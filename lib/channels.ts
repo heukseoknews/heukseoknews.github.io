@@ -48,7 +48,7 @@ function build(meta: ChannelMeta, theme: { vars?: Record<string, string> }, cate
 
 export const CHANNELS: Channel[] = [
   build(insuranceMeta as ChannelMeta, insuranceTheme, insuranceCategories, insuranceCompanies, insuranceOrgs),
-  build(aiMeta as ChannelMeta, aiTheme, aiCategories, aiCompanies as { companies: Named[]; groups: string[] }, aiOrgs),  // 준비 중(soon)
+  build(aiMeta as ChannelMeta, aiTheme, aiCategories, aiCompanies as { companies: Named[]; groups: string[] }, aiOrgs),
 ];
 /** 정적 페이지는 CHANNELS 전부 만든다. 홈 카드·채널 이동 줄은 lib/directory.ts(DIRECTORY, channelRow). */
 /** 검색 색인 제외 메타(준비 중 채널) */

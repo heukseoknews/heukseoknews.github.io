@@ -8,7 +8,7 @@ export type DirectoryEntry = { slug: string; name: string; /** 홈 카드 한 �
 
 export const DIRECTORY: DirectoryEntry[] = [
   { slug: 'insurance', name: '보험', card: '보험·계리·금융시장', status: 'live' },
-  { slug: 'ai', name: 'AI', card: '모델·오픈소스·정책·산업', status: 'soon' },
+  { slug: 'ai', name: 'AI', card: '모델·오픈소스·정책·산업', status: 'live' },
   { slug: 'finance', name: '금융', card: '은행·금융권 뉴스', status: 'soon' },
 ];
 
