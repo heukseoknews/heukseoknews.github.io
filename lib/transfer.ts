@@ -30,7 +30,7 @@ export function toBase64Url(bytes: Uint8Array): string {
 }
 
 export function fromBase64Url(s: string): Uint8Array {
-  if (!/^[A-Za-z0-9_-]*$/.test(s)) throw new Error('잘못된 문자가 있습니다.');
+  if (!/^[A-Za-z0-9_-]*$/.test(s)) throw new Error('링크가 올바르지 않습니다.');
   const b64 = s.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (s.length % 4)) % 4);
   const bin = atob(b64);
   const out = new Uint8Array(bin.length);

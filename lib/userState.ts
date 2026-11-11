@@ -2,6 +2,7 @@
  *  저장은 lib/storage.ts 의 어댑터(지금은 localStorage)가 맡는다. 형식 설명: docs/migration-localstorage.md */
 import type { Article } from './news.ts';
 import { type ReadMap, migrateReads, pruneReads } from './readState.ts';
+import { DIRECTORY } from './directory.ts';
 
 export const SCHEMA_VERSION = 1;
 export const FORMAT = 'heukseok-user-state';
@@ -71,12 +72,12 @@ export type ImportResult = { state: UserState; kind: 'heukseok' | 'legacy'; chan
  *  3) 옛 키 값 그대로 { bookmarks, lastConfirmed, readAt | readIds }
  *  형식이 맞지 않으면 Error(사용자에게 보여 줄 문구). */
 export function parseImport(raw: unknown, channel: string, legacy: LegacyKeys = {}): ImportResult {
-  if (!isObj(raw)) throw new Error('JSON 객체가 아닙니다.');
+  if (!isObj(raw)) throw new Error('백업 파일 형식이 아닙니다.');
   if (raw.format === FORMAT) {
     const v = Number(raw.schemaVersion);
-    if (!Number.isInteger(v) || v < 1) throw new Error('schemaVersion 이 없습니다.');
-    if (v > SCHEMA_VERSION) throw new Error(`더 새로운 형식(v${v})입니다. 사이트를 새로고침한 뒤 다시 시도하세요.`);
-    if (raw.channel !== channel) throw new Error(`다른 채널(${String(raw.channel)})의 데이터입니다.`);
+    if (!Number.isInteger(v) || v < 1) throw new Error('백업 파일이 손상되었습니다.');
+    if (v > SCHEMA_VERSION) throw new Error('새 버전에서 만든 파일입니다. 새로고침 후 다시 시도하세요.');
+    if (raw.channel !== channel) throw new Error(`다른 채널(${DIRECTORY.find(d => d.slug === raw.channel)?.name ?? String(raw.channel)})의 백업입니다.`);
     return { state: cleanState(fromStored(raw)), kind: 'heukseok', channel };
   }
   if (legacy.saved && (legacy.saved in raw || (legacy.companies && legacy.companies in raw))) {

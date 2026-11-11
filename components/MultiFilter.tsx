@@ -9,7 +9,7 @@ type Props = {
   selected: string[];
   onChange: (next: string[]) => void;
   groups?: string[];                   // 있으면 그룹 제목 아래로 묶어서 보여준다
-  persistNote?: string;                // 선택이 이 브라우저에 저장된다는 안내(보험사)
+  persistNote?: string;                // 선택이 다음 방문에도 유지된다는 안내(보험사)
 };
 
 /** 다중 선택 드롭다운(기사 수 순, 건수 표시, 옵션이 많으면 안에서 검색). 바깥 클릭·Esc 로 닫힘. 언론사·보험사·유관기관 공용. */
@@ -33,7 +33,7 @@ export default function MultiFilter({ label, options, selected, onChange, groups
       {label}{selected.length > 0 && <b>{selected.length}</b>}<ChevronDown size={15} aria-hidden="true" />
     </button>
     {open && <div className="sourcePanel" role="group" aria-label={`${label} 선택`}>
-      <div className="sourcePanelHead"><span>{label} {options.length}곳 · 기사 수 순</span><button type="button" disabled={!selected.length} onClick={() => onChange([])}>전체 해제</button></div>
+      <div className="sourcePanelHead"><span>{label} {options.length}곳</span><button type="button" disabled={!selected.length} onClick={() => onChange([])}>전체 해제</button></div>
       {options.length > 8 && <label className="msSearch"><Search size={14} aria-hidden="true" /><input type="search" aria-label={`${label} 안에서 검색`} placeholder={`${label} 검색`} value={q} onChange={e => setQ(e.target.value)} /></label>}
       <ul>{blocks.map(b => <li key={b.group ?? '_'} className="msGroup">
         {b.group && <div className="msGroupName">{b.group}</div>}
@@ -41,7 +41,7 @@ export default function MultiFilter({ label, options, selected, onChange, groups
           <label><input type="checkbox" checked={selected.includes(o.name)} onChange={() => toggle(o.name)} /><span className="sname">{o.name}</span><span className="scount">{o.count.toLocaleString()}</span></label>
         </li>)}</ul>
       </li>)}
-        {!shown.length && <li className="msNone">일치하는 {label}이(가) 없습니다</li>}
+        {!shown.length && <li className="msNone">검색 결과가 없습니다</li>}
       </ul>
       {persistNote && <div className="msNote">{persistNote}</div>}
     </div>}

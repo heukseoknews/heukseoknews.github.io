@@ -7,7 +7,7 @@ const bytes = new Uint8Array(256).map((_, i) => i);
 const b = toBase64Url(bytes);
 assert.ok(/^[A-Za-z0-9_-]+$/.test(b));
 assert.deepEqual(fromBase64Url(b), bytes);
-assert.throws(() => fromBase64Url('ab+c'), /잘못된 문자/);
+assert.throws(() => fromBase64Url('ab+c'), /링크가 올바르지 않습니다/);
 
 // gzip+base64url 왕복(한글 포함)
 const obj = toExportFile('insurance', { ...EMPTY_STATE, companies: ['삼성생명'], readAt: { a: '2026-11-01T00:00:00.000Z' } });

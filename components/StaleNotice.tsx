@@ -8,5 +8,5 @@ export default function StaleNotice() {
   const { slug, fmt } = useChannel();
   const finished = useLastCollected(slug);
   if (!isStale(finished)) return null;
-  return <div className="notice staleNotice" role="status"><div><b>수집이 지연되고 있습니다 (마지막 수집: {fmt(finished!)})</b><p>자동 수집이 멈췄거나 늦어지고 있어 오래된 기사가 보일 수 있습니다.</p></div></div>;
+  return <div className="notice staleNotice" role="status"><div><b>기사 갱신이 늦어지고 있습니다 (마지막 수집 {fmt(finished!)})</b><p>최근 기사가 빠져 있을 수 있습니다.</p></div></div>;
 }

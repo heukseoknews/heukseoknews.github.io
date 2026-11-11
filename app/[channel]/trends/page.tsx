@@ -15,7 +15,7 @@ export default function TrendsPage() {
   const [trends, setTrends] = useState<Trends | null>(null);
   const [failure, setFailure] = useState('');
   const [off, setOff] = useState<string[]>([]);
-  useEffect(() => { loadTrends(ch.slug).then(setTrends).catch(() => setFailure('추이 데이터(trends.json)가 아직 없습니다. 수집을 한 번 실행하면 생성됩니다.')); }, [ch.slug]);
+  useEffect(() => { loadTrends(ch.slug).then(setTrends).catch(() => setFailure('추이 자료를 불러오지 못했습니다.')); }, [ch.slug]);
   const today = todayKst();
   const weeks = useMemo(() => trends ? lastWeeks(trends, today, WEEKS) : [], [trends, today]);
   const shown = trends?.keywords.filter(k => !off.includes(k)) ?? [];
@@ -26,8 +26,8 @@ export default function TrendsPage() {
 
   return <>
     <h1 className="srOnly">키워드 추이</h1>
-    <div className="notice"><div><b>키워드 주별 언급 수 (최근 {WEEKS}주)</b><p>기사 제목에 키워드가 들어간 건수를 발행일(KST) 기준 월~일 주 단위로 셉니다. 키워드는 channels/{ch.slug}/keywords.json에서 바꾸며, 수집을 실행하면 과거분까지 다시 집계됩니다. 이번 주는 진행 중이라 값이 작을 수 있고, 데이터는 수집을 시작한 주부터 있습니다.</p></div></div>
-    {!trends && !failure && <div className="articles"><div className="empty">추이 데이터를 불러오는 중입니다…</div></div>}
+    <div className="notice"><div><b>키워드 주별 언급 수 (최근 {WEEKS}주)</b><p>제목에 키워드가 나온 기사 수(주 단위, 월~일)</p></div></div>
+    {!trends && !failure && <div className="articles"><div className="empty">불러오는 중…</div></div>}
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     {trends && <section className="articles chartBox">
       <div className="legend">{trends.keywords.map((k, i) => <label key={k} className={off.includes(k) ? 'off' : ''}>

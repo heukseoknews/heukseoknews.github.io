@@ -17,8 +17,6 @@ import { useSaved } from '../../lib/useSaved';
 type Tab = TabId;
 const TABS: Tab[] = ['new', 'all', 'press', 'bookmarks'];  // 표시 이름은 채널 channel.json 의 tabs
 const PAGE = 50;
-/** 받침 유무에 맞는 조사(은/는) */
-const eunNeun = (w: string) => { const c = w.charCodeAt(w.length - 1) - 0xac00; return c >= 0 && c < 11172 && c % 28 ? '은' : '는'; };
 
 export default function Home() {
   const ch = useChannel();
@@ -125,7 +123,7 @@ export default function Home() {
     sources.length > 0 && { key: 'sources', label: `${L.sources} ${sources.length}곳`, clear: () => setSources([]), hint: countWithout('sources') },
     companies.length > 0 && { key: 'companies', label: `${L.companies} ${companies.length}곳`, clear: () => setCompanies([]), hint: countWithout('companies') },
     orgs.length > 0 && { key: 'orgs', label: `${L.orgs} ${orgs.length}곳`, clear: () => setOrgs([]), hint: countWithout('orgs') },
-    dateChanged && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dateFilter.from : `${dateFilter.from}~${dateFilter.to}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }), hint: countWithout('date') },
+    dateChanged && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dayHeading(dateFilter.from) : `${dayHeading(dateFilter.from)} ~ ${dayHeading(dateFilter.to)}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }), hint: countWithout('date') },
     unreadOnly && { key: 'unread', label: '안 읽은 것만', clear: () => setUnreadOnly(false), hint: countBase(category, search, false, includeLow) },
     includeLow && tab !== 'bookmarks' && { key: 'low', label: '관련도 낮은 기사 포함', clear: () => setIncludeLow(false) },
   ].filter(Boolean) as Active[];
@@ -151,10 +149,10 @@ export default function Home() {
       <button type="button" className={'filterToggle' + (activeCount ? ' on' : '')} aria-expanded={sheetOpen} aria-controls="filterControls" onClick={() => setSheetOpen(o => !o)}><Filter size={15} aria-hidden="true" /> 필터{activeCount > 0 && <b aria-label={`켜진 필터 ${activeCount}개`}>{activeCount}</b>}</button>
       <div id="filterControls" className={'filterControls' + (sheetOpen ? ' open' : '')}>
         <MultiFilter label={L.sources} options={sourceOpts} selected={sources} onChange={v => { setSources(v); setPage(1); }} />
-        <MultiFilter label={L.companies} options={companyOpts} selected={companies} groups={ch.companyGroups} persistNote={`선택한 ${L.companies}${eunNeun(L.companies)} 이 브라우저에 저장됩니다.`} onChange={v => { setCompanies(v); setPage(1); }} />
+        <MultiFilter label={L.companies} options={companyOpts} selected={companies} groups={ch.companyGroups} persistNote="다음 방문에도 유지됩니다." onChange={v => { setCompanies(v); setPage(1); }} />
         <MultiFilter label={L.orgs} options={orgOpts} selected={orgs} groups={ch.orgGroups} onChange={v => { setOrgs(v); setPage(1); }} />
-        <label className="check" title="제목을 클릭해 연 기사는 읽음으로 기록됩니다(새 뉴스 범위의 읽음 기록은 우선 보관)"><input type="checkbox" checked={unreadOnly} onChange={e => { setUnreadOnly(e.target.checked); setPage(1); }} /> 안 읽은 것만</label>
-        {tab !== 'bookmarks' && <label className="check" title="제목에 보험 관련 단어가 없는 기사(시장 속보·타 업종 등)입니다. 새 뉴스 건수와 이번 주 핵심에는 포함되지 않습니다."><input type="checkbox" checked={includeLow} onChange={e => { setIncludeLow(e.target.checked); setPage(1); }} /> 관련도 낮은 기사 포함</label>}
+        <label className="check" title="열어 본 기사는 읽음으로 표시됩니다."><input type="checkbox" checked={unreadOnly} onChange={e => { setUnreadOnly(e.target.checked); setPage(1); }} /> 안 읽은 것만</label>
+        {tab !== 'bookmarks' && <label className="check" title="시장 속보·타 업종 기사 등"><input type="checkbox" checked={includeLow} onChange={e => { setIncludeLow(e.target.checked); setPage(1); }} /> 관련도 낮은 기사 포함</label>}
       </div>
       <button type="button" className="filterReset" disabled={!activeCount} onClick={resetFilters}><RotateCcw size={14} aria-hidden="true" /> 필터 초기화{activeCount > 0 && <b>{activeCount}</b>}</button>
     </div>
@@ -163,21 +161,20 @@ export default function Home() {
     <FilterChips label={L.sources} selected={sources} onChange={v => { setSources(v); setPage(1); }} />
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />
     {tab === 'new' && <div className="notice"><div><b>마지막 확인 완료 이후 수집된 기사</b><p>{baseline ? `마지막 확인 완료: ${fmt(baseline)}` : '처음 접속했습니다. 보관 중인 뉴스를 모두 새 뉴스로 표시합니다.'} · 수집시각 기준(표시 시각은 발행시각)</p></div><button className="confirm" disabled={!ready} onClick={markDone}><Check size={15} /> 새 뉴스 확인 완료</button></div>}
-    {tab === 'new' && (hiddenReadCount > 0 || showRead) && <div className="readToggleRow"><button type="button" className="readToggle" aria-pressed={showRead} onClick={() => { setShowRead(v => !v); setPage(1); }}>{showRead ? `읽은 기사 ${hiddenReadCount}건 표시 중 · 숨기기` : `읽은 기사 ${hiddenReadCount}건 숨김 · 다시 보기`}</button></div>}
-    {tab === 'press' && ch.notices?.press && <div className="notice"><div><b>{ch.notices.press.title}</b><p>{ch.notices.press.body}</p></div></div>}
-    <div className="listHead"><h3>{ch.tabs[tab]} <small>{rows.length.toLocaleString()}건</small></h3><span>{loadingMore ? '과거 기사 불러오는 중…' : index?.updated_at ? `마지막 수집 ${fmt(index.updated_at)}` : '수집 이력 없음'}</span></div>
+    {tab === 'new' && (hiddenReadCount > 0 || showRead) && <div className="readToggleRow"><button type="button" className="readToggle" aria-pressed={showRead} onClick={() => { setShowRead(v => !v); setPage(1); }}>{showRead ? '읽은 기사 숨기기' : `읽은 기사 ${hiddenReadCount.toLocaleString()}건 보기`}</button></div>}
+    <div className="listHead"><h3>{ch.tabs[tab]} <small>{rows.length.toLocaleString()}건</small></h3><span>{loadingMore ? '과거 기사 불러오는 중…' : index?.updated_at ? `마지막 수집 ${fmt(index.updated_at)}` : ''}</span></div>
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     <section className="articles">{!ready || (loading && tab !== 'bookmarks') ? <div className="empty">뉴스를 불러오는 중입니다…</div> : pageRows.length === 0
       ? (active.length
-        ? <div className="empty"><Newspaper size={27} /><b>조건에 맞는 기사가 없습니다</b><p>아래 필터가 함께 적용되어 결과가 비었습니다. 하나씩 해제해 보세요.</p>
-            <ul className="emptyFilters">{active.map(f => <li key={f.key} className={f.hint ? 'fix' : ''}><span>{f.label}</span>{f.hint !== undefined && <small>{f.hint > 0 ? `이 필터를 풀면 ${f.hint.toLocaleString()}건` : '풀어도 0건'}</small>}<button type="button" onClick={() => { f.clear(); setPage(1); }}><X size={13} aria-hidden="true" /> 해제</button></li>)}</ul>
+        ? <div className="empty"><Newspaper size={27} /><b>조건에 맞는 기사가 없습니다</b><p>필터를 하나씩 해제해 보세요.</p>
+            <ul className="emptyFilters">{active.map(f => <li key={f.key} className={f.hint ? 'fix' : ''}><span>{f.label}</span>{f.hint !== undefined && <small>{f.hint > 0 ? `해제하면 ${f.hint.toLocaleString()}건` : '해제해도 0건'}</small>}<button type="button" onClick={() => { f.clear(); setPage(1); }}><X size={13} aria-hidden="true" /> 해제</button></li>)}</ul>
             <button type="button" className="confirm" onClick={resetFilters}>필터 초기화</button></div>
         : tab === 'all' && dateFilter && dateFilter.from === today && dateFilter.to === today
-        ? <div className="empty"><Newspaper size={27} /><b>오늘 올라온 기사가 아직 없습니다</b><p>수집은 매일 아침 이뤄집니다. 어제 기사를 확인해 보세요.</p><button type="button" className="confirm" onClick={() => { const y = addDays(today, -1); setDateFilter({ from: y, to: y }); setCalMonth(y.slice(0, 7)); setPage(1); }}>어제 보기</button></div>
-        : <div className="empty"><Newspaper size={27} /><b>표시할 기사가 없습니다.</b><p>새 뉴스 확인 여부, 검색어, 수집 실행 결과를 확인하세요.</p></div>)
+        ? <div className="empty"><Newspaper size={27} /><b>오늘 올라온 기사가 아직 없습니다</b><p>매일 아침 갱신됩니다.</p><button type="button" className="confirm" onClick={() => { const y = addDays(today, -1); setDateFilter({ from: y, to: y }); setCalMonth(y.slice(0, 7)); setPage(1); }}>어제 보기</button></div>
+        : <div className="empty"><Newspaper size={27} /><b>{tab === 'new' ? '새 기사가 없습니다.' : tab === 'bookmarks' ? '북마크한 기사가 없습니다.' : '기사가 없습니다.'}</b></div>)
       : pageRows.map((a, i) => { const d = kstDate(a.published_at); const head = sort === 'latest' && (i === 0 || d !== kstDate(pageRows[i - 1].published_at));
         return <Fragment key={a.id}>{head && <div className="dayhead">{dayHeading(d)}<small>· {perDay[d]}건</small></div>}
-          <ArticleCard a={a} baseline={baseline} showDiscovery={tab === 'press'} bookmarked={!!saved.bookmarks[a.id]} read={readSet.has(a.id)} dim={tab === 'new' || tab === 'all'} fading={justRead.has(a.id)} onBookmark={toggleBookmark} onRead={handleRead} onUnread={tab === 'new' && showRead ? unmarkRead : undefined} onMarkRead={tab === 'new' ? handleMarkRead : undefined} /></Fragment>; })}</section>
+          <ArticleCard a={a} baseline={baseline} bookmarked={!!saved.bookmarks[a.id]} read={readSet.has(a.id)} dim={tab === 'new' || tab === 'all'} fading={justRead.has(a.id)} onBookmark={toggleBookmark} onRead={handleRead} onUnread={tab === 'new' && showRead ? unmarkRead : undefined} onMarkRead={tab === 'new' ? handleMarkRead : undefined} /></Fragment>; })}</section>
     {rows.length > PAGE && <div className="pagination"><button disabled={curPage <= 1} onClick={() => setPage(curPage - 1)}>이전</button><span>{curPage} / {lastPage} 페이지</span><button disabled={curPage >= lastPage} onClick={() => setPage(curPage + 1)}>다음</button></div>}
     {undo && <div className="undoToast" role="status" aria-live="polite"><span>읽음 처리했습니다</span><button type="button" onClick={handleUndo}>되돌리기</button></div>}
   </>;

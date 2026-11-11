@@ -27,7 +27,7 @@ export default function SettingsPage() {
     history.replaceState(null, '', window.location.pathname + window.location.search);  // 데이터가 주소창·방문 기록에 남지 않게
     decodePayload(code)
       .then(raw => setPending({ ...parseImport(raw, ch.slug, legacy), from: 'link' }))
-      .catch(e => setError(`링크의 데이터를 읽지 못했습니다: ${e instanceof Error ? e.message : String(e)} 파일로 옮기는 방법을 이용하세요.`));
+      .catch(e => { console.error('import link', e); setError('링크를 읽지 못했습니다. 파일로 가져오세요.'); });
   }, [ch.slug, legacy]);
 
   const current = summarize(saved);
@@ -52,7 +52,8 @@ export default function SettingsPage() {
       const raw = JSON.parse(await f.text());
       setPending({ ...parseImport(raw, ch.slug, legacy), from: 'file', name: f.name });
     } catch (e) {
-      setError(`가져오지 못했습니다: ${e instanceof SyntaxError ? 'JSON 파일이 아닙니다.' : e instanceof Error ? e.message : String(e)}`);
+      if (!(e instanceof Error) || e instanceof SyntaxError) console.error('import file', e);
+      setError(`가져오지 못했습니다: ${e instanceof SyntaxError || !(e instanceof Error) ? '백업 파일이 아닙니다.' : e.message}`);
     } finally {
       if (fileRef.current) fileRef.current.value = '';
     }
@@ -68,19 +69,19 @@ export default function SettingsPage() {
 
   const row = (label: string, s: Summary | null) => s && <tr><td data-label="구분"><b>{label}</b></td>
     <td data-label="북마크">{s.bookmarks.toLocaleString()}건</td><td data-label="읽음">{s.reads.toLocaleString()}건</td>
-    <td data-label="새 뉴스 확인 시각">{s.lastConfirmed ? fmt(s.lastConfirmed) : '없음'}</td><td data-label={`선택한 ${ch.filters.companies}`}>{s.companies.toLocaleString()}곳</td></tr>;
+    <td data-label="마지막 확인">{s.lastConfirmed ? fmt(s.lastConfirmed) : '없음'}</td><td data-label={`선택한 ${ch.filters.companies}`}>{s.companies.toLocaleString()}곳</td></tr>;
 
   return <>
     <h1 className="srOnly">내 데이터</h1>
-    <div className="notice"><div><b>내 데이터 (이 브라우저)</b><p>북마크·읽음 기록·새 뉴스 확인 시각·선택한 {ch.filters.companies}는 이 브라우저에만 저장됩니다. 다른 기기·브라우저로 옮기거나 백업하려면 파일로 내려받아 가져오세요. 가져오기는 지금 데이터를 지우지 않고 합칩니다.</p></div></div>
+    <div className="notice"><div><b>내 데이터</b><p>북마크·읽음 기록·새 뉴스 확인 시각·선택한 {ch.filters.companies}는 이 브라우저에만 저장됩니다. 다른 기기로 옮길 때는 파일로 내려받아 가져오세요(기존 기록과 합쳐집니다).</p></div></div>
     {error && <div className="error" role="alert"><AlertCircle size={17} /> {error}</div>}
     {done && <div className="notice" role="status"><div><b><CheckCircle2 size={14} /> {done}</b></div></div>}
 
     {pending && <section className="articles dataPanel" aria-labelledby="import-title">
-      <h3 id="import-title">가져오기 미리보기 <small>{pending.from === 'link' ? '이전 링크' : pending.name}{pending.kind === 'legacy' ? ' · 옛 사이트(actuary-news-hub) 형식' : ''}</small></h3>
-      <div className="tableWrap"><table className="statusTable"><thead><tr><th>구분</th><th>북마크</th><th>읽음</th><th>새 뉴스 확인 시각</th><th>선택한 {ch.filters.companies}</th></tr></thead>
+      <h3 id="import-title">가져오기 미리보기 <small>{pending.from === 'link' ? '이전 링크' : pending.name}{pending.kind === 'legacy' ? ' · 이전 사이트 기록' : ''}</small></h3>
+      <div className="tableWrap"><table className="statusTable"><thead><tr><th>구분</th><th>북마크</th><th>읽음</th><th>마지막 확인</th><th>선택한 {ch.filters.companies}</th></tr></thead>
         <tbody>{row('가져올 데이터', incoming)}{row('지금 이 브라우저', current)}{row('합친 뒤', merged)}</tbody></table></div>
-      <p className="dataNote">겹치는 북마크·읽음은 하나로 합치고, 새 뉴스 확인 시각은 더 늦은 쪽을 씁니다. 읽음 기록이 1,500건을 넘으면 오래된 기록부터 정리됩니다.</p>
+      <p className="dataNote">겹치는 기록은 하나로 합칩니다.</p>
       <div className="dataActions">
         <button type="button" className="confirm" disabled={!ready} onClick={apply}>확인하고 가져오기</button>
         <button type="button" className="readToggle" onClick={() => setPending(null)}>취소</button>
@@ -89,7 +90,7 @@ export default function SettingsPage() {
 
     <section className="articles dataPanel" aria-labelledby="current-title">
       <h3 id="current-title">지금 저장된 데이터</h3>
-      {!ready ? <div className="empty">불러오는 중입니다…</div> : <div className="tableWrap"><table className="statusTable"><thead><tr><th>구분</th><th>북마크</th><th>읽음</th><th>새 뉴스 확인 시각</th><th>선택한 {ch.filters.companies}</th></tr></thead>
+      {!ready ? <div className="empty">불러오는 중입니다…</div> : <div className="tableWrap"><table className="statusTable"><thead><tr><th>구분</th><th>북마크</th><th>읽음</th><th>마지막 확인</th><th>선택한 {ch.filters.companies}</th></tr></thead>
         <tbody>{row('이 브라우저', current)}</tbody></table></div>}
       <div className="dataActions">
         <button type="button" className="confirm" disabled={!ready} onClick={download}><Download size={15} /> 파일로 내려받기(백업)</button>

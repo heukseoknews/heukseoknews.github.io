@@ -7,7 +7,7 @@ export function useNews(channel: string, extra: string[] | 'all' = []) {
   const [index, setIndex] = useState<DataIndex | null>(null);
   const [byMonth, setByMonth] = useState<Record<string, Article[]>>({});
   const [failure, setFailure] = useState('');
-  useEffect(() => { loadIndex(channel).then(setIndex).catch(e => setFailure(`데이터 인덱스를 읽지 못했습니다: ${e.message}`)); }, [channel]);
+  useEffect(() => { loadIndex(channel).then(setIndex).catch(e => { console.error('index.json', e); setFailure('뉴스를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.'); }); }, [channel]);
   const extraKey = extra === 'all' ? 'all' : extra.join(',');
   const wanted = useMemo(() => {
     const m = index?.months.map(x => x.month) ?? [];
@@ -19,7 +19,7 @@ export function useNews(channel: string, extra: string[] | 'all' = []) {
   useEffect(() => {
     wanted.filter(m => !(m in byMonth)).forEach(m => {
       loadMonth(channel, m).then(rows => setByMonth(p => ({ ...p, [m]: rows })))
-        .catch(e => { setByMonth(p => ({ ...p, [m]: [] })); setFailure(`${m} 데이터를 읽지 못했습니다: ${e.message}`); });
+        .catch(e => { console.error(`${m}.json`, e); setByMonth(p => ({ ...p, [m]: [] })); setFailure(`${Number(m.slice(0, 4))}년 ${Number(m.slice(5, 7))}월 기사를 불러오지 못했습니다.`); });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wanted, byMonth]);

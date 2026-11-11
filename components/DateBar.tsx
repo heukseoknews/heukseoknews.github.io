@@ -25,9 +25,9 @@ export default function DateBar({ filter, onChange, counts, month, onMonth }: Pr
   const is = (a: string, b: string) => filter?.from === a && filter?.to === b;
   return <div className="datebar">
     <div className="dateRow">
-      <button className="dnav" aria-label="이전" onClick={() => shift(-1)}><ChevronLeft size={16} /></button>
+      <button className="dnav" aria-label="이전 기간" onClick={() => shift(-1)}><ChevronLeft size={16} /></button>
       <button className={'dcur' + (filter ? ' on' : '')} onClick={() => setOpen(o => !o)} aria-expanded={open}><CalendarDays size={15} /> {label(filter)}</button>
-      <button className="dnav" aria-label="다음" disabled={!filter || filter.to >= today} onClick={() => shift(1)}><ChevronRight size={16} /></button>
+      <button className="dnav" aria-label="다음 기간" disabled={!filter || filter.to >= today} onClick={() => shift(1)}><ChevronRight size={16} /></button>
       <button className={is(today, today) ? 'dq on' : 'dq'} onClick={() => { single(today); onMonth(today.slice(0, 7)); }}>오늘</button>
       <button className={is(yesterday, yesterday) ? 'dq on' : 'dq'} onClick={() => { single(yesterday); onMonth(yesterday.slice(0, 7)); }}>어제</button>
       <button className={is(week[0], week[1]) ? 'dq on' : 'dq'} onClick={() => { onChange({ from: week[0], to: week[1] }); onMonth(week[0].slice(0, 7)); }}>이번 주</button>

@@ -24,8 +24,8 @@ assert.equal(file.format, FORMAT); assert.equal(file.schemaVersion, 1); assert.e
 const r1 = parseImport(file, 'insurance', LEGACY);
 assert.equal(r1.kind, 'heukseok');
 assert.deepEqual(summarize(r1.state), { bookmarks: 1, reads: 1, lastConfirmed: st.lastConfirmed, companies: 1 });
-assert.throws(() => parseImport(file, 'ai', LEGACY), /다른 채널/);
-assert.throws(() => parseImport({ ...file, schemaVersion: 2 }, 'insurance', LEGACY), /더 새로운 형식/);
+assert.throws(() => parseImport(file, 'ai', LEGACY), /다른 채널\(보험\)의 백업/);
+assert.throws(() => parseImport({ ...file, schemaVersion: 2 }, 'insurance', LEGACY), /새 버전에서 만든 파일/);
 
 // 2) 옛 사이트 localStorage 묶음(값이 JSON 문자열이어도 받음)
 const dump = { 'actuary-news-hub-v3': JSON.stringify({ bookmarks: { b: art('b') }, lastConfirmed: null, readAt: { b: '2026-11-03T00:00:00.000Z' } }), 'actuary-news-hub-companies-v1': '["KB손해보험"]' };
@@ -37,7 +37,7 @@ assert.deepEqual(parseImport({ 'actuary-news-hub-v3': { readIds: ['q'] } }, 'ins
 // 3) 옛 키 값 그대로 / 잘못된 입력
 assert.equal(parseImport({ bookmarks: {}, readIds: ['z'] }, 'insurance', LEGACY).state.readAt.z !== undefined, true);
 assert.throws(() => parseImport({ bookmarks: {} }, 'ai', {}), /형식이 아닙니다/);  // 옛 키가 없는 채널은 옛 형식을 받지 않음
-assert.throws(() => parseImport([], 'insurance', LEGACY), /객체가 아닙니다/);
+assert.throws(() => parseImport([], 'insurance', LEGACY), /백업 파일 형식이 아닙니다/);
 assert.throws(() => parseImport({ hello: 1 }, 'insurance', LEGACY), /형식이 아닙니다/);
 
 // 가져온 북마크 정리: 필수 필드 없으면 버리고, 배열 필드는 채움. 잘못된 시각은 버림
