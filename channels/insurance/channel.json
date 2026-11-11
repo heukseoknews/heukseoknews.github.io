@@ -17,6 +17,13 @@
   "companies": "보험사",
   "orgs": "유관기관"
  },
+ "notices": {
+  "press": {
+   "title": "금융위원회 · 금융감독원 관련 자료",
+   "body": "금융위는 공식 RSS와 검색으로 발견한 자료를 함께 보여주며, 금융감독원은 직접 수집이 아니라 검색으로 발견한 자료입니다. 누락될 수 있습니다."
+  }
+ },
+ "press_discovery_label": true,
  "storage": {
   "legacy_keys": {
    "saved": "actuary-news-hub-v3",

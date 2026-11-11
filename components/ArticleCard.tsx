@@ -10,12 +10,12 @@ type Props = { a: Article; baseline: string | null; bookmarked: boolean; read: b
 const tagList = (a: Article) => [...new Set([...(a.orgs ?? []), ...(a.companies ?? []), ...a.tags])].slice(0, 4);
 
 export default function ArticleCard({ a, baseline, bookmarked, read, rank, dim, fading, showDiscovery, onBookmark, onRead, onUnread, onMarkRead }: Props) {
-  const { fmt } = useChannel();
+  const { fmt, press_discovery_label } = useChannel();
   return <article className={'article' + (dim && read ? ' isRead' : '') + (fading ? ' fading' : '')}><div className="articleMain">
     <div className="meta">
       {rank !== undefined && <span className="rank">{rank}</span>}
       <span className={a.source_type === 'press' ? 'pill official' : 'pill'}>{a.category}</span>
-      {showDiscovery && a.source_type === 'press' && <span className="officialText">{a.feed_name.includes('RSS') ? '공식 RSS' : '검색으로 발견'}</span>}
+      {showDiscovery && press_discovery_label && a.source_type === 'press' && <span className="officialText">{a.feed_name.includes('RSS') ? '공식 RSS' : '검색으로 발견'}</span>}
       <span>{a.source}</span><span className="dot">·</span><time dateTime={a.published_at}>{fmt(a.published_at)}</time>
       {baseline && isNewArticle(a, baseline) && <span className="new">NEW</span>}
     </div>
