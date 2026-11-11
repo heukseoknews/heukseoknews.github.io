@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
-import { themeCss } from '../lib/theme.ts';
+import { PLANNED_THEMES, THEME_KEYS, contrast, themeCss } from '../lib/theme.ts';
 import { loadChannels, planChannels } from '../scripts/plan-channels.mjs';
 
 // 채널 폴더 = lib/channels.ts 등록, 채널 수집 시각(schedule_utc) ⊂ deploy.yml cron, 매트릭스는 scripts/plan-channels.mjs
@@ -69,8 +69,29 @@ assert.equal(ai.notices?.press, undefined); assert.notEqual(ai.press_discovery_l
 const page = readFileSync('app/[channel]/page.tsx', 'utf8');
 assert.ok(!page.includes('금융위원회'), '보험 전용 안내 문구는 channel.json 으로');
 const css = readFileSync('app/globals.css', 'utf8');
-assert.ok(css.startsWith(':root{--brand:#155099;--brand-strong:#204e87;--brand-dark:#173e74;'), 'globals.css 기본 색 = 보험 테마');
-assert.equal(themeCss(JSON.parse(readFileSync('channels/insurance/theme.json', 'utf8')).vars), ':root{--brand:#155099;--brand-strong:#204e87;--brand-dark:#173e74}');
+assert.ok(css.startsWith(':root{--accent:#1756A9;--accent-strong:#0F3F80;--accent-soft:#EAF1FB;--accent-dark:#7FB0F0;'), 'globals.css 기본 색 = 보험 테마');
+assert.equal(themeCss(JSON.parse(readFileSync('channels/insurance/theme.json', 'utf8')).vars), ':root{--accent:#1756A9;--accent-strong:#0F3F80;--accent-soft:#EAF1FB;--accent-dark:#7FB0F0}');
+assert.match(css, /--brand:var\(--accent\);--brand-strong:var\(--accent-strong\)/, '옛 변수 이름은 accent 의 별칭');
+
+// 채널 테마 4색과 대비(WCAG AA): 흰 바탕 글자·흰 글자 얹기 4.5, soft 위 strong·accent 4.5, 어두운 바탕(#11161D) 위 dark 4.5
+const themes: Record<string, Record<string, string>> = { ...Object.fromEntries(dirs.map(d => [d, JSON.parse(readFileSync(`channels/${d}/theme.json`, 'utf8')).vars])), ...PLANNED_THEMES };
+for (const d of Object.keys(PLANNED_THEMES)) assert.ok(!dirs.includes(d), `${d}: 폴더가 생기면 PLANNED_THEMES 에서 theme.json 으로 옮긴다`);
+for (const [slug, t] of Object.entries(themes)) {
+  assert.deepEqual(Object.keys(t).sort(), [...THEME_KEYS].sort(), `${slug}: 테마는 accent·strong·soft·dark 4색`);
+  for (const v of Object.values(t)) assert.match(v, /^#[0-9A-Fa-f]{6}$/);
+  const [a, s, so, dk] = THEME_KEYS.map(k => t[k]);
+  for (const [label, x, y] of [['accent/흰 바탕', a, '#FFFFFF'], ['accent/페이지 바탕', a, '#F6F7F9'], ['strong/soft', s, so], ['accent/soft', a, so], ['dark/어두운 바탕', dk, '#11161D']] as const)
+    assert.ok(contrast(x, y) >= 4.5, `${slug} ${label} 대비 ${contrast(x, y).toFixed(2)} < 4.5`);
+}
+// 채널 색은 서로 달라야 한다(보험 파랑·AI 보라·금융 초록)
+assert.equal(new Set(Object.values(themes).map(t => t['--accent'].toLowerCase())).size, Object.keys(themes).length);
+assert.equal(themes.ai['--accent'], '#6A3FD0');
+assert.equal(themes.finance['--accent'], '#127346');
+// 공통 글자색 대비
+for (const [c, min] of [['#16202b', 4.5], ['#55606e', 4.5], ['#646f7f', 4.5], ['#7d8796', 3]] as const) {
+  assert.ok(css.includes(c), `globals.css 에 ${c}`);
+  assert.ok(contrast(c, '#ffffff') >= min && contrast(c, '#f6f7f9') >= min, `${c} 대비`);
+}
 
 // 테마 값 검사: 위험한 이름·값은 버린다
 assert.equal(themeCss({ '--a': '#fff', 'color': 'red', '--b': 'red;}body{x:y', '--c': 'url(javascript:x)' }), ':root{--a:#fff}');

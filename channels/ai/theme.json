@@ -1,7 +1,8 @@
 {
  "vars": {
-  "--brand": "#0f6b6b",
-  "--brand-strong": "#0b5757",
-  "--brand-dark": "#083f40"
+  "--accent": "#6A3FD0",
+  "--accent-strong": "#4F2BA3",
+  "--accent-soft": "#F1ECFD",
+  "--accent-dark": "#B9A0F5"
  }
 }

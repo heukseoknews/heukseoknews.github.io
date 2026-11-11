@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import Footer from '../../components/Footer';
 import SiteHeader from '../../components/SiteHeader';
@@ -14,6 +14,12 @@ type Params = { params: Promise<{ channel: string }> };
 // 정적 빌드: channels 레지스트리의 채널마다 /<채널>/ 페이지를 만든다.
 export const dynamicParams = false;
 export function generateStaticParams() { return CHANNELS.map(c => ({ channel: c.slug })); }
+
+/** 브라우저 주소창 색 = 채널 색 */
+export async function generateViewport({ params }: Params): Promise<Viewport> {
+  const accent = getChannel((await params).channel)?.themeVars['--accent'];
+  return accent ? { themeColor: accent } : {};
+}
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const c = getChannel((await params).channel);

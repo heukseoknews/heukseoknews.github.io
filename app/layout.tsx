@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   icons: { icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/favicon.ico', sizes: '16x16 32x32 48x48' }], apple: '/apple-touch-icon.png' },
   ...shareMeta(title, description, '/'),
 };
-export const viewport: Viewport = { themeColor: '#173e74' };
+export const viewport: Viewport = { themeColor: '#1756A9' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Pretendard(자체 호스팅, scripts/sync-fonts.mjs 가 public/fonts/ 에 복사). 글자 범위별 조각만 받는다.
