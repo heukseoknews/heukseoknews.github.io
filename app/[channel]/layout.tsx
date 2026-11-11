@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!c) return {};
   const description = `${SITE.name} ${c.name} — ${c.subtitle}`;
   const full = `${c.subtitle} | ${SITE.name}`;
-  return { title: { absolute: full }, description, ...shareMeta(full, description, `/${c.slug}/`) };
+  return { title: { absolute: full }, description, ...shareMeta(full, description, `/${c.slug}/`), ...(c.hidden ? { robots: { index: false, follow: false } } : {}) };
 }
 
 export default async function ChannelLayout({ children, params }: Params & { children: React.ReactNode }) {

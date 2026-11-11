@@ -20,6 +20,6 @@ export function pageMetadata(label: string, sub: string) {
     const title = `${label} · ${c.name}`;
     const description = `${SITE.name} ${c.name} — ${label}`;
     const full = `${title} | ${SITE.name}`;  // 중간 레이아웃이 제목을 정하면 루트 템플릿이 내려오지 않아 완성된 제목을 쓴다
-    return { title: { absolute: full }, description, ...shareMeta(full, description, `/${c.slug}/${sub}`) };
+    return { title: { absolute: full }, description, ...shareMeta(full, description, `/${c.slug}/${sub}`), ...(c.hidden ? { robots: { index: false, follow: false } } : {}) };
   };
 }

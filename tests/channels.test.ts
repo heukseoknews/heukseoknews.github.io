@@ -18,6 +18,7 @@ for (const d of dirs) {
   const c = JSON.parse(readFileSync(`channels/${d}/channel.json`, 'utf8'));
   for (const k of REQUIRED) assert.ok(c[k], `${d}/channel.json: ${k} 없음`);
   assert.equal(c.slug, d);
+  assert.ok(c.hidden === undefined || typeof c.hidden === 'boolean', `${d}: hidden 은 true/false`);
   assert.deepEqual(Object.keys(c.tabs).sort(), ['all', 'bookmarks', 'new', 'press']);
   assert.deepEqual(Object.keys(c.filters).sort(), ['companies', 'orgs', 'sources']);
   assert.equal(c.schedule_utc, cron, `${d}: schedule_utc 와 deploy.yml cron 이 다르다`);
@@ -30,6 +31,11 @@ for (const d of dirs) {
   assert.equal(themeCss(t.vars).split(';').length, Object.keys(t.vars).length, `${d}/theme.json: 허용되지 않는 변수·값`);
   for (const f of ['categories', 'companies', 'orgs', 'score', 'feeds', 'boards', 'keywords']) JSON.parse(readFileSync(`channels/${d}/${f}.json`, 'utf8'));
 }
+
+// 기본 채널(보험)은 숨김일 수 없다(포털 / 가 이동하는 곳). 숨김 채널은 등록·빌드하되 전환·포털에는 나오지 않는다(lib/channels.ts VISIBLE_CHANNELS)
+assert.notEqual(JSON.parse(readFileSync('channels/insurance/channel.json', 'utf8')).hidden, true, '기본 채널은 숨길 수 없다');
+assert.match(registry, /VISIBLE_CHANNELS[^\n]*filter\(c => !c\.hidden\)/, 'VISIBLE_CHANNELS 는 hidden 을 뺀다');
+for (const f of ['components/ChannelSwitcher.tsx', 'app/page.tsx']) assert.ok(readFileSync(f, 'utf8').includes('VISIBLE_CHANNELS') && !/\bCHANNELS\.map/.test(readFileSync(f, 'utf8')), `${f}: 숨김 채널을 링크하면 안 됨`);
 
 // 보험 채널은 옛 사이트와 같은 이름·라벨·색
 const ins = JSON.parse(readFileSync('channels/insurance/channel.json', 'utf8'));

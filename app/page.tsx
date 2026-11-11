@@ -1,4 +1,4 @@
-import { CHANNELS, DEFAULT_CHANNEL, channelHref } from '../lib/channels';
+import { DEFAULT_CHANNEL, VISIBLE_CHANNELS, channelHref } from '../lib/channels';
 import { SITE } from '../lib/site';
 
 const target = channelHref(DEFAULT_CHANNEL);
@@ -12,6 +12,6 @@ export default function Portal() {
     <noscript><meta httpEquiv="refresh" content={`0; url=${target}`} /></noscript>
     <h1>{SITE.name}</h1>
     <p>{SITE.subtitle}</p>
-    <ul>{CHANNELS.map(c => <li key={c.slug}><a href={channelHref(c.slug)}>{c.name} — {c.subtitle}</a></li>)}</ul>
+    <ul>{VISIBLE_CHANNELS.map(c => <li key={c.slug}><a href={channelHref(c.slug)}>{c.name} — {c.subtitle}</a></li>)}</ul>
   </main>;
 }

@@ -15,6 +15,8 @@ export type ChannelMeta = {
   slug: string; name: string; subtitle: string; description: string; locale: string; timezone: string; schedule_utc: string;
   tabs: Record<TabId, string>; filters: Record<FilterId, string>;
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
+  /** true 면 /<slug>/ 페이지는 만들되 채널 전환·포털에 링크하지 않고 noindex(숨김 운영). 공개할 때 이 값만 바꾼다. */
+  hidden?: boolean;
 };
 type Named = { name: string; group: string };
 export type Channel = ChannelMeta & Formatters & {
@@ -37,6 +39,8 @@ function build(meta: ChannelMeta, theme: { vars?: Record<string, string> }, cate
 export const CHANNELS: Channel[] = [
   build(insuranceMeta as ChannelMeta, insuranceTheme, insuranceCategories, insuranceCompanies, insuranceOrgs),
 ];
+/** 채널 전환·포털에 보이는 채널(hidden 제외). 정적 페이지는 CHANNELS 전부 만든다. */
+export const VISIBLE_CHANNELS: Channel[] = CHANNELS.filter(c => !c.hidden);
 export const DEFAULT_CHANNEL = 'insurance';
 export const getChannel = (slug: string): Channel | undefined => CHANNELS.find(c => c.slug === slug);
 /** 채널 안 경로: channelHref('insurance', 'week/') → '/insurance/week/' */
