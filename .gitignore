@@ -1,0 +1,11 @@
+.venv/
+node_modules/
+.next/
+out/
+__pycache__/
+.env*
+.DS_Store
+public/data/
+*.tsbuildinfo
+public/version.json
+scripts/probe/out/

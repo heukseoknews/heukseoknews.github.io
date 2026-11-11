@@ -1,0 +1,12 @@
+{
+  "_comment": "키워드 추이 차트에 쓰는 키워드. 제목에 name 또는 aliases(대소문자 무시)가 포함되면 1건으로 센다. 수정 후 수집을 실행하면 과거분까지 다시 집계된다.",
+  "keywords": [
+    { "name": "K-ICS", "aliases": ["kics"] },
+    { "name": "IFRS17", "aliases": ["ifrs 17"] },
+    { "name": "실손", "aliases": [] },
+    { "name": "자동차보험", "aliases": [] },
+    { "name": "금리", "aliases": [] },
+    { "name": "고령화", "aliases": [] },
+    { "name": "재보험", "aliases": [] }
+  ]
+}

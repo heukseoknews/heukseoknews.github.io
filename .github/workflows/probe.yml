@@ -1,0 +1,32 @@
+name: Probe sources (조사 전용)
+
+# 기관별 수집 가능성 조사. 수동 실행만 가능하며 data/ 커밋·배포·Pages 변경을 하지 않는다.
+# 결과 JSON 은 아티팩트로만 올린다(gh run download 로 내려받아 Mac 결과와 비교).
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: '특정 기관 id만 조사(쉼표 구분, 비우면 전체)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r scripts/probe/requirements.txt
+      - name: Run probe
+        run: python scripts/probe/probe.py --label actions --out scripts/probe/out/actions.json --only "${{ inputs.only }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe-actions
+          path: scripts/probe/out/actions.json
+          retention-days: 14

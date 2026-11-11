@@ -1,0 +1,12 @@
+{
+  "_comment": "HTML 게시판 직접 수집 설정(금융위 RSS 점검 중 대체 + 공식 보도자료). pages: 평소 페이지 수, backfill_pages: --backfill 때 페이지 수. delay_s: 요청 간격(초, 1.2 이상 유지). relevant_departments: 이 담당부서 글은 항상 관련 있음(relevant=true).",
+  "delay_s": 1.2,
+  "pages": 2,
+  "backfill_pages": 4,
+  "relevant_departments": ["보험과"],
+  "boards": [
+    {"name": "금융위원회 게시판", "parser": "fsc", "source": "금융위원회", "url": "https://www.fsc.go.kr/no010101", "page_param": "curPage"},
+    {"name": "금융위원회 보험과 게시판", "parser": "fsc", "source": "금융위원회", "url": "https://www.fsc.go.kr/no010101?srchKey=dept&srchText=%EB%B3%B4%ED%97%98%EA%B3%BC", "page_param": "curPage", "pages": 2, "backfill_pages": 3},
+    {"name": "금융감독원 게시판", "parser": "fss", "source": "금융감독원", "url": "https://www.fss.or.kr/fss/bbs/B0000188/list.do?menuNo=200218", "page_param": "pageIndex"}
+  ]
+}

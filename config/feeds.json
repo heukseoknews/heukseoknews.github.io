@@ -1,0 +1,138 @@
+{
+  "_comment": "구글 뉴스 검색 피드(쿼리당 최대 100건). 쿼리는 25개 이하로 유지한다. 상한(100건)에 닿은 쿼리는 status 에 '쿼리 분할 필요'로 표시되니 더 쪼갠다. source: 고정 출처명(없으면 기사 제목 끝의 '- 언론사'에서 추출). max_age_days: 검색(구글 뉴스) 피드 기사는 발행 후 이 일수를 넘으면 저장하지 않는다(게시판 공식 글과 직접 RSS에는 적용하지 않음). when: 검색 기간(기본 7d). 기사가 많아 상한(100건)에 닿는 쿼리는 쿼리를 쪼개거나 기간을 3d 로 줄인다(수집이 매일 돌아 겹침이 충분하다).",
+  "max_age_days": 180,
+  "queries": [
+    {
+      "name": "주요 경제지·보험",
+      "q": "보험 (site:hankyung.com OR site:mk.co.kr OR site:edaily.co.kr OR site:mt.co.kr OR site:yna.co.kr OR site:newsis.com)",
+      "type": "media"
+    },
+    {
+      "name": "주요 경제지·금융시장",
+      "q": "(국고채 OR 금리 OR 환율 OR 보험사 자산운용) (site:hankyung.com OR site:mk.co.kr OR site:edaily.co.kr OR site:mt.co.kr OR site:yna.co.kr OR site:newsis.com)",
+      "type": "media"
+    },
+    {
+      "name": "사회변화·보험",
+      "q": "(고령화 OR 저출산 OR 인공지능 OR 기후위기 OR 의료비) 보험",
+      "type": "media"
+    },
+    {
+      "name": "금융위원회 검색",
+      "q": "site:fsc.go.kr (보험 OR K-ICS OR 실손 OR 생명보험 OR 손해보험)",
+      "type": "press",
+      "source": "금융위원회"
+    },
+    {
+      "name": "금융감독원 검색",
+      "q": "site:fss.or.kr (보험 OR 보험사 OR 지급여력 OR 실손 OR K-ICS)",
+      "type": "press",
+      "source": "금융감독원"
+    },
+    {
+      "name": "자동차보험",
+      "q": "(자동차보험 OR 자보 OR 대인배상 OR 대물배상 OR 자차보험)",
+      "type": "media"
+    },
+    {
+      "name": "자동차보험·제도",
+      "q": "(정비수가 OR 과실비율 OR 경상환자 OR 한방치료 OR 렌트비 OR 자동차보험료)",
+      "type": "media"
+    },
+    {
+      "name": "기관·금융감독원",
+      "q": "금융감독원 (보험 OR 보험사 OR 보험업)",
+      "type": "media"
+    },
+    {
+      "name": "기관·금융위원회",
+      "q": "금융위원회 (보험 OR 보험사 OR 보험업)",
+      "type": "media"
+    },
+    {
+      "name": "기관·보험개발원",
+      "q": "보험개발원",
+      "type": "media"
+    },
+    {
+      "name": "기관·손해보험협회",
+      "q": "손해보험협회",
+      "type": "media"
+    },
+    {
+      "name": "기관·생명보험협회",
+      "q": "생명보험협회",
+      "type": "media"
+    },
+    {
+      "name": "기관·보험연구원",
+      "q": "보험연구원",
+      "type": "media"
+    },
+    {
+      "name": "재보험",
+      "q": "(재보험 OR 코리안리)",
+      "type": "media"
+    },
+    {
+      "name": "생보사·삼성·한화",
+      "q": "(삼성생명 OR 한화생명)",
+      "type": "media"
+    },
+    {
+      "name": "생보사·교보·신한·농협",
+      "q": "(교보생명 OR 신한라이프 OR 농협생명)",
+      "type": "media",
+      "when": "3d"
+    },
+    {
+      "name": "생보사·중소(국내)",
+      "q": "(동양생명 OR ABL생명 OR 푸본현대생명 OR 흥국생명 OR 미래에셋생명 OR KDB생명 OR iM라이프 OR DB생명 OR 하나생명) -배구 -핑크스파이더스 -농구",
+      "type": "media",
+      "when": "3d"
+    },
+    {
+      "name": "생보업권·외국계",
+      "q": "(생보사 OR 생명보험사 OR 생보업계 OR 라이나생명 OR 메트라이프 OR AIA생명 OR 처브라이프 OR 푸르덴셜 OR 에이플러스)",
+      "type": "media"
+    },
+    {
+      "name": "손보사·삼성화재(캐노피우스)",
+      "q": "삼성화재 (캐노피우스 OR 로이즈) -배구 -블루팡스",
+      "type": "media",
+      "when": "1d"
+    },
+    {
+      "name": "손보사·삼성화재(그 외)",
+      "q": "삼성화재 -캐노피우스 -로이즈 -배구 -블루팡스 -연수원 -골프",
+      "type": "media",
+      "when": "3d"
+    },
+    {
+      "name": "손보사·현대해상",
+      "q": "현대해상",
+      "type": "media"
+    },
+    {
+      "name": "손보사·DB·KB",
+      "q": "(DB손보 OR DB손해보험 OR KB손보 OR KB손해보험)",
+      "type": "media",
+      "when": "3d"
+    },
+    {
+      "name": "손보사·메리츠·한화",
+      "q": "(메리츠화재 OR 한화손보 OR 한화손해보험)",
+      "type": "media"
+    },
+    {
+      "name": "손보사·중소·인터넷",
+      "q": "(롯데손보 OR 흥국화재 OR 하나손보 OR 하나손해보험 OR MG손보 OR 캐롯손보 OR AXA손보 OR 에이스손보)",
+      "type": "media"
+    },
+    {
+      "name": "손보업권",
+      "q": "(손보사 OR 손해보험사 OR 손보업계)",
+      "type": "media"
+    }
+  ]
+}

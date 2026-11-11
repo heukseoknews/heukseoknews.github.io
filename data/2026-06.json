@@ -1,0 +1,77 @@
+[
+ {
+  "id": "509787b70a061f85",
+  "title": "보험업권의 과도한 판매수수료 경쟁을 방지하고, 수수료에 대한 소비자의 알권리를 제고하기 위한 보험 판매수수료 제도개선 사항이 7.1일부터 시행됩니다.",
+  "url": "https://www.fsc.go.kr/no010101/87217",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-06-30T00:00:00+00:00",
+  "collected_at": "2026-11-11T07:40:09.268061+00:00",
+  "category": "보험경영·판매",
+  "sub_categories": [],
+  "tags": [
+   "판매수수료"
+  ],
+  "score": 3,
+  "feed_name": "금융위원회 보험과 게시판",
+  "relevant": true,
+  "department": "보험과",
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "128614ace92e0264",
+  "title": "보험부채 평가기준의 합리성과 신뢰성이 제고되고, IFRS17(‘23년 시행) 체계하 보험업권도 리스크 관리를 위한 K-ICS 내부모형을 활용할 수 있게 되는 등 보험회사의 리스크관리 역량이 더욱 고도화됩니다.",
+  "url": "https://www.fsc.go.kr/no010101/87205",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-06-29T00:00:00+00:00",
+  "collected_at": "2026-11-11T07:40:09.268061+00:00",
+  "category": "제도·회계·건전성",
+  "sub_categories": [
+   "위험관리·재보험"
+  ],
+  "tags": [
+   "보험부채",
+   "IFRS 17",
+   "IFRS17",
+   "K-ICS",
+   "리스크"
+  ],
+  "score": 5,
+  "feed_name": "금융위원회 보험과 게시판",
+  "relevant": true,
+  "department": "보험과",
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "42a86092ff7e6be7",
+  "title": "AI 시대 진화하는 보험사기, 범정부 공조로 국민들의 보험금 누수 막아낸다. - ｢AI 기반 보험사기 방지체계 구축 TF｣ 출범",
+  "url": "https://www.fsc.go.kr/no010101/87030",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-06-04T00:00:00+00:00",
+  "collected_at": "2026-11-11T07:40:09.268061+00:00",
+  "category": "위험관리·재보험",
+  "sub_categories": [
+   "사회·인구·기술 변화"
+  ],
+  "tags": [
+   "보험사기",
+   "AI"
+  ],
+  "score": 3,
+  "feed_name": "금융위원회 보험과 게시판",
+  "relevant": true,
+  "department": "보험과",
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ }
+]

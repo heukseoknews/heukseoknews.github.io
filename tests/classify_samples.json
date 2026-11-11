@@ -1,0 +1,1640 @@
+[
+ {
+  "title": "계리가정보고서 도입 등 ｢보험업감독규정｣ 개정안 금융위원회 의결",
+  "feed_name": "금융위원회 검색",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "신한EZ손보, ‘사람 살리는 금융’ 캠페인 동참",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "빅테크 신용위험 우려 확산…AI 투자 열풍 속 '보험' 찾는 월가",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "은행서 증권·보험까지…AI 해킹에 한 달 새 금융사 20곳 '구멍'",
+  "feed_name": "사회변화·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "\"한 번 가입으로 1년 내내 무제한 보장\"…현대해상, '트래블패스365 해외여행보험' 출시",
+  "feed_name": "보험저널",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험 산업における AI 애플리케이션: 혁신 기회 및 관리 과제.",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "[보험사 실적 평가의 딜레마] ③같은 보험도 다른 계리가정…실적 비교 신뢰성은",
+  "feed_name": "보험매일",
+  "label": "제도·회계·건전성",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "“보험사·GA, 계약체결비용 산정기준 공유 어디까지?”… 4년 분급 앞두고 투명성 과제",
+  "feed_name": "보험저널",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "동양생명 종신보험 출시…암·뇌심 질환 시 보험료 면제",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "“AI로 변액보험 펀드 관리”…교보생명, 로보어드바이저 ‘모닝브리핑’ 개시",
+  "feed_name": "사회변화·보험",
+  "label": "생명보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "[해피라이프]황반변성, 조기 발견이 관건…치료비 부담 줄이는 보험 점검법",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "AI가 고객 맞춤 보험 설계… 하루 1만1000건 지원",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "교보SBI저축은행, 사명 변경 기념 금리우대 혜택과 경품 제공 - 머니투데이",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "환율 급등락에 보험사 해외사업 수익성 촉각",
+  "feed_name": "보험매일",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "교보생명, 변액보험 사후관리에 초점…네비게이션 역할은 AI",
+  "feed_name": "사회변화·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "위험분담제 환급금, 실손보험 보상 못 받는다...대법원 “실제 부담한 의료비 아냐”",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "한화생명, 생애자금형 종신보험 2030 가입 비중 31%",
+  "feed_name": "보험매일",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "금리 5% 넘고 연체는 3배로…빌리기도 갚기도 버거운 보금자리론",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험사 계리가정 감독 강화… 금감원 정기 보고 의무화",
+  "feed_name": "한국보험신문",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "채권 큰손들, 美중간선거 앞 '관망'…\"공화 싹쓸이 땐 충격\"",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "[아유경제_사회] 4대보험경정청구센터와 SME솔루션, AI 기반 4대보험료 환급ㆍ기업 맞춤형 교육 서비스 협력",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "[금융 라운지] 유족이 받던 종신보험 … 이젠 내 생활비로",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험약관 이해도 ‘양호’…평가상품 36개 중 우수는 1개",
+  "feed_name": "보험매일",
+  "label": "제도·회계·건전성",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "하나손보, 치매 재활·요양비 보장 확대…진단부터 장기요양까지",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "현대해상, 1년 내내 여행 횟수 무제한 보장 ‘해외여행보험’ 선봬",
+  "feed_name": "한국보험신문",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "“차보험료 133만원→72만원 ‘확’ 깎아”…이제 ‘청년 운전자’ 할인 쉬워진다",
+  "feed_name": "주요 경제지·보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "수협보험, 국내·해외 여행공제 출시…의료비부터 항공기 지연까지 보장",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "치매·여행·교권보호까지…손보사, 맞춤형 보장 확대",
+  "feed_name": "보험매일",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "연기금·보험사까지 나섰다…스케일업 자금 잇는 기관들",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "장기금리 상승의 이면...채권시장이 주목해야 할 구조적 변화",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "외국인 국고채 매수 93%가 1년 이하…11월 중기물 수요 살아날까",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "큰 병 치료하려면 수백만원…반려견 고령화에 커지는 펫보험 시장",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "[속보]“빚투족 이자 부담” 신용대출 금리 7% 근접",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "AI 투자에 '보험' 드는 월가…풋옵션·CDS 수요 급증",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "희귀·중증난치질환자 건강보험 본인부담률 10% → 7% 인하 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "한국파마, 철 결핍 치료제 '아크루퍼' 건강보험 급여 등재 신청 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "2028년부터 26만 간병인 산재보험 안전망에 편입",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "‘이 정도는 괜찮겠지’…일상 파고든 보험사기 [김앤장 금융·핀테크·가상자산 인사이트]",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "환자를 위한 편의였다?…진료기록이 보험사기가 되는 순간 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "[보험사 실적 평가의 딜레마] ①순익 줄고 CSM 늘고…진짜 성적표는 어디에",
+  "feed_name": "보험매일",
+  "label": "보험경영·판매",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "생명보험재단, 제4회 ‘비:리브유 60초 영상제’ 수상작 발표",
+  "feed_name": "한국보험신문",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "보험사 CEO 연임 시험대…순익·건전성 저울질",
+  "feed_name": "보험매일",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "“美 중간선거가 환율 가른다” 달러 약세냐 유가발 강세냐",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "건강보험 상담부터 직원 문서 작성까지…AI 기능 개편",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "실손의료비 변천사 1~5세대 비교표 | is보험 보험안내자료",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "“금리 내리기 전에 담자”…미국 10년물 국채 ETF에 쏠린 눈",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "여전히 미흡한 ‘AI 안경 부정행위’ 대책…‘보험 확대’만 강조",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "건강보험공단, 한국보건행정학회에서 '의료비 지원체계 통합 방안' 기관 세션 운영",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "\"K-보험 동남아 영토 넓힌다\"… 금감원, 베트남·인니 감독당국 초청 세미나 개최",
+  "feed_name": "보험저널",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "경북창조경제혁신센터·DB손해보험, AI 보험 기술 사업화 모색",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "보험설계사 상담 훈련도 AI 고객이 맡는다…딥브레인AI, 삼성화재에 실전 교육 시스템 구축",
+  "feed_name": "사회변화·보험",
+  "label": "보험경영·판매",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "금감원, 베트남·인니 보험감독당국 만나 인허가·영업 협조요청",
+  "feed_name": "주요 경제지·보험",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험금 얼마나 줄지 멋대로 계산 못한다…보험사 산출근거 매년 점검",
+  "feed_name": "주요 경제지·보험",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "유넘그룹, 3분기 적자전환과 단체장해보험 부진에 투자심리 위축",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "베트남·인니 보험시장 공략 지원…금감원, 현지 인허가 장벽 해소 나서",
+  "feed_name": "보험매일",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "건강보험 적용 노인 1100만명 돌파…총 진료비 137조원",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "건강보험연구원, 보건행정학회 학술대회 기관세션 운영",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "[보험브리핑] 삼성생명, AI 박람회서 시니어 통합돌봄 모델 선봬 외",
+  "feed_name": "사회변화·보험",
+  "label": "생명보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "처브라이프, 종신보험에 입원·수술·3대질병 보장 강화",
+  "feed_name": "보험매일",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "KDB생명, 치매·장기요양 시 연금 50% 추가 지급",
+  "feed_name": "보험매일",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "금감원, 청년 운전자 자동차보험 할인 안내 강화",
+  "feed_name": "한국보험신문",
+  "label": "자동차보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "'고의 자해'로 보험금 타내…보험설계사 낀 일당 검거",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "동양생명, ‘우리WON하는건강플러스종신보험’ 출시",
+  "feed_name": "한국보험신문",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험 모집질서 개선, 판매 권한만큼 ‘책임’도 강화해야",
+  "feed_name": "한국보험신문",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "[11월 생보GA시책] “700종신 빠진 시책 새판짜기”… 통합건강·단기납종신·경영인정기 강세, 대체 종신 약세",
+  "feed_name": "보험저널",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "\"청년 자동차보험 가입시 부모님 자동차 운전경력 활용하세요\"",
+  "feed_name": "주요 경제지·보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "하나손보, '하나더넥스트 치매플러스보험' 출시 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "처브라이프, 사망보장에 의료비 결합한 건강종신보험 출시",
+  "feed_name": "사회변화·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "희귀·중증난치질환자 의료비 부담 낮춘다…연간 22만원 경감",
+  "feed_name": "보험매일",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "“IFRS17에 IFRS18까지”… 보험사 셈법 달라지나, 전속·GA 수익성 재평가 촉각",
+  "feed_name": "보험저널",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "KDB생명, ‘더!행복플러스UP연금보험’ 개정… 돌봄 비용 대비 강화",
+  "feed_name": "한국보험신문",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "“금리 안 올렸는데 엔화는 왜 뛰지?”…日 12월 인상 기대",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "처브라이프, '의료비' 지원하는 체증형 종신보험...‘Chubb 플러스 건강종신보험 무배당’ 출시",
+  "feed_name": "보험저널",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "[2일 보험주 마감시황] 대형 손보 3사 동반 하락…흥국화재 3.61%↑·상장 GA 약세",
+  "feed_name": "보험저널",
+  "label": "금융시장·자산운용",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "아들이 피 3ℓ 토하는데도 방치…사망보험부터 가입한 친모 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "\"치매·요양 시 연금 1.5배\"…KDB생명, '더!행복플러스UP연금보험' 개정 출시",
+  "feed_name": "보험저널",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "'달러연금' 10년 확정이율 6.40%·월납 4.93%… AIA생명, '금리보너스·암 납입면제'로 승부",
+  "feed_name": "보험저널",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "‘몰라서 놓친’ 첫차 보험료 할인… 금감원, 청년 가입화면부터 바꾼다",
+  "feed_name": "보험저널",
+  "label": "자동차보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "고금리 상품의 부메랑 … 누적손해 11조에 짓눌린 생보사",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "금감원, 베트남·인니 보험감독당국 초청…보험사 해외진출 지원",
+  "feed_name": "주요 경제지·보험",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "롯데오토케어, 2년간 부당 보험사고 245건 적발…29억2000만원 회수",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "中 증시 방어 총력전…자사주 매입 지원금리 1%로 낮추고 상설화 - 머니투데이",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "\"납입 완료하면 암·순환계 치료비 100세 보장\"…동양생명, '(무)우리WON하는건강플러스종신보험' 출시",
+  "feed_name": "보험저널",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "'엄빠차·군토나' 몰던 운전경력도 인정…청년 車보험료 최대 46% 줄어든다",
+  "feed_name": "주요 경제지·보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "생보업계 생산적 금융 6.2조 공급…장기투자 확대에 규제 합리화 추진",
+  "feed_name": "보험매일",
+  "label": "금융시장·자산운용",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "[프라임에셋 IPO 대해부] ③보험사도 주목한 '밸류체인'… 질적 성장 전환 후 매출 3배",
+  "feed_name": "보험저널",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "요양시설 간호사 늘리니…건강보험 진료비 7.7% 줄었다",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "대형사 차보험료 할인 특약 축소…내년 차보험료 향방은",
+  "feed_name": "보험매일",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험사 건강보험 설계도 맞춤형…'추천 플랜' 세분화",
+  "feed_name": "보험매일",
+  "label": "보험경영·판매",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "보험 부재가 인공지능 발전을 저해한다",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "건강보험 일산병원, 의료AI 임상 실증…진료현장 적용 가능성 확인",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "유권자들이 75세 이상 은퇴자들에게 100% 의료보험 혜택을 제공해야 한다고 제안했습니다. 보건부는 이에 대해 어떤 입장을 가지고 있습니까?",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "사회보험 사각지대 확대에…저소득 근로자 혜택 줄었다",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험판매전문회사 입법 추진… 당국 우려 넘어설 해법은",
+  "feed_name": "한국보험신문",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "건보공단, 국민 중심 통합 의료비 지원체계 모색",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "\"이자 더 드려요\" 불붙은 은행 경쟁...'예금 금리' 또 올렸다 - 머니투데이",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "\"교권침해 법률비용에 우울증까지 보장\"…한화손보, 교직원 특화 플랜 출시",
+  "feed_name": "보험저널",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "보험사기 연루 보험업종사자에 대한 등록취소·업무정지 등 제재",
+  "feed_name": "금융위원회 검색",
+  "label": "제도·회계·건전성",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "美연준, 금리 동결…워시 \"12월 인상 예단 안 해\"(종합)",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "한투운용, ACE 글로벌메모리반도체TOP3채권혼합액티브 ETF 상장",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "현대해상, AI로 1분 만에 보험설계안 3종 생성",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "\"과열된 보험 영업 꼼수 막는다\"…박성훈 의원·보험연구원, 모집질서 건전화 정책토론회 개최",
+  "feed_name": "보험저널",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "군 운전병·장기렌터카 경력도 인정…청년 車보험료 28.9% 아낀다",
+  "feed_name": "주요 경제지·보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "\"아들 피 토하는데 사망보험 가입\"…25년 경력 설계사 친모의 최후",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "자동가입 시민안전보험, 보험금은 '신청해야' 받는다",
+  "feed_name": "보험매일",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "월가, '12월 금리 인상' 확률 85%…\"이번에 왜 안 올렸나\" 비판도 [Fed워치]",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "[사설] 무너진 교권에 보험 드는 교사들…씁쓸한 공교육 현실",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "뉴욕증시, 금리동결에 상승 마감…오라클 11%·SK하이닉스 13%↑",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "보험료 낮추고 중도인출 늘리고…종신보험의 진화",
+  "feed_name": "사회변화·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "메트라이프생명, 사망보장에 펀드·연금 투자까지",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "AI가 틀린 답 내놔도 보험은 ‘사각지대’…해외는 전용보험 경쟁",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "퇴직연금 디폴트옵션, 보험사 장기 수익률 업권 최하위",
+  "feed_name": "보험매일",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "“AI 믿고 돈 쏟아붓더니”…월가, 이젠 폭락 보험까지 든다",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "팀이지, 시드 투자 이어 팁스 선정… \"중고차 보증보험 AI 고도화\" - 머니투데이",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "암치료 1억4000만원 이상 보장·전이암 ‘출발지’까지… DB손보, '암·순환계' 보장 강화",
+  "feed_name": "보험저널",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "보험사 보험부채 '부실 산출' 막는다…GA 관리 책임도 강화",
+  "feed_name": "주요 경제지·보험",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "고금리 시대 채권 투자, 파킹형·일반형·만기형 어떻게 고를까[머니인사이트]",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "엔화, 美 장기금리 상승에 1달러=158엔대 중반 하락 출발",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "경상의료비 216조원⋯의료혁신위, 비급여ㆍ실손보험 연계 권고",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "한화생명, ‘필요할때 쓰는 종신보험’ 신상품 가입자 속성 분석",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "보험사 경영진 보수, 장기성과·소비자 보호 반영해야",
+  "feed_name": "한국보험신문",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "Fed, 기준금리 연 3.75%~4.00%로 동결…2명은 인상 주장 [Fed워치]",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "고령화에 치솟는 의료비…“비급여·실손보험, 건강보험 연계 관리해야”",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "우리금융그룹 동양생명, ‘(무)우리WON하는건강플러스종신보험’출시",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "\"군대서 운전했다면 꼭 확인\"…자동차보험료 38만원 아끼는 법 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "20만원 잃고 20년 지기에 불 질렀다…7개월 전 가입시킨 '2억 사망보험'[뉴스속오늘] - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "“AI 믿는다더니”…폭락에 '보험'드는 월가",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "현대해상, AI 보험설계 지원 'Hi-헬퍼' 오픈... 영업 효율성 확대",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "'자동 가입' 시민안전보험, 보험금은 직접 청구해야…\"지자체별 상이\"",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "애덤 백 \"비트코인 투자 3차 물결 온다…연기금·보험사가 주도\"",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "\"사고 나면 가족에 자동 알림\"…한화손보, '안심위치공유서비스' 배타적사용권 획득",
+  "feed_name": "보험저널",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "국민건강보험공단, 국민 중심의 통합적 의료비 지원체계 모색",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "처브라이프, 종신에 입원·수술 보장 '처브플러스 건강종신보험' 출시 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "퇴직연금 시장 커지는데…은행·증권·보험사 고객 유치 경쟁 격화",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "[게시판] 한화손보 '안심위치공유서비스' 배타적사용권 3개월",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "빅테크 신용위험 우려 확산…AI 투자 열풍 속 '보험' 찾는 월가",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "보험모집질서 위반신고",
+  "feed_name": "금융감독원 검색",
+  "label": "제도·회계·건전성",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "[26년 10월 생보 GA채널] “700종신 빠지자 실적 희비 교차”… 동양생명 82.8% 급감, 라이나생명 72% 급증",
+  "feed_name": "보험저널",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "'고의 자해'로 보험금 타낸 보험설계사 낀 일당 검거",
+  "feed_name": "보험매일",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "하나손해보험, 검사부터 재활·장기요양까지 ‘치매 전 과정’ 보장 상품 출시",
+  "feed_name": "한국보험신문",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "[단독] “보험금 받기 왜이리 힘들지?”…실손보험 가입자 민원만 해마다 1만여건",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "이병래 남동구청장, 일일지사장으로 건강보험 업무 체험하며 현장 소통",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "교보생명, AI로 변액보험 펀드 관리 강화…매일 금융시장 정보 제공",
+  "feed_name": "사회변화·보험",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "키움증권 \"퇴직연금 사업 5개월만 적립금 2천억원 돌파\"",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "보험경영·판매",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "보험사 경영실태평가에 듀레이션 갭·GA 운영위험 신설 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "빅테크 AI채권 수익률 6.51%…전문가들 \"우량 회사채, 이례적 기회\"",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "국고채 넘어선 CP 금리…“경색 아닌 키맞추기”",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "보험시장 입김 커진 GA, 내부통제 그대로…\"소비자 보호 체계 강화해야\"",
+  "feed_name": "주요 경제지·보험",
+  "label": "제도·회계·건전성",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "ABL생명, 종신보험 인출·사망보장 기능 강화",
+  "feed_name": "보험매일",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "\"학생한테 맞을 줄은\"…교사들 사비 털어 가입한 '보험'",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "[단독] 26만 간병인 산재보험 품는다 …보험료 최대 80% 정부 지원 검토",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "교권침해 변호사비도 보장?…한화손보, 교직원 전용 상품 출시",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "[그래픽] 산재보험 지급액 첫 8조 돌파…수급자 42만명 육박",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "퇴직연금 500조 시장, 보험사 단독 경쟁서 '금융그룹 대항전'으로",
+  "feed_name": "보험매일",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "'400조원 실탄' 장착한 삼전닉스, 채권시장 큰손으로 급부상",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "“살아서 100% 꺼내 쓴다”... 확 달라진 '종신보험', 2030세대 호응",
+  "feed_name": "보험저널",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "기금형 퇴직연금 시대 대비하는 한화금융… 4개사 공동전략 가동",
+  "feed_name": "한국보험신문",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "로봇 고장도 보험으로…아시아 보험시장 '신위험 대응' 속도",
+  "feed_name": "보험매일",
+  "label": "위험관리·재보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "한화생명, 후순위채 4000억 수요예측 '턱걸이'…금리 상단 5.3% 확정",
+  "feed_name": "보험매일",
+  "label": "금융시장·자산운용",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "한화금융 4개사, 기금형 퇴직연금 대응 강화",
+  "feed_name": "보험매일",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "금융위, 포용금융 평가에 인센티브 연계… 부실채권 정리도 개편",
+  "feed_name": "한국보험신문",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "CD금리 가고 KOFR 시대 온다… ‘새 기준금리 파생상품’ 1년 만에 거래 10배 껑충",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "중소 생보 자회사 GA, 외형보다 실속…자생력 확보 희비",
+  "feed_name": "보험매일",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "건강보험부터 AI 관리까지…중앙아시아 4개국 한국서 연수",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "부모 車운전한 경력도 인정…청년 자동차보험료 아끼는 법은",
+  "feed_name": "주요 경제지·보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "자사주 소각 때마다 주식 파는 삼성 보험사…보험계열사 금산법 규제 다시 수면 위로",
+  "feed_name": "보험매일",
+  "label": "제도·회계·건전성",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "한화손보, ‘안심위치공유서비스’ 배타적사용권 획득",
+  "feed_name": "보험매일",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "현대해상, 美재보험 영토 넓힌다…글로벌 중개사와 인수업무 계약",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "KB손해보험, 3분기 순이익 2023억원…전년비 3.1% 감소",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "기후위기가 부른 사과 '열과현상'...보험 사각지대에 포항 농가 '눈물'",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "생·손보 광고심의 손질…단순 수치 변경 승인 간소화",
+  "feed_name": "보험매일",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "車보험 첫 가입 청년, 운전경력 인정받으면 보험료 최대 46% 절감",
+  "feed_name": "보험매일",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "거절 없다… 연 2% 금리, 최대 300만원 '기초대출' 나온다 - 머니투데이",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "건강보험으로 보장되는 의료비가 증가하고 있습니다.",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "\"질병 패러다임 바꾸는 CAR-T, 한국서도 보험 적용 확대돼야\"",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "현대해상, AI 보험설계 지원 시스템 ‘Hi-헬퍼’ 오픈",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "[보험사 실적 평가의 딜레마] ②CSM 높으면 좋은 실적?…숫자 뒤에 가려진 수익성",
+  "feed_name": "보험매일",
+  "label": "제도·회계·건전성",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "보험이 사회의 변화를 읽는 이유, 당신의 내일 때문입니다.",
+  "feed_name": "사회변화·보험",
+  "label": "사회·인구·기술 변화",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "\"납입보험료 100% 빼써도 사망보장 그대로\"…ABL생명, '우리WON스테이블종신보험' 출시",
+  "feed_name": "보험저널",
+  "label": "생명보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "고용보험 잘 안다는 예술인 22% 뿐…가입방법 1대1 상담 진행",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "\"괜찮다는 말 뒤 숨겨진 마음\"…생명보험재단, 제4회 '비:리브유' 영상제 수상작 발표",
+  "feed_name": "보험저널",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "한화손보 교직원 전용 플랜 … 피해발생금·형사소송비 보장",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "전남경찰청, 자해로 보험금 9억 챙긴 5명 검거 - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "금융권 해킹 확산에 보험업계도 보안 강화…당국, AI 대응책 마련 속도",
+  "feed_name": "보험매일",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "주식으로 눈물 흘린 친구, 달러보험으로 간다는데…“투자유의점 확인을”",
+  "feed_name": "주요 경제지·보험",
+  "label": "생명보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "美 연준 금리 동결에 국채금리 상승…뉴욕증시는 혼조",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "금융시장·자산운용",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "잇단 보안위협에 불안감 확산…日, '사이버 보험' 문의 3배↑",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "현대해상, 보험설계에 AI 도입…클릭 한 번으로 맞춤형 보장안 3개 완성",
+  "feed_name": "사회변화·보험",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "“많이 파는 GA보다 위험 적은 GA 선호”… 2027년 보험사, GA채널 제휴·우대 기준 바뀌나",
+  "feed_name": "보험저널",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "고금리 보장 상품에 보험사 '발목'",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "생명보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "실손보험금 청구, 이제는 실손24 하나로 간편하게! [금융프렌즈]",
+  "feed_name": "금융위원회 검색",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "희귀중증난치질환자, 건강보험 부담 7%로 줄인다",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "자사주 소각에 보험사 지분구조 변화…주주환원·출자관리 맞물려",
+  "feed_name": "보험매일",
+  "label": "보험경영·판매",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "국민건강보험공단, '2026 공공기관 AI 혁신 챌린지' 최우수상 수상",
+  "feed_name": "사회변화·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "작년 산재보험 수급자 42만 '역대 최대'…지급액 8조↑",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "\"AI 거품 꺼질라\"…월가, 주가 폭락 대비 풋옵션 등 '보험' 찾는다",
+  "feed_name": "주요 경제지·보험",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "보험사, 하지정맥류 입원 심사기준 사전 안내 강화",
+  "feed_name": "한국보험신문",
+  "label": "손해보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "실손보험 다섯번 개편해도 손보사 1.9조 적자늪 여전",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid2"
+ },
+ {
+  "title": "삼성생명, 초고령사회 돌봄 패러다임 바꾼다… 지역 통합돌봄 ‘시니어 커넥티드 케어’ 출격",
+  "feed_name": "보험저널",
+  "label": "생명보험",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "[3일 보험주 마감시황] 인카 0.95%↑·에이플러스 2.83%↓·삼성생명 3.33%↓",
+  "feed_name": "보험저널",
+  "label": "금융시장·자산운용",
+  "ambiguous": true,
+  "split": "valid2"
+ },
+ {
+  "title": "車보험 손해율 소폭 개선에도…\"보험료 인하 여력은 아직\"",
+  "feed_name": "기관·보험개발원",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "KB손보, 車보험 원수보험료 두 분기 연속 두 자릿수↑...성장 견인차로 '우뚝'",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "삼성화재 전기차보험 가입과 보장 내용…어떤 구조로 나뉘나",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "축소하던 車보험에 다시 힘주는 롯데손보…신한금융 편입 앞두고 '눈길'",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "롯데손보, 안전운전자 알짜 차보험 특약 '주목'...커넥티드카 이어 주차일수도 보험료 할인에 반영",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "파죽지세 KB손보…차보험 점유율 ‘쑥’",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "연령별 정상 맥박수…자동차보험 연령특약에 적용되는 기준과 확인 방법",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "롯데손해보험, 차 세워둔 날 많으면 자동차보험료 최대 15% 할인",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "자동차보험 ‘8주룰’ 본격 시행…과잉진료 줄이고 보험료 낮출까",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "경상환자 8주 초과 치료 신청 하루 600건...車 보험 ‘8주룰’ 효과 시험대",
+  "feed_name": "자동차보험·제도",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "교통사고 경상환자 ‘8주 초과 치료’ 하루 570건… 보험금 누수 잡나",
+  "feed_name": "자동차보험·제도",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "교통사고 경상환자 8주룰 도입…“추가치료 검토해달라” 하루 570건",
+  "feed_name": "자동차보험·제도",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "[친절한 경제] '나이롱 환자'는 옛말?…'8주룰' 심사 신청 '하루 570건'",
+  "feed_name": "기관·보험개발원",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "4주 진단서로 못 줄인 경상환자 치료비…‘8주룰’은 다를까",
+  "feed_name": "자동차보험·제도",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "자동차손해배상진흥원 '경상환자 8주 추가치료' 검토업무 담당",
+  "feed_name": "자동차보험·제도",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "교통사고 한방치료, ‘8주 기준’ 시행 두 달… 입원 치료부터 치료 기록까지 달라진 점은",
+  "feed_name": "자동차보험·제도",
+  "label": "자동차보험",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "자동차보험 상반기 원수보험료 10조6384억원…총손익 2380억원, 전년 대비 37.7% 감소",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "‘커넥티드카안전운전할인’ 자동차보험 특별약관 출시",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "자동차보험료 ‘자동 검증’ 기술 특허 취득",
+  "feed_name": "자동차보험",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "대법 \"사고 렌터카 비용, 사용가치 같은 차량의 시장요금 따져야\"",
+  "feed_name": "주요 경제지·보험",
+  "label": "자동차보험",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "전기차 손해율 105.1%로 치솟아...보험사들 ‘속앓이’",
+  "feed_name": "기관·보험개발원",
+  "label": "자동차보험",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "에너지 절약에 동참하는 국민들께 혜택을 제공할 수 있도록 「차량 5부제 할인 특약」을 신설하여 자동차보험료 부담을조금이나마 덜어드리겠습니다.",
+  "feed_name": "금융위원회 보험과 게시판",
+  "label": "자동차보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "카카오페이손보, 운전자보험 4종으로 세분화",
+  "feed_name": "보험매일",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "자녀 태운 부모 운전자까지…카카오페이손보, '운전자보험' 4개 플랜 개편",
+  "feed_name": "보험저널",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "한화손보, '여성 운전자 안심위치공유' 배타적사용권 획득",
+  "feed_name": "주요 경제지·보험",
+  "label": "손해보험",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "렌터카로 차선·신호위반 차량 노려 '쾅'...선후배 모여 3.2억 '보험사기' - 머니투데이",
+  "feed_name": "주요 경제지·보험",
+  "label": "위험관리·재보험",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "\"고령 운전자 10％만 면허 반납해도 사고 비용 33억원 절감\"",
+  "feed_name": "보험매일",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "\"차 있으면 못 받는다더니..\" 2026 기초연금, 자동차 기준 바뀐 조건 1위",
+  "feed_name": "기관·보험개발원",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "포터 비영업용 자동차세는 2004년식도 2026년식도 연 28,500원으로 같다",
+  "feed_name": "기관·보험개발원",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "“도대체 원가는 얼마예요? … 中 자동차의 비밀과 70년대 日 데자뷔",
+  "feed_name": "주요 경제지·금융시장",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ },
+ {
+  "title": "스마트폰 보며 걷다 ‘쾅’…“운전자만 잘못인가요?” 과실 비율 보니 [라이프+]",
+  "feed_name": "자동차보험·제도",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "train"
+ },
+ {
+  "title": "국민대, 챗GPT로 교통사고 과실비율 확인하는 서비스 공개",
+  "feed_name": "자동차보험·제도",
+  "label": "미분류",
+  "ambiguous": true,
+  "split": "valid"
+ },
+ {
+  "title": "“지금도 비싼데 또 오른다”…LA·OC 렌트비, 2029년까지 오를 듯",
+  "feed_name": "자동차보험·제도",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "train"
+ },
+ {
+  "title": "발달장애 아동의 분노조절, 아빌리파이와 한방치료 병행의 가능성은?",
+  "feed_name": "자동차보험·제도",
+  "label": "미분류",
+  "ambiguous": false,
+  "split": "valid"
+ }
+]
