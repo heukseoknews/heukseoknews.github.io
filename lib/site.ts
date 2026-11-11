@@ -2,7 +2,8 @@
 export const SITE = {
   name: '흑석일보',
   nameEn: 'Heukseok Ilbo',
-  subtitle: '보험·AI·금융 뉴스 모아보기',
+  subtitle: '보험·AI·금융 뉴스 모아보기',  // title·OG·푸터
+  tagline: '보험·AI·금융 뉴스를 매일 모아 전합니다.',  // 홈 한 줄 소개
   url: 'https://heukseoknews.github.io/',
   issues: 'https://github.com/heukseoknews/heukseoknews.github.io/issues',
   author: 'Seungu Sin',

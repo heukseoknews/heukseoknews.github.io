@@ -21,4 +21,9 @@ assert.doesNotMatch(page, /http-?equiv|refresh/i, '홈에 meta refresh 없음(�
 assert.doesNotMatch(page, /location\.replace|['"]use client['"]/, '홈은 정적 서버 컴포넌트, 자동 이동 없음');
 assert.ok(page.includes('DIRECTORY.map') && page.includes("d.status === 'live'") && page.includes('aria-disabled="true"'), '카드 상태는 레지스트리 status, 준비 중은 링크 아님');
 assert.doesNotMatch(page, /useNews|fetch\(|\/data\//, '홈은 데이터를 받지 않는다');
+// 상단 줄: 오른쪽 '내 데이터' 링크(내 데이터 화면), 한 줄 소개는 SITE.tagline(부제 SITE.subtitle 은 title·OG·푸터용)
+assert.ok(page.includes('className="homeTop"') && page.includes('href={IMPORT_TARGET}') && page.includes('내 데이터'));
+assert.ok(page.includes('{SITE.tagline}') && !page.includes('{SITE.subtitle}'));
+const site = readFileSync('lib/site.ts', 'utf8');
+assert.ok(site.includes("tagline: '보험·AI·금융 뉴스를 매일 모아 전합니다.'") && site.includes("subtitle: '보험·AI·금융 뉴스 모아보기'"));
 console.log('home tests passed');

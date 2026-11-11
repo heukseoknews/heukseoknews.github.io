@@ -134,6 +134,14 @@ assert.match(css, /\.chart \.axis\{fill:var\(--muted\)\}/);
 const card = readFileSync('components/ArticleCard.tsx', 'utf8');
 assert.ok(!/#[0-9a-fA-F]{6}/.test(card) && /\.bookmark \.saved\{fill:var\(--accent\)\}/.test(css));
 
+// 공식 발표 배지 = 채널 토큰(고정색 없음): soft 바탕 + strong 글자 + accent 테두리. 대비는 위 테마 검사(strong/soft·accent/soft 4.5 이상)
+assert.match(css, /\.pill\.official\{background:var\(--accent-soft\);color:var\(--accent-strong\);box-shadow:inset 0 0 0 1px var\(--accent\)\}/);
+// 한국어 줄바꿈은 낱말 단위, 긴 영문·URL 은 넘치지 않게
+assert.match(css, /body\{margin:0;word-break:keep-all;overflow-wrap:anywhere\}/);
+// 본문 포커스 표시: 2px 채널색(키보드 포커스만)
+assert.ok(css.includes('.shell :is(a,button,input,select,summary):focus-visible{outline:2px solid var(--accent);outline-offset:2px}'));
+assert.ok(!/outline:3px solid var\(--brand\)/.test(css), '본문 포커스 3px 고정색 없음');
+
 // 테마 값 검사: 위험한 이름·값은 버린다
 assert.equal(themeCss({ '--a': '#fff', 'color': 'red', '--b': 'red;}body{x:y', '--c': 'url(javascript:x)' }), ':root{--a:#fff}');
 assert.equal(themeCss({}), '');
