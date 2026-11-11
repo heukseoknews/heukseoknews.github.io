@@ -154,5 +154,19 @@ gem = collect.make_article('Gemini 4 Carbon: Our next frontier model', 'https://
 assert 'LLM·NLP' in gem['orgs']
 assert rel('World Cup final draws record viewers', feed='Ars Technica AI')[0] is False  # 단독 world 는 여전히 아님
 assert collect.GOOGLE_DELAY >= 1.2
+
+# 12) 2차 보정: 한국어 AI 도입·적용 → 업계·투자 동향, 정책·에세이 → 정책·규제·안전, 강한 키워드가 있으면 원래 카테고리 유지
+cat = lambda t, feed='AI타임스', kind='media': rel(t, kind, feed)[1]['category']
+assert cat('현대제철, AI로 원료 배합·물류 최적화…제조·업무 혁신 사례 198건 발굴', '인공지능신문') == '업계·투자 동향'
+assert cat("중기부, 2030년까지 ‘AI 유니콘 20곳·데카콘 1곳' 키운다") == '업계·투자 동향'
+assert cat('원프레딕트, CJ제일제당 공장 AI 팩토리 기술개발 사업 참여') == '업계·투자 동향'
+assert cat('네이버, 업무 최적화 AI 에이전트 출시') == '모델·제품 출시'              # 출시(3) > 최적화(2)
+assert cat('정부, AI 기본법 시행령 적용 범위 확정') == '정책·규제·안전'              # 기본법(3) > 적용(2)
+assert cat('Fair use benefits everyone', 'OpenAI News', 'press') == '정책·규제·안전'
+assert cat('Democratic governance of frontier AI, part II: Empowering cyber defenders', 'OpenAI News', 'press') == '정책·규제·안전'
+assert cat('Introducing GPT-6.1 Terra', 'OpenAI News', 'press') == '모델·제품 출시'
+assert cat('Cogent and OpenAI build cyber defense factories for enterprises', 'OpenAI News', 'press') != '정책·규제·안전'
+assert cat('How scientists use Claude', 'Anthropic 공식(검색)', 'press') == '미분류' and rel('How scientists use Claude', 'press', 'Anthropic 공식(검색)')[1]['score'] == 2
+assert rel('Meta FAIR Releases e-means: An Algorithm Beating k-means in 10x Fewer Epochs', feed='Meta AI(검색)')[0] is True
 channel.use('insurance'); collect.ALWAYS_RELEVANT.clear()
 print('engine tests (ai) passed')
