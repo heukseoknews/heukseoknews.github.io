@@ -1,0 +1,79 @@
+{
+ "generated_at": "2026-11-11T12:05:42.108787+00:00",
+ "keywords": [
+  "GPT",
+  "Gemini",
+  "Claude",
+  "Llama",
+  "오픈소스",
+  "규제",
+  "월드모델"
+ ],
+ "weeks": [
+  {
+   "week_start": "2026-10-12",
+   "counts": {
+    "GPT": 2,
+    "Gemini": 3,
+    "Claude": 0,
+    "Llama": 0,
+    "오픈소스": 1,
+    "규제": 0,
+    "월드모델": 0
+   },
+   "total": 24
+  },
+  {
+   "week_start": "2026-10-19",
+   "counts": {
+    "GPT": 7,
+    "Gemini": 0,
+    "Claude": 0,
+    "Llama": 0,
+    "오픈소스": 0,
+    "규제": 0,
+    "월드모델": 0
+   },
+   "total": 29
+  },
+  {
+   "week_start": "2026-10-26",
+   "counts": {
+    "GPT": 6,
+    "Gemini": 1,
+    "Claude": 0,
+    "Llama": 0,
+    "오픈소스": 0,
+    "규제": 0,
+    "월드모델": 0
+   },
+   "total": 33
+  },
+  {
+   "week_start": "2026-11-02",
+   "counts": {
+    "GPT": 3,
+    "Gemini": 2,
+    "Claude": 5,
+    "Llama": 0,
+    "오픈소스": 0,
+    "규제": 0,
+    "월드모델": 0
+   },
+   "total": 55
+  },
+  {
+   "week_start": "2026-11-09",
+   "counts": {
+    "GPT": 8,
+    "Gemini": 9,
+    "Claude": 15,
+    "Llama": 0,
+    "오픈소스": 7,
+    "규제": 2,
+    "월드모델": 4
+   },
+   "total": 166
+  }
+ ]
+}

@@ -1,0 +1,265 @@
+{
+ "last_run": {
+  "started_at": "2026-11-11T12:05:39.865592+00:00",
+  "finished_at": "2026-11-11T12:05:42.106792+00:00",
+  "candidates": 333,
+  "added": 333,
+  "failed": [],
+  "noted": [],
+  "blocked": {}
+ },
+ "sources": {
+  "OpenAI News": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 1380,
+   "kept": 91,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0,
+    "junk_title": 1,
+    "too_old": 8
+   },
+   "filtered": [
+    "[노이즈 제목] LifeVal"
+   ],
+   "oldest": "2026-10-07T07:00:00+00:00",
+   "newest": "2026-11-12T00:00:00+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "Google DeepMind": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 100,
+   "kept": 14,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0,
+    "too_old": 86
+   },
+   "filtered": [],
+   "oldest": "2025-12-04T16:23:24+00:00",
+   "newest": "2026-11-10T16:03:47+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "Hugging Face Blog": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 903,
+   "kept": 30,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0,
+    "too_old": 70
+   },
+   "filtered": [],
+   "oldest": "2026-06-22T13:18:56+00:00",
+   "newest": "2026-11-11T05:01:16+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "NVIDIA Blog": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 18,
+   "kept": 18,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 3
+   },
+   "filtered": [
+    "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
+    "‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW",
+    "Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW"
+   ],
+   "oldest": "2026-10-29T13:00:16+00:00",
+   "newest": "2026-11-11T03:00:20+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "TechCrunch AI": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 20,
+   "kept": 20,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 3
+   },
+   "filtered": [
+    "Nvidia’s crisis has corporate governance experts reaching for the popcorn",
+    "Nvidia CEO Jensen Huang’s affair with alleged Chinese spy: a timeline",
+    "Jensen Huang reportedly engaged a PR firm with a history of handling high-profile sex scandals a year ago"
+   ],
+   "oldest": "2026-11-09T23:28:37+00:00",
+   "newest": "2026-11-11T07:30:51+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "Ars Technica AI": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 20,
+   "kept": 20,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 3
+   },
+   "filtered": [
+    "Nvidia CEO's affair becomes a national security problem",
+    "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update.",
+    "Ukraine’s drone strikes spur hasty Russian plans for underground data centers"
+   ],
+   "oldest": "2026-10-30T20:40:13+00:00",
+   "newest": "2026-11-10T22:35:01+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "AI타임스": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 50,
+   "kept": 50,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 12
+   },
+   "filtered": [
+    "나주, 공공비축미 8075톤 매입…건조벼 12일부터 시작",
+    "순천 해룡면, 취약계층·독거노인 30세대 색칠놀이 프로그램 운영",
+    "여수, LG화학 여수공장 IPA 생산시설 증설 검토에 행정지원",
+    "전남광주, 광주 산단 20곳 환경오염물질 배출 점검",
+    "포톤엣지큐, 서울대 산학협력단과 전고체 냉각기술 연구 협력",
+    "코어위브, 매출 168% 급증에도 부채 469억달러…투자 불안 여전",
+    "엔비디아, 젠슨 황 사건 조사 위해 뉴욕 유명 로펌 고용",
+    "디 인포메이션 \"젠슨 황 인맥으로 엔비디아 칩 10조원 규모 중국 공급\"",
+    "젠슨 황, 불륜 인정 1년 전부터 '성 스캔들 전문' PR 업체 고용",
+    "“수변길에 예술을 더하다”… 계양구 서부간선수로, 특색 있는 석재 조형물로 야간경관 조성"
+   ],
+   "oldest": "2026-11-10T07:47:29+00:00",
+   "newest": "2026-11-11T09:23:00+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "인공지능신문": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 50,
+   "kept": 50,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 3
+   },
+   "filtered": [
+    "업스테이지, 엔비디아 투자 유치 예정…아마존·AMD 이어 글로벌 빅테크 투자자 확보 확대",
+    "BMW, 삼성SDI·LG에너지솔루션과 차세대 배터리 공급망 확대…유럽·미국 현지 생산 강화",
+    "젠슨 황, ‘중국 스파이’ 연루 의혹 속 불륜 인정·공개 사과…엔비디아 이사회 독립 조사 착수"
+   ],
+   "oldest": "2026-11-09T00:55:48+00:00",
+   "newest": "2026-11-11T10:57:00+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "Anthropic 공식(검색)": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 25,
+   "kept": 21,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0,
+    "junk_title": 4
+   },
+   "filtered": [
+    "[노이즈 제목] - Anthropic",
+    "[노이즈 제목] - Anthropic",
+    "[노이즈 제목] - Anthropic",
+    "[노이즈 제목] - Anthropic"
+   ],
+   "oldest": "2026-11-04T15:41:58+00:00",
+   "newest": "2026-11-11T08:15:01+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "Meta AI(검색)": {
+   "ok": true,
+   "last_run_at": "2026-11-11T12:05:39.865592+00:00",
+   "last_success_at": "2026-11-11T12:05:39.865592+00:00",
+   "consecutive_failures": 0,
+   "entries": 19,
+   "kept": 19,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 2
+   },
+   "filtered": [
+    "I landed 4 job offers out of grad school and picked Meta. These 2 tactics helped me land my ideal offer.",
+    "Introducing Our Smallest, Most Efficient Model: Muse Ember"
+   ],
+   "oldest": "2026-11-09T18:00:00+00:00",
+   "newest": "2026-11-11T07:32:57+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  }
+ }
+}

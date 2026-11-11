@@ -1,0 +1,1739 @@
+[
+ {
+  "id": "208850a6ee7c8b55",
+  "title": "Supersonic airliner in doubt as company shifts to powering AI data centers",
+  "url": "https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-10-30T21:41:54+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "eaad933c9eb95379",
+  "title": "Anthropic VS code extension on Cursor backdoored for nearly 12 hours",
+  "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-10-30T21:09:54+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "code"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c8804a79ad56c280",
+  "title": "Dartmouth's provost warned us about AI cheating—but his own AI use cost him his job",
+  "url": "https://arstechnica.com/tech-policy/2026/10/dartmouths-provost-warned-us-about-ai-cheating-but-his-own-ai-use-cost-him-his-job/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-10-30T20:40:13+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "91038b3a35f762ad",
+  "title": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+  "url": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-10-30T15:00:10+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "NVIDIA Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "59623d61a7aaaf73",
+  "title": "Speeding up planning decisions with AI",
+  "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-30T14:18:30+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "84abd1857de5dfd9",
+  "title": "Making it easier for websites to express AI training preferences",
+  "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-30T09:30:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a86d24c59c826150",
+  "title": "Community safety report and new protections for teens",
+  "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-30T09:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "safety",
+   "protections",
+   "teens"
+  ],
+  "score": 5,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "574dbaf7fc8731e4",
+  "title": "Fair use benefits everyone",
+  "url": "https://openai.com/index/fair-use-benefits-everyone",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-30T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "fair use"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "9349f418e7bc7ab4",
+  "title": "An updated Model Spec for more capable and beneficial AI",
+  "url": "https://openai.com/index/updated-model-spec",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-29T17:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "e508e29ae812fe58",
+  "title": "Granite Switch 4.1.1 — Update models like you update software",
+  "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-29T13:37:07+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "update",
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "ea413dd27e3e4bb8",
+  "title": "Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW",
+  "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-10-29T13:00:16+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "launch"
+  ],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "0f01adb2acab0a67",
+  "title": "How we detect frontier model misalignment",
+  "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-29T09:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "misalignment",
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "d948735545c20cf3",
+  "title": "How Ropes & Gray is developing AI for transactional diligence",
+  "url": "https://openai.com/index/ropes-gray-ai-diligence",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-29T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "718617961cab3abc",
+  "title": "Announcing Project ProtoStar: Making Publicly Funded Science AI-Ready",
+  "url": "https://huggingface.co/blog/announcing-project-protostar",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-29T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "announcing"
+  ],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "b6b30743068c2627",
+  "title": "Welcome Le Chonk: Mistral Large 4 on Hugging Face",
+  "url": "https://huggingface.co/blog/mistral-large4",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-29T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Mistral",
+   "Hugging Face"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "6394645bd5105adc",
+  "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+  "url": "https://huggingface.co/blog/anydecisionmodel",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-29T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "introducing",
+   "open models",
+   "model"
+  ],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Apple"
+  ],
+  "orgs": [
+   "음성·오디오"
+  ]
+ },
+ {
+  "id": "85f94c0fe8f02a81",
+  "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+  "url": "https://openai.com/index/credit-saison",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-29T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "16681fd606d5f699",
+  "title": "Evernote turns AI-driven discovery into paid subscriptions",
+  "url": "https://openai.com/ads/customers/evernote",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-28T19:40:49+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3e32bae570ff21ee",
+  "title": "Gemini 4 Carbon: Our next frontier model",
+  "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-28T17:00:58+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 4,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "a395c7da350b5086",
+  "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+  "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-28T13:15:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "partnership"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "e2ed7680c50ae3f0",
+  "title": "The future of the firm",
+  "url": "https://openai.com/index/the-future-of-the-firm",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-28T10:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "709cc8e2bd467b79",
+  "title": "Legora is building the agentic operating system for legal work",
+  "url": "https://openai.com/index/legora",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-28T09:30:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "1c5b51464767c2ad",
+  "title": "Build specialized multimodal models with LFM3",
+  "url": "https://huggingface.co/blog/LiquidAI/lfm3",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-27T17:16:52+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "비전·멀티모달"
+  ]
+ },
+ {
+  "id": "e960e8891f7d7ad8",
+  "title": "Genie 4: A new generation of world simulation",
+  "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-27T16:01:38+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ]
+ },
+ {
+  "id": "1e3ebf94e41ebe19",
+  "title": "Retell uses OpenAI models to help power 100M monthly calls",
+  "url": "https://openai.com/index/retell-ai",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-27T15:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c417f8e3d39d0b89",
+  "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+  "url": "https://openai.com/index/oracle-apps-in-chatgpt",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-27T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "partnership",
+   "app"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "c44dc9ed271ff418",
+  "title": "How Check Point accelerates vulnerability research with Daybreak",
+  "url": "https://openai.com/index/check-point-daybreak",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-27T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a9c488820a62ac4a",
+  "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+  "url": "https://openai.com/index/greptile-code-review-codex-astra",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-26T22:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "code"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "35e334c198740f74",
+  "title": "Introducing GPT-6.1 Terra",
+  "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-26T18:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introducing"
+  ],
+  "score": 5,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "8eb6001a836a6e50",
+  "title": "Working with academic communities to build scientific understanding",
+  "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-26T14:30:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "7d972df501d01ba1",
+  "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+  "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-26T13:45:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "27334100e818b985",
+  "title": "ChatGPT’s expanding world of work",
+  "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-26T10:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "7e73eebe3e909303",
+  "title": "How Fanatics and OpenAI streamline the fan experience",
+  "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-26T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "742d30efdc4090c1",
+  "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+  "url": "https://openai.com/index/openai-cut-incident-investigation",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-26T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "ee4c22366ef7e7ab",
+  "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+  "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-23T17:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "f8c156dba7886826",
+  "title": "Securing our frontier model training environment",
+  "url": "https://openai.com/index/securing-our-frontier-model-training-environment",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-23T10:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "2b3f616d26d343fe",
+  "title": "Does Your Model Run on AWS Trainium? Look It Up",
+  "url": "https://huggingface.co/blog/torch-neuronx-model-support",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-23T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "3b5a2a6a27ab5490",
+  "title": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
+  "url": "https://openai.com/index/anima",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-23T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "1a543055a02f9816",
+  "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+  "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-23T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "partner",
+   "safety"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "51888f116f5b0837",
+  "title": "Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox",
+  "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-22T22:24:34+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "891b7e0bbf66f86d",
+  "title": "Build more responsive apps with the Decisions API",
+  "url": "https://openai.com/index/decisions-api",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-22T19:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "api",
+   "app"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "8f93170faf71fda6",
+  "title": "Beyond tree cover: mapping the world’s forest types",
+  "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-22T14:30:24+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "6400feb681472530",
+  "title": "What FDE means at OpenAI",
+  "url": "https://openai.com/index/forward-deployed-engineering-means",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-22T06:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "eda525050cea8fce",
+  "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+  "url": "https://openai.com/index/uber-chatgpt-work-rollout",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-22T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "3f1a11956436b167",
+  "title": "Broad access through consistent standards",
+  "url": "https://openai.com/index/broad-access-through-consistent-standards",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T21:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "standards"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "40a01666d562060b",
+  "title": "How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications",
+  "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-21T17:35:36+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "inference"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "39cad894cdd240fb",
+  "title": "How AT&T is rethinking in-house legal work with OpenAI",
+  "url": "https://openai.com/index/att-legal",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T17:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "5b4e08461387ba3b",
+  "title": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
+  "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-21T16:04:43+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b1215e1aefc04c61",
+  "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+  "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T13:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "95dedf578de78f3e",
+  "title": "OpenAI models are coming to Google Cloud",
+  "url": "https://openai.com/index/openai-models-google-cloud",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T12:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI",
+   "Google·DeepMind"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "de9db6f384cbc788",
+  "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+  "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "ea92da5c121ecb45",
+  "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
+  "url": "https://openai.com/index/building-chatgpt-ad-stack",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "64ddfb139fec8a1c",
+  "title": "Using thousands of AI agents to uncover new leads in biological data",
+  "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T04:50:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "3fe372fb2e8166f0",
+  "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+  "url": "https://openai.com/index/cloudflare-cyber",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "e270f5ba4688033d",
+  "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
+  "url": "https://openai.com/index/empowering-cyber-defenders",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-21T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "governance",
+   "democratic"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "1725d137aa3debc0",
+  "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+  "url": "https://openai.com/index/ted-taylor-restaurant",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-20T10:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "aa8847d44cbae332",
+  "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+  "url": "https://openai.com/index/terminal-x",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-20T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "39e60f901a735303",
+  "title": "Hugging Face ❤️ TorchTPU: TPUs, Natively",
+  "url": "https://huggingface.co/blog/hf-torchtpu",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-20T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Hugging Face"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "41fb25a47d12d204",
+  "title": "AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms",
+  "url": "https://huggingface.co/blog/anylanguagemodel-1-0",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-20T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Apple"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c2b4b68d7e0027f0",
+  "title": "MPS in PyTorch 2.15",
+  "url": "https://huggingface.co/blog/mps-pytorch-2-15",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-20T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "pytorch"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "1cfb6291fa158d05",
+  "title": "OpenAI acquires Orchestra Bio",
+  "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-20T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "acquire"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "1dbe22633003a2af",
+  "title": "Advancing coding in low‑resource programming languages",
+  "url": "https://openai.com/index/low-resource-programming-languages",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-19T12:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "coding"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "5c52b7d34becd1cc",
+  "title": "TorchNeuron: running HF models on AWS Trainium is easier than ever",
+  "url": "https://huggingface.co/blog/hf-torchneuron",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-19T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "9732b2763df5a67a",
+  "title": "How Itaú is building generative AI for its entire customer base",
+  "url": "https://openai.com/index/itau-generative-ai",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-16T19:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c9a6184923cc1a58",
+  "title": "Welcome Beam: a 501B open model you can own, customize, and scale",
+  "url": "https://huggingface.co/blog/reflection-beam",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-16T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "open model",
+   "model"
+  ],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "d3b9ba6f7bd01af0",
+  "title": "How Localiza reorganized work around generative AI",
+  "url": "https://openai.com/index/localiza-generative-ai",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-16T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "86dbfdb5b436c283",
+  "title": "How Grupo Boticário uses AI to strengthen human connections",
+  "url": "https://openai.com/index/grupo-boticario",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-16T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "9e63539289a31c86",
+  "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+  "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-16T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "b6756c0a180ee554",
+  "title": "Benefit Street Partners answers questions faster with Codex",
+  "url": "https://openai.com/index/benefit-street-partners",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-16T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "partner"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "32165ee6af8945a5",
+  "title": "Bringing GPT-Rosalind to academic research labs",
+  "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-15T19:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "3b88e63140868036",
+  "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
+  "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-15T16:08:03+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "a60f4a701f887ae8",
+  "title": "Teaching students to think and learn through questions",
+  "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-15T13:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "39052ad94a8a76cc",
+  "title": "Apertus 1.5 Release Notes",
+  "url": "https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-15T09:08:45+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "release"
+  ],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "ff0cf28c5d753057",
+  "title": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta",
+  "url": "https://huggingface.co/blog/meta-muse-spark-open",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-15T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "open-weight",
+   "model"
+  ],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "비전·멀티모달"
+  ]
+ },
+ {
+  "id": "eb67409897ed2136",
+  "title": "Welcome FLUX.3 Image Klein in Diffusers",
+  "url": "https://huggingface.co/blog/flux-3",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-15T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "diffusers"
+  ],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "94eadcab22c41e35",
+  "title": "Sullivan & Cromwell brings legal expertise into agreement review",
+  "url": "https://openai.com/index/sullivan-cromwell",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-15T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "57c3309db5bedcde",
+  "title": "Amp puts AI agents to work beyond code with OpenAI models",
+  "url": "https://openai.com/index/amp-beyond-coding",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-14T12:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "agent",
+   "code",
+   "model"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "004cd593adabcd24",
+  "title": "SentinelOne cuts malware analysis from weeks to hours",
+  "url": "https://openai.com/index/sentinelone",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-14T12:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a8b8c31de898145e",
+  "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
+  "url": "https://openai.com/index/third-moment-research",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-14T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "94ee28b93f9d2d83",
+  "title": "How Block is building AI-powered security with OpenAI technology",
+  "url": "https://openai.com/index/block-ai-powered-security",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-14T07:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b76b11a1199f73b7",
+  "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+  "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-14T02:00:14+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "government",
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "200a5d3dd39c6bfb",
+  "title": "The EU’s next chapter in AI is agentic",
+  "url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-14T00:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "eu"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "1dc99b611b2499a3",
+  "title": "Developing Gemini 4 Argon responsibly and safely",
+  "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-13T19:43:07+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "53911f98c21c784f",
+  "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+  "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-10-13T17:05:48+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "d96a2391b623b2cb",
+  "title": "Gemini 4 Argon for Robotics",
+  "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-13T16:01:58+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP",
+   "월드모델·로보틱스"
+  ]
+ },
+ {
+  "id": "4e31b829ae688591",
+  "title": "Gemini 4 Argon: Built to solve your hardest problems",
+  "url": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-10-13T16:01:52+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "8d45898e533e591d",
+  "title": "Higgsfield takes AI video from 1 minute to over 10",
+  "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-10-13T12:00:00+00:00",
+  "collected_at": "2026-11-11T12:05:39.865592+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ }
+]
