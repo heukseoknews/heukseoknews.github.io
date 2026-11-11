@@ -1,5 +1,9 @@
 {
   "_comment": "출처 이름 정규화(도메인 → 이름, 이름 → 이름). 필요할 때 추가.",
   "domains": {},
-  "names": {}
+  "names": {
+    "Anthropic Alignment Science blog": "Anthropic",
+    "Anthropic 공식(검색)": "Anthropic",
+    "AI at Meta": "Meta"
+  }
 }

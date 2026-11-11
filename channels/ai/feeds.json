@@ -1,18 +1,78 @@
 {
-  "_comment": "AI 채널 소스(단계 1: RSS 8개 + 구글 뉴스 site: 2개). rss: type press = 공식 블로그(공식 발표 탭, 중요도 +1). 전체 이력을 주는 공식 블로그 RSS 는 max_age_days 로 오래된 글을 받지 않는다. AI타임스·인공지능신문은 시각에 타임존이 없어 기본(Asia/Seoul)으로 해석한다. queries: RSS 가 없는 공식 사이트를 구글 뉴스 site: 검색으로(영어, lang en). 제외(docs/ai-channel-plan.md 1장): Wayve(봇 차단), VentureBeat(429), 지디넷·전자신문 전체 섹션 RSS.",
+  "_comment": "AI 채널 소스(단계 1: RSS 8개 + 구글 뉴스 site: 2개). rss: type press = 공식 블로그(공식 발표 탭, 중요도 +1). 전체 이력을 주는 공식 블로그 RSS 는 max_age_days 로 오래된 글을 받지 않는다. AI타임스·인공지능신문은 시각에 타임존이 없어 기본(Asia/Seoul)으로 해석한다. queries: Anthropic 은 RSS 가 없어 구글 뉴스 site: 검색(lang en), Meta AI 는 공식 사이트 검색 결과가 거의 없어 뉴스 검색. always_relevant: 피드 자체가 AI 공식 소스라 키워드와 무관하게 관련 있음(NVIDIA 는 게임 소식 때문에 제외). 제외(docs/ai-channel-plan.md 1장): Wayve(봇 차단), VentureBeat(429), 지디넷·전자신문 전체 섹션 RSS.",
   "max_age_days": 30,
   "rss": [
-    {"name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "type": "press", "source": "OpenAI", "max_age_days": 30},
-    {"name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "type": "press", "source": "Google DeepMind", "max_age_days": 30},
-    {"name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml", "type": "press", "source": "Hugging Face", "max_age_days": 30},
-    {"name": "NVIDIA Blog", "url": "https://blogs.nvidia.com/feed/", "type": "press", "source": "NVIDIA", "max_age_days": 30},
-    {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "type": "media", "source": "TechCrunch"},
-    {"name": "Ars Technica AI", "url": "https://arstechnica.com/ai/feed/", "type": "media", "source": "Ars Technica"},
-    {"name": "AI타임스", "url": "https://www.aitimes.com/rss/allArticle.xml", "type": "media", "source": "AI타임스"},
-    {"name": "인공지능신문", "url": "https://www.aitimes.kr/rss/allArticle.xml", "type": "media", "source": "인공지능신문"}
+    {
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/rss.xml",
+      "type": "press",
+      "source": "OpenAI",
+      "max_age_days": 30,
+      "always_relevant": true
+    },
+    {
+      "name": "Google DeepMind",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "type": "press",
+      "source": "Google DeepMind",
+      "max_age_days": 30,
+      "always_relevant": true
+    },
+    {
+      "name": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "type": "press",
+      "source": "Hugging Face",
+      "max_age_days": 30,
+      "always_relevant": true
+    },
+    {
+      "name": "NVIDIA Blog",
+      "url": "https://blogs.nvidia.com/feed/",
+      "type": "press",
+      "source": "NVIDIA",
+      "max_age_days": 30
+    },
+    {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "type": "media",
+      "source": "TechCrunch"
+    },
+    {
+      "name": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/feed/",
+      "type": "media",
+      "source": "Ars Technica"
+    },
+    {
+      "name": "AI타임스",
+      "url": "https://www.aitimes.com/rss/allArticle.xml",
+      "type": "media",
+      "source": "AI타임스"
+    },
+    {
+      "name": "인공지능신문",
+      "url": "https://www.aitimes.kr/rss/allArticle.xml",
+      "type": "media",
+      "source": "인공지능신문"
+    }
   ],
   "queries": [
-    {"name": "Anthropic 공식(검색)", "q": "site:anthropic.com", "when": "7d", "lang": "en", "type": "press"},
-    {"name": "Meta AI 공식(검색)", "q": "site:ai.meta.com", "when": "7d", "lang": "en", "type": "press"}
+    {
+      "name": "Anthropic 공식(검색)",
+      "q": "site:anthropic.com",
+      "when": "7d",
+      "lang": "en",
+      "type": "press",
+      "always_relevant": true
+    },
+    {
+      "name": "Meta AI(검색)",
+      "q": "(\"Meta AI\" OR \"Meta FAIR\" OR \"V-JEPA\")",
+      "when": "3d",
+      "lang": "en",
+      "type": "media"
+    }
   ]
 }

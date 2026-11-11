@@ -1,5 +1,7 @@
 {
-  "_comment": "노이즈 제목(메뉴·목록 이름). min_chars 미만 또는 exact 와 같으면 저장하지 않음.",
+  "_comment": "노이즈 제목(메뉴·목록 이름). min_chars 미만 또는 exact 와 같으면 저장하지 않음. exact 는 띄어쓰기를 지운 제목과 비교(구글 검색의 빈 제목 '- Anthropic').",
   "min_chars": 8,
-  "exact": []
+  "exact": [
+    "-Anthropic"
+  ]
 }
