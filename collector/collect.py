@@ -47,13 +47,14 @@ def load_json(path: Path, default):
 
 def load_sources(config_dir: Path) -> tuple[list, set, int | None]:
     """(직접 RSS + 구글 검색 피드 행 목록, 구글 검색 피드 이름 집합, 검색 피드 기사 최대 나이(일)).
-    행 = (feed_name, url, source_type, 고정 출처명 or None, 옵션{timezone}). 직접 RSS 는 feeds.json 의 rss, 검색은 queries."""
+    행 = (feed_name, url, source_type, 고정 출처명 or None, 옵션{timezone, max_age_days}). 직접 RSS 는 feeds.json 의 rss, 검색은 queries.
+    검색 피드의 기사 최대 나이는 feeds.json max_age_days, 직접 RSS 는 피드별 max_age_days(없으면 제한 없음)."""
     feeds = load_json(config_dir / 'feeds.json', {})
     tz_default = feeds.get('default_timezone', DEFAULT_TZ)
     lang_default = feeds.get('google_lang', 'ko')
     rows, queries = [], set()
     for f in feeds.get('rss', []):
-        rows.append((f['name'], f['url'], f.get('type', 'media'), f.get('source'), {'timezone': f.get('timezone', tz_default)}))
+        rows.append((f['name'], f['url'], f.get('type', 'media'), f.get('source'), {'timezone': f.get('timezone', tz_default), 'max_age_days': f.get('max_age_days')}))
     for q in feeds.get('queries', []):
         rows.append((q['name'], google(q['q'], q.get('when', '7d'), q.get('lang', lang_default)), q.get('type', 'media'), q.get('source'), {'timezone': tz_default}))
         queries.add(q['name'])
@@ -142,6 +143,8 @@ def judge(title: str, kind: str, name: str | None, dept: str | None = None) -> t
         rel = True
     if not rel:
         c = {**c, 'category': UNCATEGORIZED, 'sub_categories': [], 'score': load_classifier().score(title, UNCATEGORIZED)[0]}
+    else:
+        c = {**c, 'score': load_classifier().source_bonus(c['score'], kind)}  # score.json source_type_bonus(예: 공식 발표 +1), 없으면 그대로
     return rel, c
 
 
@@ -295,6 +298,7 @@ def reclassify(data_dir: Path) -> None:
                 rel, c = judge(a['title'], a['source_type'], a.get('feed_name'), a.get('department'))
             else:  # 예전 기사(수집 단계에서 이미 관련 있음으로 걸러진 것)는 relevant=true 로 이전
                 rel, c = True, classify(a['title'], a.get('feed_name'))
+                c = {**c, 'score': load_classifier().source_bonus(c['score'], a.get('source_type'))}
             ent = tag_entities(a['title'], a.get('source'), c['tags'])
             new = {'category': c['category'], 'sub_categories': c['sub_categories'], 'tags': ent['tags'], 'score': c['score'], 'relevant': rel,
                    'companies': ent['companies'], 'orgs': ent['orgs']}
@@ -335,7 +339,7 @@ def rescore(data_dir: Path, big: int = 2) -> dict:
         rows = load_shard(path)
         dirty = False
         for a in rows:
-            new = classify(a['title'], a.get('feed_name'))['score'] if a.get('relevant', True) else load_classifier().score(a['title'], UNCATEGORIZED)[0]
+            new = load_classifier().source_bonus(classify(a['title'], a.get('feed_name'))['score'], a.get('source_type')) if a.get('relevant', True) else load_classifier().score(a['title'], UNCATEGORIZED)[0]
             old = a['score']
             before[old] = before.get(old, 0) + 1
             after[new] = after.get(new, 0) + 1
@@ -447,7 +451,7 @@ def main():
     unmapped: set[str] = set()
     articles, failed, results = {}, [], {}
     with ThreadPoolExecutor(max_workers=5) as pool:
-        futs = {pool.submit(collect_source, s, now_iso, aliases, unmapped, tfilter, blocked, max_age if s[0] in queries else None): s[0] for s in sources}
+        futs = {pool.submit(collect_source, s, now_iso, aliases, unmapped, tfilter, blocked, max_age if s[0] in queries else s[4].get('max_age_days')): s[0] for s in sources}
         for f in as_completed(futs):
             name = futs[f]
             try:

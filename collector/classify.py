@@ -80,6 +80,7 @@ class Classifier:
         sc = score_cfg
         self.base, self.max_score = sc.get('base', 2), sc.get('max', 5)
         self.excluded_score = sc.get('excluded_score', self.base)
+        self.type_bonus = sc.get('source_type_bonus', {})  # 출처 유형별 가산(예: {"press": 1} = 공식 발표 +1, 상한 max)
         low = sc.get('low_importance', {})
         self.low, self.low_max = m(low.get('keywords', [])), low.get('max_score', self.max_score)
         core = sc.get('core_terms', {})
@@ -101,6 +102,10 @@ class Classifier:
         pk = cfg.get('press_relevance_keywords')
         self.press_re = re.compile('|'.join(map(re.escape, pk)), re.I) if pk else None
         self.hints = cfg.get('feed_hints', {})
+
+    def source_bonus(self, score: int, source_type: str | None) -> int:
+        b = self.type_bonus.get(source_type or '', 0)
+        return min(self.max_score, score + b) if b else score
 
     def press_ok(self, title: str) -> bool:
         return self.press_re is None or bool(self.press_re.search(title))

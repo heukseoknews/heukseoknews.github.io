@@ -102,4 +102,14 @@ try:
 except ValueError:
     pass
 assert channel.timezone() == 'Asia/Seoul'
+
+# 8) 피드별 기사 최대 나이(전체 이력을 주는 공식 블로그 RSS 용), 출처 유형 가산(score.json source_type_bonus)
+with tempfile.TemporaryDirectory() as d:
+    (Path(d) / 'feeds.json').write_text(json.dumps({'max_age_days': 180, 'rss': [{'name': 'R', 'url': 'https://x/rss', 'max_age_days': 30}, {'name': 'S', 'url': 'https://y/rss'}]}), encoding='utf-8')
+    rows, _, max_age = collect.load_sources(Path(d))
+    assert [r[4]['max_age_days'] for r in rows] == [30, None] and max_age == 180
+assert all(r[4]['max_age_days'] is None for r in collect.load_sources(channel.config_path('insurance'))[0][:4])  # 보험 RSS 는 제한 없음(이전과 같음)
+bonus = Classifier({**base_cfg, 'match_mode': 'en'}, {'max': 5, 'source_type_bonus': {'press': 1}})
+assert bonus.source_bonus(2, 'press') == 3 and bonus.source_bonus(5, 'press') == 5 and bonus.source_bonus(2, 'media') == 2 and bonus.source_bonus(2, None) == 2
+assert ins.source_bonus(3, 'press') == 3   # 보험 채널은 가산 없음
 print('engine tests passed')
