@@ -370,3 +370,32 @@ AI 채널은 쿼리 상한(채널당 25개 유지 권장)보다 **쿼리당 100�
 7. **공개 시점**: 단계 1 직후 채널 전환에 바로 노출할지, 숨김(`hidden`) 상태로 1~2주 운영 후 공개할지.
 8. **cron**: 보험과 같은 20:37 UTC(미국 업무일 기사가 대부분 포함되는 시각)로 둘지, 따로 둘지.
 9. **'학습 중요도' 문구**: AI 채널에서는 '중요도'로 바꿀지(채널 설정화 필요).
+
+---
+
+## 7. 확정 결정 (2026-11-11)
+
+- **수집 빈도**: AI 채널은 하루 3회(피드가 얕은 소스 때문). 보험 채널은 하루 1회 그대로. CLAUDE.md 수집 원칙에 반영.
+- **분야 5개**(LLM·NLP / 비전·멀티모달 / 음성·오디오 / 통계·ML·시계열 / 월드모델·로보틱스): 필터 + 카드 태그로 표시. 단계 1에서는 기존 '유관기관' 필터 칸(`orgs.json`, 라벨은 channel.json `filters.orgs`)을 '분야'로 재사용.
+- **공개 시점**: 숨긴 채 1~2주 운영한 뒤 공개(헤더·채널 전환에 노출하지 않음).
+- **범위 제외**: SoTA·리더보드(확장 지점만 2.6장 끝에 기록).
+
+## 8. 단계 0 결과 — 채널 설정으로 옮긴 엔진 항목
+
+키가 없으면 이전과 같은 기본값을 쓴다. 보험 채널은 `feeds.json` 의 `rss`, `categories.json` 의 `press_relevance_keywords`·`eval_focus` 만 추가했다.
+
+| 설정 파일 · 키 | 내용 | 기본값(키 없을 때) | 보험 채널 |
+|---|---|---|---|
+| `feeds.json` `rss[]` | 직접 RSS: `name`, `url`, `type`(media/press), `source`(고정 출처), `timezone`, `substitute`(점검 중이면 이 출처의 게시판이 대신함 — 상태 '참고' 표시) | 없음 | 예전 코드 상수 4개를 같은 순서·값으로 이전 |
+| `feeds.json` `default_timezone` | 타임존 없는 피드 시각의 해석 | `Asia/Seoul`(이전의 −9h와 같음) | 미설정 |
+| `feeds.json` `google_lang`, `queries[].lang` | 구글 뉴스 언어 `ko`(hl=ko&gl=KR) / `en`(hl=en-US&gl=US) | `ko` | 미설정 |
+| `categories.json` `match_mode` | `ko`: 이전 규칙 그대로 / `en`: 영어 키워드에 복수형(s/es)·띄어쓰기·하이픈 변형, 버전 번호 경계(`gpt-4.5` ≠ `GPT-4.55`), `. + /` 포함 토큰도 단어 경계. 한글 키워드는 두 모드 모두 띄어쓰기 무시 부분일치 | `ko` | 미설정 |
+| `categories.json` `relevance_mode` | `substring`(이전) / `word`(단어 경계 — `said` 안의 `ai` 불일치) | `match_mode` 가 `en` 이면 `word`, 아니면 `substring` | 미설정 |
+| `categories.json` `press_relevance_keywords` | 공식 발표(press) 기사가 관련 있으려면 제목에 있어야 할 낱말(예전 `PRESS_RE`) | 조건 없음 | 예전 정규식과 같은 8개 |
+| `categories.json` `eval_focus` | `eval_classify.py` 가 따로 정밀도·재현율을 보여 줄 카테고리 | 없음 | `["자동차보험"]` |
+| `score.json` 모든 항목 | `base`·`max`·`keyword_thresholds`·`core_terms`·`market_cap`·`low_importance`·`excluded_score` 모두 선택 | base 2, max 5, 나머지 규칙 없음 | 변경 없음 |
+| `channel.json` `timezone` | 주별 키워드 집계(trends)의 날짜 기준 | `Asia/Seoul` | 이미 있음 |
+
+- `companies.json`·`orgs.json`·`context_exclude.json` 의 별칭 매칭도 같은 `match_mode` 를 쓴다.
+- 그대로 둔 것: 게시판 파서(fsc·fss, 한국 정부 사이트 전용이라 KST·`Accept-Language: ko` 가 사이트의 성질), `ORG_SUFFIX`(' - 금융위원회' 접미 제거, AI 제목에는 영향 없음), 화면의 날짜 키(`lib/dates.ts` KST)와 이름 정렬(`'ko'`). 화면 쪽은 `tests/channels.test.ts` 가 모든 채널의 `timezone=Asia/Seoul`, `locale=ko*` 를 강제한다 — 다른 값이 필요해지면 화면 코드를 먼저 일반화한다.
+- 검증: 옛 코드(a292208) 대비 `scripts/audit/equivalence_collector.py` 차이 0(1,798건 재분류·분류 지운 사본 재계산·index·trends·정확도), `scripts/audit/equivalence_site.ts` 같음. 새 테스트 `collector/test_engine.py`.
