@@ -1,18 +1,37 @@
-import { DEFAULT_CHANNEL, channelHref, getChannel } from '../lib/channels';
-import { DIRECTORY } from '../lib/directory';
+import { ArrowRight } from 'lucide-react';
+import Wordmark from '../components/Wordmark';
+import { ChannelIcon, channelColors } from '../components/channelLook';
+import { channelHref, getChannel } from '../lib/channels';
+import { DIRECTORY, IMPORT_REDIRECT_JS } from '../lib/directory';
 import { SITE } from '../lib/site';
 
-const target = channelHref(DEFAULT_CHANNEL);
-// 해시는 그대로 넘긴다. #import=… (북마크·읽음 이전 링크)는 내 데이터 화면으로 보낸다.
-const redirect = `(function(){var h=location.hash||'';location.replace((h.indexOf('#import=')===0?${JSON.stringify(channelHref(DEFAULT_CHANNEL, 'settings/'))}:${JSON.stringify(target)})+h);})();`;
-
-/** 포털 주소(/). 지금은 채널이 하나라 기본 채널(/insurance/)로 바로 이동한다. JS 가 꺼져 있으면 meta refresh·링크로 이동. */
-export default function Portal() {
-  return <main className="shell portal">
-    <script dangerouslySetInnerHTML={{ __html: redirect }} />
-    <noscript><meta httpEquiv="refresh" content={`0; url=${target}`} /></noscript>
-    <h1>{SITE.name}</h1>
-    <p>{SITE.subtitle}</p>
-    <ul>{DIRECTORY.filter(d => d.status === 'live' && getChannel(d.slug)).map(c => <li key={c.slug}><a href={channelHref(c.slug)}>{c.name} — {c.card}</a></li>)}</ul>
-  </main>;
+/** 홈(/): 워드마크·한 줄 소개·채널 카드. 정적 HTML 이라 JS 없이도 보이고 데이터를 받지 않는다.
+ *  카드 상태는 lib/directory.ts status(live = 링크, soon = '준비 중'). /#import=… 만 내 데이터 화면으로 이동한다. */
+export default function Home() {
+  return <div className="home">
+    <script dangerouslySetInnerHTML={{ __html: IMPORT_REDIRECT_JS }} />
+    <main className="homeMain" id="content">
+      <header className="homeHero">
+        <h1><span className="srOnly">{SITE.name}</span><Wordmark /></h1>
+        <p>{SITE.subtitle}</p>
+      </header>
+      <ul className="chGrid" aria-label="채널">
+        {DIRECTORY.map(d => {
+          const live = d.status === 'live' && !!getChannel(d.slug);
+          const body = <>
+            <span className="chIco"><ChannelIcon slug={d.slug} size={28} /></span>
+            <h2>{d.name}</h2>
+            <p>{d.card}</p>
+            <span className="chFoot">{live ? <span className="chGo">보기<ArrowRight size={18} aria-hidden="true" /></span> : <span className="soonBadge">준비 중</span>}</span>
+          </>;
+          return <li key={d.slug} style={channelColors(d.slug)}>
+            {live
+              ? <a className="chCard live" href={channelHref(d.slug)}>{body}</a>
+              : <div className="chCard soon" aria-disabled="true">{body}</div>}
+          </li>;
+        })}
+      </ul>
+    </main>
+    <footer className="homeFoot"><p>© 2026 {SITE.author} · {SITE.notice}</p></footer>
+  </div>;
 }
