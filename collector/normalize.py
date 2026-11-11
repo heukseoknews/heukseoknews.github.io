@@ -35,7 +35,7 @@ def prefer(new, old):
 
 
 class TitleFilter:
-    """config/title_filters.json: 메뉴·목록 페이지 이름만 있는 노이즈 제목을 걸러낸다."""
+    """channels/insurance/title_filters.json: 메뉴·목록 페이지 이름만 있는 노이즈 제목을 걸러낸다."""
 
     def __init__(self, min_chars: int = 0, exact: list[str] | None = None):
         self.min_chars = min_chars
@@ -55,7 +55,7 @@ class TitleFilter:
 
 
 class SourceAliases:
-    """config/source_aliases.json: 도메인(우선) → 이름 순으로 언론사명을 정규화."""
+    """channels/insurance/source_aliases.json: 도메인(우선) → 이름 순으로 언론사명을 정규화."""
 
     def __init__(self, domains: dict | None = None, names: dict | None = None):
         self.domains, self.names = domains or {}, names or {}

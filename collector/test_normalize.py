@@ -34,7 +34,7 @@ tf = TitleFilter(6, ['보험정책'])
 assert tf.is_junk('보험정책') and tf.is_junk('보 험 정 책') and tf.is_junk('공지') and tf.is_junk('보험정책 ')
 assert not tf.is_junk('보험모집질서 위반신고') and not tf.is_junk('실손24 안내')
 import json as _j
-real = TitleFilter.load(Path(__file__).resolve().parent.parent / 'config' / 'title_filters.json')
+real = TitleFilter.load(Path(__file__).resolve().parent.parent / 'channels' / 'insurance' / 'title_filters.json')
 assert real.is_junk('보험모집질서 위반신고') and real.is_junk('보험정책') and not real.is_junk('보험모집질서 개선 토론회')
 with tempfile.TemporaryDirectory() as d:
     pth = Path(d) / '2026-11.json'

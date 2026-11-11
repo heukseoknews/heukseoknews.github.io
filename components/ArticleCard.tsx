@@ -2,7 +2,7 @@
 import { Bookmark, BookmarkCheck, Check, ExternalLink } from 'lucide-react';
 import { Article, isSafeUrl } from '../lib/news';
 import { isNewArticle } from '../lib/newsFilter';
-import { fmt } from '../lib/format';
+import { useChannel } from '../lib/channelContext';
 
 type Props = { a: Article; baseline: string | null; bookmarked: boolean; read: boolean; rank?: number; dim?: boolean; fading?: boolean; showDiscovery?: boolean; onBookmark: (a: Article) => void; onRead: (id: string) => void; onUnread?: (id: string) => void; onMarkRead?: (id: string) => void };
 
@@ -10,6 +10,7 @@ type Props = { a: Article; baseline: string | null; bookmarked: boolean; read: b
 const tagList = (a: Article) => [...new Set([...(a.orgs ?? []), ...(a.companies ?? []), ...a.tags])].slice(0, 4);
 
 export default function ArticleCard({ a, baseline, bookmarked, read, rank, dim, fading, showDiscovery, onBookmark, onRead, onUnread, onMarkRead }: Props) {
+  const { fmt } = useChannel();
   return <article className={'article' + (dim && read ? ' isRead' : '') + (fading ? ' fading' : '')}><div className="articleMain">
     <div className="meta">
       {rank !== undefined && <span className="rank">{rank}</span>}

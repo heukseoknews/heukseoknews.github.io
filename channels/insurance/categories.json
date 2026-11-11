@@ -1,5 +1,5 @@
 {
-  "_comment": "제목 키워드 규칙. 가중치: strong=3, company=2, normal=1, weighted={키워드:점수}. 한글은 띄어쓰기·대소문자 무시 부분일치, 영문/숫자만의 키워드(AI, GA, Fed, K-ICS 등)는 단어 경계로 비교. 대표 카테고리=가중 점수 최고(동점은 priority 순), 점수 있는 나머지는 sub_categories. 자동차보험은 별도 카테고리(손해보험에서 분리, 동점이면 priority 상 앞선 자동차보험이 우선). 운전자보험은 손해보험에 둔다. 카테고리를 추가·삭제할 때는 이 파일(categories, priority)만 고친다 — 화면 카테고리 버튼도 이 파일에서 만든다. 수정 후 `python collector/collect.py --reclassify` 로 과거 기사에 반영. (점수 산식·핵심어·금리 상한은 config/score.json 으로 분리)",
+  "_comment": "제목 키워드 규칙. 가중치: strong=3, company=2, normal=1, weighted={키워드:점수}. 한글은 띄어쓰기·대소문자 무시 부분일치, 영문/숫자만의 키워드(AI, GA, Fed, K-ICS 등)는 단어 경계로 비교. 대표 카테고리=가중 점수 최고(동점은 priority 순), 점수 있는 나머지는 sub_categories. 자동차보험은 별도 카테고리(손해보험에서 분리, 동점이면 priority 상 앞선 자동차보험이 우선). 운전자보험은 손해보험에 둔다. 카테고리를 추가·삭제할 때는 이 파일(categories, priority)만 고친다 — 화면 카테고리 버튼도 이 파일에서 만든다. 수정 후 `python collector/collect.py --reclassify` 로 과거 기사에 반영. (점수 산식·핵심어·금리 상한은 channels/insurance/score.json 으로 분리)",
   "priority": [
     "제도·회계·건전성",
     "생명보험",

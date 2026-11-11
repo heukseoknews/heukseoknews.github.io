@@ -23,10 +23,3 @@ export function groupOptions(options: FacetOption[], groups: string[] = []): { g
   return out.filter(g => g.options.length);
 }
 
-/** 브라우저 저장(보험사 선택 유지)용 안전한 읽기/쓰기. 저장소를 못 쓰면 빈 선택으로 동작한다. */
-export function readList(key: string): string[] {
-  try { const v = JSON.parse(localStorage.getItem(key) ?? '[]'); return Array.isArray(v) ? v.filter(x => typeof x === 'string') : []; } catch { return []; }
-}
-export function writeList(key: string, list: string[]) {
-  try { localStorage.setItem(key, JSON.stringify(list)); } catch { /* 저장 불가(사생활 보호 모드 등)면 이번 방문에만 유지 */ }
-}

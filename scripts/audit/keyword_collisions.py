@@ -2,7 +2,7 @@
 
   python scripts/audit/keyword_collisions.py
 
-config/categories.json(분류·점수 키워드)과 config/score.json(핵심어·보험 단어·금리 상한 키워드)의 모든 키워드를 대상으로:
+channels/insurance/categories.json(분류·점수 키워드)과 channels/insurance/score.json(핵심어·보험 단어·금리 상한 키워드)의 모든 키워드를 대상으로:
  A. 포함 충돌   — 한 키워드가 다른 키워드의 일부(예: '금리' ⊂ '기준금리', '손보' ⊂ '손보사')
  B. 경계 겹침   — 한 키워드의 끝과 다른 키워드의 앞이 겹쳐 합쳐진 글자열에서 둘 다 일치(예: '실손'+'손보' → '실[손보]험')
  C. 분류 영향   — 같은 겹침 제거를 분류(카테고리 선택)에도 적용하면 대표 카테고리가 바뀌는 기사(확인만, 분류는 수정하지 않음)
@@ -17,9 +17,9 @@ sys.path.insert(0, str(ROOT / 'collector'))
 from classify import TIERS, _squash, classify, load  # noqa: E402
 
 cl = load()
-CFG = json.loads((ROOT / 'config' / 'categories.json').read_text(encoding='utf-8'))
-SC = json.loads((ROOT / 'config' / 'score.json').read_text(encoding='utf-8'))
-ARTICLES = [x for f in sorted(glob.glob(str(ROOT / 'data' / '????-??.json'))) for x in json.loads(Path(f).read_text(encoding='utf-8'))]
+CFG = json.loads((ROOT / 'channels' / 'insurance' / 'categories.json').read_text(encoding='utf-8'))
+SC = json.loads((ROOT / 'channels' / 'insurance' / 'score.json').read_text(encoding='utf-8'))
+ARTICLES = [x for f in sorted(glob.glob(str(ROOT / 'data' / 'insurance' / '????-??.json'))) for x in json.loads(Path(f).read_text(encoding='utf-8'))]
 SQ = [(a, _squash(a['title'])) for a in ARTICLES]
 
 # 키워드 수집: (이름, 목록 이름, 종류, 점수)

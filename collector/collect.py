@@ -1,7 +1,7 @@
 """RSS 메타데이터 수집기 (제목·링크·출처·발행시각만 저장, 본문/이미지 저장 안 함).
 
-결과: data/YYYY-MM.json (발행시각 기준 월별 샤드) + data/index.json
-사용: python collector/collect.py [--data-dir data] [--dry-run]
+결과: data/<채널>/YYYY-MM.json (발행시각 기준 월별 샤드) + data/<채널>/index.json
+사용: python collector/collect.py [--channel insurance] [--data-dir data/insurance] [--config-dir channels/insurance] [--dry-run]
 비밀키 불필요. 일부 피드가 실패해도 계속 진행한다.
 """
 from __future__ import annotations
@@ -13,6 +13,7 @@ from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
 import feedparser
 import requests
+import channel
 from boards import fetch_board
 from classify import UNCATEGORIZED, classify, load as load_classifier
 from entities import company_relevant, sports_team_title, tag_entities
@@ -29,7 +30,7 @@ def google(q: str, when: str = '7d') -> str:
     return 'https://news.google.com/rss/search?q=' + quote(q + f' when:{when}') + '&hl=ko&gl=KR&ceid=KR:ko'
 
 
-# 직접 RSS: (feed_name, url, source_type, 고정 출처명 or None). 구글 검색 피드는 config/feeds.json, 게시판은 config/boards.json.
+# 직접 RSS: (feed_name, url, source_type, 고정 출처명 or None). 구글 검색 피드는 feeds.json, 게시판은 boards.json(채널 설정 폴더).
 RSS_SOURCES = [
     ('보험매일', 'https://www.fins.co.kr/rss/allArticle.xml', 'media', '보험매일'),
     ('보험저널', 'https://www.insjournal.co.kr/rss/allArticle.xml', 'media', '보험저널'),
@@ -57,7 +58,7 @@ def load_sources(config_dir: Path) -> tuple[list, set, int | None]:
 
 
 class Blocked:
-    """config/blocked_sources.json: 저장하지 않을 출처."""
+    """blocked_sources.json: 저장하지 않을 출처."""
 
     def __init__(self, sources: dict | None = None):
         self.reasons = {k.casefold(): v for k, v in (sources or {}).items()}
@@ -118,7 +119,7 @@ def parse_date(entry):
     return dt.isoformat()
 
 
-RELEVANT_DEPTS: set[str] = set()  # config/boards.json relevant_departments (main 에서 채움)
+RELEVANT_DEPTS: set[str] = set()  # boards.json relevant_departments (main 에서 채움)
 
 
 def judge(title: str, kind: str, name: str | None, dept: str | None = None) -> tuple[bool, dict]:
@@ -276,7 +277,7 @@ def save(rows, data_dir: Path, aliases=None, tfilter=None):
 
 
 def reclassify(data_dir: Path) -> None:
-    """저장된 모든 기사를 현재 config/categories.json 규칙으로 다시 분류. id·수집시각·발행시각 등은 건드리지 않는다."""
+    """저장된 모든 기사를 현재 categories.json 규칙으로 다시 분류. id·수집시각·발행시각 등은 건드리지 않는다."""
     total = changed = 0
     counts: dict[str, int] = {}
     for path in sorted(data_dir.glob('????-??.json')):
@@ -320,7 +321,7 @@ def reindex(data_dir: Path, config_dir: Path) -> None:
 
 
 def rescore(data_dir: Path, big: int = 2) -> dict:
-    """저장된 기사의 중요도(★)만 config/score.json 산식으로 다시 계산한다(분류·태그·id·시각은 그대로).
+    """저장된 기사의 중요도(★)만 score.json 산식으로 다시 계산한다(분류·태그·id·시각은 그대로).
     반환: 변경 요약(분포 전후, 변경 건수, 별점이 big 이상 바뀐 기사 목록)."""
     before, after, changes = {}, {}, []
     for path in sorted(data_dir.glob('????-??.json')):
@@ -407,15 +408,17 @@ def merge_found(articles: dict, found: list) -> None:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--data-dir', default='data')
-    ap.add_argument('--config-dir', default='config')
+    ap.add_argument('--channel', default=channel.DEFAULT, help='채널 슬러그(설정 channels/<채널>/, 데이터 data/<채널>/)')
+    ap.add_argument('--data-dir', default=None, help='기본: data/<채널>')
+    ap.add_argument('--config-dir', default=None, help='기본: channels/<채널>')
     ap.add_argument('--dry-run', action='store_true')
-    ap.add_argument('--backfill', action='store_true', help='게시판을 더 깊이(config/boards.json backfill_pages) 한 번 읽어 과거 글을 채움')
+    ap.add_argument('--backfill', action='store_true', help='게시판을 더 깊이(boards.json backfill_pages) 한 번 읽어 과거 글을 채움')
     ap.add_argument('--reindex', action='store_true', help='네트워크 없이 index.json(월 목록)과 trends.json 만 다시 만듦(월 파일을 옮기거나 지운 뒤)')
-    ap.add_argument('--rescore', action='store_true', help='네트워크 없이 저장된 기사의 중요도(★)만 config/score.json 산식으로 다시 계산')
+    ap.add_argument('--rescore', action='store_true', help='네트워크 없이 저장된 기사의 중요도(★)만 score.json 산식으로 다시 계산')
     ap.add_argument('--reclassify', action='store_true', help='네트워크 없이 저장된 기사를 현재 분류 규칙으로 재분류(관련도 relevant 포함)')
     args = ap.parse_args()
-    cdir = Path(args.config_dir)
+    cdir = channel.use(args.channel, args.config_dir)  # 분류·개체 로더도 이 폴더를 읽는다
+    args.data_dir = args.data_dir or str(channel.data_path(args.channel))
     boards_cfg = load_json(cdir / 'boards.json', {'boards': []})
     RELEVANT_DEPTS.update(boards_cfg.get('relevant_departments', []))
     if args.reindex:

@@ -4,7 +4,7 @@
 
 - 각 URL을 요청해 RSS는 feedparser, HTML 게시판은 범용 추출기(앵커 + 같은 행의 날짜)로 최신 글 제목·날짜·링크를 뽑는다.
 - 본문/첨부는 가져오지 않는다(링크 유효성은 HEAD 로만 확인). 요청 간 1초 이상 간격, robots.txt 확인.
-- 현재 config/categories.json 분류 규칙(collector/classify.py, 읽기 전용)으로 제목 분포를 낸다.
+- 현재 channels/insurance/categories.json 분류 규칙(collector/classify.py, 읽기 전용)으로 제목 분포를 낸다.
 """
 from __future__ import annotations
 import argparse, json, re, sys, time

@@ -1,13 +1,15 @@
-"""제목 키워드 기반 분류기. 분류 규칙은 config/categories.json, 중요도(★) 산식은 config/score.json 에서 관리한다."""
+"""제목 키워드 기반 분류기. 분류 규칙은 channels/<채널>/categories.json, 중요도(★) 산식은 channels/<채널>/score.json 에서 관리한다."""
 from __future__ import annotations
 import json
 import re
 from functools import lru_cache
 from pathlib import Path
 
+import channel
+
 UNCATEGORIZED = '미분류'  # 7개 카테고리 탭에는 노출하지 않고 '전체'에서만 보인다
 TIERS = {'strong': 3, 'company': 2, 'normal': 1}
-DEFAULT_CONFIG = Path(__file__).resolve().parent.parent / 'config' / 'categories.json'
+DEFAULT_CONFIG = channel.config_path() / 'categories.json'  # 기본 채널(insurance) 경로. 실제 로딩은 현재 채널(channel.config_dir())
 DEFAULT_SCORE = DEFAULT_CONFIG.with_name('score.json')
 _ASCII = re.compile(r'^[a-z0-9\- ]+$')
 
@@ -128,7 +130,7 @@ class Classifier:
         return sum(1 for g in self.core_groups if self._any(g, text, sq))
 
     def score(self, title: str, category: str) -> tuple[int, dict]:
-        """(★, 근거). 산식은 config/score.json."""
+        """(★, 근거). 산식은 channels/insurance/score.json."""
         text, sq = title.casefold(), _squash(title)
         cfg = self.score_cfg
         top = self.star_top(text, sq, category)
@@ -145,10 +147,15 @@ class Classifier:
         return int(s), {'top': top, 'core_count': core, 'market_capped': market_capped, 'low_capped': low_capped}
 
 
-@lru_cache(maxsize=None)
 def load(path: str | None = None, score_path: str | None = None) -> Classifier:
+    d = channel.config_dir()
+    return _load(str(path or d / 'categories.json'), str(score_path or d / 'score.json'))
+
+
+@lru_cache(maxsize=None)
+def _load(path: str, score_path: str) -> Classifier:
     rd = lambda p: json.loads(Path(p).read_text(encoding='utf-8'))
-    return Classifier(rd(path or DEFAULT_CONFIG), rd(score_path or DEFAULT_SCORE))
+    return Classifier(rd(path), rd(score_path))
 
 
 def classify(title: str, feed_name: str | None = None) -> dict:

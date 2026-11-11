@@ -1,19 +1,21 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 import { AlertCircle } from 'lucide-react';
-import { todayKst } from '../../lib/dates';
-import { loadTrends } from '../../lib/news';
-import { Trends, lastWeeks, niceMax } from '../../lib/trends';
+import { todayKst } from '../../../lib/dates';
+import { loadTrends } from '../../../lib/news';
+import { Trends, lastWeeks, niceMax } from '../../../lib/trends';
+import { useChannel } from '../../../lib/channelContext';
 
 const WEEKS = 12;
 const COLORS = ['#204e87', '#d2691e', '#2a9d6f', '#b5446e', '#7a5bc7', '#c9a227', '#3a9bb8'];
 const W = 640, H = 280, L = 36, R = 12, T = 12, B = 34;
 
 export default function TrendsPage() {
+  const ch = useChannel();
   const [trends, setTrends] = useState<Trends | null>(null);
   const [failure, setFailure] = useState('');
   const [off, setOff] = useState<string[]>([]);
-  useEffect(() => { loadTrends().then(setTrends).catch(() => setFailure('추이 데이터(trends.json)가 아직 없습니다. 수집을 한 번 실행하면 생성됩니다.')); }, []);
+  useEffect(() => { loadTrends(ch.slug).then(setTrends).catch(() => setFailure('추이 데이터(trends.json)가 아직 없습니다. 수집을 한 번 실행하면 생성됩니다.')); }, [ch.slug]);
   const today = todayKst();
   const weeks = useMemo(() => trends ? lastWeeks(trends, today, WEEKS) : [], [trends, today]);
   const shown = trends?.keywords.filter(k => !off.includes(k)) ?? [];
@@ -23,7 +25,7 @@ export default function TrendsPage() {
   const md = (d: string) => `${Number(d.slice(5, 7))}/${Number(d.slice(8))}`;
 
   return <>
-    <div className="notice"><div><b>키워드 주별 언급 수 (최근 {WEEKS}주)</b><p>기사 제목에 키워드가 들어간 건수를 발행일(KST) 기준 월~일 주 단위로 셉니다. 키워드는 config/keywords.json에서 바꾸며, 수집을 실행하면 과거분까지 다시 집계됩니다. 이번 주는 진행 중이라 값이 작을 수 있고, 데이터는 수집을 시작한 주부터 있습니다.</p></div></div>
+    <div className="notice"><div><b>키워드 주별 언급 수 (최근 {WEEKS}주)</b><p>기사 제목에 키워드가 들어간 건수를 발행일(KST) 기준 월~일 주 단위로 셉니다. 키워드는 channels/{ch.slug}/keywords.json에서 바꾸며, 수집을 실행하면 과거분까지 다시 집계됩니다. 이번 주는 진행 중이라 값이 작을 수 있고, 데이터는 수집을 시작한 주부터 있습니다.</p></div></div>
     {!trends && !failure && <div className="articles"><div className="empty">추이 데이터를 불러오는 중입니다…</div></div>}
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     {trends && <section className="articles chartBox">

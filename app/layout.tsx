@@ -1,13 +1,7 @@
 import type { Metadata } from 'next';
-import Footer from '../components/Footer';
-import SiteHeader from '../components/SiteHeader';
-import StaleNotice from '../components/StaleNotice';
+import { SITE } from '../lib/site';
 import './globals.css';
-export const metadata: Metadata = { title: 'Actuary News Hub | 보험계리 뉴스', description: '보험계리 업무에 필요한 뉴스를 매일 아침 자동으로 모아 보여 주는 공개 뉴스 대시보드' };
+export const metadata: Metadata = { title: `${SITE.name} | ${SITE.subtitle}`, description: `${SITE.name}(${SITE.nameEn}) — ${SITE.subtitle}. 매일 아침 자동으로 모은 뉴스의 제목·링크·출처만 보여 줍니다.` };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="ko"><body>
-    <SiteHeader />
-    <main className="shell"><StaleNotice />{children}</main>
-    <Footer />
-  </body></html>;
+  return <html lang="ko"><body>{children}</body></html>;
 }

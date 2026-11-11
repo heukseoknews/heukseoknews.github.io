@@ -1,5 +1,5 @@
 """HTML 게시판 직접 수집(금융위·금감원 보도자료). 제목·링크·담당부서·등록일만 읽고 본문·첨부는 읽지 않는다.
-config/boards.json 의 parser 이름('fsc','fss')으로 추출기를 고른다. 구조가 바뀌어 0건이면 예외(구조 변경 의심)를 던진다.
+channels/insurance/boards.json 의 parser 이름('fsc','fss')으로 추출기를 고른다. 구조가 바뀌어 0건이면 예외(구조 변경 의심)를 던진다.
 """
 from __future__ import annotations
 import re, time

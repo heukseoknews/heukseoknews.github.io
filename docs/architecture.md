@@ -4,6 +4,8 @@
 > 목적: 새 저장소 `heukseoknews/heukseoknews.github.io`(서비스 이름 **흑석일보**, `https://heukseoknews.github.io/`)로 옮기고 **채널(보험·AI·금융)** 구조로 정리하기 전에, 현재 구조를 한 문서로 고정한다.
 > 숫자는 `python scripts/audit/funnel.py` 로 다시 뽑을 수 있다(`data/status.json`·`data/*.json` 읽기 전용).
 
+> **이전 후 경로(2026-11-11 반영)**: 이 문서의 1~7장은 이전 전 구조 기록이다. 지금은 `config/` → `channels/insurance/`, `data/` → `data/insurance/`, 사이트는 루트 주소(basePath 없음)의 `/insurance/` 이다. 구현된 내용은 8.7 참고.
+
 ## 목차
 1. 전체 흐름도
 2. 소스 표
@@ -366,3 +368,17 @@ heukseoknews.github.io/                # 새 저장소(서비스 '흑석일보',
 
 ### 8.6 이전 순서 제안(참고)
 1. 새 저장소 생성·Pages 설정 → 2. 코드·`data/` 이전(채널 1개 `insurance` 로 먼저, 동작 동일 확인) → 3. 채널 설정 분리(경로·`basePath`·localStorage 키 일반화, 로직 변경 없이) → 4. 헤더 채널 전환·테마 → 5. 옛 사이트 안내 + 북마크 이전 → 6. AI·금융 채널 추가(매칭 모드·산식 등 코드 수정 항목은 6장 (c))
+
+### 8.7 구현 현황 (2026-11-11, 새 저장소 이전)
+범위: 6장 (b) 중 사이트 이름·탭 이름·필터 라벨·테마·로케일/타임존(화면 날짜 표기)·cron·localStorage 키만 설정으로 옮겼다. (c) 항목과 `RSS_SOURCES`·`PRESS_RE`·`ORG_SUFFIX`·구글 `hl/gl`·수집기 KST 보정(`parse_date`·`boards.py`·`trends.py`)·화면 `lib/dates.ts` 의 KST 고정·정렬 언어(`'ko'`)는 그대로다.
+
+| 항목 | 지금 |
+|---|---|
+| 채널 설정 | `channels/insurance/` — 옛 `config/` 파일 11개를 이름 그대로 옮기고 `channel.json`(이름·부제·설명·locale·timezone·schedule_utc·탭 이름·필터 라벨·옛 localStorage 키), `theme.json`(CSS 변수 `--brand`·`--brand-strong`·`--brand-dark`)만 새로 만듦. 8.1 의 `sources.json`·`filters.json` 통합은 하지 않음 |
+| 수집기 | `collector/channel.py` + `collect.py --channel`(기본 insurance) → 설정 `channels/<채널>/`, 데이터 `data/<채널>/`. `--config-dir` 를 주면 `classify.py`·`entities.py` 도 그 폴더를 읽는다(이전에는 고정 경로) |
+| 화면 | `app/[channel]/…`(generateStaticParams), 채널 레지스트리 `lib/channels.ts`, 컨텍스트 `lib/channelContext.tsx`. 데이터 `/data/<채널>/…`. `/` 는 `/insurance/` 로 이동(`#import=` 해시는 `/insurance/settings/` 로). 헤더 채널 전환 `components/ChannelSwitcher.tsx`(채널 1개면 숨김). 테마는 채널 레이아웃이 `:root` CSS 변수로 주입 |
+| 사용자 상태 | `lib/userState.ts`(순수 로직) + `lib/storage.ts`(localStorage 어댑터). 키 `heukseok-v1:insurance`, 보험사 선택도 같은 덩어리. 옛 키 읽기·가져오기 지원. 형식: `docs/migration-localstorage.md` |
+| 내 데이터 | `/insurance/settings/` — JSON 백업·복원, `#import=` 해시 수신, 미리보기 후 합집합 병합 |
+| 워크플로 | `deploy.yml`: collect(채널 매트릭스, fail-fast false, 채널별 `data/<채널>` 커밋·아티팩트) → build(main 최신 + 이번 수집 아티팩트) → deploy → report(수집·커밋 실패 시 실행 실패 표시). cron 20:37 UTC 그대로 |
+| 동등성 검증 | `scripts/audit/equivalence_collector.py`, `scripts/audit/equivalence_site.ts`(옛 코드 사본과 비교: 재분류 결과 기사 필드, 분류 정확도, 빌드된 화면의 카테고리·건수·필터) |
+

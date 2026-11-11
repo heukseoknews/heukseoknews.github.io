@@ -1,4 +1,4 @@
-"""수집 퍼널·소스 표·데이터 통계를 data/status.json 과 data/*.json 에서 뽑는다(읽기 전용, docs/architecture.md 의 숫자 근거).
+"""수집 퍼널·소스 표·데이터 통계를 data/insurance/status.json 과 data/insurance/*.json 에서 뽑는다(읽기 전용, docs/architecture.md 의 숫자 근거).
 
   python scripts/audit/funnel.py            # 마크다운 표를 표준출력으로
 
@@ -10,8 +10,8 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-st = json.loads((ROOT / 'data' / 'status.json').read_text(encoding='utf-8'))
-arts = [a for f in sorted(glob.glob(str(ROOT / 'data' / '????-??.json'))) for a in json.loads(Path(f).read_text(encoding='utf-8'))]
+st = json.loads((ROOT / 'data' / 'insurance' / 'status.json').read_text(encoding='utf-8'))
+arts = [a for f in sorted(glob.glob(str(ROOT / 'data' / 'insurance' / '????-??.json'))) for a in json.loads(Path(f).read_text(encoding='utf-8'))]
 run, src = st['last_run'], st['sources']
 KIND = {'rss': 'RSS', 'search': '구글 뉴스 검색', 'board': 'HTML 게시판'}
 
@@ -53,7 +53,7 @@ for n, s in src.items():
 print('\n## 저장 데이터 통계')
 rel = [a for a in arts if a.get('relevant', True)]
 print(f"- 전체 {len(arts)}건, 관련 {len(rel)}건, 관련도 낮음 {len(arts) - len(rel)}건")
-print('- 월 파일: ' + ', '.join(f"{p.stem} {p.stat().st_size // 1024}KB" for p in sorted((ROOT / 'data').glob('????-??.json'))))
+print('- 월 파일: ' + ', '.join(f"{p.stem} {p.stat().st_size // 1024}KB" for p in sorted((ROOT / 'data' / 'insurance').glob('????-??.json'))))
 print('- 카테고리(관련): ' + ', '.join(f'{c} {n}' for c, n in Counter(a['category'] for a in rel).most_common()))
 print('- 출처 구분: ' + ', '.join(f'{c} {n}' for c, n in Counter(a['source_type'] for a in arts).most_common()))
 print(f"- companies 매칭 {sum(1 for a in arts if a.get('companies'))}건, orgs 매칭 {sum(1 for a in arts if a.get('orgs'))}건, 구글 링크 {sum(1 for a in arts if 'news.google.com' in a['url'])}건")

@@ -1,7 +1,7 @@
 // 빌드 시점에 public/version.json 생성 — 배포가 실제로 반영됐는지 확인용.
-// 배포 URL: /actuary-news-hub/version.json
+// 배포 URL: https://heukseoknews.github.io/version.json
 import { execSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 /** Date → 'YYYY-MM-DDTHH:mm:ss+09:00' (KST) */
@@ -11,8 +11,15 @@ export function toKstIso(d = new Date()) {
 
 const git = (cmd, fallback = '') => { try { return execSync(`git ${cmd}`, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { return fallback; } };
 
-/** data/status.json 에서 마지막으로 수집에 성공한 시각(소스별 last_success_at 중 최신, 없으면 last_run.finished_at) */
-export function dataCollectedAt(statusPath = 'data/status.json') {
+/** 모든 채널(data/<채널>/status.json) 중 가장 최근 수집 성공 시각 */
+export function latestCollectedAt(dataDir = 'data') {
+  if (!existsSync(dataDir)) return null;
+  const all = readdirSync(dataDir, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => dataCollectedAt(`${dataDir}/${d.name}/status.json`)).filter(Boolean).sort();
+  return all.at(-1) ?? null;
+}
+
+/** 채널 status.json 에서 마지막으로 수집에 성공한 시각(소스별 last_success_at 중 최신, 없으면 last_run.finished_at) */
+export function dataCollectedAt(statusPath = 'data/insurance/status.json') {
   if (!existsSync(statusPath)) return null;
   try {
     const s = JSON.parse(readFileSync(statusPath, 'utf8'));
@@ -28,7 +35,7 @@ export function buildVersion(env = process.env) {
     built_at: toKstIso(),
     run_id: env.GITHUB_RUN_ID ?? null,
     trigger: env.GITHUB_EVENT_NAME ?? 'local',
-    data_collected_at: dataCollectedAt(),
+    data_collected_at: latestCollectedAt(),
   };
 }
 

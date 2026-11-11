@@ -1,5 +1,5 @@
 {
-  "_comment": "보험사 필터용 회사 목록. name: 화면 표기(정식명), group: 생명보험/손해보험/재보험/기타, aliases: 제목에서 찾을 이름. 한글 별칭은 띄어쓰기 무시 부분일치, 영문·숫자만인 별칭은 단어 경계. '삼성', '현대', 'DB', 'KB', '한화' 같은 단독 약어는 은행·증권·건설과 혼동되므로 넣지 않고 '보험사명+접미(생명/화재/손보/해상 등)'만 별칭으로 쓴다. 별칭을 {\"t\":..., \"not_before\":정규식, \"not_after\":정규식} 으로 쓰면 앞뒤 글자를 제한할 수 있다. 수정 후 `python collector/collect.py --reclassify` 로 과거 기사에 반영. relevance: 제목에 보험사가 나오면 '보험' 단어가 없어도(예: '메리츠화재 3분기 순익') 관련 기사로 본다. 단 스포츠·연예·방송 맥락이면 제외한다(config/context_exclude.json).",
+  "_comment": "보험사 필터용 회사 목록. name: 화면 표기(정식명), group: 생명보험/손해보험/재보험/기타, aliases: 제목에서 찾을 이름. 한글 별칭은 띄어쓰기 무시 부분일치, 영문·숫자만인 별칭은 단어 경계. '삼성', '현대', 'DB', 'KB', '한화' 같은 단독 약어는 은행·증권·건설과 혼동되므로 넣지 않고 '보험사명+접미(생명/화재/손보/해상 등)'만 별칭으로 쓴다. 별칭을 {\"t\":..., \"not_before\":정규식, \"not_after\":정규식} 으로 쓰면 앞뒤 글자를 제한할 수 있다. 수정 후 `python collector/collect.py --reclassify` 로 과거 기사에 반영. relevance: 제목에 보험사가 나오면 '보험' 단어가 없어도(예: '메리츠화재 3분기 순익') 관련 기사로 본다. 단 스포츠·연예·방송 맥락이면 제외한다(channels/insurance/context_exclude.json).",
   "relevance": {"company_mention_is_relevant": true},
   "groups": ["생명보험", "손해보험", "재보험", "기타"],
   "companies": [

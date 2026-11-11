@@ -1,16 +1,18 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { AlertCircle, CheckCircle2, Info, XCircle } from 'lucide-react';
-import { Status, loadStatus, loadVersion } from '../../lib/news';
-import { VersionInfo, formatBuild, triggerLabel } from '../../lib/version';
-import { fmt } from '../../lib/format';
+import { Status, loadStatus, loadVersion } from '../../../lib/news';
+import { VersionInfo, formatBuild, triggerLabel } from '../../../lib/version';
+import { useChannel } from '../../../lib/channelContext';
 
 export default function StatusPage() {
+  const ch = useChannel();
+  const { fmt } = ch;
   const [status, setStatus] = useState<Status | null>(null);
   const [failure, setFailure] = useState('');
   const [ver, setVer] = useState<VersionInfo | null>(null);
   useEffect(() => { loadVersion().then(setVer).catch(() => {}); }, []);
-  useEffect(() => { loadStatus().then(setStatus).catch(() => setFailure('수집 상태 파일(status.json)이 아직 없습니다. 수집을 한 번 실행하면 생성됩니다.')); }, []);
+  useEffect(() => { loadStatus(ch.slug).then(setStatus).catch(() => setFailure('수집 상태 파일(status.json)이 아직 없습니다. 수집을 한 번 실행하면 생성됩니다.')); }, [ch.slug]);
   const entries = status ? Object.entries(status.sources) : [];
   const run = status?.last_run;
   return <>
@@ -27,7 +29,7 @@ export default function StatusPage() {
         <td data-label="저장 후보">{s.ok ? s.kept : '—'}</td>
         <td data-label="받은 기사 범위(발행)" className="note">{s.ok && s.oldest && s.newest ? <>{fmt(s.oldest)} ~<br />{fmt(s.newest)}</> : '—'}
           {s.at_limit && <span className="flag" title="피드가 준 항목 수가 50/100건에 닿았습니다. 더 오래된 기사가 잘렸을 수 있습니다.">상한 도달</span>}
-          {s.needs_split && <span className="flag warn" title="검색 쿼리가 100건 상한에 닿았습니다. 쿼리를 더 쪼개야 놓치는 기사가 없습니다(config/feeds.json).">쿼리 분할 필요</span>}
+          {s.needs_split && <span className="flag warn" title={`검색 쿼리가 100건 상한에 닿았습니다. 쿼리를 더 쪼개야 놓치는 기사가 없습니다(channels/${ch.slug}/feeds.json).`}>쿼리 분할 필요</span>}
           {s.gap_risk && <span className="flag warn" title="받은 기사 중 가장 오래된 것이 직전 수집 시각보다 늦습니다. 그 사이 기사를 놓쳤을 수 있습니다.">누락 위험</span>}</td>
         <td data-label="마지막 성공">{s.last_success_at ? fmt(s.last_success_at) : '없음'}</td>
         <td data-label="비고" className="note">{s.note ? `참고: ${s.note}` : s.error ?? ''}{!s.error && !s.note && (s.skipped.low_relevance ?? s.skipped.irrelevant) ? `관련도 낮음 ${s.skipped.low_relevance ?? s.skipped.irrelevant}건(저장함)` : ''}

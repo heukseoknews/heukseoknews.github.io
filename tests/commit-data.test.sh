@@ -60,4 +60,10 @@ out=$(cd "$d/runner" && bash "$SCRIPT" origin main 2>&1); rc=$?
   && ok "실패 보고, 데이터 보존" || bad "rc=$rc"
 [ "$(echo "$out" | grep -c '시도 [0-9]/3')" -ge 3 ] && ok "3회 시도" || bad "시도 횟수"
 
+echo "6) 채널 경로를 주면 그 폴더만 커밋하고 메시지에 채널을 붙인다(다른 변경은 커밋하지 않음)"
+d=$(setup t6); mkdir -p "$d/runner/data/insurance"; echo '{"v":6}' > "$d/runner/data/insurance/status.json"; echo '{"v":"x"}' > "$d/runner/data/status.json"
+(cd "$d/runner" && bash "$SCRIPT" origin main data/insurance >/dev/null 2>&1); rc=$?
+ins=$(git -C "$d/remote.git" show main:data/insurance/status.json 2>/dev/null); top=$(git -C "$d/remote.git" show main:data/status.json)
+[ $rc -eq 0 ] && [ "$ins" = '{"v":6}' ] && [ "$top" = '{"v":0}' ] && [[ "$(remote_head "$d")" == "data: "*" (insurance)" ]] && ok "경로 한정 커밋" || bad "rc=$rc ins=$ins top=$top head=$(remote_head "$d")"
+
 [ $fail -eq 0 ] && echo "commit-data tests passed" || { echo "commit-data tests FAILED"; exit 1; }

@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
-# data/ 변경을 커밋하고 push한다. GitHub 쪽 일시 오류(remote rejected)나 그 사이 다른 push에 대비해
-# 실패하면 pull --rebase(충돌 시 이쪽 수집 결과 우선) 후 최대 3회 재시도한다.
-#   사용: scripts/commit-data.sh [remote=origin] [branch=main]
+# 데이터 폴더(채널별 data/<채널>) 변경을 커밋하고 push한다. GitHub 쪽 일시 오류(remote rejected)나
+# 그 사이 다른 push(다른 채널의 수집 커밋 포함)에 대비해 실패하면 pull --rebase(충돌 시 이쪽 수집 결과 우선) 후 최대 3회 재시도한다.
+#   사용: scripts/commit-data.sh [remote=origin] [branch=main] [path=data]
 #   환경: RETRY_SLEEP="5 15" (재시도 전 대기 초, 테스트에서 "0 0"으로 덮어씀)
 set -u
 REMOTE="${1:-origin}"
 BRANCH="${2:-main}"
+DATA_PATH="${3:-data}"
 SLEEPS=(${RETRY_SLEEP:-5 15})
 MAX=3
 
-git add data
+git add -- "$DATA_PATH"
 if git diff --cached --quiet; then
   echo "변경 없음 — 커밋 생략"
   exit 0
 fi
-git commit -q -m "data: 뉴스 수집 $(date -u +%Y-%m-%dT%H:%MZ)" || { echo "::error::git commit 실패"; exit 1; }
+LABEL=""
+[ "$DATA_PATH" != "data" ] && LABEL=" (${DATA_PATH#data/})"
+git commit -q -m "data: 뉴스 수집 $(date -u +%Y-%m-%dT%H:%MZ)${LABEL}" -- "$DATA_PATH" || { echo "::error::git commit 실패"; exit 1; }
 
 for attempt in $(seq 1 "$MAX"); do
   if git push "$REMOTE" "HEAD:$BRANCH"; then

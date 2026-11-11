@@ -3,11 +3,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { Article, DataIndex, loadIndex, loadMonth } from './news';
 
 /** index.json + 월 파일 지연 로딩. extra: 추가로 불러올 월 목록 또는 'all'. 기본은 최근 2개월. */
-export function useNews(extra: string[] | 'all' = []) {
+export function useNews(channel: string, extra: string[] | 'all' = []) {
   const [index, setIndex] = useState<DataIndex | null>(null);
   const [byMonth, setByMonth] = useState<Record<string, Article[]>>({});
   const [failure, setFailure] = useState('');
-  useEffect(() => { loadIndex().then(setIndex).catch(e => setFailure(`데이터 인덱스를 읽지 못했습니다: ${e.message}`)); }, []);
+  useEffect(() => { loadIndex(channel).then(setIndex).catch(e => setFailure(`데이터 인덱스를 읽지 못했습니다: ${e.message}`)); }, [channel]);
   const extraKey = extra === 'all' ? 'all' : extra.join(',');
   const wanted = useMemo(() => {
     const m = index?.months.map(x => x.month) ?? [];
@@ -18,9 +18,10 @@ export function useNews(extra: string[] | 'all' = []) {
   }, [index, extraKey]);
   useEffect(() => {
     wanted.filter(m => !(m in byMonth)).forEach(m => {
-      loadMonth(m).then(rows => setByMonth(p => ({ ...p, [m]: rows })))
+      loadMonth(channel, m).then(rows => setByMonth(p => ({ ...p, [m]: rows })))
         .catch(e => { setByMonth(p => ({ ...p, [m]: [] })); setFailure(`${m} 데이터를 읽지 못했습니다: ${e.message}`); });
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wanted, byMonth]);
   const all = useMemo(() => Object.values(byMonth).flat(), [byMonth]);
   // loading: 최초 표시에 필요한 최근 2개월이 모두 끝날 때까지(성공/실패 무관). 이전에는 index만 오면 끝난 것으로 보여 '기사 없음'이 깜빡였다.

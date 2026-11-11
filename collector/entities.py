@@ -1,4 +1,4 @@
-"""제목에서 보험사(config/companies.json)·유관기관(config/orgs.json)을 찾는다. 카테고리와 별개의 필터용 메타(companies/orgs 필드).
+"""제목에서 보험사(companies.json)·유관기관(orgs.json)을 찾는다(현재 채널 설정 폴더, 기본 channels/insurance/). 카테고리와 별개의 필터용 메타(companies/orgs 필드).
 한글 별칭은 띄어쓰기를 무시한 부분일치, 영문·숫자만인 별칭은 단어 경계, {t,not_before,not_after} 별칭은 앞뒤 글자를 제한한 정규식으로 비교한다.
 """
 from __future__ import annotations
@@ -7,9 +7,8 @@ import re
 from functools import lru_cache
 from pathlib import Path
 
+import channel
 from classify import Matcher, _squash
-
-CONFIG_DIR = Path(__file__).resolve().parent.parent / 'config'
 
 
 class _Rule:
@@ -55,9 +54,13 @@ class Entities:
         return [t for t in tags if _squash(t) not in self.alias_keys]
 
 
-@lru_cache(maxsize=None)
 def load(config_dir: str | None = None) -> tuple['Entities', 'Entities']:
-    d = Path(config_dir) if config_dir else CONFIG_DIR
+    return _load(str(Path(config_dir) if config_dir else channel.config_dir()))
+
+
+@lru_cache(maxsize=None)
+def _load(config_dir: str) -> tuple['Entities', 'Entities']:
+    d = Path(config_dir)
     rd = lambda n, k: json.loads((d / n).read_text(encoding='utf-8')).get(k, []) if (d / n).exists() else []
     return Entities(rd('companies.json', 'companies')), Entities(rd('orgs.json', 'orgs'))
 
@@ -68,21 +71,33 @@ def tag_entities(title: str, source: str | None, tags: list[str]) -> dict:
     return {'companies': comp.match(title), 'orgs': orgs.match(title, source), 'tags': orgs.strip_tags(comp.strip_tags(tags))}
 
 
-@lru_cache(maxsize=None)
 def _relevance_cfg() -> dict:
-    d = CONFIG_DIR / 'companies.json'
+    return _relevance_cfg_at(str(channel.config_dir()))
+
+
+@lru_cache(maxsize=None)
+def _relevance_cfg_at(config_dir: str) -> dict:
+    d = Path(config_dir) / 'companies.json'
     return json.loads(d.read_text(encoding='utf-8')).get('relevance', {}) if d.exists() else {}
 
 
-@lru_cache(maxsize=None)
 def _context_cfg() -> dict:
-    d = CONFIG_DIR / 'context_exclude.json'
+    return _context_cfg_at(str(channel.config_dir()))
+
+
+@lru_cache(maxsize=None)
+def _context_cfg_at(config_dir: str) -> dict:
+    d = Path(config_dir) / 'context_exclude.json'
     return json.loads(d.read_text(encoding='utf-8')) if d.exists() else {}
 
 
-@lru_cache(maxsize=None)
 def _context_matchers() -> tuple[list, list]:
-    c = _context_cfg()
+    return _context_matchers_at(str(channel.config_dir()))
+
+
+@lru_cache(maxsize=None)
+def _context_matchers_at(config_dir: str) -> tuple[list, list]:
+    c = _context_cfg_at(config_dir)
     mk = lambda items: [_Rule(i) if isinstance(i, dict) else Matcher(i) for i in items]
     return mk(c.get('exclude_words', [])), mk(c.get('business_words', []))
 
@@ -97,7 +112,7 @@ def _without_company_names(title: str) -> str:
 
 def sports_team_title(title: str) -> bool:
     """보험사 이름이 나오지만 스포츠·연예·방송 기사(흥국생명 배구, 삼성화재 블루팡스 등)로 보이는 제목.
-    제목에 보험사 이름과 제외어(config/context_exclude.json)가 함께 있고, 보험사 이름을 뺀 나머지에 보험 사업 단서(보험·순익·실적·상품·출시 등)가 없을 때 참."""
+    제목에 보험사 이름과 제외어(context_exclude.json)가 함께 있고, 보험사 이름을 뺀 나머지에 보험 사업 단서(보험·순익·실적·상품·출시 등)가 없을 때 참."""
     if not load()[0].match(title):
         return False
     text, sq = title.casefold(), _squash(title)
@@ -109,7 +124,7 @@ def sports_team_title(title: str) -> bool:
 
 
 def company_relevant(title: str) -> bool:
-    """제목에 보험사가 나오면 '보험' 단어가 없어도 관련 기사로 본다(config/companies.json relevance). 스포츠·연예 맥락이면 아니다."""
+    """제목에 보험사가 나오면 '보험' 단어가 없어도 관련 기사로 본다(companies.json relevance). 스포츠·연예 맥락이면 아니다."""
     if not _relevance_cfg().get('company_mention_is_relevant'):
         return False
     return bool(load()[0].match(title)) and not sports_team_title(title)

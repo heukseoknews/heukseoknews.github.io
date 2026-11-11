@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT / 'collector'))
 from classify import _squash, load  # noqa: E402  (읽기 전용)
 
 cl = load()
-ARTICLES = [x for f in sorted(glob.glob(str(ROOT / 'data' / '????-??.json'))) for x in json.loads(Path(f).read_text(encoding='utf-8'))]
+ARTICLES = [x for f in sorted(glob.glob(str(ROOT / 'data' / 'insurance' / '????-??.json'))) for x in json.loads(Path(f).read_text(encoding='utf-8'))]
 
 
 def explain(a: dict) -> dict:
@@ -91,7 +91,7 @@ P('')
 P('| 카테고리 | strong 키워드 |')
 P('|---|---|')
 import json as _j
-cfg = _j.loads((ROOT / 'config' / 'categories.json').read_text(encoding='utf-8'))
+cfg = _j.loads((ROOT / 'channels' / 'insurance' / 'categories.json').read_text(encoding='utf-8'))
 for cat, spec in cfg['categories'].items():
     P(f"| {cat} | {', '.join(spec.get('strong', []))} |")
 P('')

@@ -1,5 +1,5 @@
 """주별 키워드 언급 수 집계 (제목 기준, 발행시각 KST, 주 시작=월요일).
-config/keywords.json 을 읽어 data/trends.json 을 만든다. 전체 월 파일을 다시 훑으므로 키워드 변경이 과거분에 반영된다.
+channels/<채널>/keywords.json 을 읽어 data/<채널>/trends.json 을 만든다. 전체 월 파일을 다시 훑으므로 키워드 변경이 과거분에 반영된다.
 """
 from __future__ import annotations
 import json

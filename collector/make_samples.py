@@ -27,6 +27,6 @@ def pick(articles, existing_titles, n, seed):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); ap.add_argument('--n', type=int, default=100); ap.add_argument('--seed', type=int, default=1)
     a = ap.parse_args()
-    arts = [x for f in sorted(glob.glob(str(ROOT / 'data' / '????-??.json'))) for x in json.loads(Path(f).read_text(encoding='utf-8'))]
+    arts = [x for f in sorted(glob.glob(str(ROOT / 'data' / 'insurance' / '????-??.json'))) for x in json.loads(Path(f).read_text(encoding='utf-8'))]
     old = [r['title'] for r in json.loads((ROOT / 'tests' / 'classify_samples.json').read_text(encoding='utf-8'))]
     json.dump([{'title': x['title'], 'feed_name': x['feed_name']} for x in pick(arts, old, a.n, a.seed)], sys.stdout, ensure_ascii=False, indent=1)

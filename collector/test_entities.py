@@ -34,7 +34,7 @@ rel, c = collect.judge('메리츠화재 3분기 순익 3285억…전년비 29.2%
 assert rel is True and c['category'] != '미분류'
 assert collect.judge('KB손보, 현대캐피탈에 3-1 역전승', 'media', '뉴시스')[0] is False
 assert collect.judge('삼성 현대 한화 실적 발표', 'media', '뉴시스')[0] is False, '단독 약어는 보험사로 보지 않음'
-# 보험사와 같은 이름의 구단·연예·방송 기사는 관련 기사가 아니다(config/context_exclude.json). 실제 제목들
+# 보험사와 같은 이름의 구단·연예·방송 기사는 관련 기사가 아니다(channels/insurance/context_exclude.json). 실제 제목들
 NOT_RELEVANT = [
     "김연경, 친정팀 흥국생명 꺾고 최고시청률 7% 찍었다(‘신인감독2’)[美친시청률]",
     "김연경 원더독스, 흥국생명에 역스윕 승리…5세트 혈투 끝 웃었다",

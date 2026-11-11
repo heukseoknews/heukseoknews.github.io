@@ -1,0 +1,26 @@
+{
+ "slug": "insurance",
+ "name": "보험",
+ "subtitle": "보험·계리·금융시장",
+ "description": "보험계리 업무에 필요한 뉴스를 매일 아침 자동으로 모아 보여 줍니다.",
+ "locale": "ko-KR",
+ "timezone": "Asia/Seoul",
+ "schedule_utc": "37 20 * * *",
+ "tabs": {
+  "new": "새 뉴스",
+  "all": "전체 뉴스",
+  "press": "감독당국 보도자료",
+  "bookmarks": "북마크"
+ },
+ "filters": {
+  "sources": "언론사",
+  "companies": "보험사",
+  "orgs": "유관기관"
+ },
+ "storage": {
+  "legacy_keys": {
+   "saved": "actuary-news-hub-v3",
+   "companies": "actuary-news-hub-companies-v1"
+  }
+ }
+}

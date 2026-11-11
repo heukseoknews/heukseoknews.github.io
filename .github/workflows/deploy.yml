@@ -2,69 +2,109 @@ name: Collect and deploy
 
 on:
   schedule:
-    - cron: '37 20 * * *'  # 매일 20:37 UTC = 한국시간 05:37. GitHub 예약은 수 시간까지 늦을 수 있어 일찍 잡아 둠(급하면 수동 실행)
-  workflow_dispatch:   # GitHub 웹에서 "Run workflow" (수동 수집 + 배포)
+    - cron: '37 20 * * *'  # 매일 20:37 UTC = 한국시간 05:37(channels/*/channel.json schedule_utc 와 같아야 함, tests/channels.test.ts 가 확인). GitHub 예약은 수 시간까지 늦을 수 있어 일찍 잡아 둠
+  workflow_dispatch:   # 수동 수집 + 배포: gh workflow run deploy.yml (오래된 실행의 Re-run 은 옛 코드를 다시 배포하므로 쓰지 않는다)
   push:
     branches: [main]   # 코드 변경 시 빌드·배포만 (수집 없음)
 
 # GITHUB_TOKEN 커밋은 다른 워크플로를 트리거하지 않으므로 수집→커밋→빌드→배포를 한 워크플로에서 처리한다.
+# 권한은 잡마다 필요한 만큼만 준다(수집: 데이터 커밋, 배포: Pages).
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
   group: collect-and-deploy
   cancel-in-progress: false
 
 jobs:
-  build:
+  # 채널별 수집. 한 채널이 실패해도 다른 채널의 수집·배포는 계속된다(fail-fast: false, 아래 잡은 실패해도 진행).
+  collect:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    outputs:
-      commit_failed: ${{ steps.flag.outputs.failed }}
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        channel: [insurance]   # channels/ 폴더 목록과 같아야 함(tests/channels.test.ts 가 확인)
     steps:
       - uses: actions/checkout@v4
 
       - name: Set up Python
-        if: github.event_name != 'push'
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: pip
           cache-dependency-path: collector/requirements.txt
 
-      - name: Collect news (일부 피드 실패해도 계속)
-        if: github.event_name != 'push'
+      - name: Test collector
         run: |
           python -m pip install -r collector/requirements.txt
           for t in collector/test_*.py; do (cd collector && python "$(basename $t)"); done
-          python collector/collect.py
 
-      # push가 GitHub 쪽 일시 오류 등으로 끝내 실패해도 빌드·배포는 계속한다(작업 디렉터리의 최신 data 로 사이트가 갱신됨).
-      # 실패는 아래 flag 단계와 마지막 report 작업이 '실행 실패'로 표시한다.
+      - name: Collect news (일부 피드 실패해도 계속)
+        id: collect
+        run: python collector/collect.py --channel "${{ matrix.channel }}"
+
+      # push가 GitHub 쪽 일시 오류 등으로 끝내 실패해도 빌드·배포는 계속한다(아래 아티팩트의 최신 data 로 사이트가 갱신됨).
       - name: Commit data (재시도 3회)
         id: commit
-        if: github.event_name != 'push'
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          bash scripts/commit-data.sh origin "${GITHUB_REF_NAME}"
+          bash scripts/commit-data.sh origin "${GITHUB_REF_NAME}" "data/${{ matrix.channel }}"
+
+      # 빌드 잡이 이번 수집 결과로 배포하도록 채널 데이터를 넘긴다(커밋 push가 실패한 경우에도 사이트는 갱신).
+      - uses: actions/upload-artifact@v4
+        with:
+          name: data-${{ matrix.channel }}
+          path: data/${{ matrix.channel }}
+          retention-days: 1
 
       - name: Record commit result
-        id: flag
         if: always()
         run: |
-          echo "failed=${{ steps.commit.outcome == 'failure' }}" >> "$GITHUB_OUTPUT"
           if [ "${{ steps.commit.outcome }}" = "failure" ]; then
-            echo "::error title=data 커밋 실패::저장소에 data 를 push하지 못했습니다. 이번 수집은 사이트에만 반영됩니다(다음 실행에서 같은 기사가 다시 수집되며 중복은 생기지 않음)."
+            echo "::error title=data 커밋 실패(${{ matrix.channel }})::저장소에 data/${{ matrix.channel }} 를 push하지 못했습니다. 이번 수집은 사이트에만 반영됩니다(다음 실행에서 같은 기사가 다시 수집되며 중복은 생기지 않음)."
             {
-              echo "### ⚠️ data 커밋 실패"
-              echo "- 수집·빌드·배포는 완료되어 **사이트에는 새 데이터가 반영**되었습니다."
+              echo "### ⚠️ data 커밋 실패 (${{ matrix.channel }})"
+              echo "- 수집·빌드·배포는 계속되어 **사이트에는 새 데이터가 반영**됩니다."
               echo "- 저장소에는 반영되지 않았습니다. 'Commit data' 단계 로그를 확인하세요."
             } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
           fi
+
+  build:
+    needs: collect
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # 수집 잡이 push한 data 커밋까지 포함하도록 브랜치 최신을 받는다(version.json commit = 배포된 main 커밋).
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Use collected data
+        if: github.event_name != 'push'
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: data-*
+          path: artifacts
+
+      - name: Apply collected data
+        if: github.event_name != 'push'
+        run: |
+          for d in artifacts/data-*; do
+            [ -d "$d" ] || continue
+            ch="${d#artifacts/data-}"
+            rm -rf "data/$ch" && mkdir -p "data/$ch" && cp -R "$d/." "data/$ch/"
+            echo "data/$ch ← 이번 수집 결과"
+          done
+          rm -rf artifacts
 
       - uses: actions/setup-node@v4
         with:
@@ -82,7 +122,11 @@ jobs:
 
   deploy:
     needs: build
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -90,12 +134,13 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-  # data 커밋이 끝내 실패한 경우, 배포까지 끝낸 뒤 실행을 '실패'로 표시해 알림(메일)과 빨간 표시를 남긴다.
+  # 어느 채널이든 수집·data 커밋이 실패했으면, 배포까지 끝낸 뒤 실행을 '실패'로 표시해 알림(메일)과 빨간 표시를 남긴다.
+  # (사이트 상단의 36시간 지연 안내는 status.json 의 마지막 수집 시각으로 화면에서 따로 판단한다.)
   report:
-    needs: [build, deploy]
-    if: always() && needs.build.outputs.commit_failed == 'true'
+    needs: [collect, build, deploy]
+    if: ${{ always() && needs.collect.result == 'failure' }}
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "::error title=data 커밋 실패::사이트는 갱신되었지만 저장소에 data 가 저장되지 않았습니다."
+          echo "::error title=수집 또는 data 커밋 실패::실패한 채널의 collect 잡 로그를 확인하세요. 다른 채널과 사이트 배포는 계속되었습니다(배포 결과: ${{ needs.deploy.result }})."
           exit 1
