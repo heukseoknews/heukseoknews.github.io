@@ -2,6 +2,7 @@
  *
  *   node --experimental-strip-types scripts/audit/equivalence_site.ts <옛 코드 사본 폴더>
  *
+ * 옛 쪽도 채널 구조(out/insurance/)면 같은 경로끼리 비교한다(디자인 개편 전후 비교: 헤더·푸터·홈 / 은 비교 밖, 본문 main 만).
  * 두 쪽 모두 `npm run build` 가 끝난 상태여야 한다. 브라우저 없이 확인한다:
  * 1) 배포되는 data JSON 이 바이트 단위로 같은지  2) 정적 HTML 의 본문(탭·카테고리 버튼·필터 버튼·안내 문구)이 같은지
  * 3) 같은 데이터에 옛/새 lib 함수와 옛/새 설정(카테고리 순서·보험사·기관 그룹)을 적용한 건수·필터 옵션이 같은지.
@@ -14,11 +15,15 @@ import { pathToFileURL } from 'node:url';
 const OLD = resolve(process.argv[2] ?? '');
 const NEW = resolve(import.meta.dirname, '../..');
 if (!existsSync(join(OLD, 'out/index.html')) || !existsSync(join(NEW, 'out/insurance/index.html'))) throw new Error('두 쪽 모두 npm run build 가 필요합니다.');
+/** 옛 쪽도 채널 구조인지(out/insurance/ 와 channels/insurance/ 가 있으면 같은 경로끼리 비교) */
+const SAME = existsSync(join(OLD, 'out/insurance/index.html')) && existsSync(join(OLD, 'channels/insurance'));
+const oldPage = (p: string) => (SAME ? 'insurance/' + p : p);
+console.log(SAME ? '비교: 채널 구조 ↔ 채널 구조(같은 경로)' : '비교: 옛 단일 사이트 ↔ 채널 구조');
 const errs: string[] = [];
 const check = (label: string, fn: () => void) => { try { fn(); console.log(`  ✓ ${label}`); } catch (e) { errs.push(label); console.log(`  ✗ ${label}\n${(e as Error).message.slice(0, 1500)}`); } };
 
 // 1) 배포 data
-const oldData = join(OLD, 'out/data'), newData = join(NEW, 'out/data/insurance');
+const oldData = join(OLD, SAME ? 'out/data/insurance' : 'out/data'), newData = join(NEW, 'out/data/insurance');
 const files = readdirSync(oldData).filter(f => f.endsWith('.json')).sort();
 // 이식 뒤 수집으로 기사가 늘어나므로: 옛 월 파일의 기사(id)는 새 쪽에 같은 내용으로 있어야 하고, 추가된 기사는 건수만 보고한다.
 // index·status·trends 는 수집마다 바뀌므로 비교하지 않는다.
@@ -43,7 +48,7 @@ const mainText = (html: string) => {
 };
 const pick = (html: string, re: RegExp) => [...html.matchAll(re)].map(m => m[1].replace(/<[^>]+>/g, '').replace(/<!--.*?-->/g, '').trim());
 for (const [o, n] of [['index.html', 'insurance/index.html'], ['week/index.html', 'insurance/week/index.html'], ['trends/index.html', 'insurance/trends/index.html'], ['status/index.html', 'insurance/status/index.html']]) {
-  const ho = readFileSync(join(OLD, 'out', o), 'utf8'), hn = readFileSync(join(NEW, 'out', n), 'utf8');
+  const ho = (SAME ? stripIntendedNew : (h: string) => h)(readFileSync(join(OLD, 'out', oldPage(o)), 'utf8')), hn = readFileSync(join(NEW, 'out', n), 'utf8');
   check(`${o} ↔ ${n} 본문 텍스트 동일`, () => {
     let t = mainText(ho);
     for (const [re, to] of INTENDED) t = t.replace(re, to);
@@ -60,7 +65,7 @@ type A = { id: string; source: string; source_type: string; category: string; re
 const articles: A[] = files.filter(f => /^\d{4}-\d{2}\.json$/.test(f)).flatMap(f => JSON.parse(readFileSync(join(newData, f), 'utf8')));
 const json = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
 const lib = async (root: string, name: string) => import(pathToFileURL(join(root, 'lib', name)).href);
-const sides = await Promise.all([[OLD, join(OLD, 'config')], [NEW, join(NEW, 'channels/insurance')]].map(async ([root, cfg]) => {
+const sides = await Promise.all([[OLD, join(OLD, SAME ? 'channels/insurance' : 'config')], [NEW, join(NEW, 'channels/insurance')]].map(async ([root, cfg]) => {
   const facets = await lib(root, 'facets.ts'), sources = await lib(root, 'sources.ts'), hl = await lib(root, 'highlights.ts');
   const cats = Object.keys(json(join(cfg, 'categories.json')).categories);
   const cg = Object.fromEntries(json(join(cfg, 'companies.json')).companies.map((c: { name: string; group: string }) => [c.name, c.group]));

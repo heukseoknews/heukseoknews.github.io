@@ -5,23 +5,25 @@
   "type": "module",
   "scripts": {
     "sync-data": "node scripts/sync-data.mjs",
+    "sync-fonts": "node scripts/sync-fonts.mjs",
     "version": "node scripts/make-version.mjs",
-    "dev": "npm run sync-data && npm run version && next dev",
-    "build": "npm run sync-data && npm run version && next build",
+    "dev": "npm run sync-data && npm run sync-fonts && npm run version && next dev",
+    "build": "npm run sync-data && npm run sync-fonts && npm run version && next build",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types tests/new-news.test.ts && node --experimental-strip-types tests/dates.test.ts && node --experimental-strip-types tests/highlights.test.ts && node --experimental-strip-types tests/trends.test.ts && node --experimental-strip-types tests/stale.test.ts && node --experimental-strip-types tests/read-state.test.ts && node --experimental-strip-types tests/sources.test.ts && node --experimental-strip-types tests/facets.test.ts && node --experimental-strip-types tests/version.test.ts && node --experimental-strip-types tests/channels.test.ts && node --experimental-strip-types tests/user-state.test.ts && node --experimental-strip-types tests/transfer.test.ts && bash tests/commit-data.test.sh",
+    "test": "node --experimental-strip-types tests/new-news.test.ts && node --experimental-strip-types tests/dates.test.ts && node --experimental-strip-types tests/highlights.test.ts && node --experimental-strip-types tests/trends.test.ts && node --experimental-strip-types tests/stale.test.ts && node --experimental-strip-types tests/read-state.test.ts && node --experimental-strip-types tests/sources.test.ts && node --experimental-strip-types tests/facets.test.ts && node --experimental-strip-types tests/version.test.ts && node --experimental-strip-types tests/channels.test.ts && node --experimental-strip-types tests/user-state.test.ts && node --experimental-strip-types tests/transfer.test.ts && node --experimental-strip-types tests/fonts.test.ts && bash tests/commit-data.test.sh",
     "collect": ".venv/bin/python collector/collect.py --channel insurance"
   },
   "dependencies": {
+    "lucide-react": "^0.468.0",
     "next": "15.5.6",
+    "pretendard": "1.3.9",
     "react": "19.1.1",
-    "react-dom": "19.1.1",
-    "lucide-react": "^0.468.0"
+    "react-dom": "19.1.1"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
     "@types/node": "^22.15.0",
     "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0"
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.9.3"
   }
 }

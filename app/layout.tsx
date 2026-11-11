@@ -15,5 +15,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: '#173e74' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="ko"><body>{children}</body></html>;
+  // Pretendard(자체 호스팅, scripts/sync-fonts.mjs 가 public/fonts/ 에 복사). 글자 범위별 조각만 받는다.
+  return <html lang="ko"><head><link rel="stylesheet" href="/fonts/pretendard/pretendard.css" /></head><body>{children}</body></html>;
 }
