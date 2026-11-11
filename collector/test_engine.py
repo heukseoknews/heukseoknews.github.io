@@ -113,3 +113,46 @@ bonus = Classifier({**base_cfg, 'match_mode': 'en'}, {'max': 5, 'source_type_bon
 assert bonus.source_bonus(2, 'press') == 3 and bonus.source_bonus(5, 'press') == 5 and bonus.source_bonus(2, 'media') == 2 and bonus.source_bonus(2, None) == 2
 assert ins.source_bonus(3, 'press') == 3   # 보험 채널은 가산 없음
 print('engine tests passed')
+
+# 9) 피드별 always_relevant: 키워드가 없어도 관련(재분류 때도 피드 이름으로 같은 판정). 설정 없는 보험 채널은 그대로
+assert collect.load_always_relevant(channel.config_path('insurance')) == set()
+ai_dir = channel.config_path('ai')
+assert collect.load_always_relevant(ai_dir) == {'OpenAI News', 'Google DeepMind', 'Hugging Face Blog', 'Anthropic 공식(검색)'}
+assert 'NVIDIA Blog' not in collect.load_always_relevant(ai_dir)
+
+# AI 채널 설정으로 판정(이 아래는 현재 채널을 ai 로 바꿔서 확인)
+channel.use('ai')
+collect.ALWAYS_RELEVANT.clear(); collect.ALWAYS_RELEVANT.update(collect.load_always_relevant(ai_dir))
+rel = lambda t, kind='media', feed='TechCrunch AI': collect.judge(t, kind, feed)
+assert rel('Securing our frontier model training environment', 'press', 'OpenAI News')[0] is True
+assert rel('Apertus 1.5 Release Notes', 'press', 'Hugging Face Blog')[0] is True        # 키워드 없음, 피드로 관련
+assert rel('Apertus 1.5 Release Notes')[0] is False                                     # 같은 제목도 일반 매체면 아님
+assert rel('Slice Into GFN Thursday: Phantom Blade Zero Launches on GeForce NOW', 'press', 'NVIDIA Blog')[0] is False
+
+# 10) 고객 도입 사례 패턴(OpenAI·Anthropic 피드만): 미분류 + ★2 상한(공식 출처 +1 뒤에도)
+case = rel('Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot', 'press', 'OpenAI News')
+assert case[0] is True and case[1]['category'] == '미분류' and case[1]['score'] == 2
+for t in ['How Grupo Boticário uses AI to strengthen human connections', 'SentinelOne cuts malware analysis from weeks to hours',
+          'Singapore Airlines elevates travel & work with OpenAI technology', 'How AT&T is rethinking in-house legal work with OpenAI']:
+    assert collect.load_classifier().downgraded(t, 'OpenAI News'), t
+for t in ['Introducing GPT-6.1 Terra', 'OpenAI acquires Orchestra Bio', 'How we detect frontier model misalignment',
+          'Build more responsive apps with the Decisions API', 'OpenAI models are coming to Google Cloud', 'ChatGPT Enterprise now available in AWS Marketplace']:
+    assert not collect.load_classifier().downgraded(t, 'OpenAI News'), t
+assert not collect.load_classifier().downgraded('How Specializing the Vocabulary of SLMs Can Cut Inference Cost', 'Hugging Face Blog')  # 대상 피드 아님
+
+# 11) 키워드 보정: 지난 dry-run 의 누락·오분류 사례
+launch = rel('Introducing GPT-6.1 Terra', 'press', 'OpenAI News')[1]
+assert launch['category'] == '모델·제품 출시' and launch['score'] >= 4               # introducing + gpt 계열(GPT-6.1)
+genie = collect.make_article('Genie 4: A new generation of world simulation', 'https://x/g', 'Google DeepMind', 'media', '2026-11-11T00:00:00+00:00', 'c', 'Ars Technica AI')
+assert genie['relevant'] and '월드모델·로보틱스' in genie['orgs']                     # 'world simulation', 일반 매체에서도
+assert rel('클로드 페이블 5.2, 전자기기 3종 설계…회로 수정 없이 시제품 제작', feed='AI타임스')[0] is True
+seed = collect.make_article("바이트댄스, 100회 수정해도 이미지 유지하는 '시드림 5.5' 공개", 'https://x/s', 'AI타임스', 'media', '2026-11-11T00:00:00+00:00', 'c', 'AI타임스')
+assert seed['relevant'] and seed['category'] == '모델·제품 출시' and '비전·멀티모달' in seed['orgs']
+assert rel("보스턴 다이내믹스, 바퀴 달린 '아틀라스' 공개…360도 회전 점프까지", feed='AI타임스')[0] is True
+assert rel("어도비, '파이어플라이' 기능 대거 확대… 초·중급 크리에이터 시장 조준", feed='AI타임스')[0] is True
+gem = collect.make_article('Gemini 4 Carbon: Our next frontier model', 'https://x/c', 'Google DeepMind', 'press', '2026-11-11T00:00:00+00:00', 'c', 'Google DeepMind')
+assert 'LLM·NLP' in gem['orgs']
+assert rel('World Cup final draws record viewers', feed='Ars Technica AI')[0] is False  # 단독 world 는 여전히 아님
+assert collect.GOOGLE_DELAY >= 1.2
+channel.use('insurance'); collect.ALWAYS_RELEVANT.clear()
+print('engine tests (ai) passed')

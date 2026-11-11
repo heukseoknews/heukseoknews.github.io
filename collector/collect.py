@@ -81,7 +81,7 @@ class Blocked:
 
 
 _google_lock, _google_last = threading.Lock(), [0.0]
-GOOGLE_DELAY = 0.6  # 구글 뉴스 요청 간 최소 간격(초): 쿼리가 늘어도 한꺼번에 몰리지 않게
+GOOGLE_DELAY = 1.2  # 구글 뉴스 요청 간 최소 간격(초, CLAUDE.md: 요청 간 1.2초 이상): 쿼리가 늘어도 한꺼번에 몰리지 않게
 
 
 def throttle_google(url: str) -> None:
@@ -127,6 +127,12 @@ def parse_date(entry, tz: str = DEFAULT_TZ):
 
 
 RELEVANT_DEPTS: set[str] = set()  # boards.json relevant_departments (main 에서 채움)
+ALWAYS_RELEVANT: set[str] = set()  # feeds.json rss·queries 의 always_relevant 피드 이름(main 에서 채움). 재분류 때도 피드 이름으로 같은 판정
+
+
+def load_always_relevant(config_dir: Path) -> set[str]:
+    feeds = load_json(config_dir / 'feeds.json', {})
+    return {f['name'] for f in feeds.get('rss', []) + feeds.get('queries', []) if f.get('always_relevant')}
 
 
 def judge(title: str, kind: str, name: str | None, dept: str | None = None) -> tuple[bool, dict]:
@@ -141,10 +147,12 @@ def judge(title: str, kind: str, name: str | None, dept: str | None = None) -> t
         rel = True
     if not rel and company_relevant(title):  # 보험사가 제목에 나오면 '보험' 단어가 없어도 관련(스포츠 구단 기사 등 제외)
         rel = True
+    if not rel and name in ALWAYS_RELEVANT:  # 공식 AI 블로그 등 피드 자체가 주제인 소스(feeds.json always_relevant)
+        rel = True
     if not rel:
         c = {**c, 'category': UNCATEGORIZED, 'sub_categories': [], 'score': load_classifier().score(title, UNCATEGORIZED)[0]}
     else:
-        c = {**c, 'score': load_classifier().source_bonus(c['score'], kind)}  # score.json source_type_bonus(예: 공식 발표 +1), 없으면 그대로
+        c = {**c, 'score': load_classifier().final_score(title, name, c['score'], kind)}  # 출처 유형 가산·제목 패턴 상한(설정 없으면 그대로)
     return rel, c
 
 
@@ -298,7 +306,7 @@ def reclassify(data_dir: Path) -> None:
                 rel, c = judge(a['title'], a['source_type'], a.get('feed_name'), a.get('department'))
             else:  # 예전 기사(수집 단계에서 이미 관련 있음으로 걸러진 것)는 relevant=true 로 이전
                 rel, c = True, classify(a['title'], a.get('feed_name'))
-                c = {**c, 'score': load_classifier().source_bonus(c['score'], a.get('source_type'))}
+                c = {**c, 'score': load_classifier().final_score(a['title'], a.get('feed_name'), c['score'], a.get('source_type'))}
             ent = tag_entities(a['title'], a.get('source'), c['tags'])
             new = {'category': c['category'], 'sub_categories': c['sub_categories'], 'tags': ent['tags'], 'score': c['score'], 'relevant': rel,
                    'companies': ent['companies'], 'orgs': ent['orgs']}
@@ -339,7 +347,7 @@ def rescore(data_dir: Path, big: int = 2) -> dict:
         rows = load_shard(path)
         dirty = False
         for a in rows:
-            new = load_classifier().source_bonus(classify(a['title'], a.get('feed_name'))['score'], a.get('source_type')) if a.get('relevant', True) else load_classifier().score(a['title'], UNCATEGORIZED)[0]
+            new = load_classifier().final_score(a['title'], a.get('feed_name'), classify(a['title'], a.get('feed_name'))['score'], a.get('source_type')) if a.get('relevant', True) else load_classifier().score(a['title'], UNCATEGORIZED)[0]
             old = a['score']
             before[old] = before.get(old, 0) + 1
             after[new] = after.get(new, 0) + 1
@@ -432,6 +440,7 @@ def main():
     args.data_dir = args.data_dir or str(channel.data_path(args.channel))
     boards_cfg = load_json(cdir / 'boards.json', {'boards': []})
     RELEVANT_DEPTS.update(boards_cfg.get('relevant_departments', []))
+    ALWAYS_RELEVANT.update(load_always_relevant(cdir))
     if args.reindex:
         reindex(Path(args.data_dir), cdir)
         return 0

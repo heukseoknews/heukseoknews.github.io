@@ -102,10 +102,26 @@ class Classifier:
         pk = cfg.get('press_relevance_keywords')
         self.press_re = re.compile('|'.join(map(re.escape, pk)), re.I) if pk else None
         self.hints = cfg.get('feed_hints', {})
+        # 제목 패턴 하향(예: 고객 도입 사례): 정규식이 제목(소문자)에 맞으면 미분류 + ★ max_score 상한. feeds 를 주면 그 피드에만 적용
+        dp = cfg.get('downgrade_patterns', {})
+        self.down_res = [re.compile(p) for p in dp.get('patterns', [])]
+        self.down_feeds = set(dp.get('feeds', []))
+        self.down_max = dp.get('max_score', self.max_score)
+
+    def downgraded(self, title: str, feed_name: str | None = None) -> bool:
+        if not self.down_res or (self.down_feeds and feed_name not in self.down_feeds):
+            return False
+        t = title.casefold()
+        return any(r.search(t) for r in self.down_res)
 
     def source_bonus(self, score: int, source_type: str | None) -> int:
         b = self.type_bonus.get(source_type or '', 0)
         return min(self.max_score, score + b) if b else score
+
+    def final_score(self, title: str, feed_name: str | None, score: int, source_type: str | None) -> int:
+        """관련 기사의 최종 ★: 출처 유형 가산 후, 제목 패턴 하향이면 상한. 두 설정이 없으면 score 그대로(보험 채널)."""
+        s = self.source_bonus(score, source_type)
+        return min(s, self.down_max) if self.downgraded(title, feed_name) else s
 
     def press_ok(self, title: str) -> bool:
         return self.press_re is None or bool(self.press_re.search(title))
@@ -150,6 +166,8 @@ class Classifier:
             category = UNCATEGORIZED
         sub = [c for c, _ in sorted(scores.items(), key=lambda x: -x[1]) if c != category and scores[c] > 0]
         score, _ = self.score(title, category)
+        if self.downgraded(title, feed_name):  # 고객 도입 사례 등: 카테고리 없이 낮은 ★
+            category, sub, score = UNCATEGORIZED, [], min(score, self.down_max)
         return {'category': category, 'sub_categories': sub, 'tags': tags, 'score': score, 'relevant': relevant}
 
     # ---- 중요도(★) ----
