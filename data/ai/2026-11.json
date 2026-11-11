@@ -19,6 +19,265 @@
   "orgs": []
  },
  {
+  "id": "038f46a4355e8569",
+  "title": "With $720M round, Britain’s Fractile gets a leg up in the race for AI chips",
+  "url": "https://techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T19:34:55+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "chip"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "f2c9646eac9d4c1a",
+  "title": "Congress to call Jensen Huang in to answer for alleged Chinese spy affair",
+  "url": "https://techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T19:22:22+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "congress"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "bb27561db5d10d50",
+  "title": "Taiwan’s chipmaking giant TSMC to invest $1B in Anthropic, OpenAI",
+  "url": "https://arstechnica.com/ai/2026/11/taiwans-chipmaking-giant-tsmc-to-invest-1b-in-anthropic-openai/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-11T18:16:40+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "invest"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic",
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "1e2d7b9998cc9ff1",
+  "title": "Big Walk used AI to fix a bug. Now the indie gaming world is having a reckoning.",
+  "url": "https://arstechnica.com/gaming/2026/11/big-walk-used-ai-to-fix-a-bug-now-the-indie-gaming-world-is-having-a-reckoning/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-11T17:37:32+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "64509ca33b7d72c4",
+  "title": "Worse Together: How Performance Breaks Down in Multi-User Multi-Agent Teams",
+  "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5mZm01S0Via2g3cWczVVB5YlNSMlI1a2FKekVZY0liWmMzQndHSnIyNVd2RnlLUWFWb3ItWG1KZVZQY2Q3aUlGeGM2UzRDb0Qxc3dtWEFQZkN3TDdmMDJoam1R?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-11T16:43:59+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "236705559d2866e2",
+  "title": "Is Jensen Huang’s bad behavior more commonplace than it seems?",
+  "url": "https://techcrunch.com/2026/11/11/is-jensen-huangs-bad-behavior-more-commonplace-than-it-seems/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T16:16:07+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "bed7979fe4378809",
+  "title": "OpenAI’s quarterly revenue reportedly crosses $10B for the first time",
+  "url": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T16:14:44+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "revenue"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "ba0fcf4e325b4115",
+  "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+  "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-11-11T15:00:15+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "34b5b4703a4ee290",
+  "title": "Databricks’ new AI agent tells CEO Ali Ghodsi the unvarnished truth",
+  "url": "https://techcrunch.com/2026/11/11/databricks-new-ai-agent-tells-ceo-ali-ghodsi-the-unvarnished-truth/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T15:00:00+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "agent",
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "7db3dbf05615c3ed",
+  "title": "Google DeepMind just mathematically verified key parts of Signal",
+  "url": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-11T14:08:57+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "87209848417b63cf",
+  "title": "Plurai wants to help AI agents work better using the same approach that helped get self-driving cars to roads",
+  "url": "https://techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T14:00:00+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP",
+   "월드모델·로보틱스"
+  ]
+ },
+ {
+  "id": "fdae674c6e74db23",
+  "title": "화웨이, AI가 가정 전력 생산·저장·소비 최적화하는 에너지 시스템 ‘루테라 S2’ 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42698",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-11T12:25:23+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "공개",
+   "최적화"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "00c132db98ec4512",
+  "title": "셀바스AI, 한국어·영어를 하나의 목소리로 읽는 AI 음성합성 상용화…예스24 전자책에 적용",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42697",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-11T12:12:45+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "적용"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "음성·오디오"
+  ]
+ },
+ {
   "id": "80d4f9004cde2f01",
   "title": "바이두, 초당 200토큰 생성하는 ‘어니 5.5 플래시’ 공개…코딩·3D 모델링·AI 에이전트 겨냥",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42696",
@@ -1122,6 +1381,42 @@
   "tags": [],
   "score": 2,
   "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "11568aa8dfcf9a3c",
+  "title": "Token Pooling-Aware Training for Multi-Vector Embedding Models",
+  "url": "https://huggingface.co/blog/token-pooling",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-11T00:00:00+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "55ff14dc4213127d",
+  "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+  "url": "https://openai.com/index/jiostar-vijay-seshadri",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-11T00:00:00+00:00",
+  "collected_at": "2026-11-11T19:49:49.916990+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
   "orgs": []
