@@ -53,7 +53,9 @@ with tempfile.TemporaryDirectory() as d:
     res = {'금융위원회 RSS': {'ok': False, 'error': 'HTTPError: 503'}, '금융위원회 게시판': {'ok': True, 'kept': 3, 'entries': 20, 'source': '금융위원회', 'blocked': {'Vietnam.vn': 2}},
            '보험 쿼리': {'ok': True, 'kept': 100, 'entries': 100}, '금융감독원 게시판': {'ok': False, 'error': 'ValueError: 구조 변경 의심', 'source': '금융감독원'}}
     names = ['금융위원회 RSS', '보험 쿼리', '금융위원회 게시판', '금융감독원 게시판']
-    collect.write_status(Path(d), '2026-11-11T00:00:00+00:00', res, 1, 0, names, {'보험 쿼리'}, {'금융위원회 게시판', '금융감독원 게시판'})
+    subs = collect.load_substitutes(collect.channel.config_path('insurance'))  # 대체 표시 목록은 채널 설정(feeds.json rss.substitute)
+    assert subs == {'금융위원회 RSS': '금융위원회'}
+    collect.write_status(Path(d), '2026-11-11T00:00:00+00:00', res, 1, 0, names, {'보험 쿼리'}, {'금융위원회 게시판', '금융감독원 게시판'}, subs)
     st = json.loads((Path(d) / 'status.json').read_text(encoding='utf-8'))
     assert st['sources']['금융위원회 RSS']['note'] == '점검 중(게시판으로 대체 수집)'
     assert st['last_run']['failed'] == ['금융감독원 게시판'] and st['last_run']['noted'] == ['금융위원회 RSS'], '구조 변경 의심은 실패로 남음'

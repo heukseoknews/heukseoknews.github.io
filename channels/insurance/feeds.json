@@ -1,6 +1,12 @@
 {
-  "_comment": "구글 뉴스 검색 피드(쿼리당 최대 100건). 쿼리는 25개 이하로 유지한다. 상한(100건)에 닿은 쿼리는 status 에 '쿼리 분할 필요'로 표시되니 더 쪼갠다. source: 고정 출처명(없으면 기사 제목 끝의 '- 언론사'에서 추출). max_age_days: 검색(구글 뉴스) 피드 기사는 발행 후 이 일수를 넘으면 저장하지 않는다(게시판 공식 글과 직접 RSS에는 적용하지 않음). when: 검색 기간(기본 7d). 기사가 많아 상한(100건)에 닿는 쿼리는 쿼리를 쪼개거나 기간을 3d 로 줄인다(수집이 매일 돌아 겹침이 충분하다).",
+  "_comment": "rss: 직접 RSS(이름·url·type·고정 source, substitute=점검 중이면 이 출처의 게시판이 대신함, timezone=타임존 없는 시각의 해석, 기본 default_timezone 또는 Asia/Seoul). queries: 구글 뉴스 검색 피드(쿼리당 최대 100건). 쿼리는 25개 이하로 유지한다. 상한(100건)에 닿은 쿼리는 status 에 '쿼리 분할 필요'로 표시되니 더 쪼갠다. source: 고정 출처명(없으면 기사 제목 끝의 '- 언론사'에서 추출). max_age_days: 검색(구글 뉴스) 피드 기사는 발행 후 이 일수를 넘으면 저장하지 않는다(게시판 공식 글과 직접 RSS에는 적용하지 않음). when: 검색 기간(기본 7d). 기사가 많아 상한(100건)에 닿는 쿼리는 쿼리를 쪼개거나 기간을 3d 로 줄인다(수집이 매일 돌아 겹침이 충분하다).",
   "max_age_days": 180,
+  "rss": [
+    {"name": "보험매일", "url": "https://www.fins.co.kr/rss/allArticle.xml", "type": "media", "source": "보험매일"},
+    {"name": "보험저널", "url": "https://www.insjournal.co.kr/rss/allArticle.xml", "type": "media", "source": "보험저널"},
+    {"name": "한국보험신문", "url": "https://www.insnews.co.kr/rss/allArticle.xml", "type": "media", "source": "한국보험신문"},
+    {"name": "금융위원회 RSS", "url": "https://www.fsc.go.kr/about/fsc_bbs_rss/?fid=0111", "type": "press", "source": "금융위원회", "substitute": "금융위원회"}
+  ],
   "queries": [
     {
       "name": "주요 경제지·보험",

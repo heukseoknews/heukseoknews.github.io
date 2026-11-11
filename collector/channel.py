@@ -4,6 +4,7 @@
 collect.py 가 시작할 때 use() 로 채널(또는 --config-dir)을 정하면 모든 설정이 그 경로에서 읽힌다.
 """
 from __future__ import annotations
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,3 +36,8 @@ def config_dir() -> Path:
 def slug() -> str:
     return _state['slug']
 
+
+def timezone(default: str = 'Asia/Seoul') -> str:
+    """채널 channel.json 의 timezone(주별 집계 등 날짜 기준). 없으면 Asia/Seoul."""
+    p = config_dir() / 'channel.json'
+    return json.loads(p.read_text(encoding='utf-8')).get('timezone', default) if p.exists() else default

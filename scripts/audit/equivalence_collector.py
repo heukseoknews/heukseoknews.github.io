@@ -45,6 +45,16 @@ def compare(a: Path, b: Path, label: str) -> list[str]:
     return errs
 
 
+def compare_port(old: Path, new: Path) -> list[str]:
+    """이식 시점 데이터(옛 저장소) 대 지금 데이터: 옛 기사 id 는 모든 필드가 같아야 하고, 이후 수집으로 늘어난 기사는 건수만 보고한다."""
+    rows = lambda d: {a['id']: a for p in sorted(d.glob('????-??.json')) for a in json.loads(p.read_text(encoding='utf-8'))}
+    o, n = rows(old), rows(new)
+    errs = [f'[이식 데이터] {i} 필드 다름: {sorted(k for k in set(o[i]) | set(n[i]) if o[i].get(k) != n[i].get(k))}' for i in o if i in n and o[i] != n[i]]
+    errs += [f'[이식 데이터] {i} 가 지금 데이터에 없음' for i in o if i not in n]
+    print(f'[이식 데이터] 이식 시점 {len(o)}건 비교, 차이 {len(errs)}건 · 이후 수집으로 추가 {len(set(n) - set(o))}건(지금 {len(n)}건)')
+    return errs
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--old', required=True, type=Path, help='옛 코드 사본(config/, collector/, data/ 가 있는 폴더)')
@@ -58,7 +68,7 @@ def main():
     errs: list[str] = []
 
     # 0) 이식한 데이터가 옛 데이터와 같은지
-    errs += compare(old / 'data', src, '이식 데이터')
+    errs += compare_port(old / 'data', src)
 
     # 1) 그대로 재분류
     for side in ('old', 'new'):

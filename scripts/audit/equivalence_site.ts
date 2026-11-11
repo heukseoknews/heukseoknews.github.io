@@ -20,14 +20,20 @@ const check = (label: string, fn: () => void) => { try { fn(); console.log(`  �
 // 1) 배포 data
 const oldData = join(OLD, 'out/data'), newData = join(NEW, 'out/data/insurance');
 const files = readdirSync(oldData).filter(f => f.endsWith('.json')).sort();
-check(`배포 data 파일 목록·내용 동일 (${files.length}개)`, () => {
-  assert.deepEqual(readdirSync(newData).sort(), files);
-  for (const f of files) assert.ok(readFileSync(join(oldData, f)).equals(readFileSync(join(newData, f))), f);
+// 이식 뒤 수집으로 기사가 늘어나므로: 옛 월 파일의 기사(id)는 새 쪽에 같은 내용으로 있어야 하고, 추가된 기사는 건수만 보고한다.
+// index·status·trends 는 수집마다 바뀌므로 비교하지 않는다.
+const months = files.filter(f => /^\d{4}-\d{2}\.json$/.test(f));
+check(`배포 data: 옛 기사 그대로 (월 파일 ${months.length}개)`, () => {
+  const byId = (dir: string) => new Map(readdirSync(dir).filter(f => /^\d{4}-\d{2}\.json$/.test(f)).flatMap(f => JSON.parse(readFileSync(join(dir, f), 'utf8'))).map((a: { id: string }) => [a.id, JSON.stringify(a)]));
+  const o = byId(oldData), n = byId(newData);
+  for (const [id, a] of o) assert.equal(n.get(id), a, `기사 ${id} 다름 또는 없음`);
+  console.log(`    옛 기사 ${o.size}건 동일 · 이후 추가 ${n.size - o.size}건`);
 });
 
 // 2) 정적 HTML 본문(<main class="shell">). 헤더·푸터(브랜드)는 의도적으로 바뀌었으므로 제외.
-//    의도한 문구 변경: 설정 경로 config/ → channels/insurance/
+//    의도한 변경: 설정 경로 config/ → channels/insurance/, 페이지별 화면 밖 제목(h1.srOnly, 헤더 1단계)
 const INTENDED: [RegExp, string][] = [[/config\/keywords\.json/g, 'channels/insurance/keywords.json']];
+const stripIntendedNew = (html: string) => html.replace(/<h1 class="srOnly">[\s\S]*?<\/h1>/g, '');
 const mainText = (html: string) => {
   const m = /<main class="shell"[^>]*>([\s\S]*?)<\/main>/.exec(html);
   if (!m) throw new Error('main 없음');
@@ -41,7 +47,7 @@ for (const [o, n] of [['index.html', 'insurance/index.html'], ['week/index.html'
   check(`${o} ↔ ${n} 본문 텍스트 동일`, () => {
     let t = mainText(ho);
     for (const [re, to] of INTENDED) t = t.replace(re, to);
-    assert.equal(mainText(hn), t);
+    assert.equal(mainText(stripIntendedNew(hn)), t);
   });
   check(`${o} ↔ ${n} 탭·카테고리·필터 버튼 동일`, () => {
     for (const re of [/<nav class="primary"[^>]*>([\s\S]*?)<\/nav>/g, /<nav class="categories"[^>]*>([\s\S]*?)<\/nav>/g, /class="sourceBtn[^"]*"[^>]*>([\s\S]*?)<svg/g, /<label class="check"[^>]*>([\s\S]*?)<\/label>/g, /placeholder="([^"]*)"/g, /<option value="[^"]*">([^<]*)</g])

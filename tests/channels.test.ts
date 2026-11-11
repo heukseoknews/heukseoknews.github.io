@@ -22,6 +22,10 @@ for (const d of dirs) {
   assert.deepEqual(Object.keys(c.filters).sort(), ['companies', 'orgs', 'sources']);
   assert.equal(c.schedule_utc, cron, `${d}: schedule_utc 와 deploy.yml cron 이 다르다`);
   assert.doesNotThrow(() => new Intl.DateTimeFormat(c.locale, { timeZone: c.timezone }));
+  // 화면의 날짜 키(lib/dates.ts KST_MS)·이름 정렬(lib/facets.ts, lib/sources.ts 'ko')은 아직 KST·한국어 고정이다.
+  // 다른 timezone·locale 채널을 만들려면 화면 코드를 먼저 일반화해야 하므로 여기서 막는다(수집기는 channel.json timezone 을 이미 읽는다).
+  assert.equal(c.timezone, 'Asia/Seoul', `${d}: 화면 날짜 코드가 KST 고정 — 다른 타임존은 lib/dates.ts 일반화 후`);
+  assert.ok(c.locale.startsWith('ko'), `${d}: 화면 정렬이 'ko' 고정 — 다른 locale 은 lib/facets.ts 일반화 후`);
   const t = JSON.parse(readFileSync(`channels/${d}/theme.json`, 'utf8'));
   assert.equal(themeCss(t.vars).split(';').length, Object.keys(t.vars).length, `${d}/theme.json: 허용되지 않는 변수·값`);
   for (const f of ['categories', 'companies', 'orgs', 'score', 'feeds', 'boards', 'keywords']) JSON.parse(readFileSync(`channels/${d}/${f}.json`, 'utf8'));

@@ -28,11 +28,17 @@ class _Rule:
         return m.start() if m else -1
 
 
+def _match_mode(config_dir: Path) -> str:
+    """분류 규칙(categories.json)의 match_mode 를 개체 매칭에도 쓴다(기본 'ko')."""
+    p = config_dir / 'categories.json'
+    return json.loads(p.read_text(encoding='utf-8')).get('match_mode', 'ko') if p.exists() else 'ko'
+
+
 class Entities:
-    def __init__(self, items: list[dict]):
+    def __init__(self, items: list[dict], mode: str = 'ko'):
         self.items = []
         for it in items:
-            ms = [(_Rule(a) if isinstance(a, dict) else Matcher(a)) for a in it.get('aliases', [])]
+            ms = [(_Rule(a) if isinstance(a, dict) else Matcher(a, mode)) for a in it.get('aliases', [])]
             names = [a['t'] if isinstance(a, dict) else a for a in it.get('aliases', [])]
             self.items.append({'name': it['name'], 'group': it.get('group'), 'matchers': ms, 'aliases': names, 'sources': set(it.get('sources', []))})
         self.alias_keys = {_squash(a) for it in self.items for a in it['aliases'] + [it['name']]}
@@ -62,7 +68,8 @@ def load(config_dir: str | None = None) -> tuple['Entities', 'Entities']:
 def _load(config_dir: str) -> tuple['Entities', 'Entities']:
     d = Path(config_dir)
     rd = lambda n, k: json.loads((d / n).read_text(encoding='utf-8')).get(k, []) if (d / n).exists() else []
-    return Entities(rd('companies.json', 'companies')), Entities(rd('orgs.json', 'orgs'))
+    mode = _match_mode(d)
+    return Entities(rd('companies.json', 'companies'), mode), Entities(rd('orgs.json', 'orgs'), mode)
 
 
 def tag_entities(title: str, source: str | None, tags: list[str]) -> dict:
@@ -98,7 +105,8 @@ def _context_matchers() -> tuple[list, list]:
 @lru_cache(maxsize=None)
 def _context_matchers_at(config_dir: str) -> tuple[list, list]:
     c = _context_cfg_at(config_dir)
-    mk = lambda items: [_Rule(i) if isinstance(i, dict) else Matcher(i) for i in items]
+    mode = _match_mode(Path(config_dir))
+    mk = lambda items: [_Rule(i) if isinstance(i, dict) else Matcher(i, mode) for i in items]
     return mk(c.get('exclude_words', [])), mk(c.get('business_words', []))
 
 

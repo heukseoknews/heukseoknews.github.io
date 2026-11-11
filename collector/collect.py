@@ -9,6 +9,7 @@ import argparse, hashlib, html, json, logging, re, sys, threading, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 
 import feedparser
@@ -26,18 +27,15 @@ FILTER_SAMPLES = 10  # status.json에 남기는 걸러진 제목 샘플 수
 UA = 'ActuaryNewsHub/3.0 (personal RSS reader; metadata only)'
 
 
-def google(q: str, when: str = '7d') -> str:
-    return 'https://news.google.com/rss/search?q=' + quote(q + f' when:{when}') + '&hl=ko&gl=KR&ceid=KR:ko'
+# 구글 뉴스 검색 언어(쿼리별 lang, 없으면 feeds.json google_lang, 없으면 ko)
+GOOGLE_LANG = {'ko': 'hl=ko&gl=KR&ceid=KR:ko', 'en': 'hl=en-US&gl=US&ceid=US:en'}
+DEFAULT_TZ = 'Asia/Seoul'  # 타임존 없는 피드 시각의 기본 해석(피드별 timezone, feeds.json default_timezone 으로 바꿈)
 
 
-# 직접 RSS: (feed_name, url, source_type, 고정 출처명 or None). 구글 검색 피드는 feeds.json, 게시판은 boards.json(채널 설정 폴더).
-RSS_SOURCES = [
-    ('보험매일', 'https://www.fins.co.kr/rss/allArticle.xml', 'media', '보험매일'),
-    ('보험저널', 'https://www.insjournal.co.kr/rss/allArticle.xml', 'media', '보험저널'),
-    ('한국보험신문', 'https://www.insnews.co.kr/rss/allArticle.xml', 'media', '한국보험신문'),
-    ('금융위원회 RSS', 'https://www.fsc.go.kr/about/fsc_bbs_rss/?fid=0111', 'press', '금융위원회'),
-]
-RSS_SUBSTITUTE = {'금융위원회 RSS': '금융위원회'}  # 점검(503) 중이면 같은 기관의 게시판 수집이 대체한다는 참고 표시용
+def google(q: str, when: str = '7d', lang: str = 'ko') -> str:
+    if lang not in GOOGLE_LANG:
+        raise ValueError(f'구글 뉴스 lang 은 {sorted(GOOGLE_LANG)} 중 하나: {lang}')
+    return 'https://news.google.com/rss/search?q=' + quote(q + f' when:{when}') + '&' + GOOGLE_LANG[lang]
 
 
 def load_json(path: Path, default):
@@ -48,13 +46,23 @@ def load_json(path: Path, default):
 
 
 def load_sources(config_dir: Path) -> tuple[list, set, int | None]:
-    """(RSS+구글 검색 피드 행 목록, 구글 검색 피드 이름 집합, 검색 피드 기사 최대 나이(일))."""
-    rows, queries = list(RSS_SOURCES), set()
+    """(직접 RSS + 구글 검색 피드 행 목록, 구글 검색 피드 이름 집합, 검색 피드 기사 최대 나이(일)).
+    행 = (feed_name, url, source_type, 고정 출처명 or None, 옵션{timezone}). 직접 RSS 는 feeds.json 의 rss, 검색은 queries."""
     feeds = load_json(config_dir / 'feeds.json', {})
+    tz_default = feeds.get('default_timezone', DEFAULT_TZ)
+    lang_default = feeds.get('google_lang', 'ko')
+    rows, queries = [], set()
+    for f in feeds.get('rss', []):
+        rows.append((f['name'], f['url'], f.get('type', 'media'), f.get('source'), {'timezone': f.get('timezone', tz_default)}))
     for q in feeds.get('queries', []):
-        rows.append((q['name'], google(q['q'], q.get('when', '7d')), q.get('type', 'media'), q.get('source')))
+        rows.append((q['name'], google(q['q'], q.get('when', '7d'), q.get('lang', lang_default)), q.get('type', 'media'), q.get('source'), {'timezone': tz_default}))
         queries.add(q['name'])
     return rows, queries, feeds.get('max_age_days')
+
+
+def load_substitutes(config_dir: Path) -> dict[str, str]:
+    """직접 RSS 가 점검(503 등) 중일 때 같은 기관의 게시판 수집이 대신한다는 '참고' 표시용: {RSS 이름: 게시판 출처명}."""
+    return {f['name']: f['substitute'] for f in load_json(config_dir / 'feeds.json', {}).get('rss', []) if f.get('substitute')}
 
 
 class Blocked:
@@ -85,7 +93,6 @@ def throttle_google(url: str) -> None:
         _google_last[0] = time.time()
 
 
-PRESS_RE = re.compile('보험|실손|K-ICS|지급여력|계리|보험금|보험료|CSM', re.I)
 TRACKING = re.compile(r'^(utm_.*|fbclid|gclid|oc|ref|from|cid|ocid|mc_.*)$', re.I)
 
 
@@ -107,16 +114,15 @@ def article_id(url: str) -> str:
 HAS_TZ = re.compile(r'(Z|GMT|UTC|[+-]\d{2}:?\d{2})\s*$', re.I)
 
 
-def parse_date(entry):
-    """UTC ISO 반환. 국내 전문지 RSS는 타임존 없는 'YYYY-MM-DD HH:MM:SS'(KST)라 -9h 보정."""
+def parse_date(entry, tz: str = DEFAULT_TZ):
+    """UTC ISO 반환. 시각에 타임존이 없으면(국내 전문지 RSS의 'YYYY-MM-DD HH:MM:SS') 피드 설정 tz 의 현지 시각으로 본다(기본 KST)."""
     t = entry.get('published_parsed') or entry.get('updated_parsed')
     if not t:
         return None
-    dt = datetime(*t[:6], tzinfo=timezone.utc)
     raw = entry.get('published') or entry.get('updated') or ''
-    if not HAS_TZ.search(raw):
-        dt -= timedelta(hours=9)
-    return dt.isoformat()
+    if HAS_TZ.search(raw):
+        return datetime(*t[:6], tzinfo=timezone.utc).isoformat()
+    return datetime(*t[:6], tzinfo=ZoneInfo(tz)).astimezone(timezone.utc).isoformat()
 
 
 RELEVANT_DEPTS: set[str] = set()  # boards.json relevant_departments (main 에서 채움)
@@ -126,7 +132,7 @@ def judge(title: str, kind: str, name: str | None, dept: str | None = None) -> t
     """(관련도, 분류 결과). 관련도 낮은 기사는 버리지 않고 relevant=False·미분류로 저장한다."""
     c = classify(title, name)
     rel = bool(c['relevant'])
-    if kind == 'press' and not PRESS_RE.search(title):
+    if kind == 'press' and not load_classifier().press_ok(title):  # 공식 발표 글의 관련도 조건(categories.json press_relevance_keywords)
         rel = False
     if rel and sports_team_title(title):  # 보험사와 이름이 같은 구단·연예 기사는 관련 없음(보험 사업 단서가 있으면 유지)
         rel = False
@@ -154,7 +160,8 @@ def make_article(title, link, source, kind, published, now_iso, name, dept=None)
 
 def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, blocked=None, max_age_days=None):
     """max_age_days: 지정하면 발행 후 그 일수를 넘은 기사는 저장하지 않는다(검색 피드용)."""
-    name, url, kind, fixed = row
+    name, url, kind, fixed, *rest = row
+    tz = (rest[0] if rest else {}).get('timezone', DEFAULT_TZ)
     throttle_google(url)
     r = requests.get(url, timeout=15, headers={'User-Agent': UA, 'Accept': 'application/rss+xml, application/xml, text/xml'})
     r.raise_for_status()
@@ -170,7 +177,7 @@ def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, bloc
         link = (e.get('link') or '').strip()
         if not raw or not link.startswith(('http://', 'https://')):
             skipped['no_link'] += 1; continue
-        published = parse_date(e)
+        published = parse_date(e, tz)
         if not published:
             skipped['no_date'] += 1; continue
         dates.append(published)
@@ -316,7 +323,7 @@ def reindex(data_dir: Path, config_dir: Path) -> None:
     months = sorted((p.stem for p in data_dir.glob('????-??.json')), reverse=True)
     info = [{'month': m, 'count': len(load_shard(data_dir / f'{m}.json')), 'bytes': (data_dir / f'{m}.json').stat().st_size} for m in months]
     idx_path.write_text(json.dumps({'updated_at': updated, 'months': info}, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    write_trends(data_dir, config_dir / 'keywords.json')
+    write_trends(data_dir, config_dir / 'keywords.json', channel.timezone())
     logging.info('index·trends 재생성: 월 파일 %d개', len(months))
 
 
@@ -355,7 +362,7 @@ def skipped_stats(stats: dict) -> dict:
             'oldest': stats['oldest'], 'newest': stats['newest']}
 
 
-def write_status(data_dir: Path, started: str, results: dict, total: int, added: int, names: list[str], queries: set[str], boards: set[str]):
+def write_status(data_dir: Path, started: str, results: dict, total: int, added: int, names: list[str], queries: set[str], boards: set[str], substitutes: dict[str, str] | None = None):
     """실행 결과 저장. 이번에 실패해도 이전의 last_success_at은 유지한다."""
     path = data_dir / 'status.json'
     try:
@@ -385,7 +392,7 @@ def write_status(data_dir: Path, started: str, results: dict, total: int, added:
         }
         for src, n in r.get('blocked', {}).items():
             blocked_total[src] = blocked_total.get(src, 0) + n
-    for name, org in RSS_SUBSTITUTE.items():  # RSS 점검 중이면 같은 기관의 게시판 수집이 성공했는지 보고 '참고' 로 표시
+    for name, org in (substitutes or {}).items():  # RSS 점검 중이면 같은 기관의 게시판 수집이 성공했는지 보고 '참고' 로 표시
         s_ = sources.get(name)
         if s_ and not s_['ok'] and any(sources[b]['ok'] for b in boards if b in sources and results.get(b, {}).get('source') == org):
             s_['note'] = '점검 중(게시판으로 대체 수집)'
@@ -479,9 +486,9 @@ def main():
         logging.info('후보 %d건, 신규 저장 %d건', len(articles), added)
     if not args.dry_run:
         names = [r[0] for r in sources] + [b['name'] for b in boards_cfg['boards']]
-        write_status(Path(args.data_dir), now_iso, results, len(articles), added, names, queries, {b['name'] for b in boards_cfg['boards']})
+        write_status(Path(args.data_dir), now_iso, results, len(articles), added, names, queries, {b['name'] for b in boards_cfg['boards']}, load_substitutes(cdir))
         try:
-            write_trends(Path(args.data_dir), cdir / 'keywords.json')
+            write_trends(Path(args.data_dir), cdir / 'keywords.json', channel.timezone())
         except Exception as e:  # 집계 실패가 수집을 막지 않는다
             logging.warning('trends 집계 실패: %s', e)
     logging.info('실패 피드: %s', ', '.join(failed) or '없음')

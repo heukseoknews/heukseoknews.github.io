@@ -12,19 +12,35 @@ TIERS = {'strong': 3, 'company': 2, 'normal': 1}
 DEFAULT_CONFIG = channel.config_path() / 'categories.json'  # 기본 채널(insurance) 경로. 실제 로딩은 현재 채널(channel.config_dir())
 DEFAULT_SCORE = DEFAULT_CONFIG.with_name('score.json')
 _ASCII = re.compile(r'^[a-z0-9\- ]+$')
+# match_mode 'en'(영어·혼합 채널): 영숫자에 . + / 가 섞인 토큰(gpt-4.5, c++)도 단어 경계로 비교한다
+_ASCII_EN = re.compile(r'^[a-z0-9][a-z0-9.+/\- ]*$')
+MATCH_MODES = ('ko', 'en')
 
 
 def _squash(s: str) -> str:
     return re.sub(r'\s+', '', s.casefold())
 
 
-class Matcher:
-    """한글 등: 띄어쓰기 무시 부분일치 / 영문·숫자만 있는 키워드: 영숫자 단어 경계 일치."""
+def _en_pattern(k: str) -> re.Pattern:
+    """영어 키워드: 단어 경계 + 띄어쓰기·하이픈 변형(open source = open-source = opensource) + 끝이 영문자면 복수형(s/es).
+    뒤에 영숫자나 '.숫자'가 오면 불일치(gpt-4.5 가 GPT-4.55 에 걸리지 않게)."""
+    body = re.sub(r'(?:\\ |\\-)+', r'[\\s\\-]*', re.escape(k))
+    plural = r'(?:e?s)?' if k[-1].isalpha() else ''
+    return re.compile(r'(?<![a-z0-9])' + body + plural + r'(?![a-z0-9]|\.\d)')
 
-    def __init__(self, keyword: str):
+
+class Matcher:
+    """한글 등: 띄어쓰기 무시 부분일치 / 영문·숫자만 있는 키워드: 영숫자 단어 경계 일치.
+    mode 'ko'(기본, 보험 채널): 지금까지의 규칙 그대로. mode 'en': 영어 키워드에 복수형·하이픈 변형·버전 번호 경계를 적용(한글 키워드는 같음)."""
+
+    def __init__(self, keyword: str, mode: str = 'ko'):
+        if mode not in MATCH_MODES:
+            raise ValueError(f'match_mode 는 {MATCH_MODES} 중 하나: {mode}')
         self.keyword = keyword
         k = keyword.casefold()
-        if _ASCII.match(k):
+        if mode == 'en' and _ASCII_EN.match(k):
+            self.kind, self.pat = 'word', _en_pattern(k.strip())
+        elif mode == 'ko' and _ASCII.match(k):
             self.kind, self.pat = 'word', re.compile(r'(?<![a-z0-9])' + re.escape(k).replace(r'\ ', r'\s*') + r'(?![a-z0-9])')
         else:
             self.kind, self.pat = 'sub', _squash(keyword)
@@ -50,27 +66,49 @@ class Classifier:
         self.cfg = cfg
         self.score_cfg = score_cfg
         self.priority = cfg['priority']
+        self.mode = mode = cfg.get('match_mode', 'ko')
         self.rules: dict[str, list[tuple[Matcher, int]]] = {}
         for cat, spec in cfg['categories'].items():
-            items = [(Matcher(k), w) for tier, w in TIERS.items() for k in spec.get(tier, [])]
-            items += [(Matcher(k), w) for k, w in spec.get('weighted', {}).items()]
+            items = [(Matcher(k, mode), w) for tier, w in TIERS.items() for k in spec.get(tier, [])]
+            items += [(Matcher(k, mode), w) for k, w in spec.get('weighted', {}).items()]
             self.rules[cat] = items
-        m = lambda ks: [Matcher(k) for k in ks]
-        self.exclude, self.unless = m(cfg['exclude']['keywords']), m(cfg['exclude']['unless'])
-        self.combos = [(m(x['any']), m(x['with'])) for x in cfg['exclude'].get('combos', [])]
+        m = lambda ks: [Matcher(k, mode) for k in ks]
+        ex = cfg.get('exclude', {})
+        self.exclude, self.unless = m(ex.get('keywords', [])), m(ex.get('unless', []))
+        self.combos = [(m(x['any']), m(x['with'])) for x in ex.get('combos', [])]
+        # 점수 산식 항목은 모두 선택(없으면 그 규칙을 쓰지 않음). 보험 채널은 전부 설정되어 있다.
         sc = score_cfg
-        self.low = m(sc['low_importance']['keywords'])
-        self.low_max = sc['low_importance']['max_score']
-        self.core_groups = [m(g) for g in sc['core_terms']['groups']]
-        self.core_add = {int(k): v for k, v in sc['core_terms']['add_by_count'].items()}
-        self.core_ignore = [_squash(w) for w in sc['core_terms'].get('ignore_inside', [])]
-        self.thresholds = sorted((t['top_at_least'], t['add']) for t in sc['keyword_thresholds'])
-        mc = sc['market_cap']
-        self.market_cats, self.market_max = set(mc['categories']), mc['max_score']
+        self.base, self.max_score = sc.get('base', 2), sc.get('max', 5)
+        self.excluded_score = sc.get('excluded_score', self.base)
+        low = sc.get('low_importance', {})
+        self.low, self.low_max = m(low.get('keywords', [])), low.get('max_score', self.max_score)
+        core = sc.get('core_terms', {})
+        self.core_groups = [m(g) for g in core.get('groups', [])]
+        self.core_add = {int(k): v for k, v in core.get('add_by_count', {}).items()}
+        self.core_ignore = [_squash(w) for w in core.get('ignore_inside', [])]
+        self.thresholds = sorted((t['top_at_least'], t['add']) for t in sc.get('keyword_thresholds', []))
+        mc = sc.get('market_cap', {})
+        self.market_cats, self.market_max = set(mc.get('categories', [])), mc.get('max_score', self.max_score)
         company = [k for cat in mc.get('insurance_company_categories', []) for k in cfg['categories'].get(cat, {}).get('company', [])]
-        self.insurance_terms = m(mc['insurance_terms'] + company)
-        self.relevance = [_squash(k) for k in cfg['relevance_keywords']]
+        self.insurance_terms = m(mc.get('insurance_terms', []) + company)
+        # 관련도: 'substring'(기본, 보험) = 띄어쓰기 지운 제목 부분일치 / 'word' = Matcher(영어 단어 경계). match_mode 'en' 이면 기본 'word'
+        self.relevance_mode = cfg.get('relevance_mode', 'word' if mode == 'en' else 'substring')
+        if self.relevance_mode not in ('substring', 'word'):
+            raise ValueError(f'relevance_mode: {self.relevance_mode}')
+        self.relevance = [_squash(k) for k in cfg.get('relevance_keywords', [])]
+        self.relevance_m = m(cfg.get('relevance_keywords', []))
+        # 공식 발표(press) 기사의 관련도 조건: 제목에 이 낱말 중 하나가 없으면 관련도 낮음. 키가 없으면 조건 없음
+        pk = cfg.get('press_relevance_keywords')
+        self.press_re = re.compile('|'.join(map(re.escape, pk)), re.I) if pk else None
         self.hints = cfg.get('feed_hints', {})
+
+    def press_ok(self, title: str) -> bool:
+        return self.press_re is None or bool(self.press_re.search(title))
+
+    def is_relevant(self, text: str, sq: str) -> bool:
+        if self.relevance_mode == 'word':
+            return self._any(self.relevance_m, text, sq)
+        return any(k in sq for k in self.relevance)
 
     @staticmethod
     def _any(ms: list[Matcher], text: str, sq: str) -> bool:
@@ -78,7 +116,7 @@ class Classifier:
 
     def classify(self, title: str, feed_name: str | None = None) -> dict:
         text, sq = title.casefold(), _squash(title)
-        relevant = any(k in sq for k in self.relevance)
+        relevant = self.is_relevant(text, sq)
         scores: dict[str, int] = {}
         hits: list[tuple[int, int, str]] = []  # (-weight, 위치, 키워드)
         for cat, items in self.rules.items():
@@ -94,7 +132,7 @@ class Classifier:
 
         excluded = self._any(self.exclude, text, sq) or any(self._any(a, text, sq) and self._any(w, text, sq) for a, w in self.combos)
         if excluded and not self._any(self.unless, text, sq):
-            return {'category': UNCATEGORIZED, 'sub_categories': [], 'tags': tags, 'score': self.score_cfg['excluded_score'], 'relevant': relevant}
+            return {'category': UNCATEGORIZED, 'sub_categories': [], 'tags': tags, 'score': self.excluded_score, 'relevant': relevant}
 
         hint = self.hints.get(feed_name or '')
         if scores:
@@ -132,12 +170,11 @@ class Classifier:
     def score(self, title: str, category: str) -> tuple[int, dict]:
         """(★, 근거). 산식은 channels/insurance/score.json."""
         text, sq = title.casefold(), _squash(title)
-        cfg = self.score_cfg
         top = self.star_top(text, sq, category)
         core = self.core_count(text, sq)
-        s = cfg['base'] + sum(add for at_least, add in self.thresholds if top >= at_least)
-        s += self.core_add.get(min(core, max(self.core_add)), 0) if core else 0
-        s = min(cfg['max'], s)
+        s = self.base + sum(add for at_least, add in self.thresholds if top >= at_least)
+        s += self.core_add.get(min(core, max(self.core_add)), 0) if core and self.core_add else 0
+        s = min(self.max_score, s)
         market_capped = category in self.market_cats and not self._any(self.insurance_terms, text, sq) and s > self.market_max
         if market_capped:
             s = self.market_max
