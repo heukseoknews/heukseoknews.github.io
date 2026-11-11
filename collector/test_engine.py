@@ -168,5 +168,37 @@ assert cat('Introducing GPT-6.1 Terra', 'OpenAI News', 'press') == '모델·제�
 assert cat('Cogent and OpenAI build cyber defense factories for enterprises', 'OpenAI News', 'press') != '정책·규제·안전'
 assert cat('How scientists use Claude', 'Anthropic 공식(검색)', 'press') == '미분류' and rel('How scientists use Claude', 'press', 'Anthropic 공식(검색)')[1]['score'] == 2
 assert rel('Meta FAIR Releases e-means: An Algorithm Beating k-means in 10x Fewer Epochs', feed='Meta AI(검색)')[0] is True
+
+# 13) 미래 발행 시각 보정(피드 수집 경로): 수집 시각보다 5분 넘게 미래면 수집 시각으로, 5분 이내는 그대로, 타임존 변환 뒤에 판정
+NOW = '2026-11-11T12:05:00+00:00'
+assert collect.clamp_future('2026-11-12T00:00:00+00:00', NOW) == (NOW, True)                     # 다음 날 09:00 KST 예약 글
+assert collect.clamp_future('2026-11-11T12:09:59+00:00', NOW) == ('2026-11-11T12:09:59+00:00', False)  # 5분 이내 오차는 유지
+assert collect.clamp_future('2026-11-11T12:10:00+00:00', NOW) == ('2026-11-11T12:10:00+00:00', False)  # 정확히 5분은 유지
+assert collect.clamp_future('2026-11-11T12:10:01+00:00', NOW) == (NOW, True)
+assert collect.clamp_future('2026-11-10T00:00:00+00:00', NOW) == ('2026-11-10T00:00:00+00:00', False)  # 과거는 그대로
+FEED = """<?xml version="1.0"?><rss version="2.0"><channel>
+<item><title>Future post</title><link>https://example.com/future</link><pubDate>Thu, 12 Nov 2026 09:00:00 +0900</pubDate></item>
+<item><title>Slight skew</title><link>https://example.com/skew</link><pubDate>Wed, 11 Nov 2026 12:08:00 GMT</pubDate></item>
+<item><title>Naive local</title><link>https://example.com/naive</link><pubDate>2026-11-11 04:08:00</pubDate></item>
+<item><title>Naive local future</title><link>https://example.com/naive2</link><pubDate>2026-11-11 21:08:00</pubDate></item>
+<item><title>Yesterday</title><link>https://example.com/old</link><pubDate>Tue, 10 Nov 2026 08:00:00 GMT</pubDate></item></channel></rss>"""
+class _Resp:
+    content = FEED.encode()
+    def raise_for_status(self): pass
+_get = collect.requests.get
+collect.requests.get = lambda *a, **k: _Resp()
+try:
+    out, st = collect.collect_source(('OpenAI News', 'https://example.com/rss', 'press', 'OpenAI', {'timezone': 'America/Los_Angeles'}), NOW)
+finally:
+    collect.requests.get = _get
+got = {a['url'].rsplit('/', 1)[1]: a['published_at'] for a in out}
+assert got['future'] == NOW                                  # +0900 → 00:00 UTC, 수집 시각보다 12시간 미래
+assert got['skew'] == '2026-11-11T12:08:00+00:00'            # 3분 미래: 유지
+assert got['naive'] == '2026-11-11T12:08:00+00:00'           # 타임존 없는 04:08 = LA(PST, UTC-8) → 12:08 UTC: 유지
+assert got['naive2'] == NOW                                  # 21:08 PST = 다음 날 05:08 UTC → 보정
+assert got['old'] == '2026-11-10T08:00:00+00:00'
+assert st['future_clamped'] == 2 and st['newest'] == '2026-11-11T12:08:00+00:00'  # 받은 범위도 보정 뒤 값
+# 게시판(날짜만, 09:00 KST 관례)과 저장된 data 는 보정하지 않는다: make_article·reclassify 는 받은 시각 그대로
+assert collect.make_article('금융위, 실손보험 개선', 'https://x/b', '금융위원회', 'press', '2026-11-12T00:00:00+00:00', NOW, '금융위원회 게시판')['published_at'] == '2026-11-12T00:00:00+00:00'
 channel.use('insurance'); collect.ALWAYS_RELEVANT.clear()
 print('engine tests (ai) passed')

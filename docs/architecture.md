@@ -41,7 +41,7 @@ flowchart TD
 |---|---|---|---|
 | ① | 시작 | `.github/workflows/deploy.yml` | cron/수동 → `python collector/collect.py` 실행(앞서 `collector/test_*.py` 전부 실행) |
 | ② | 가져오기 | `collect.py` `load_sources`(RSS_SOURCES + `config/feeds.json`), `collect_source`(RSS/구글), `collect_board`→`boards.py` `fetch_board`·`parse_fsc`·`parse_fss`(게시판), `throttle_google`(0.6초) | URL/쿼리 → 항목(title, link, 날짜, 담당부서) |
-| ③ | 정규화 | `parse_date`(타임존 없는 국내 RSS는 KST→UTC −9h), `clean`, 제목 `- 언론사` 분리, `normalize.SourceAliases.resolve`(도메인→이름 순), `normalize.strip_org_suffix`, `article_id`(정규화 URL 해시 16자) | → title, source, published_at(UTC ISO), id |
+| ③ | 정규화 | `parse_date`(타임존 없는 국내 RSS는 KST→UTC −9h), `clamp_future`(피드 시각이 수집 시각보다 5분 넘게 미래면 수집 시각으로. 피드 경로만, 게시판·저장 data 는 그대로), `clean`, 제목 `- 언론사` 분리, `normalize.SourceAliases.resolve`(도메인→이름 순), `normalize.strip_org_suffix`, `article_id`(정규화 URL 해시 16자) | → title, source, published_at(UTC ISO), id |
 | ④ | 저장 전 필터 | `collect_source`(no_link/no_date, `max_age_days`), `TitleFilter.is_junk`(`title_filters.json`), `Blocked.is_blocked`(`blocked_sources.json`) | 걸러진 건수는 `skipped`·`blocked` 로 status 에 기록 |
 | ⑤ | 판정·분류 | `collect.judge`, `classify.Classifier.classify`(카테고리 8개+미분류, tags, sub_categories), `entities.company_relevant`·`sports_team_title` | → category, sub_categories, tags, **relevant** |
 | ⑥ | 엔터티·점수 | `entities.tag_entities`, `Classifier.score`(`score.json`) | → companies, orgs, (tags 정리), score |

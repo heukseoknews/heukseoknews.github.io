@@ -126,6 +126,18 @@ def parse_date(entry, tz: str = DEFAULT_TZ):
     return datetime(*t[:6], tzinfo=ZoneInfo(tz)).astimezone(timezone.utc).isoformat()
 
 
+FUTURE_TOLERANCE = timedelta(minutes=5)
+
+
+def clamp_future(published: str, now_iso: str) -> tuple[str, bool]:
+    """발행 시각이 수집 시각보다 5분 넘게 미래이면(예: 다음 날 09:00 로 적힌 예약 글) 수집 시각으로 맞춘다.
+    5분 이내는 서버 시계 차이로 보고 그대로 둔다. 시각은 parse_date 가 피드 타임존을 UTC 로 바꾼 뒤의 값이다.
+    반환: (저장할 시각, 보정 여부). 피드 수집 경로(collect_source)에서만 쓰고, 저장된 data 는 다시 쓰지 않는다."""
+    if datetime.fromisoformat(published) - datetime.fromisoformat(now_iso) > FUTURE_TOLERANCE:
+        return now_iso, True
+    return published, False
+
+
 RELEVANT_DEPTS: set[str] = set()  # boards.json relevant_departments (main 에서 채움)
 ALWAYS_RELEVANT: set[str] = set()  # feeds.json rss·queries 의 always_relevant 피드 이름(main 에서 채움). 재분류 때도 피드 이름으로 같은 판정
 
@@ -182,6 +194,7 @@ def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, bloc
     entries = feed.entries[:FEED_CAP]
     out, skipped, filtered, dates = [], {'no_link': 0, 'no_date': 0, 'low_relevance': 0}, [], []
     blocked_n: dict[str, int] = {}
+    future = 0  # 미래 발행 시각을 수집 시각으로 맞춘 건수(로그용)
     cutoff = (datetime.fromisoformat(now_iso) - timedelta(days=max_age_days)).isoformat() if max_age_days else None
     for e in entries:
         raw = clean(e.get('title', ''))
@@ -191,6 +204,8 @@ def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, bloc
         published = parse_date(e, tz)
         if not published:
             skipped['no_date'] += 1; continue
+        published, moved = clamp_future(published, now_iso)
+        future += moved
         dates.append(published)
         if cutoff and published < cutoff:
             skipped['too_old'] = skipped.get('too_old', 0) + 1
@@ -223,6 +238,9 @@ def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, bloc
         out.append(art)
     stats = {'feed_size': len(feed.entries), 'skipped': skipped, 'filtered': filtered,
              'oldest': min(dates) if dates else None, 'newest': max(dates) if dates else None, 'blocked': blocked_n}
+    if future:
+        stats['future_clamped'] = future
+        logging.info('%s: 미래 발행 시각 %d건을 수집 시각으로 맞춤', name, future)
     return out, stats
 
 
