@@ -26,7 +26,8 @@ def shards(d: Path) -> dict[str, list]:
     return {p.name: json.loads(p.read_text(encoding='utf-8')) for p in sorted(d.glob('????-??.json'))}
 
 
-def compare(a: Path, b: Path, label: str) -> list[str]:
+def compare(a: Path, b: Path, label: str, check_bytes: bool = True) -> list[str]:
+    """월 파일별 기사 필드 비교. check_bytes=False 는 키 순서가 달라질 수 있는 비교(분류 필드를 지웠다 다시 붙인 사본)용."""
     errs, sa, sb = [], shards(a), shards(b)
     if sa.keys() != sb.keys():
         return [f'[{label}] 월 파일 목록이 다름: {sorted(sa)} vs {sorted(sb)}']
@@ -39,7 +40,7 @@ def compare(a: Path, b: Path, label: str) -> list[str]:
             if x != y:
                 diff = sorted(k for k in set(x) | set(y) if x.get(k) != y.get(k))
                 errs.append(f'[{label}] {name} {x.get("id")} 필드 다름: {diff}')
-        if (a / name).read_bytes() != (b / name).read_bytes():
+        if check_bytes and (a / name).read_bytes() != (b / name).read_bytes():
             errs.append(f'[{label}] {name} 파일 바이트가 다름')
     print(f'[{label}] 기사 {n}건 비교, 차이 {len(errs)}건')
     return errs
@@ -90,7 +91,7 @@ def main():
     out_old = run([a.python, 'collector/collect.py', '--reclassify', '--data-dir', work / 'old_scrubbed'], old)
     out_new = run([a.python, 'collector/collect.py', '--reclassify', '--channel', 'insurance', '--data-dir', work / 'new_scrubbed'], ROOT)
     errs += compare(work / 'old_scrubbed', work / 'new_scrubbed', '재분류(분류 지운 사본)')
-    errs += compare(work / 'old_asis', work / 'new_scrubbed', '지운 사본 재계산 = 원본 재분류')
+    errs += compare(work / 'old_asis', work / 'new_scrubbed', '지운 사본 재계산 = 원본 재분류(내용)', check_bytes=False)  # 지웠다 붙인 companies·orgs 는 키 순서가 바뀐다
     if out_old.splitlines()[-9:] != out_new.splitlines()[-9:]:
         errs.append('[재분류 로그] 카테고리 분포 출력이 다름')
 
