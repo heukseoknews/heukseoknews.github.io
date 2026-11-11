@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { lastWeeks, niceMax } from '../lib/trends.ts';
+import { chartText, lastWeeks, niceMax } from '../lib/trends.ts';
 
 const t = { generated_at: '', keywords: ['K-ICS', '금리'], total: 0, weeks: [
   { week_start: '2026-10-26', counts: { 'K-ICS': 1, '금리': 14 }, total: 53 },
@@ -19,4 +19,12 @@ assert.equal(lastWeeks({ ...t, weeks: [{ week_start: '2026-01-05', counts: {}, t
 assert.equal(lastWeeks({ ...t, weeks: [] }, '2026-11-04', 12).length, 1);
 assert.equal(lastWeeks(t, '2026-11-08', 1)[0].week_start, '2026-11-02'); // 일요일도 같은 주
 assert.equal(niceMax(0), 5); assert.equal(niceMax(17), 20); assert.equal(niceMax(23), 30); assert.equal(niceMax(120), 150);
+// 차트 글자: 넓은 화면은 예전 값 그대로, 390px(차트 약 328px)에서는 실제 11px 이상·날짜 겹침 없음
+assert.deepEqual(chartText(1014, 640, 12), { font: 10, left: 36, right: 12, bottom: 34, step: 1 });
+assert.deepEqual(chartText(0, 640, 12), { font: 10, left: 36, right: 12, bottom: 34, step: 1 }, '폭을 모를 때(첫 그리기)는 넓은 화면 값');
+const m = chartText(328, 640, 12);
+assert.ok(m.font * 328 / 640 >= 11, `모바일 실제 글자 ${(m.font * 328 / 640).toFixed(1)}px`);
+assert.ok((640 - m.left - m.right) / 11 * m.step >= m.font * 3.2, '날짜 라벨 간격 ≥ 라벨 폭');
+assert.ok(m.right >= m.font * 1.45, '마지막 날짜 라벨이 오른쪽에서 잘리지 않음');
+assert.ok(m.left >= m.font * 2 + 6 && m.step === 2);
 console.log('trends tests passed');

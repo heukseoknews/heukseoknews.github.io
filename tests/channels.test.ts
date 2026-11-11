@@ -87,11 +87,12 @@ assert.deepEqual(ins.tabs, { new: '새 뉴스', all: '전체 뉴스', press: '�
 assert.deepEqual(ins.filters, { sources: '언론사', companies: '보험사', orgs: '유관기관' });
 assert.equal(ins.subtitle, '보험·계리·금융시장');
 assert.deepEqual(ins.storage.legacy_keys, { saved: 'actuary-news-hub-v3', companies: 'actuary-news-hub-companies-v1' });
-assert.equal(ins.notices.press.title, '금융위원회 · 금융감독원 관련 자료');
-assert.equal(ins.press_discovery_label, true);
-// AI 채널은 보험용 안내·수집 경로 표기를 쓰지 않는다
-const ai = JSON.parse(readFileSync('channels/ai/channel.json', 'utf8'));
-assert.equal(ai.notices?.press, undefined); assert.notEqual(ai.press_discovery_label, true);
+// 화면이 읽지 않는 설정은 두지 않는다(옛 탭 안내 notices·수집 경로 표기 press_discovery_label 삭제)
+for (const d of dirs) {
+  const c = JSON.parse(readFileSync(`channels/${d}/channel.json`, 'utf8'));
+  assert.ok(!('notices' in c) && !('press_discovery_label' in c), `${d}/channel.json: 쓰지 않는 설정 notices·press_discovery_label 없음`);
+}
+assert.ok(!/notices|press_discovery_label/.test(registry), 'ChannelMeta 에도 없음');
 const page = readFileSync('app/[channel]/page.tsx', 'utf8');
 assert.ok(!page.includes('금융위원회'), '보험 전용 안내 문구는 channel.json 으로');
 const css = readFileSync('app/globals.css', 'utf8');

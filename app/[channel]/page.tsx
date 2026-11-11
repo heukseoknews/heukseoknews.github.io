@@ -40,6 +40,9 @@ export default function Home() {
   const [orgs, setOrgs] = useState<string[]>([]);          // 선택한 유관기관(비면 전체) — 탭 이동 시 초기화, 저장하지 않음
   const [filterOpen, setFilterOpen] = useState(false);     // [필터] 버튼으로 펼치는 패널
   const filterBtn = useRef<HTMLButtonElement>(null);
+  const filterPanel = useRef<HTMLDivElement>(null);
+  // 패널을 열면 첫 항목(언론사)으로 포커스. 닫을 때(Esc)는 onFilterKey 가 [필터] 버튼으로 돌려보낸다
+  useEffect(() => { if (filterOpen) filterPanel.current?.querySelector<HTMLElement>('button, input')?.focus(); }, [filterOpen]);
   const [calMonth, setCalMonth] = useState(todayKst().slice(0, 7));
   const [showRead, setShowRead] = useState(false);            // 새 뉴스 탭: 읽은 기사 다시 보기(기본 숨김)
   const [justRead, setJustRead] = useState<Set<string>>(new Set()); // 방금 읽어 곧 사라질 카드(짧은 페이드 후 제거)
@@ -162,7 +165,7 @@ export default function Home() {
       <button ref={filterBtn} type="button" className={'filterToggle' + (chips.length ? ' on' : '')} aria-expanded={filterOpen} aria-controls="filterPanel" onClick={() => setFilterOpen(o => !o)}><Filter size={15} aria-hidden="true" /> 필터{chips.length > 0 && <b aria-label={`켜진 필터 ${chips.length}개`}>{chips.length}</b>}</button>
       <label className="sort"><SlidersHorizontal size={15} /><select value={sort} onChange={e => { setSort(e.target.value as 'latest' | 'important'); setPage(1); }}><option value="latest">최신순</option><option value="important">중요도순</option></select></label>
     </div>
-    <div id="filterPanel" className="filterPanel" role="group" aria-label="필터" hidden={!filterOpen} onKeyDown={onFilterKey}>
+    <div ref={filterPanel} id="filterPanel" className="filterPanel" role="group" aria-label="필터" hidden={!filterOpen} onKeyDown={onFilterKey}>
         <MultiFilter label={L.sources} options={sourceOpts} selected={sources} onChange={v => { setSources(v); setPage(1); }} />
         <MultiFilter label={L.companies} options={companyOpts} selected={companies} groups={ch.companyGroups} persistNote="다음 방문에도 유지됩니다." onChange={v => { setCompanies(v); setPage(1); }} />
         <MultiFilter label={L.orgs} options={orgOpts} selected={orgs} groups={ch.orgGroups} onChange={v => { setOrgs(v); setPage(1); }} />

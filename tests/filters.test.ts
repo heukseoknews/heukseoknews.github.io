@@ -34,6 +34,10 @@ assert.equal(t.companies, f.companies, '보험사 선택 유지'); assert.equal(
 const page = readFileSync('app/[channel]/page.tsx', 'utf8');
 assert.match(page, /id="filterPanel"[^>]*hidden=\{!filterOpen\}/);
 assert.match(page, /aria-expanded=\{filterOpen\} aria-controls="filterPanel"/);
+// 패널을 열면 첫 항목(언론사 버튼)으로 포커스, 처음 화면(닫힘)에서는 옮기지 않는다
+assert.match(page, /useEffect\(\(\) => \{ if \(filterOpen\) filterPanel\.current\?\.querySelector<HTMLElement>\('button, input'\)\?\.focus\(\); \}, \[filterOpen\]\)/);
+assert.match(page, /<div ref=\{filterPanel\} id="filterPanel"/);
+assert.ok(page.indexOf('<MultiFilter label={L.sources}') < page.indexOf('<MultiFilter label={L.companies}'), '패널 첫 항목은 언론사');
 assert.match(page, /e\.key !== 'Escape'[\s\S]{0,120}setFilterOpen\(false\); filterBtn\.current\?\.focus\(\)/);
 assert.ok(page.includes('setPanel(removeChip(panel, c))') && page.includes('setPanel(onTabChange(panel))') && page.includes('panelChips(panel, L, tab)'));
 assert.match(page, /if \(n\.companies !== companies\) setCompanies\(n\.companies\)/);

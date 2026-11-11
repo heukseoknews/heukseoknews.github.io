@@ -25,10 +25,6 @@ export type ChannelMeta = {
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
   /** false 면 워크플로가 이 채널을 수집하지 않는다(설정만 준비된 상태). */
   collect?: boolean;
-  /** 탭 위 안내(채널마다 다름). 없으면 표시하지 않는다. */
-  notices?: { press?: { title: string; body: string } };
-  /** 공식 발표 탭 카드에 '공식 RSS'/'검색으로 발견' 수집 경로를 표시할지(보험 채널). */
-  press_discovery_label?: boolean;
 };
 type Named = { name: string; group: string };
 export type Channel = ChannelMeta & Formatters & {

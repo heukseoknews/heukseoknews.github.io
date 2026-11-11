@@ -20,3 +20,17 @@ export function niceMax(v: number): number {
   const step = v <= 20 ? 5 : v <= 50 ? 10 : 50;
   return Math.ceil(v / step) * step;
 }
+
+/** 차트 글자: SVG 는 화면 폭에 맞춰 통째로 줄어들므로, 좁은 화면에서도 실제 글자가 11px 이상이 되게 좌표 단위로 환산한다.
+ *  넓은 화면(좌표 1 ≤ 화면 1.1px)은 예전 그대로(글자 10, 왼쪽 36, 오른쪽 12, 아래 34, 날짜 매주). 폭을 아직 모르면(0) 넓은 화면 값.
+ *  반환: font·left·right·bottom(좌표 단위), step(x축 날짜를 몇 주마다 쓸지 — 글자가 겹치지 않게) */
+export function chartText(renderedPx: number, viewW: number, weeks: number) {
+  const unit = renderedPx > 0 ? viewW / renderedPx : 0;  // 화면 1px 당 좌표 단위
+  const font = Math.max(10, Math.round(11 * unit * 10) / 10);
+  const left = Math.max(36, Math.ceil(font * 2 + 6));     // y축 숫자 세 자리
+  const right = font > 10 ? Math.ceil(font * 1.5) : 12;  // 마지막 날짜 라벨의 오른쪽 절반
+  const bottom = Math.max(34, Math.ceil(font + 20));
+  const gap = weeks > 1 ? (viewW - left - right) / (weeks - 1) : Infinity;
+  const step = Math.max(1, Math.ceil((font * 3.2) / gap)); // '11/10' 폭 ≈ 글자 크기 × 3.2
+  return { font, left, right, bottom, step };
+}

@@ -22,7 +22,7 @@
 ## 감독당국 보도자료 탭
 
 - 금융위원회는 공식 RSS와 게시판 직접 수집, 금융감독원은 게시판 직접 수집이 기본이고 일부는 구글 뉴스 검색으로 보완한다(channels/insurance/feeds.json, boards.json). 검색 보완분은 누락될 수 있다.
-- 카드에 표시하던 '공식 RSS'·'검색으로 발견' 수집 경로 표기는 2026-11 화면에서 뺐다(게시판 수집분이 '검색으로 발견'으로 잘못 표시되던 문제 포함). `channel.json` 의 `notices.press`·`press_discovery_label` 은 화면이 더 이상 읽지 않는다.
+- 카드에 표시하던 '공식 RSS'·'검색으로 발견' 수집 경로 표기는 2026-11 화면에서 뺐다(게시판 수집분이 '검색으로 발견'으로 잘못 표시되던 문제 포함). 관련 설정(`channel.json` 의 `notices.press`·`press_discovery_label`)도 삭제했다.
 
 ## 키워드 추이
 
