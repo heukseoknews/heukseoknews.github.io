@@ -17,7 +17,9 @@ import { type Formatters, makeFormatters } from './format';
 export type TabId = 'new' | 'all' | 'press' | 'bookmarks';
 export type FilterId = 'sources' | 'companies' | 'orgs';
 export type ChannelMeta = {
-  slug: string; name: string; subtitle: string; description: string; locale: string; timezone: string; schedule_utc: string;
+  slug: string; name: string; subtitle: string; description: string; locale: string; timezone: string;
+  /** 수집 시각(UTC cron). .github/workflows/deploy.yml 의 schedule 중 하나여야 한다(tests/channels.test.ts). */
+  schedule_utc: string[];
   tabs: Record<TabId, string>; filters: Record<FilterId, string>;
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
   /** true 면 /<slug>/ 페이지는 만들되 채널 전환·포털에 링크하지 않고 noindex(숨김 운영). 공개할 때 이 값만 바꾼다. */

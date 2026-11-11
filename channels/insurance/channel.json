@@ -5,7 +5,7 @@
  "description": "보험계리 업무에 필요한 뉴스를 매일 아침 자동으로 모아 보여 줍니다.",
  "locale": "ko-KR",
  "timezone": "Asia/Seoul",
- "schedule_utc": "37 20 * * *",
+ "schedule_utc": ["37 20 * * *"],
  "tabs": {
   "new": "새 뉴스",
   "all": "전체 뉴스",

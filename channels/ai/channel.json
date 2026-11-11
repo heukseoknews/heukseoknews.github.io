@@ -5,7 +5,7 @@
  "description": "AI 모델·오픈소스·정책·산업 뉴스를 하루 세 번 모아 보여 줍니다.",
  "locale": "ko-KR",
  "timezone": "Asia/Seoul",
- "schedule_utc": "37 20 * * *",
+ "schedule_utc": ["37 20 * * *", "37 4 * * *", "37 12 * * *"],
  "hidden": true,
  "collect": false,
  "tabs": {

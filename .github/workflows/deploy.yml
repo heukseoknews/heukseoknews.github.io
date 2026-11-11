@@ -1,9 +1,18 @@
 name: Collect and deploy
 
 on:
+  # 채널별 수집 시각은 channels/*/channel.json schedule_utc(이 목록 중 하나여야 함, tests/channels.test.ts 가 확인).
+  # GitHub 예약은 수 시간까지 늦을 수 있어 일찍 잡아 둔다.
   schedule:
-    - cron: '37 20 * * *'  # 매일 20:37 UTC = 한국시간 05:37(channels/*/channel.json schedule_utc 와 같아야 함, tests/channels.test.ts 가 확인). GitHub 예약은 수 시간까지 늦을 수 있어 일찍 잡아 둠
-  workflow_dispatch:   # 수동 수집 + 배포: gh workflow run deploy.yml (오래된 실행의 Re-run 은 옛 코드를 다시 배포하므로 쓰지 않는다)
+    - cron: '37 20 * * *'  # 20:37 UTC = 한국시간 05:37 — 모든 수집 채널
+    - cron: '37 4 * * *'   # 04:37 UTC = 13:37 — AI 채널(하루 3회)
+    - cron: '37 12 * * *'  # 12:37 UTC = 21:37 — AI 채널(하루 3회)
+  workflow_dispatch:   # 수동 수집 + 배포: gh workflow run deploy.yml [-f channels=ai] (오래된 실행의 Re-run 은 옛 코드를 다시 배포하므로 쓰지 않는다)
+    inputs:
+      channels:
+        description: '수집할 채널(쉼표 구분). 비우면 수집이 켜진 채널 전체'
+        required: false
+        default: ''
   push:
     branches: [main]   # 코드 변경 시 빌드·배포만 (수집 없음)
 
@@ -17,9 +26,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 이번 실행에서 수집할 채널(scripts/plan-channels.mjs): collect:false 제외, 예약 실행이면 그 cron 을 가진 채널만.
+  plan:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      channels: ${{ steps.plan.outputs.channels }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: plan
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+          ONLY: ${{ inputs.channels }}
+        run: node scripts/plan-channels.mjs "$EVENT" "$SCHEDULE" "$ONLY" | tee -a "$GITHUB_OUTPUT"
+
   # 채널별 수집. 한 채널이 실패해도 다른 채널의 수집·배포는 계속된다(fail-fast: false, 아래 잡은 실패해도 진행).
   collect:
-    if: github.event_name != 'push'
+    needs: plan
+    if: github.event_name != 'push' && needs.plan.outputs.channels != '[]'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -27,7 +53,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        channel: [insurance]   # channels/ 폴더 목록과 같아야 함(tests/channels.test.ts 가 확인)
+        channel: ${{ fromJSON(needs.plan.outputs.channels) }}
     steps:
       - uses: actions/checkout@v4
 
@@ -76,9 +102,10 @@ jobs:
             exit 1
           fi
 
+  # 예약 실행인데 수집할 채널이 없으면(예: AI 수집이 꺼진 상태의 04:37·12:37) 빌드·배포도 하지 않는다.
   build:
-    needs: collect
-    if: ${{ !cancelled() }}
+    needs: [plan, collect]
+    if: ${{ !cancelled() && (github.event_name != 'schedule' || needs.plan.outputs.channels != '[]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
