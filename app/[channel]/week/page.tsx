@@ -18,6 +18,7 @@ export default function WeekPage() {
   const today = todayKst();
   const rows = useMemo(() => weeklyHighlights(all, today, LIMIT, category), [all, today, category]);
   return <>
+    <h1 className="srOnly">이번 주 핵심</h1>
     <div className="notice"><div><b>이번 주 핵심 기사 (최근 7일, 최대 {LIMIT}건)</b><p>{dayHeading(addDays(today, -6))} ~ {dayHeading(today)} 발행 기사를 중요도 높은 순으로 보여줍니다. 중요도는 제목 키워드로 계산한 값이라 동점이 많고 정확하지 않을 수 있습니다.</p></div></div>
     <div className="catOuter"><nav className="categories" aria-label="뉴스 카테고리">{['전체', ...ch.categories].map(c =>
       <button key={c} className={category === c ? 'chosen' : ''} onClick={() => setCategory(c)}>{c}</button>)}</nav></div>

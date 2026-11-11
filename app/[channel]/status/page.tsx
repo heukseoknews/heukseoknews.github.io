@@ -16,6 +16,7 @@ export default function StatusPage() {
   const entries = status ? Object.entries(status.sources) : [];
   const run = status?.last_run;
   return <>
+    <h1 className="srOnly">수집 상태</h1>
     {ver && <div className="notice"><div><b>사이트 빌드 {formatBuild(ver.built_at)}</b><p>커밋 {ver.commit}{ver.commit_message ? ` · ${ver.commit_message}` : ''} · {triggerLabel(ver.trigger)}{ver.run_id ? ` · 실행 #${ver.run_id}` : ''}</p></div></div>}
     {run && <div className="notice"><div><b>마지막 수집 {fmt(run.started_at)}</b><p>후보 {run.candidates}건 · 신규 저장 {run.added}건 · 실패 피드 {run.failed.length}개{run.failed.length ? ` (${run.failed.join(', ')})` : ''}{run.noted?.length ? ` · 참고 ${run.noted.length}개(${run.noted.join(', ')}: 게시판으로 대체)` : ''}{run.blocked && Object.keys(run.blocked).length ? ` · 차단 출처 ${Object.entries(run.blocked).map(([k, v]) => `${k} ${v}건`).join(', ')}` : ''}</p></div></div>}
     {!status && !failure && <div className="articles"><div className="empty">수집 상태를 불러오는 중입니다…</div></div>}

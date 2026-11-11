@@ -29,7 +29,7 @@ check(`배포 data 파일 목록·내용 동일 (${files.length}개)`, () => {
 //    의도한 문구 변경: 설정 경로 config/ → channels/insurance/
 const INTENDED: [RegExp, string][] = [[/config\/keywords\.json/g, 'channels/insurance/keywords.json']];
 const mainText = (html: string) => {
-  const m = /<main class="shell">([\s\S]*?)<\/main>/.exec(html);
+  const m = /<main class="shell"[^>]*>([\s\S]*?)<\/main>/.exec(html);
   if (!m) throw new Error('main 없음');
   return m[1].replace(/<!--.*?-->/g, '').replace(/<(script|style)[\s\S]*?<\/\1>/g, '')
     .replace(/<(input|select|option)\b[^>]*>/g, t => ` ${(/(placeholder|value|aria-label)="([^"]*)"/g.exec(t) ?? [])[0] ?? ''} `)

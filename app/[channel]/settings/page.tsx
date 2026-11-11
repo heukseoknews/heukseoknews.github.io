@@ -71,6 +71,7 @@ export default function SettingsPage() {
     <td data-label="새 뉴스 확인 시각">{s.lastConfirmed ? fmt(s.lastConfirmed) : '없음'}</td><td data-label={`선택한 ${ch.filters.companies}`}>{s.companies.toLocaleString()}곳</td></tr>;
 
   return <>
+    <h1 className="srOnly">내 데이터</h1>
     <div className="notice"><div><b>내 데이터 (이 브라우저)</b><p>북마크·읽음 기록·새 뉴스 확인 시각·선택한 {ch.filters.companies}는 이 브라우저에만 저장됩니다. 다른 기기·브라우저로 옮기거나 백업하려면 파일로 내려받아 가져오세요. 가져오기는 지금 데이터를 지우지 않고 합칩니다.</p></div></div>
     {error && <div className="error" role="alert"><AlertCircle size={17} /> {error}</div>}
     {done && <div className="notice" role="status"><div><b><CheckCircle2 size={14} /> {done}</b></div></div>}

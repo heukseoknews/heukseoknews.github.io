@@ -5,6 +5,7 @@ import SiteHeader from '../../components/SiteHeader';
 import StaleNotice from '../../components/StaleNotice';
 import { ChannelProvider } from '../../lib/channelContext';
 import { CHANNELS, getChannel } from '../../lib/channels';
+import { shareMeta } from '../../lib/meta';
 import { SITE } from '../../lib/site';
 import { themeCss } from '../../lib/theme';
 
@@ -16,7 +17,10 @@ export function generateStaticParams() { return CHANNELS.map(c => ({ channel: c.
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const c = getChannel((await params).channel);
-  return c ? { title: `${SITE.name} | ${c.subtitle}`, description: `${SITE.name} ${c.name} 채널 — ${c.description}` } : {};
+  if (!c) return {};
+  const description = `${SITE.name} ${c.name} — ${c.subtitle}`;
+  const full = `${c.subtitle} | ${SITE.name}`;
+  return { title: { absolute: full }, description, ...shareMeta(full, description, `/${c.slug}/`) };
 }
 
 export default async function ChannelLayout({ children, params }: Params & { children: React.ReactNode }) {
@@ -26,7 +30,7 @@ export default async function ChannelLayout({ children, params }: Params & { chi
   return <ChannelProvider slug={c.slug}>
     {css && <style dangerouslySetInnerHTML={{ __html: css }} />}
     <SiteHeader />
-    <main className="shell"><StaleNotice />{children}</main>
+    <main className="shell" id="content"><StaleNotice />{children}</main>
     <Footer />
   </ChannelProvider>;
 }

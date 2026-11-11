@@ -136,7 +136,8 @@ export default function Home() {
   };
 
   return <>
-    <nav className="primary" aria-label="주요 메뉴">{TABS.map(t =>
+    <h1 className="srOnly">{ch.name} 뉴스</h1>
+    <nav className="primary" aria-label="뉴스 보기">{TABS.map(t =>
       <button key={t} className={tab === t ? 'active' : ''} onClick={() => { setTab(t); setCategory('전체'); setSources([]); setOrgs([]); setPage(1); }}>
         {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && ready && !loading && <span className="count" aria-label={`안 읽은 새 뉴스 ${newCount}건`}>{newCount.toLocaleString()}</span>}
       </button>)}</nav>
