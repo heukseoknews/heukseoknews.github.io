@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { PLANNED_THEMES, THEME_KEYS, contrast, themeCss } from '../lib/theme.ts';
+import { DIRECTORY, channelRow, statusOf } from '../lib/directory.ts';
 import { loadChannels, planChannels } from '../scripts/plan-channels.mjs';
 
 // 채널 폴더 = lib/channels.ts 등록, 채널 수집 시각(schedule_utc) ⊂ deploy.yml cron, 매트릭스는 scripts/plan-channels.mjs
@@ -50,10 +51,32 @@ assert.deepEqual(planChannels([{ ...ch[0], collect: false }, ch[1]], 'schedule',
 // 보험 채널은 20:37 에 수집된다(지금과 같음)
 assert.ok(planChannels(real, 'schedule', '37 20 * * *').includes('insurance') && planChannels(real, 'workflow_dispatch').includes('insurance'));
 
-// 기본 채널(보험)은 숨김일 수 없다(포털 / 가 이동하는 곳). 숨김 채널은 등록·빌드하되 전환·포털에는 나오지 않는다(lib/channels.ts VISIBLE_CHANNELS)
-assert.notEqual(JSON.parse(readFileSync('channels/insurance/channel.json', 'utf8')).hidden, true, '기본 채널은 숨길 수 없다');
-assert.match(registry, /VISIBLE_CHANNELS[^\n]*filter\(c => !c\.hidden\)/, 'VISIBLE_CHANNELS 는 hidden 을 뺀다');
-for (const f of ['components/ChannelSwitcher.tsx', 'app/page.tsx']) assert.ok(readFileSync(f, 'utf8').includes('VISIBLE_CHANNELS') && !/\bCHANNELS\.map/.test(readFileSync(f, 'utf8')), `${f}: 숨김 채널을 링크하면 안 됨`);
+// 공개 여부 = lib/directory.ts status(live | soon) 하나. channel.json 의 hidden 은 화면이 읽지 않는다.
+const byDir = Object.fromEntries(DIRECTORY.map(d => [d.slug, d]));
+assert.equal(DIRECTORY.length, new Set(DIRECTORY.map(d => d.slug)).size, 'DIRECTORY slug 중복');
+for (const d of dirs) {
+  assert.ok(byDir[d], `${d}: lib/directory.ts DIRECTORY 에 없음`);
+  assert.equal(byDir[d].name, JSON.parse(readFileSync(`channels/${d}/channel.json`, 'utf8')).name, `${d}: 이름이 channel.json 과 다름`);
+}
+for (const e of DIRECTORY) {
+  assert.ok(['live', 'soon'].includes(e.status), `${e.slug}: status 는 live | soon`);
+  assert.ok(e.card && e.name, `${e.slug}: 이름·카드 설명`);
+  if (e.status === 'live') assert.ok(dirs.includes(e.slug), `${e.slug}: live 채널은 channels/ 폴더(페이지)가 있어야 한다`);
+  if (!dirs.includes(e.slug)) assert.ok(PLANNED_THEMES[e.slug], `${e.slug}: 폴더 없는 채널은 PLANNED_THEMES 에 색`);
+}
+assert.equal(statusOf('insurance'), 'live', '기본 채널(보험)은 공개');
+assert.equal(statusOf('ai'), 'soon'); assert.equal(statusOf('finance'), 'soon'); assert.ok(!dirs.includes('finance'));
+assert.deepEqual(DIRECTORY.map(d => [d.slug, d.card]), [['insurance', '보험·계리·금융시장'], ['ai', '모델·오픈소스·정책·산업'], ['finance', '은행·금융권 뉴스']]);
+// 채널 이동 줄: live 와 지금 채널만 링크, 준비 중은 링크 없음
+const row = (cur: string) => channelRow(cur).map(r => [r.slug, r.href, r.current]);
+assert.deepEqual(row('insurance'), [['insurance', '/insurance/', true], ['ai', null, false], ['finance', null, false]]);
+assert.deepEqual(row('ai'), [['insurance', '/insurance/', false], ['ai', '/ai/', true], ['finance', null, false]]);
+// 화면 코드: hidden 대신 status, 이동 줄은 channelRow, 숨김 채널 목록 직접 링크 금지
+for (const f of ['app/[channel]/layout.tsx', 'lib/meta.ts']) { const t = readFileSync(f, 'utf8'); assert.ok(t.includes('robotsFor(c)') && !t.includes('.hidden'), `${f}: noindex 는 status(robotsFor)`); }
+assert.match(registry, /robotsFor = \(c: Channel\) => \(c\.status === 'live' \? \{\} : \{ robots: \{ index: false, follow: false \} \}\)/);
+const sw = readFileSync('components/ChannelSwitcher.tsx', 'utf8');
+assert.ok(sw.includes('channelRow(ch.slug)') && !/\bCHANNELS\.map/.test(sw) && sw.includes('aria-disabled="true"'), 'ChannelSwitcher: channelRow, 준비 중은 비활성 span');
+for (const f of ['components/SiteHeader.tsx', 'components/Footer.tsx']) assert.ok(!readFileSync(f, 'utf8').includes("'status/', '수집 상태'"), `${f}: 수집 상태 메뉴 없음`);
 
 // 보험 채널은 옛 사이트와 같은 이름·라벨·색
 const ins = JSON.parse(readFileSync('channels/insurance/channel.json', 'utf8'));

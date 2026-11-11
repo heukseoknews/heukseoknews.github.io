@@ -8,14 +8,14 @@ import { useChannel } from '../lib/channelContext';
 import { SITE } from '../lib/site';
 import { isStale } from '../lib/stale';
 import { useLastCollected } from '../lib/useSiteInfo';
-import ChannelSwitcher from './ChannelSwitcher';
 import Wordmark from './Wordmark';
 
 // 채널 안 경로(/<채널>/ 뒤). 주 메뉴는 기사 보기, 보조 메뉴는 설정·운영 성격
 const MAIN = [['', '뉴스'], ['week/', '이번 주 핵심'], ['trends/', '키워드 추이']] as const;
-const UTIL = [['settings/', '내 데이터'], ['status/', '수집 상태']] as const;
+const UTIL = [['settings/', '내 데이터']] as const;
 
-/** 모든 페이지 공통 헤더(상단 고정). ≤640px 에서는 햄버거 메뉴로 접힌다. */
+/** 채널 페이지 공통 헤더(상단 고정): 워드마크(홈 /) · 채널명 · 주 메뉴 · 내 데이터. ≤640px 에서는 햄버거 메뉴로 접힌다.
+ *  채널 이동 줄은 헤더 아래 ChannelSwitcher. 수집 상태는 지연일 때만 배지로 보인다. */
 export default function SiteHeader() {
   const pathname = usePathname();
   const ch = useChannel();
@@ -41,10 +41,10 @@ export default function SiteHeader() {
   return <header className="siteHeader">
     <a href="#content" className="skipLink">본문 바로가기</a>
     <div className="siteHeaderInner">
-      <Link href={channelHref(ch.slug)} className="siteBrand" aria-label={`${SITE.name} 홈`}>
-        <Wordmark sub />
-      </Link>
-      <ChannelSwitcher />
+      <div className="siteBrand">
+        <Link href="/" className="brandHome" aria-label={`${SITE.name} 홈`}><Wordmark /></Link>
+        <span className="chName">{ch.name}</span>
+      </div>
       <button ref={btn} type="button" className="menuBtn" aria-label={open ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(o => !o)}>
         {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
       </button>

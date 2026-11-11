@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
+import ChannelSwitcher from '../../components/ChannelSwitcher';
 import Footer from '../../components/Footer';
 import SiteHeader from '../../components/SiteHeader';
 import StaleNotice from '../../components/StaleNotice';
 import { ChannelProvider } from '../../lib/channelContext';
-import { CHANNELS, getChannel } from '../../lib/channels';
+import { CHANNELS, getChannel, robotsFor } from '../../lib/channels';
 import { shareMeta } from '../../lib/meta';
 import { SITE } from '../../lib/site';
 import { themeCss } from '../../lib/theme';
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!c) return {};
   const description = `${SITE.name} ${c.name} — ${c.subtitle}`;
   const full = `${c.subtitle} | ${SITE.name}`;
-  return { title: { absolute: full }, description, ...shareMeta(full, description, `/${c.slug}/`), ...(c.hidden ? { robots: { index: false, follow: false } } : {}) };
+  return { title: { absolute: full }, description, ...shareMeta(full, description, `/${c.slug}/`), ...robotsFor(c) };
 }
 
 export default async function ChannelLayout({ children, params }: Params & { children: React.ReactNode }) {
@@ -36,6 +37,7 @@ export default async function ChannelLayout({ children, params }: Params & { chi
   return <ChannelProvider slug={c.slug}>
     {css && <style dangerouslySetInnerHTML={{ __html: css }} />}
     <SiteHeader />
+    <ChannelSwitcher />
     <main className="shell" id="content"><StaleNotice />{children}</main>
     <Footer />
   </ChannelProvider>;

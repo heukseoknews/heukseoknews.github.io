@@ -11,6 +11,7 @@ import aiCategories from '../channels/ai/categories.json';
 import aiCompanies from '../channels/ai/companies.json';
 import aiOrgs from '../channels/ai/orgs.json';
 import { categoryList } from './categories';
+import { type ChannelStatus, statusOf } from './directory';
 import { groupMap } from './entities';
 import { type Formatters, makeFormatters } from './format';
 
@@ -22,7 +23,7 @@ export type ChannelMeta = {
   schedule_utc: string[];
   tabs: Record<TabId, string>; filters: Record<FilterId, string>;
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
-  /** true 면 /<slug>/ 페이지는 만들되 채널 전환·포털에 링크하지 않고 noindex(숨김 운영). 공개할 때 이 값만 바꾼다. */
+  /** 옛 숨김 표시. 화면은 더 이상 읽지 않는다 — 공개 여부는 lib/directory.ts 의 status. */
   hidden?: boolean;
   /** false 면 워크플로가 이 채널을 수집하지 않는다(설정만 준비된 상태). */
   collect?: boolean;
@@ -33,6 +34,8 @@ export type ChannelMeta = {
 };
 type Named = { name: string; group: string };
 export type Channel = ChannelMeta & Formatters & {
+  /** live = 공개(링크·색인), soon = 준비 중(페이지는 있으나 링크 없음·noindex). lib/directory.ts 에서 정한다. */
+  status: ChannelStatus;
   themeVars: Record<string, string>;
   categories: string[];
   companyGroup: Record<string, string>; companyGroups: string[];
@@ -42,7 +45,7 @@ export type Channel = ChannelMeta & Formatters & {
 function build(meta: ChannelMeta, theme: { vars?: Record<string, string> }, categories: { categories: Record<string, unknown> },
   companies: { companies: Named[]; groups: string[] }, orgs: { orgs: Named[]; groups: string[] }): Channel {
   return {
-    ...meta, ...makeFormatters(meta.locale, meta.timezone), themeVars: theme.vars ?? {},
+    ...meta, ...makeFormatters(meta.locale, meta.timezone), status: statusOf(meta.slug), themeVars: theme.vars ?? {},
     categories: categoryList(categories),
     companyGroup: groupMap(companies.companies), companyGroups: companies.groups,
     orgGroup: groupMap(orgs.orgs), orgGroups: orgs.groups,
@@ -51,10 +54,11 @@ function build(meta: ChannelMeta, theme: { vars?: Record<string, string> }, cate
 
 export const CHANNELS: Channel[] = [
   build(insuranceMeta as ChannelMeta, insuranceTheme, insuranceCategories, insuranceCompanies, insuranceOrgs),
-  build(aiMeta as ChannelMeta, aiTheme, aiCategories, aiCompanies as { companies: Named[]; groups: string[] }, aiOrgs),  // 숨김 운영(hidden)
+  build(aiMeta as ChannelMeta, aiTheme, aiCategories, aiCompanies as { companies: Named[]; groups: string[] }, aiOrgs),  // 준비 중(soon)
 ];
-/** 채널 전환·포털에 보이는 채널(hidden 제외). 정적 페이지는 CHANNELS 전부 만든다. */
-export const VISIBLE_CHANNELS: Channel[] = CHANNELS.filter(c => !c.hidden);
+/** 정적 페이지는 CHANNELS 전부 만든다. 홈 카드·채널 이동 줄은 lib/directory.ts(DIRECTORY, channelRow). */
+/** 검색 색인 제외 메타(준비 중 채널) */
+export const robotsFor = (c: Channel) => (c.status === 'live' ? {} : { robots: { index: false, follow: false } });
 export const DEFAULT_CHANNEL = 'insurance';
 export const getChannel = (slug: string): Channel | undefined => CHANNELS.find(c => c.slug === slug);
 /** 채널 안 경로: channelHref('insurance', 'week/') → '/insurance/week/' */
