@@ -3,11 +3,12 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'rea
 import { Bookmark, Check, Newspaper, Search, ShieldCheck, Clock3, AlertCircle, SlidersHorizontal, Filter, RotateCcw, X } from 'lucide-react';
 import ArticleCard from '../../components/ArticleCard';
 import DateBar, { DateFilter } from '../../components/DateBar';
-import MultiFilter, { FilterChips } from '../../components/MultiFilter';
+import MultiFilter from '../../components/MultiFilter';
 import { Article, isRelevant } from '../../lib/news';
 import type { TabId } from '../../lib/channels';
 import { useChannel } from '../../lib/channelContext';
 import { facetOptions, matchesFacet } from '../../lib/facets';
+import { type PanelFilters, onTabChange, panelChips, removeChip } from '../../lib/filterState';
 import { addDays, countByDate, dayHeading, kstDate, shiftMonth, todayKst } from '../../lib/dates';
 import { sourceOptions } from '../../lib/sources';
 import { isNewArticle, isUnreadNew, visibleInNewTab } from '../../lib/newsFilter';
@@ -37,7 +38,8 @@ export default function Home() {
   const setDateFilter = (f: DateFilter) => setDateFilters(s => ({ ...s, [tab]: f }));
   const [sources, setSources] = useState<string[]>([]);  // 선택한 언론사(비면 전체) — 탭 이동 시 초기화
   const [orgs, setOrgs] = useState<string[]>([]);          // 선택한 유관기관(비면 전체) — 탭 이동 시 초기화, 저장하지 않음
-  const [sheetOpen, setSheetOpen] = useState(false);       // 모바일: 필터 시트 펼침
+  const [filterOpen, setFilterOpen] = useState(false);     // [필터] 버튼으로 펼치는 패널
+  const filterBtn = useRef<HTMLButtonElement>(null);
   const [calMonth, setCalMonth] = useState(todayKst().slice(0, 7));
   const [showRead, setShowRead] = useState(false);            // 새 뉴스 탭: 읽은 기사 다시 보기(기본 숨김)
   const [justRead, setJustRead] = useState<Set<string>>(new Set()); // 방금 읽어 곧 사라질 카드(짧은 페이드 후 제거)
@@ -129,6 +131,19 @@ export default function Home() {
     includeLow && tab !== 'bookmarks' && { key: 'low', label: '관련도 낮은 기사 포함', clear: () => setIncludeLow(false) },
   ].filter(Boolean) as Active[];
   const activeCount = active.length;
+  // 필터 패널(언론사·보험사·유관기관·체크 2개): 켜진 것은 칩으로, 칩에서 바로 해제(lib/filterState.ts)
+  const panel: PanelFilters = { sources, companies, orgs, unreadOnly, includeLow };
+  const setPanel = (n: PanelFilters) => {
+    setSources(n.sources); setOrgs(n.orgs); setUnreadOnly(n.unreadOnly); setIncludeLow(n.includeLow);
+    if (n.companies !== companies) setCompanies(n.companies);  // 보험사는 사용자 상태에 저장되므로 바뀔 때만
+    setPage(1);
+  };
+  const chips = panelChips(panel, L, tab);
+  // Esc: 패널 안 드롭다운이 열려 있으면 드롭다운만(MultiFilter 가 닫음), 아니면 패널을 닫고 [필터] 버튼으로 포커스
+  const onFilterKey = (e: React.KeyboardEvent) => {
+    if (e.key !== 'Escape' || !filterOpen || document.querySelector('#filterPanel .sourcePanel')) return;
+    setFilterOpen(false); filterBtn.current?.focus();
+  };
   const resetFilters = () => {
     setCategory('전체'); setSearch(''); setSources([]); setOrgs([]); setCompanies([]); setUnreadOnly(false); setIncludeLow(false);
     setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }); setPage(1);
@@ -137,29 +152,28 @@ export default function Home() {
   return <>
     <h1 className="srOnly">{ch.name} 뉴스</h1>
     <nav className="primary" aria-label="뉴스 보기">{TABS.map(t =>
-      <button key={t} className={tab === t ? 'active' : ''} onClick={() => { setTab(t); setCategory('전체'); setSources([]); setOrgs([]); setPage(1); }}>
+      <button key={t} className={tab === t ? 'active' : ''} onClick={() => { setTab(t); setCategory('전체'); setPanel(onTabChange(panel)); }}>
         {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && ready && !loading && <span className="count" aria-label={`안 읽은 새 뉴스 ${newCount}건`}>{newCount.toLocaleString()}</span>}
       </button>)}</nav>
     <div className="catOuter"><nav className="categories" aria-label="뉴스 카테고리">{['전체', ...ch.categories].map(c =>
       <button key={c} className={category === c ? 'chosen' : ''} onClick={() => { setCategory(c); setPage(1); }}>{c}</button>)}</nav></div>
-    <div className="toolbar">
+    <div className="toolbar" onKeyDown={onFilterKey}>
       <div className="search"><Search size={16} /><input aria-label="뉴스 검색" placeholder={`기사 제목·${L.sources}·${L.companies} 검색`} value={search} onChange={e => { setSearch(e.target.value); setPage(1); }} /></div>
+      <button ref={filterBtn} type="button" className={'filterToggle' + (chips.length ? ' on' : '')} aria-expanded={filterOpen} aria-controls="filterPanel" onClick={() => setFilterOpen(o => !o)}><Filter size={15} aria-hidden="true" /> 필터{chips.length > 0 && <b aria-label={`켜진 필터 ${chips.length}개`}>{chips.length}</b>}</button>
       <label className="sort"><SlidersHorizontal size={15} /><select value={sort} onChange={e => { setSort(e.target.value as 'latest' | 'important'); setPage(1); }}><option value="latest">최신순</option><option value="important">중요도순</option></select></label>
     </div>
-    <div className="filterBar">
-      <button type="button" className={'filterToggle' + (activeCount ? ' on' : '')} aria-expanded={sheetOpen} aria-controls="filterControls" onClick={() => setSheetOpen(o => !o)}><Filter size={15} aria-hidden="true" /> 필터{activeCount > 0 && <b aria-label={`켜진 필터 ${activeCount}개`}>{activeCount}</b>}</button>
-      <div id="filterControls" className={'filterControls' + (sheetOpen ? ' open' : '')}>
+    <div id="filterPanel" className="filterPanel" role="group" aria-label="필터" hidden={!filterOpen} onKeyDown={onFilterKey}>
         <MultiFilter label={L.sources} options={sourceOpts} selected={sources} onChange={v => { setSources(v); setPage(1); }} />
         <MultiFilter label={L.companies} options={companyOpts} selected={companies} groups={ch.companyGroups} persistNote="다음 방문에도 유지됩니다." onChange={v => { setCompanies(v); setPage(1); }} />
         <MultiFilter label={L.orgs} options={orgOpts} selected={orgs} groups={ch.orgGroups} onChange={v => { setOrgs(v); setPage(1); }} />
         <label className="check" title="열어 본 기사는 읽음으로 표시됩니다."><input type="checkbox" checked={unreadOnly} onChange={e => { setUnreadOnly(e.target.checked); setPage(1); }} /> 안 읽은 것만</label>
         {tab !== 'bookmarks' && <label className="check" title="시장 속보·타 업종 기사 등"><input type="checkbox" checked={includeLow} onChange={e => { setIncludeLow(e.target.checked); setPage(1); }} /> 관련도 낮은 기사 포함</label>}
-      </div>
       <button type="button" className="filterReset" disabled={!activeCount} onClick={resetFilters}><RotateCcw size={14} aria-hidden="true" /> 필터 초기화{activeCount > 0 && <b>{activeCount}</b>}</button>
     </div>
-    <FilterChips label={L.companies} selected={companies} onChange={v => { setCompanies(v); setPage(1); }} />
-    <FilterChips label={L.orgs} selected={orgs} onChange={v => { setOrgs(v); setPage(1); }} />
-    <FilterChips label={L.sources} selected={sources} onChange={v => { setSources(v); setPage(1); }} />
+    {chips.length > 0 && <div className="filterChips" role="group" aria-label="켜진 필터">
+      {chips.map(c => <span key={c.key} className="chip">{c.kindLabel && <span className="chipKind">{c.kindLabel}</span>}{c.label}<button type="button" aria-label={`${c.kindLabel ? c.kindLabel + ' ' : ''}${c.label} 해제`} onClick={() => setPanel(removeChip(panel, c))}><X size={13} aria-hidden="true" /></button></span>)}
+      <button type="button" className="chipClear" onClick={resetFilters}>필터 초기화</button>
+    </div>}
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />
     {/* 목록 머리: 탭 이름·건수, 새 뉴스 탭은 읽은 기사 보기·마지막 확인·모두 확인. 불러오기 전에는 건수·확인 정보를 비워 둔다(정적 HTML 에 0건이 찍히지 않게). */}
     <div className="listHead">

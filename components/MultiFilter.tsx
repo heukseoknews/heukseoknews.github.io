@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ChevronDown, Search, X } from 'lucide-react';
+import { ChevronDown, Search } from 'lucide-react';
 import { FacetOption, groupOptions } from '../lib/facets';
 
 type Props = {
@@ -48,11 +48,3 @@ export default function MultiFilter({ label, options, selected, onChange, groups
   </div>;
 }
 
-/** 선택한 항목 칩(어떤 필터인지 이름 표기). 칩의 x 로 하나씩, '전체 해제'로 모두 해제. */
-export function FilterChips({ label, selected, onChange }: { label: string; selected: string[]; onChange: (next: string[]) => void }) {
-  if (!selected.length) return null;
-  return <div className="sourceChips" aria-label={`선택한 ${label}`}>
-    {selected.map(s => <span key={s} className="chip"><span className="chipKind">{label}</span>{s}<button type="button" aria-label={`${s} 선택 해제`} onClick={() => onChange(selected.filter(x => x !== s))}><X size={13} aria-hidden="true" /></button></span>)}
-    <button type="button" className="chipClear" onClick={() => onChange([])}>{label} 전체 해제</button>
-  </div>;
-}
