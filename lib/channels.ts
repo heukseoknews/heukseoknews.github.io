@@ -5,6 +5,11 @@ import insuranceTheme from '../channels/insurance/theme.json';
 import insuranceCategories from '../channels/insurance/categories.json';
 import insuranceCompanies from '../channels/insurance/companies.json';
 import insuranceOrgs from '../channels/insurance/orgs.json';
+import aiMeta from '../channels/ai/channel.json';
+import aiTheme from '../channels/ai/theme.json';
+import aiCategories from '../channels/ai/categories.json';
+import aiCompanies from '../channels/ai/companies.json';
+import aiOrgs from '../channels/ai/orgs.json';
 import { categoryList } from './categories';
 import { groupMap } from './entities';
 import { type Formatters, makeFormatters } from './format';
@@ -17,6 +22,8 @@ export type ChannelMeta = {
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
   /** true 면 /<slug>/ 페이지는 만들되 채널 전환·포털에 링크하지 않고 noindex(숨김 운영). 공개할 때 이 값만 바꾼다. */
   hidden?: boolean;
+  /** false 면 워크플로가 이 채널을 수집하지 않는다(설정만 준비된 상태). */
+  collect?: boolean;
 };
 type Named = { name: string; group: string };
 export type Channel = ChannelMeta & Formatters & {
@@ -38,6 +45,7 @@ function build(meta: ChannelMeta, theme: { vars?: Record<string, string> }, cate
 
 export const CHANNELS: Channel[] = [
   build(insuranceMeta as ChannelMeta, insuranceTheme, insuranceCategories, insuranceCompanies, insuranceOrgs),
+  build(aiMeta as ChannelMeta, aiTheme, aiCategories, aiCompanies as { companies: Named[]; groups: string[] }, aiOrgs),  // 숨김 운영(hidden)
 ];
 /** 채널 전환·포털에 보이는 채널(hidden 제외). 정적 페이지는 CHANNELS 전부 만든다. */
 export const VISIBLE_CHANNELS: Channel[] = CHANNELS.filter(c => !c.hidden);

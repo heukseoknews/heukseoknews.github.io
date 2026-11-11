@@ -10,7 +10,8 @@ const registered = [...new Set([...registry.matchAll(/'\.\.\/channels\/([a-z0-9-
 assert.deepEqual(registered, dirs, 'channels/ 폴더와 lib/channels.ts 등록이 다르다');
 const wf = readFileSync('.github/workflows/deploy.yml', 'utf8');
 const matrix = /channel: \[([^\]]*)\]/.exec(wf)?.[1].split(',').map(s => s.trim()).filter(Boolean).sort();
-assert.deepEqual(matrix, dirs, 'deploy.yml 매트릭스와 channels/ 폴더가 다르다');
+const collecting = dirs.filter(d => JSON.parse(readFileSync(`channels/${d}/channel.json`, 'utf8')).collect !== false);
+assert.deepEqual(matrix, collecting, 'deploy.yml 매트릭스와 수집 채널(collect !== false)이 다르다');
 const cron = /cron: '([^']+)'/.exec(wf)?.[1];
 
 const REQUIRED = ['slug', 'name', 'subtitle', 'description', 'locale', 'timezone', 'schedule_utc', 'tabs', 'filters'];

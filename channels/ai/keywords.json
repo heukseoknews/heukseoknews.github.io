@@ -1,0 +1,12 @@
+{
+  "_comment": "AI 채널 키워드 추이. 제목에 name 또는 aliases(대소문자 무시)가 포함되면 1건.",
+  "keywords": [
+    {"name": "GPT", "aliases": ["chatgpt", "챗gpt"]},
+    {"name": "Gemini", "aliases": ["제미나이"]},
+    {"name": "Claude", "aliases": ["클로드"]},
+    {"name": "Llama", "aliases": ["라마3", "라마 3"]},
+    {"name": "오픈소스", "aliases": ["open source", "open-source", "open-weight"]},
+    {"name": "규제", "aliases": ["regulation", "ai act", "기본법"]},
+    {"name": "월드모델", "aliases": ["world model", "월드 모델", "피지컬 ai"]}
+  ]
+}

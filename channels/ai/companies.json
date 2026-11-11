@@ -1,0 +1,27 @@
+{
+  "_comment": "AI 채널 '기업' 필터. name: 화면 표기, group: 화면 그룹, aliases: 제목에서 찾을 이름. 한글 별칭 중 다른 낱말 안에 들어가는 것(메타버스의 '메타')은 {t, not_after} 로 제한한다. relevance.company_mention_is_relevant 는 false: 빅테크 이름만으로는 AI 기사로 보지 않는다.",
+  "relevance": {"company_mention_is_relevant": false},
+  "groups": ["AI 연구소·스타트업", "빅테크", "국내 기업"],
+  "companies": [
+    {"name": "OpenAI", "group": "AI 연구소·스타트업", "aliases": ["openai", "chatgpt", "오픈AI", "오픈에이아이", "챗GPT"]},
+    {"name": "Anthropic", "group": "AI 연구소·스타트업", "aliases": ["anthropic", "claude", "앤트로픽", "앤스로픽", "클로드"]},
+    {"name": "Mistral", "group": "AI 연구소·스타트업", "aliases": ["mistral", "미스트랄"]},
+    {"name": "xAI", "group": "AI 연구소·스타트업", "aliases": ["xai", "grok", "그록"]},
+    {"name": "DeepSeek", "group": "AI 연구소·스타트업", "aliases": ["deepseek", "딥시크"]},
+    {"name": "Hugging Face", "group": "AI 연구소·스타트업", "aliases": ["hugging face", "huggingface", "허깅페이스"]},
+    {"name": "World Labs", "group": "AI 연구소·스타트업", "aliases": ["world labs", "월드랩스"]},
+    {"name": "Google·DeepMind", "group": "빅테크", "aliases": ["google", "deepmind", "gemini", "구글", "딥마인드", "제미나이"]},
+    {"name": "Meta", "group": "빅테크", "aliases": ["meta", "meta ai", {"t": "메타", "not_after": "버스|데이터|인지"}]},
+    {"name": "Microsoft", "group": "빅테크", "aliases": ["microsoft", "마이크로소프트"]},
+    {"name": "NVIDIA", "group": "빅테크", "aliases": ["nvidia", "엔비디아"]},
+    {"name": "Amazon", "group": "빅테크", "aliases": ["amazon", "aws", "아마존"]},
+    {"name": "Apple", "group": "빅테크", "aliases": ["apple", "애플"]},
+    {"name": "Alibaba", "group": "빅테크", "aliases": ["alibaba", "qwen", "알리바바", "큐원"]},
+    {"name": "네이버", "group": "국내 기업", "aliases": ["naver", "네이버", "하이퍼클로바"]},
+    {"name": "카카오", "group": "국내 기업", "aliases": ["kakao", "카카오"]},
+    {"name": "LG AI연구원", "group": "국내 기업", "aliases": ["lg ai", "exaone", "엑사원", "LG AI연구원"]},
+    {"name": "업스테이지", "group": "국내 기업", "aliases": ["upstage", "업스테이지"]},
+    {"name": "삼성전자", "group": "국내 기업", "aliases": ["samsung", "삼성전자"]},
+    {"name": "SK텔레콤", "group": "국내 기업", "aliases": ["SKT", "SK텔레콤"]}
+  ]
+}

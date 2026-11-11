@@ -1,0 +1,38 @@
+{
+  "_comment": "AI 채널 분류 규칙. match_mode en: 영어 키워드는 단어 경계·복수형(s/es)·띄어쓰기/하이픈 변형, 버전 번호 경계. 한글 키워드는 띄어쓰기 무시 부분일치. relevance_mode word: 관련도도 단어 경계(said 안의 ai 불일치). 가중치 strong=3, company=2, normal=1. 대표 카테고리=점수 최고(동점은 priority 순). press_relevance_keywords 를 두지 않아 공식 블로그(press)에 추가 조건이 없다.",
+  "match_mode": "en",
+  "relevance_mode": "word",
+  "priority": ["정책·규제·안전", "모델·제품 출시", "오픈소스·개발 도구", "업계·투자 동향"],
+  "categories": {
+    "모델·제품 출시": {
+      "strong": ["launch", "launched", "unveil", "unveiled", "release", "released", "introduce", "introduced", "debut", "debuted", "roll out", "rolls out", "rolled out", "generally available", "출시", "공개", "선보", "선봬", "신모델", "새 모델"],
+      "company": ["gpt-5", "gpt-6", "gemini", "claude", "llama", "grok", "sora", "veo", "imagen", "copilot", "chatgpt", "qwen", "deepseek", "mistral", "챗GPT", "제미나이", "클로드", "그록", "딥시크"],
+      "normal": ["model", "update", "feature", "app", "업데이트", "기능", "모델"]
+    },
+    "오픈소스·개발 도구": {
+      "strong": ["open source", "open-weight", "open weights", "open model", "github", "hugging face", "sdk", "오픈소스", "깃허브", "허깅페이스", "공개 모델"],
+      "company": ["framework", "library", "toolkit", "dataset", "benchmark", "fine-tuning", "fine-tune", "inference", "developer", "api", "cuda", "pytorch", "transformers", "vllm", "llama.cpp", "langchain", "ollama", "프레임워크", "라이브러리", "데이터셋", "벤치마크", "개발자", "파인튜닝", "추론 엔진"],
+      "normal": ["code", "coding", "agent", "tool", "코딩", "에이전트", "도구"]
+    },
+    "정책·규제·안전": {
+      "strong": ["regulation", "regulator", "ai act", "executive order", "lawsuit", "antitrust", "export control", "규제", "법안", "기본법", "소송", "수출 통제", "가이드라인"],
+      "company": ["law", "bill", "policy", "senate", "congress", "court", "copyright", "safety", "alignment", "deepfake", "privacy", "ban", "ftc", "eu", "government", "정책", "정부", "국회", "저작권", "안전", "윤리", "딥페이크", "개인정보", "과기정통부", "방통위"],
+      "normal": ["risk", "misuse", "election", "위험", "선거"]
+    },
+    "업계·투자 동향": {
+      "strong": ["funding", "raises", "raised", "valuation", "acquisition", "acquire", "acquired", "merger", "ipo", "투자 유치", "인수", "합병", "상장", "기업가치"],
+      "company": ["investment", "invest", "revenue", "earnings", "partnership", "partner", "deal", "layoff", "startup", "data center", "stock", "투자", "매출", "실적", "협력", "제휴", "업무협약", "MOU", "스타트업", "데이터센터", "주가"],
+      "normal": ["market", "ceo", "hire", "chip", "gpu", "시장", "반도체", "대표"]
+    }
+  },
+  "exclude": {"keywords": [], "unless": [], "combos": []},
+  "feed_hints": {},
+  "relevance_keywords": [
+    "ai", "artificial intelligence", "machine learning", "deep learning", "neural network", "llm", "large language model", "language model", "foundation model",
+    "generative", "genai", "chatbot", "gpt", "chatgpt", "openai", "anthropic", "claude", "gemini", "deepmind", "llama", "mistral", "deepseek", "qwen", "grok", "xai", "hugging face",
+    "copilot", "multimodal", "computer vision", "speech recognition", "text-to-speech", "diffusion model", "inference", "fine-tuning", "agent", "agentic",
+    "robot", "robotics", "humanoid", "world model", "world simulator", "embodied", "physical ai", "jepa",
+    "인공지능", "생성형", "거대언어모델", "언어모델", "챗봇", "머신러닝", "기계학습", "딥러닝", "에이전트", "멀티모달", "파운데이션 모델",
+    "로봇", "로보틱스", "휴머노이드", "피지컬", "월드모델", "세계 모델", "오픈AI", "앤트로픽", "딥마인드", "챗GPT", "제미나이"
+  ]
+}

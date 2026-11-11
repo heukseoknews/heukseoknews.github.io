@@ -1,0 +1,22 @@
+{
+ "slug": "ai",
+ "name": "AI",
+ "subtitle": "AI 모델·도구·정책·산업",
+ "description": "AI 모델·오픈소스·정책·산업 뉴스를 하루 세 번 모아 보여 줍니다.",
+ "locale": "ko-KR",
+ "timezone": "Asia/Seoul",
+ "schedule_utc": "37 20 * * *",
+ "hidden": true,
+ "collect": false,
+ "tabs": {
+  "new": "새 뉴스",
+  "all": "전체 뉴스",
+  "press": "공식 발표",
+  "bookmarks": "북마크"
+ },
+ "filters": {
+  "sources": "언론사",
+  "companies": "기업",
+  "orgs": "분야"
+ }
+}

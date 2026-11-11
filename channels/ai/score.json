@@ -1,0 +1,16 @@
+{
+  "_comment": "AI 채널 중요도(★) 최소 구성. score = base + 키워드 점수 임계 가산 + 핵심어 가산(출시 동사와 모델·제품명이 함께 나오면 +1), 상한 max. 공식 발표(press: 공식 블로그·공식 사이트 검색)는 +1(source_type_bonus). 의견·목록형·할인 기사는 2점 상한. 보험 채널의 시장 상한·계리 핵심어는 쓰지 않는다.",
+  "base": 2,
+  "max": 5,
+  "keyword_thresholds": [{"top_at_least": 3, "add": 1}, {"top_at_least": 6, "add": 1}],
+  "core_terms": {
+    "groups": [
+      ["launch", "release", "unveil", "introduce", "debut", "출시", "공개"],
+      ["gpt", "chatgpt", "gemini", "claude", "llama", "grok", "sora", "veo", "qwen", "deepseek", "mistral", "챗GPT", "제미나이", "클로드", "그록", "딥시크"]
+    ],
+    "add_by_count": {"2": 1}
+  },
+  "low_importance": {"keywords": ["best", "top 10", "how to", "deal", "discount", "sale", "review", "opinion", "칼럼", "기고", "사설"], "max_score": 2},
+  "source_type_bonus": {"press": 1},
+  "excluded_score": 2
+}
