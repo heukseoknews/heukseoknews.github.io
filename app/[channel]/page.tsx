@@ -20,7 +20,7 @@ const PAGE = 50;
 
 export default function Home() {
   const ch = useChannel();
-  const { fmt } = ch;
+  const { fmt, fmtShort } = ch;
   const L = ch.filters;   // 필터 라벨(언론사/보험사/유관기관)
   const [tab, setTab] = useState<Tab>('new');
   const [category, setCategory] = useState<string>('전체');
@@ -108,6 +108,7 @@ export default function Home() {
   const lastPage = Math.max(1, Math.ceil(rows.length / PAGE));
   const curPage = Math.min(page, lastPage);  // 읽은 기사가 빠져 페이지 수가 줄어도 범위를 벗어나지 않게
   const pageRows = rows.slice((curPage - 1) * PAGE, curPage * PAGE);
+  const listReady = ready && (tab === 'bookmarks' || !loading);
   const markDone = () => { update(s => ({ ...s, lastConfirmed: new Date().toISOString() })); setPage(1); };
 
   // 켜진 필터 목록: 배지 개수·'필터 초기화'·결과 0건 안내에 쓴다. hint = 그 필터만 풀었을 때 건수(조합 때문에 비었는지 알려 줌)
@@ -160,9 +161,16 @@ export default function Home() {
     <FilterChips label={L.orgs} selected={orgs} onChange={v => { setOrgs(v); setPage(1); }} />
     <FilterChips label={L.sources} selected={sources} onChange={v => { setSources(v); setPage(1); }} />
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />
-    {tab === 'new' && <div className="notice"><div><b>마지막 확인 완료 이후 수집된 기사</b><p>{baseline ? `마지막 확인 완료: ${fmt(baseline)}` : '처음 접속했습니다. 보관 중인 뉴스를 모두 새 뉴스로 표시합니다.'} · 수집시각 기준(표시 시각은 발행시각)</p></div><button className="confirm" disabled={!ready} onClick={markDone}><Check size={15} /> 새 뉴스 확인 완료</button></div>}
-    {tab === 'new' && (hiddenReadCount > 0 || showRead) && <div className="readToggleRow"><button type="button" className="readToggle" aria-pressed={showRead} onClick={() => { setShowRead(v => !v); setPage(1); }}>{showRead ? '읽은 기사 숨기기' : `읽은 기사 ${hiddenReadCount.toLocaleString()}건 보기`}</button></div>}
-    <div className="listHead"><h3>{ch.tabs[tab]} <small>{rows.length.toLocaleString()}건</small></h3><span>{loadingMore ? '과거 기사 불러오는 중…' : index?.updated_at ? `마지막 수집 ${fmt(index.updated_at)}` : ''}</span></div>
+    {/* 목록 머리: 탭 이름·건수, 새 뉴스 탭은 읽은 기사 보기·마지막 확인·모두 확인. 불러오기 전에는 건수·확인 정보를 비워 둔다(정적 HTML 에 0건이 찍히지 않게). */}
+    <div className="listHead">
+      <h2>{ch.tabs[tab]}{listReady && <small>{rows.length.toLocaleString()}건</small>}</h2>
+      {loadingMore && <span className="listNote">과거 기사 불러오는 중…</span>}
+      {tab === 'new' && listReady && <div className="listActions">
+        {(hiddenReadCount > 0 || showRead) && <button type="button" className="readToggle" aria-pressed={showRead} onClick={() => { setShowRead(v => !v); setPage(1); }}>{showRead ? '읽은 기사 숨기기' : `읽은 기사 ${hiddenReadCount.toLocaleString()}건 보기`}</button>}
+        {baseline && <span className="lastConfirm" title={`마지막 확인 ${fmt(baseline)}`}>마지막 확인 {fmtShort(baseline)}</span>}
+        <button type="button" className="confirm" onClick={markDone}><Check size={15} aria-hidden="true" /> 모두 확인</button>
+      </div>}
+    </div>
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     <section className="articles">{!ready || (loading && tab !== 'bookmarks') ? <div className="empty">뉴스를 불러오는 중입니다…</div> : pageRows.length === 0
       ? (active.length
