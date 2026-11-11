@@ -116,6 +116,21 @@ for (const [c, min] of [['#16202b', 4.5], ['#55606e', 4.5], ['#646f7f', 4.5], ['
   assert.ok(contrast(c, '#ffffff') >= min && contrast(c, '#f6f7f9') >= min, `${c} 대비`);
 }
 
+// 푸터: 수집 상태 링크·빌드 시각·commit 없음(version.json 은 유지), 문의·마지막 수집만
+const footer = readFileSync('components/Footer.tsx', 'utf8');
+assert.ok(!/status\/|수집 상태|formatBuild|useVersion|\.commit/.test(footer), '푸터에 수집 상태 링크·빌드 정보 없음');
+assert.ok(footer.includes('SITE.issues') && footer.includes('마지막 수집') && footer.includes('SITE.nameEn'));
+// 차트 색: 토큰(1번 = 채널 색), 나머지는 흰 바탕 3:1 이상(그래픽), 축 글자는 --muted(4.5:1 이상)
+const trendsPage = readFileSync('app/[channel]/trends/page.tsx', 'utf8');
+assert.ok(!/#[0-9a-fA-F]{6}/.test(trendsPage), 'trends 화면에 하드코딩 색 없음');
+const chartColors = [...css.matchAll(/--chart-(\d):([^;]+);/g)].map(m => [m[1], m[2]]);
+assert.equal(chartColors.length, 7); assert.equal(chartColors[0][1], 'var(--accent)');
+for (const [, c] of chartColors.slice(1)) assert.ok(contrast(c, '#FFFFFF') >= 3, `차트 색 ${c} 대비`);
+assert.match(css, /\.chart \.axis\{fill:var\(--muted\)\}/);
+// 북마크 채움 = 채널 색 토큰
+const card = readFileSync('components/ArticleCard.tsx', 'utf8');
+assert.ok(!/#[0-9a-fA-F]{6}/.test(card) && /\.bookmark \.saved\{fill:var\(--accent\)\}/.test(css));
+
 // 테마 값 검사: 위험한 이름·값은 버린다
 assert.equal(themeCss({ '--a': '#fff', 'color': 'red', '--b': 'red;}body{x:y', '--c': 'url(javascript:x)' }), ':root{--a:#fff}');
 assert.equal(themeCss({}), '');

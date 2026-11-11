@@ -7,7 +7,8 @@ import { Trends, lastWeeks, niceMax } from '../../../lib/trends';
 import { useChannel } from '../../../lib/channelContext';
 
 const WEEKS = 12;
-const COLORS = ['#204e87', '#d2691e', '#2a9d6f', '#b5446e', '#7a5bc7', '#c9a227', '#3a9bb8'];
+// 선 색 = CSS 토큰(--chart-1 은 채널 색, 나머지는 흰 바탕 대비 4.9:1 이상)
+const COLORS = [1, 2, 3, 4, 5, 6, 7].map(i => `var(--chart-${i})`);
 const W = 640, H = 280, L = 36, R = 12, T = 12, B = 34;
 
 export default function TrendsPage() {
@@ -34,11 +35,11 @@ export default function TrendsPage() {
         <input type="checkbox" checked={!off.includes(k)} onChange={() => setOff(o => o.includes(k) ? o.filter(v => v !== k) : [...o, k])} />
         <i style={{ background: COLORS[i % COLORS.length] }} />{k}</label>)}</div>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="키워드별 주간 언급 수 추이" className="chart">
-        {[0, 1, 2, 3, 4].map(g => { const v = (max * g) / 4; return <g key={g}><line x1={L} x2={W - R} y1={y(v)} y2={y(v)} stroke="#e6ebf2" /><text x={L - 6} y={y(v) + 4} textAnchor="end" fontSize="10" fill="#8a9aac">{Math.round(v)}</text></g>; })}
-        {weeks.map((w, i) => <text key={w.week_start} x={x(i)} y={H - 12} textAnchor="middle" fontSize="10" fill="#8a9aac">{md(w.week_start)}</text>)}
+        {[0, 1, 2, 3, 4].map(g => { const v = (max * g) / 4; return <g key={g}><line className="grid" x1={L} x2={W - R} y1={y(v)} y2={y(v)} /><text className="axis" x={L - 6} y={y(v) + 4} textAnchor="end" fontSize="10">{Math.round(v)}</text></g>; })}
+        {weeks.map((w, i) => <text key={w.week_start} className="axis" x={x(i)} y={H - 12} textAnchor="middle" fontSize="10">{md(w.week_start)}</text>)}
         {trends.keywords.map((k, ki) => off.includes(k) ? null : <g key={k}>
-          <polyline fill="none" stroke={COLORS[ki % COLORS.length]} strokeWidth="2" points={weeks.map((w, i) => `${x(i)},${y(w.counts[k] ?? 0)}`).join(' ')} />
-          {weeks.map((w, i) => <circle key={i} cx={x(i)} cy={y(w.counts[k] ?? 0)} r="3" fill={COLORS[ki % COLORS.length]}><title>{`${k} · ${md(w.week_start)}주 · ${w.counts[k] ?? 0}건`}</title></circle>)}
+          <polyline fill="none" style={{ stroke: COLORS[ki % COLORS.length] }} strokeWidth="2" points={weeks.map((w, i) => `${x(i)},${y(w.counts[k] ?? 0)}`).join(' ')} />
+          {weeks.map((w, i) => <circle key={i} cx={x(i)} cy={y(w.counts[k] ?? 0)} r="3" style={{ fill: COLORS[ki % COLORS.length] }}><title>{`${k} · ${md(w.week_start)}주 · ${w.counts[k] ?? 0}건`}</title></circle>)}
         </g>)}
       </svg>
       <div className="tableWrap"><table className="statusTable"><thead><tr><th>주 시작(월)</th>{trends.keywords.map(k => <th key={k}>{k}</th>)}<th>전체 기사</th></tr></thead>

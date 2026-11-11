@@ -1,5 +1,5 @@
 'use client';
-import { Bookmark, BookmarkCheck, Check, ExternalLink } from 'lucide-react';
+import { Bookmark, Check, ExternalLink } from 'lucide-react';
 import { Article, isSafeUrl } from '../lib/news';
 import { isNewArticle } from '../lib/newsFilter';
 import { useChannel } from '../lib/channelContext';
@@ -26,7 +26,7 @@ export default function ArticleCard({ a, baseline, bookmarked, read, rank, dim, 
   </div>
     <div className="cardActions">
       {onMarkRead && !read && <button type="button" aria-label="읽음 처리" title="읽음 처리" className="readBtn" onClick={() => onMarkRead(a.id)}><Check size={20} /></button>}
-      <button aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} className="bookmark" onClick={() => onBookmark(a)}>{bookmarked ? <BookmarkCheck size={20} fill="#e7f1ff" /> : <Bookmark size={20} />}</button>
+      <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={() => onBookmark(a)}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
     </div>
   </article>;
 }
