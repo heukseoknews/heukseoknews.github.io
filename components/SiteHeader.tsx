@@ -15,7 +15,7 @@ const MAIN = [['', '뉴스'], ['week/', '이번 주 핵심'], ['trends/', '키�
 const UTIL = [['settings/', '내 데이터']] as const;
 
 /** 채널 페이지 공통 헤더(상단 고정): 워드마크(홈 /) · 채널명 · 주 메뉴 · 내 데이터. ≤640px 에서는 햄버거 메뉴로 접힌다.
- *  채널 이동 줄은 헤더 아래 ChannelSwitcher. 수집 상태는 지연일 때만 배지로 보인다. */
+ *  채널 이동 줄은 헤더 아래 ChannelSwitcher. 수집 지연일 때만 배지(링크 아님)를 보인다. */
 export default function SiteHeader() {
   const pathname = usePathname();
   const ch = useChannel();
@@ -51,7 +51,7 @@ export default function SiteHeader() {
       <div id="site-nav" className={'siteNav' + (open ? ' open' : '')}>
         <nav aria-label="사이트 메뉴"><ul>{MAIN.map(item)}</ul></nav>
         <nav aria-label="보조 메뉴" className="utilNav"><ul>{UTIL.map(item)}</ul></nav>
-        {stale && finished && <Link href={channelHref(ch.slug, 'status/')} className="collectBadge warn" title={`마지막 수집 ${ch.fmt(finished)}`}>수집 지연</Link>}
+        {stale && finished && <span className="collectBadge warn" role="status" title={`마지막 수집 ${ch.fmt(finished)}`}>수집 지연</span>}
       </div>
     </div>
   </header>;

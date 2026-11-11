@@ -20,7 +20,7 @@ for (const d of dirs) {
   const c = JSON.parse(readFileSync(`channels/${d}/channel.json`, 'utf8'));
   for (const k of REQUIRED) assert.ok(c[k], `${d}/channel.json: ${k} 없음`);
   assert.equal(c.slug, d);
-  assert.ok(c.hidden === undefined || typeof c.hidden === 'boolean', `${d}: hidden 은 true/false`);
+  assert.equal(c.hidden, undefined, `${d}: 공개 여부는 lib/directory.ts status — channel.json hidden 은 쓰지 않는다`);
   assert.deepEqual(Object.keys(c.tabs).sort(), ['all', 'bookmarks', 'new', 'press']);
   assert.deepEqual(Object.keys(c.filters).sort(), ['companies', 'orgs', 'sources']);
   assert.ok(Array.isArray(c.schedule_utc) && c.schedule_utc.length, `${d}: schedule_utc 는 cron 목록`);
@@ -51,7 +51,7 @@ assert.deepEqual(planChannels([{ ...ch[0], collect: false }, ch[1]], 'schedule',
 // 보험 채널은 20:37 에 수집된다(지금과 같음)
 assert.ok(planChannels(real, 'schedule', '37 20 * * *').includes('insurance') && planChannels(real, 'workflow_dispatch').includes('insurance'));
 
-// 공개 여부 = lib/directory.ts status(live | soon) 하나. channel.json 의 hidden 은 화면이 읽지 않는다.
+// 공개 여부 = lib/directory.ts status(live | soon) 하나(channel.json 에 hidden 없음).
 const byDir = Object.fromEntries(DIRECTORY.map(d => [d.slug, d]));
 assert.equal(DIRECTORY.length, new Set(DIRECTORY.map(d => d.slug)).size, 'DIRECTORY slug 중복');
 for (const d of dirs) {
@@ -76,7 +76,10 @@ for (const f of ['app/[channel]/layout.tsx', 'lib/meta.ts']) { const t = readFil
 assert.match(registry, /robotsFor = \(c: Channel\) => \(c\.status === 'live' \? \{\} : \{ robots: \{ index: false, follow: false \} \}\)/);
 const sw = readFileSync('components/ChannelSwitcher.tsx', 'utf8');
 assert.ok(sw.includes('channelRow(ch.slug)') && !/\bCHANNELS\.map/.test(sw) && sw.includes('aria-disabled="true"'), 'ChannelSwitcher: channelRow, 준비 중은 비활성 span');
-for (const f of ['components/SiteHeader.tsx', 'components/Footer.tsx']) assert.ok(!readFileSync(f, 'utf8').includes("'status/', '수집 상태'"), `${f}: 수집 상태 메뉴 없음`);
+// 수집 상태(/status/) 링크는 사이트 어디에도 없다(페이지는 주소로만). 지연 배지는 표시만.
+for (const f of ['components/SiteHeader.tsx', 'components/Footer.tsx', 'components/ChannelSwitcher.tsx', 'components/StaleNotice.tsx', 'app/page.tsx', 'app/[channel]/page.tsx', 'app/[channel]/layout.tsx'])
+  assert.ok(!/['"`]status\/['"`]|\/status\//.test(readFileSync(f, 'utf8')), `${f}: 수집 상태 링크 없음`);
+assert.match(readFileSync('components/SiteHeader.tsx', 'utf8'), /<span className="collectBadge warn" role="status"/);
 
 // 보험 채널은 옛 사이트와 같은 이름·라벨·색
 const ins = JSON.parse(readFileSync('channels/insurance/channel.json', 'utf8'));

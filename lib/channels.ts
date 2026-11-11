@@ -23,8 +23,6 @@ export type ChannelMeta = {
   schedule_utc: string[];
   tabs: Record<TabId, string>; filters: Record<FilterId, string>;
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
-  /** 옛 숨김 표시. 화면은 더 이상 읽지 않는다 — 공개 여부는 lib/directory.ts 의 status. */
-  hidden?: boolean;
   /** false 면 워크플로가 이 채널을 수집하지 않는다(설정만 준비된 상태). */
   collect?: boolean;
   /** 탭 위 안내(채널마다 다름). 없으면 표시하지 않는다. */
