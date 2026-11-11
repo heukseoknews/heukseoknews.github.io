@@ -7,7 +7,7 @@
  "timezone": "Asia/Seoul",
  "schedule_utc": ["37 20 * * *", "37 4 * * *", "37 12 * * *"],
  "hidden": true,
- "collect": false,
+ "collect": true,
  "tabs": {
   "new": "새 뉴스",
   "all": "전체 뉴스",
