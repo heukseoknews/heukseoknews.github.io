@@ -1,5 +1,5 @@
 {
-  "_comment": "AI 채널 소스(단계 1: RSS 8개 + 구글 뉴스 site: 2개). rss: type press = 공식 블로그(공식 발표 탭, 중요도 +1). 전체 이력을 주는 공식 블로그 RSS 는 max_age_days 로 오래된 글을 받지 않는다. AI타임스·인공지능신문은 시각에 타임존이 없어 기본(Asia/Seoul)으로 해석한다. queries: Anthropic 은 RSS 가 없어 구글 뉴스 site: 검색(lang en), Meta AI 는 공식 사이트 검색 결과가 거의 없어 뉴스 검색. always_relevant: 피드 자체가 AI 공식 소스라 키워드와 무관하게 관련 있음(NVIDIA 는 게임 소식 때문에 제외). 제외(docs/ai-channel-plan.md 1장): Wayve(봇 차단), VentureBeat(429), 지디넷·전자신문 전체 섹션 RSS.",
+  "_comment": "AI 채널 소스(단계 1: RSS 8개 + 구글 뉴스 site: 2개). rss: type press = 공식 블로그(공식 발표 탭, 중요도 +1). 전체 이력을 주는 공식 블로그 RSS 는 max_age_days 로 오래된 글을 받지 않는다. AI타임스·인공지능신문은 시각에 타임존이 없어 기본(Asia/Seoul)으로 해석한다. queries: Anthropic 은 RSS 가 없어 구글 뉴스 site: 검색(lang en), Meta AI 는 공식 사이트 검색 결과가 거의 없어 연구 쪽으로 좁힌 뉴스 검색(Meta FAIR·V-JEPA·Meta Superintelligence). always_relevant: 피드 자체가 AI 공식 소스라 키워드와 무관하게 관련 있음(NVIDIA 는 게임 소식 때문에 제외). 제외(docs/ai-channel-plan.md 1장): Wayve(봇 차단), VentureBeat(429), 지디넷·전자신문 전체 섹션 RSS.",
   "max_age_days": 30,
   "rss": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "Meta AI(검색)",
-      "q": "(\"Meta AI\" OR \"Meta FAIR\" OR \"V-JEPA\")",
+      "q": "(\"Meta FAIR\" OR \"V-JEPA\" OR \"Meta Superintelligence\")",
       "when": "3d",
       "lang": "en",
       "type": "media"
