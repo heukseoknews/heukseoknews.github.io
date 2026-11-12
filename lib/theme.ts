@@ -22,6 +22,4 @@ export function contrast(a: string, b: string): number {
 }
 
 /** 채널 폴더가 아직 없는(수집·페이지 없음) 예정 채널의 테마. 폴더를 만들면 channels/<slug>/theme.json 으로 옮긴다. */
-export const PLANNED_THEMES: Record<string, ThemeVars> = {
-  finance: { '--accent': '#127346', '--accent-strong': '#0B5533', '--accent-soft': '#E6F4EC', '--accent-dark': '#6FCF9E' },
-};
+export const PLANNED_THEMES: Record<string, ThemeVars> = {};  // 금융 초록은 channels/finance/theme.json 으로 옮김

@@ -1,0 +1,21 @@
+{
+ "slug": "finance",
+ "name": "금융",
+ "subtitle": "은행·증권·금융정책·핀테크",
+ "description": "은행·금리, 증권·자본시장, 금융정책·감독, 핀테크 뉴스를 매일 아침 자동으로 모아 보여 줍니다.",
+ "locale": "ko-KR",
+ "timezone": "Asia/Seoul",
+ "schedule_utc": ["37 20 * * *"],
+ "collect": false,
+ "tabs": {
+  "new": "새 뉴스",
+  "all": "전체 뉴스",
+  "press": "금융당국·기관 발표",
+  "bookmarks": "북마크"
+ },
+ "filters": {
+  "sources": "언론사",
+  "companies": "금융회사",
+  "orgs": "기관"
+ }
+}

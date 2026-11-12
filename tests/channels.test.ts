@@ -65,12 +65,13 @@ for (const e of DIRECTORY) {
   if (!dirs.includes(e.slug)) assert.ok(PLANNED_THEMES[e.slug], `${e.slug}: 폴더 없는 채널은 PLANNED_THEMES 에 색`);
 }
 assert.equal(statusOf('insurance'), 'live', '기본 채널(보험)은 공개');
-assert.equal(statusOf('ai'), 'live'); assert.equal(statusOf('finance'), 'soon'); assert.ok(!dirs.includes('finance'));
-assert.deepEqual(DIRECTORY.map(d => [d.slug, d.card]), [['insurance', '보험·계리·금융시장'], ['ai', '모델·오픈소스·정책·산업'], ['finance', '은행·금융권 뉴스']]);
+assert.equal(statusOf('ai'), 'live'); assert.equal(statusOf('finance'), 'live'); assert.ok(dirs.includes('finance'));
+assert.deepEqual(DIRECTORY.map(d => [d.slug, d.card]), [['insurance', '보험·계리·금융시장'], ['ai', '모델·오픈소스·정책·산업'], ['finance', '은행·증권·금융정책·핀테크']]);
 // 채널 이동 줄: live 와 지금 채널만 링크, 준비 중은 링크 없음
 const row = (cur: string) => channelRow(cur).map(r => [r.slug, r.href, r.current]);
-assert.deepEqual(row('insurance'), [['insurance', '/insurance/', true], ['ai', '/ai/', false], ['finance', null, false]]);
-assert.deepEqual(row('ai'), [['insurance', '/insurance/', false], ['ai', '/ai/', true], ['finance', null, false]]);
+assert.deepEqual(row('insurance'), [['insurance', '/insurance/', true], ['ai', '/ai/', false], ['finance', '/finance/', false]]);
+assert.deepEqual(row('ai'), [['insurance', '/insurance/', false], ['ai', '/ai/', true], ['finance', '/finance/', false]]);
+assert.deepEqual(row('finance'), [['insurance', '/insurance/', false], ['ai', '/ai/', false], ['finance', '/finance/', true]]);
 // 화면 코드: hidden 대신 status, 이동 줄은 channelRow, 숨김 채널 목록 직접 링크 금지
 for (const f of ['app/[channel]/layout.tsx', 'lib/meta.ts']) { const t = readFileSync(f, 'utf8'); assert.ok(t.includes('robotsFor(c)') && !t.includes('.hidden'), `${f}: noindex 는 status(robotsFor)`); }
 assert.match(registry, /robotsFor = \(c: Channel\) => \(c\.status === 'live' \? \{\} : \{ robots: \{ index: false, follow: false \} \}\)/);

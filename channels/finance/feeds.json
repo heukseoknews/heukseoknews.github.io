@@ -1,0 +1,142 @@
+{
+  "_comment": "금융 채널 소스(docs/finance-channel-plan.md 1장). rss: 금융 섹션 RSS(하루 1회 수집에 맞게 24시간 넘게 담는 피드만)와 공식 RSS(한국은행·재정경제부, type press). 시각에 타임존이 없는 피드(헤럴드경제·대한금융신문·재정경제부)는 기본(Asia/Seoul)으로 해석한다. 이데일리는 https 에서 수집기 요청을 끊어(연결 재설정) http 주소를 쓴다. 공식 RSS 는 오래된 글까지 담아 max_age_days 14. queries: 구글 뉴스 검색(쿼리당 최대 100건, 25개 이하 유지, 상한에 닿으면 쪼개거나 when 을 줄인다). 금융위·금감원 보도자료는 boards.json 게시판(금융위 RSS 는 점검 중 503). 제외: 파이낸셜뉴스(시각 'Thu,12 Nov' 를 수집기가 읽지 못함), 조선비즈 증권·헤럴드경제 증권·딜사이트TV 금융(종목·시황 비중이 커 관련도 낮음 40~55%, 양 조절), 연합인포맥스·뉴스핌·이데일리 증권(피드 창 2~5시간), 아시아경제·더벨·은행연합회(robots 차단), 경제 섹션 전체 피드(금융 비율 10~26%).",
+  "max_age_days": 7,
+  "rss": [
+    {
+      "name": "서울경제 금융",
+      "url": "https://www.sedaily.com/rss/finance",
+      "type": "media",
+      "source": "서울경제"
+    },
+    {
+      "name": "이데일리 금융",
+      "url": "http://rss.edaily.co.kr/finance_news.xml",
+      "type": "media",
+      "source": "이데일리"
+    },
+    {
+      "name": "헤럴드경제 금융",
+      "url": "https://biz.heraldcorp.com/rss/google/finance",
+      "type": "media",
+      "source": "헤럴드경제"
+    },
+    {
+      "name": "대한금융신문",
+      "url": "https://www.kbanker.co.kr/rss/allArticle.xml",
+      "type": "media",
+      "source": "대한금융신문"
+    },
+    {
+      "name": "한국은행 보도자료",
+      "url": "https://www.bok.or.kr/portal/bbs/B0000552/news.rss?menuNo=200690",
+      "type": "press",
+      "source": "한국은행",
+      "max_age_days": 14
+    },
+    {
+      "name": "재정경제부 보도자료",
+      "url": "https://www.moef.go.kr/com/detailRssTagService.do?bbsId=MOSFBBS_000000000028",
+      "type": "press",
+      "source": "재정경제부",
+      "max_age_days": 14
+    }
+  ],
+  "queries": [
+    {
+      "name": "한은·기준금리",
+      "q": "(기준금리 OR 금융통화위원회 OR 금통위 OR 한은 총재 OR 통화정책) -특징주 -배구 -농구 -야구 -축구 -채용",
+      "when": "3d",
+      "type": "media"
+    },
+    {
+      "name": "가계대출·예대금리",
+      "q": "(intitle:가계대출 OR intitle:예대금리차 OR intitle:대출금리 OR intitle:예금금리) (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "가계부채·대출규제",
+      "q": "intitle:가계부채 OR intitle:DSR OR intitle:대출규제 OR intitle:부동산PF OR intitle:총량규제",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "5대 은행",
+      "q": "(국민은행 OR 신한은행 OR 하나은행 OR 우리은행 OR 농협은행) (순이익 OR 실적 OR 제재 OR 과징금 OR 행장 OR 연체율 OR 해킹) -농구 -배구 -딜링룸 -마감",
+      "when": "3d",
+      "type": "media"
+    },
+    {
+      "name": "인터넷·지방·국책은행",
+      "q": "(카카오뱅크 OR 케이뱅크 OR 토스뱅크 OR 기업은행 OR iM뱅크 OR 부산은행 OR 산업은행) (순이익 OR 실적 OR 제재 OR 과징금 OR 행장 OR 연체율 OR 해킹) -농구 -배구 -마감",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "대형 증권사",
+      "q": "(미래에셋증권 OR 한국투자증권 OR NH투자증권 OR 삼성증권 OR KB증권 OR 키움증권) (순이익 OR 실적 OR 제재 OR 과징금 OR 사장 OR 해킹 OR IMA) -목표가 -특징주 -마감",
+      "when": "1d",
+      "type": "media"
+    },
+    {
+      "name": "증권업계",
+      "q": "(intitle:증권사 OR intitle:IMA OR intitle:발행어음 OR intitle:종투사) -목표가 -특징주 (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "자본시장 제도",
+      "q": "(intitle:공매도 OR intitle:밸류업 OR intitle:자본시장법 OR intitle:넥스트레이드 OR intitle:주주환원) -특징주 (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "IPO·공모",
+      "q": "(intitle:IPO OR intitle:수요예측 OR intitle:공모주 OR intitle:상장예비심사) (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "금융위원회",
+      "q": "(intitle:금융위 OR intitle:금융위원회 OR intitle:금융위원장 OR intitle:금융당국) (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "금융감독원",
+      "q": "(intitle:금감원 OR intitle:금융감독원 OR intitle:금감원장) (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "3d",
+      "type": "media"
+    },
+    {
+      "name": "소비자보호·내부통제",
+      "q": "(책무구조도 OR 불완전판매 OR 금융소비자보호 OR 내부통제) (은행 OR 증권사 OR 금융사 OR 금융권)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "핀테크 기업",
+      "q": "(intitle:토스 OR intitle:카카오페이 OR intitle:네이버페이 OR intitle:네이버파이낸셜 OR intitle:비바리퍼블리카) (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "가상자산 제도",
+      "q": "(intitle:가상자산 OR intitle:디지털자산) (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "3d",
+      "type": "media"
+    },
+    {
+      "name": "스테이블코인·토큰증권",
+      "q": "(intitle:스테이블코인 OR intitle:원화코인 OR intitle:예금토큰 OR intitle:토큰증권) (site:yna.co.kr OR site:hankyung.com OR site:mk.co.kr OR site:einfomax.co.kr OR site:edaily.co.kr)",
+      "when": "7d",
+      "type": "media"
+    },
+    {
+      "name": "카드사",
+      "q": "(카드사 OR 신한카드 OR 삼성카드 OR KB국민카드 OR 현대카드 OR 롯데카드) (순이익 OR 실적 OR 제재 OR 과징금 OR 가맹점수수료 OR 카드론 OR 연체율) -배구 -농구",
+      "when": "7d",
+      "type": "media"
+    }
+  ]
+}

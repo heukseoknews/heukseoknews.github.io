@@ -1,0 +1,4 @@
+{
+ "_comment": "같은 사건 묶기(collector/cluster.py). 금융 채널은 꺼 둔다(켜는 기준·값은 channels/insurance/cluster.json, docs/article-quality-plan.md).",
+ "enabled": false
+}

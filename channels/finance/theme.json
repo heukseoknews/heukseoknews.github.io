@@ -1,0 +1,8 @@
+{
+ "vars": {
+  "--accent": "#127346",
+  "--accent-strong": "#0B5533",
+  "--accent-soft": "#E6F4EC",
+  "--accent-dark": "#6FCF9E"
+ }
+}

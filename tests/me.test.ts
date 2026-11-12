@@ -8,7 +8,8 @@ import type { Article } from '../lib/news.ts';
 // ---------- 메뉴·채널 선택 ----------
 assert.deepEqual(ME_MENU.map(m => m.href), ['/me/', '/me/data/']);  // 로그인 뒤 '/me/account/' 를 더할 자리
 assert.deepEqual(meChannels(['insurance', 'ai']), ['insurance', 'ai']);
-assert.deepEqual(meChannels(['insurance', 'ai', 'finance']), ['insurance', 'ai']);  // 준비 중 채널은 빠짐
+assert.deepEqual(meChannels(['insurance', 'ai', 'finance']), ['insurance', 'ai', 'finance']);
+assert.deepEqual(meChannels(['insurance', 'nope']), ['insurance']);  // 페이지가 없는 채널은 빠짐
 assert.equal(pickChannel('ai', 'insurance', ['insurance', 'ai']), 'ai');
 assert.equal(pickChannel('finance', 'ai', ['insurance', 'ai']), 'ai');       // 목록에 없는 ?ch= 는 무시
 assert.equal(pickChannel(null, 'nope', ['insurance', 'ai']), 'insurance');

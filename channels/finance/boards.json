@@ -1,0 +1,10 @@
+{
+  "_comment": "금융 채널 HTML 게시판(보험 채널과 같은 fsc·fss 파서, 담당부서 필터 없이 보도자료 전체). 금융위 RSS 가 점검 중일 때도 게시판이 공식 보도자료를 대신한다. pages: 평소 페이지 수, backfill_pages: --backfill 때 페이지 수, delay_s: 요청 간격(초, 1.2 이상). relevant_departments 를 두지 않는다(관련도는 제목 키워드로 판정).",
+  "delay_s": 1.2,
+  "pages": 2,
+  "backfill_pages": 4,
+  "boards": [
+    {"name": "금융위원회 보도자료", "parser": "fsc", "source": "금융위원회", "url": "https://www.fsc.go.kr/no010101", "page_param": "curPage"},
+    {"name": "금융감독원 보도자료", "parser": "fss", "source": "금융감독원", "url": "https://www.fss.or.kr/fss/bbs/B0000188/list.do?menuNo=200218", "page_param": "pageIndex"}
+  ]
+}

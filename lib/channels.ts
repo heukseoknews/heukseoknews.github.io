@@ -10,6 +10,11 @@ import aiTheme from '../channels/ai/theme.json';
 import aiCategories from '../channels/ai/categories.json';
 import aiCompanies from '../channels/ai/companies.json';
 import aiOrgs from '../channels/ai/orgs.json';
+import financeMeta from '../channels/finance/channel.json';
+import financeTheme from '../channels/finance/theme.json';
+import financeCategories from '../channels/finance/categories.json';
+import financeCompanies from '../channels/finance/companies.json';
+import financeOrgs from '../channels/finance/orgs.json';
 import { categoryList } from './categories';
 import { type ChannelStatus, statusOf } from './directory';
 import { groupMap } from './entities';
@@ -49,6 +54,7 @@ function build(meta: ChannelMeta, theme: { vars?: Record<string, string> }, cate
 export const CHANNELS: Channel[] = [
   build(insuranceMeta as ChannelMeta, insuranceTheme, insuranceCategories, insuranceCompanies, insuranceOrgs),
   build(aiMeta as ChannelMeta, aiTheme, aiCategories, aiCompanies as { companies: Named[]; groups: string[] }, aiOrgs),
+  build(financeMeta as ChannelMeta, financeTheme, financeCategories, financeCompanies as { companies: Named[]; groups: string[] }, financeOrgs as { orgs: Named[]; groups: string[] }),
 ];
 /** 정적 페이지는 CHANNELS 전부 만든다. 홈 카드·채널 이동 줄은 lib/directory.ts(DIRECTORY, channelRow). */
 /** 검색 색인 제외 메타(준비 중 채널) */
