@@ -8,7 +8,8 @@
   · 회사 거부(company_veto): 기사와 묶음의 회사·기관 태그가 둘 다 있는데 겹치지 않으면 넣지 않음(같은 형식의 다른 회사 실적)
   · 같은 매체(same_source_threshold): 묶음에 같은 매체 기사가 있으면 더 높은 기준(정형 제목 'Case Study - X' 방지)
   · 시간 폭(max_span_hours): 묶음의 첫 기사와 마지막 기사 사이가 이 시간을 넘지 않게(후속 보도 연쇄 방지)
-  · 묶음 합치기(merge_threshold): 이번 실행에서 새로 생긴 묶음이 다른 묶음과 중심끼리 코사인이 이 값 이상이면 합친다(같은 사건이 두 묶음으로 갈라지는 것 방지)
+  · 묶음 합치기(merge_threshold): 이번 실행에서 새로 생긴 묶음이 다른 묶음과 중심끼리 코사인이 이 값 이상이면 합친다(같은 사건이 두 묶음으로 갈라지는 것 방지).
+    한쪽이 혼자인 기사면 threshold 를 쓰고, 더 합칠 것이 없을 때까지 반복한다(같은 입력으로 다시 돌려도 결과가 같게)
 - 증분: 이미 2건 이상으로 묶인 기사의 묶음은 바꾸지 않는다(cluster_id 고정, 고정 묶음끼리는 합치지 않음). 묶이지 않은 최근(lookback_days) 기사만 새로 판정.
 
 기사에 쓰는 선택 필드(docs/data-contract.md): cluster_id, cluster_size, cluster_sources, cluster_lead. 혼자인 기사에는 쓰지 않는다.
@@ -190,34 +191,40 @@ def assign(rows: list[dict], cfg: dict, now: datetime | None = None) -> dict:
     frozen = set(groups) - {a['id'] for a in todo}
     merged = 0
     if c.get('merge_threshold'):
-        queue = sorted((x for x in groups.values() if x.cid not in frozen), key=lambda x: (x.first, x.cid))
-        while queue:  # 합쳐서 커진 새 묶음은 다시 대기열에 넣어 한 번 더 비교한다
-            g = queue.pop(0)
-            if groups.get(g.cid) is not g:
-                continue
-            cands = set().union(*(inv.get(k, ()) for k in g.vec)) - {g.cid} if g.vec else set()
-            best, bs = None, -1.0
-            for cid in sorted(cands):
-                h = groups.get(cid)
-                if h is None or max(g.last, h.last) - min(g.first, h.first) > span or g.first > h.last + win or h.first > g.last + win:
+        for _ in range(20):  # 더 합칠 것이 없을 때까지 반복(고정점): 다음 실행에서 결과가 달라지지 않게
+            before = merged
+            queue = sorted((x for x in groups.values() if x.cid not in frozen), key=lambda x: (x.first, x.cid))
+            while queue:  # 합쳐서 커진 새 묶음은 다시 대기열에 넣어 한 번 더 비교한다
+                g = queue.pop(0)
+                if groups.get(g.cid) is not g:
                     continue
-                if c['company_veto'] and g.ents and h.ents and not (g.ents & h.ents):
+                cands = set().union(*(inv.get(k, ()) for k in g.vec)) - {g.cid} if g.vec else set()
+                best, bs = None, -1.0
+                for cid in sorted(cands):
+                    h = groups.get(cid)
+                    if h is None or max(g.last, h.last) - min(g.first, h.first) > span or g.first > h.last + win or h.first > g.last + win:
+                        continue
+                    if c['company_veto'] and g.ents and h.ents and not (g.ents & h.ents):
+                        continue
+                    sm = g.gsim(h)
+                    # 한쪽이 혼자인 기사면 '기사 넣기'와 같은 기준(threshold) — 다음 실행의 재판정과 결과가 같도록
+                    thr = c['threshold'] if min(len(g.members), len(h.members)) == 1 else c['merge_threshold']
+                    if sm < thr or ((g.sources & h.sources) and sm < c['same_source_threshold']):
+                        continue
+                    if sm > bs:
+                        best, bs = h, sm
+                if best is None:
                     continue
-                sm = g.gsim(h)
-                if sm < c['merge_threshold'] or ((g.sources & h.sources) and sm < c['same_source_threshold']):
-                    continue
-                if sm > bs:
-                    best, bs = h, sm
-            if best is None:
-                continue
-            keep, drop = (best, g) if best.cid in frozen or (best.first, best.cid) < (g.first, g.cid) else (g, best)
-            keep.absorb(drop)
-            for k in drop.vec:
-                inv[k].discard(drop.cid); inv[k].add(keep.cid)
-            del groups[drop.cid]
-            merged += 1
-            if keep.cid not in frozen:
-                queue.insert(0, keep)
+                keep, drop = (best, g) if best.cid in frozen or (best.first, best.cid) < (g.first, g.cid) else (g, best)
+                keep.absorb(drop)
+                for k in drop.vec:
+                    inv[k].discard(drop.cid); inv[k].add(keep.cid)
+                del groups[drop.cid]
+                merged += 1
+                if keep.cid not in frozen:
+                    queue.insert(0, keep)
+            if merged == before:
+                break
 
     # 3) 필드 쓰기(2건 이상만). 혼자 남은 기사는 묶음 필드를 지운다
     clustered = 0

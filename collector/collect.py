@@ -455,6 +455,7 @@ def main():
     ap.add_argument('--rescore', action='store_true', help='네트워크 없이 저장된 기사의 중요도(★)만 score.json 산식으로 다시 계산')
     ap.add_argument('--reclassify', action='store_true', help='네트워크 없이 저장된 기사를 현재 분류 규칙으로 재분류(관련도 relevant 포함)')
     ap.add_argument('--quality', action='store_true', help='네트워크 없이 같은 사건 묶기·중요도 v2 를 다시 계산(cluster.json·score.json v2 플래그가 켜진 것만)')
+    ap.add_argument('--quality-all', action='store_true', help='--quality 와 함께: 최근 lookback_days 대신 저장된 전체 기간을 판정(처음 켤 때 과거 기사 백필)')
     ap.add_argument('--strip-quality', action='store_true', help='되돌리기: 저장된 기사에서 묶기·중요도 v2 선택 필드를 지움')
     args = ap.parse_args()
     cdir = channel.use(args.channel, args.config_dir)  # 분류·개체 로더도 이 폴더를 읽는다
@@ -477,8 +478,8 @@ def main():
         print(json.dumps(summary, ensure_ascii=False, indent=1))
         quality.run(Path(args.data_dir), cdir)
         return 0
-    if args.quality:
-        print(json.dumps(quality.run(Path(args.data_dir), cdir), ensure_ascii=False, indent=1))
+    if args.quality:  # --dry-run 이면 계산·검사만 하고 파일은 쓰지 않는다
+        print(json.dumps(quality.run(Path(args.data_dir), cdir, all_days=args.quality_all, dry_run=args.dry_run), ensure_ascii=False, indent=1))
         return 0
     now_iso = datetime.now(timezone.utc).isoformat()
     sources, queries, max_age = load_sources(cdir)

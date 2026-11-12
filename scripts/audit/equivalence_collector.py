@@ -5,6 +5,8 @@
 옛 코드 사본은 `git -C <옛 저장소> archive <커밋> | tar -x -C <폴더>` 로 만든다(옛 저장소에는 쓰지 않음).
 1) 저장 데이터 그대로 --reclassify  2) 분류 결과를 지운 데이터로 --reclassify(분류·점수·개체를 전부 다시 계산)
 3) --reindex(index·trends)  4) 분류 정답 샘플 정확도(eval_classify) — 모두 옛 코드와 새 코드의 결과가 같아야 한다.
+새 코드는 channels/insurance 사본에서 품질 플래그(cluster.json·score.json v2)를 끄고 돌린다(묶기·v2 필드는 이 검증 대상이 아님).
+2026-11-12 'DB생명' 별칭 수정 뒤로는 KDB생명 제목 기사의 companies 에서 'DB생명'이 빠지는 차이가 정상이다(docs/article-quality-plan.md 12장).
 다르면 다른 기사·필드를 출력하고 종료 코드 1.
 """
 from __future__ import annotations
@@ -67,6 +69,16 @@ def main():
     shutil.rmtree(work, ignore_errors=True); work.mkdir(parents=True)
     src = ROOT / 'data' / 'insurance'
     errs: list[str] = []
+    # 새 코드는 품질 플래그(묶기·v2)를 끈 설정 사본으로 돌린다: 이 검증은 분류·점수(score) 동등성만 본다
+    cfg = work / 'config_insurance'
+    shutil.copytree(ROOT / 'channels' / 'insurance', cfg)
+    for name, key in (('cluster.json', None), ('score.json', 'v2')):
+        if (cfg / name).exists():
+            d = json.loads((cfg / name).read_text(encoding='utf-8'))
+            if key is None or key in d:
+                (d[key] if key else d)['enabled'] = False
+                (cfg / name).write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding='utf-8')
+    new_args = ['--channel', 'insurance', '--config-dir', str(cfg)]
 
     # 0) 이식한 데이터가 옛 데이터와 같은지
     errs += compare_port(old / 'data', src)
@@ -75,7 +87,7 @@ def main():
     for side in ('old', 'new'):
         shutil.copytree(src, work / f'{side}_asis')
     run([a.python, 'collector/collect.py', '--reclassify', '--data-dir', work / 'old_asis'], old)
-    run([a.python, 'collector/collect.py', '--reclassify', '--channel', 'insurance', '--data-dir', work / 'new_asis'], ROOT)
+    run([a.python, 'collector/collect.py', '--reclassify', *new_args, '--data-dir', work / 'new_asis'], ROOT)
     errs += compare(work / 'old_asis', work / 'new_asis', '재분류(그대로)')
 
     # 2) 분류 결과를 지운 사본으로 재분류: 모든 기사의 분류·점수·관련도·개체를 처음부터 다시 계산
@@ -89,14 +101,14 @@ def main():
                 r.pop('companies', None); r.pop('orgs', None)
             p.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     out_old = run([a.python, 'collector/collect.py', '--reclassify', '--data-dir', work / 'old_scrubbed'], old)
-    out_new = run([a.python, 'collector/collect.py', '--reclassify', '--channel', 'insurance', '--data-dir', work / 'new_scrubbed'], ROOT)
+    out_new = run([a.python, 'collector/collect.py', '--reclassify', *new_args, '--data-dir', work / 'new_scrubbed'], ROOT)
     errs += compare(work / 'old_scrubbed', work / 'new_scrubbed', '재분류(분류 지운 사본)')
     errs += compare(work / 'old_asis', work / 'new_scrubbed', '지운 사본 재계산 = 원본 재분류(내용)', check_bytes=False)  # 지웠다 붙인 companies·orgs 는 키 순서가 바뀐다
     if out_old.splitlines()[-9:] != out_new.splitlines()[-9:]:
         errs.append('[재분류 로그] 카테고리 분포 출력이 다름')
 
     # 3) index·trends 재생성
-    for side, cwd, extra in (('old', old, []), ('new', ROOT, ['--channel', 'insurance'])):
+    for side, cwd, extra in (('old', old, []), ('new', ROOT, new_args)):
         run([a.python, 'collector/collect.py', '--reindex', *extra, '--data-dir', work / f'{side}_asis'], cwd)
     ti = [json.loads((work / f'{s}_asis' / 'trends.json').read_text(encoding='utf-8')) for s in ('old', 'new')]
     for t in ti:

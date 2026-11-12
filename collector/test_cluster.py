@@ -64,6 +64,17 @@ by = {a['id']: a for a in r}
 assert by['a001']['cluster_id'] == 'a001' and by['a001']['cluster_size'] == 3 and by['a001']['cluster_sources'] == 3
 assert s['groups'] == 4 and s['clustered'] == 10, s
 
+# 2-1) 고정점: 같은 입력에 다시 돌려도 결과가 같다(첫 실행에서 혼자 남은 기사가 다음 실행에서 묶음에 붙지 않음)
+snap2 = copy.deepcopy(r)
+cluster.assign(r, CFG)
+assert r == snap2
+r2b = copy.deepcopy(rows) + [art(30, '현대해상, 성남시의료원 로비에 독서 쉼터…34번째', '중앙이코노미', 6, ['현대해상']),
+                             art(31, '현대해상, 병원 34곳에 마음도서관 조성…정서 지원 확대', '뉴스1', 9, ['현대해상'])]
+cluster.assign(r2b, {**CFG, 'lookback_days': 100000, 'idf_days': 100000})
+snap3 = copy.deepcopy(r2b)
+cluster.assign(r2b, CFG)
+assert r2b == snap3
+
 # 3) 회사 거부 끄면 같은 형식의 다른 회사 실적이 묶일 수 있다(설정이 실제로 쓰이는지)
 r2 = copy.deepcopy(rows)
 cluster.assign(r2, {**CFG, 'company_veto': False, 'threshold': 0.2})
