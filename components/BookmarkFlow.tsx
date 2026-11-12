@@ -24,6 +24,9 @@ export function useBookmarkFlow(api: Api, onToast?: () => void) {
     timer.current = window.setTimeout(() => setToast(null), TOAST_MS);
   }, [onToast]);
   const clear = useCallback(() => { clearTimeout(timer.current); setToast(null); }, []);
+  // 안내 위에 마우스를 올리거나 키보드로 들어가면 닫히지 않게 멈추고, 벗어나면 다시 센다
+  const pause = () => clearTimeout(timer.current);
+  const resume = () => { clearTimeout(timer.current); timer.current = window.setTimeout(() => setToast(null), TOAST_MS); };
 
   const onBookmark = useCallback((a: Article) => {
     const cur = saved.bookmarks[a.id];
@@ -32,10 +35,21 @@ export function useBookmarkFlow(api: Api, onToast?: () => void) {
     else show({ kind: 'added', id: a.id, n: Date.now() });
   }, [saved.bookmarks, toggleBookmark, show]);
 
-  const openEditor = useCallback((id: string) => { clear(); setEditing(id); }, [clear]);
+  const returnTo = useRef<HTMLElement | null>(null);
+  const openEditor = useCallback((id: string) => { returnTo.current = document.activeElement as HTMLElement | null; clear(); setEditing(id); }, [clear]);
   const editingBm = editing ? saved.bookmarks[editing] : undefined;
+  // 정리 창을 닫으면 연 버튼으로, 그 버튼이 사라졌으면(안내의 '정리') 그 카드의 북마크 버튼으로 포커스를 돌려준다
+  const closeEditor = useCallback(() => {
+    const id = editing;
+    setEditing(null);
+    requestAnimationFrame(() => {
+      const back = returnTo.current;
+      if (back?.isConnected) back.focus();
+      else if (id) document.querySelector<HTMLElement>(`[data-bm-id="${CSS.escape(id)}"] .bookmark`)?.focus();
+    });
+  }, [editing]);
 
-  const toastNode = toast && <div className="undoToast" role="status" aria-live="polite" key={toast.n}>
+  const toastNode = toast && <div className="undoToast" role="status" aria-live="polite" key={toast.n} onMouseEnter={pause} onMouseLeave={resume} onFocus={pause} onBlur={resume}>
     {toast.kind === 'added'
       ? <><span>북마크에 저장했습니다</span><button type="button" onClick={() => openEditor(toast.id)}>정리</button></>
       : <><span>북마크를 해제했습니다</span><button type="button" onClick={() => { restore(toast.prev); clear(); }}>되돌리기</button></>}
@@ -43,7 +57,7 @@ export function useBookmarkFlow(api: Api, onToast?: () => void) {
 
   const editorNode = isLive(editingBm) && <BookmarkEditor key={editingBm.id} bookmark={editingBm}
     folders={liveGroups(saved, 'folders')} tags={liveGroups(saved, 'tags')}
-    onCreate={addGroup} onSave={p => editBookmark(editingBm.id, p)} onClose={() => setEditing(null)} />;
+    onCreate={addGroup} onSave={p => editBookmark(editingBm.id, p)} onClose={closeEditor} />;
 
   return { onBookmark, openEditor, clearToast: clear, toastNode, editorNode };
 }

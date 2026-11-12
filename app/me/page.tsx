@@ -67,7 +67,7 @@ export default function MyBookmarksPage() {
     const folder = folderOf(saved, b);
     const tg = tagsOf(saved, b);
     const read = readSet.has(b.id);
-    return <article key={b.id} className={'article myBm' + (b.missing ? ' missing' : '')}>
+    return <article key={b.id} data-bm-id={b.id} className={'article myBm' + (b.missing ? ' missing' : '')}>
       <div className="articleMain">
         <div className="cardTop">
           {!b.missing && <span className={b.source_type === 'press' ? 'pill official' : 'pill'}>{b.category || '미분류'}</span>}
@@ -111,7 +111,7 @@ export default function MyBookmarksPage() {
       <MultiFilter label={L.sources} options={srcOpts} selected={f.sources} onChange={v => set({ sources: v })} />
       <MultiFilter label={L.companies} options={coOpts} selected={f.companies} groups={ch.companyGroups} onChange={v => set({ companies: v })} />
       <MultiFilter label={L.orgs} options={orgOpts} selected={f.orgs} groups={ch.orgGroups} onChange={v => set({ orgs: v })} />
-      <label className="sort meSelect"><span>기간</span><select aria-label="기간(발행일)" value={f.period} onChange={e => set({ period: e.target.value as Period })}>
+      <label className="sort meSelect" title="발행일 기준"><span>기간</span><select aria-label="기간(발행일 기준)" value={f.period} onChange={e => set({ period: e.target.value as Period })}>
         {PERIODS.map(p => <option key={p.id} value={p.id}>{p.label}</option>)}</select></label>
       <label className="sort meSelect"><span>읽음</span><select aria-label="읽음 여부" value={f.read} onChange={e => set({ read: e.target.value as ReadFilter })}>
         <option value="all">전체</option><option value="unread">안 읽은 것</option><option value="read">읽은 것</option></select></label>

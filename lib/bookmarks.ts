@@ -195,7 +195,7 @@ function checkName(s: WithBm, kind: GroupKind, name: string, except?: string): s
 /** 폴더·태그 만들기. 한도(폴더 20·태그 50)·빈 이름·같은 이름이면 Error(화면 문구). */
 export function createGroup<S extends WithBm>(s: S, kind: GroupKind, name: string, now: string, id = newId(kind)): { state: S; id: string } {
   const n = checkName(s, kind, name);
-  if (liveGroups(s, kind).length >= LIMITS[kind]) throw new Error(`${KIND_LABEL[kind]}는 ${LIMITS[kind]}개까지 만들 수 있습니다.`);
+  if (liveGroups(s, kind).length >= LIMITS[kind]) throw new Error(`${KIND_LABEL[kind]}는 ${LIMITS[kind]}개까지입니다.`);
   return { state: { ...s, [kind]: { ...s[kind], [id]: { id, name: n, createdAt: now, updatedAt: now } } }, id };
 }
 

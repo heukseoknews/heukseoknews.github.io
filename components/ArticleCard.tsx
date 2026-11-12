@@ -11,7 +11,7 @@ const tagList = (a: Article) => [...new Set([...(a.orgs ?? []), ...(a.companies 
 
 export default function ArticleCard({ a, baseline, bookmarked, read, rank, dim, fading, onBookmark, onRead, onUnread, onMarkRead }: Props) {
   const { fmt } = useChannel();
-  return <article className={'article' + (dim && read ? ' isRead' : '') + (fading ? ' fading' : '')}><div className="articleMain">
+  return <article data-bm-id={a.id} className={'article' + (dim && read ? ' isRead' : '') + (fading ? ' fading' : '')}><div className="articleMain">
     {/* 위계: 분류 배지 줄 → 제목 → 출처·시간 → 중요도·태그 */}
     <div className="cardTop">
       {rank !== undefined && <span className="rank">{rank}</span>}

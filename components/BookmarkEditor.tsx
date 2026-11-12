@@ -37,14 +37,14 @@ export default function BookmarkEditor({ bookmark, folders, tags, onCreate, onSa
   };
   const addFolder = () => create('folders', newFolder, id => { setFolderId(id); setNewFolder(''); });
   const addTag = () => {
-    if (picked.length >= LIMITS.tagsPerBookmark) { setError(`태그는 북마크 하나에 ${LIMITS.tagsPerBookmark}개까지 붙일 수 있습니다.`); return; }
+    if (picked.length >= LIMITS.tagsPerBookmark) { setError(`태그는 북마크 하나에 ${LIMITS.tagsPerBookmark}개까지입니다.`); return; }
     create('tags', newTag, id => { setPicked(p => [...p, id]); setNewTag(''); });
   };
-  const toggleTag = (id: string) => setPicked(p => {
-    if (p.includes(id)) return p.filter(x => x !== id);
-    if (p.length >= LIMITS.tagsPerBookmark) { setError(`태그는 북마크 하나에 ${LIMITS.tagsPerBookmark}개까지 붙일 수 있습니다.`); return p; }
-    return [...p, id];
-  });
+  const toggleTag = (id: string) => {
+    if (picked.includes(id)) { setPicked(picked.filter(x => x !== id)); setError(''); return; }
+    if (picked.length >= LIMITS.tagsPerBookmark) { setError(`태그는 북마크 하나에 ${LIMITS.tagsPerBookmark}개까지입니다.`); return; }
+    setPicked([...picked, id]);
+  };
   const save = () => { onSave({ folderId: folderId || null, tags: picked, memo }); onClose(); };
   const enter = (fn: () => void) => (e: React.KeyboardEvent) => { if (e.key === 'Enter' && !e.nativeEvent.isComposing) { e.preventDefault(); fn(); } };
 
