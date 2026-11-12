@@ -112,5 +112,181 @@
     ],
     "max_score": 2
   },
-  "excluded_score": 2
+  "excluded_score": 2,
+  "v2": {
+    "_comment": "중요도 v2(collector/score_v2.py). enabled=false 이면 계산하지 않는다(기존 score 는 그대로). 켜면 선택 필드 score_v2(★1~5)를 쓴다. raw = base + 주제 키워드 최고 등급(tier_points, 강한 키워드 2개 이상 extra_strong) + 핵심어 수(core_points, core_terms 재사용) + 카테고리 가중 + 사건 유형(event_terms, 합계 event_max 상한) + 주요 기업(entity_points) + 출처 유형 + 관련도 낮음 감점. ★ = star_thresholds(★2·3·4·5 하한)로 변환 후 보도 매체 수 가산(coverage_points), 낮은 가치(low_value: 홍보·행사·주가 등, 묶음의 cluster_share 이상이면 묶음 전체)·관련도 낮음(irrelevant_max_stars)·v1 상한(use_v1_caps: 시장 속보·금리·제목 패턴) 적용. 관련 기사는 최저 relevant_min_stars. 묶음이 있으면 관련 기사는 같은 사건 점수 = 관련 구성원 ★의 event_quantile 분위수(event_level).",
+    "enabled": false,
+    "base": 1.0,
+    "tier_points": {
+      "strong": 1.5,
+      "company": 0.5,
+      "normal": 0.5
+    },
+    "extra_strong": 0.5,
+    "core_points": {
+      "1": 1.0,
+      "2": 2.0
+    },
+    "category_points": {
+      "제도·회계·건전성": 1.0,
+      "위험관리·재보험": 0.5,
+      "금융시장·자산운용": -0.5,
+      "사회·인구·기술 변화": 0
+    },
+    "event_terms": [
+      {
+        "name": "제도·감독",
+        "terms": [
+          "개정",
+          "시행",
+          "의결",
+          "입법",
+          "법안",
+          "개정안",
+          "제재",
+          "과징금",
+          "징계",
+          "검사",
+          "현장점검",
+          "가이드라인",
+          "모범규준",
+          "의무화"
+        ],
+        "points": 1.0
+      },
+      {
+        "name": "실적·건전성",
+        "terms": [
+          "순익",
+          "순이익",
+          "실적",
+          "영업이익",
+          "적자",
+          "흑자",
+          "보험손익",
+          "투자손익",
+          "지급여력",
+          "킥스",
+          "손해율",
+          "해지율"
+        ],
+        "points": 1.0
+      },
+      {
+        "name": "M&A·구조",
+        "terms": [
+          "인수",
+          "합병",
+          "매각",
+          "경영권",
+          "M&A",
+          "지분"
+        ],
+        "points": 1.0
+      },
+      {
+        "name": "상품·가격",
+        "terms": [
+          "출시",
+          "배타적사용권",
+          "보험료 인상",
+          "보험료 인하",
+          "개편",
+          "특약"
+        ],
+        "points": 0.5
+      }
+    ],
+    "event_max": 2.0,
+    "source_type_points": {
+      "press": 0.5
+    },
+    "low_value": {
+      "terms": [
+        "봉사",
+        "기부",
+        "후원",
+        "캠페인",
+        "사회공헌",
+        "나눔",
+        "성료",
+        "시상",
+        "수상",
+        "브랜드평판",
+        "주가",
+        "마감시황",
+        "특징주",
+        "목표가",
+        "포토",
+        "웹예능",
+        "홍보대사",
+        "이벤트",
+        "운동회",
+        "쉼터",
+        "도서관",
+        "데모데이",
+        "협약",
+        "MOU",
+        "임직원",
+        "펀런",
+        "김장",
+        "연탄",
+        "헌혈",
+        "승계",
+        "증여세",
+        "보험브리핑",
+        "뉴스브리핑",
+        "확인 방법",
+        "점검법",
+        "갈아타",
+        "비교표",
+        "어떤 구조",
+        "총정리",
+        "일손",
+        "집짓기",
+        "사랑의 집",
+        "손편지",
+        "성금",
+        "김장",
+        "연탄",
+        "안전문화",
+        "체험",
+        "축제",
+        "행사 개최",
+        "걷기",
+        "플로깅",
+        "재능기부",
+        "장학금",
+        "협업 이벤트",
+        "굿즈"
+      ],
+      "patterns": [
+        "\\[포토",
+        "\\[카드",
+        "\\[사진"
+      ],
+      "points": 0,
+      "max_stars": 2,
+      "cluster_share": 0.3
+    },
+    "star_thresholds": [
+      1.0,
+      2.0,
+      4.0,
+      6.0
+    ],
+    "coverage_points": [
+      {
+        "sources_at_least": 12,
+        "add": 1
+      }
+    ],
+    "irrelevant_stars": 1,
+    "irrelevant_points": -1.0,
+    "irrelevant_max_stars": 2,
+    "event_level": true,
+    "event_quantile": 0.75,
+    "use_v1_caps": true,
+    "relevant_min_stars": 2
+  }
 }
