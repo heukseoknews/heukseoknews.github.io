@@ -3,7 +3,7 @@
 //   node scripts/admin/verify.mjs [--apply] [--url <프로젝트 URL>]
 // 하는 일: 임시 시험 계정 2개(zz-verify-a, zz-verify-b, 무작위 비밀번호 — 화면에 보이지 않음)를 만들고
 //   anon 차단, 비밀번호 변경 전 user_state 차단·변경 후 허용, 다른 사용자 행 접근 불가, 프로필·변경 필요 값 위조 불가,
-//   상한(북마크 1,000·폴더 20·태그 50·메모 200자), private 함수 비노출, 관리자 초기화 후 다시 차단을 확인한 뒤
+//   서버 상한(악용 방지: 북마크 3,000·폴더 100·태그 200·메모 1,000자)과 화면 한도를 넘는 합친 결과 허용, private 함수 비노출, 관리자 초기화 후 다시 차단을 확인한 뒤
 //   시험 계정을 지운다(중간에 실패해도 지운다). 필요: SUPABASE_URL, 비밀 키 파일, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.
 import { randomBytes } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
@@ -18,7 +18,7 @@ export const STEPS = [
   '4. A: profiles(표시 이름·is_admin)·account_security(변경 필요) 고치기 막힘, profiles 만들기 막힘',
   '5. A·B 비밀번호 변경(현재 비밀번호 필요) → 변경 필요 = false(트리거) → A user_state 쓰기·읽기 성공',
   '6. B: A 의 행 읽기 0행, 고치기·지우기 0행, A 의 user_id 로 만들기 막힘, 자기 행 user_id 를 A 로 바꾸기 막힘',
-  '7. A: 상한 초과(북마크 1,001·폴더 21·태그 51·메모 201자·북마크당 태그 11) 거절, 한도 안 저장 성공',
+  '7. A: 서버 상한 초과(북마크 3,001·폴더 101·태그 201·메모 1,001자·북마크당 태그 51) 거절, 화면 한도를 넘는 합친 결과(북마크 2,000·폴더 40·태그 100)와 상한 경계(3,000·100·200) 저장 성공',
   '7-1. A: 사용자당 채널 행 10개 상한(11번째 거절)',
   '8. A: private 함수(password_ready) 직접 호출 불가',
   '9. 관리자 초기화(reset_pending → 비밀번호 변경 → 변경 필요 켬) 뒤 A 의 user_state 다시 막힘, 새 비밀번호로 로그인해도 변경 필요 유지',
@@ -94,18 +94,22 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await denied('6. B 가 자기 행 user_id 를 A 로 바꾸기 막힘', () => asB.patch('user_state', `user_id=eq.${ids[B]}&channel=eq.${CHANNEL}`, { user_id: ids[A] }));
     await rows0('6. B profiles 에서 A 행 읽기 0행', () => asB.select('profiles', `select=*&user_id=eq.${ids[A]}`));
 
-    // 7. 상한
+    // 7. 서버 상한(악용 방지용 넉넉한 값). 화면 한도(1,000·20·50·200자·10)를 넘는 합친 결과는 통과해야 한다
     const many = (n, f) => Object.fromEntries(Array.from({ length: n }, (_, i) => [`x${i}`, f(i)]));
     const bm = i => ({ id: `x${i}`, channel: CHANNEL, title: 't', url: 'https://example.invalid/', savedAt: '2026-01-01T00:00:00Z', updatedAt: '2026-01-01T00:00:00Z', tags: [], memo: '' });
     const grp = i => ({ id: `x${i}`, name: `n${i}`, createdAt: '2026-01-01T00:00:00Z', updatedAt: '2026-01-01T00:00:00Z' });
     const q = `user_id=eq.${ids[A]}&channel=eq.${CHANNEL}`;
-    await denied('7. 북마크 1,001건 거절', () => asA.patch('user_state', q, { bookmarks: many(1001, bm) }));
-    await denied('7. 폴더 21개 거절', () => asA.patch('user_state', q, { folders: many(21, grp) }));
-    await denied('7. 태그 51개 거절', () => asA.patch('user_state', q, { tags: many(51, grp) }));
-    await denied('7. 메모 201자 거절', () => asA.patch('user_state', q, { bookmarks: { x0: { ...bm(0), memo: '가'.repeat(201) } } }));
-    await denied('7. 북마크당 태그 11개 거절', () => asA.patch('user_state', q, { bookmarks: { x0: { ...bm(0), tags: Array.from({ length: 11 }, (_, i) => `t${i}`) } } }));
-    const fine = await asA.patch('user_state', q, { bookmarks: many(1000, bm), folders: many(20, grp), tags: many(50, grp) });
-    ok('7. 한도 안(북마크 1,000·폴더 20·태그 50) 저장 성공', Array.isArray(fine) && fine.length === 1);
+    await denied('7. 북마크 3,001건 거절', () => asA.patch('user_state', q, { bookmarks: many(3001, bm) }));
+    await denied('7. 폴더 101개 거절', () => asA.patch('user_state', q, { folders: many(101, grp) }));
+    await denied('7. 태그 201개 거절', () => asA.patch('user_state', q, { tags: many(201, grp) }));
+    await denied('7. 메모 1,001자 거절', () => asA.patch('user_state', q, { bookmarks: { x0: { ...bm(0), memo: '가'.repeat(1001) } } }));
+    await denied('7. 북마크당 태그 51개 거절', () => asA.patch('user_state', q, { bookmarks: { x0: { ...bm(0), tags: Array.from({ length: 51 }, (_, i) => `t${i}`) } } }));
+    const merged = await asA.patch('user_state', q, { bookmarks: many(2000, bm), folders: many(40, grp), tags: many(100, grp) });
+    ok('7. 화면 한도를 넘는 합친 결과(북마크 2,000·폴더 40·태그 100) 저장 성공', Array.isArray(merged) && merged.length === 1);
+    const edge = await asA.patch('user_state', q, { bookmarks: many(3000, bm), folders: many(100, grp), tags: many(200, grp) });
+    ok('7. 서버 상한 경계(북마크 3,000·폴더 100·태그 200) 저장 성공', Array.isArray(edge) && edge.length === 1);
+    const long = await asA.patch('user_state', q, { bookmarks: { x0: { ...bm(0), memo: '가'.repeat(1000), tags: Array.from({ length: 50 }, (_, i) => `t${i}`) } } });
+    ok('7. 메모 1,000자·북마크당 태그 50 저장 성공', Array.isArray(long) && long.length === 1);
     for (let i = 1; i < 10; i++) await asA.insert('user_state', { channel: `${CHANNEL}-${i}` });
     await denied('7-1. 채널 행 11번째 거절', () => asA.insert('user_state', { channel: `${CHANNEL}-10` }));
 

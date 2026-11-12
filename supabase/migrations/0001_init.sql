@@ -70,8 +70,9 @@ create table if not exists public.user_state (
   created_at     timestamptz not null default now(),
   updated_at     timestamptz not null default now(),
   primary key (user_id, channel),
-  -- 오류·악용으로 행이 커지는 것을 막는 안전장치. check 는 TOAST 압축 전 jsonb 크기로 평가된다(JSON 텍스트와 비슷하거나 조금 큼).
-  -- docs/auth-plan.md 3.2 의 '많음'(JSON 약 1.6MB)이 여유 있게 들어가도록 4MB 로 둔다.
+  -- 오류·악용으로 행이 커지는 것을 막는 안전장치. check 는 TOAST 압축 전 jsonb 크기로 평가된다(JSON 바이트보다 약 7% 큼).
+  -- 실제 기사로 잰 압축 전 크기(docs/auth-plan.md 3.2): 화면 한도까지 채운 1기기(북마크 1,000·메모 모두 200자·읽음 5,000) 약 1.7MB,
+  -- 두 기기를 합친 결과(북마크 2,000) 약 3.1MB → 4MB 안. 서버 북마크 상한 3,000 에서 메모까지 모두 200자로 채우면 약 4.6MB 라 이 상한이 먼저 걸린다.
   constraint user_state_size check (pg_column_size(bookmarks) + pg_column_size(folders) + pg_column_size(tags)
                                     + pg_column_size(read_at) + pg_column_size(companies) < 4000000)
 );
@@ -115,12 +116,17 @@ drop trigger if exists user_state_touch on public.user_state;
 create trigger user_state_touch before update on public.user_state
   for each row execute function private.touch_updated_at();
 
--- 사용자별 상한(docs/auth-plan.md 3.3·migration-localstorage.md 1장): 채널당 북마크 1,000, 폴더 20, 태그 50(살아 있는 것),
--- 메모 200자, 북마크당 태그 10, 사용자당 채널 행 10개. 삭제 표시는 deletedAt 이 문자열인 항목만 인정하고(클라이언트 cleanEntry 와 같은 기준),
--- 객체가 아닌 북마크 값도 살아 있는 것으로 센다(상한 우회 방지).
--- 예외: 이전 값보다 늘지 않는 변경은 한도를 넘어도 통과한다 — 관리자가 한도 위로 넣어 둔 행에서 줄이는 쪽 변경·다른 항목 변경이 막히지 않게.
--- 주의(한계): 두 기기에서 따로 만든 것을 합쳐 서버 행보다 늘면서 한도를 넘는 변경은 거절된다. 클라이언트는 이 오류(23514)를 받으면
--- 사용자에게 줄이라고 안내해야 한다(docs/auth-runbook.md '설계 메모').
+-- 서버 상한 = 악용 방지용 넉넉한 값(docs/auth-plan.md 3.3 '서버 상한과 화면 한도').
+--   실제 사용 한도(채널당 북마크 1,000·폴더 20·태그 50·메모 200자·북마크당 태그 10)는 화면(lib/bookmarks.ts)에서만 검사한다.
+--   서버가 화면 한도로 막으면 두 기기 기록을 합친 결과가 한도를 넘을 때 동기화가 계속 거절된다 —
+--   설계 원칙은 "합친 결과가 한도를 넘어도 허용, 새로 만들기만 막음"이므로 서버는 그보다 넉넉하게 둔다.
+--   - 채널당 북마크 3,000·폴더 100·태그 200(살아 있는 것): 두세 기기를 화면 한도까지 채워 합쳐도 들어가는 값.
+--   - 메모 1,000자·북마크당 태그 50: 병합은 북마크 단위로 한쪽을 고르므로(메모·태그를 이어 붙이지 않음) 화면 한도를 넘지 않는다.
+--     서버 값은 API 를 직접 불러 한 항목을 키우는 것만 막는 용도이고, 화면 한도를 서버보다 낮게 바꿔도 SQL 을 고칠 필요가 없게 넉넉히 둔다.
+--   - 사용자당 채널 행 10개, 행 크기 4MB(표 정의의 user_state_size)는 그대로.
+-- 삭제 표시는 deletedAt 이 문자열인 항목만 인정하고(클라이언트 cleanEntry 와 같은 기준), 객체가 아닌 북마크 값도 살아 있는 것으로 센다(상한 우회 방지).
+-- 예외: 이전 값보다 늘지 않는 변경은 상한을 넘어도 통과한다 — 관리자가 상한 위로 넣어 둔 행에서 줄이는 쪽 변경·다른 항목 변경이 막히지 않게.
+-- 상한에 걸리면 오류 코드 23514(check_violation). 정상 사용으로는 닿지 않는 값이라 클라이언트는 '동기화 실패'로만 다루면 된다.
 create or replace function private.check_user_state_limits() returns trigger
   language plpgsql set search_path = '' as $$
 declare
@@ -140,28 +146,28 @@ begin
       raise exception 'user_state limit: channels >10' using errcode = 'check_violation';
     end if;
   end if;
-  if n_book > 1000 and n_book > o_book then
-    raise exception 'user_state limit: bookmarks %>1000', n_book using errcode = 'check_violation';
+  if n_book > 3000 and n_book > o_book then
+    raise exception 'user_state limit: bookmarks %>3000', n_book using errcode = 'check_violation';
   end if;
-  if n_fold > 20 and n_fold > o_fold then
-    raise exception 'user_state limit: folders %>20', n_fold using errcode = 'check_violation';
+  if n_fold > 100 and n_fold > o_fold then
+    raise exception 'user_state limit: folders %>100', n_fold using errcode = 'check_violation';
   end if;
-  if n_tag > 50 and n_tag > o_tag then
-    raise exception 'user_state limit: tags %>50', n_tag using errcode = 'check_violation';
+  if n_tag > 200 and n_tag > o_tag then
+    raise exception 'user_state limit: tags %>200', n_tag using errcode = 'check_violation';
   end if;
   select e.key into bad_memo from jsonb_each(new.bookmarks) e
    where jsonb_typeof(e.value) = 'object' and jsonb_typeof(e.value -> 'memo') = 'string'
-     and char_length(e.value ->> 'memo') > 200
+     and char_length(e.value ->> 'memo') > 1000
    limit 1;
   if bad_memo is not null then
-    raise exception 'user_state limit: memo >200 chars' using errcode = 'check_violation';
+    raise exception 'user_state limit: memo >1000 chars' using errcode = 'check_violation';
   end if;
   select e.key into bad_tags from jsonb_each(new.bookmarks) e
    where jsonb_typeof(e.value) = 'object' and jsonb_typeof(e.value -> 'tags') = 'array'
-     and jsonb_array_length(e.value -> 'tags') > 10
+     and jsonb_array_length(e.value -> 'tags') > 50
    limit 1;
   if bad_tags is not null then
-    raise exception 'user_state limit: tags per bookmark >10' using errcode = 'check_violation';
+    raise exception 'user_state limit: tags per bookmark >50' using errcode = 'check_violation';
   end if;
   return new;
 end $$;
