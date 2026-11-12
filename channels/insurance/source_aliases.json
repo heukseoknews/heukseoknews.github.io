@@ -1,17 +1,45 @@
 {
-  "_comment": "출처(언론사) 이름 정규화. domains: 구글 뉴스 RSS의 <source url> 도메인(하위 도메인 포함) → 언론사명. names: 이름 → 언론사명(도메인을 알 수 없는 기존 데이터용). 근거가 확인된 것만 둔다. 매핑되지 않은 이름은 그대로 두고 수집 로그에 남긴다.",
+  "_comment": "출처(언론사) 이름 정규화. domains: 구글 뉴스 RSS의 <source url> 도메인(하위 도메인 포함) → 언론사명. names: 이름 → 언론사명(도메인을 알 수 없는 기존 데이터용). 근거가 확인된 것만 둔다. 매핑되지 않은 이름은 그대로 두고 수집 로그에 남긴다. 2026-11-12 추가: 구글 뉴스가 매체명 대신 도메인·장식 문자를 준 경우(매체 홈페이지 제목으로 확인한 것만). 이름을 확인하지 못한 www.dhns.co.kr 은 두지 않는다. 같은 계열이라도 다른 매체(서울경제·서울경제TV, 딜사이트·DealSite경제TV, 머니투데이·MTN 머니투데이방송, SBS Biz·SBS 뉴스)는 합치지 않는다.",
   "domains": {
     "hankyung.com": "한국경제",
     "mk.co.kr": "매일경제",
     "edaily.co.kr": "이데일리",
     "mt.co.kr": "머니투데이",
     "yna.co.kr": "연합뉴스",
-    "newsis.com": "뉴시스"
+    "newsis.com": "뉴시스",
+    "fetv.co.kr": "FETV",
+    "ebn.co.kr": "EBN",
+    "dt.co.kr": "디지털타임스",
+    "xportsnews.com": "엑스포츠뉴스",
+    "ppss.kr": "ㅍㅍㅅㅅ",
+    "moneystorm.kr": "머니스톰",
+    "dhtimes.co.kr": "DH times",
+    "catchnews.kr": "CatchNews",
+    "mocar.kr": "MOCAR",
+    "livesnews.com": "라이브뉴스",
+    "news.sbs.co.kr": "SBS 뉴스",
+    "programs.sbs.co.kr": "SBS",
+    "kbanker.co.kr": "대한금융신문"
   },
   "names": {
     "마켓인": "이데일리",
     "매일경제 마켓": "매일경제",
     "이데일리TV": "이데일리",
-    "한경매거진": "한국경제"
+    "한경매거진": "한국경제",
+    ":: 위즈경제 ::": "위즈경제",
+    "진일보 | 전남일보": "전남일보",
+    "www.fetv.co.kr": "FETV",
+    "www.ebn.co.kr": "EBN",
+    "www.dt.co.kr": "디지털타임스",
+    "www.xportsnews.com": "엑스포츠뉴스",
+    "https://www.ppss.kr/": "ㅍㅍㅅㅅ",
+    "https://www.moneystorm.kr/": "머니스톰",
+    "https://www.dhtimes.co.kr/": "DH times",
+    "https://www.catchnews.kr/": "CatchNews",
+    "https://www.mocar.kr/": "MOCAR",
+    "livesnews.com": "라이브뉴스",
+    "news.sbs.co.kr": "SBS 뉴스",
+    "programs.sbs.co.kr": "SBS",
+    "DFT 대한금융신문": "대한금융신문"
   }
 }
