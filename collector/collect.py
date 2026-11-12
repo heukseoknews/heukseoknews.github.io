@@ -301,6 +301,9 @@ def save(rows, data_dir: Path, aliases=None, tfilter=None):
     by_month: dict[str, list] = {}
     for a in rows:
         by_month.setdefault(a['published_at'][:7], []).append(a)
+    # 다른 월 파일에 이미 있는 id: 같은 링크의 발행 시각을 피드가 나중에 바꿔 보내면(구글 뉴스) 다른 월 파일에 한 번 더
+    # 저장되던 문제를 막는다. 처음 저장한 월·발행 시각을 유지한다(id 기준만 — 같은 제목의 정기 공지는 서로 다른 글).
+    home = {a['id']: p.stem for p in data_dir.glob('????-??.json') for a in load_shard(p)}
     added = 0
     for month, items in by_month.items():
         path = data_dir / f'{month}.json'
@@ -309,6 +312,8 @@ def save(rows, data_dir: Path, aliases=None, tfilter=None):
         by_id = {a['id'] for a in existing}
         changed = False
         for a in items:
+            if home.get(a['id'], month) != month:
+                continue
             k = dedupe_key(a)
             if k in by_key:
                 better = prefer(a, by_key[k])  # 기존이 구글 링크이고 새 것이 직접 링크면 교체
@@ -325,6 +330,55 @@ def save(rows, data_dir: Path, aliases=None, tfilter=None):
     index = {'updated_at': datetime.now(timezone.utc).isoformat(), 'months': info}
     (data_dir / 'index.json').write_text(json.dumps(index, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
     return added
+
+
+def cross_month_duplicates(data_dir: Path) -> list[dict]:
+    """같은 id 가 둘 이상의 월 파일에 있는 기사. 남길 사본 = 가장 먼저 수집된 것(같으면 먼저 발행, 같으면 앞 월).
+    반환: [{'id', 'keep': (월, 발행, 수집), 'drop': [(월, 발행, 수집), ...], 'title', 'source'}]"""
+    where: dict[str, list] = {}
+    for p in sorted(data_dir.glob('????-??.json')):
+        for a in load_shard(p):
+            where.setdefault(a['id'], []).append((p.stem, a))
+    out = []
+    for i, copies in where.items():
+        if len({m for m, _ in copies}) < 2:
+            continue
+        copies = sorted(copies, key=lambda x: (x[1]['collected_at'], x[1]['published_at'], x[0]))
+        info = lambda c: (c[0], c[1]['published_at'], c[1]['collected_at'])
+        out.append({'id': i, 'keep': info(copies[0]), 'drop': [info(c) for c in copies[1:]], 'title': copies[0][1]['title'], 'source': copies[0][1]['source']})
+    return out
+
+
+def dedupe_months(data_dir: Path, config_dir: Path, dry_run: bool = True) -> dict:
+    """여러 월 파일에 같은 id 가 있으면 먼저 수집된 사본만 남긴다(cross_month_duplicates 규칙).
+    dry_run(기본): 파일을 쓰지 않고 지울 사본과 그 결과(월별 건수, 품질 필드가 바뀌는 기사)만 돌려준다.
+    적용하면 지운 뒤 index·trends 를 다시 만들고 품질 후처리(플래그가 켜진 경우)를 돌린다."""
+    dups = cross_month_duplicates(data_dir)
+    drop = {(m, d['id']) for d in dups for m, _, _ in d['drop']}
+    shards = {p: load_shard(p) for p in sorted(data_dir.glob('????-??.json'))}
+    kept = {p: [a for a in rows if (p.stem, a['id']) not in drop] for p, rows in shards.items()}
+    Q = ('cluster_id', 'cluster_size', 'cluster_sources', 'cluster_lead', 'score_v2')
+    before = {(p.stem, a['id']): {k: a.get(k) for k in Q} for p, rows in kept.items() for a in rows}
+    sim = [dict(a) for rows in kept.values() for a in rows]
+    if any(quality.enabled(config_dir)):
+        quality.compute(sim, config_dir, force=quality.enabled(config_dir))
+    it = iter(sim)
+    q_changed = []
+    for p, rows in kept.items():
+        for a in rows:
+            b = next(it)
+            new = {k: b.get(k) for k in Q}
+            if new != before[(p.stem, a['id'])]:
+                q_changed.append({'month': p.stem, 'id': a['id'], 'title': a['title'], 'before': before[(p.stem, a['id'])], 'after': new})
+    summary = {'duplicates': dups, 'removed': len(drop), 'counts': {p.stem: (len(shards[p]), len(kept[p])) for p in shards if len(shards[p]) != len(kept[p])},
+               'quality_changed': q_changed, 'dry_run': dry_run}
+    if not dry_run and drop:
+        for p, rows in kept.items():
+            if len(rows) != len(shards[p]):
+                p.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+        reindex(data_dir, config_dir)
+        quality.run(data_dir, config_dir)
+    return summary
 
 
 def reclassify(data_dir: Path) -> None:
@@ -470,6 +524,7 @@ def main():
     ap.add_argument('--reclassify', action='store_true', help='네트워크 없이 저장된 기사를 현재 분류 규칙으로 재분류(관련도 relevant 포함)')
     ap.add_argument('--quality', action='store_true', help='네트워크 없이 같은 사건 묶기·중요도 v2 를 다시 계산(cluster.json·score.json v2 플래그가 켜진 것만)')
     ap.add_argument('--quality-all', action='store_true', help='--quality 와 함께: 최근 lookback_days 대신 저장된 전체 기간을 판정(처음 켤 때 과거 기사 백필)')
+    ap.add_argument('--dedupe-months', action='store_true', help='여러 월 파일에 같은 id 가 있는 기사를 먼저 수집된 사본만 남기고 정리(--dry-run 이면 목록만)')
     ap.add_argument('--strip-quality', action='store_true', help='되돌리기: 저장된 기사에서 묶기·중요도 v2 선택 필드를 지움')
     args = ap.parse_args()
     cdir = channel.use(args.channel, args.config_dir)  # 분류·개체 로더도 이 폴더를 읽는다
@@ -479,6 +534,9 @@ def main():
     ALWAYS_RELEVANT.update(load_always_relevant(cdir))
     if args.reindex:
         reindex(Path(args.data_dir), cdir)
+        return 0
+    if args.dedupe_months:
+        print(json.dumps(dedupe_months(Path(args.data_dir), cdir, dry_run=args.dry_run), ensure_ascii=False, indent=1))
         return 0
     if args.strip_quality:
         logging.info('품질 필드 제거: %d건', quality.strip_all(Path(args.data_dir)))
