@@ -128,11 +128,11 @@ export const folderOf = (d: BookmarkData, b: Bookmark): Group | undefined => (b.
 /** 북마크의 태그(지워진 태그는 빼고 이름순) */
 export const tagsOf = (d: BookmarkData, b: Bookmark): Group[] => b.tags.map(t => d.tags[t]).filter(isLiveGroup).sort((a, b2) => a.name.localeCompare(b2.name, 'ko'));
 
-/** 북마크를 목록·필터용 기사 모양으로(기존 북마크 탭·필터 로직을 그대로 쓰기 위해). */
+/** 북마크를 목록·필터용 기사 모양으로(기존 북마크 탭·필터 로직을 그대로 쓰기 위해). 발행 시각을 모르면 저장 시각. */
 export function toArticle(b: Bookmark): Article {
   return {
     id: b.id, title: b.title, url: b.url, source: b.source, source_type: b.source_type,
-    published_at: b.published_at, collected_at: b.collected_at ?? b.published_at, category: b.category,
+    published_at: b.published_at || b.savedAt, collected_at: b.collected_at ?? (b.published_at || b.savedAt), category: b.category,
     sub_categories: b.sub_categories, tags: b.keywords, companies: b.companies, orgs: b.orgs,
     score: b.score ?? 2, feed_name: '',
   };

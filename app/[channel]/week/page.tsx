@@ -7,13 +7,16 @@ import { weeklyHighlights } from '../../../lib/highlights';
 import { useChannel } from '../../../lib/channelContext';
 import { useNews } from '../../../lib/useNews';
 import { useSaved } from '../../../lib/useSaved';
+import { useBookmarkFlow } from '../../../components/BookmarkFlow';
 
 const LIMIT = 20;
 
 export default function WeekPage() {
   const ch = useChannel();
   const [category, setCategory] = useState('전체');
-  const { saved, ready, toggleBookmark, markRead, readSet, isBookmarked } = useSaved();
+  const savedApi = useSaved();
+  const { saved, ready, markRead, readSet, isBookmarked } = savedApi;
+  const bmFlow = useBookmarkFlow(savedApi);
   const { all, failure, loading } = useNews(ch.slug); // 최근 2개월이면 7일 범위를 충분히 포함
   const today = todayKst();
   const rows = useMemo(() => weeklyHighlights(all, today, LIMIT, category), [all, today, category]);
@@ -25,6 +28,7 @@ export default function WeekPage() {
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     <section className="articles">{loading || !ready ? <div className="empty">뉴스를 불러오는 중입니다…</div> : rows.length === 0
       ? <div className="empty"><Newspaper size={27} /><b>최근 7일 기사가 없습니다.</b></div>
-      : rows.map((a, i) => <ArticleCard key={a.id} a={a} rank={i + 1} baseline={saved.lastConfirmed} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} onBookmark={toggleBookmark} onRead={markRead} />)}</section>
+      : rows.map((a, i) => <ArticleCard key={a.id} a={a} rank={i + 1} baseline={saved.lastConfirmed} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={markRead} />)}</section>
+    {bmFlow.toastNode}{bmFlow.editorNode}
   </>;
 }

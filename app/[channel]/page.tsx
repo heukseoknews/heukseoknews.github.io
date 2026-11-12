@@ -14,7 +14,8 @@ import { sourceOptions } from '../../lib/sources';
 import { isNewArticle, isUnreadNew, visibleInNewTab } from '../../lib/newsFilter';
 import { useNews } from '../../lib/useNews';
 import { useSaved } from '../../lib/useSaved';
-import { toArticle } from '../../lib/bookmarks';
+import { fillMissing, toArticle } from '../../lib/bookmarks';
+import { useBookmarkFlow } from '../../components/BookmarkFlow';
 
 type Tab = TabId;
 const TABS: Tab[] = ['new', 'all', 'press', 'bookmarks'];  // 표시 이름은 채널 channel.json 의 tabs
@@ -48,14 +49,20 @@ export default function Home() {
   const [showRead, setShowRead] = useState(false);            // 새 뉴스 탭: 읽은 기사 다시 보기(기본 숨김)
   const [justRead, setJustRead] = useState<Set<string>>(new Set()); // 방금 읽어 곧 사라질 카드(짧은 페이드 후 제거)
   const timers = useRef<number[]>([]);
-  const { saved, ready, update, toggleBookmark, markRead, unmarkRead, setCompanies, readSet, bookmarkList, isBookmarked } = useSaved();
-  const bookmarkArticles = useMemo(() => bookmarkList.map(toArticle), [bookmarkList]);
+  const savedApi = useSaved();
+  const { saved, ready, update, markRead, unmarkRead, setCompanies, readSet, bookmarkList, isBookmarked } = savedApi;
+  // 기사 정보가 없는 옛 북마크(v1 이전분)는 기사 데이터를 불러오면 채운다. 채우기 전에는 북마크 탭에서 빼고 마이페이지에서만 보인다
+  const bookmarkArticles = useMemo(() => bookmarkList.filter(b => !b.missing).map(toArticle), [bookmarkList]);
   const companies = saved.companies;  // 선택한 보험사(비면 전체) — 사용자 상태에 저장(새로고침 후에도 유지)
   // 달력 월의 KST 날짜는 UTC 월 샤드 경계에 걸칠 수 있어 앞뒤 월도 함께 불러온다
   const { index, all, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : [shiftMonth(calMonth, -1), calMonth, shiftMonth(calMonth, 1)]);
   const baseline = saved.lastConfirmed;
+  useEffect(() => { if (all.length && bookmarkList.some(b => b.missing)) update(s => fillMissing(s, all)); }, [all, bookmarkList, update]);
   const [undo, setUndo] = useState<{ id: string; n: number } | null>(null); // 읽음 버튼 직후 5초간 '되돌리기'(마지막 한 건만)
   const undoTimer = useRef<number | undefined>(undefined);
+  // 북마크: 저장하면 '정리'(폴더·태그·메모), 해제하면 '되돌리기' 안내. 안내는 한 번에 하나만(읽음 안내와 서로 닫음)
+  const closeReadUndo = useCallback(() => { clearTimeout(undoTimer.current); setUndo(null); }, []);
+  const bmFlow = useBookmarkFlow(savedApi, closeReadUndo);
   useEffect(() => () => { timers.current.forEach(clearTimeout); clearTimeout(undoTimer.current); }, []);
   // 제목 클릭·휠클릭·Enter 로 읽음 처리. 새 뉴스 탭에서는 클릭 이벤트가 끝난 직후(새 탭 열기가 시작된 뒤)에 카드를 제거한다.
   const handleRead = useCallback((id: string) => {
@@ -68,10 +75,11 @@ export default function Home() {
   // 카드의 '읽음' 버튼: 링크를 열었을 때와 같은 읽음 처리(handleRead→markRead)를 재사용하고 되돌리기 안내를 띄운다
   const handleMarkRead = useCallback((id: string) => {
     handleRead(id);
+    bmFlow.clearToast();
     clearTimeout(undoTimer.current);
     setUndo(u => ({ id, n: (u?.n ?? 0) + 1 }));
     undoTimer.current = window.setTimeout(() => setUndo(null), 5000);
-  }, [handleRead]);
+  }, [handleRead, bmFlow.clearToast]);
   const handleUndo = useCallback(() => {
     if (!undo) return;
     unmarkRead(undo.id);
@@ -201,8 +209,9 @@ export default function Home() {
         : <div className="empty"><Newspaper size={27} /><b>{tab === 'new' ? '새 기사가 없습니다.' : tab === 'bookmarks' ? '북마크한 기사가 없습니다.' : '기사가 없습니다.'}</b></div>)
       : pageRows.map((a, i) => { const d = kstDate(a.published_at); const head = sort === 'latest' && (i === 0 || d !== kstDate(pageRows[i - 1].published_at));
         return <Fragment key={a.id}>{head && <div className="dayhead">{dayHeading(d)}<small>· {perDay[d]}건</small></div>}
-          <ArticleCard a={a} baseline={baseline} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} dim={tab === 'new' || tab === 'all'} fading={justRead.has(a.id)} onBookmark={toggleBookmark} onRead={handleRead} onUnread={tab === 'new' && showRead ? unmarkRead : undefined} onMarkRead={tab === 'new' ? handleMarkRead : undefined} /></Fragment>; })}</section>
+          <ArticleCard a={a} baseline={baseline} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} dim={tab === 'new' || tab === 'all'} fading={justRead.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={handleRead} onUnread={tab === 'new' && showRead ? unmarkRead : undefined} onMarkRead={tab === 'new' ? handleMarkRead : undefined} /></Fragment>; })}</section>
     {rows.length > PAGE && <div className="pagination"><button disabled={curPage <= 1} onClick={() => setPage(curPage - 1)}>이전</button><span>{curPage} / {lastPage} 페이지</span><button disabled={curPage >= lastPage} onClick={() => setPage(curPage + 1)}>다음</button></div>}
+    {bmFlow.toastNode}{bmFlow.editorNode}
     {undo && <div className="undoToast" role="status" aria-live="polite"><span>읽음 처리했습니다</span><button type="button" onClick={handleUndo}>되돌리기</button></div>}
   </>;
 }

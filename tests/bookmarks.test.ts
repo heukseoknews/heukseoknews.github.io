@@ -137,6 +137,8 @@ assert.equal(bm(filled, 'a').missing, undefined); assert.equal(bm(filled, 'a').t
 assert.equal(bm(filled, 'z').missing, true);  // 못 찾으면 그대로 보존
 assert.equal(bm(filled, 'a').updatedAt, UNKNOWN_TIME);  // 사용자가 바꾼 것이 아니므로 수정 시각 유지
 assert.equal(fillMissing(filled, []), filled);
+// 발행 시각을 모르는 북마크도 목록에서 날짜가 깨지지 않게(저장 시각으로)
+assert.equal(toArticle(bm(fromStored({ schemaVersion: 2, bookmarks: { n: { title: 't', url: 'u', savedAt: T(5), updatedAt: T(5), tags: [], memo: '' } } }, CH), 'n')).published_at, T(5));
 
 // ---------- 크기 추정: 10명 · 1인 북마크 수백 건 ----------
 // 실제 기사(data/insurance)로 북마크를 만들고 메모·태그·폴더를 한도까지 채운다.
