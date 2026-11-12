@@ -23,7 +23,7 @@ def art(title, kind='media', feed=None, i='x'):
 
 # ---- 보험 채널 ----
 sv = scorer('insurance')
-assert not sv.enabled, '기본값은 꺼짐'
+assert sv.enabled, '2026-11-12 부터 켜짐'
 st = lambda title, kind='media', n=1: sv.article_stars(art(title, kind), n)[0]
 # 제도·계리 핵심: ★5
 assert st('계리가정보고서 도입 등 ｢보험업감독규정｣ 개정안 금융위원회 의결', 'press') == 5
@@ -75,7 +75,7 @@ assert all(x['score_v2'] <= 2 for x in rows), [x['score_v2'] for x in rows]
 
 # ---- AI 채널 ----
 sv = scorer('ai')
-assert not sv.enabled
+assert sv.enabled
 st = lambda title, kind='media', feed=None, n=1: sv.article_stars(art(title, kind, feed), n)[0]
 assert st('Introducing GPT-6.1 Terra', 'press', 'OpenAI News') >= 4
 assert st("구글, '제미나이 4 카본' 정식 출시…'페이블 5.2'의 4분의 1 가격", feed='AI타임스') >= 4

@@ -1,6 +1,6 @@
 {
  "_comment": "같은 사건 묶기(collector/cluster.py). enabled=false 이면 아무것도 하지 않는다. 켜면 수집 후 최근 lookback_days 기사 중 아직 묶이지 않은 것을 발행 순으로, window_hours 안 묶음의 중심 제목 벡터(TF-IDF)와 코사인 threshold 이상이면 묶는다. company_veto: 회사·기관 태그가 서로 다르면 묶지 않음. same_source_threshold: 같은 매체 기사끼리는 더 높은 기준. merge_threshold: 이번 실행에 새로 생긴 묶음이 다른 묶음과 중심끼리 이 값 이상이면 합침(고정된 묶음끼리는 합치지 않음). max_span_hours: 묶음 첫~마지막 기사 최대 폭. synonyms: 제목 치환(예: {\"뮤즈 엠버\": \"muse ember\"}). 근거·되돌리기는 docs/article-quality-plan.md.",
- "enabled": false,
+ "enabled": true,
  "window_hours": 72,
  "threshold": 0.3,
  "same_source_threshold": 0.6,

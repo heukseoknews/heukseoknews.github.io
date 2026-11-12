@@ -26,13 +26,42 @@ try:
     shard = data / '2026-11.json'
     original = json.dumps(rows, ensure_ascii=False, indent=1) + '\n'
     shard.write_text(original, encoding='utf-8')
+    index = data / 'index.json'
+    index_orig = json.dumps({'updated_at': '2026-11-10T06:00:00+00:00', 'months': [{'month': '2026-11', 'count': 3, 'bytes': shard.stat().st_size}]}, ensure_ascii=False, indent=1) + '\n'
+    index.write_text(index_orig, encoding='utf-8')
 
-    # 1) 실제 채널 설정(플래그 꺼짐): 아무것도 하지 않는다
+    # 1) 플래그를 끈 설정 사본(되돌린 상태): 아무것도 하지 않는다
     for ch in ('insurance', 'ai'):
-        cd = channel.use(ch)
-        assert quality.enabled(cd) == (False, False), f'{ch}: 기본값은 꺼짐'
+        off = tmp / f'off_{ch}'
+        shutil.copytree(ROOT / 'channels' / ch, off)
+        for name, path in (('cluster.json', None), ('score.json', 'v2')):
+            d = json.loads((off / name).read_text(encoding='utf-8'))
+            (d[path] if path else d)['enabled'] = False
+            (off / name).write_text(json.dumps(d, ensure_ascii=False), encoding='utf-8')
+        cd = channel.use(ch, off)
+        assert quality.enabled(cd) == (False, False)
         assert quality.run(data, cd) is None
-        assert shard.read_text(encoding='utf-8') == original
+        assert shard.read_text(encoding='utf-8') == original and index.read_text(encoding='utf-8') == index_orig
+    # 실제 채널 설정: 2026-11-12 부터 두 채널 모두 켜짐(docs/data-contract.md)
+    assert all(quality.enabled(ROOT / 'channels' / ch) == (True, True) for ch in ('insurance', 'ai'))
+
+    # 1-1) dry-run: 플래그를 켠 설정이어도 파일은 쓰지 않고 요약·검사만
+    cfg0 = tmp / 'cfg0'
+    shutil.copytree(ROOT / 'channels' / 'insurance', cfg0)
+    for name, path in (('cluster.json', None), ('score.json', 'v2')):
+        d = json.loads((cfg0 / name).read_text(encoding='utf-8'))
+        (d[path] if path else d)['enabled'] = True
+        (cfg0 / name).write_text(json.dumps(d, ensure_ascii=False), encoding='utf-8')
+    channel.use('insurance', cfg0)
+    dr = quality.run(data, cfg0, dry_run=True, all_days=True)
+    assert dr['files_changed'] == 0 and dr['would_change'] == ['2026-11.json'] and shard.read_text(encoding='utf-8') == original
+    ck = dr['check']
+    assert ck['problems'] == [] and ck['groups'] == 1 and ck['max_group'] == 2 and ck['listed'] == 2, ck
+    assert ck['score_v2_all'] == {2: 2, 5: 1} and ck['score_all'] == {2: 2, 5: 1}, ck
+    # 검사가 실제로 잡는지: 대표 2건·크기 불일치
+    bad = [dict(a, cluster_id='x', cluster_size=3, cluster_sources=2, cluster_lead=True) for a in rows[:2]]
+    probs = quality.check(bad)['problems']
+    assert any('대표 2건' in p for p in probs) and any('cluster_size' in p for p in probs), probs
 
     # 2) 플래그를 켠 설정 사본: 선택 필드만 덧붙고 기존 필드는 그대로
     cfg = tmp / 'cfg'
@@ -50,6 +79,8 @@ try:
     assert out['a1']['cluster_id'] == out['a2']['cluster_id'] == 'a1' and out['a1']['cluster_size'] == 2 and out['a1']['cluster_sources'] == 2
     assert sum(1 for a in out.values() if a.get('cluster_lead')) == 1 and 'cluster_id' not in out['a3']
     assert out['a3']['score_v2'] == 5 and out['a1']['score_v2'] == out['a2']['score_v2'] == 2
+    ix = json.loads(index.read_text(encoding='utf-8'))
+    assert ix['months'][0]['bytes'] == shard.stat().st_size and ix['updated_at'] == '2026-11-10T06:00:00+00:00', 'index 크기만 갱신'
     # 다시 돌려도 같다(멱등)
     snap = shard.read_text(encoding='utf-8')
     assert quality.run(data, cfg)['files_changed'] == 0 and shard.read_text(encoding='utf-8') == snap
@@ -63,6 +94,7 @@ try:
     # 4) 되돌리기: 선택 필드를 지우면 원래 파일과 바이트가 같다
     assert quality.strip_all(data) == 3
     assert shard.read_text(encoding='utf-8') == original
+    assert index.read_text(encoding='utf-8') == index_orig, '되돌리면 index 도 원래 바이트'
 finally:
     channel.use('insurance')
     shutil.rmtree(tmp, ignore_errors=True)
