@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { EMPTY_TEXT, emptyKind } from '../lib/emptyState.ts';
 
-const k = (o: Partial<Parameters<typeof emptyKind>[0]>) => emptyKind({ filtered: false, tab: 'all', channelArticles: 100, todayDefault: false, ...o });
+const k = (o: Partial<Parameters<typeof emptyKind>[0]>) => emptyKind({ filtered: false, date: 'default', tab: 'all', channelArticles: 100, ...o });
 // 필터·검색 있음 + 0건 → 한 줄 + 필터 초기화(탭·데이터와 무관)
 for (const tab of ['new', 'all', 'press', 'bookmarks'] as const) assert.equal(k({ filtered: true, tab }), 'filtered');
 assert.equal(k({ filtered: true, channelArticles: 0 }), 'filtered');
@@ -12,7 +12,15 @@ assert.equal(k({ channelArticles: 0 }), 'noData');                 // 새 채널
 assert.equal(k({ tab: 'new', channelArticles: 0 }), 'noData');
 assert.equal(k({ tab: 'new' }), 'noNew');
 assert.equal(k({ tab: 'bookmarks', channelArticles: 0 }), 'noBookmarks');  // 북마크는 데이터와 무관
-assert.equal(k({ tab: 'all', todayDefault: true }), 'noToday');
+// '전체 뉴스' 날짜: 기본(최근 3일)만 → 최근 3일 문구 + [전체 기간 보기] / 직접 고른 날짜 → 조건에 맞는 기사 없음 / '오늘'을 직접 고름 → 오늘 문구 + [어제 보기]
+assert.equal(k({ tab: 'all' }), 'noRecent');
+assert.equal(EMPTY_TEXT.noRecent, '최근 3일간 올라온 기사가 없습니다');
+assert.equal(k({ tab: 'all', date: 'changed' }), 'filtered');
+assert.equal(k({ tab: 'all', date: 'today' }), 'noToday');
+assert.equal(EMPTY_TEXT.noToday, '오늘 올라온 기사가 아직 없습니다');
+assert.equal(k({ tab: 'all', date: 'today', filtered: true }), 'filtered', '오늘 + 다른 조건이면 필터 초기화');
+assert.equal(k({ tab: 'new', date: 'today' }), 'filtered', '다른 탭에서 고른 날짜는 필터');
+assert.equal(k({ tab: 'all', channelArticles: 0 }), 'noData');
 assert.equal(k({ tab: 'press' }), 'noPress');
 assert.equal(EMPTY_TEXT.noData, '아직 모은 기사가 없습니다');
 assert.equal(EMPTY_TEXT.noNew, '새 기사가 없습니다');
@@ -22,6 +30,8 @@ assert.equal(EMPTY_TEXT.noBookmarks, '북마크한 기사가 없습니다');
 const page = readFileSync('app/[channel]/page.tsx', 'utf8');
 for (const t of ['해제해도', '`해제하면 $', '하나씩 해제', 'emptyFilters', 'countWithout', 'countBase']) assert.ok(!page.includes(t), `page: ${t} 없음`);
 assert.ok(page.includes("{empty === 'filtered' && <button type=\"button\" className=\"confirm\" onClick={resetFilters}>필터 초기화</button>}"));
+assert.ok(page.includes("{empty === 'noRecent' && <button type=\"button\" className=\"confirm\" onClick={() => { setDateFilter(null); setPage(1); }}>전체 기간 보기</button>}"));
+assert.ok(page.includes("{empty === 'noToday' &&") && page.includes('어제 보기'));
 // 필터 초기화는 카테고리·검색·언론사·보험사·기관·안 읽은 것만·관련도 낮음·날짜를 모두 되돌린다
 const reset = /const resetFilters = \(\) => \{([\s\S]*?)\n  \};/.exec(page)![1];
 for (const f of ["setCategory('전체')", "setSearch('')", 'setSources([])', 'setOrgs([])', 'setCompanies([])', 'setUnreadOnly(false)', 'setIncludeLow(false)', 'delete n[tab]'])

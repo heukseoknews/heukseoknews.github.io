@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react';
 import { addDays, dayHeading, monthGrid, shiftMonth, todayKst, weekRange } from '../lib/dates';
+import { RECENT_DAYS, recentRange } from '../lib/filterState';
 
 export type DateFilter = { from: string; to: string } | null;
 type Props = { filter: DateFilter; onChange: (f: DateFilter) => void; counts: Record<string, number>; month: string; onMonth: (ym: string) => void };
@@ -22,6 +23,7 @@ export default function DateBar({ filter, onChange, counts, month, onMonth }: Pr
     onChange(next); onMonth(next.from.slice(0, 7));
   };
   const week = weekRange(today);
+  const recent = recentRange(today);
   const is = (a: string, b: string) => filter?.from === a && filter?.to === b;
   return <div className="datebar">
     <div className="dateRow">
@@ -30,6 +32,7 @@ export default function DateBar({ filter, onChange, counts, month, onMonth }: Pr
       <button className="dnav" aria-label="다음 기간" disabled={!filter || filter.to >= today} onClick={() => shift(1)}><ChevronRight size={16} /></button>
       <button className={is(today, today) ? 'dq on' : 'dq'} onClick={() => { single(today); onMonth(today.slice(0, 7)); }}>오늘</button>
       <button className={is(yesterday, yesterday) ? 'dq on' : 'dq'} onClick={() => { single(yesterday); onMonth(yesterday.slice(0, 7)); }}>어제</button>
+      <button className={is(recent.from, recent.to) ? 'dq on' : 'dq'} onClick={() => { onChange(recent); onMonth(recent.from.slice(0, 7)); }}>최근 {RECENT_DAYS}일</button>
       <button className={is(week[0], week[1]) ? 'dq on' : 'dq'} onClick={() => { onChange({ from: week[0], to: week[1] }); onMonth(week[0].slice(0, 7)); }}>이번 주</button>
       {filter && <button className="dq" onClick={() => onChange(null)}>해제</button>}
     </div>

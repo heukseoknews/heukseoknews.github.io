@@ -19,16 +19,34 @@ export function panelChips(f: PanelFilters, L: PanelLabels, tab: TabId): Chip[] 
   ];
 }
 
-/** 날짜 조건 칩 문구: 오늘·어제·이번 주, 그 밖 '11월 12일' 또는 '11월 6일~11월 12일'. 전체 기간(null)이면 칩 없음. */
+/** 날짜 조건. null 은 전체 기간 */
+export type DateRange = { from: string; to: string };
+/** '전체 뉴스' 기본 기간: 오늘 포함 최근 3일. 수집이 하루 1회(05:37 KST)라 '오늘'만 보이면 아침에 자주 비어서다. */
+export const RECENT_DAYS = 3;
+export const recentRange = (today: string): DateRange => ({ from: addDays(today, -(RECENT_DAYS - 1)), to: today });
+/** 탭별 기본 날짜: '전체 뉴스'는 최근 3일, 다른 탭은 전체 기간 */
+export const defaultDate = (tab: TabId, today: string): DateRange | null => tab === 'all' ? recentRange(today) : null;
+const same = (a: DateRange | null, b: DateRange | null) => a === b || (!!a && !!b && a.from === b.from && a.to === b.to);
+/** 날짜 상태: default(탭 기본값 그대로) · today(사용자가 '오늘'을 고름) · changed(그 밖에 바꿈, 전체 기간 포함) */
+export type DateState = 'default' | 'today' | 'changed';
+export function dateState(f: DateRange | null, tab: TabId, today: string): DateState {
+  if (same(f, defaultDate(tab, today))) return 'default';
+  return f && f.from === today && f.to === today ? 'today' : 'changed';
+}
+/** 필터 버튼 배지 숫자: 칩 수에서 기본 날짜 칩은 뺀다(사용자가 날짜를 바꿨을 때만 날짜를 센다) */
+export const badgeCount = (chips: Chip[], date: DateState): number => chips.filter(c => c.kind !== 'date' || date !== 'default').length;
+
+/** 날짜 조건 칩 문구: 오늘·어제·최근 3일·이번 주, 그 밖 '11월 12일' 또는 '11월 6일~11월 12일'. 전체 기간(null)이면 칩 없음. */
 const md = (d: string) => `${Number(d.slice(5, 7))}월 ${Number(d.slice(8, 10))}일`;
-export function dateChipLabel(f: { from: string; to: string }, today: string): string {
+export function dateChipLabel(f: DateRange, today: string): string {
   if (f.from === f.to) return f.from === today ? '오늘' : f.from === addDays(today, -1) ? '어제' : md(f.from);
+  if (same(f, recentRange(today))) return `최근 ${RECENT_DAYS}일`;
   const [ws, we] = weekRange(today);
   if (f.from === ws && f.to === we) return '이번 주';
   return `${md(f.from)}~${md(f.to)}`;
 }
-/** 날짜 칩(필터 칩 줄 맨 앞). '전체 뉴스' 기본값 '오늘'도 칩으로 보인다 — 아침에 오늘 기사가 0건일 때 이유가 보이게. */
-export const dateChip = (f: { from: string; to: string } | null, today: string): Chip | null =>
+/** 날짜 칩(필터 칩 줄 맨 앞). '전체 뉴스' 기본값 '최근 3일'도 칩으로 보인다(배지 숫자에는 세지 않음, badgeCount). */
+export const dateChip = (f: DateRange | null, today: string): Chip | null =>
   f ? { key: 'date', kind: 'date', kindLabel: '날짜', label: dateChipLabel(f, today) } : null;
 
 /** 칩 하나 해제(날짜 칩은 화면이 날짜 조건을 '전체 기간'으로 바꾼다) */
