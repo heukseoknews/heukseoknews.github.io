@@ -40,3 +40,14 @@
 - 구글 뉴스 경유 링크는 구글을 거쳐 원문으로 이동한다.
 - 화면 오류 문구는 일반 문장만 보여 주고, 원문 오류(HTTP 상태, 브라우저 영문 메시지)는 브라우저 console 에 남긴다.
 - 사이트 빌드 시각·commit 은 /version.json 에서 확인한다.
+
+## 같은 사건 묶기·중요도 v2(품질 플래그)
+
+- 2026-11-12 부터 보험·AI 두 채널 모두 켜져 있다: `channels/<채널>/cluster.json` `enabled`(같은 사건 묶기), `channels/<채널>/score.json` 의 `v2.enabled`(중요도 v2). 켜져 있으면 매 수집 뒤 최근 10일 기사를 다시 판정해 `cluster_*`·`score_v2` 필드를 쓴다. 필드 뜻은 docs/data-contract.md, 설계는 docs/article-quality-plan.md.
+- 기존 `score` 는 그대로 함께 저장한다. 화면이 어느 값을 쓰는지는 화면 코드가 정한다.
+- **끄는 법(되돌리기)**:
+  1. 끄려는 채널의 `cluster.json` 과 `score.json` 의 `v2` 에서 `"enabled": true` 를 `false` 로 바꿔 커밋한다(둘을 함께 끄는 것을 권한다. 묶기만 끄면 이미 저장된 묶음 필드가 2단계 전까지 남아 `score_v2` 가 계속 그 묶음을 쓴다. 2단계는 다섯 필드를 모두 지우고, v2 가 켜져 있으면 다음 수집 때 `score_v2` 만 기사 단위로 다시 생긴다).
+  2. 최신 main 을 받은 뒤 저장된 필드를 지운다: `python collector/collect.py --channel <채널> --strip-quality`. `cluster_id`·`cluster_size`·`cluster_sources`·`cluster_lead`·`score_v2` 만 지워지고 월 파일은 필드를 넣기 전과 같은 바이트가 된다(index.json 크기도 다시 맞춤).
+  3. `data/<채널>/` 의 바뀐 월 파일과 index.json 을 파일 지정으로 커밋하고 push 한다. 화면은 필드가 없으면 기존 `score` 와 단독 기사로 동작한다.
+- 다시 켤 때 과거분까지 묶으려면 플래그를 켠 뒤 `python collector/collect.py --channel <채널> --quality --quality-all` 을 한 번 실행한다. `--dry-run` 을 붙이면 파일을 쓰지 않고 묶음 수·목록 항목 수·★ 분포·일관성 검사만 출력한다.
+- 보험 분류 동등성 검사(`scripts/audit/equivalence_collector.py`)는 품질 플래그를 끈 설정 사본으로 새 코드를 돌린다.
