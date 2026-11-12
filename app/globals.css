@@ -91,7 +91,7 @@ footer.siteFooter{margin-top:0;background:#fff;border-top:1px solid var(--line);
 .filterReset:disabled{opacity:.45;cursor:default}.filterReset:not(:disabled){color:var(--accent);border-color:var(--accent);font-weight:700}
 .filterChips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:-6px 0 14px}
 .filterChips .chip button{width:26px;height:26px;justify-content:center;align-items:center}
-.toolbar button:focus-visible,.filterPanel button:focus-visible,.filterPanel input:focus-visible,.filterChips button:focus-visible,.emptyFilters button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toolbar button:focus-visible,.filterPanel button:focus-visible,.filterPanel input:focus-visible,.filterChips button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .search:focus-within,.sort:has(:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
 .sourcePanel>ul{list-style:none;margin:0;padding:6px 0;max-height:340px;overflow-y:auto}.sourcePanel .msGroup>ul{list-style:none;margin:0;padding:0;max-height:none;overflow:visible}
 .msGroupName{padding:8px 14px 4px;font-size:var(--fs-12);font-weight:700;color:var(--muted);letter-spacing:.3px}
@@ -99,9 +99,6 @@ footer.siteFooter{margin-top:0;background:#fff;border-top:1px solid var(--line);
 .msSearch input{border:0;outline:0;width:100%;height:34px;font-size:13px;background:transparent;color:var(--text)}
 .msNone{padding:12px 14px;font-size:12px;color:var(--muted)}.msNote{padding:9px 14px;border-top:1px solid var(--line-soft);font-size:var(--fs-12);color:var(--muted)}
 .chipKind{font-size:var(--fs-12);color:var(--subtle);margin-right:2px}
-.emptyFilters{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;align-items:center}
-.emptyFilters li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-2)}.emptyFilters small{color:var(--muted)}
-.emptyFilters button{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:#fff;border-radius:40px;padding:5px 10px;font-size:12px;color:var(--brand)}
 @media(max-width:640px){
  .toolbar{flex-wrap:wrap}.toolbar .search{flex:1 1 100%}.filterToggle,.toolbar .sort{flex:1;justify-content:center;height:44px}.toolbar .sort select{flex:1}
  .filterPanel{flex-direction:column;align-items:stretch;gap:8px;padding:12px}
@@ -110,7 +107,6 @@ footer.siteFooter{margin-top:0;background:#fff;border-top:1px solid var(--line);
  .filterPanel .check{min-height:44px}
  .filterReset{margin-left:0;min-height:44px;justify-content:center}
 }
-.emptyFilters li.fix span{font-weight:700;color:var(--brand)}.emptyFilters li.fix small{color:var(--brand);font-weight:700}
 @media(min-width:641px){.filterPanel .sourcePanel{left:0;right:auto}}
 .dataPanel{padding:18px 20px;margin:18px 0}.dataPanel :is(h2,h3){font-size:15px;color:var(--accent-strong);margin:0 0 12px}.dataPanel :is(h2,h3) small{font-weight:normal;color:var(--muted);font-size:12px;margin-left:6px}.dataNote{font-size:12px;color:var(--muted);margin:12px 0 0;line-height:1.5}.dataActions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}.fileBtn{display:inline-flex;align-items:center;gap:6px;cursor:pointer}.fileBtn input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.fileBtn:focus-within{outline:2px solid var(--brand);outline-offset:2px}
 /* 채널 이동 줄(헤더 아래). 버튼마다 --c-accent·--c-soft 로 그 채널 색 */

@@ -4,6 +4,7 @@ import { Bookmark, Check, Newspaper, Search, ShieldCheck, Clock3, AlertCircle, S
 import ArticleCard, { type CardGroup } from '../../components/ArticleCard';
 import { clusterIndex, collapse, countLabel, single, sortItems } from '../../lib/clusters';
 import { stars } from '../../lib/stars';
+import { EMPTY_TEXT, emptyKind } from '../../lib/emptyState';
 import DateBar, { DateFilter } from '../../components/DateBar';
 import MultiFilter from '../../components/MultiFilter';
 import { Article, isRelevant } from '../../lib/news';
@@ -150,25 +151,24 @@ export default function Home() {
   const listReady = ready && (tab === 'bookmarks' || !loading);
   const markDone = () => { update(s => ({ ...s, lastConfirmed: new Date().toISOString() })); setPage(1); };
 
-  // 켜진 필터 목록: 배지 개수·'필터 초기화'·결과 0건 안내에 쓴다. hint = 그 필터만 풀었을 때 건수(조합 때문에 비었는지 알려 줌)
+  // 켜진 필터 목록: 필터 배지 개수·'필터 초기화'·빈 화면 판단에 쓴다
   const defaultDate: DateFilter = tab === 'all' ? { from: today, to: today } : null;
   const dateChanged = JSON.stringify(dateFilter) !== JSON.stringify(defaultDate);
-  const emptyNow = !loading && rows.length === 0;  // 0건일 때만 '풀면 N건'을 계산한다(평소엔 비용 없음)
-  const countWithout = (skip: Skip) => emptyNow ? base.filter(a => pass(a, skip)).length : undefined;
-  const countBase = (cat: string, q: string, unread: boolean, low: boolean) => emptyNow ? buildBase(cat, q, unread, low).filter(a => pass(a)).length : undefined;
-  type Active = { key: string; label: string; clear: () => void; hint?: number };
+  type Active = { key: string; label: string; clear: () => void };
   const active: Active[] = [
-    category !== '전체' && { key: 'category', label: `카테고리: ${category}`, clear: () => setCategory('전체'), hint: countBase('전체', search, unreadOnly, includeLow) },
-    search.trim() && { key: 'search', label: `검색: ${search.trim()}`, clear: () => setSearch(''), hint: countBase(category, '', unreadOnly, includeLow) },
-    sources.length > 0 && { key: 'sources', label: `${L.sources} ${sources.length}곳`, clear: () => setSources([]), hint: countWithout('sources') },
-    companies.length > 0 && { key: 'companies', label: `${L.companies} ${companies.length}곳`, clear: () => setCompanies([]), hint: countWithout('companies') },
-    orgs.length > 0 && { key: 'orgs', label: `${L.orgs} ${orgs.length}곳`, clear: () => setOrgs([]), hint: countWithout('orgs') },
-    dateChanged && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dayHeading(dateFilter.from) : `${dayHeading(dateFilter.from)} ~ ${dayHeading(dateFilter.to)}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }), hint: countWithout('date') },
-    unreadOnly && { key: 'unread', label: '안 읽은 것만', clear: () => setUnreadOnly(false), hint: countBase(category, search, false, includeLow) },
+    category !== '전체' && { key: 'category', label: `카테고리: ${category}`, clear: () => setCategory('전체') },
+    search.trim() && { key: 'search', label: `검색: ${search.trim()}`, clear: () => setSearch('') },
+    sources.length > 0 && { key: 'sources', label: `${L.sources} ${sources.length}곳`, clear: () => setSources([]) },
+    companies.length > 0 && { key: 'companies', label: `${L.companies} ${companies.length}곳`, clear: () => setCompanies([]) },
+    orgs.length > 0 && { key: 'orgs', label: `${L.orgs} ${orgs.length}곳`, clear: () => setOrgs([]) },
+    dateChanged && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dayHeading(dateFilter.from) : `${dayHeading(dateFilter.from)} ~ ${dayHeading(dateFilter.to)}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }) },
+    unreadOnly && { key: 'unread', label: '안 읽은 것만', clear: () => setUnreadOnly(false) },
     includeLow && tab !== 'bookmarks' && { key: 'low', label: '관련도 낮은 기사 포함', clear: () => setIncludeLow(false) },
   ].filter(Boolean) as Active[];
   const activeCount = active.length;
   const filtering = active.length > 0;  // 필터·검색이 켜져 있으면 펼친 묶음에서 맞은 기사를 구분해 보인다
+  // 빈 화면: 필터·검색이 있으면 한 줄 + [필터 초기화], 없으면 원인별 한 줄(lib/emptyState.ts)
+  const empty = emptyKind({ filtered: filtering, tab, channelArticles: all.length, todayDefault: tab === 'all' && !dateChanged });
   // 필터 패널(언론사·보험사·유관기관·체크 2개): 켜진 것은 칩으로, 칩에서 바로 해제(lib/filterState.ts)
   const panel: PanelFilters = { sources, companies, orgs, unreadOnly, includeLow };
   const setPanel = (n: PanelFilters) => {
@@ -227,13 +227,9 @@ export default function Home() {
     </div>
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     <section className="articles">{!ready || (loading && tab !== 'bookmarks') ? <div className="empty">뉴스를 불러오는 중입니다…</div> : pageItems.length === 0
-      ? (active.length
-        ? <div className="empty"><Newspaper size={27} /><b>조건에 맞는 기사가 없습니다</b><p>필터를 하나씩 해제해 보세요.</p>
-            <ul className="emptyFilters">{active.map(f => <li key={f.key} className={f.hint ? 'fix' : ''}><span>{f.label}</span>{f.hint !== undefined && <small>{f.hint > 0 ? `해제하면 ${f.hint.toLocaleString()}건` : '해제해도 0건'}</small>}<button type="button" onClick={() => { f.clear(); setPage(1); }}><X size={13} aria-hidden="true" /> 해제</button></li>)}</ul>
-            <button type="button" className="confirm" onClick={resetFilters}>필터 초기화</button></div>
-        : tab === 'all' && dateFilter && dateFilter.from === today && dateFilter.to === today
-        ? <div className="empty"><Newspaper size={27} /><b>오늘 올라온 기사가 아직 없습니다</b><p>매일 아침 갱신됩니다.</p><button type="button" className="confirm" onClick={() => { const y = addDays(today, -1); setDateFilter({ from: y, to: y }); setCalMonth(y.slice(0, 7)); setPage(1); }}>어제 보기</button></div>
-        : <div className="empty"><Newspaper size={27} /><b>{tab === 'new' ? '새 기사가 없습니다.' : tab === 'bookmarks' ? '북마크한 기사가 없습니다.' : '기사가 없습니다.'}</b></div>)
+      ? <div className="empty" data-empty={empty}>{empty === 'noBookmarks' ? <Bookmark size={27} aria-hidden="true" /> : <Newspaper size={27} aria-hidden="true" />}<b>{EMPTY_TEXT[empty]}</b>
+          {empty === 'filtered' && <button type="button" className="confirm" onClick={resetFilters}>필터 초기화</button>}
+          {empty === 'noToday' && <button type="button" className="confirm" onClick={() => { const y = addDays(today, -1); setDateFilter({ from: y, to: y }); setCalMonth(y.slice(0, 7)); setPage(1); }}>어제 보기</button>}</div>
       : pageItems.map((it, i) => { const a = it.lead; const d = kstDate(a.published_at); const head = sort === 'latest' && (i === 0 || d !== kstDate(pageItems[i - 1].lead.published_at));
         const group: CardGroup | undefined = it.clusterId ? { others: it.others, size: it.size, sources: it.sources, matched: it.matched, showMatch: filtering && it.matched.size < it.others.length + 1,  /* 모두 맞으면 구분할 필요 없음 */ open: openGroups.has(it.clusterId), onToggle: () => toggleGroup(it.clusterId!), isBookmarked, isRead: id => readSet.has(id) } : undefined;
         return <Fragment key={a.id}>{head && <div className="dayhead">{dayHeading(d)}<small>· {perDay[d]}건</small></div>}
