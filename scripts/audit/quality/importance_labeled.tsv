@@ -1,0 +1,95 @@
+item_id	channel	id	title	source	source_type	label	label_b	final
+ins-rel2-01	insurance	7b4bfde401ac2776	[보험브리핑] 현대해상, 성남시의료원에 '마음도서관' 개관 외	서울파이낸스	media	2	2	2
+ins-rel2-02	insurance	0c2c2f20323b3b36	기후위기가 부른 사과 '열과현상'...보험 사각지대에 포항 농가 '눈물'	글로벌경제신문	media	3	3	3
+ins-rel2-03	insurance	5a33a3bd9d37115c	현대해상, 병원 로비를 열린 독서쉼터로..성남시의료원에 '마음도서관' 개관	한국정경신문	media	2	2	2
+ins-rel2-04	insurance	6c06a34ce7efa541	한화손보, 3분기 순익 34% 증가…보험손익 급증	스페셜경제	media	4	4	4
+ins-rel2-05	insurance	b1549c40183d17d2	[해피라이프]황반변성, 조기 발견이 관건…치료비 부담 줄이는 보험 점검법	이데일리	media	2	2	2
+ins-rel2-06	insurance	ea73869affabdf28	삼성화재 "횡단보도 보행자 6명 중 1명 스마트폰 사용"…사고 위험 경고	팝콘뉴스	media	2	2	2
+ins-rel2-07	insurance	04a1ed608851cbcc	[3일 보험주 마감시황] 인카 0.95%↑·에이플러스 2.83%↓·삼성생명 3.33%↓	보험저널	media	2	2	2
+ins-rel2-08	insurance	dd9d605baa16c38c	현대해상 3세 승계 시동…정경선, 1200억대 증여세 마련 어쩌나	ESG경제	media	2	2	2
+ins-rel2-09	insurance	402fc2dfbdb3094c	[INSIGHT] 유재훈 보험개발원장 “보험산업의 공정한 중재자 역할 강화”	한국보험신문	media	3	3	3
+ins-rel2-10	insurance	c1d927b70c8874ae	금감원, 보험사 '릴레이 현장점검'…장기민원 해결 주력	KB Think	media	3	3	3
+ins-rel2-11	insurance	c7f472e4bd4c4fe8	현대해상, 최신 암 치료·어린이 보장 강화한 다이렉트 보험 2종 출시	뉴스1	media	3	2	3
+ins-rel2-12	insurance	64e92d1d0e0666e3	2028년부터 26만 간병인 산재보험 안전망에 편입	매일경제	media	3	3	3
+ins-rel2-13	insurance	dd34f7c2b07e95d5	공짜 강연인 줄 알았는데…보험 영업, 혹했다간 낭패	한국경제	media	2	2	2
+ins-rel2-14	insurance	34dda675d459cbea	[보험 Pick] 메트라이프생명, 고객 서비스 강화…대상웰라이프·토스인슈어런스, 시니어케어·지역 영업 확대	라이센스뉴스	media	2	2	2
+ins-rel2-15	insurance	e624746d1cdfb1cd	“美 중간선거가 환율 가른다” 달러 약세냐 유가발 강세냐	한국경제	media	2	1	2
+ins-rel2-16	insurance	c7f001b7a54fdea0	SG "미래대응기금, 채권시장에 중요한 수급…단기채·크레딧 지지"	연합뉴스	media	2	1	2
+ins-rel2-17	insurance	accbb96809e2c529	연금저축보험 수익률 아쉽다면 연금저축펀드로 갈아타세요	한국경제	media	2	2	2
+ins-rel2-18	insurance	b29d59f3d3a9beb8	DB손보, '교통·환경챌린지 8기' 성과 공유…우수기업 선정	데일리안	media	2	2	2
+ins-rel3-01	insurance	8ca8a856c23e9a1a	[소비자 분쟁] 3대 생보사, 민원 일제히 증가…절반 이상 보험금	FETV	media	3	3	3
+ins-rel3-02	insurance	f0e65b5421e76718	KDB생명, 10년간 사망보험금 늘어나는 종신보험 출시	코리아리포트	media	3	2	3
+ins-rel3-03	insurance	4486531bf1a6924c	한화생명, 설계사용 'AI 비서' 도입…생·손보사 전방위 확산	SBS Biz	media	3	3	3
+ins-rel3-04	insurance	64ca454dfe6cc851	생보사, 번 돈보다 나간 돈이 1.2조 더 많아…신한라이프는 ‘역전’ 해소	CEO스코어데일리	media	4	4	4
+ins-rel3-05	insurance	3e0697a67d3d306f	“아이 근시 억제한다며 검사용 안약 장기 처방”… 정식 치료제 등장에 실손 심사 ‘도마’	보험저널	media	3	3	3
+ins-rel3-06	insurance	76893b745d880f45	보험사 GA 관리 평가, 내부통제·점검 활동 살핀다	보험매일	media	4	3	4
+ins-rel3-07	insurance	0db82d4ec64efd03	동양생명, '우리WON하는건강플러스종신보험' 출시 - 머니투데이	머니투데이	media	3	2	3
+ins-rel3-08	insurance	c09a91e5f230c729	금감원, 베트남·인니 보험감독당국 초청…보험사 해외진출 지원	뉴시스	media	2	2	2
+ins-rel3-09	insurance	cadbbfa67aa6d971	ABL생명, '게임'으로 보험설계사 업무 알린다	포인트데일리	media	2	2	2
+ins-rel3-10	insurance	83f2e530eb2cba27	"금감원이 나서니 드디어 바뀌네"... 첫 자동차보험료, 61만 원 할인 받는 조건은?	오토트리뷴	media	2	3	2
+ins-rel3-11	insurance	509787b70a061f85	보험업권의 과도한 판매수수료 경쟁을 방지하고, 수수료에 대한 소비자의 알권리를 제고하기 위한 보험 판매수수료 제도개선 사항이 7.1일부터 시행됩니다.	금융위원회	press	5	4	5
+ins-rel3-12	insurance	3775c4a22941a15e	삼성화재 전기차보험 가입과 보장 내용…어떤 구조로 나뉘나	스페셜타임스	media	2	2	2
+ins-rel3-13	insurance	c25c1bb4c66b09bb	[소비자 분쟁] 3대 생보사, 분쟁조정 22% 증가…보험금 갈등 심화	FETV	media	3	3	3
+ins-rel3-14	insurance	073b6445b06fd702	실손의료비 변천사 1~5세대 비교표 | is보험 보험안내자료	이즈보험	media	1	2	1
+ins-rel4-01	insurance	1295c7f5d99ea7bf	교통사고 경상환자 8주룰 도입…“추가치료 검토해달라” 하루 570건	부산일보	media	4	4	4
+ins-rel4-02	insurance	d4006d943d1d0087	자녀 태운 부모 운전자까지…카카오페이손보, '운전자보험' 4개 플랜 개편	보험저널	media	3	2	3
+ins-rel4-03	insurance	56eb4afd223883fa	[한화손보 펨테크 리포트 ③] '디시전 메이커' 잡았다…여성 팬덤이 끌어올릴 CSM의 선순환	굿모닝경제	media	3	2	3
+ins-rel4-04	insurance	d2ea2b9d1381af82	“보험사·GA, 계약체결비용 산정기준 공유 어디까지?”… 4년 분급 앞두고 투명성 과제	보험저널	media	4	4	4
+ins-rel4-05	insurance	f77b1edb9856a3ea	보험사, 코스피 급락에 채권·주식 손실 '연타'	뉴스투데이	media	4	3	4
+ins-rel4-06	insurance	3f1123c57ee911f8	Aon(AON) 주가, 재보험 사업 진출에도 불구하고 공정가치보다 23% 낮을 수 있어	Simply Wall St	media	2	2	2
+ins-rel4-07	insurance	23ca37ec913f1df9	살짝 다쳐도 “8주 이상 치료받겠다”…車보험 ‘8주룰’ 도입후 매일 570건 신청	매일경제	media	4	4	4
+ins-rel4-08	insurance	25b8c0b948044dfc	실손서 확인한 절감 효과…손보사, 다음은 ‘8주룰’ 손익 개선	파이낸셜투데이	media	4	4	4
+ins-rel4-09	insurance	ceb770ba0fb3d841	실적 발표: Kemper, 자동차보험 손해율 개선에 2026년 3분기 예상 이익 상회	Investing.com 한국어	media	2	2	2
+ins-rel4-10	insurance	2924eb8ea0b933ce	“실손보험료 좀 부담 됐었는데”…할인과 전환 제도로 낮출 수 있다는데	매일경제	media	2	2	2
+ins-rel5-01	insurance	27a8a046a0330707	실손보험 다섯번 개편해도 손보사 1.9조 적자늪 여전	매일경제	media	4	4	4
+ins-rel5-02	insurance	c7d25a40e6a65d5b	보험사 계리가정 관리 강화…금융위, 보험업감독규정 개정안 의결	아시아투데이	media	5	5	5
+ins-rel5-03	insurance	5aa4aefc83884e97	금감원 '계리가정 옐로카드'에 보험사 비상⋯ 연말 CSM 촉각	이투데이	media	5	5	5
+ins-rel5-04	insurance	40cdcb03965d8c7c	계리가정보고서 도입 등 ｢보험업감독규정｣ 개정안 금융위원회 의결	금융위원회	press	5	5	5
+ins-rel5-05	insurance	f6f33ed01e101663	계리가정보고서 도입 등 보험업감독규정 개정안 금융위원회 의결	금융감독원	press	5	5	5
+ins-rel5-06	insurance	b808ab4828682a88	고령화에 치솟는 의료비…“비급여·실손보험, 건강보험 연계 관리해야”	한겨레	media	4	4	4
+ins-irr-01	insurance	c05ed9d2286ee273	'2연승' 신한은행 최윤아 감독 "수비 좋아졌다, 이해란 더 막기 힘들어졌어"...삼성생명 이주연 손목 골절→하상윤 감독 "다른 선수들에게는 기회" [MD인천]	마이데일리	media	1	1	1
+ins-irr-02	insurance	98e75de375766935	금감원, 대형GA 잇단 고강도 검사…강경 기조에 업계 '긴장'	전자신문	media	4	3	4
+ins-irr-03	insurance	a2ab55e728794d78	신한은행, 삼성생명에 아쉬운 패배…개막 3연승 도전 실패	경인일보	media	1	1	1
+ins-irr-04	insurance	c233ec9bdabc976e	OK저축은행, 삼성화재에 3-2 역전승⋯	이투데이	media	1	1	1
+ins-irr-05	insurance	68f6ef8a1ec30d9f	반도체 꺾이자 돈 몰렸다…수익률 상위 10개 중 7개가 '이것' [이수의 ETF줌인]	한국경제	media	1	1	1
+ins-irr-06	insurance	c653cebd9917f56f	이찬진 금융감독원장, 은행지주 이사회 의장 간담회 개최	금융감독원	press	2	2	2
+ins-irr-07	insurance	05467752d0456c50	금융회사 지배구조의 공정성과 투명성을 제고합니다.	금융감독원	press	3	2	3
+ins-irr-08	insurance	5cad0a5f1d251368	라이나전성기재단 운영 한국전통호텔 ‘바랑재’, 5성급 획득	한국보험신문	media	1	1	1
+ai-rel2-01	ai	94ee28b93f9d2d83	How Block is building AI-powered security with OpenAI technology	OpenAI	press	2	2	2
+ai-rel2-02	ai	3b5a2a6a27ab5490	Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live	OpenAI	press	2	1	2
+ai-rel2-03	ai	38c7141b6ea9e70d	Case Study - Legora	Anthropic	press	2	1	2
+ai-rel2-04	ai	038f46a4355e8569	With $720M round, Britain’s Fractile gets a leg up in the race for AI chips	TechCrunch	media	3	4	3
+ai-rel2-05	ai	dc314222aef693a9	문샷, 중국서 엔비디아 최신 AI 칩 임대 정황…금융 문서 확인	AI타임스	media	3	3	3
+ai-rel2-06	ai	208850a6ee7c8b55	Supersonic airliner in doubt as company shifts to powering AI data centers	Ars Technica	media	2	2	2
+ai-rel2-07	ai	f0ac58f6b7471f10	디즈니, 어도비와 전용 AI 모델 공동 개발…영화·테마파크로 확대	AI타임스	media	3	3	3
+ai-rel2-08	ai	782d282ede2603ed	KT·마이크로소프트, 네트워크 문제 감지하는 AI 에이전트 개발…장애 탐지 10분에서 2~3분으로 단축	인공지능신문	media	3	2	3
+ai-rel2-09	ai	e0200cc8d1aefba0	"클로드는 어떻게 컴퓨터 화면을 하나의 언어처럼 읽는가"...김용덕 변리사, 앤트로픽의 화면 이해 특허 분석	인공지능신문	media	2	2	2
+ai-rel2-10	ai	c7ed782a752fe280	중기부, 2030년까지 ‘AI 유니콘 20곳·데카콘 1곳' 키운다	AI타임스	media	3	2	3
+ai-rel3-01	ai	e5a25966251123f4	Lawsuit: Man introduced his wife to ChatGPT. She used it to plan his murder.	Ars Technica	media	2	2	2
+ai-rel3-02	ai	064fb88520fa5af6	More Performance From Every Byte: How Full-Stack Codesign Solves AI’s Memory Challenge	NVIDIA	press	2	3	2
+ai-rel3-03	ai	1864e43d05e79138	AI Is Changing How Semiconductor Fabs Work — and Engineers Are Moving Faster Because of It	NVIDIA	press	2	2	2
+ai-rel3-04	ai	8f0b399bf4dbc995	Founders’ letter	Anthropic	press	4	3	4
+ai-rel3-05	ai	c6252906d0ad7509	구글, AI 검색에 광고 수익성 악화…기업 인수까지 검토	AI타임스	media	3	3	3
+ai-rel3-06	ai	19b4fcb1faac9c9b	BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model	Hugging Face	press	2	2	2
+ai-rel3-07	ai	1a543055a02f9816	OpenAI and Poland’s NASK partner to advance AI safety and security	OpenAI	press	3	3	3
+ai-rel3-08	ai	5ba7647ef318e29b	삼성전자, AI 엑스레이로 소아 방사선량 최대 45% 줄인다…‘GC85A Fit’ 출시	인공지능신문	media	2	2	2
+ai-rel3-09	ai	55d059b88c6c576a	Your Experts Have Partners. There's HOPE for Keeping Them Together	Hugging Face	press	3	2	3
+ai-rel3-10	ai	b76b11a1199f73b7	Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection	Google DeepMind	press	3	3	3
+ai-rel3-11	ai	2d1d326185a62641	Flipsnack grows product signups with conversion optimization	OpenAI	press	2	1	2
+ai-rel3-12	ai	c2b4b68d7e0027f0	MPS in PyTorch 2.15	Hugging Face	press	3	2	3
+ai-rel4-01	ai	b6b30743068c2627	Welcome Le Chonk: Mistral Large 4 on Hugging Face	Hugging Face	press	4	4	4
+ai-rel4-02	ai	d864fe3a0834e167	'페이블 5.2' 프롬프트 가이드 공개…"코드 맡기면 정리 5배 증가"	AI타임스	media	3	2	3
+ai-rel4-03	ai	3f911b82b4abca26	삼성전자, AI 스타트업 1천개 육성 달성…30개사 중 15곳과 기술검증 추진	인공지능신문	media	2	2	2
+ai-rel4-04	ai	55cb0588b3e8436e	Gemini 4 Carbon is now available	Google DeepMind	press	5	5	5
+ai-rel4-05	ai	cb93d68b445c05b0	Pay for Hugging Face Hub with your Google Cloud Account	Hugging Face	press	2	2	2
+ai-rel4-06	ai	db6aa1f2f638c7d8	바이트댄스, 100회 수정해도 이미지 유지하는 '시드림 5.5' 공개	AI타임스	media	4	3	4
+ai-rel4-07	ai	d8296a22c5e08cc8	엔스케일, 350억달러 IPO 연기 검토…AI 데이터센터 투자 불안 여파	AI타임스	media	3	4	3
+ai-rel4-08	ai	72d03510d19dc7c3	구글, '제미나이 로보틱스 2.5' 공개…공장 작업 성공률 96%	AI타임스	media	4	4	4
+ai-rel5-01	ai	81a3994a47ebc193	구글, '제미나이 4 카본' 정식 출시…'페이블 5.2'의 4분의 1 가격	AI타임스	media	5	4	5
+ai-rel5-02	ai	265239243505befa	Meta Launches Muse Ember, a Low-Cost AI Model Priced Like Claude Haiku 5.5	Technology Org	media	4	4	4
+ai-rel5-03	ai	35e334c198740f74	Introducing GPT-6.1 Terra	OpenAI	press	5	5	5
+ai-rel5-04	ai	86c270bf47b54ff7	NVIDIA Announces New Planned Investments in Korean Startups at the MSIT-NVIDIA AI Startup Partnership Forum	NVIDIA	press	3	3	3
+ai-irr-01	ai	d1f3df81d4d143b4	Jensen Huang accused of having another affair — with an Nvidia exec	TechCrunch	media	2	1	2
+ai-irr-02	ai	f562f28d815d098c	디 인포메이션 "젠슨 황 인맥으로 엔비디아 칩 10조원 규모 중국 공급"	AI타임스	media	3	4	3
+ai-irr-03	ai	51b214e93a44df78	젠슨 황, 불륜 인정 1년 전부터 '성 스캔들 전문' PR 업체 고용	AI타임스	media	2	1	2
+ai-irr-04	ai	294df6909ab04034	ETRI, 국가보안기술연구소 신임 소장에 임정석 책임연구원 선임	인공지능신문	media	2	1	2

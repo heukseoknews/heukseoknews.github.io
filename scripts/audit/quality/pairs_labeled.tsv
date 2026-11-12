@@ -1,0 +1,115 @@
+pair_id	channel	stratum	N	a_id	b_id	a_title	a_source	b_title	b_source	hours_apart	label	label_b	final
+ins-S1-01	insurance	S1	2820	5b9915540b07e970	eed267b9e1228ba5	현대해상, 성남시의료원에 ‘마음도서관’ 개관...정서적 회복 지원	스마트투데이	현대해상, 성남시의료원에 ‘마음도서관’ 문 열어	핀포인트뉴스	7.2	Y	Y	Y
+ins-S1-02	insurance	S1	2820	c913ba282076526c	f589a09bb807553c	한화손보, 이대서울병원에 환자·지역 주민 위한 ‘웰니스 존’ 조성	파이낸셜투데이	[보험 뉴스브리핑] 한화손보 이대서울병원 친환경 쉼터 '웰니스 존' 조성	아시아타임즈	3.2	Y	Y	Y
+ins-S1-03	insurance	S1	2820	234989d0ce694027	5196a7c857f58676	현대해상, 성남시의료원에 34번째 ‘마음도서관’ 개관	퍼블릭뉴스통신	현대해상, 성남시의료원에 ‘마음도서관’ 개관…11년간 병원 34곳에 조성	헤럴드경제	0.0	Y	Y	Y
+ins-S1-04	insurance	S1	2820	63ac2a03c76b1d54	5cad0a5f1d251368	라이나전성기재단 운영 한국전통호텔 바랑재, 5성급 획득	중앙이코노미뉴스	라이나전성기재단 운영 한국전통호텔 ‘바랑재’, 5성급 획득	한국보험신문	3.9	Y	Y	Y
+ins-S1-05	insurance	S1	2820	489f0c3b4c01963e	e9d02a9d7da752da	현대해상, 성남시의료원에 ‘마음도서관’ 개관…전국 34곳 조성	서울타임즈뉴스	현대해상, 성남시의료원에 병원 내 쉼터 '마음도서관' 개관	뉴스핌	2.6	Y	Y	Y
+ins-S1-06	insurance	S1	2820	fa60a01626706625	2f80e11ca7cd36cc	삼성화재, 2.3조 들여 캐노피우스 경영권 인수	딜사이트	삼성화재, 영국 캐노피우스 경영권 인수…글로벌 보험사업 확대	한국면세뉴스	10.0	Y	Y	Y
+ins-S1-07	insurance	S1	2820	e9ed946aa6c0befc	ef0ecf627a5b43c1	현대해상, 성남시의료원에 ‘마음도서관’ 개관	보험신보	[보험 뉴스브리핑] 현대해상 성남시의료원 '마음도서관' 개관	아시아타임즈	7.6	Y	Y	Y
+ins-S1-08	insurance	S1	2820	b28f77261ea34302	eae18994510799f0	현대해상, 성남시의료원에 마음도서관 개관	아주경제	현대해상, 병원 로비에 독서 공간 마련…성남시의료원 ′마음도서관′ 개관	KPI뉴스	5.6	Y	Y	Y
+ins-S1-09	insurance	S1	2820	8d9c8bf74b49248a	f8ed3b9476873cd0	김철주 생보협회장, 사람 살리는 금융 캠페인 동참…금융 안전망 강화	아주경제	김철주 생명보험협회장, ‘사람 살리는 금융’ 릴레이 캠페인 동참	세계일보	4.3	Y	Y	Y
+ins-S1-10	insurance	S1	2820	571ccb2ab213618c	34aabe2f058e0e03	김철주 생명보험협회장, 사람 살리는 금융 릴레이 캠페인 동참	www.ebn.co.kr	김철주 생보협회장, ‘사람 살리는 금융’ 캠페인 동참	서울타임즈뉴스	7.3	Y	Y	Y
+ins-S1-11	insurance	S1	2820	a0e53dc66b1cc72a	61bcda4c57e19925	메리츠화재, 3분기 누적 순이익 1조3528억원…전년比 6.8%↓	아주경제	메리츠화재, 3분기 누적 순익 1조3528억원	메트로신문	0.6	Y	Y	Y
+ins-S1-12	insurance	S1	2820	e7399ef97f409f60	f65ef1ae7c30e82b	한화손보, '여성 운전자 안심위치공유' 배타적사용권 획득	뉴시스	한화손보, ‘안심위치공유서비스’ 배타적사용권 획득	보험매일	0.4	Y	Y	Y
+ins-S2-01	insurance	S2	2622	1ffca8b06f77ff9d	4a9f962f7247fee6	삼성화재, 2.3조원에 英 캐노피우스 경영권 인수···지분율 80.6%	서울파이낸스	[분석] 삼성화재, 캐노피우스 경영권 인수로 글로벌 도약	메디컬투데이	23.7	Y	Y	Y
+ins-S2-02	insurance	S2	2622	ca6e70bfdb9b94c1	0addac7a5661dd74	삼성화재, 英 캐노피우스 3조에 인수…북미·유럽 특수보험 시장 공략	서울경제	삼성화재, 英 특수보험사 캐노피우스 지분 80%로 확대…해외시장 공략	알파경제	2.6	Y	Y	Y
+ins-S2-03	insurance	S2	2622	453a89504a7f70ba	eed267b9e1228ba5	현대해상, 성남시의료원 로비에 도서관…34번째 쉼터	중앙이코노미뉴스	현대해상, 성남시의료원에 ‘마음도서관’ 문 열어	핀포인트뉴스	6.3	Y	Y	Y
+ins-S2-04	insurance	S2	2622	c3264138afdc99f0	90ff116da670edf4	삼성화재, 영국 로이즈 캐노피우스 경영권 인수… 지분율 80.6%로 확대	한국보험신문	삼성화재, 2조2647억원 들여 英 캐노피우스 경영권 인수	더글로벌기빙뉴스	9.4	Y	Y	Y
+ins-S2-05	insurance	S2	2622	fb02c91ca5bb9060	d85e278223a70cc3	DB손보, ‘교통∙환경챌린지 8기’ 데모데이 개최...소셜벤쳐 5곳 성과 공유	https://www.moneystorm.kr/	[보험브리핑] DB손보, 교통·환경 소셜벤처 육성 데모데이 개최 외	서울파이낸스	2.8	Y	Y	Y
+ins-S2-06	insurance	S2	2622	7f172b29e0fc0b36	a8cdf1bc6dd2212b	삼성화재, 英 보험사 로이즈 캐노피우스 경영권 인수	Chosunbiz	삼성화재, 2조2647억원 들여 英 캐노피우스 경영권 인수...해외사업 확대	녹색경제신문	7.5	Y	Y	Y
+ins-S2-07	insurance	S2	2622	88ef7fe6a04c9f3e	a1ee4b568cb3c602	김연경 감독 원더독스, 흥국생명 상대 3세트 초반 10:0 리드…역스윕 도전 (‘신인감독 김연경2’)	MHN스포츠	‘신인감독 김연경2’ 원더독스, 흥국생명에 역전승…5주 연속 일요 예능 2054 1위	싱글리스트	71.4	R	R	R
+ins-S2-08	insurance	S2	2622	bd2bc0283482a6ea	a0592a01b4547d05	삼성화재, 2.3조원 투입해 英 캐노피우스 경영권 품는다	조세일보	삼성화재, 캐노피우스 경영권에 2.3조원…미국 사업 수익성 과제	한국공제보험신문	28.3	Y	R	Y
+ins-S2-09	insurance	S2	2622	57b637f48b96c75c	cca65b55cf680f70	한화손보, 이대서울병원 內 친환경 치유 쉼터 ‘웰니스 존’ 조성	보험저널	한화손보, ‘웰니스 존’ 조성으로 친환경 치유센터 개소	한국보험신문	3.4	Y	Y	Y
+ins-S2-10	insurance	S2	2622	758ef994eedde2ea	ed963502d1876a71	한화손보, 이대서울병원에 '웰니스 존' 조성… 왕벚나무 80그루 식재	비즈트리뷴	한화손해보험, 이대서울병원에 친환경 쉼터 조성	팝콘뉴스	3.8	Y	Y	Y
+ins-S2-11	insurance	S2	2622	19d20a695837a634	1f314a83446befce	현대해상, 성남시의료원에 '마음도서관' 조성… 병원에 독서·휴식 공간 마련	Korea IT Times	현대해상, 성남시의료원에 ‘마음도서관’ 개관…환자·보호자 정서적 안정 지원	백세시대	5.1	Y	Y	Y
+ins-S2-12	insurance	S2	2622	a0dc8380a31cef84	9247ef0571491c5d	신경계질환 진단금, 중증도 높을수록 커진다…라이나생명 ‘통합특약’ 6개월 배타적사용권	보험저널	라이나생명, 신경계질환 진단특약 6개월 독점권 획득	경제타임스	0.8	Y	Y	Y
+ins-S2-13	insurance	S2	2622	0fddd974f32f3402	14436aef7965de82	KDB생명, 사망보험금 최대 2배 늘어나는 '더!행복플러스종신보험' 출시	뉴스1	KDB생명, 사망보험금 체증형 종신보험 출시	포인트데일리	2.0	Y	Y	Y
+ins-S2-14	insurance	S2	2622	acfb8cd9f638b3eb	1355e6ea0974ec10	우리금융그룹 ABL생명, ‘사람 살리는 금융’ 릴레이 캠페인 동참	퍼블릭뉴스통신	김철주 생보협회장, ‘사람 살리는 금융’ 캠페인 동참	경제타임스	0.0	N	Y	N
+ins-S3-01	insurance	S3	2660	5feb19f0d4c7d8c0	4a9f962f7247fee6	삼성화재, 캐노피우스 품고 글로벌 영토 확장···수익성 개선 기대	뉴스웨이	[분석] 삼성화재, 캐노피우스 경영권 인수로 글로벌 도약	메디컬투데이	0.3	Y	Y	Y
+ins-S3-02	insurance	S3	2660	775e68f14a420ae6	6cca0a3596f41f1d	'신인감독' 김연경, 흥국생명에 3대2 대역전 '2연승 쾌거' - 머니투데이	머니투데이	‘신인감독 김연경2’ 필승 원더독스, 흥국생명 상대로 5세트 끝 역전승	톱스타뉴스	5.1	Y	Y	Y
+ins-S3-03	insurance	S3	2660	107da6b1f9bc4fa5	37f594b4cd5272c8	메리츠증권, 3분기 누적 순익 7205억…전년비 12% 증가	이데일리	메리츠화재, 3분기 누적 순익 1조3528억원···전년比 6.8%↓	서울파이낸스	0.8	N	N	N
+ins-S3-04	insurance	S3	2660	4811c0d3b0301335	b75e96ee4a9401e1	차기 생보협회장 '민간' 무게	DFT 대한금융신문	김철주 생보협회장, '사람 살리는 금융' 캠페인 동참	더팩트	17.8	N	R	N
+ins-S3-05	insurance	S3	2660	416d058d3d73882d	de86918243c593b0	한화손보, 3Q 보험손익 209%↑ 전망…장기보험 반등	PRESS9	삼성생명, 3Q 보험손익 반등 기대…CSM 성장 탄력	PRESS9	23.5	N	N	N
+ins-S3-06	insurance	S3	2660	21b533ed74a0a396	e2338d51c672abfb	[포토] 교보생명, 보호아동과 베트남서 집짓기 봉사활동	FETV	교보생명, 베트남 취약가정 주택 4채 건립 지원…보호아동도 봉사 참여	로이슈	0.5	Y	Y	Y
+ins-S3-07	insurance	S3	2660	a0e53dc66b1cc72a	b33aa04e9f729e7d	메리츠화재, 3분기 누적 순이익 1조3528억원…전년比 6.8%↓	아주경제	메리츠화재 3Q 별도 순이익 3285억원…전년 동기 대비 29.2% 감소	뉴스저널리즘	0.4	Y	Y	Y
+ins-S3-08	insurance	S3	2660	20f88d784b63e37c	38141535127d3676	KB라이프, 출범 후 줄곧 지배구조 ‘A’… ‘대표·이사회 분리’ 통했다	보험저널	KB라이프, 지배구조 평가 4년 연속 A등급	보험매일	0.7	Y	Y	Y
+ins-S3-09	insurance	S3	2660	0dbfda71affe3f94	c8be8ff28ff4a426	한화손보, 3분기 누적 순익 3114억…장기보험손익 16.9%↑	파이낸셜투데이	한화손보, 3분기 순익 961억원 … 보험손익 개선에 34.1%↑	뉴데일리	1.3	Y	Y	Y
+ins-S3-10	insurance	S3	2660	f7da64d063ddbc8d	088b48416227a295	김철주 생명보험협회장, 생명존중 가치 바탕 ‘사람 살리는 금융’ 캠페인 동참	한국보험신문	김철주 생보협회장, 불법사금융 예방 캠페인 동참	뉴시스	6.0	Y	R	Y
+ins-S3-11	insurance	S3	2660	43302b191db4ccb8	cd2f11ac8a8d1bdb	‘신인감독 김연경2’ 흥국생명 직관 경기	BNT뉴스	김연경, '옛 주장' 표승주 꺾었다…흥국생명에 역전승, 최고 7.0% (신인감독2)[종합]	www.xportsnews.com	15.1	Y	R	Y
+ins-S3-12	insurance	S3	2660	3f43658e02d32978	8d650b0bfe588cb1	DB손보, 소방공무원에 감사 쿠키·손편지 전달...안전문화 지원 이어가	더퍼블릭	DB손보, 소방공무원 응원 봉사활동	보험매일	8.2	Y	Y	Y
+ins-S3-13	insurance	S3	2660	f149c52aaddf1dc9	32e337af022349e1	보험연구원, 스위스 생갈렌대와 연구 교류…글로벌 협력 네트워크 확대	파이낸셜뉴스	보험연구원, 스위스 장크트갈렌대와 AI·사이버리스크 공동연구	한국경제	4.8	Y	Y	Y
+ins-S3-14	insurance	S3	2660	bf14ef3e1f3e5626	ceb770ba0fb3d841	자동차보험 '8주룰' 심사 본격화…손해율 개선 효과 주목	데일리안	실적 발표: Kemper, 자동차보험 손해율 개선에 2026년 3분기 예상 이익 상회	Investing.com 한국어	33.0	N	N	N
+ins-S4-01	insurance	S4	3869	63a226deb274827b	423ee46dae9dc30b	한화證 “삼성화재, 캐노피우스 인수로 ROE 개선…연간 순익 2600억 원 증가 기대”	팝콘뉴스	삼성화재, 3분기 누적 순익 1.86조…캐노피우스 투자손익 견인 - 머니투데이	머니투데이	26.8	N	R	N
+ins-S4-02	insurance	S4	3869	82d746a4de754941	7a042f2d1cd6f5bd	메리츠화재, 3분기 순익 3285억⋯전년比 29.2%↓	이투데이	한화손보, 3분기 누적 순익 3114억… 전년比 5.8%↑	글로벌이코노믹	17.1	N	N	N
+ins-S4-03	insurance	S4	3869	ecfbb1fd805c64ab	5feb19f0d4c7d8c0	삼성화재가 지분 80.56%로 품은 英 캐노피우스는	자본시장뉴스	삼성화재, 캐노피우스 품고 글로벌 영토 확장···수익성 개선 기대	뉴스웨이	21.4	R	R	R
+ins-S4-04	insurance	S4	3869	604d213b49f71c73	bcbd80a4e37b0f65	메리츠화재, 보험손익 선방에도 투자손익 부진…3분기 순익 6.8% 감소 - 머니투데이	머니투데이	삼성화재, 3분기 누적 순익 1조8676억원…보험·투자손익 동반 증가	보험저널	17.3	N	N	N
+ins-S4-05	insurance	S4	3869	1e51af145e462745	a80ad43ab7a6dede	김철주 생보협회장, '사람 살리는 금융' 릴레이 캠페인 동참	파이낸셜포스트	ABL생명, 불법사금융 예방 ‘사람 살리는 금융’ 동참	한국보험신문	1.3	N	Y	N
+ins-S4-06	insurance	S4	3869	d010e4151c4afbe1	bd734cb183331e72	DB손해보험, '마음을 잇다' 소방공무원 응원 봉사활동 실시	전자신문	교보생명, 보호아동과 함께 베트남 봉사활동 실시	보험신보	25.2	N	N	N
+ins-S4-07	insurance	S4	3869	9870dea48244c1f9	6e476e10dc7b91a1	메리츠화재, 3분기 순익 3285억원…전년 대비 29.2%↓	더팩트	한화손보, 3분기 순익 961억원…작년 동기대비 34%↑	www.ebn.co.kr	13.8	N	N	N
+ins-S4-08	insurance	S4	3869	afd92e7f5953c410	5880e5f254b6c07e	"차 안 타면 보험료 깎아준다"…롯데손보, 업계 첫 주차일수 할인	아시아경제	롯데손보, ‘주차한 날’도 보험료 최대 15% 할인	핀포인트뉴스	0.8	Y	Y	Y
+ins-S4-09	insurance	S4	3869	a22610d44942124a	528d75deebe1687d	국민연금 ‘11년지기 친구’ JP모건과 전 자산군 협력키로	매일경제	"위탁운용에서 한발 더" 국민연금, JP모간자산운용과 협력확대 협약 - 머니투데이	머니투데이	0.3	Y	Y	Y
+ins-S4-10	insurance	S4	3869	0addac7a5661dd74	bd2bc0283482a6ea	삼성화재, 英 특수보험사 캐노피우스 지분 80%로 확대…해외시장 공략	알파경제	삼성화재, 2.3조원 투입해 英 캐노피우스 경영권 품는다	조세일보	2.2	Y	Y	Y
+ins-S4-11	insurance	S4	3869	5b9915540b07e970	7e7d3cc4d724c53c	현대해상, 성남시의료원에 ‘마음도서관’ 개관...정서적 회복 지원	스마트투데이	현대해상, 병원에 책과 휴식을 더하다…'마음도서관' 34곳 조성	뉴스1	0.4	Y	Y	Y
+ins-S4-12	insurance	S4	3869	8cd423f3184eaeca	90ff116da670edf4	삼성화재 英 캐노피우스 인수 놓고 외신 "상당한 수익 거둘 것"	더구루	삼성화재, 2조2647억원 들여 英 캐노피우스 경영권 인수	더글로벌기빙뉴스	10.7	R	R	R
+ins-S4-13	insurance	S4	3869	3a6fc37ab13131bc	4dbc7cb7801116f5	메리츠금융, 보험·증권 엇갈린 실적…3분기 누적 순익 3.2%↓ - 머니투데이	머니투데이	메리츠금융, 3분기 순익 전년比 27% 감소…증시 악화에 화재 투자손익 급감	인베스트조선	1.4	Y	Y	Y
+ins-S4-14	insurance	S4	3869	a5160c2932d238c6	94f1587f9fa6ca08	현대해상, AI 보험설계 지원 시스템 ‘Hi-헬퍼’ 도입	보험매일	현대해상, AI로 1분 만에 보험설계안 3종 생성	신아일보	0.4	Y	Y	Y
+ins-S5-01	insurance	S5	7035	9c1969fa76c91503	68899616be8f7e87	한화손보, 3분기 순이익 961억⋯전년비 34.1%↑	이투데이	한화손보, 3분기 누적 순익 3114억…신계약 CSM 1兆	www.fetv.co.kr	0.5	Y	Y	Y
+ins-S5-02	insurance	S5	7035	3cbaebd6c3b2a498	58d0d376778fa6ec	[빅데이터로본다] 생명보험 2026년 11월 브랜드평판... 1위 교보생명, 2위 미래에셋생명, 3위 삼성생명	일간투데이	미래에셋, 개인투자용 국채 11월 청약…총발행규모 2천억원	연합뉴스	32.0	N	N	N
+ins-S5-03	insurance	S5	7035	d5ba5c450cfdab13	5eae921bc7416758	삼성생명 주가 7,500원 상승 후 장마감	아시아뉴스통신	[오늘의 주목주] '실적 경계' 삼성화재 주가 5%대 내려, 코스피 외국인 순매수에 5370선 상승 마감	비즈니스포스트	25.6	N	N	N
+ins-S5-04	insurance	S5	7035	0f9a29e11a849c38	2e117ca050018d7e	[보험브리핑]롯데손보·카카오페이손보·DB손보	메트로신문	[보험브리핑]현대해상·농협손보·ABL생명·DB생명	메트로신문	23.1	N	N	N
+ins-S5-05	insurance	S5	7035	ab809cd6cdbebe74	9a6fe177b9728ecc	삼성화재, 영국 특종보험사 캐노피우스 경영권 인수	DealSite경제TV	[오늘Who] 삼성화재 영국 보험사 품는다, 이문화 해외사업 성장판 확대 '3조 승부수'	비즈니스포스트	2.5	Y	Y	Y
+ins-S5-06	insurance	S5	7035	979908ad778766aa	ed963502d1876a71	[함께가자 우리ESG] DB손해보험, 교통·환경챌린지 데모데이 성료	뉴스락	한화손해보험, 이대서울병원에 친환경 쉼터 조성	팝콘뉴스	7.5	N	N	N
+ins-S5-07	insurance	S5	7035	9c1969fa76c91503	b95d9b051a1e3e67	한화손보, 3분기 순이익 961억⋯전년비 34.1%↑	이투데이	한화손보, 탄탄한 본업 체력…3분기 순익 키웠다	DealSite경제TV	0.9	Y	Y	Y
+ins-S5-08	insurance	S5	7035	3baa9d0bad455822	fb1f2439e04bba3b	NH농협생명, 경기 안성 양파농가 찾아 농촌일손돕기 실시	사회적경제뉴스	서울시·NH농협생명, 노숙인 농촌 단기 일경험 사업 첫발	핀포인트뉴스	69.3	N	N	N
+ins-S5-09	insurance	S5	7035	8831ba0cf20ab158	36b2a740a6f8c1df	삼성화재, 2~3년차 보장성보험 유지율 개선…25차월 76%	토요경제	삼성화재 2.3조·DB손보 2.3조…보험사 해외 M&A 판 커진다	뉴스1	16.3	N	N	N
+ins-S5-10	insurance	S5	7035	f8ed3b9476873cd0	c1d927b70c8874ae	김철주 생명보험협회장, ‘사람 살리는 금융’ 릴레이 캠페인 동참	세계일보	금감원, 보험사 '릴레이 현장점검'…장기민원 해결 주력	KB Think	18.6	N	N	N
+ins-E-01	insurance	E	20603	a8cdf1bc6dd2212b	7e65dad50a22632e	삼성화재, 2조2647억원 들여 英 캐노피우스 경영권 인수...해외사업 확대	녹색경제신문	삼성화재, 횡단보도 6명 중 1명 ′스몸비′…사고 67.5% 보행자 과실 0%	메가경제	20.3	N	N	N
+ins-E-02	insurance	E	20603	0c7ca4011f2649a6	ad6fc2594b43542e	삼성생명, 2027년 순익 8조원 전망	PRESS9	이주연 없어도 이겼다! 이해란 '21득점 9리바운드' 미친 활약, 삼성생명 신한은행에 54-51 신승...공동 선두 도약 [MD인천]	마이데일리	7.5	N	N	N
+ins-E-03	insurance	E	20603	288c7492a787944a	dc84181736958318	DB손해보험, ‘교통·환경챌린지 8기’ 데모데이 개최… 선정 5개 기업 성과 공유	퍼블릭뉴스통신	침수·화재 막는 벤처 육성…DB손보의 '소셜 혁신 8기'	경제타임스	1.2	Y	Y	Y
+ins-E-04	insurance	E	20603	b22b8f58c2e58f44	f7b577f7ec5afd31	삼성화재, '2조원대 베팅'에 커지는 기대와 부담…해외사업 '시험대'	프라임경제	삼성화재 "횡단보도 6명 중 1명 스마트폰 사용…96% 좌우 확인 안 해"	뉴스티앤티	5.0	N	N	N
+ins-E-05	insurance	E	20603	fcddb481c1cf1dcb	6b1b286cb4cd7658	한화손보 직원, 금융 AI 챌린지 대상…‘모의창구' 주목	경제타임스	[더밸류 브리핑] 오늘의 손해보험사 소식…삼성화재·한화손보·NH 농협손보	더밸류뉴스	30.6	N	N	N
+ins-E-06	insurance	E	20603	561197bfcd940cfd	bb460abb0e148491	한화손해보험, 12일 컨퍼런스콜로 3분기 실적 발표	비건뉴스	한화손보, 3분기 누적 당기순익 3114억원…손해율 개선에 보험손익 껑충	이데일리	69.8	R	R	R
+ins-E-07	insurance	E	20603	703e0d22e59a342a	ccc30611a8b9478f	삼성화재, 英 특수보험사 인수… 수익원 다변화	세계일보	삼성화재, 3분기 순이익 8.3% 감소…자동차보험은 흑자 전환	한국경제	28.7	N	R	N
+ins-E-08	insurance	E	20603	2835919dca66a70c	251a0f7b7680c71e	'우스만 개인 최다 33점' 한국전력, 삼성화재 꺾고 2연승(종합)	연합뉴스	삼성화재 3분기 순이익 4천932억·8.3%↓…예상치 소폭 상회	연합인포맥스	34.6	N	N	N
+ins-R-01	insurance	R	1063643	8747b774f2e4c312	e539c61264f13cb2	건보공단, 공공·민간보험 데이터 연계 추진 방향 논의…의료비 통합지원 모색	전자신문	메트라이프(MET) 주식은 40%의 가치 격차가 있음에도 불구하고 합리적인 수준으로 보인다	Simply Wall St	40.3	N	N	N
+ins-R-02	insurance	R	1063643	12a93f28e11aa24f	7b886ac3fcd7d3c6	[빅데이터투데이] 생명보험 2026년 11월 브랜드평판 랭킹... 1위 교보생명, 2위 미래에셋생명, 3위 삼성생명	파이낸스투데이	DB생명, 독서소외 아동에 '동화 목소리' 기부	포인트데일리	8.6	N	N	N
+ins-R-03	insurance	R	1063643	36a04706cdb00f8a	056550ed32333173	산재보험급여 첫 8조원 돌파…수급자 42만명 육박	보험매일	대출금리 공시 얼마나 구체화하나…포용금융·소비자보호 평가 반영 검토 - 머니투데이	머니투데이	24.7	N	N	N
+ins-R-04	insurance	R	1063643	a17ec6eac780d8a4	c25c1bb4c66b09bb	NH농협생명, 안성 양파농가 일손 돕기 나서	비즈월드	[소비자 분쟁] 3대 생보사, 분쟁조정 22% 증가…보험금 갈등 심화	FETV	16.3	N	N	N
+ai-S1-01	ai	S1	6	0bcc040a77a860fa	81567c52066e9db9	Meta releases Muse Ember, a $0.10-per-million-token model for high-volume agent work	MLQ.ai	Meta Releases Muse Ember, a 1M-Context Model for High-Volume Agent Work	MarkTechPost	11.1	Y	Y	Y
+ai-S1-02	ai	S1	6	9c78c98e71a83937	72d03510d19dc7c3	휴머노이드 로봇에 ‘제미나이 로보틱스 2.5’ 탑재…구글, 벤츠 생산라인서 작업 성공률 96% 달성	인공지능신문	구글, '제미나이 로보틱스 2.5' 공개…공장 작업 성공률 96%	AI타임스	7.3	Y	Y	Y
+ai-S1-03	ai	S1	6	6bef113157ebb053	a62c92be41cc6f52	Meta releases Muse Ember, a lightweight model for agent execution	news.lavx.hu	Meta Launches Muse Ember, Lightweight AI Model for Agent Execution	Analytics Insight	12.6	Y	Y	Y
+ai-S1-04	ai	S1	6	1a437db079e30ad7	a62c92be41cc6f52	Meta releases Muse Ember, a new lightweight model for agent execution	TechCrunch	Meta Launches Muse Ember, Lightweight AI Model for Agent Execution	Analytics Insight	15.5	Y	Y	Y
+ai-S1-05	ai	S1	6	1a437db079e30ad7	6bef113157ebb053	Meta releases Muse Ember, a new lightweight model for agent execution	TechCrunch	Meta releases Muse Ember, a lightweight model for agent execution	news.lavx.hu	2.9	Y	Y	Y
+ai-S1-06	ai	S1	6	4cc686f0d8904bd2	f2c9646eac9d4c1a	Nvidia CEO Jensen Huang’s affair with alleged Chinese spy: a timeline	TechCrunch	Congress to call Jensen Huang in to answer for alleged Chinese spy affair	TechCrunch	26.3	R	R	R
+ai-S2-01	ai	S2	30	0bcc040a77a860fa	6bef113157ebb053	Meta releases Muse Ember, a $0.10-per-million-token model for high-volume agent work	MLQ.ai	Meta releases Muse Ember, a lightweight model for agent execution	news.lavx.hu	1.3	Y	Y	Y
+ai-S2-02	ai	S2	30	81567c52066e9db9	fa17fb04e0a2b5f0	Meta Releases Muse Ember, a 1M-Context Model for High-Volume Agent Work	MarkTechPost	Meta Releases Muse Ember, a Low-Cost AI Model Designed to Handle High-Volume Agent Tasks	Tekedia	4.4	Y	Y	Y
+ai-S2-03	ai	S2	30	42f0786ec0b8a45f	e093e2a49aacf0cb	Case Study - Rakuten	Anthropic	Case Study - Lilly	Anthropic	0.0	N	N	N
+ai-S2-04	ai	S2	30	4e31b829ae688591	d96a2391b623b2cb	Gemini 4 Argon: Built to solve your hardest problems	Google DeepMind	Gemini 4 Argon for Robotics	Google DeepMind	0.0	R	R	R
+ai-S2-05	ai	S2	30	42f0786ec0b8a45f	c80f9e3167df2965	Case Study - Rakuten	Anthropic	Case Study - Walmart	Anthropic	0.0	N	N	N
+ai-S2-06	ai	S2	30	6bef113157ebb053	fa17fb04e0a2b5f0	Meta releases Muse Ember, a lightweight model for agent execution	news.lavx.hu	Meta Releases Muse Ember, a Low-Cost AI Model Designed to Handle High-Volume Agent Tasks	Tekedia	14.1	Y	Y	Y
+ai-S2-07	ai	S2	30	1a437db079e30ad7	0bcc040a77a860fa	Meta releases Muse Ember, a new lightweight model for agent execution	TechCrunch	Meta releases Muse Ember, a $0.10-per-million-token model for high-volume agent work	MLQ.ai	1.5	Y	Y	Y
+ai-S3-01	ai	S3	31	a62c92be41cc6f52	fa17fb04e0a2b5f0	Meta Launches Muse Ember, Lightweight AI Model for Agent Execution	Analytics Insight	Meta Releases Muse Ember, a Low-Cost AI Model Designed to Handle High-Volume Agent Tasks	Tekedia	1.5	Y	Y	Y
+ai-S3-02	ai	S3	31	81567c52066e9db9	a62c92be41cc6f52	Meta Releases Muse Ember, a 1M-Context Model for High-Volume Agent Work	MarkTechPost	Meta Launches Muse Ember, Lightweight AI Model for Agent Execution	Analytics Insight	2.9	Y	Y	Y
+ai-S3-03	ai	S3	31	265239243505befa	fa17fb04e0a2b5f0	Meta Launches Muse Ember, a Low-Cost AI Model Priced Like Claude Haiku 5.5	Technology Org	Meta Releases Muse Ember, a Low-Cost AI Model Designed to Handle High-Volume Agent Tasks	Tekedia	0.1	Y	Y	Y
+ai-S3-04	ai	S3	31	b83c5a9c27184e68	265239243505befa	Meta launches Muse Ember for cost-efficient AI agent tasks	TechGig	Meta Launches Muse Ember, a Low-Cost AI Model Priced Like Claude Haiku 5.5	Technology Org	10.1	Y	Y	Y
+ai-S3-05	ai	S3	31	19edc24986582da2	110e2ee00f0e0c34	Appendix to “AI for Scientific Discovery: How Researchers Use Claude”	Anthropic	How scientists use Claude	Anthropic	7.2	R	R	R
+ai-S3-06	ai	S3	31	37c679c9d09971a3	fa17fb04e0a2b5f0	Meta launches Muse Ember, its most efficient AI model to handle repetitive tasks; know what it can do and	The Economic Times	Meta Releases Muse Ember, a Low-Cost AI Model Designed to Handle High-Volume Agent Tasks	Tekedia	14.4	Y	Y	Y
+ai-S3-07	ai	S3	31	b3b7fa6c1f3dcbf6	e12ad59c369bd96f	Google will let schools skip AI tools, but they have to give up search, too	Ars Technica	Google: Schools can keep search while skipping Gemini, but AI search is non-negotiable	Ars Technica	51.8	R	Y	R
+ai-S4-01	ai	S4	169	9be805818eb1a5e1	4fdca01e16580ccd	앤트로픽, 86조원 규모 기업공개 가속…기업 가치 1880조원 목표, 나스닥 상장 위한 투자자 설명회 돌입	인공지능신문	TSMC, 자체 칩 개발 나선 오픈AI·앤트로픽에 최대 1.3조원 투자	AI타임스	17.3	N	N	N
+ai-S4-02	ai	S4	169	f2c9646eac9d4c1a	d1f3df81d4d143b4	Congress to call Jensen Huang in to answer for alleged Chinese spy affair	TechCrunch	Jensen Huang accused of having another affair — with an Nvidia exec	TechCrunch	3.9	R	R	R
+ai-S4-03	ai	S4	169	1a437db079e30ad7	113c86696146288e	Meta releases Muse Ember, a new lightweight model for agent execution	TechCrunch	Introducing Our Smallest, Most Efficient Model: Muse Ember	Meta AI	2.4	Y	Y	Y
+ai-S4-04	ai	S4	169	236705559d2866e2	3927e8656e242ccd	Is Jensen Huang’s bad behavior more commonplace than it seems?	TechCrunch	The unfolding Jensen Huang scandal: a timeline	TechCrunch	7.6	R	R	R
+ai-S4-05	ai	S4	169	612147b20f79cd44	e12be6c2ba7dcfd8	Anthropic launches roadshow for proposed initial public offering	Anthropic	Anthropic launches Claude Meetings to turn workplace discussions into plans and tasks	TechCrunch	5.8	N	N	N
+ai-S4-06	ai	S4	169	e086b6a569cdaf26	a75982b151db7f3d	After challenging Google’s Android with Cyanogen, its co-founder takes aim at Windows for AI era	TechCrunch	Google broadens its AI hardware portfolio with two new specialized chips	TechCrunch	1.9	N	N	N
+ai-S4-07	ai	S4	169	1725d137aa3debc0	eda525050cea8fce	Franchisee reconciles cash in 94% less time with ChatGPT Work	OpenAI	Uber brings ChatGPT Work to all employees with OpenAI	OpenAI	38.0	N	N	N
+ai-S5-01	ai	S5	2827	28bf67cf1684b7b2	81567c52066e9db9	Jensen Huang reportedly engaged a PR firm with a history of handling high-profile sex scandals a year ago	TechCrunch	Meta Releases Muse Ember, a 1M-Context Model for High-Volume Agent Work	MarkTechPost	7.1	N	N	N
+ai-S5-02	ai	S5	2827	fc87a45dcfbf03d4	32d4e91d243ef07f	Heimstaden is changing residential real estate management with AI	OpenAI	Dharma Field Extractor: Any Document In, Structured Fields in JSON Out	Hugging Face	33.8	N	N	N
+ai-S5-03	ai	S5	2827	5553fe020c93d3c2	4cc686f0d8904bd2	Anthropic sets IPO price range of $70 to $78 per share to reach an implied valuation of $1.404 trillion	TechCrunch	Nvidia CEO Jensen Huang’s affair with alleged Chinese spy: a timeline	TechCrunch	3.0	N	N	N
+ai-S5-04	ai	S5	2827	9437640665920f6f	ba0fcf4e325b4115	Meta launches Muse Ember AI for coding and document parsing	NewsBytes	AlphaGenome 2: Deciphering how cells read DNA to better understand disease	Google DeepMind	42.0	N	N	N
+ai-S5-05	ai	S5	2827	95dedf578de78f3e	6400feb681472530	OpenAI models are coming to Google Cloud	OpenAI	What FDE means at OpenAI	OpenAI	18.0	N	N	N
+ai-E-01	ai	E	993	c6252906d0ad7509	9db1eb85c92ad4d0	구글, AI 검색에 광고 수익성 악화…기업 인수까지 검토	AI타임스	'제미나이'가 기억하는 내 정보 한눈에 보여준다…수정·삭제도 가능	AI타임스	2.6	N	N	N
+ai-E-02	ai	E	993	37c679c9d09971a3	4a69b1b062132764	Meta launches Muse Ember, its most efficient AI model to handle repetitive tasks; know what it can do and	The Economic Times	메타, 100만 토큰 처리하는 초경량 AI ‘뮤즈 엠버’ 공개…앱 넘나들며 코딩·업무 자동화 수행	인공지능신문	30.4	Y	Y	Y
+ai-E-03	ai	E	993	ea8615ca3ee894cb	a75982b151db7f3d	"말만 하면 지도 앱이 완성된다”…구글, 제미나이·구글맵 결합해 AI 앱 개발 자동화	인공지능신문	Google broadens its AI hardware portfolio with two new specialized chips	TechCrunch	4.5	N	N	N
+ai-E-04	ai	E	993	5b4416b71730e2b4	84450dca19ea467c	구글, AI 반도체 ‘TPU 8i 맥스·8tx’ 공개…연산 성능 2배·데이터 처리 중 암호화로 에이전틱 AI 공략	인공지능신문	앤트로픽, 클로드 오피스 출시…IPO 앞두고 MS·구글과 경쟁	AI타임스	29.6	N	N	N
+ai-R-01	ai	R	22935	0f192bba36f64bb6	db41dec20cf5bfb8	Otter AI can now follow conversations across 30+ languages	TechCrunch	[AI리더의 서가] AI는 어떻게 기업의 무기가 되는가	AI타임스	41.0	N	N	N
+ai-R-02	ai	R	22935	8c18a42b1131abd3	0f192bba36f64bb6	메타, AI로 청소년 실제 나이 추정해 보호 기능 자동 적용…전 세계 수백만명 추가 보호	인공지능신문	Otter AI can now follow conversations across 30+ languages	TechCrunch	4.4	N	N	N
