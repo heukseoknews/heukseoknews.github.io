@@ -6,7 +6,7 @@
  "locale": "ko-KR",
  "timezone": "Asia/Seoul",
  "schedule_utc": ["37 20 * * *"],
- "collect": false,
+ "collect": true,
  "tabs": {
   "new": "새 뉴스",
   "all": "전체 뉴스",
