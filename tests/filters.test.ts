@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { clearPanel, onTabChange, panelChips, removeChip, type PanelFilters } from '../lib/filterState.ts';
+import { clearPanel, dateChip, dateChipLabel, onTabChange, panelChips, removeChip, type PanelFilters } from '../lib/filterState.ts';
 
 // 필터 접기: 켜진 필터만 칩으로, 칩에서 바로 해제, 초기화, 탭 이동 시 보험사 선택 유지
 const L = { sources: '언론사', companies: '보험사', orgs: '유관기관' };
@@ -43,4 +43,25 @@ assert.ok(page.includes('setPanel(removeChip(panel, c))') && page.includes('setP
 assert.match(page, /if \(n\.companies !== companies\) setCompanies\(n\.companies\)/);
 assert.match(page, /const companies = saved\.companies;/, '보험사 선택은 사용자 상태(저장)에서 읽는다');
 for (const k of ['MultiFilter label={L.sources}', 'MultiFilter label={L.companies}', 'MultiFilter label={L.orgs}', '안 읽은 것만', '관련도 낮은 기사 포함', 'className="filterReset"']) assert.ok(page.includes(k), `패널 안: ${k}`);
+
+// 날짜 조건 칩: '전체 기간'이 아니면 칩(기본 '오늘' 포함), 문구는 짧게
+const TODAY = '2026-11-12';  // 목요일, 이번 주 = 11-09(월)~11-15(일)
+assert.equal(dateChip(null, TODAY), null, '전체 기간이면 칩 없음');
+assert.deepEqual(dateChip({ from: TODAY, to: TODAY }, TODAY), { key: 'date', kind: 'date', kindLabel: '날짜', label: '오늘' });
+assert.equal(dateChipLabel({ from: '2026-11-11', to: '2026-11-11' }, TODAY), '어제');
+assert.equal(dateChipLabel({ from: '2026-11-02', to: '2026-11-02' }, TODAY), '11월 2일');
+const [ws, we] = [(await import('../lib/dates.ts')).weekRange(TODAY)][0];
+assert.equal(dateChipLabel({ from: ws, to: we }, TODAY), '이번 주');
+assert.equal(dateChipLabel({ from: '2026-11-06', to: '2026-11-12' }, TODAY), '11월 6일~11월 12일');
+assert.deepEqual(removeChip(f, { kind: 'date' }), f, '날짜 칩 해제는 화면이 날짜를 전체 기간으로');
+// 화면: 날짜 칩은 칩 줄 맨 앞·필터 버튼 배지에 포함, 해제하면 전체 기간, 빈 화면 판단에서 기본 '오늘'만이면 필터 아님(38 그대로)
+const pg = readFileSync('app/[channel]/page.tsx', 'utf8');
+assert.ok(pg.includes("const chips = [...(dChip ? [dChip] : []), ...panelChips(panel, L, tab)];"));
+assert.ok(pg.includes("필터{chips.length > 0 && <b aria-label={`켜진 필터 ${chips.length}개`}>{chips.length}</b>}"));
+assert.ok(pg.includes("if (c.kind === 'date') { setDateFilter(null); setPage(1); }"));
+assert.ok(pg.includes("dateFilter && { key: 'date',"), '필터 초기화 배지에도 날짜 포함');
+assert.ok(pg.includes("filtered: active.some(f => f.key !== 'date' || dateChanged)"));
+// 마이페이지 목록 버튼 이름 = 필터 초기화
+const me = readFileSync('app/me/page.tsx', 'utf8');
+assert.ok(me.includes('필터 초기화') && !me.includes('조건 모두 해제'));
 console.log('filters tests passed');

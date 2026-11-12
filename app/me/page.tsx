@@ -139,13 +139,13 @@ export default function MyBookmarksPage() {
 
     <div className="listHead">
       <h2>{ch.name} 북마크{ready && <small>{rows.length.toLocaleString()}건</small>}</h2>
-      {anyFilter && <div className="listActions"><button type="button" className="readToggle" onClick={reset}><X size={13} aria-hidden="true" /> 조건 모두 해제</button></div>}
+      {anyFilter && <div className="listActions"><button type="button" className="readToggle" onClick={reset}><X size={13} aria-hidden="true" /> 필터 초기화</button></div>}
     </div>
     <section className="articles">{!ready ? <div className="empty">불러오는 중입니다…</div>
       : bookmarkList.length === 0
         ? <div className="empty"><BookmarkIcon size={27} aria-hidden="true" /><b>북마크한 기사가 없습니다.</b><Link className="confirm" href={channelHref(ch.slug)}>{ch.name} 뉴스 보기</Link></div>
         : rows.length === 0
-          ? <div className="empty"><b>조건에 맞는 북마크가 없습니다.</b><button type="button" className="confirm" onClick={reset}>조건 모두 해제</button></div>
+          ? <div className="empty"><b>조건에 맞는 북마크가 없습니다.</b><button type="button" className="confirm" onClick={reset}>필터 초기화</button></div>
           : groups.map(g => <Fragment key={g.category}>
             <div className="dayhead">{g.category}<small>· {(f.category === '전체' ? rows.filter(b => (b.category || '미분류') === g.category).length : rows.length).toLocaleString()}건</small></div>
             {g.items.map(card)}

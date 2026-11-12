@@ -11,7 +11,7 @@ import { Article, isRelevant } from '../../lib/news';
 import type { TabId } from '../../lib/channels';
 import { useChannel } from '../../lib/channelContext';
 import { facetOptions, matchesFacet } from '../../lib/facets';
-import { type PanelFilters, onTabChange, panelChips, removeChip } from '../../lib/filterState';
+import { type PanelFilters, dateChip, onTabChange, panelChips, removeChip } from '../../lib/filterState';
 import { addDays, countByDate, dayHeading, kstDate, shiftMonth, todayKst } from '../../lib/dates';
 import { sourceOptions } from '../../lib/sources';
 import { isNewArticle, isUnreadNew, visibleInNewTab } from '../../lib/newsFilter';
@@ -161,14 +161,15 @@ export default function Home() {
     sources.length > 0 && { key: 'sources', label: `${L.sources} ${sources.length}곳`, clear: () => setSources([]) },
     companies.length > 0 && { key: 'companies', label: `${L.companies} ${companies.length}곳`, clear: () => setCompanies([]) },
     orgs.length > 0 && { key: 'orgs', label: `${L.orgs} ${orgs.length}곳`, clear: () => setOrgs([]) },
-    dateChanged && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dayHeading(dateFilter.from) : `${dayHeading(dateFilter.from)} ~ ${dayHeading(dateFilter.to)}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }) },
+    dateFilter && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dayHeading(dateFilter.from) : `${dayHeading(dateFilter.from)} ~ ${dayHeading(dateFilter.to)}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }) },
     unreadOnly && { key: 'unread', label: '안 읽은 것만', clear: () => setUnreadOnly(false) },
     includeLow && tab !== 'bookmarks' && { key: 'low', label: '관련도 낮은 기사 포함', clear: () => setIncludeLow(false) },
   ].filter(Boolean) as Active[];
   const activeCount = active.length;
   const filtering = active.length > 0;  // 필터·검색이 켜져 있으면 펼친 묶음에서 맞은 기사를 구분해 보인다
   // 빈 화면: 필터·검색이 있으면 한 줄 + [필터 초기화], 없으면 원인별 한 줄(lib/emptyState.ts)
-  const empty = emptyKind({ filtered: filtering, tab, channelArticles: all.length, todayDefault: tab === 'all' && !dateChanged });
+  // 기본 날짜('전체 뉴스'의 오늘)만 걸린 경우는 필터로 보지 않는다 → '오늘 올라온 기사가 아직 없습니다'
+  const empty = emptyKind({ filtered: active.some(f => f.key !== 'date' || dateChanged), tab, channelArticles: all.length, todayDefault: tab === 'all' && !dateChanged });
   // 필터 패널(언론사·보험사·유관기관·체크 2개): 켜진 것은 칩으로, 칩에서 바로 해제(lib/filterState.ts)
   const panel: PanelFilters = { sources, companies, orgs, unreadOnly, includeLow };
   const setPanel = (n: PanelFilters) => {
@@ -176,7 +177,8 @@ export default function Home() {
     if (n.companies !== companies) setCompanies(n.companies);  // 보험사는 사용자 상태에 저장되므로 바뀔 때만
     setPage(1);
   };
-  const chips = panelChips(panel, L, tab);
+  const dChip = dateChip(dateFilter, today);
+  const chips = [...(dChip ? [dChip] : []), ...panelChips(panel, L, tab)];  // 날짜 칩 맨 앞, 필터 버튼 배지도 날짜 포함
   // Esc: 패널 안 드롭다운이 열려 있으면 드롭다운만(MultiFilter 가 닫음), 아니면 패널을 닫고 [필터] 버튼으로 포커스
   const onFilterKey = (e: React.KeyboardEvent) => {
     if (e.key !== 'Escape' || !filterOpen || document.querySelector('#filterPanel .sourcePanel')) return;
@@ -211,7 +213,7 @@ export default function Home() {
       <button type="button" className="filterReset" disabled={!activeCount} onClick={resetFilters}><RotateCcw size={14} aria-hidden="true" /> 필터 초기화{activeCount > 0 && <b>{activeCount}</b>}</button>
     </div>
     {chips.length > 0 && <div className="filterChips" role="group" aria-label="켜진 필터">
-      {chips.map(c => <span key={c.key} className="chip">{c.kindLabel && <span className="chipKind">{c.kindLabel}</span>}{c.label}<button type="button" aria-label={`${c.kindLabel ? c.kindLabel + ' ' : ''}${c.label} 해제`} onClick={() => setPanel(removeChip(panel, c))}><X size={13} aria-hidden="true" /></button></span>)}
+      {chips.map(c => <span key={c.key} className="chip">{c.kindLabel && <span className="chipKind">{c.kindLabel}</span>}{c.label}<button type="button" aria-label={`${c.kindLabel ? c.kindLabel + ' ' : ''}${c.label} 해제`} onClick={() => { if (c.kind === 'date') { setDateFilter(null); setPage(1); } else setPanel(removeChip(panel, c)); }}><X size={13} aria-hidden="true" /></button></span>)}
       <button type="button" className="chipClear" onClick={resetFilters}>필터 초기화</button>
     </div>}
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />
