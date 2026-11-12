@@ -12,7 +12,7 @@
     {"name": "흥국생명", "group": "생명보험", "aliases": ["흥국생명"]},
     {"name": "미래에셋생명", "group": "생명보험", "aliases": ["미래에셋생명"]},
     {"name": "ABL생명", "group": "생명보험", "aliases": ["ABL생명"]},
-    {"name": "DB생명", "group": "생명보험", "aliases": ["DB생명"]},
+    {"name": "DB생명", "group": "생명보험", "aliases": [{"t": "DB생명", "not_before": "k"}]},
     {"name": "KDB생명", "group": "생명보험", "aliases": ["KDB생명"]},
     {"name": "KB라이프", "group": "생명보험", "aliases": ["KB라이프", "KB생명"]},
     {"name": "푸본현대생명", "group": "생명보험", "aliases": ["푸본현대생명", "푸본현대"]},

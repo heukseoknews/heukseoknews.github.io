@@ -91,4 +91,13 @@ with tempfile.TemporaryDirectory() as d:
     assert row['companies'] == ['삼성화재'] and row['orgs'] == ['금융감독원'] and outs[0] == outs[1]
     collect.rescore(Path(d))  # 점수만 바꾸고 companies/orgs 는 그대로
     assert json.loads((Path(d) / '2026-11.json').read_text(encoding='utf-8'))[0]['companies'] == ['삼성화재']
+# 'DB생명' 은 'KDB생명' 안에서 일치하지 않는다(channels/insurance/companies.json not_before). 진짜 DB생명은 유지
+import channel as _ch
+_ch.use('insurance')
+_comp = entities.load()[0]
+assert _comp.match('KDB생명, 10년간 사망보험금 늘어나는 종신보험 출시') == ['KDB생명']
+assert _comp.match('kdb생명 사망보험금 체증형 종신보험') == ['KDB생명']
+assert _comp.match('DB생명, 독서소외 아동에 동화 목소리 기부') == ['DB생명']
+assert _comp.match('[포토] DB생명 임직원 봉사') == ['DB생명']
+assert _comp.match('KDB생명·DB생명 나란히 신상품') == ['KDB생명', 'DB생명']
 print('entities tests passed')
