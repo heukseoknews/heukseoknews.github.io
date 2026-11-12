@@ -38,6 +38,7 @@
 
 - 제목·링크·출처·발행시각과 분류 메타만 저장하고 본문·이미지는 저장하지 않는다.
 - 구글 뉴스 경유 링크는 구글을 거쳐 원문으로 이동한다.
+- 출처 이름 정규화(`channels/<채널>/source_aliases.json`): `domains` 는 새로 수집하는 기사(구글 뉴스 `<source url>`)에, `names` 는 이름 그대로 매핑한다. `names` 를 바꾸면 **다음 수집의 저장 단계가 저장된 기사 출처까지 자동으로 바꾸고**(`normalize_shards`, `--reclassify` 와 무관), 제목+출처가 같아진 기사는 합친다. 수집 전에 `python collector/collect.py --channel <채널> --normalize-sources --dry-run` 으로 바뀔 이름·사라질 기사·품질 필드 변화를 확인하고, `--dry-run` 없이 실행하면 수집 없이 바로 적용한다.
 - 같은 기사(같은 id = 같은 링크)는 한 월 파일에만 둔다. 피드가 같은 링크의 발행 시각을 나중에 바꿔 보내도(구글 뉴스에서 실제로 10-29 → 11-05 로 바뀐 사례) 처음 저장한 월·발행 시각을 유지한다(`collect.save`). 이전 코드로 생긴 중복은 `python collector/collect.py --channel <채널> --dedupe-months --dry-run` 으로 목록을 보고, `--dry-run` 없이 실행하면 먼저 수집된 사본만 남기고 index·trends·품질 필드를 다시 맞춘다. 같은 제목의 정기 공지는 id 가 달라 대상이 아니다.
 - 피드 날짜는 원문 문자열을 먼저 읽고(쉼표 뒤 공백 없음·요일 변형·'GMT+9'·'KST'·'YYYY.MM.DD' 등, collector/dates.py) 못 읽으면 feedparser 값을 쓴다. 그래도 읽지 못한 기사는 저장하지 않고, 소스별 건수를 status.json `skipped.no_date` 와 수집 로그 경고(원문 예시 3개)에 남긴다. 게시판도 날짜 없는 글 수를 같은 곳에 센다.
 - 화면 오류 문구는 일반 문장만 보여 주고, 원문 오류(HTTP 상태, 브라우저 영문 메시지)는 브라우저 console 에 남긴다.

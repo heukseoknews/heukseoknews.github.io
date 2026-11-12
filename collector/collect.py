@@ -381,6 +381,45 @@ def dedupe_months(data_dir: Path, config_dir: Path, dry_run: bool = True) -> dic
     return summary
 
 
+def normalize_sources(data_dir: Path, config_dir: Path, dry_run: bool = True) -> dict:
+    """저장된 기사에 현재 정규화 규칙(source_aliases.json names, 제목 접미사·노이즈 필터)을 적용한다 — 다음 수집의 save 가
+    하는 일(normalize_shards)을 수집 없이 따로 실행. 정규화로 제목+출처가 같아진 기사는 합쳐진다.
+    dry_run(기본): data 사본에서 실행해 바뀌는 출처 이름(전→후, 건수), 합쳐져 사라지는 기사, 품질 필드가 바뀌는 기사만 돌려준다.
+    적용하면 이어서 index·trends 를 다시 만들고 품질 후처리(플래그가 켜진 경우)를 돌린다."""
+    import shutil
+    import tempfile
+    aliases = SourceAliases.load(config_dir / 'source_aliases.json')
+    tfilter = TitleFilter.load(config_dir / 'title_filters.json')
+    work = Path(tempfile.mkdtemp(prefix='normalize-')) / data_dir.name if dry_run else data_dir
+    try:
+        if dry_run:
+            shutil.copytree(data_dir, work)
+        rd = lambda d: {(p.stem, a['id']): a for p in sorted(d.glob('????-??.json')) for a in load_shard(p)}
+        before = rd(work)
+        changed_files = normalize_shards(work, aliases, tfilter)
+        if changed_files:
+            reindex(work, config_dir)
+            quality.run(work, config_dir)
+        after = rd(work)
+        Q = ('cluster_id', 'cluster_size', 'cluster_sources', 'cluster_lead', 'score_v2')
+        renamed: dict[str, int] = {}
+        for k, a in before.items():
+            if k in after and after[k]['source'] != a['source']:
+                key = f"{a['source']} → {after[k]['source']}"
+                renamed[key] = renamed.get(key, 0) + 1
+        other = sorted({f for k, a in before.items() if k in after for f in set(a) | set(after[k])
+                        if f not in ('source',) + Q and a.get(f) != after[k].get(f)})
+        return {'dry_run': dry_run, 'files_changed': changed_files,
+                'renamed': dict(sorted(renamed.items(), key=lambda x: -x[1])), 'renamed_articles': sum(renamed.values()),
+                'removed': [{'month': k[0], 'id': k[1], 'title': a['title'], 'source': a['source']} for k, a in before.items() if k not in after],
+                'quality_changed': [{'month': k[0], 'id': k[1], 'title': a['title'][:40], 'before': {q: a.get(q) for q in Q}, 'after': {q: after[k].get(q) for q in Q}}
+                                    for k, a in before.items() if k in after and any(a.get(q) != after[k].get(q) for q in Q)],
+                'other_fields_changed': other}
+    finally:
+        if dry_run:
+            shutil.rmtree(work.parent, ignore_errors=True)
+
+
 def reclassify(data_dir: Path) -> None:
     """저장된 모든 기사를 현재 categories.json 규칙으로 다시 분류. id·수집시각·발행시각 등은 건드리지 않는다."""
     total = changed = 0
@@ -525,6 +564,7 @@ def main():
     ap.add_argument('--quality', action='store_true', help='네트워크 없이 같은 사건 묶기·중요도 v2 를 다시 계산(cluster.json·score.json v2 플래그가 켜진 것만)')
     ap.add_argument('--quality-all', action='store_true', help='--quality 와 함께: 최근 lookback_days 대신 저장된 전체 기간을 판정(처음 켤 때 과거 기사 백필)')
     ap.add_argument('--dedupe-months', action='store_true', help='여러 월 파일에 같은 id 가 있는 기사를 먼저 수집된 사본만 남기고 정리(--dry-run 이면 목록만)')
+    ap.add_argument('--normalize-sources', action='store_true', help='저장된 기사에 출처 이름 정규화(source_aliases.json names)를 수집 없이 적용(--dry-run 이면 바뀔 목록만)')
     ap.add_argument('--strip-quality', action='store_true', help='되돌리기: 저장된 기사에서 묶기·중요도 v2 선택 필드를 지움')
     args = ap.parse_args()
     cdir = channel.use(args.channel, args.config_dir)  # 분류·개체 로더도 이 폴더를 읽는다
@@ -534,6 +574,9 @@ def main():
     ALWAYS_RELEVANT.update(load_always_relevant(cdir))
     if args.reindex:
         reindex(Path(args.data_dir), cdir)
+        return 0
+    if args.normalize_sources:
+        print(json.dumps(normalize_sources(Path(args.data_dir), cdir, dry_run=args.dry_run), ensure_ascii=False, indent=1))
         return 0
     if args.dedupe_months:
         print(json.dumps(dedupe_months(Path(args.data_dir), cdir, dry_run=args.dry_run), ensure_ascii=False, indent=1))
