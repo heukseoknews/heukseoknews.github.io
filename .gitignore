@@ -10,3 +10,6 @@ public/fonts/
 *.tsbuildinfo
 public/version.json
 scripts/probe/out/
+# 비밀·계정 목록은 저장소에 두지 않는다(docs/auth-runbook.md)
+*.env
+accounts*.csv
