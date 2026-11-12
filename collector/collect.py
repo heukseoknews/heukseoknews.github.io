@@ -15,6 +15,7 @@ from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 import feedparser
 import requests
 import channel
+import dates as feed_dates
 import quality
 from boards import fetch_board
 from classify import UNCATEGORIZED, classify, load as load_classifier
@@ -117,11 +118,15 @@ HAS_TZ = re.compile(r'(Z|GMT|UTC|[+-]\d{2}:?\d{2})\s*$', re.I)
 
 
 def parse_date(entry, tz: str = DEFAULT_TZ):
-    """UTC ISO 반환. 시각에 타임존이 없으면(국내 전문지 RSS의 'YYYY-MM-DD HH:MM:SS') 피드 설정 tz 의 현지 시각으로 본다(기본 KST)."""
+    """UTC ISO 반환. 시각에 타임존이 없으면(국내 전문지 RSS의 'YYYY-MM-DD HH:MM:SS') 피드 설정 tz 의 현지 시각으로 본다(기본 KST).
+    원문 문자열을 dates.parse(feed_dates) 로 먼저 읽고(쉼표 뒤 공백 없음·요일 변형·'GMT+9'·'YYYY.MM.DD' 등), 못 읽을 때만 feedparser 결과를 쓴다."""
+    raw = entry.get('published') or entry.get('updated') or ''
+    dt = feed_dates.parse(raw, tz)
+    if dt is not None:
+        return feed_dates.to_utc_iso(dt)
     t = entry.get('published_parsed') or entry.get('updated_parsed')
     if not t:
         return None
-    raw = entry.get('published') or entry.get('updated') or ''
     if HAS_TZ.search(raw):
         return datetime(*t[:6], tzinfo=timezone.utc).isoformat()
     return datetime(*t[:6], tzinfo=ZoneInfo(tz)).astimezone(timezone.utc).isoformat()
@@ -196,6 +201,7 @@ def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, bloc
     out, skipped, filtered, dates = [], {'no_link': 0, 'no_date': 0, 'low_relevance': 0}, [], []
     blocked_n: dict[str, int] = {}
     future = 0  # 미래 발행 시각을 수집 시각으로 맞춘 건수(로그용)
+    bad_dates: list[str] = []  # 날짜를 읽지 못한 원문 예시(로그·status 용)
     cutoff = (datetime.fromisoformat(now_iso) - timedelta(days=max_age_days)).isoformat() if max_age_days else None
     for e in entries:
         raw = clean(e.get('title', ''))
@@ -204,7 +210,10 @@ def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, bloc
             skipped['no_link'] += 1; continue
         published = parse_date(e, tz)
         if not published:
-            skipped['no_date'] += 1; continue
+            skipped['no_date'] += 1
+            if len(bad_dates) < 3:
+                bad_dates.append((e.get('published') or e.get('updated') or '(날짜 없음)')[:40])
+            continue
         published, moved = clamp_future(published, now_iso)
         future += moved
         dates.append(published)
@@ -239,6 +248,9 @@ def collect_source(row, now_iso, aliases=None, unmapped=None, tfilter=None, bloc
         out.append(art)
     stats = {'feed_size': len(feed.entries), 'skipped': skipped, 'filtered': filtered,
              'oldest': min(dates) if dates else None, 'newest': max(dates) if dates else None, 'blocked': blocked_n}
+    if skipped['no_date']:  # 날짜를 읽지 못한 기사는 버리되 조용히 사라지지 않게 남긴다
+        stats['no_date_samples'] = bad_dates
+        logging.warning('%s: 날짜를 읽지 못해 %d건 버림(예: %s)', name, skipped['no_date'], ' | '.join(bad_dates))
     if future:
         stats['future_clamped'] = future
         logging.info('%s: 미래 발행 시각 %d건을 수집 시각으로 맞춤', name, future)
@@ -249,7 +261,9 @@ def collect_board(spec: dict, cfg: dict, now_iso: str, backfill: bool, tfilter=N
     """HTML 게시판 1개 수집. 결과 형식은 collect_source 와 같다."""
     pages = spec.get('backfill_pages', cfg.get('backfill_pages', 4)) if backfill else spec.get('pages', cfg.get('pages', 2))
     items, info = fetch_board(spec, pages, max(cfg.get('delay_s', 1.2), 1.2))
-    out, skipped, filtered, dates = [], {'no_link': 0, 'no_date': 0, 'low_relevance': 0}, [], []
+    out, skipped, filtered, dates = [], {'no_link': 0, 'no_date': info.get('no_date', 0), 'low_relevance': 0}, [], []
+    if skipped['no_date']:  # 게시판 목록에서 날짜를 읽지 못해 건너뛴 글
+        logging.warning('%s: 날짜를 읽지 못해 %d건 버림(게시판 목록)', spec['name'], skipped['no_date'])
     blocked_n: dict[str, int] = {}
     for it in items:
         title = strip_org_suffix(clean(it['title']))

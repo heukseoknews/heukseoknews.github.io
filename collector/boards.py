@@ -34,8 +34,9 @@ def _clean(s: str) -> str:
     return re.sub(r'\s+', ' ', s or '').strip()
 
 
-def parse_fsc(html: bytes | str) -> list[dict]:
-    """금융위 목록: li > .inner > .cont(.subject a, .info '담당부서 : X') + .day. 링크는 영구 URL(/no010101/{id}, 쿼리 제거)."""
+def parse_fsc(html: bytes | str, stats: dict | None = None) -> list[dict]:
+    """금융위 목록: li > .inner > .cont(.subject a, .info '담당부서 : X') + .day. 링크는 영구 URL(/no010101/{id}, 쿼리 제거).
+    stats 를 주면 날짜를 읽지 못해 건너뛴 글 수를 stats['no_date'] 에 더한다."""
     soup = BeautifulSoup(html, 'html.parser')
     out = []
     for inner in soup.select('li > div.inner'):
@@ -45,6 +46,8 @@ def parse_fsc(html: bytes | str) -> list[dict]:
         m = FSC_ID.search(a['href'])
         pub = _date((inner.select_one('div.day') or inner).get_text(' '))
         title = _clean(a.get('title') or a.get_text(' '))
+        if m and title and not pub and stats is not None:
+            stats['no_date'] = stats.get('no_date', 0) + 1
         if not (m and pub and title):
             continue
         dm = re.search(r'담당부서\s*[:：]\s*([^\s|]+)', inner.select_one('div.info').get_text(' ') if inner.select_one('div.info') else '')
@@ -52,8 +55,9 @@ def parse_fsc(html: bytes | str) -> list[dict]:
     return out
 
 
-def parse_fss(html: bytes | str, base: str = 'https://www.fss.or.kr/') -> list[dict]:
-    """금감원 목록: table tbody tr > td.title a(view.do?nttId=), 날짜 td. 링크는 nttId·menuNo 만 남긴 영구 URL."""
+def parse_fss(html: bytes | str, base: str = 'https://www.fss.or.kr/', stats: dict | None = None) -> list[dict]:
+    """금감원 목록: table tbody tr > td.title a(view.do?nttId=), 날짜 td. 링크는 nttId·menuNo 만 남긴 영구 URL.
+    stats 를 주면 날짜를 읽지 못해 건너뛴 글 수를 stats['no_date'] 에 더한다."""
     soup = BeautifulSoup(html, 'html.parser')
     out = []
     for tr in soup.select('table tbody tr'):
@@ -66,6 +70,8 @@ def parse_fss(html: bytes | str, base: str = 'https://www.fss.or.kr/') -> list[d
             continue
         pub = next((d for d in (_date(td.get_text(' ')) for td in tr.find_all('td')) if d), None)
         title = _clean(a.get_text(' '))
+        if title and not pub and stats is not None:
+            stats['no_date'] = stats.get('no_date', 0) + 1
         if not (pub and title):
             continue
         path = urlsplit(href).path
@@ -83,7 +89,7 @@ def fetch_board(spec: dict, pages: int, delay: float = 1.2, session: requests.Se
     """게시판 1..pages 페이지를 순서대로(요청 간격 delay초) 읽는다. 추출 0건이면 ValueError."""
     parse = PARSERS[spec['parser']]
     s = session or requests.Session()
-    items, seen, n_pages = [], set(), 0
+    items, seen, n_pages, st = [], set(), 0, {'no_date': 0}
     for page in range(1, pages + 1):
         url = spec['url']
         if page > 1:
@@ -92,7 +98,7 @@ def fetch_board(spec: dict, pages: int, delay: float = 1.2, session: requests.Se
             time.sleep(delay)
         r = s.get(url, timeout=25, headers={'User-Agent': UA, 'Accept-Language': 'ko'})
         r.raise_for_status()
-        rows = parse(r.content)
+        rows = parse(r.content, stats=st)
         n_pages += 1
         if not rows:
             if page == 1:
@@ -101,4 +107,4 @@ def fetch_board(spec: dict, pages: int, delay: float = 1.2, session: requests.Se
         for row in rows:
             if row['url'] not in seen:
                 seen.add(row['url']); items.append(row)
-    return items, {'pages': n_pages}
+    return items, {'pages': n_pages, 'no_date': st['no_date']}
