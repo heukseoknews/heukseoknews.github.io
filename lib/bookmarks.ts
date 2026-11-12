@@ -2,6 +2,7 @@
  *  지울 때는 바로 없애지 않고 삭제 표시(deletedAt)를 남긴다 — 다른 기기·서버와 합칠 때 지운 항목이 되살아나지 않게.
  *  형식·병합 규칙: docs/migration-localstorage.md, 서버 행: docs/auth-plan.md 3장. */
 import type { Article } from './news.ts';
+import { stars } from './stars.ts';
 
 export const LIMITS = { folders: 20, tags: 50, memo: 200, tagsPerBookmark: 10, groupName: 20 } as const;
 /** 삭제 표시를 지우는 기한(일). 이보다 오래 연결되지 않은 기기의 기록은 합칠 때 되살아날 수 있다. */
@@ -59,7 +60,8 @@ export function snapshotOf(a: unknown): Snapshot | null {
     published_at: validIso(a.published_at) ? a.published_at : '',
   };
   if (validIso(a.collected_at)) s.collected_at = a.collected_at;
-  if (typeof a.score === 'number' && a.score >= 0 && a.score <= 5) s.score = Math.round(a.score);
+  // ★은 화면과 같은 규칙(lib/stars.ts: score_v2 우선). 묶음 필드 등 다른 품질 필드는 스냅샷에 넣지 않는다
+  if (typeof a.score === 'number' && a.score >= 0 && a.score <= 5) s.score = stars({ score: a.score, score_v2: typeof a.score_v2 === 'number' ? a.score_v2 : undefined });
   return s;
 }
 

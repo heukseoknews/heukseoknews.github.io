@@ -7,6 +7,12 @@ export type Article = {
   orgs?: string[];         // 제목에 나온/공식 출처인 유관기관(channels/<채널>/orgs.json)
   relevant?: boolean;      // false = 관련도 낮음(수집은 하되 기본 화면에서 숨김). 없으면 true(예전 기사)
   department?: string;     // 게시판 담당부서(내부 메타)
+  // 기사 품질(선택, docs/data-contract.md 2장). 플래그가 꺼진 채널(금융 등)·백필 전 데이터에는 없다
+  cluster_id?: string;     // 같은 사건 묶음 라벨(기사 id 로 해석하지 않음)
+  cluster_size?: number;   // 묶음 기사 수(전체 월 합계, 없으면 1)
+  cluster_sources?: number; // 묶음 매체 수(없으면 1)
+  cluster_lead?: true;     // 묶음 대표(묶음당 1건)
+  score_v2?: number;       // 중요도 v2(★1~5). 화면은 lib/stars.ts stars() 로 읽는다
 };
 export const isRelevant = (a: { relevant?: boolean }) => a.relevant !== false;
 export type DataIndex = { updated_at: string | null; months: { month: string; count: number; bytes: number }[] };

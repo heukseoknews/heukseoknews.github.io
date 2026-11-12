@@ -1,7 +1,9 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { AlertCircle, Newspaper } from 'lucide-react';
 import ArticleCard from '../../../components/ArticleCard';
+import { clusterIndex } from '../../../lib/clusters';
+import { isRelevant } from '../../../lib/news';
 import { addDays, dayHeading, todayKst } from '../../../lib/dates';
 import { weeklyHighlights } from '../../../lib/highlights';
 import { useChannel } from '../../../lib/channelContext';
@@ -19,7 +21,10 @@ export default function WeekPage() {
   const bmFlow = useBookmarkFlow(savedApi);
   const { all, failure, loading } = useNews(ch.slug); // 최근 2개월이면 7일 범위를 충분히 포함
   const today = todayKst();
-  const rows = useMemo(() => weeklyHighlights(all, today, LIMIT, category), [all, today, category]);
+  const rows = useMemo(() => weeklyHighlights(all, today, LIMIT, category), [all, today, category]);  // 같은 사건은 대표 하나만
+  const idx = useMemo(() => clusterIndex(all.filter(isRelevant)), [all]);
+  const [open, setOpen] = useState<Set<string>>(new Set());
+  const toggle = useCallback((cid: string) => setOpen(s => { const n = new Set(s); if (n.has(cid)) n.delete(cid); else n.add(cid); return n; }), []);
   return <>
     <h1 className="srOnly">이번 주 핵심</h1>
     <div className="notice"><div><b>이번 주 핵심</b><p>{dayHeading(addDays(today, -6))} ~ {dayHeading(today)} · 중요도순</p></div></div>
@@ -28,7 +33,7 @@ export default function WeekPage() {
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     <section className="articles">{loading || !ready ? <div className="empty">뉴스를 불러오는 중입니다…</div> : rows.length === 0
       ? <div className="empty"><Newspaper size={27} /><b>최근 7일 기사가 없습니다.</b></div>
-      : rows.map((a, i) => <ArticleCard key={a.id} a={a} rank={i + 1} baseline={saved.lastConfirmed} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={markRead} />)}</section>
+      : rows.map((a, i) => <ArticleCard key={a.id} a={a} rank={i + 1} group={a.cluster_id ? { others: (idx.get(a.cluster_id) ?? []).filter(o => o.id !== a.id).sort((x, y) => x.published_at.localeCompare(y.published_at)), size: Math.max(a.cluster_size ?? 1, idx.get(a.cluster_id)?.length ?? 1), sources: a.cluster_sources ?? 1, matched: new Set(), showMatch: false, open: open.has(a.cluster_id), onToggle: () => toggle(a.cluster_id!), isBookmarked, isRead: id => readSet.has(id) } : undefined} baseline={saved.lastConfirmed} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={markRead} />)}</section>
     {bmFlow.toastNode}{bmFlow.editorNode}
   </>;
 }
