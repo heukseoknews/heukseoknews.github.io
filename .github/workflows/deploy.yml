@@ -68,6 +68,7 @@ jobs:
         run: |
           python -m pip install -r collector/requirements.txt
           for t in collector/test_*.py; do (cd collector && python "$(basename $t)"); done
+          for t in tests/test_*.py; do python "$t"; done   # 채널 설정 테스트(예: tests/test_finance_channel.py)
 
       - name: Collect news (일부 피드 실패해도 계속)
         id: collect
