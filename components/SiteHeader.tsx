@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, UserRound, X } from 'lucide-react';
-import { CHANNELS, channelHref } from '../lib/channels';
+import { CHANNELS, CHANNEL_NAME_WIDTH, channelHref } from '../lib/channels';
 import { ME_HOME, meChannels, meHref } from '../lib/me';
 import { useChannel } from '../lib/channelContext';
 import { SITE } from '../lib/site';
@@ -46,7 +46,7 @@ export default function SiteHeader({ me = false }: { me?: boolean }) {
     <div className="siteHeaderInner">
       <div className="siteBrand">
         <Link href="/" className="brandHome" aria-label={`${SITE.name} 홈`}><Wordmark /></Link>
-        <span className="chName">{me ? '마이페이지' : ch.name}</span>
+        <span className={'chName' + (me ? '' : ' fixed')} style={me ? undefined : { width: CHANNEL_NAME_WIDTH }}>{me ? '마이페이지' : ch.name}</span>
       </div>
       <button ref={btn} type="button" className="menuBtn" aria-label={open ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(o => !o)}>
         {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}

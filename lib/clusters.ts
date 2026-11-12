@@ -59,5 +59,9 @@ export function sortItems(items: Item[], sort: 'latest' | 'important'): Item[] {
   });
 }
 
+/** 목록 머리 건수: 같은 사건 묶음으로 카드 수와 기사 수가 다르면 '사건 N건 · 기사 M건', 같으면 'N건'. */
+export const countLabel = (cards: number, articles: number) =>
+  cards === articles ? `${cards.toLocaleString()}건` : `사건 ${cards.toLocaleString()}건 · 기사 ${articles.toLocaleString()}건`;
+
 /** 묶지 않고 기사 하나씩(북마크 탭 등) */
 export const single = (rows: Article[]): Item[] => rows.map(a => ({ lead: a, others: [], matched: new Set([a.id]), size: 1, sources: 1 }));

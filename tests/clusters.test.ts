@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { clusterIndex, collapse, isLead, single, sortItems } from '../lib/clusters.ts';
+import { clusterIndex, collapse, countLabel, isLead, single, sortItems } from '../lib/clusters.ts';
 import { STAR_SOURCE, stars } from '../lib/stars.ts';
 import { weeklyHighlights } from '../lib/highlights.ts';
 import { snapshotOf, toArticle, addBookmark } from '../lib/bookmarks.ts';
@@ -80,5 +80,10 @@ const file = JSON.parse(JSON.stringify(toExportFile('insurance', st)));
 assert.equal(file.schemaVersion, 2);
 assert.deepEqual(Object.keys(parseImport(file, 'insurance').state.bookmarks).sort(), ['m1', 'm2']);
 assert.equal(Object.keys(fromStored({ schemaVersion: 1, bookmarks: { m1 } }, 'insurance').bookmarks).length, 1);
+
+// 목록 머리: 묶음이 있으면 '사건 N건 · 기사 M건', 없으면 'N건'
+assert.equal(countLabel(721, 1561), '사건 721건 · 기사 1,561건');
+assert.equal(countLabel(734, 734), '734건');
+assert.ok(readFileSync('app/[channel]/page.tsx', 'utf8').includes('countLabel(items.length, rows.length)'));
 
 console.log('clusters tests passed');

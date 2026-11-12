@@ -63,3 +63,8 @@ export const DEFAULT_CHANNEL = 'insurance';
 export const getChannel = (slug: string): Channel | undefined => CHANNELS.find(c => c.slug === slug);
 /** 채널 안 경로: channelHref('insurance', 'week/') → '/insurance/week/' */
 export const channelHref = (slug: string, sub = '') => `/${slug}/${sub}`;
+
+/** 헤더의 채널 이름 자리 폭(가장 긴 채널 이름 기준, 한글 1em·그 밖 0.65em). 채널을 더해도 이 값이 자동으로 맞춰져
+ *  오른쪽 메뉴가 모든 채널에서 같은 x 에서 시작한다(docs/design-plan.md '채널은 색과 내용만 바뀐다'). */
+export const nameEm = (name: string) => [...name].reduce((w, c) => w + (/[가-힣]/.test(c) ? 1 : 0.65), 0);
+export const CHANNEL_NAME_WIDTH = `${Math.max(...CHANNELS.map(c => nameEm(c.name))).toFixed(2)}em`;

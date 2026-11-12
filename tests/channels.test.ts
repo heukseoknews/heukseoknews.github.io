@@ -84,7 +84,20 @@ assert.match(readFileSync('components/SiteHeader.tsx', 'utf8'), /<span className
 
 // 보험 채널은 옛 사이트와 같은 이름·라벨·색
 const ins = JSON.parse(readFileSync('channels/insurance/channel.json', 'utf8'));
-assert.deepEqual(ins.tabs, { new: '새 뉴스', all: '전체 뉴스', press: '감독당국 보도자료', bookmarks: '북마크' });
+assert.deepEqual(ins.tabs, { new: '새 뉴스', all: '전체 뉴스', press: '공식 발표', bookmarks: '북마크' });
+// 채널은 색과 내용만 바뀌고 틀은 같다(docs/design-plan.md): 탭 이름은 모든 채널이 같다
+for (const d of dirs) assert.deepEqual(JSON.parse(readFileSync(`channels/${d}/channel.json`, 'utf8')).tabs, ins.tabs, `${d}: 탭 이름은 모든 채널 같음`);
+// 헤더 채널 이름 자리는 가장 긴 채널 이름 기준 고정 폭(lib/channels.ts CHANNEL_NAME_WIDTH, 한글 1em·그 밖 0.65em)
+assert.match(registry, /export const CHANNEL_NAME_WIDTH = `\$\{Math\.max\(\.\.\.CHANNELS\.map\(c => nameEm\(c\.name\)\)\)/);
+const hdr = readFileSync('components/SiteHeader.tsx', 'utf8');
+assert.ok(hdr.includes('width: CHANNEL_NAME_WIDTH'), '헤더는 채널 이름 자리 폭을 고정');
+const em = (n: string) => [...n].reduce((w, c) => w + (/[가-힣]/.test(c) ? 1 : 0.65), 0);
+const names = dirs.map(d => JSON.parse(readFileSync(`channels/${d}/channel.json`, 'utf8')).name);
+assert.equal(Math.max(...names.map(em)), 2, '지금 가장 긴 채널 이름은 한글 2자(보험·금융)');
+// 스크롤바 자리 고정·탭 배지 고정 폭·불러오기 전 배지 자리·본문 여백 = 헤더 여백
+const g = readFileSync('app/globals.css', 'utf8');
+for (const rule of ['html{scrollbar-gutter:stable}', '.primary .count{display:inline-block;min-width:48px', '.primary .count.pending{visibility:hidden}', '@media(max-width:640px){.shell{padding-left:16px;padding-right:16px}}'])
+  assert.ok(g.includes(rule), `globals.css: ${rule}`);
 assert.deepEqual(ins.filters, { sources: '언론사', companies: '보험사', orgs: '유관기관' });
 assert.equal(ins.subtitle, '보험·계리·금융시장');
 assert.deepEqual(ins.storage.legacy_keys, { saved: 'actuary-news-hub-v3', companies: 'actuary-news-hub-companies-v1' });

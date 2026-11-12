@@ -2,7 +2,7 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Bookmark, Check, Newspaper, Search, ShieldCheck, Clock3, AlertCircle, SlidersHorizontal, Filter, RotateCcw, X } from 'lucide-react';
 import ArticleCard, { type CardGroup } from '../../components/ArticleCard';
-import { clusterIndex, collapse, single, sortItems } from '../../lib/clusters';
+import { clusterIndex, collapse, countLabel, single, sortItems } from '../../lib/clusters';
 import { stars } from '../../lib/stars';
 import DateBar, { DateFilter } from '../../components/DateBar';
 import MultiFilter from '../../components/MultiFilter';
@@ -191,7 +191,9 @@ export default function Home() {
     <h1 className="srOnly">{ch.name} 뉴스</h1>
     <nav className="primary" aria-label="뉴스 보기">{TABS.map(t =>
       <button key={t} className={tab === t ? 'active' : ''} onClick={() => { setTab(t); setCategory('전체'); setPanel(onTabChange(panel)); }}>
-        {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && ready && !loading && <span className="count" aria-label={`안 읽은 새 뉴스 ${newCount}건`}>{newCount.toLocaleString()}</span>}
+        {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && (ready && !loading
+          ? <span className="count" aria-label={`안 읽은 새 뉴스 ${newCount}건`}>{newCount.toLocaleString()}</span>
+          : <span className="count pending" aria-hidden="true" />)}  {/* 불러오기 전에도 자리를 잡아 탭 위치가 바뀌지 않게 */}
       </button>)}</nav>
     <div className="catOuter"><nav className="categories" aria-label="뉴스 카테고리">{['전체', ...ch.categories].map(c =>
       <button key={c} className={category === c ? 'chosen' : ''} onClick={() => { setCategory(c); setPage(1); }}>{c}</button>)}</nav></div>
@@ -215,7 +217,7 @@ export default function Home() {
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />
     {/* 목록 머리: 탭 이름·건수, 새 뉴스 탭은 읽은 기사 보기·마지막 확인·모두 확인. 불러오기 전에는 건수·확인 정보를 비워 둔다(정적 HTML 에 0건이 찍히지 않게). */}
     <div className="listHead">
-      <h2>{ch.tabs[tab]}{listReady && <small>{items.length.toLocaleString()}건{items.length !== rows.length && ` · 기사 ${rows.length.toLocaleString()}건`}</small>}</h2>
+      <h2>{ch.tabs[tab]}{listReady && <small>{countLabel(items.length, rows.length)}</small>}</h2>
       {loadingMore && <span className="listNote">과거 기사 불러오는 중…</span>}
       {tab === 'new' && listReady && <div className="listActions">
         {(hiddenReadCount > 0 || showRead) && <button type="button" className="readToggle" aria-pressed={showRead} onClick={() => { setShowRead(v => !v); setPage(1); }}>{showRead ? '읽은 기사 숨기기' : `읽은 기사 ${hiddenReadCount.toLocaleString()}건 보기`}</button>}
