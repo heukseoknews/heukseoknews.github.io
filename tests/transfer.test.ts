@@ -29,7 +29,8 @@ assert.equal(readImportHash(''), null);
 const hex = (i: number) => (i * 2654435761 % 2 ** 32).toString(16).padStart(8, '0') + (i * 40503 % 2 ** 32).toString(16).padStart(8, '0');
 const reads = (n: number) => Object.fromEntries(Array.from({ length: n }, (_, i) => [hex(i + 1), new Date(Date.UTC(2026, 10, 1) + i * 137_000 + (i % 997)).toISOString()]));
 const big = await encodePayload(toExportFile('insurance', { ...EMPTY_STATE, readAt: reads(1500) }));
-const small = await encodePayload(toExportFile('insurance', { ...EMPTY_STATE, readAt: reads(300), bookmarks: Object.fromEntries(Array.from({ length: 10 }, (_, i) => [hex(i), { id: hex(i), title: '삼성화재, 캐노피우스 인수 마무리…해외 사업 확대'.repeat(1), url: 'https://news.google.com/rss/articles/CBMi' + 'x'.repeat(180), source: '한국경제', source_type: 'media', published_at: '2026-11-01T00:00:00+00:00', collected_at: '2026-11-01T00:00:00+00:00', category: '손해보험', tags: ['인수'], score: 3, feed_name: '손보사', companies: ['삼성화재'], orgs: [] }])) }));
+// 옛 사이트 이전 링크는 v1 형식(북마크 = 기사 객체)으로 만든다(docs/migration-localstorage.md 5장)
+const small = await encodePayload({ format: 'heukseok-user-state', schemaVersion: 1, channel: 'insurance', exported_at: '2026-11-11T00:00:00.000Z', lastConfirmed: null, companies: [], readAt: reads(300), bookmarks: Object.fromEntries(Array.from({ length: 10 }, (_, i) => [hex(i), { id: hex(i), title: '삼성화재, 캐노피우스 인수 마무리…해외 사업 확대'.repeat(1), url: 'https://news.google.com/rss/articles/CBMi' + 'x'.repeat(180), source: '한국경제', source_type: 'media', published_at: '2026-11-01T00:00:00+00:00', collected_at: '2026-11-01T00:00:00+00:00', category: '손해보험', tags: ['인수'], score: 3, feed_name: '손보사', companies: ['삼성화재'], orgs: [] }])) });
 console.log(`  해시 길이: 읽음 1,500건 ${big.length}자, 읽음 300건+북마크 10건 ${small.length}자 (기준 ${HASH_MAX_CHARS}자)`);
 assert.ok(big.length > HASH_MAX_CHARS);
 assert.ok(small.length < HASH_MAX_CHARS);

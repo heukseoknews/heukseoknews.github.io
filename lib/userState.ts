@@ -1,73 +1,63 @@
-/** 사용자 상태(북마크·읽음·새 뉴스 확인 시각·선택한 보험사)를 한 덩어리로 다룬다. 저장 위치와 무관한 순수 로직.
- *  저장은 lib/storage.ts 의 어댑터(지금은 localStorage)가 맡는다. 형식 설명: docs/migration-localstorage.md */
-import type { Article } from './news.ts';
+/** 사용자 상태(북마크·폴더·태그·읽음·새 뉴스 확인 시각·선택한 보험사)를 채널별 한 덩어리로 다룬다. 저장 위치와 무관한 순수 로직.
+ *  저장은 lib/storage.ts 의 어댑터(지금은 localStorage)가 맡는다. 형식 설명: docs/migration-localstorage.md
+ *  v2(2026-11): 북마크에 사용자 메타(폴더·태그·메모)와 삭제 표시를 더했다. v1 은 읽을 때 자동으로 바꾼다. */
+import { type BookmarkData, type BookmarkEntry, type Group, cleanBookmarkData, liveBookmarks, liveGroups, mergeBookmarkData, migrateV1Bookmarks, purgeTombstones, validIso, withoutTombstones } from './bookmarks.ts';
 import { type ReadMap, migrateReads, pruneReads } from './readState.ts';
 import { DIRECTORY } from './directory.ts';
 
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 export const FORMAT = 'heukseok-user-state';
-/** localStorage 키: heukseok-v1:insurance */
+/** localStorage 키: heukseok-v2:insurance (v1 키 heukseok-v1:insurance 는 읽기만 하고 지우지 않는다) */
 export const storageKey = (channel: string, version = SCHEMA_VERSION) => `heukseok-v${version}:${channel}`;
 
-export type UserState = { bookmarks: Record<string, Article>; lastConfirmed: string | null; readAt: ReadMap; companies: string[] };
+export type UserState = BookmarkData & { lastConfirmed: string | null; readAt: ReadMap; companies: string[] };
 export type StoredUserState = { schemaVersion: number; channel: string } & UserState;
 export type ExportFile = { format: typeof FORMAT; exported_at: string } & StoredUserState;
 export type LegacyKeys = { saved?: string; companies?: string };
 
-export const EMPTY_STATE: UserState = { bookmarks: {}, lastConfirmed: null, readAt: {}, companies: [] };
+export const EMPTY_STATE: UserState = { bookmarks: {}, folders: {}, tags: {}, lastConfirmed: null, readAt: {}, companies: [] };
 
 const isObj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
 const strList = (v: unknown): string[] => Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : [];
 
-/** 저장소에서 읽은 값(새 형식 또는 옛 actuary-news-hub-v3 형식)을 UserState 로. 예전 readIds 배열도 이전한다.
- *  companies 를 따로 주면(옛 actuary-news-hub-companies-v1 키) 그 값을 쓴다. */
-export function fromStored(raw: unknown, companies?: unknown): UserState {
+/** 저장소에서 읽은 값(v2, v1, 옛 actuary-news-hub-v3 형식)을 UserState 로. v1 북마크는 v2 로 바꾸고(정보가 없으면 id 보존),
+ *  예전 readIds 배열도 이전한다. companies 를 따로 주면(옛 actuary-news-hub-companies-v1 키) 그 값을 쓴다.
+ *  now 를 주면 기한이 지난 삭제 표시를 정리한다. */
+export function fromStored(raw: unknown, channel: string, companies?: unknown, now?: string): UserState {
   const j = isObj(raw) ? raw : {};
-  return {
-    bookmarks: (isObj(j.bookmarks) ? j.bookmarks : {}) as Record<string, Article>,
-    lastConfirmed: typeof j.lastConfirmed === 'string' ? j.lastConfirmed : null,
-    readAt: migrateReads(j as { readAt?: unknown; readIds?: unknown }),
-    companies: strList(companies !== undefined ? companies : j.companies),
+  const v2 = Number(j.schemaVersion) >= 2;
+  const data: BookmarkData = v2 ? cleanBookmarkData(j, channel) : { bookmarks: migrateV1Bookmarks(j.bookmarks, channel), folders: {}, tags: {} };
+  const s: UserState = {
+    ...data,
+    lastConfirmed: validIso(j.lastConfirmed) ? j.lastConfirmed : null,
+    readAt: cleanReads(migrateReads(j as { readAt?: unknown; readIds?: unknown })),
+    companies: [...new Set(strList(companies !== undefined ? companies : j.companies))],
   };
+  return now ? purgeTombstones(s, now) : s;
 }
+
+const cleanReads = (m: ReadMap): ReadMap => {
+  const out: ReadMap = {};
+  for (const [id, at] of Object.entries(m)) if (validIso(at)) out[id] = at;
+  return out;
+};
 
 export const toStored = (channel: string, s: UserState): StoredUserState => ({ schemaVersion: SCHEMA_VERSION, channel, ...s });
 
-export const toExportFile = (channel: string, s: UserState, now = new Date()): ExportFile => ({ format: FORMAT, exported_at: now.toISOString(), ...toStored(channel, s) });
+/** 내보내기 파일: 삭제 표시는 넣지 않는다(지금 가진 것만). */
+export const toExportFile = (channel: string, s: UserState, now = new Date()): ExportFile => ({ format: FORMAT, exported_at: now.toISOString(), ...toStored(channel, { ...s, ...withoutTombstones(s) }) });
 
 // ---------- 가져오기 ----------
-
-const ISO = /^\d{4}-\d{2}-\d{2}T[\d:.]+(Z|[+-]\d{2}:?\d{2})$/;
-const validIso = (v: unknown): v is string => typeof v === 'string' && ISO.test(v) && !isNaN(Date.parse(v));
-
-/** 가져온 북마크는 화면이 깨지지 않게 최소 필드를 확인하고(없으면 버림) 배열 필드는 빈 배열로 채운다. */
-function cleanBookmarks(v: unknown): Record<string, Article> {
-  const out: Record<string, Article> = {};
-  if (!isObj(v)) return out;
-  for (const [id, a] of Object.entries(v)) {
-    if (!isObj(a) || typeof a.title !== 'string' || typeof a.url !== 'string' || typeof a.published_at !== 'string') continue;
-    out[id] = { ...a, id, tags: strList(a.tags), companies: strList(a.companies), orgs: strList(a.orgs),
-      source: typeof a.source === 'string' ? a.source : '', category: typeof a.category === 'string' ? a.category : '',
-      score: typeof a.score === 'number' ? a.score : 2, collected_at: typeof a.collected_at === 'string' ? a.collected_at : a.published_at } as Article;
-  }
-  return out;
-}
-
-function cleanState(s: UserState): UserState {
-  const readAt: ReadMap = {};
-  for (const [id, at] of Object.entries(s.readAt)) if (validIso(at)) readAt[id] = at;
-  return { bookmarks: cleanBookmarks(s.bookmarks), lastConfirmed: validIso(s.lastConfirmed) ? s.lastConfirmed : null, readAt, companies: [...new Set(s.companies)] };
-}
 
 const maybeJson = (v: unknown): unknown => {
   if (typeof v !== 'string') return v;
   try { return JSON.parse(v); } catch { return undefined; }
 };
 
-export type ImportResult = { state: UserState; kind: 'heukseok' | 'legacy'; channel: string };
+export type ImportResult = { state: UserState; kind: 'heukseok' | 'legacy'; channel: string; version: number };
 
 /** 가져오기 파일·해시의 내용을 해석한다. 받는 형식:
- *  1) 흑석일보 내보내기 { format:'heukseok-user-state', schemaVersion, channel, ... }
+ *  1) 흑석일보 내보내기 { format:'heukseok-user-state', schemaVersion: 1 | 2, channel, ... }
  *  2) 옛 사이트 localStorage 묶음 { 'actuary-news-hub-v3': 값(객체 또는 JSON 문자열), 'actuary-news-hub-companies-v1': 배열 }
  *  3) 옛 키 값 그대로 { bookmarks, lastConfirmed, readAt | readIds }
  *  형식이 맞지 않으면 Error(사용자에게 보여 줄 문구). */
@@ -78,32 +68,40 @@ export function parseImport(raw: unknown, channel: string, legacy: LegacyKeys = 
     if (!Number.isInteger(v) || v < 1) throw new Error('백업 파일이 손상되었습니다.');
     if (v > SCHEMA_VERSION) throw new Error('새 버전에서 만든 파일입니다. 새로고침 후 다시 시도하세요.');
     if (raw.channel !== channel) throw new Error(`다른 채널(${DIRECTORY.find(d => d.slug === raw.channel)?.name ?? String(raw.channel)})의 백업입니다.`);
-    return { state: cleanState(fromStored(raw)), kind: 'heukseok', channel };
+    return { state: fromStored(raw, channel), kind: 'heukseok', channel, version: v };
   }
   if (legacy.saved && (legacy.saved in raw || (legacy.companies && legacy.companies in raw))) {
     const saved = maybeJson(raw[legacy.saved]);
     const comp = legacy.companies && legacy.companies in raw ? maybeJson(raw[legacy.companies]) : undefined;
-    return { state: cleanState(fromStored(saved, comp)), kind: 'legacy', channel };
+    return { state: fromStored(isObj(saved) ? { ...saved, schemaVersion: 1 } : saved, channel, comp), kind: 'legacy', channel, version: 1 };
   }
   if (legacy.saved && ('bookmarks' in raw || 'readAt' in raw || 'readIds' in raw || 'lastConfirmed' in raw)) {
-    return { state: cleanState(fromStored(raw)), kind: 'legacy', channel };
+    return { state: fromStored({ ...raw, schemaVersion: 1 }, channel), kind: 'legacy', channel, version: 1 };
   }
   throw new Error('흑석일보 백업 파일 형식이 아닙니다.');
 }
 
-/** 기존 데이터와 합집합으로 병합. 북마크·읽음이 겹치면 기존 것을 유지하되 읽은 시각은 더 이른 쪽,
- *  확인 시각은 더 늦은 쪽, 선택한 보험사는 기존 순서 뒤에 새 항목을 붙인다. 읽음 한도 규칙(pruneReads)을 적용한다. */
+/** 기존 데이터와 병합.
+ *  - 북마크·폴더·태그: 같은 항목은 수정 시각이 늦은 쪽(삭제 표시도 같은 기준, 같으면 기존 것). 그래서 지운 항목이 되살아나지 않는다.
+ *  - 읽음: 합집합, 같은 기사는 더 이른 읽은 시각. 확인 시각은 더 늦은 쪽. 선택한 보험사는 기존 순서 뒤에 새 항목.
+ *  - 그 뒤 읽음 한도 규칙(pruneReads). */
 export function mergeStates(cur: UserState, inc: UserState): UserState {
   const readAt: ReadMap = { ...inc.readAt };
   for (const [id, at] of Object.entries(cur.readAt)) readAt[id] = readAt[id] && readAt[id] < at ? readAt[id] : at;
   const lc = [cur.lastConfirmed, inc.lastConfirmed].filter((x): x is string => !!x).sort().at(-1) ?? null;
   return {
-    bookmarks: { ...inc.bookmarks, ...cur.bookmarks },
+    ...mergeBookmarkData(cur, inc),
     lastConfirmed: lc,
     readAt: pruneReads(readAt, lc),
     companies: [...new Set([...cur.companies, ...inc.companies])],
   };
 }
 
-export type Summary = { bookmarks: number; reads: number; lastConfirmed: string | null; companies: number };
-export const summarize = (s: UserState): Summary => ({ bookmarks: Object.keys(s.bookmarks).length, reads: Object.keys(s.readAt).length, lastConfirmed: s.lastConfirmed, companies: s.companies.length });
+export type Summary = { bookmarks: number; reads: number; lastConfirmed: string | null; companies: number; folders: number; tags: number; memos: number };
+export const summarize = (s: UserState): Summary => {
+  const live = liveBookmarks(s);
+  return { bookmarks: live.length, reads: Object.keys(s.readAt).length, lastConfirmed: s.lastConfirmed, companies: s.companies.length,
+    folders: liveGroups(s, 'folders').length, tags: liveGroups(s, 'tags').length, memos: live.filter(b => b.memo).length };
+};
+
+export type { BookmarkEntry, Group };

@@ -14,6 +14,7 @@ import { sourceOptions } from '../../lib/sources';
 import { isNewArticle, isUnreadNew, visibleInNewTab } from '../../lib/newsFilter';
 import { useNews } from '../../lib/useNews';
 import { useSaved } from '../../lib/useSaved';
+import { toArticle } from '../../lib/bookmarks';
 
 type Tab = TabId;
 const TABS: Tab[] = ['new', 'all', 'press', 'bookmarks'];  // 표시 이름은 채널 channel.json 의 tabs
@@ -47,7 +48,8 @@ export default function Home() {
   const [showRead, setShowRead] = useState(false);            // 새 뉴스 탭: 읽은 기사 다시 보기(기본 숨김)
   const [justRead, setJustRead] = useState<Set<string>>(new Set()); // 방금 읽어 곧 사라질 카드(짧은 페이드 후 제거)
   const timers = useRef<number[]>([]);
-  const { saved, ready, update, toggleBookmark, markRead, unmarkRead, setCompanies, readSet } = useSaved();
+  const { saved, ready, update, toggleBookmark, markRead, unmarkRead, setCompanies, readSet, bookmarkList, isBookmarked } = useSaved();
+  const bookmarkArticles = useMemo(() => bookmarkList.map(toArticle), [bookmarkList]);
   const companies = saved.companies;  // 선택한 보험사(비면 전체) — 사용자 상태에 저장(새로고침 후에도 유지)
   // 달력 월의 KST 날짜는 UTC 월 샤드 경계에 걸칠 수 있어 앞뒤 월도 함께 불러온다
   const { index, all, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : [shiftMonth(calMonth, -1), calMonth, shiftMonth(calMonth, 1)]);
@@ -80,7 +82,7 @@ export default function Home() {
   const relevantAll = useMemo(() => all.filter(isRelevant), [all]);  // 새 뉴스 건수·이번 주 핵심은 토글과 무관하게 관련 기사만 센다
   // 탭·카테고리·검색·안 읽은 것·관련도 조건을 적용한 기본 목록(최신순/중요도순 정렬 포함). 결과 0건 안내에서 조건 하나를 빼고 다시 계산하기 위해 함수로 둔다.
   const buildBase = (cat: string, searchText: string, unread: boolean, low: boolean): Article[] => {
-    let r: Article[] = tab === 'bookmarks' ? Object.values(saved.bookmarks) : low ? all : relevantAll;
+    let r: Article[] = tab === 'bookmarks' ? bookmarkArticles : low ? all : relevantAll;
     if (tab === 'new') r = r.filter(a => visibleInNewTab(a, { baseline, read: readSet, showRead, justRead }));
     if (tab === 'press') r = r.filter(a => a.source_type === 'press');
     if (cat !== '전체') r = r.filter(a => a.category === cat); // '미분류'는 카테고리 버튼에 없고 '전체'에서만
@@ -90,7 +92,7 @@ export default function Home() {
     return [...r].sort((a, b) => sort === 'important' ? b.score - a.score || b.published_at.localeCompare(a.published_at) : b.published_at.localeCompare(a.published_at));
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const base = useMemo(() => buildBase(category, search, unreadOnly, includeLow), [tab, all, category, search, sort, baseline, saved.bookmarks, unreadOnly, readSet, showRead, justRead, includeLow, relevantAll]);
+  const base = useMemo(() => buildBase(category, search, unreadOnly, includeLow), [tab, all, category, search, sort, baseline, bookmarkArticles, unreadOnly, readSet, showRead, justRead, includeLow, relevantAll]);
   const inDate = (a: Article) => !dateFilter || (kstDate(a.published_at) >= dateFilter.from && kstDate(a.published_at) <= dateFilter.to);
   type Skip = 'sources' | 'companies' | 'orgs' | 'date';
   const bySrc = (a: Article) => [a.source], byCo = (a: Article) => a.companies ?? [], byOrg = (a: Article) => a.orgs ?? [];
@@ -199,7 +201,7 @@ export default function Home() {
         : <div className="empty"><Newspaper size={27} /><b>{tab === 'new' ? '새 기사가 없습니다.' : tab === 'bookmarks' ? '북마크한 기사가 없습니다.' : '기사가 없습니다.'}</b></div>)
       : pageRows.map((a, i) => { const d = kstDate(a.published_at); const head = sort === 'latest' && (i === 0 || d !== kstDate(pageRows[i - 1].published_at));
         return <Fragment key={a.id}>{head && <div className="dayhead">{dayHeading(d)}<small>· {perDay[d]}건</small></div>}
-          <ArticleCard a={a} baseline={baseline} bookmarked={!!saved.bookmarks[a.id]} read={readSet.has(a.id)} dim={tab === 'new' || tab === 'all'} fading={justRead.has(a.id)} onBookmark={toggleBookmark} onRead={handleRead} onUnread={tab === 'new' && showRead ? unmarkRead : undefined} onMarkRead={tab === 'new' ? handleMarkRead : undefined} /></Fragment>; })}</section>
+          <ArticleCard a={a} baseline={baseline} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} dim={tab === 'new' || tab === 'all'} fading={justRead.has(a.id)} onBookmark={toggleBookmark} onRead={handleRead} onUnread={tab === 'new' && showRead ? unmarkRead : undefined} onMarkRead={tab === 'new' ? handleMarkRead : undefined} /></Fragment>; })}</section>
     {rows.length > PAGE && <div className="pagination"><button disabled={curPage <= 1} onClick={() => setPage(curPage - 1)}>이전</button><span>{curPage} / {lastPage} 페이지</span><button disabled={curPage >= lastPage} onClick={() => setPage(curPage + 1)}>다음</button></div>}
     {undo && <div className="undoToast" role="status" aria-live="polite"><span>읽음 처리했습니다</span><button type="button" onClick={handleUndo}>되돌리기</button></div>}
   </>;

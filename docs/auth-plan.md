@@ -158,7 +158,7 @@
 |---|---|---|---|
 | `profiles` | 사용자 1행 | 표시 이름 | 본인 행 읽기만(확장 때 로그인 사용자 전체 읽기, 11장) |
 | `account_security` | 사용자 1행 | 비밀번호 변경 필요 여부, 바꾼 시각 | 본인 행 읽기만 |
-| `user_state` | 사용자 × 채널 1행 | 북마크·읽음·확인 시각·보험사 | 본인 행 읽기·쓰기 |
+| `user_state` | 사용자 × 채널 1행 | 북마크(기사 스냅샷·폴더·태그·메모·삭제 표시)·내 폴더·내 태그·읽음·확인 시각·보험사 | 본인 행 읽기·쓰기 |
 
 표시 이름과 비밀번호 상태를 다른 표로 나눈 이유: 댓글·채팅을 열면 표시 이름은 다른 사용자에게 보여야 하지만 비밀번호 상태는 본인만 봐야 한다. RLS 는 행 단위라 한 표에서 열마다 다르게 열기 어렵다.
 
@@ -181,15 +181,17 @@ create table public.account_security (
 create table public.user_state (
   user_id        uuid        not null default auth.uid() references auth.users(id) on delete cascade,
   channel        text        not null check (channel ~ '^[a-z0-9-]{1,32}$'),
-  schema_version int         not null default 1,
-  bookmarks      jsonb       not null default '{}'::jsonb,   -- { 기사 id: Article }
+  schema_version int         not null default 2,             -- 브라우저 저장 형식과 같은 번호(3.3)
+  bookmarks      jsonb       not null default '{}'::jsonb,   -- { 기사 id: 북마크 | 삭제 표시 } (3.3)
+  folders        jsonb       not null default '{}'::jsonb,   -- { 폴더 id: { id, name, createdAt, updatedAt, deletedAt? } }
+  tags           jsonb       not null default '{}'::jsonb,   -- { 태그 id: 같은 모양 }
   read_at        jsonb       not null default '{}'::jsonb,   -- { 기사 id: ISO 시각 }
   last_confirmed timestamptz,
   companies      jsonb       not null default '[]'::jsonb,   -- [정식명]
   rev            bigint      not null default 1,             -- 낙관적 동시성(3.4)
   updated_at     timestamptz not null default now(),
   primary key (user_id, channel),
-  constraint user_state_size check (pg_column_size(bookmarks) + pg_column_size(read_at) + pg_column_size(companies) < 2000000)
+  constraint user_state_size check (pg_column_size(bookmarks) + pg_column_size(folders) + pg_column_size(tags) + pg_column_size(read_at) + pg_column_size(companies) < 2000000)
 );
 
 -- 트리거 함수는 Data API 에 노출되지 않는 private 스키마에 둔다
@@ -234,39 +236,53 @@ revoke execute on all functions in schema private from public, anon, authenticat
 - 관리자가 비밀번호를 초기화해도 이 트리거가 '변경 필요'를 끈다. 그래서 관리 스크립트는 **비밀번호를 바꾼 다음** `must_change_password = true` 를 다시 켠다(6.3, 순서 중요).
 - 기본 키가 `(user_id, …)` 로 시작하므로 RLS 조건에 인덱스가 따로 필요 없다.
 - 채널 목록은 DB 가 모른다(새 채널을 열 때 DB 변경 불필요).
-- 2MB 상한은 오류·악용으로 행이 커지는 것을 막는 안전장치다(정상 최대치의 약 5배).
+- 2MB 상한은 오류·악용으로 행이 커지는 것을 막는 안전장치다. `pg_column_size` 는 압축(TOAST) 뒤 크기라 JSON 문자열 크기보다 작게 잡힌다. JSON 기준으로도 3.2 의 '많음'(1.6MB)까지 들어간다.
 
-### 3.2 크기 추정(실측 데이터 기준)
+### 3.2 크기 추정(실측, v2 형식)
 
-기사 1건 JSON 평균 649바이트(최대 1,334), 읽음 1건 약 46바이트.
+`tests/bookmarks.test.ts` 가 실제 기사(data/insurance)로 북마크를 만들고 폴더 20·태그 50을 채워 JSON 크기를 잰다. 북마크 1건은 기사 스냅샷(평균 약 600바이트) + 메타(저장·수정 시각, 폴더, 태그 3개 약 150바이트) + 메모(한글 1자 3바이트)다. 읽음 1건 약 46바이트.
 
-| 사용 정도(채널 1개) | 북마크 | 읽음 | 크기 |
-|---|---:|---:|---:|
-| 가벼움 | 20 | 300 | 약 27KB |
-| 보통(읽음 한도 SOFT) | 100 | 1,500 | 약 134KB |
-| 최대(읽음 한도 HARD) | 300 | 5,000 | 약 425KB |
+| 사용 정도(채널 1개) | 북마크 | 메모 | 읽음 | 크기(JSON) |
+|---|---:|---:|---:|---:|
+| 가벼움 | 50 | 20자 | 300 | 약 64KB |
+| 보통 | 300 | 60자 | 1,500(SOFT) | 약 358KB |
+| 많음 | 1,000 | 200자(한도) | 5,000(HARD) | 약 1.6MB |
 
-- 10명 × 채널 3개 × 보통 ≈ **4MB**, 전원 최대치여도 ≈ 13MB. 무료 플랜 DB 500MB 의 1~3%. `profiles`·`account_security` 는 합쳐 수 KB. jsonb 는 큰 값을 압축(TOAST)하므로 실제로는 더 작다.
-- **egress(무료 월 5GB)가 더 빠듯하다**: 행 전체를 자주 내려받으면(10명 × 하루 30회 × 3채널 × 134KB ≈ 하루 120MB, 월 3.6GB) 한도에 가깝다. 그래서 3.4 처럼 **`rev` 만 먼저 확인하고 바뀌었을 때만 행 전체를 받는다.** 올릴 때 응답도 `rev` 만 받는다. 이렇게 하면 월 수십 MB 수준이다.
+- 10명 × 채널 3개 × 보통 ≈ **11MB**, 전원 '많음'이어도 ≈ 48MB. 무료 플랜 DB 500MB 의 2~10%. jsonb 는 큰 값을 압축(TOAST)하므로 실제로는 더 작다. `profiles`·`account_security` 는 합쳐 수 KB.
+- 한 행 2MB 상한에는 북마크 약 1,200건(메모를 모두 200자로 채운 경우)에서 닿는다. 채널당 북마크 상한(예: 1,000건)을 둘지는 동기화 구현(단계 3) 전에 정한다. 지금 브라우저 저장에는 상한이 없다.
+- **egress(무료 월 5GB)가 더 빠듯하다**: 행 전체를 자주 내려받으면(10명 × 하루 30회 × 3채널 × 358KB ≈ 하루 320MB) 한도를 넘는다. 그래서 3.4 처럼 **`rev` 만 먼저 확인하고 바뀌었을 때만 행 전체를 받는다.** 올릴 때 응답도 `rev` 만 받는다. 이렇게 하면 실제로 바뀐 때만 받으므로 월 수백 MB 이하다.
 
-### 3.3 병합 규칙
+### 3.3 형식(v2)과 병합 규칙
 
-| 상황 | 함수 | 규칙 |
+브라우저 저장 형식(`heukseok-v2:<채널>`, `docs/migration-localstorage.md` 1장)과 서버 행은 같은 모양이다 — `bookmarks`·`folders`·`tags`·`read_at`(브라우저 `readAt`)·`last_confirmed`·`companies`. 브라우저 키 이름은 5.2 표의 `heukseok-v1:` 을 `heukseok-v2:` 로 읽는다(v1 키는 읽기 전용 이전 원본).
+
+| 항목 | 모양 |
+|---|---|
+| 북마크 | 기사 스냅샷(제목·링크·출처·분류·키워드·보험사·기관·발행 시각) + `savedAt`·`updatedAt`·`folderId?`·`tags`(내 태그 id)·`memo`(200자)·`missing?` |
+| 삭제 표시 | `{ id, channel, savedAt, updatedAt, deletedAt }` — 북마크·폴더·태그를 지우면 바로 없애지 않고 남긴다. 30일 뒤 정리 |
+| 폴더·태그 | `{ id, name, createdAt, updatedAt, deletedAt? }`, 폴더 20·태그 50(살아 있는 것) |
+
+| 항목 | 병합 규칙 | 삭제 전달 |
 |---|---|---|
-| 이 기기가 이 계정과 **처음** 맞출 때(기준본 없음) | 기존 `mergeStates(local, server)` | 합집합. 같은 북마크는 이 기기 것, 읽음은 이른 시각, 확인 시각은 늦은 쪽, 보험사는 순서 유지 뒤 추가, 그 뒤 `pruneReads` |
-| 이후 동기화(기준본 있음) | 새 `mergeStates3(base, local, server)` | 아래 표 |
+| 북마크·폴더·태그 | 같은 id 는 `updatedAt` 이 늦은 쪽(삭제 표시도 같은 기준, 같으면 이 기기). 메모·폴더·태그는 북마크 단위로 함께 | **삭제 표시로 전달된다**(기준본 필요 없음) |
+| 읽음 | 합집합, 이른 시각 | 기준본 비교(아래) |
+| 확인 시각 | 늦은 쪽 | — |
+| 선택한 보험사 | 순서 유지 뒤 추가 | 기준본 비교(아래) |
+| 그 뒤 | `pruneReads`(읽음 한도), 기한 지난 삭제 표시 정리 | |
 
-합집합만으로는 **삭제가 전달되지 않는다**(한 기기에서 북마크를 지워도 다른 기기 사본과 합치면 되살아남). 그래서 마지막으로 서버와 맞춘 내용(기준본, `base`)을 기기에 보관하고 3-방향으로 합친다.
+- 브라우저 쪽 `mergeStates(cur, inc)`(가져오기·첫 연결)가 이미 위 규칙이다. 북마크·폴더·태그는 삭제 표시 덕분에 첫 연결 때도 지운 항목이 되살아나지 않는다.
+- 삭제 표시가 없는 두 항목 — **'안 읽음으로' 되돌린 읽음 기록과 해제한 보험사** — 만 3-방향 병합이 필요하다. 마지막으로 서버와 맞춘 내용(기준본, `base`)을 기기에 두고 `mergeStates3(base, local, server)` 로 합친다:
 
-| 항목 | 이 기기(local) | 서버(server) | 결과 |
+| 읽음·보험사의 각 항목 | 이 기기 | 서버 | 결과 |
 |---|---|---|---|
-| 북마크·읽음·보험사의 각 항목 | 있음 | 있음 | 유지(북마크는 이 기기 객체, 읽음은 이른 시각) |
-| | 있음 | 없음 | 기준본에 있었으면 **다른 기기에서 지운 것 → 삭제**, 없었으면 이 기기에서 추가한 것 → 유지 |
-| | 없음 | 있음 | 기준본에 있었으면 **이 기기에서 지운 것 → 삭제**, 없었으면 다른 기기에서 추가 → 유지 |
-| 확인 시각 | | | 더 늦은 쪽 |
-| 그 뒤 | | | `pruneReads`(읽음 한도) |
+| | 있음 | 있음 | 유지(읽음은 이른 시각) |
+| | 있음 | 없음 | 기준본에 있었으면 다른 기기에서 지운 것 → 삭제, 없었으면 유지 |
+| | 없음 | 있음 | 기준본에 있었으면 이 기기에서 지운 것 → 삭제, 없었으면 유지 |
 
-성질(테스트로 확인): `mergeStates3(b, x, b) = x`, `mergeStates3(b, b, y) = y`, 같은 입력을 두 번 합쳐도 같다, 기준본이 없으면 `mergeStates` 와 같다. 첫 연결 때 다른 기기에서 지운 항목이 한 번 되살아날 수 있는 것은 받아들인다(기준본이 없어 구분 불가).
+  북마크·폴더·태그는 `mergeStates3` 안에서도 `updatedAt` 규칙을 그대로 쓴다. 성질(테스트로 확인): `mergeStates3(b, x, b) = x`, `mergeStates3(b, b, y) = y`, 두 번 합쳐도 같다, 기준본이 없으면 `mergeStates` 와 같다.
+- 시계: `updatedAt` 은 기기 시계다. 두 기기 시계가 몇 분 어긋나면 그 사이 같은 북마크를 양쪽에서 고친 경우 늦게 고친 쪽이 질 수 있다(10명 규모에서 받아들임). 서버 `updated_at` 은 행 단위라 항목 비교에는 쓰지 않는다.
+- 30일 넘게 연결되지 않은 기기는 그 사이 지운 항목의 삭제 표시가 정리된 뒤라, 그 기기의 사본과 합치면 지운 항목이 되살아날 수 있다(받아들임).
+- 한도(폴더 20·태그 50)는 만들 때만 검사한다. 두 기기에서 따로 만들어 합친 결과가 한도를 넘어도 지우지 않고, 한도 아래로 줄 때까지 새로 만들기만 막는다.
 
 ### 3.4 서버와 주고받기(낙관적 동시성)
 
