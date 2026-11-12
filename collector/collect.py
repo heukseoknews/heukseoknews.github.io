@@ -15,6 +15,7 @@ from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 import feedparser
 import requests
 import channel
+import quality
 from boards import fetch_board
 from classify import UNCATEGORIZED, classify, load as load_classifier
 from entities import company_relevant, sports_team_title, tag_entities
@@ -453,6 +454,8 @@ def main():
     ap.add_argument('--reindex', action='store_true', help='네트워크 없이 index.json(월 목록)과 trends.json 만 다시 만듦(월 파일을 옮기거나 지운 뒤)')
     ap.add_argument('--rescore', action='store_true', help='네트워크 없이 저장된 기사의 중요도(★)만 score.json 산식으로 다시 계산')
     ap.add_argument('--reclassify', action='store_true', help='네트워크 없이 저장된 기사를 현재 분류 규칙으로 재분류(관련도 relevant 포함)')
+    ap.add_argument('--quality', action='store_true', help='네트워크 없이 같은 사건 묶기·중요도 v2 를 다시 계산(cluster.json·score.json v2 플래그가 켜진 것만)')
+    ap.add_argument('--strip-quality', action='store_true', help='되돌리기: 저장된 기사에서 묶기·중요도 v2 선택 필드를 지움')
     args = ap.parse_args()
     cdir = channel.use(args.channel, args.config_dir)  # 분류·개체 로더도 이 폴더를 읽는다
     args.data_dir = args.data_dir or str(channel.data_path(args.channel))
@@ -462,12 +465,20 @@ def main():
     if args.reindex:
         reindex(Path(args.data_dir), cdir)
         return 0
+    if args.strip_quality:
+        logging.info('품질 필드 제거: %d건', quality.strip_all(Path(args.data_dir)))
+        return 0
     if args.reclassify:
         reclassify(Path(args.data_dir))
+        quality.run(Path(args.data_dir), cdir)  # 플래그가 꺼져 있으면 아무것도 하지 않음
         return 0
     if args.rescore:
         summary = rescore(Path(args.data_dir))
         print(json.dumps(summary, ensure_ascii=False, indent=1))
+        quality.run(Path(args.data_dir), cdir)
+        return 0
+    if args.quality:
+        print(json.dumps(quality.run(Path(args.data_dir), cdir), ensure_ascii=False, indent=1))
         return 0
     now_iso = datetime.now(timezone.utc).isoformat()
     sources, queries, max_age = load_sources(cdir)
@@ -514,6 +525,10 @@ def main():
         logging.info('dry-run: 관련 %d건 / 관련도 낮음 %d건', rel, len(articles) - rel)
     else:
         added = save(list(articles.values()), Path(args.data_dir), aliases, tfilter)
+        try:  # 같은 사건 묶기·중요도 v2(플래그가 켜진 채널만). 실패해도 수집 결과는 유지
+            quality.run(Path(args.data_dir), cdir, datetime.fromisoformat(now_iso))
+        except Exception as e:
+            logging.warning('품질 후처리 실패: %s', str(e)[:180])
         logging.info('후보 %d건, 신규 저장 %d건', len(articles), added)
     if not args.dry_run:
         names = [r[0] for r in sources] + [b['name'] for b in boards_cfg['boards']]
