@@ -1,5 +1,123 @@
 [
  {
+  "id": "782d282ede2603ed",
+  "title": "KT·마이크로소프트, 네트워크 문제 감지하는 AI 에이전트 개발…장애 탐지 10분에서 2~3분으로 단축",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42705",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T01:41:13+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Microsoft"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "af14948727ac3137",
+  "title": "AI, \"1000개 질문을 0.25초 안에 판단한다!\"...구글 ‘제미나이 디시전 1’ 공개, 에이전트 의사결정 속도·비용 혁신",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42704",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T01:11:43+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개"
+  ],
+  "score": 4,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ]
+ },
+ {
+  "id": "59a3e7dd1993c1f2",
+  "title": "엔비디아 이사회, 젠슨 황 해임 논의 착수…주가 시간외 8% 급락",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217304",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T00:56:27+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "주가"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "e592123bc5486873",
+  "title": "AI로 희귀 신장암 진단 정확도 60%에서 73.3%로 향상…의사의 AI 수용 성향이 진단 성과 좌우",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42703",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T00:45:40+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "452ed64f40f0bd99",
+  "title": "\"기록의 맥락까지 찾아준다\"... 솔트룩스,국가기록 2,380만 건 AI 검색 기반 구축",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42701",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T00:22:02+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "11184e94526b2e65",
+  "title": "IBM, 양자컴퓨터 연산 속도 최대 19배 향상…2027년 1,000큐비트 시대 연다",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42700",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T00:06:59+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
   "id": "65b96c238445cded",
   "title": "Gilbert + Tobin rethinks the business of law with AI",
   "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
@@ -14,6 +132,212 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "db41dec20cf5bfb8",
+  "title": "[AI리더의 서가] AI는 어떻게 기업의 무기가 되는가",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217032",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "294df6909ab04034",
+  "title": "ETRI, 국가보안기술연구소 신임 소장에 임정석 책임연구원 선임",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42699",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-11T23:53:58+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3927e8656e242ccd",
+  "title": "The unfolding Jensen Huang scandal: a timeline",
+  "url": "https://techcrunch.com/2026/11/11/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T23:50:00+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "eb294a56c70bf2d1",
+  "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+  "url": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T23:28:45+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "stock",
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "1f0eb589d8a3cc25",
+  "title": "코어위브 25% 급등에 AI 기술주 동반 반등…엔비디아도 상승 전환",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217298",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-11T23:25:05+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "d1f3df81d4d143b4",
+  "title": "Jensen Huang accused of having another affair — with an Nvidia exec",
+  "url": "https://techcrunch.com/2026/11/11/jensen-huang-accused-of-having-another-affair-with-a-nvidia-exec/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T23:17:05+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "78cd03fc7c402d7d",
+  "title": "[11월11일] 앤트로픽이 월가에 진짜 하고 싶었던 말…42분 영상에 담긴 5가지 투자 논리",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217257",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-11T22:00:00+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "321d8b43ce72dae6",
+  "title": "Why the data center you dread might never even be built",
+  "url": "https://techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T20:15:15+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c3fa6b6a98307756",
+  "title": "Meta is losing its longtime head of infrastructure",
+  "url": "https://techcrunch.com/2026/11/11/meta-is-losing-its-longtime-head-of-infrastructure/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T20:12:01+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "27ced9ec34f579c9",
+  "title": "How backlash and red tape continue to slow data centers post-Blue Wave",
+  "url": "https://techcrunch.com/podcast/how-backlash-and-red-tape-continue-to-slow-data-centers-post-blue-wave/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T20:02:14+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "5413a692ab5366d7",
+  "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
+  "url": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-11T19:54:00+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
   "relevant": true,
   "companies": [],
   "orgs": []
@@ -3439,6 +3763,27 @@
    "Meta"
   ],
   "orgs": []
+ },
+ {
+  "id": "8dc670208a0d134d",
+  "title": "Meta Muse Voice Transcribe: 80ms Engine Targets AI Glasses [2026]",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBpUUNpY2dVbkdlWm5MTmdCekN0Sk51SXhwVUt3Q2ZSSnlLcmc1dUN4UUF0WHFlcFZfdmpXdi1vbnlfeW9xRmUtYWljV2oya0pwTk80OGRVcEo2ZTJlbU1ucjZ5QVE4QkdqQ1c1ei1IT01CQQ?oc=5",
+  "source": "shattered.io",
+  "source_type": "media",
+  "published_at": "2026-11-09T19:30:21+00:00",
+  "collected_at": "2026-11-12T02:00:02.314029+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "음성·오디오"
+  ]
  },
  {
   "id": "f51a877eb7eb929a",

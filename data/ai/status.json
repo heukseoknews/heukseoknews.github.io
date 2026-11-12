@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-11T19:49:49.916990+00:00",
-  "finished_at": "2026-11-11T19:49:52.155851+00:00",
-  "candidates": 335,
-  "added": 15,
+  "started_at": "2026-11-12T02:00:02.314029+00:00",
+  "finished_at": "2026-11-12T02:00:04.354819+00:00",
+  "candidates": 334,
+  "added": 18,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 1381,
    "kept": 92,
@@ -27,7 +27,7 @@
     "[노이즈 제목] LifeVal"
    ],
    "oldest": "2026-10-07T12:00:00+00:00",
-   "newest": "2026-11-11T19:49:49.916990+00:00",
+   "newest": "2026-11-12T00:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -36,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 15,
@@ -58,8 +58,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 904,
    "kept": 31,
@@ -80,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -105,24 +105,29 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 4
+    "low_relevance": 9
    },
    "filtered": [
+    "The unfolding Jensen Huang scandal: a timeline",
+    "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+    "Jensen Huang accused of having another affair — with an Nvidia exec",
+    "Why the data center you dread might never even be built",
+    "Meta is losing its longtime head of infrastructure",
+    "How backlash and red tape continue to slow data centers post-Blue Wave",
     "Congress to call Jensen Huang in to answer for alleged Chinese spy affair",
     "Is Jensen Huang’s bad behavior more commonplace than it seems?",
-    "Nvidia’s crisis has corporate governance experts reaching for the popcorn",
-    "Nvidia CEO Jensen Huang’s affair with alleged Chinese spy: a timeline"
+    "Nvidia’s crisis has corporate governance experts reaching for the popcorn"
    ],
-   "oldest": "2026-11-10T14:00:00+00:00",
-   "newest": "2026-11-11T19:34:55+00:00",
+   "oldest": "2026-11-10T18:49:52+00:00",
+   "newest": "2026-11-11T23:50:00+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -131,8 +136,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -156,8 +161,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -167,6 +172,7 @@
     "low_relevance": 12
    },
    "filtered": [
+    "엔비디아 이사회, 젠슨 황 해임 논의 착수…주가 시간외 8% 급락",
     "나주, 공공비축미 8075톤 매입…건조벼 12일부터 시작",
     "순천 해룡면, 취약계층·독거노인 30세대 색칠놀이 프로그램 운영",
     "여수, LG화학 여수공장 IPA 생산시설 증설 검토에 행정지원",
@@ -175,11 +181,10 @@
     "코어위브, 매출 168% 급증에도 부채 469억달러…투자 불안 여전",
     "엔비디아, 젠슨 황 사건 조사 위해 뉴욕 유명 로펌 고용",
     "디 인포메이션 \"젠슨 황 인맥으로 엔비디아 칩 10조원 규모 중국 공급\"",
-    "젠슨 황, 불륜 인정 1년 전부터 '성 스캔들 전문' PR 업체 고용",
-    "“수변길에 예술을 더하다”… 계양구 서부간선수로, 특색 있는 석재 조형물로 야간경관 조성"
+    "젠슨 황, 불륜 인정 1년 전부터 '성 스캔들 전문' PR 업체 고용"
    ],
-   "oldest": "2026-11-10T07:47:29+00:00",
-   "newest": "2026-11-11T09:23:00+00:00",
+   "oldest": "2026-11-10T08:13:10+00:00",
+   "newest": "2026-11-12T00:56:27+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -188,23 +193,24 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 3
+    "low_relevance": 4
    },
    "filtered": [
+    "IBM, 양자컴퓨터 연산 속도 최대 19배 향상…2027년 1,000큐비트 시대 연다",
+    "ETRI, 국가보안기술연구소 신임 소장에 임정석 책임연구원 선임",
     "업스테이지, 엔비디아 투자 유치 예정…아마존·AMD 이어 글로벌 빅테크 투자자 확보 확대",
-    "BMW, 삼성SDI·LG에너지솔루션과 차세대 배터리 공급망 확대…유럽·미국 현지 생산 강화",
-    "젠슨 황, ‘중국 스파이’ 연루 의혹 속 불륜 인정·공개 사과…엔비디아 이사회 독립 조사 착수"
+    "BMW, 삼성SDI·LG에너지솔루션과 차세대 배터리 공급망 확대…유럽·미국 현지 생산 강화"
    ],
-   "oldest": "2026-11-09T01:00:00+00:00",
-   "newest": "2026-11-11T12:25:23+00:00",
+   "oldest": "2026-11-09T02:59:50+00:00",
+   "newest": "2026-11-12T01:41:13+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -213,11 +219,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
-   "entries": 25,
-   "kept": 21,
+   "entries": 24,
+   "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -231,7 +237,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-04T15:41:58+00:00",
-   "newest": "2026-11-11T17:22:07+00:00",
+   "newest": "2026-11-11T23:24:08+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -240,8 +246,8 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-11T19:49:49.916990+00:00",
-   "last_success_at": "2026-11-11T19:49:49.916990+00:00",
+   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
