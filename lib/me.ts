@@ -24,3 +24,6 @@ export function pickChannel(query: string | null, remembered: string | null, lis
 export const meHref = (path: string, channel: string) => `${path}?ch=${encodeURIComponent(channel)}`;
 /** 옛 '내 데이터' 주소(/<채널>/settings/)가 보낼 곳 */
 export const dataHref = (channel: string) => meHref('/me/data/', channel);
+
+/** 옛 '내 데이터' 주소(/<채널>/settings/)에서 화면을 그리기 전에 마이페이지로 보내는 인라인 스크립트(#import= 해시 유지). */
+export const settingsRedirectJs = (channel: string) => `(function(){location.replace(${JSON.stringify(dataHref(channel))}+(location.hash||''));})();`;

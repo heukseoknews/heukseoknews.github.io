@@ -2,20 +2,19 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, UserRound, X } from 'lucide-react';
 import { CHANNELS, channelHref } from '../lib/channels';
-import { meChannels } from '../lib/me';
+import { ME_HOME, meChannels, meHref } from '../lib/me';
 import { useChannel } from '../lib/channelContext';
 import { SITE } from '../lib/site';
 import { isStale } from '../lib/stale';
 import { useLastCollected } from '../lib/useSiteInfo';
 import Wordmark from './Wordmark';
 
-// 채널 안 경로(/<채널>/ 뒤). 주 메뉴는 기사 보기, 보조 메뉴는 설정·운영 성격
+// 채널 안 경로(/<채널>/ 뒤). 주 메뉴는 기사 보기. 오른쪽 위는 마이페이지(내 북마크·내 데이터, 로그인 뒤 계정)
 const MAIN = [['', '뉴스'], ['week/', '이번 주 핵심'], ['trends/', '키워드 추이']] as const;
-const UTIL = [['settings/', '내 데이터']] as const;
 
-/** 채널 페이지 공통 헤더(상단 고정): 워드마크(홈 /) · 채널명 · 주 메뉴 · 내 데이터. ≤640px 에서는 햄버거 메뉴로 접힌다.
+/** 채널 페이지 공통 헤더(상단 고정): 워드마크(홈 /) · 채널명 · 주 메뉴 · 마이페이지. ≤640px 에서는 햄버거 메뉴로 접힌다.
  *  채널 이동 줄은 헤더 아래 ChannelSwitcher. 수집 지연일 때만 배지(링크 아님)를 보인다.
  *  me: 마이페이지(/me/) — 채널명 자리에 '마이페이지', 주 메뉴는 공개 채널의 뉴스로 가는 링크. */
 export default function SiteHeader({ me = false }: { me?: boolean }) {
@@ -54,7 +53,9 @@ export default function SiteHeader({ me = false }: { me?: boolean }) {
       </button>
       <div id="site-nav" className={'siteNav' + (open ? ' open' : '')}>
         <nav aria-label="사이트 메뉴"><ul>{mainItems}</ul></nav>
-        <nav aria-label="보조 메뉴" className="utilNav"><ul>{UTIL.map(item)}</ul></nav>
+        <nav aria-label="보조 메뉴" className="utilNav"><ul><li>
+          <Link href={meHref(ME_HOME, ch.slug)} className={'meBtn' + (me ? ' active' : '')} aria-current={me ? 'page' : undefined}><UserRound size={17} aria-hidden="true" />마이페이지</Link>
+        </li></ul></nav>
         {stale && finished && <span className="collectBadge warn" role="status" title={`마지막 수집 ${ch.fmt(finished)}`}>수집 지연</span>}
       </div>
     </div>

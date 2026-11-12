@@ -2,11 +2,11 @@
 
 옛 사이트(`insurance-math.github.io/actuary-news-hub/`)에서 흑석일보(`heukseoknews.github.io`)로 북마크·읽음을 옮길 때와, 흑석일보 안에서 백업·복원할 때 쓰는 형식이다. 옛 사이트에 이전 버튼을 넣을 때 이 문서를 기준으로 삼는다.
 
-주소(origin)가 바뀌면 브라우저는 localStorage 를 새로 시작한다. 그래서 옛 사이트에서 데이터를 꺼내 새 사이트의 **내 데이터** 화면(`/insurance/settings/`)으로 넘겨야 한다. 넘기는 방법은 둘이다.
+주소(origin)가 바뀌면 브라우저는 localStorage 를 새로 시작한다. 그래서 옛 사이트에서 데이터를 꺼내 새 사이트의 **마이페이지 → 내 데이터** 화면(`/me/data/?ch=insurance`)으로 넘겨야 한다. 옛 주소 `/insurance/settings/` 는 해시를 유지한 채 이 화면으로 보낸다. 넘기는 방법은 둘이다.
 
 | 방법 | 옛 사이트가 하는 일 | 새 사이트가 하는 일 |
 |---|---|---|
-| 링크(해시) | 아래 JSON 을 인코딩해 `https://heukseoknews.github.io/insurance/settings/#import=<인코딩>` 으로 이동 | 해시를 읽고 바로 지운 뒤(주소창·방문 기록에 남지 않게) 가져오기 미리보기를 연다 |
+| 링크(해시) | 아래 JSON 을 인코딩해 `https://heukseoknews.github.io/me/data/?ch=insurance#import=<인코딩>` 으로 이동(옛 주소 `/insurance/settings/#import=…` 도 동작) | 해시를 읽고 바로 지운 뒤(주소창·방문 기록에 남지 않게) 가져오기 미리보기를 연다 |
 | 파일 | 아래 JSON 을 `.json` 파일로 내려받게 한다 | 사용자가 **파일에서 가져오기(복원)** 로 고르면 같은 미리보기를 연다 |
 
 해시(`#` 뒤)는 서버로 전송되지 않는다. 두 방법 모두 미리보기(북마크 N건, 읽음 N건, 확인 시각, 선택한 보험사 N곳, 합친 뒤 건수)를 보여 주고 사용자가 확인해야 저장한다.
@@ -49,7 +49,7 @@
 - 저장 시각을 모르므로 `savedAt` 은 수집 시각(없으면 발행 시각), `updatedAt` 은 고정값 `2000-01-01T00:00:00.000Z`. 여러 기기가 따로 이전해도 같은 값이 되어 합칠 때 충돌하지 않고, 실제로 고친 기록이 항상 이긴다.
 - 제목·링크가 없거나 id 만 있는 북마크(옛 형식의 id 배열 포함)는 버리지 않고 `missing: true` 로 보존한다. 화면이 기사 데이터를 불러오면 같은 id 의 기사로 채운다(`fillMissing`).
 
-코드: 순수 로직 `lib/userState.ts`(상태·가져오기·병합)와 `lib/bookmarks.ts`(북마크·폴더·태그), 저장소 어댑터 `lib/storage.ts`(localStorage 구현, 나중에 원격 저장소로 바꿀 자리), 화면 마이페이지 `app/me/`.
+코드: 순수 로직 `lib/userState.ts`(상태·가져오기·병합)와 `lib/bookmarks.ts`(북마크·폴더·태그), 저장소 어댑터 `lib/storage.ts`(localStorage 구현, 나중에 원격 저장소로 바꿀 자리), 화면 마이페이지 `app/me/`(내 북마크 `/me/`, 내 데이터 `/me/data/`, 채널은 `?ch=`).
 
 새 키가 아직 없으면 옛 키(`actuary-news-hub-v3`, `actuary-news-hub-companies-v1`)를 읽는다(같은 origin 에서 띄운 경우 대비). 옛 키는 지우지 않는다. 옛 키 이름은 `channels/insurance/channel.json` 의 `storage.legacy_keys` 에 있다.
 
@@ -115,7 +115,7 @@
 
 - 압축: `new CompressionStream('gzip')`(Chrome 80+, Safari 16.4+, Firefox 113+). 해제: `DecompressionStream('gzip')`.
 - base64url: `+`→`-`, `/`→`_`, 끝의 `=` 제거.
-- 해시 파라미터 이름은 `import` 하나뿐이다. 루트(`/#import=…`)로 들어와도 `/insurance/settings/#import=…` 로 넘긴다.
+- 해시 파라미터 이름은 `import` 하나뿐이다. 루트(`/#import=…`)나 옛 주소(`/insurance/settings/#import=…`)로 들어와도 `/me/data/?ch=insurance#import=…` 로 넘긴다.
 - 구현·테스트: `lib/transfer.ts`, `tests/transfer.test.ts`.
 
 옛 사이트 쪽 인코딩 예시:
@@ -157,5 +157,5 @@ async function encodeForHash(obj) {
 ## 5. 옛 사이트 작업 체크리스트(이번 작업 범위 밖)
 
 1. 상단 배너: "흑석일보로 이전했습니다 → https://heukseoknews.github.io/".
-2. 이전 버튼: 옛 키 두 개를 읽어 2장의 권장 형식으로 만든다 → 3장 방식으로 인코딩 → 32,000자 이하면 `https://heukseoknews.github.io/insurance/settings/#import=…` 로 이동, 넘으면 `.json` 파일을 내려받게 하고 "새 사이트 → 내 데이터 → 파일에서 가져오기" 를 안내한다.
+2. 이전 버튼: 옛 키 두 개를 읽어 2장의 권장 형식으로 만든다 → 3장 방식으로 인코딩 → 32,000자 이하면 `https://heukseoknews.github.io/me/data/?ch=insurance#import=…` 로 이동, 넘으면 `.json` 파일을 내려받게 하고 "새 사이트 → 마이페이지 → 내 데이터 → 파일에서 가져오기" 를 안내한다.
 3. 옛 데이터는 지우지 않는다.

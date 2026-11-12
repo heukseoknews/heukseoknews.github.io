@@ -241,3 +241,10 @@ a.chBtn:hover{border-color:var(--c-accent)}
  .meSelect{width:100%;justify-content:space-between}.meSelect select{flex:1}
  .filterPanel .filterReset{margin-left:0;justify-content:center;min-height:44px}
 }
+/* 헤더 오른쪽 위 '마이페이지' 버튼(모바일 메뉴 안에서는 다른 줄과 같은 목록 줄) */
+@media(min-width:641px){
+ .siteNav .utilNav ul a.meBtn{gap:6px;min-height:38px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--text-2);font-weight:600;background:var(--surface)}
+ .siteNav .utilNav ul a.meBtn:hover{border-color:var(--accent);color:var(--accent-strong)}
+ .siteNav .utilNav ul a.meBtn.active{border-color:var(--accent);color:var(--accent-strong);background:var(--accent-soft)}
+}
+@media(max-width:640px){.siteNav .utilNav ul a.meBtn{gap:8px}}

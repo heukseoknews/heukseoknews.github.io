@@ -21,6 +21,7 @@ export function channelRow(current: string): RowItem[] {
   return DIRECTORY.map(d => ({ ...d, current: d.slug === current, href: d.status === 'live' || d.slug === current ? `/${d.slug}/` : null }));
 }
 
-/** 옛 이전 링크(/#import=…)는 내 데이터 화면으로 해시를 유지한 채 보낸다. 홈(/)의 인라인 스크립트. 그 밖에는 이동하지 않는다. */
-export const IMPORT_TARGET = '/insurance/settings/';
+/** 옛 이전 링크(/#import=…)는 마이페이지 내 데이터(보험 채널)로 해시를 유지한 채 보낸다. 홈(/)의 인라인 스크립트. 그 밖에는 이동하지 않는다.
+ *  lib/me.ts dataHref('insurance') 와 같아야 한다(tests/home.test.ts). */
+export const IMPORT_TARGET = '/me/data/?ch=insurance';
 export const IMPORT_REDIRECT_JS = `(function(){var h=location.hash||'';if(h.indexOf('#import=')===0)location.replace(${JSON.stringify(IMPORT_TARGET)}+h);})();`;
