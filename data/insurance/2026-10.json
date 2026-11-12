@@ -908,11 +908,7 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "cluster_id": "14edee2b1490e8dd",
-  "cluster_size": 2,
-  "cluster_sources": 1,
-  "score_v2": 2,
-  "cluster_lead": true
+  "score_v2": 2
  },
  {
   "id": "defe87fb1b2848b9",
