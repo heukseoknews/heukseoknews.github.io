@@ -16,7 +16,12 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "115a075a94614956",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 3,
+  "cluster_lead": true
  },
  {
   "id": "9f3d164abe02da1e",
@@ -38,7 +43,8 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "09fa51d578d80a27",
@@ -58,7 +64,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "94b7d7ec37ea243d",
@@ -83,7 +90,11 @@
   "companies": [
    "현대해상"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "5d3eef7dad5d0f12",
+  "cluster_size": 8,
+  "cluster_sources": 8,
+  "score_v2": 2
  },
  {
   "id": "65a180dd4040f56d",
@@ -103,7 +114,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "8f92fe11a6982798",
@@ -125,7 +137,8 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "9db66fca53d70393",
@@ -144,7 +157,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "4357a9e21cf03349",
@@ -164,7 +178,11 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "e62b1025f6c19f15",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "202ccb87fa17c2da",
@@ -187,7 +205,11 @@
   "companies": [
    "현대해상"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "5d3eef7dad5d0f12",
+  "cluster_size": 8,
+  "cluster_sources": 8,
+  "score_v2": 2
  },
  {
   "id": "48e465f7bf68073f",
@@ -204,7 +226,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "630bbee49b6b9003",
@@ -227,7 +250,11 @@
   "companies": [
    "현대해상"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "5d3eef7dad5d0f12",
+  "cluster_size": 8,
+  "cluster_sources": 8,
+  "score_v2": 2
  },
  {
   "id": "d4f39e091abce4f1",
@@ -251,7 +278,12 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "44f31e8069578f94",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
  },
  {
   "id": "94f1587f9fa6ca08",
@@ -274,7 +306,11 @@
   "companies": [
    "현대해상"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "5d3eef7dad5d0f12",
+  "cluster_size": 8,
+  "cluster_sources": 8,
+  "score_v2": 2
  },
  {
   "id": "fbf5fc93b87bbe2b",
@@ -298,7 +334,11 @@
   "companies": [
    "교보생명"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "80be18661d5f29a1",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
  },
  {
   "id": "44f31e8069578f94",
@@ -322,7 +362,11 @@
   "feed_name": "주요 경제지·금융시장",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "44f31e8069578f94",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
  },
  {
   "id": "c9fbcf49c912cbf2",
@@ -345,7 +389,11 @@
   "companies": [
    "현대해상"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "5d3eef7dad5d0f12",
+  "cluster_size": 8,
+  "cluster_sources": 8,
+  "score_v2": 2
  },
  {
   "id": "80be18661d5f29a1",
@@ -369,7 +417,12 @@
   "companies": [
    "교보생명"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "80be18661d5f29a1",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
  },
  {
   "id": "a5160c2932d238c6",
@@ -392,7 +445,11 @@
   "companies": [
    "현대해상"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "5d3eef7dad5d0f12",
+  "cluster_size": 8,
+  "cluster_sources": 8,
+  "score_v2": 2
  },
  {
   "id": "5d3eef7dad5d0f12",
@@ -417,7 +474,12 @@
   "companies": [
    "현대해상"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "5d3eef7dad5d0f12",
+  "cluster_size": 8,
+  "cluster_sources": 8,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "95bb124b91797cfe",
@@ -439,7 +501,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "a75d1bd66abde7aa",
@@ -459,7 +522,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "e3e05b9a55f3fc83",
@@ -479,7 +543,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "c80ea939bfc2578f",
@@ -499,7 +564,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "536fff85a0cf3663",
@@ -519,7 +585,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "af77ee50a1e30e56",
@@ -541,7 +608,11 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "cluster_id": "09e1b46edadd0ce6",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "c54f1c32f52ba6cc",
@@ -562,7 +633,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "ebabdb939ae25763",
@@ -581,7 +653,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "fda5b3285f388224",
@@ -600,7 +673,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "bffc7b6198cc72bf",
@@ -619,7 +693,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "95468076081a5ce3",
@@ -640,7 +715,11 @@
   "companies": [],
   "orgs": [
    "국민건강보험공단"
-  ]
+  ],
+  "cluster_id": "00e61415349a514f",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 2
  },
  {
   "id": "f22aded403b08e50",
@@ -662,7 +741,8 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "735f6afde0b44cb0",
@@ -684,7 +764,11 @@
   "companies": [],
   "orgs": [
    "국민건강보험공단"
-  ]
+  ],
+  "cluster_id": "00e61415349a514f",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 2
  },
  {
   "id": "b808ab4828682a88",
@@ -709,7 +793,11 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "ad8f27daa1998985",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
  },
  {
   "id": "89cb463993a18a27",
@@ -730,7 +818,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "eaa8d6b5712dbd15",
@@ -749,7 +838,8 @@
   "companies": [
    "KB손해보험"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "532a5e99e886b317",
@@ -774,7 +864,8 @@
   "companies": [
    "KB손해보험"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "073b6445b06fd702",
@@ -796,7 +887,8 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "14edee2b1490e8dd",
@@ -815,7 +907,12 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "14edee2b1490e8dd",
+  "cluster_size": 2,
+  "cluster_sources": 1,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "defe87fb1b2848b9",
@@ -834,7 +931,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "ad8f27daa1998985",
@@ -858,7 +956,12 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "ad8f27daa1998985",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
  },
  {
   "id": "e16869f4f413feaf",
@@ -881,7 +984,8 @@
   ],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "00e61415349a514f",
@@ -902,7 +1006,12 @@
   "companies": [],
   "orgs": [
    "국민건강보험공단"
-  ]
+  ],
+  "cluster_id": "00e61415349a514f",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "e73fb1b38ba3c933",
@@ -921,7 +1030,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b4a479e47ac549c8",
@@ -940,7 +1050,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "2e06be484f314176",
@@ -960,7 +1071,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "be1b2c7d273106ee",
@@ -979,7 +1091,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "d37a1df477d1b43e",
@@ -1004,7 +1117,12 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "cluster_id": "3a9b1846c84fb3d0",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
  },
  {
   "id": "7660f7286fa63d2c",
@@ -1024,7 +1142,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "cec9cd8719fb49e1",
@@ -1046,7 +1165,11 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "cluster_id": "cec9cd8719fb49e1",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "3a9b1846c84fb3d0",
@@ -1071,7 +1194,11 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "cluster_id": "3a9b1846c84fb3d0",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
  },
  {
   "id": "09e1b46edadd0ce6",
@@ -1093,7 +1220,12 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "cluster_id": "09e1b46edadd0ce6",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "daced4f9a54228cd",
@@ -1115,7 +1247,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "229105e2c51e206b",
@@ -1137,7 +1270,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "37efbec9a42edc4a",
@@ -1157,7 +1291,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "ebaec9de8d626698",
@@ -1179,7 +1314,12 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "cluster_id": "cec9cd8719fb49e1",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "8b4ec4afe7151544",
@@ -1199,7 +1339,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "25d66c4374cfcf4a",
@@ -1219,7 +1360,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "e62b1025f6c19f15",
@@ -1239,7 +1381,12 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "e62b1025f6c19f15",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "7d1668d23af8a0d8",
@@ -1258,7 +1405,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "fbbbd0f1778feda4",
@@ -1278,7 +1426,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "1bbdec87807fac1d",
@@ -1300,7 +1449,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "58e3aa72bc8c02b7",
@@ -1320,7 +1470,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "70d84545940b14c1",
@@ -1339,7 +1490,8 @@
   "sub_categories": [],
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b21a9b80ac9312ac",
@@ -1359,7 +1511,11 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "cluster_id": "476bed52ed342f5b",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
  },
  {
   "id": "ebff5bd7fc04382f",
@@ -1379,7 +1535,11 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "cluster_id": "ae72998c1f2e2398",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
  },
  {
   "id": "451d7a50a60c01a4",
@@ -1401,7 +1561,11 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "cluster_id": "451d7a50a60c01a4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "bb4d0179b450b3c9",
@@ -1423,7 +1587,12 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "cluster_id": "6b757fddbe477094",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "7f61a8b7191fa2c8",
@@ -1443,7 +1612,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "dc7a7c194172b66d",
@@ -1465,7 +1635,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "c653cebd9917f56f",
@@ -1485,7 +1656,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "476bed52ed342f5b",
@@ -1505,7 +1677,12 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "cluster_id": "476bed52ed342f5b",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "ae72998c1f2e2398",
@@ -1525,7 +1702,12 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "cluster_id": "ae72998c1f2e2398",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "641493b80f7480da",
@@ -1547,7 +1729,12 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "cluster_id": "451d7a50a60c01a4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "cb10fa18c7fc0f46",
@@ -1569,7 +1756,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "6b757fddbe477094",
@@ -1591,7 +1779,11 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "cluster_id": "6b757fddbe477094",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "cfd838fc10a7597c",
@@ -1611,7 +1803,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "dc28579333b81204",
@@ -1633,7 +1826,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "9bb53eae8eb163ae",
@@ -1655,7 +1849,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "6d463bb1399b9cfe",
@@ -1675,7 +1870,8 @@
   "companies": [],
   "orgs": [
    "금융감독원"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "9192f0397aac07e2",
@@ -1695,7 +1891,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "905f3af615978df4",
@@ -1715,7 +1912,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "da00d1e1c0f7934f",
@@ -1737,7 +1935,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "2966e6902bb9bf7e",
@@ -1759,7 +1958,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "3663b9a0085565a4",
@@ -1781,7 +1981,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "fd35d36d3612228f",
@@ -1801,7 +2002,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "3b462ad1c7d1657f",
@@ -1821,7 +2023,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "efe70896d061fcea",
@@ -1843,7 +2046,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "d389980db09d6810",
@@ -1862,7 +2066,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 1
  },
  {
   "id": "de4fa331a9db3192",
@@ -1885,6 +2090,7 @@
   "orgs": [
    "보건복지부",
    "금융위원회"
-  ]
+  ],
+  "score_v2": 3
  }
 ]

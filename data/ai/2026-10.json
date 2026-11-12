@@ -16,7 +16,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "eaad933c9eb95379",
@@ -37,7 +38,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "c8804a79ad56c280",
@@ -54,7 +56,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "91038b3a35f762ad",
@@ -73,7 +76,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "59623d61a7aaaf73",
@@ -90,7 +94,8 @@
   "feed_name": "Google DeepMind",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "84abd1857de5dfd9",
@@ -107,7 +112,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "a86d24c59c826150",
@@ -128,7 +134,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "574dbaf7fc8731e4",
@@ -147,7 +154,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "9349f418e7bc7ab4",
@@ -166,7 +174,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "e508e29ae812fe58",
@@ -186,7 +195,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "ea413dd27e3e4bb8",
@@ -205,7 +215,8 @@
   "feed_name": "NVIDIA Blog",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "0f01adb2acab0a67",
@@ -229,7 +240,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "d948735545c20cf3",
@@ -246,7 +258,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "718617961cab3abc",
@@ -265,7 +278,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "b6b30743068c2627",
@@ -287,7 +301,8 @@
    "Mistral",
    "Hugging Face"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "6394645bd5105adc",
@@ -314,7 +329,8 @@
   ],
   "orgs": [
    "음성·오디오"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "85f94c0fe8f02a81",
@@ -335,7 +351,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "16681fd606d5f699",
@@ -352,7 +369,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "3e32bae570ff21ee",
@@ -375,7 +393,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "a395c7da350b5086",
@@ -396,7 +415,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "e2ed7680c50ae3f0",
@@ -413,7 +433,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "709cc8e2bd467b79",
@@ -432,7 +453,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "1c5b51464767c2ad",
@@ -453,7 +475,8 @@
   "companies": [],
   "orgs": [
    "비전·멀티모달"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "e960e8891f7d7ad8",
@@ -472,7 +495,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "1e3ebf94e41ebe19",
@@ -493,7 +517,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c417f8e3d39d0b89",
@@ -519,7 +544,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "c44dc9ed271ff418",
@@ -536,7 +562,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "a9c488820a62ac4a",
@@ -557,7 +584,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "35e334c198740f74",
@@ -578,7 +606,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "8eb6001a836a6e50",
@@ -595,7 +624,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "7d972df501d01ba1",
@@ -614,7 +644,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "27334100e818b985",
@@ -635,7 +666,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "7e73eebe3e909303",
@@ -654,7 +686,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "742d30efdc4090c1",
@@ -673,7 +706,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "ee4c22366ef7e7ab",
@@ -694,7 +728,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "f8c156dba7886826",
@@ -715,7 +750,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "2b3f616d26d343fe",
@@ -736,7 +772,8 @@
   "companies": [
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "3b5a2a6a27ab5490",
@@ -755,7 +792,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "1a543055a02f9816",
@@ -779,7 +817,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "51888f116f5b0837",
@@ -798,7 +837,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "891b7e0bbf66f86d",
@@ -820,7 +860,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "8f93170faf71fda6",
@@ -837,7 +878,8 @@
   "feed_name": "Google DeepMind",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "6400feb681472530",
@@ -856,7 +898,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "eda525050cea8fce",
@@ -877,7 +920,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "3f1a11956436b167",
@@ -896,7 +940,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "40a01666d562060b",
@@ -915,7 +960,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "39cad894cdd240fb",
@@ -934,7 +980,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "5b4e08461387ba3b",
@@ -953,7 +1000,8 @@
   "companies": [
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "b1215e1aefc04c61",
@@ -974,7 +1022,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "95dedf578de78f3e",
@@ -996,7 +1045,8 @@
    "OpenAI",
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "de9db6f384cbc788",
@@ -1015,7 +1065,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "ea92da5c121ecb45",
@@ -1036,7 +1087,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "64ddfb139fec8a1c",
@@ -1057,7 +1109,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "3fe372fb2e8166f0",
@@ -1076,7 +1129,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "e270f5ba4688033d",
@@ -1096,7 +1150,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "1725d137aa3debc0",
@@ -1117,7 +1172,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "aa8847d44cbae332",
@@ -1136,7 +1192,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "39e60f901a735303",
@@ -1155,7 +1212,8 @@
   "companies": [
    "Hugging Face"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "41fb25a47d12d204",
@@ -1176,7 +1234,8 @@
   "companies": [
    "Apple"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "c2b4b68d7e0027f0",
@@ -1195,7 +1254,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "1cfb6291fa158d05",
@@ -1216,7 +1276,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "1dbe22633003a2af",
@@ -1235,7 +1296,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "5c52b7d34becd1cc",
@@ -1256,7 +1318,8 @@
   "companies": [
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "9732b2763df5a67a",
@@ -1273,7 +1336,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c9a6184923cc1a58",
@@ -1295,7 +1359,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "d3b9ba6f7bd01af0",
@@ -1312,7 +1377,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "86dbfdb5b436c283",
@@ -1329,7 +1395,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "9e63539289a31c86",
@@ -1352,7 +1419,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "b6756c0a180ee554",
@@ -1373,7 +1441,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "32165ee6af8945a5",
@@ -1392,7 +1461,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "3b88e63140868036",
@@ -1411,7 +1481,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "a60f4a701f887ae8",
@@ -1428,7 +1499,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "39052ad94a8a76cc",
@@ -1447,7 +1519,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "ff0cf28c5d753057",
@@ -1473,7 +1546,8 @@
   ],
   "orgs": [
    "비전·멀티모달"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "eb67409897ed2136",
@@ -1492,7 +1566,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "94eadcab22c41e35",
@@ -1509,7 +1584,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "57c3309db5bedcde",
@@ -1534,7 +1610,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "004cd593adabcd24",
@@ -1551,7 +1628,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "a8b8c31de898145e",
@@ -1570,7 +1648,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "94ee28b93f9d2d83",
@@ -1589,7 +1668,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b76b11a1199f73b7",
@@ -1613,7 +1693,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "200a5d3dd39c6bfb",
@@ -1634,7 +1715,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "1dc99b611b2499a3",
@@ -1655,7 +1737,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "53911f98c21c784f",
@@ -1674,7 +1757,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "d96a2391b623b2cb",
@@ -1696,7 +1780,8 @@
   "orgs": [
    "LLM·NLP",
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "4e31b829ae688591",
@@ -1717,7 +1802,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "8d45898e533e591d",
@@ -1734,6 +1820,7 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  }
 ]

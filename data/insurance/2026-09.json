@@ -19,7 +19,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "81d135b9c7eebc1e",
@@ -44,7 +45,8 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 5
  },
  {
   "id": "907774b961f1e8c6",
@@ -69,6 +71,7 @@
   "companies": [],
   "orgs": [
    "금융위원회"
-  ]
+  ],
+  "score_v2": 3
  }
 ]

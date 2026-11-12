@@ -18,7 +18,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "af14948727ac3137",
@@ -43,7 +44,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "59a3e7dd1993c1f2",
@@ -64,7 +66,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "e592123bc5486873",
@@ -81,7 +84,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "452ed64f40f0bd99",
@@ -98,7 +102,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "11184e94526b2e65",
@@ -115,7 +120,8 @@
   "feed_name": "인공지능신문",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "65b96c238445cded",
@@ -134,7 +140,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "db41dec20cf5bfb8",
@@ -151,7 +158,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "294df6909ab04034",
@@ -168,7 +176,8 @@
   "feed_name": "인공지능신문",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "3927e8656e242ccd",
@@ -185,7 +194,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "eb294a56c70bf2d1",
@@ -207,7 +217,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "1f0eb589d8a3cc25",
@@ -226,7 +237,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "d1f3df81d4d143b4",
@@ -245,7 +257,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "78cd03fc7c402d7d",
@@ -266,7 +279,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "321d8b43ce72dae6",
@@ -285,7 +299,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c3fa6b6a98307756",
@@ -304,7 +319,8 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "27ced9ec34f579c9",
@@ -323,7 +339,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "5413a692ab5366d7",
@@ -340,7 +357,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "038f46a4355e8569",
@@ -359,7 +377,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "f2c9646eac9d4c1a",
@@ -378,7 +397,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "bb27561db5d10d50",
@@ -400,7 +420,8 @@
    "Anthropic",
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "1e2d7b9998cc9ff1",
@@ -417,7 +438,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "64509ca33b7d72c4",
@@ -436,7 +458,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "236705559d2866e2",
@@ -453,7 +476,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "bed7979fe4378809",
@@ -474,7 +498,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "ba0fcf4e325b4115",
@@ -491,7 +516,8 @@
   "feed_name": "Google DeepMind",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "34b5b4703a4ee290",
@@ -515,7 +541,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "7db3dbf05615c3ed",
@@ -534,7 +561,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "87209848417b63cf",
@@ -556,7 +584,8 @@
   "orgs": [
    "LLM·NLP",
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "fdae674c6e74db23",
@@ -578,7 +607,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "00c132db98ec4512",
@@ -599,7 +629,8 @@
   "companies": [],
   "orgs": [
    "음성·오디오"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "80d4f9004cde2f01",
@@ -624,7 +655,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "6a9349a5cb128085",
@@ -645,7 +677,8 @@
   "companies": [
    "LG AI연구원"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "9db1eb85c92ad4d0",
@@ -666,7 +699,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "d864fe3a0834e167",
@@ -687,7 +721,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "72d03510d19dc7c3",
@@ -711,7 +746,11 @@
   "orgs": [
    "LLM·NLP",
    "월드모델·로보틱스"
-  ]
+  ],
+  "cluster_id": "9c78c98e71a83937",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
  },
  {
   "id": "8ff02bd95f099735",
@@ -733,7 +772,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "dc314222aef693a9",
@@ -752,7 +792,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "663da7c69e2e4b5e",
@@ -775,7 +816,8 @@
    "OpenAI",
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "4fdca01e16580ccd",
@@ -797,7 +839,8 @@
    "OpenAI",
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "ac94b61a25ade5ed",
@@ -818,7 +861,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "ea4ae37e8f48382b",
@@ -839,7 +883,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "7fe56f399e54656e",
@@ -856,7 +901,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c4cb21b1f25087b3",
@@ -875,7 +921,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "5d6ad4b2314d0bf6",
@@ -894,7 +941,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "371f5f2e0208611c",
@@ -913,7 +961,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "f4e4ebe108d8e8cb",
@@ -934,7 +983,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "67318b62cf01c8b5",
@@ -955,7 +1005,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "2ba7c35751a56138",
@@ -980,7 +1031,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "c7ed782a752fe280",
@@ -999,7 +1051,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c2569d8bbeed3ef4",
@@ -1016,7 +1069,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "d8296a22c5e08cc8",
@@ -1037,7 +1091,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "962c2a83c361165b",
@@ -1054,7 +1109,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "8f890663b6506209",
@@ -1078,7 +1134,8 @@
   "companies": [],
   "orgs": [
    "비전·멀티모달"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "c6252906d0ad7509",
@@ -1099,7 +1156,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "3399af1c3a180185",
@@ -1116,7 +1174,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "a8c71062ce53943a",
@@ -1138,7 +1197,8 @@
    "OpenAI",
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "c1a13385d388eac1",
@@ -1157,7 +1217,8 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "87c8c5120b3e28db",
@@ -1174,7 +1235,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "548300603f06ad66",
@@ -1200,7 +1262,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "84450dca19ea467c",
@@ -1227,7 +1290,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 5
  },
  {
   "id": "6ed99c6e326f9f5e",
@@ -1246,7 +1310,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "45fb7d02820788fc",
@@ -1265,7 +1330,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b8ed0debf460d538",
@@ -1284,7 +1350,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "ea74cf357aa3ad23",
@@ -1304,7 +1371,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "5e53c8021c27b94e",
@@ -1325,7 +1393,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "19b4fcb1faac9c9b",
@@ -1346,7 +1415,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "b06c584707e08155",
@@ -1365,7 +1435,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "6c12a2e5775eda57",
@@ -1382,7 +1453,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "f562f28d815d098c",
@@ -1401,7 +1473,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "8fa4d4c9d98ea691",
@@ -1424,7 +1497,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "c8f167ac4cb5d53a",
@@ -1446,7 +1520,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "51b214e93a44df78",
@@ -1463,7 +1538,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "1a35aa86725a6449",
@@ -1482,7 +1558,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "c5b2f450eb20f778",
@@ -1507,7 +1584,8 @@
   "companies": [
    "Alibaba"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "1153869638ee727c",
@@ -1524,7 +1602,8 @@
   "feed_name": "NVIDIA Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "af58107836cf0b15",
@@ -1545,7 +1624,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "4a69b1b062132764",
@@ -1569,7 +1649,8 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "d3001e0e6ef02cd9",
@@ -1586,7 +1667,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "422daf5d3fdee094",
@@ -1607,7 +1689,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "49617bf4e5830ae8",
@@ -1628,7 +1711,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "9c78c98e71a83937",
@@ -1650,7 +1734,12 @@
   "orgs": [
    "월드모델·로보틱스",
    "LLM·NLP"
-  ]
+  ],
+  "cluster_id": "9c78c98e71a83937",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
  },
  {
   "id": "81f32a2a6e615b76",
@@ -1673,7 +1762,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "21a2f2516f5b79cf",
@@ -1690,7 +1780,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b5eea74d71cad493",
@@ -1707,7 +1798,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "11568aa8dfcf9a3c",
@@ -1726,7 +1818,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "55ff14dc4213127d",
@@ -1743,7 +1836,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "dab14f59a11cb2e7",
@@ -1760,7 +1854,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "53e269dfc69eca3b",
@@ -1781,7 +1876,8 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "81a3994a47ebc193",
@@ -1804,7 +1900,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "b588121cdcdc64eb",
@@ -1821,7 +1918,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "fc73217409f2e0eb",
@@ -1844,7 +1942,11 @@
   ],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "cluster_id": "0cd81599427e692a",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
  },
  {
   "id": "a17ebce0304bbf82",
@@ -1861,7 +1963,12 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "100b7bf9219fadf0",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "4870c717de7f4e57",
@@ -1883,7 +1990,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "80500b1292cc170c",
@@ -1909,7 +2017,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "3b53bf6090ab9868",
@@ -1931,7 +2040,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "ae543fdc68f7cb26",
@@ -1954,7 +2064,8 @@
    "OpenAI",
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "d0a06ec7e03766fa",
@@ -1971,7 +2082,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "f881d1b7ddb70d25",
@@ -1998,7 +2110,8 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "6c91404759576779",
@@ -2019,7 +2132,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "1b0c05cd97a311af",
@@ -2039,7 +2153,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "f0f5255e09c227b6",
@@ -2058,7 +2173,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "68219fdebd4ad78c",
@@ -2075,7 +2191,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "7e74320883f414fb",
@@ -2099,7 +2216,11 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "cluster_id": "991ad48e8559b2fe",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
  },
  {
   "id": "e12be6c2ba7dcfd8",
@@ -2122,7 +2243,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "4cc686f0d8904bd2",
@@ -2143,7 +2265,11 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "33a0483307191e73",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "55cb0588b3e8436e",
@@ -2166,7 +2292,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "8eec2e0e61665676",
@@ -2187,7 +2314,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "a75982b151db7f3d",
@@ -2208,7 +2336,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "00824ebcd8896845",
@@ -2232,7 +2361,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "4587a3d096307d12",
@@ -2253,7 +2383,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "38c7141b6ea9e70d",
@@ -2270,7 +2401,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "e093e2a49aacf0cb",
@@ -2287,7 +2419,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c80f9e3167df2965",
@@ -2304,7 +2437,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "d4b2651db8ab07cb",
@@ -2321,7 +2455,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "8f0b399bf4dbc995",
@@ -2338,7 +2473,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "42f0786ec0b8a45f",
@@ -2355,7 +2491,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c86d08502069b5ef",
@@ -2383,7 +2520,11 @@
   "orgs": [
    "LLM·NLP",
    "월드모델·로보틱스"
-  ]
+  ],
+  "cluster_id": "6b6709b612e5913e",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
  },
  {
   "id": "9be805818eb1a5e1",
@@ -2409,7 +2550,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "126b111b5d436487",
@@ -2434,7 +2576,8 @@
   "orgs": [
    "LLM·NLP",
    "비전·멀티모달"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "5553fe020c93d3c2",
@@ -2456,7 +2599,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "e086b6a569cdaf26",
@@ -2475,7 +2619,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b5b0ef99e191cd08",
@@ -2494,7 +2639,8 @@
   "companies": [],
   "orgs": [
    "음성·오디오"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "0cd81599427e692a",
@@ -2515,7 +2661,12 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "cluster_id": "0cd81599427e692a",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
  },
  {
   "id": "7fc88fbdaa8e9721",
@@ -2536,7 +2687,8 @@
   "companies": [
    "Hugging Face"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "7e1488fa308ce7da",
@@ -2555,7 +2707,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "0e9fb0eb84f13acf",
@@ -2577,7 +2730,8 @@
   "feed_name": "Google DeepMind",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "0f0020abcf733229",
@@ -2594,7 +2748,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "612147b20f79cd44",
@@ -2615,7 +2770,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "ea8615ca3ee894cb",
@@ -2640,7 +2796,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "fa17fb04e0a2b5f0",
@@ -2665,7 +2822,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "265239243505befa",
@@ -2690,7 +2851,11 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "411bf6c66c4c3f63",
@@ -2714,7 +2879,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "991ad48e8559b2fe",
@@ -2737,7 +2903,12 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "cluster_id": "991ad48e8559b2fe",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
  },
  {
   "id": "a62c92be41cc6f52",
@@ -2762,7 +2933,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "cd231d3ddbc8d652",
@@ -2784,7 +2959,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "eb01a854ce09ec31",
@@ -2805,7 +2981,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "69d4d9d74efa0162",
@@ -2822,7 +2999,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b11a77a2cb98ff35",
@@ -2843,7 +3021,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "d4de899ef133a37e",
@@ -2862,7 +3041,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "beb7c5bcac564b7e",
@@ -2879,7 +3059,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "d60df51315b8170c",
@@ -2898,7 +3079,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "70260e6f831018d2",
@@ -2918,7 +3100,8 @@
   "feed_name": "AI타임스",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "fa04d4f044befae1",
@@ -2940,7 +3123,8 @@
   "orgs": [
    "LLM·NLP",
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "08dacb84db44c9f9",
@@ -2960,7 +3144,8 @@
   "orgs": [
    "LLM·NLP",
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "db6aa1f2f638c7d8",
@@ -2981,7 +3166,8 @@
   "companies": [],
   "orgs": [
    "비전·멀티모달"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "3af50a1ccba276f6",
@@ -3002,7 +3188,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "56f85849955bd528",
@@ -3023,7 +3210,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "9092d5eb66f29547",
@@ -3042,7 +3230,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "bbf546066c07aef1",
@@ -3061,7 +3250,11 @@
   "companies": [
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "a33c4294d671d3aa",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
  },
  {
   "id": "8fabc918dea85f4d",
@@ -3084,7 +3277,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "f0ac58f6b7471f10",
@@ -3103,7 +3297,8 @@
   "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "0f192bba36f64bb6",
@@ -3120,7 +3315,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "f3fc54cd1d78c100",
@@ -3137,7 +3333,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "81567c52066e9db9",
@@ -3162,7 +3359,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "2876a990fc5fedc6",
@@ -3183,7 +3384,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "b1eeb0c372e70e6a",
@@ -3204,7 +3406,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "2206cd1b7fba46fe",
@@ -3230,7 +3433,11 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "0e21f89b30e21703",
@@ -3249,7 +3456,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "ee4c9a33aa260b61",
@@ -3268,7 +3476,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "77573340f5917828",
@@ -3295,7 +3504,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "8c18a42b1131abd3",
@@ -3321,7 +3531,8 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "f47f887938fafd1f",
@@ -3348,7 +3559,8 @@
   "orgs": [
    "월드모델·로보틱스",
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 5
  },
  {
   "id": "3a9f7380a3a1b420",
@@ -3367,7 +3579,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "3f911b82b4abca26",
@@ -3390,7 +3603,8 @@
   "companies": [
    "삼성전자"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "4f4fd1b1da1f00aa",
@@ -3411,7 +3625,8 @@
   "companies": [
    "Anthropic"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "b83c5a9c27184e68",
@@ -3437,7 +3652,11 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "5b4416b71730e2b4",
@@ -3461,7 +3680,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "cb93d68b445c05b0",
@@ -3481,7 +3701,8 @@
    "Hugging Face",
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "5f3963726dbe36e6",
@@ -3504,7 +3725,8 @@
   "companies": [
    "Hugging Face"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "37e4452e64c861cf",
@@ -3523,7 +3745,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "b87e41ebebb24725",
@@ -3542,7 +3765,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "68cb2e897ee743fe",
@@ -3559,7 +3783,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "28bf67cf1684b7b2",
@@ -3576,7 +3801,8 @@
   "feed_name": "TechCrunch AI",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "b5bbc45e8fae48c8",
@@ -3601,7 +3827,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "1b33273c0decad10",
@@ -3624,7 +3854,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "9437640665920f6f",
@@ -3648,7 +3879,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "6bef113157ebb053",
@@ -3673,7 +3908,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "37c679c9d09971a3",
@@ -3695,7 +3934,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "113c86696146288e",
@@ -3715,7 +3958,11 @@
   "feed_name": "Meta AI(검색)",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 2
  },
  {
   "id": "6b6709b612e5913e",
@@ -3737,7 +3984,12 @@
   "orgs": [
    "LLM·NLP",
    "월드모델·로보틱스"
-  ]
+  ],
+  "cluster_id": "6b6709b612e5913e",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
  },
  {
   "id": "0bcc040a77a860fa",
@@ -3762,7 +4014,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "8dc670208a0d134d",
@@ -3783,7 +4039,8 @@
   ],
   "orgs": [
    "음성·오디오"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "f51a877eb7eb929a",
@@ -3808,7 +4065,11 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "caa9073cefb43725",
@@ -3832,7 +4093,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 4
  },
  {
   "id": "57ddf2e94f6d17d4",
@@ -3853,7 +4115,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "84ee73f86298cad1",
@@ -3874,7 +4137,11 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5
  },
  {
   "id": "1a437db079e30ad7",
@@ -3899,7 +4166,12 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "1a437db079e30ad7",
+  "cluster_size": 15,
+  "cluster_sources": 15,
+  "score_v2": 5,
+  "cluster_lead": true
  },
  {
   "id": "7cea50907b9af2dd",
@@ -3925,7 +4197,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "33a0483307191e73",
@@ -3947,7 +4220,12 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "33a0483307191e73",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "ac8f18750241a65f",
@@ -3966,7 +4244,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "ac7541a92be1caa1",
@@ -3987,7 +4266,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "a33c4294d671d3aa",
@@ -4006,7 +4286,12 @@
   "companies": [
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "a33c4294d671d3aa",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "6e07690c27eb09da",
@@ -4029,7 +4314,8 @@
   ],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "952d2516af2e9054",
@@ -4048,7 +4334,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "55d059b88c6c576a",
@@ -4067,7 +4354,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "a04b09213bc67e9f",
@@ -4088,7 +4376,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "08fa4e5f4178f222",
@@ -4111,7 +4400,8 @@
    "NVIDIA",
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "6911b784b0e82d52",
@@ -4134,7 +4424,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "86c270bf47b54ff7",
@@ -4157,7 +4448,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "02e9abf47eaf3fa0",
@@ -4176,7 +4468,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "2e34e84f0999c607",
@@ -4193,7 +4486,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "9a825059bcc422db",
@@ -4210,7 +4504,8 @@
   "feed_name": "인공지능신문",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "2667a2b3d3d3086f",
@@ -4231,7 +4526,8 @@
   "companies": [
    "LG AI연구원"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "1461f76dabae3cad",
@@ -4253,7 +4549,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "b866b627a071d9e7",
@@ -4275,7 +4572,8 @@
    "SK텔레콤",
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "d08694737b722c2b",
@@ -4296,7 +4594,8 @@
   ],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "77625322d4684167",
@@ -4317,7 +4616,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "698f0868e7dfb446",
@@ -4338,7 +4638,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "eb25380cc5e40adb",
@@ -4362,7 +4663,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "63d01a5f10cd121f",
@@ -4390,7 +4692,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "022acf10d06c3aea",
@@ -4411,7 +4714,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "e0200cc8d1aefba0",
@@ -4432,7 +4736,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "cc8874e0a30f9d43",
@@ -4451,7 +4756,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "50bda62575307e2d",
@@ -4470,7 +4776,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "2f8bdb573ce97d12",
@@ -4493,7 +4800,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "100b7bf9219fadf0",
@@ -4514,7 +4822,11 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "cluster_id": "100b7bf9219fadf0",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "c5bd04cff9263140",
@@ -4535,7 +4847,8 @@
   "companies": [
    "LG AI연구원"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "5ba7647ef318e29b",
@@ -4556,7 +4869,8 @@
   "companies": [
    "삼성전자"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "7da094ca658ca0b1",
@@ -4578,7 +4892,8 @@
   "feed_name": "인공지능신문",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "aec9995e93555871",
@@ -4597,7 +4912,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "18e6afbbbea053f8",
@@ -4618,7 +4934,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "d0ec6a3ddfca9b7a",
@@ -4637,7 +4954,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "0b33259ab4386660",
@@ -4658,7 +4976,8 @@
   "companies": [
    "Meta"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "e3b273e196542284",
@@ -4675,7 +4994,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "0676c12db8f0f583",
@@ -4697,7 +5017,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "5a90caffb2c87d2e",
@@ -4716,7 +5037,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "a0a44ed09dc9a108",
@@ -4735,7 +5057,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "13e4c95dcbaa6d34",
@@ -4752,7 +5075,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "5f721228af3682c2",
@@ -4773,7 +5097,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "110e2ee00f0e0c34",
@@ -4794,7 +5119,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "e12ad59c369bd96f",
@@ -4815,7 +5141,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "e5a25966251123f4",
@@ -4841,7 +5168,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "c82c952294da9801",
@@ -4860,7 +5188,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "cb9b318f703a0f1a",
@@ -4879,7 +5208,8 @@
   "feed_name": "NVIDIA Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "bbd492caba72ca54",
@@ -4898,7 +5228,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "1750855042e8ceec",
@@ -4919,7 +5250,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "79428cf43613e413",
@@ -4941,7 +5273,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "616c68177b707eae",
@@ -4958,7 +5291,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "19edc24986582da2",
@@ -4979,7 +5313,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "1f284cf74f35c5cb",
@@ -5003,7 +5338,8 @@
   "feed_name": "NVIDIA Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "064fb88520fa5af6",
@@ -5020,7 +5356,8 @@
   "feed_name": "NVIDIA Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "434802a6a530e968",
@@ -5039,7 +5376,8 @@
   "companies": [
    "NVIDIA"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "0639117defa113f9",
@@ -5063,7 +5401,8 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "14e90e72d3401ddf",
@@ -5086,7 +5425,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "db9792e954d44701",
@@ -5107,7 +5447,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "25fa4dd18ec78a48",
@@ -5126,7 +5467,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "2d1d326185a62641",
@@ -5143,7 +5485,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "c65c7708e93995ca",
@@ -5167,7 +5510,8 @@
   "companies": [],
   "orgs": [
    "음성·오디오"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "a8e215d1c3fca63a",
@@ -5188,7 +5532,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "1213671b2a6a93f6",
@@ -5209,7 +5554,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "486c70c94cb0cc7c",
@@ -5226,7 +5572,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "32d4e91d243ef07f",
@@ -5243,7 +5590,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "f51c2d0d00ebc28c",
@@ -5260,7 +5608,8 @@
   "feed_name": "Anthropic 공식(검색)",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "1be4fdd8e6ca80f0",
@@ -5281,7 +5630,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "fbaa86a829ad59fd",
@@ -5298,7 +5648,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "a3433e936d2c04bf",
@@ -5319,7 +5670,8 @@
   "companies": [
    "Amazon"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "295354ff422b0d4d",
@@ -5338,7 +5690,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "981785a01550309d",
@@ -5357,7 +5710,8 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "24379856c459e00a",
@@ -5376,7 +5730,8 @@
   "feed_name": "Ars Technica AI",
   "relevant": false,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "b3b7fa6c1f3dcbf6",
@@ -5397,7 +5752,8 @@
   "companies": [
    "Google·DeepMind"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "23c4f130369cb972",
@@ -5418,7 +5774,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "4d3938441f216409",
@@ -5437,7 +5794,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "1864e43d05e79138",
@@ -5454,7 +5812,8 @@
   "feed_name": "NVIDIA Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "25493a43cba550c7",
@@ -5471,7 +5830,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "34e7d62615202d0d",
@@ -5490,7 +5850,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "fc87a45dcfbf03d4",
@@ -5507,7 +5868,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "2eec94a2d2923fe4",
@@ -5528,7 +5890,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "63945bc794809749",
@@ -5545,7 +5908,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "a6f54d325d31634f",
@@ -5567,7 +5931,8 @@
   "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "019edb616369c332",
@@ -5586,7 +5951,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "6725ad9e90d62dcc",
@@ -5607,7 +5973,8 @@
   ],
   "orgs": [
    "월드모델·로보틱스"
-  ]
+  ],
+  "score_v2": 2
  },
  {
   "id": "6e38c6d82605d622",
@@ -5628,7 +5995,8 @@
   ],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 3
  },
  {
   "id": "bca108e4c77bd86b",
@@ -5645,7 +6013,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "0d297090385ad5a7",
@@ -5664,7 +6033,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "277870ffc8d71544",
@@ -5683,7 +6053,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "5d33ed0c66ace544",
@@ -5702,7 +6073,8 @@
   "feed_name": "OpenAI News",
   "relevant": true,
   "companies": [],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "945f879ef3a469b4",
@@ -5723,7 +6095,8 @@
   "companies": [
    "OpenAI"
   ],
-  "orgs": []
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "4094d4340f9e66f9",
@@ -5744,6 +6117,7 @@
   "companies": [],
   "orgs": [
    "LLM·NLP"
-  ]
+  ],
+  "score_v2": 2
  }
 ]

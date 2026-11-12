@@ -4,47 +4,47 @@
   {
    "month": "2026-11",
    "count": 1949,
-   "bytes": 1398818
+   "bytes": 1538643
   },
   {
    "month": "2026-10",
    "count": 89,
-   "bytes": 63252
+   "bytes": 67879
   },
   {
    "month": "2026-09",
    "count": 3,
-   "bytes": 1993
+   "bytes": 2044
   },
   {
    "month": "2026-08",
    "count": 1,
-   "bytes": 819
+   "bytes": 836
   },
   {
    "month": "2026-07",
    "count": 1,
-   "bytes": 664
+   "bytes": 681
   },
   {
    "month": "2026-06",
    "count": 3,
-   "bytes": 2365
+   "bytes": 2416
   },
   {
    "month": "2026-05",
    "count": 4,
-   "bytes": 2910
+   "bytes": 2978
   },
   {
    "month": "2026-04",
    "count": 4,
-   "bytes": 2889
+   "bytes": 2957
   },
   {
    "month": "2026-03",
    "count": 1,
-   "bytes": 721
+   "bytes": 738
   }
  ]
 }
