@@ -1,5 +1,576 @@
 [
  {
+  "id": "0838bef2edd27f9f",
+  "title": "Ars Live: Can the cloud survive drone strikes on data centers?",
+  "url": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-12T19:59:59+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "c5663bf2df987986",
+  "title": "젠슨 황, 엔비디아 CEO 사임…주가 14% 급락·후임 선정 착수",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217348",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T19:47:53+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "주가",
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "cluster_id": "c27f3de54f841358",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
+ },
+ {
+  "id": "341363dd4020e2e5",
+  "title": "Google’s latest Search upgrade promises better answers to your most complicated questions",
+  "url": "https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T19:27:45+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "d458704933992cfa",
+  "title": "Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash",
+  "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-12T19:23:03+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "rolls out"
+  ],
+  "score": 3,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "5b69826eead48a96",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "d77c24751633c870",
+  "title": "Nectar launches an AI agent to automate creator discovery and outreach for brands",
+  "url": "https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T19:11:00+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "launch",
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "84ec87286cb35a64",
+  "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+  "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-12T19:07:35+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "acfb8ed23481a99f",
+  "title": "Google faces calls for AI moratoriums in schools after Gemini pilot backlash",
+  "url": "https://arstechnica.com/tech-policy/2026/11/families-fight-to-keep-googles-disturbing-ai-off-school-issued-chromebooks/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-12T18:57:45+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "4a496b32dce8dcb7",
+  "title": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
+  "url": "https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T18:39:23+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "open source"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "5b69826eead48a96",
+  "title": "Introducing Gemini 4 Hydrogen",
+  "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-11-12T18:00:50+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introducing"
+  ],
+  "score": 5,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "5b69826eead48a96",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
+ },
+ {
+  "id": "9ccf02f3129f7388",
+  "title": "Hugging Face CEO vows to keep fighting for open source AI after Jensen Huang’s exit",
+  "url": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T17:36:40+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "open source",
+   "ceo"
+  ],
+  "score": 4,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Hugging Face"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "039c74dda2a3b52c",
+  "title": "United Airlines blocks AI agents from booking flights, citing cybersecurity risks",
+  "url": "https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T17:17:58+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "agent",
+   "risk"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "743bb9f48555c86c",
+  "title": "SoftBank’s billion-dollar loss may have put a cap on AI’s natural gas ambitions",
+  "url": "https://techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T17:00:52+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "6cb43935e4fe29e1",
+  "title": "Phota Labs uses AI to turn everyday photos into professional-looking shots",
+  "url": "https://techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T17:00:00+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7f38fc753bc5cf70",
+  "title": "Jensen Huang agrees to testify before Congress",
+  "url": "https://techcrunch.com/2026/11/12/jensen-huang-agrees-to-testify-before-congress/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T16:36:37+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "congress"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "bbffb3caeffafb11",
+  "title": "Five ways Jensen Huang’s ouster from Nvidia could damage the AI industry",
+  "url": "https://techcrunch.com/2026/11/12/five-ways-jensen-huangs-ouster-from-nvidia-could-damage-the-ai-industry/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T16:32:33+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "3fa90a6279ddb3ab",
+  "title": "Trump floats Apple chairman Tim Cook as Jensen Huang’s successor",
+  "url": "https://techcrunch.com/2026/11/12/trump-floats-apple-chairman-tim-cook-as-jensen-huangs-successor/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T16:12:44+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Apple"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "cfa2c9ae8aed46f7",
+  "title": "Jensen Huang is out at Nvidia — who is Colette Kress, his interim replacement?",
+  "url": "https://techcrunch.com/2026/11/12/jensen-huang-is-out-at-nvidia-who-is-colette-kress-his-interim-replacement/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T15:37:29+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "d57ecdb55e1ef8ef",
+  "title": "Norwest pushes deeper into AI with new $4B fund",
+  "url": "https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T15:18:14+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a3523f73e3129004",
+  "title": "Cyberattack on Fireworks AI allowed hackers to access Notion customers’ chat transcripts",
+  "url": "https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T15:02:28+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "c27f3de54f841358",
+  "title": "젠슨 황, 엔비디아 CEO 전격 사임… 최고재무책임자 '크레스' 임시 CEO 선임",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42715",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T14:58:12+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "cluster_id": "c27f3de54f841358",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
+ },
+ {
+  "id": "e730f1fd52f7736c",
+  "title": "Google pushes privacy angle as Gemini-powered smartglasses debut starting at $395",
+  "url": "https://arstechnica.com/google/2026/11/google-pushes-privacy-angle-as-gemini-powered-smartglasses-debut-starting-at-395/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-12T14:50:17+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "정책·규제·안전"
+  ],
+  "tags": [
+   "debut",
+   "privacy"
+  ],
+  "score": 4,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "33a3ed76b360bb53",
+  "title": "이 대통령, 충청권 392조원 메가프로젝트 본격화…AI·반도체 투자에 중소기업 참여 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42714",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T14:38:07+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "투자",
+   "반도체"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "4e4df9321c05b4fc",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
+  "id": "bb315cafa402d820",
+  "title": "A New Dawn in the Cloud: ‘Warhammer 40,000: Dawn of War IV’ Is Coming to GeForce NOW",
+  "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-12T14:00:59+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "c3081e111c43b364",
+  "title": "구글·삼성, AI 안경 시장 출사표… 12월10일 메타와 정식 격돌",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217346",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T14:00:00+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "시장"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind",
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "c9524909f9faf7a1",
+  "title": "인텔코리아, 국내 23개 기업과 ‘K-AI 풀스택 얼라이언스’ 출범…소버린 AI·피지컬 AI 생태계 구축",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42713",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T13:27:34+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "8922d709796f6fff",
+  "title": "Nine Korean startups vie for a spot in Disrupt 2027’s Startup Battlefield 200 competition",
+  "url": "https://techcrunch.com/2026/11/12/nine-korean-startups-vie-for-a-spot-in-disrupt-2027s-startup-battlefield-200-competition/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T13:26:25+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "startup"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "bcf4ef5528f8e7b5",
   "title": "인텔 아닐 난두리 부사장, “AI 에이전트 시대, GPU만으로는 부족”…차세대 추론 가속기 공개",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42712",
@@ -331,7 +902,10 @@
   "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 1,
+  "cluster_id": "4e4df9321c05b4fc",
+  "cluster_size": 2,
+  "cluster_sources": 2
  },
  {
   "id": "86c0e136204867d8",
@@ -1108,6 +1682,29 @@
   ],
   "score": 3,
   "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "cbda9238a3684b28",
+  "title": "The Definitive Fine-Tuning Guide for 3D Generation Models",
+  "url": "https://huggingface.co/blog/3d-lora-finetuning",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-12T20:22:02.018804+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "fine-tuning",
+   "model"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
   "relevant": true,
   "companies": [],
   "orgs": [],
