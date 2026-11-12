@@ -1,0 +1,630 @@
+{
+ "last_run": {
+  "started_at": "2026-11-12T04:19:15.973579+00:00",
+  "finished_at": "2026-11-12T04:19:49.154045+00:00",
+  "candidates": 898,
+  "added": 898,
+  "failed": [],
+  "noted": [],
+  "blocked": {}
+ },
+ "sources": {
+  "서울경제 금융": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 50,
+   "kept": 50,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 17
+   },
+   "filtered": [
+    "가계 빚 한 달 만에 반등했지만…당국 “총량 목표 내 관리 중”",
+    "고사하는 NPL 업계...채무불이행 업체도",
+    "젠슨 황 ‘간첩 스캔들’ 파장…美 의회, AI칩 수출 전면 봉쇄",
+    "내년 韓 성장률 3.1%도 보수적이라는 블룸버그·JP모건 “AI 투자 지속된다”",
+    "[단독]전세 대란인데…청년보증 22% 줄었다",
+    "우리銀, 퇴직연금시스템 한때 오류…고객·직원 혼란",
+    "엔비디아 덮친 ‘스파이·지분 분할’ 악재…삼전닉스 HBM 공급망 비상",
+    "BCG “韓 보험사 해외 진출 적기…선진국은 공동투자로 접근해야”",
+    "삼성화재, 英 캐노피우스 3조에 인수…북미·유럽 특수보험 시장 공략",
+    "삼성화재, KKR·KIC와 英 캐노피우스 3조에 인수"
+   ],
+   "oldest": "2026-11-09T01:16:32+00:00",
+   "newest": "2026-11-11T21:30:05+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "이데일리 금융": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 50,
+   "kept": 50,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 17
+   },
+   "filtered": [
+    "삼성화재, 3분기 누적 순익 1.8조…\"캐노피우스 인수로 글로벌 사업 확대\"",
+    "무상증자 정보로 수십억 부당이득…증선위, 벤처투자사 대표 등 고발",
+    "한화손보, 3분기 누적 당기순익 3114억원…손해율 개선에 보험손익 껑충",
+    "스마트폰 보고 걷다가 '쾅'…5년간 스몸비 사고 974건",
+    "디오니헬스케어, 피부세포 역노화 등 특허 2건 출원[마켓인]",
+    "[마켓인] 팔리는 기업만 팔린다…글로벌 PEF 엑시트 시장도 양극화",
+    "운용·진입 이어 실물자산까지…겹겹 규제에 갇힌 토종 PEF[마켓인]",
+    "꽉 막힌 국내시장, 해외로 눈 돌리는 보험업계",
+    "[마켓인]나신평도 ‘A+’…HD건설기계, 신평 3사 등급 상향 릴레이",
+    "[마켓인]사우디 7조원 '헛스윙'…PE 눈독에 韓 골프사업도 촉각"
+   ],
+   "oldest": "2026-11-08T21:00:07+00:00",
+   "newest": "2026-11-12T03:00:06+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "헤럴드경제 금융": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 46,
+   "kept": 46,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 13
+   },
+   "filtered": [
+    "사망보험금, 연금으로 당겨받기…신청자 절반이 55~64세 [H-EXCLUSIVE]",
+    "삼성화재, 3분기 누적 순익 1.8조…전년比 4.6%↑",
+    "막강 권한 ‘독립이사’ 전문성 관건…연임 이미 90%로 통과 ‘75%룰’ 실효성 의문도",
+    "교보생명 퇴직연금 DC형 1년 수익률 23.3%…15개 사업자 중 ‘1위’",
+    "인엑스, AI 전환 가속…프로덕트 엔지니어 채용",
+    "파이퍼, 이더파이와 생태계 협력…FYUSD 1000만달러 발행",
+    "6명 중 1명 폰 보며 횡단보도 건너…차 사고 과실 0%, 왜 모든 책임은 운전자만?",
+    "韓, 아세안 송금망 프로젝트 ‘넥서스’ 합류할까…장단점 살펴보니 [크립토360]",
+    "“AI가 더 싸게 사서 좋았는데…내가 먼저 산 항공권 환불 안 된다면?” [크립토360]",
+    "“실천하는 나눔, 사회 변화시키는 소중한 힘”"
+   ],
+   "oldest": "2026-11-10T08:01:04+00:00",
+   "newest": "2026-11-12T03:35:42+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "대한금융신문": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 50,
+   "kept": 50,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 18
+   },
+   "filtered": [
+    "[컨콜노트]메리츠도 해약준비금에 “부담 커졌다”",
+    "회장 검증 책임 커진 임추위…자문비 청구 근거는 공백",
+    "‘8주룰’에 뇌진탕 진단 늘까…깐깐해진 보험사",
+    "‘신종’ 발행에도…하나생명, 킥스 권고치 턱걸이",
+    "파죽지세 KB손보…차보험 점유율 ‘쑥’",
+    "새 성장모델 찾는 신한…미래는 계열사 인사에",
+    "진옥동의 용인술…정상혁 거취에 쏠린 눈",
+    "거래대금에 휘청, 미래에셋도 PBR 1배 밑으로",
+    "차기 생보협회장 '민간' 무게",
+    "반대매매 악순환 막는다…담보유지의무 한시 면제"
+   ],
+   "oldest": "2026-11-04T06:27:39+00:00",
+   "newest": "2026-11-12T02:02:51+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "한국은행 보도자료": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 100,
+   "kept": 14,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 3,
+    "too_old": 86
+   },
+   "filtered": [
+    "[보도자료] 치앙마이 이니셔티브 다자화(CMIM) 개정 협정문 발효",
+    "2026년 9월 국제수지(잠정)",
+    "[보도참고자료] 2026년 10월「물가상황점검회의」 개최"
+   ],
+   "oldest": "2026-08-04T07:00:00+00:00",
+   "newest": "2026-11-12T03:01:00+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "재정경제부 보도자료": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 40,
+   "kept": 36,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 30,
+    "too_old": 4
+   },
+   "filtered": [
+    "양극화 대응 총괄반 1차 회의 개최",
+    "영남권 메가프로젝트 이행 점검 TF 개최",
+    "비상경제장관회의 개최",
+    "[보도참고] '26.10월 고용동향 및 평가",
+    "새로운 성장동력 발굴을 위한 「2026 초혁신경제 포럼」 개최",
+    "제13차 관계부처 합동 일자리전담반(TF) 개최",
+    "이형일 부총리, 취임 후 첫 재경관 화상회의 개최",
+    "제19회 아시아 고위공무원 초청연수 실시",
+    "반도체 전문가 간담회 개최",
+    "제276차 대외경제장관회의 개최"
+   ],
+   "oldest": "2026-10-28T15:00:00+00:00",
+   "newest": "2026-11-12T01:17:02+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "한은·기준금리": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 48,
+   "kept": 48,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 23
+   },
+   "filtered": [
+    "신현송 한은 총재, BIS CPMI 의장 선임…비 서구권 최초 기록",
+    "신현송 한은 총재, BIS 지급·시장인프라위원회 이끈다...美·유럽 외 첫 의장",
+    "신현송 한은 총재, BIS CPMI 의장 선임…非美·유럽 최초",
+    "신현송 한은 총재, BIS CPMI 의장 선임…'비서구권' 최초",
+    "신현송 한은 총재, BIS ‘지급·시장인프라 위원회’ 의장 선출",
+    "[영상] 신현송 한은 총재 CPMI 의장 선임의 의미",
+    "신현송 한은 총재, CPMI 의장 선임",
+    "신현송 한은 총재, CPMI 의장 선임···첫 非미국·유럽총재",
+    "신현송 한은 총재, BIS CPMI 의장 선임…아시아 최초 - 머니투데이",
+    "신현송 한은 총재, BIS ‘지급 및 시장인프라 위원회’ 의장 선출"
+   ],
+   "oldest": "2026-11-10T01:10:00+00:00",
+   "newest": "2026-11-11T08:35:57+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "가계대출·예대금리": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 22,
+   "kept": 22,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-06T00:56:34+00:00",
+   "newest": "2026-11-12T00:29:49+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "가계부채·대출규제": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 47,
+   "kept": 47,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-05T04:44:00+00:00",
+   "newest": "2026-11-12T01:46:02+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "5대 은행": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 58,
+   "kept": 58,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 3
+   },
+   "filtered": [
+    "신한 이희건·진옥동 DNA 계승…정상혁 행장, 연임 '가속도'",
+    "홍콩 ELS 벼락 환입 1800억…순이익 1000억 뒤쳐진 KB국민, 신한 잡고 ‘리딩뱅크‘ 엎나",
+    "해킹에 보안 투자 늘리는 시중銀…피해 고객엔 보험·수수료 우대"
+   ],
+   "oldest": "2026-11-09T05:34:57+00:00",
+   "newest": "2026-11-12T02:23:15+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "인터넷·지방·국책은행": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 25,
+   "kept": 25,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-05T07:16:36+00:00",
+   "newest": "2026-11-11T22:40:14+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "대형 증권사": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 84,
+   "kept": 84,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 1
+   },
+   "filtered": [
+    "미래에셋 실적 '덜컹'…업황부진·스페이스X 평가손에 적자전환(종합)"
+   ],
+   "oldest": "2026-11-11T04:19:55+00:00",
+   "newest": "2026-11-12T03:12:02+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "증권업계": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 37,
+   "kept": 37,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-05T04:30:05+00:00",
+   "newest": "2026-11-12T03:00:06+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "자본시장 제도": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 42,
+   "kept": 42,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 28
+   },
+   "filtered": [
+    "삼전 현금 200조 돌파…올해 주주환원도 미래투자도 100조+α",
+    "신세계, 백화점·면세점 동반 호조… 주주환원 기대도↑-유진",
+    "대표 생일 게시글에도 주주환원 요구…뿔난 에이피알 주주들",
+    "‘3분기 적자’ 미래에셋...\"향후 스페이스X 실현이익으로 주주환원\"",
+    "주주환원 미루고 2조 투자…현금많은 저PBR 현대제철의 배수진",
+    "텔레포니카브라질, 3분기 순이익 30% 증가에 주주환원 확대로 주목",
+    "한진, 자사주 전량 소각 결정에 16%대 급증…주주환원 확대 기대감 쑥",
+    "브라이트스타로터리, 주주환원 확대와 이탈리아 로또 연장에 투자심리 개선",
+    "삼전닉스 올해 200조 주주환원에…“주가, 자사주 매입 아닌 ‘이것’을 봐라”",
+    "동아지질, 242억원 규모 주주환원 정책 발표"
+   ],
+   "oldest": "2026-11-05T05:13:16+00:00",
+   "newest": "2026-11-12T02:32:21+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "IPO·공모": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 58,
+   "kept": 58,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 2
+   },
+   "filtered": [
+    "엠비디, 공모가 7000원 확정…수요예측 경쟁률 187대 1",
+    "고병수 대구시의원 “138억원 들인 월배 공영주차장, 수요예측 적정했나”"
+   ],
+   "oldest": "2026-11-05T05:29:19+00:00",
+   "newest": "2026-11-11T20:11:48+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "금융위원회": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 25,
+   "kept": 25,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-05T07:03:50+00:00",
+   "newest": "2026-11-12T03:00:32+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "금융감독원": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 42,
+   "kept": 42,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-09T04:57:09+00:00",
+   "newest": "2026-11-12T03:00:06+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "소비자보호·내부통제": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 30,
+   "kept": 30,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 5
+   },
+   "filtered": [
+    "\"IT보안=CEO이슈\" CEO 책무구조도 제재 첫 사례 나오나 - 머니투데이",
+    "해킹 당했다고 CEO 제재 아니다…보안예산·보고체계가 '책무구조도' 첫 잣대",
+    "체크리스트만 늘었다…\"책무구조도, 형식적 규제만 매몰\" - 머니투데이",
+    "홍콩H지수 ELS 불완전판매 과징금 3년 만에 결론… 행정소송 여부 ‘촉각’",
+    "한투·미래에셋證, 해외법인 관리 난맥 노출 [내부통제 점검 ③]"
+   ],
+   "oldest": "2026-11-05T04:26:31+00:00",
+   "newest": "2026-11-12T02:03:49+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "핀테크 기업": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 34,
+   "kept": 34,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 5
+   },
+   "filtered": [
+    "LX판토스, 해외 취약계층 아동 지원에 2억원 기부",
+    "LX판토스, 해외 취약계층 아동 지원에 2억원 기부",
+    "비트고, 앱토스와 협력 강화… 기관 대상 온체인 시장 접근 지원",
+    "LX판토스, 국제사회 취약계층 어린이 지원에 2억원 기부",
+    "[단독] \"벽 타고 올라간 로봇이 상품 꺼내\"…LX판토스 'AI 물류랩' 첫 공개"
+   ],
+   "oldest": "2026-11-05T11:25:43+00:00",
+   "newest": "2026-11-12T01:53:02+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "가상자산 제도": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 30,
+   "kept": 29,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0,
+    "junk_title": 1
+   },
+   "filtered": [
+    "[노이즈 제목] 가상자산"
+   ],
+   "oldest": "2026-11-09T05:58:46+00:00",
+   "newest": "2026-11-12T03:11:39+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "스테이블코인·토큰증권": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 46,
+   "kept": 46,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-05T05:07:13+00:00",
+   "newest": "2026-11-12T02:42:46+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "카드사": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 44,
+   "kept": 44,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 0
+   },
+   "filtered": [],
+   "oldest": "2026-11-05T07:21:37+00:00",
+   "newest": "2026-11-12T01:00:00+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "search"
+  },
+  "금융위원회 보도자료": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 20,
+   "kept": 20,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 3
+   },
+   "filtered": [
+    "현재 유포되고 있는 부동산 대책 관련 게시글의 보도에 유의하여 주시기 바랍니다.",
+    "｢“취재정보로 매매해 ○○억 부당이득”···○○신문 조사 마무리｣ 보도 관련",
+    "한국, 아시아지배구조협회(ACGA) 기업지배구조 순위 역대급 ‘5위’ 달성"
+   ],
+   "oldest": "2026-11-02T00:00:00+00:00",
+   "newest": "2026-11-12T00:00:00+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "board"
+  },
+  "금융감독원 보도자료": {
+   "ok": true,
+   "last_run_at": "2026-11-12T04:19:15.973579+00:00",
+   "last_success_at": "2026-11-12T04:19:15.973579+00:00",
+   "consecutive_failures": 0,
+   "entries": 20,
+   "kept": 20,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 1
+   },
+   "filtered": [
+    "정부와 퇴직연금사업자가 함께 안정성과 수익성을 갖춘 퇴직연금 생태계를 만들어 나가겠습니다."
+   ],
+   "oldest": "2026-11-04T00:00:00+00:00",
+   "newest": "2026-11-12T00:00:00+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "board"
+  }
+ }
+}
