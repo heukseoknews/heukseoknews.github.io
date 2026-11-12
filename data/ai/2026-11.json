@@ -1,5 +1,140 @@
 [
  {
+  "id": "ff4ab51d13835e26",
+  "title": "알리바바, '큐원4' 첫 모델 공개…가중치·성능 평가 없이 프리뷰 출시",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217313",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T03:56:00+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "공개",
+   "출시",
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "Alibaba"
+  ],
+  "orgs": [],
+  "cluster_id": "c5b2f450eb20f778",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
+ },
+ {
+  "id": "493e1e4f2b5323f8",
+  "title": "네이버, AI 팩토리 2조원 첫 수주 확보…”10곳 이상과 추가 협상 중\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217303",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T03:45:08+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "AI 팩토리"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "네이버"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4e6a2fbf43176463",
+  "title": "구글, 차세대 경량 모델 '하이드로젠' 테스트…출시 임박 관측",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217308",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T03:22:39+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "출시",
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "d0923a9bc1280676",
+  "title": "Who could replace Jensen Huang? A highly unscientific list of possible successors",
+  "url": "https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T03:13:10+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "68a4df530faebd52",
+  "title": "구글, 판단 전용 AI '제미나이 디시전 1' 출시...질문 1000개 동시 처리",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217307",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T03:07:38+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시"
+  ],
+  "score": 4,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "af14948727ac3137",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "e3078d988d671cd9",
+  "title": "미 공화당, 젠슨 황 의회 소환장 발부 추진…사임 요구까지 등장",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217301",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T02:50:12+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "782d282ede2603ed",
   "title": "KT·마이크로소프트, 네트워크 문제 감지하는 AI 에이전트 개발…장애 탐지 10분에서 2~3분으로 단축",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42705",
@@ -45,7 +180,11 @@
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 4
+  "score_v2": 4,
+  "cluster_id": "af14948727ac3137",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "59a3e7dd1993c1f2",
@@ -586,6 +725,28 @@
    "월드모델·로보틱스"
   ],
   "score_v2": 2
+ },
+ {
+  "id": "e16da365b99d4d6d",
+  "title": "PDF version of 2026 Usage Policy - Google Docs",
+  "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPYm9TaGdVMmhoMW9Fb3BCZ2ZvNkE3NHVsc25YUHBxWlBlUXZOVGRLQkYyUEJCX2hvM3I4OG5oOC1GWUJLTmJuRlh6T3ItaFpkamdYY0NjNWh4bkNXSnl2V09lVGdnZGN2bHhZemM1RHlUbGtsalY4THJzWXIxWGIwRlRGUHNkaktCdUdFX3UtTERkQjUwanQ0cnBYWFd3dw?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-11T13:21:46+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "policy"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "fdae674c6e74db23",
@@ -1585,7 +1746,11 @@
    "Alibaba"
   ],
   "orgs": [],
-  "score_v2": 4
+  "score_v2": 4,
+  "cluster_id": "c5b2f450eb20f778",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "1153869638ee727c",
@@ -3255,6 +3420,29 @@
   "cluster_size": 2,
   "cluster_sources": 2,
   "score_v2": 1
+ },
+ {
+  "id": "3d23e8e3131d6bc4",
+  "title": "OnlyAct: Extracting Action Representations from Foundation Models for World Models",
+  "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5DNERpcjItTE41enZpR2tPUXAwUFlabmh5WFFsamRRQ3IxMkhUaERWV1VaRkRPa0lUdlR3UWxpVFREWGU1eXJhTU9NaTAxaFNp?oc=5",
+  "source": "alphaXiv",
+  "source_type": "media",
+  "published_at": "2026-11-10T08:00:00+00:00",
+  "collected_at": "2026-11-12T04:10:27.378932+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP",
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
  },
  {
   "id": "8fabc918dea85f4d",

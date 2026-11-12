@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-12T02:00:02.314029+00:00",
-  "finished_at": "2026-11-12T02:00:04.354819+00:00",
-  "candidates": 334,
-  "added": 18,
+  "started_at": "2026-11-12T04:10:27.378932+00:00",
+  "finished_at": "2026-11-12T04:10:29.651350+00:00",
+  "candidates": 336,
+  "added": 8,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 1381,
    "kept": 92,
@@ -36,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 15,
@@ -58,8 +58,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 904,
    "kept": 31,
@@ -80,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -105,17 +105,18 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 9
+    "low_relevance": 10
    },
    "filtered": [
+    "Who could replace Jensen Huang? A highly unscientific list of possible successors",
     "The unfolding Jensen Huang scandal: a timeline",
     "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
     "Jensen Huang accused of having another affair — with an Nvidia exec",
@@ -126,8 +127,8 @@
     "Is Jensen Huang’s bad behavior more commonplace than it seems?",
     "Nvidia’s crisis has corporate governance experts reaching for the popcorn"
    ],
-   "oldest": "2026-11-10T18:49:52+00:00",
-   "newest": "2026-11-11T23:50:00+00:00",
+   "oldest": "2026-11-10T19:03:52+00:00",
+   "newest": "2026-11-12T03:13:10+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -136,8 +137,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -161,30 +162,30 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 12
+    "low_relevance": 14
    },
    "filtered": [
+    "알리바바, '큐원4' 첫 모델 공개…가중치·성능 평가 없이 프리뷰 출시",
+    "구글, 차세대 경량 모델 '하이드로젠' 테스트…출시 임박 관측",
+    "미 공화당, 젠슨 황 의회 소환장 발부 추진…사임 요구까지 등장",
     "엔비디아 이사회, 젠슨 황 해임 논의 착수…주가 시간외 8% 급락",
     "나주, 공공비축미 8075톤 매입…건조벼 12일부터 시작",
     "순천 해룡면, 취약계층·독거노인 30세대 색칠놀이 프로그램 운영",
     "여수, LG화학 여수공장 IPA 생산시설 증설 검토에 행정지원",
     "전남광주, 광주 산단 20곳 환경오염물질 배출 점검",
     "포톤엣지큐, 서울대 산학협력단과 전고체 냉각기술 연구 협력",
-    "코어위브, 매출 168% 급증에도 부채 469억달러…투자 불안 여전",
-    "엔비디아, 젠슨 황 사건 조사 위해 뉴욕 유명 로펌 고용",
-    "디 인포메이션 \"젠슨 황 인맥으로 엔비디아 칩 10조원 규모 중국 공급\"",
-    "젠슨 황, 불륜 인정 1년 전부터 '성 스캔들 전문' PR 업체 고용"
+    "코어위브, 매출 168% 급증에도 부채 469억달러…투자 불안 여전"
    ],
-   "oldest": "2026-11-10T08:13:10+00:00",
-   "newest": "2026-11-12T00:56:27+00:00",
+   "oldest": "2026-11-10T08:50:00+00:00",
+   "newest": "2026-11-12T03:56:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -193,8 +194,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -219,11 +220,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
-   "entries": 24,
-   "kept": 20,
+   "entries": 25,
+   "kept": 21,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -237,7 +238,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-04T15:41:58+00:00",
-   "newest": "2026-11-11T23:24:08+00:00",
+   "newest": "2026-11-12T01:51:05+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -246,11 +247,11 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-12T02:00:02.314029+00:00",
-   "last_success_at": "2026-11-12T02:00:02.314029+00:00",
+   "last_run_at": "2026-11-12T04:10:27.378932+00:00",
+   "last_success_at": "2026-11-12T04:10:27.378932+00:00",
    "consecutive_failures": 0,
-   "entries": 18,
-   "kept": 18,
+   "entries": 19,
+   "kept": 19,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
