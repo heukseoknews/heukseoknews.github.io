@@ -10,12 +10,22 @@
     "sedaily.com": "서울경제",
     "fnnews.com": "파이낸셜뉴스",
     "asiae.co.kr": "아시아경제",
-    "einfomax.co.kr": "연합인포맥스"
+    "einfomax.co.kr": "연합인포맥스",
+    "kbanker.co.kr": "대한금융신문",
+    "ebn.co.kr": "EBN",
+    "dt.co.kr": "디지털타임스",
+    "cctoday.co.kr": "충청투데이",
+    "2news.co.kr": "에너지뉴스"
   },
   "names": {
     "마켓인": "이데일리",
     "매일경제 마켓": "매일경제",
     "이데일리TV": "이데일리",
-    "한경매거진": "한국경제"
+    "한경매거진": "한국경제",
+    "DFT 대한금융신문": "대한금융신문",
+    "www.ebn.co.kr": "EBN",
+    "www.dt.co.kr": "디지털타임스",
+    "www.cctoday.co.kr": "충청투데이",
+    "https://www.2news.co.kr/": "에너지뉴스"
   }
 }
