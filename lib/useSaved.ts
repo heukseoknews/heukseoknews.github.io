@@ -9,6 +9,8 @@ import { type Bookmark, type BookmarkPatch, type GroupKind, createGroup, deleteG
 
 export type Saved = UserState;
 const now = () => new Date().toISOString();
+/** 사용자 상태를 저장하면 같은 탭에 알린다(마이페이지 채널 탭 건수). 다른 탭은 storage 이벤트. */
+export const USER_STATE_EVENT = 'heukseok:user-state';
 
 /** 북마크·폴더·태그·읽음·확인시각·선택한 보험사: 채널별 사용자 상태. 저장은 어댑터(lib/storage.ts, 지금은 localStorage)가 맡는다. */
 export function useSaved() {
@@ -17,7 +19,11 @@ export function useSaved() {
   const [ready, setReady] = useState(false);
   useEffect(() => { setSaved(userStateStore.load(ch.slug, ch.storage?.legacy_keys)); setReady(true); }, [ch]);
   const update = useCallback((fn: (s: Saved) => Saved) => {
-    setSaved(s => { const n = fn(s); if (n !== s) userStateStore.save(ch.slug, n); return n; });
+    setSaved(s => {
+      const n = fn(s);
+      if (n !== s) { userStateStore.save(ch.slug, n); setTimeout(() => window.dispatchEvent(new Event(USER_STATE_EVENT)), 0); }
+      return n;
+    });
   }, [ch.slug]);
   const toggleBookmark = useCallback((a: Article) => update(s => toggleBm(s, a, ch.slug, now())), [update, ch.slug]);
   const unbookmark = useCallback((id: string) => update(s => removeBookmark(s, id, now())), [update]);
