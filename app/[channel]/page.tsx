@@ -176,8 +176,8 @@ export default function Home() {
     if (n.companies !== companies) setCompanies(n.companies);  // 보험사는 사용자 상태에 저장되므로 바뀔 때만
     setPage(1);
   };
-  const dChip = dateChip(dateFilter, today);
-  const chips = [...(dChip ? [dChip] : []), ...panelChips(panel, L, tab)];  // 날짜 칩 맨 앞(기본 '최근 3일'도 보임)
+  const dChip = dateChip(dateFilter, today, tab);
+  const chips = [...(dChip ? [dChip] : []), ...panelChips(panel, L, tab)];  // 날짜 칩 맨 앞(기본 '최근 3일'도 보임, 전체 기간을 고르면 '전체 기간' 칩)
   const filterBadge = badgeCount(chips, dState);  // 필터 버튼 배지: 기본 날짜는 세지 않음
   // Esc: 패널 안 드롭다운이 열려 있으면 드롭다운만(MultiFilter 가 닫음), 아니면 패널을 닫고 [필터] 버튼으로 포커스
   const onFilterKey = (e: React.KeyboardEvent) => {
@@ -213,7 +213,7 @@ export default function Home() {
       <button type="button" className="filterReset" disabled={!activeCount} onClick={resetFilters}><RotateCcw size={14} aria-hidden="true" /> 필터 초기화{activeCount > 0 && <b>{activeCount}</b>}</button>
     </div>
     {chips.length > 0 && <div className="filterChips" role="group" aria-label="켜진 필터">
-      {chips.map(c => <span key={c.key} className="chip">{c.kindLabel && <span className="chipKind">{c.kindLabel}</span>}{c.label}<button type="button" aria-label={`${c.kindLabel ? c.kindLabel + ' ' : ''}${c.label} 해제`} onClick={() => { if (c.kind === 'date') { setDateFilter(null); setPage(1); } else setPanel(removeChip(panel, c)); }}><X size={13} aria-hidden="true" /></button></span>)}
+      {chips.map(c => <span key={c.key} className="chip">{c.kindLabel && <span className="chipKind">{c.kindLabel}</span>}{c.label}<button type="button" aria-label={`${c.kindLabel ? c.kindLabel + ' ' : ''}${c.label} 해제`} onClick={() => { if (c.kind === 'date') { if (dateFilter) setDateFilter(null); else setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }); setPage(1); } else setPanel(removeChip(panel, c)); }}><X size={13} aria-hidden="true" /></button></span>)}
       {activeCount > 0 && <button type="button" className="chipClear" onClick={resetFilters}>필터 초기화</button>}  {/* 기본 날짜 칩만 있으면 되돌릴 것이 없다 */}
     </div>}
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />

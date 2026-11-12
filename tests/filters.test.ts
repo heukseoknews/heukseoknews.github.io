@@ -44,10 +44,11 @@ assert.match(page, /if \(n\.companies !== companies\) setCompanies\(n\.companies
 assert.match(page, /const companies = saved\.companies;/, '보험사 선택은 사용자 상태(저장)에서 읽는다');
 for (const k of ['MultiFilter label={L.sources}', 'MultiFilter label={L.companies}', 'MultiFilter label={L.orgs}', '안 읽은 것만', '관련도 낮은 기사 포함', 'className="filterReset"']) assert.ok(page.includes(k), `패널 안: ${k}`);
 
-// 날짜 조건 칩: '전체 기간'이 아니면 칩(기본 '최근 3일' 포함), 문구는 짧게
+// 날짜 조건 칩: 날짜가 걸려 있으면 칩(기본 '최근 3일' 포함), 기본과 다르면 '전체 기간'도 칩. 문구는 짧게
 const TODAY = '2026-11-12';  // 목요일, 이번 주 = 11-09(월)~11-15(일)
-assert.equal(dateChip(null, TODAY), null, '전체 기간이면 칩 없음');
-assert.deepEqual(dateChip({ from: TODAY, to: TODAY }, TODAY), { key: 'date', kind: 'date', kindLabel: '날짜', label: '오늘' });
+for (const t of ['new', 'press', 'bookmarks'] as const) assert.equal(dateChip(null, TODAY, t), null, `${t}: 기본이 전체 기간이면 칩 없음`);
+assert.deepEqual(dateChip(null, TODAY, 'all'), { key: 'date', kind: 'date', kindLabel: '날짜', label: '전체 기간' }, '전체 뉴스에서 전체 기간을 고르면 칩');
+assert.deepEqual(dateChip({ from: TODAY, to: TODAY }, TODAY, 'all'), { key: 'date', kind: 'date', kindLabel: '날짜', label: '오늘' });
 assert.equal(dateChipLabel({ from: '2026-11-11', to: '2026-11-11' }, TODAY), '어제');
 assert.equal(dateChipLabel({ from: '2026-11-02', to: '2026-11-02' }, TODAY), '11월 2일');
 const [ws, we] = [(await import('../lib/dates.ts')).weekRange(TODAY)][0];
@@ -71,19 +72,21 @@ assert.equal(dateState(null, 'all', TODAY), 'changed', '전체 뉴스에서 전�
 assert.equal(dateState(null, 'new', TODAY), 'default');
 assert.equal(dateState(recentRange(TODAY), 'new', TODAY), 'changed', '새 뉴스에서 최근 3일은 바꾼 것');
 // 배지 숫자: 기본 날짜 칩은 세지 않고, 바꾼 날짜는 센다
-const recentChip = dateChip(recentRange(TODAY), TODAY)!;
+const recentChip = dateChip(recentRange(TODAY), TODAY, 'all')!;
 const panel1 = panelChips({ ...none, sources: ['연합뉴스'] }, L, 'all');
 assert.equal(badgeCount([recentChip], 'default'), 0, '기본 상태 배지 없음');
 assert.equal(badgeCount([recentChip, ...panel1], 'default'), 1);
-assert.equal(badgeCount([dateChip({ from: TODAY, to: TODAY }, TODAY)!], 'today'), 1);
-assert.equal(badgeCount([dateChip({ from: '2026-11-02', to: '2026-11-02' }, TODAY)!, ...panel1], 'changed'), 2);
+assert.equal(badgeCount([dateChip({ from: TODAY, to: TODAY }, TODAY, 'all')!], 'today'), 1);
+assert.equal(badgeCount([dateChip(null, TODAY, 'all')!], dateState(null, 'all', TODAY)), 1, '전체 기간 칩은 배지 1');
+assert.equal(badgeCount([dateChip({ from: '2026-11-02', to: '2026-11-02' }, TODAY, 'all')!, ...panel1], 'changed'), 2);
 
 // 화면: 날짜 칩은 칩 줄 맨 앞(기본도 보임), 배지는 기본 날짜 제외, 해제하면 전체 기간, 초기화는 탭 기본(최근 3일)으로
 const pg = readFileSync('app/[channel]/page.tsx', 'utf8');
 assert.ok(pg.includes("const chips = [...(dChip ? [dChip] : []), ...panelChips(panel, L, tab)];"));
 assert.ok(pg.includes("const filterBadge = badgeCount(chips, dState);"));
 assert.ok(pg.includes("필터{filterBadge > 0 && <b aria-label={`켜진 필터 ${filterBadge}개`}>{filterBadge}</b>}"));
-assert.ok(pg.includes("if (c.kind === 'date') { setDateFilter(null); setPage(1); }"), '칩 해제 = 전체 기간');
+assert.ok(pg.includes("const dChip = dateChip(dateFilter, today, tab);"));
+assert.ok(pg.includes("if (c.kind === 'date') { if (dateFilter) setDateFilter(null); else setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }); setPage(1); }"), '칩 해제: 날짜 → 전체 기간, 전체 기간 칩 → 탭 기본');
 assert.ok(pg.includes("stored !== undefined ? stored : defaultDate(tab, today)"), '기본 날짜는 defaultDate');
 assert.ok(pg.includes("dState !== 'default' && { key: 'date',"), '초기화 배지: 바꾼 날짜만');
 assert.ok(pg.includes("filtered: active.some(f => f.key !== 'date'), date: dState"));

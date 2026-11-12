@@ -36,7 +36,7 @@ export function dateState(f: DateRange | null, tab: TabId, today: string): DateS
 /** 필터 버튼 배지 숫자: 칩 수에서 기본 날짜 칩은 뺀다(사용자가 날짜를 바꿨을 때만 날짜를 센다) */
 export const badgeCount = (chips: Chip[], date: DateState): number => chips.filter(c => c.kind !== 'date' || date !== 'default').length;
 
-/** 날짜 조건 칩 문구: 오늘·어제·최근 3일·이번 주, 그 밖 '11월 12일' 또는 '11월 6일~11월 12일'. 전체 기간(null)이면 칩 없음. */
+/** 날짜 조건 칩 문구: 오늘·어제·최근 3일·이번 주, 그 밖 '11월 12일' 또는 '11월 6일~11월 12일' */
 const md = (d: string) => `${Number(d.slice(5, 7))}월 ${Number(d.slice(8, 10))}일`;
 export function dateChipLabel(f: DateRange, today: string): string {
   if (f.from === f.to) return f.from === today ? '오늘' : f.from === addDays(today, -1) ? '어제' : md(f.from);
@@ -45,11 +45,13 @@ export function dateChipLabel(f: DateRange, today: string): string {
   if (f.from === ws && f.to === we) return '이번 주';
   return `${md(f.from)}~${md(f.to)}`;
 }
-/** 날짜 칩(필터 칩 줄 맨 앞). '전체 뉴스' 기본값 '최근 3일'도 칩으로 보인다(배지 숫자에는 세지 않음, badgeCount). */
-export const dateChip = (f: DateRange | null, today: string): Chip | null =>
-  f ? { key: 'date', kind: 'date', kindLabel: '날짜', label: dateChipLabel(f, today) } : null;
+/** 날짜 칩(필터 칩 줄 맨 앞). 날짜가 걸려 있으면 칩('전체 뉴스' 기본 '최근 3일'도 보이되 배지 숫자에는 세지 않음, badgeCount).
+ *  기본과 다르면 칩과 배지가 있다: '전체 뉴스'에서 전체 기간을 고르면 '전체 기간' 칩. 기본이 전체 기간인 탭은 칩 없음. */
+export const dateChip = (f: DateRange | null, today: string, tab: TabId): Chip | null =>
+  f ? { key: 'date', kind: 'date', kindLabel: '날짜', label: dateChipLabel(f, today) }
+    : defaultDate(tab, today) ? { key: 'date', kind: 'date', kindLabel: '날짜', label: '전체 기간' } : null;
 
-/** 칩 하나 해제(날짜 칩은 화면이 날짜 조건을 '전체 기간'으로 바꾼다) */
+/** 칩 하나 해제(날짜 칩은 화면이 처리: 날짜가 걸려 있으면 '전체 기간'으로, '전체 기간' 칩이면 탭 기본으로) */
 export function removeChip(f: PanelFilters, chip: Pick<Chip, 'kind' | 'value'>): PanelFilters {
   switch (chip.kind) {
     case 'unread': return { ...f, unreadOnly: false };
