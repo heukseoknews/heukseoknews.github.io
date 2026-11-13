@@ -1,8 +1,9 @@
 'use client';
-import { Bookmark, ChevronDown, EyeOff, ExternalLink, RotateCcw } from 'lucide-react';
+import { Bookmark, ChevronDown, EyeOff, ExternalLink, MessageCirclePlus, RotateCcw } from 'lucide-react';
 import { Article, isSafeUrl } from '../lib/news';
 import { useChannel } from '../lib/channelContext';
 import { stars } from '../lib/stars';
+import { useChatShare } from '../lib/chatShare';
 
 /** 같은 사건 묶음(대표 카드에만). others: 불러온 같은 묶음 기사(대표 제외), size·sources: 데이터의 묶음 기사 수·매체 수. */
 export type CardGroup = {
@@ -27,7 +28,8 @@ const pop = (e: React.MouseEvent<HTMLButtonElement>) => { const el = e.currentTa
 const unpop = (e: React.AnimationEvent<HTMLButtonElement>) => e.currentTarget.classList.remove('pop');
 
 export default function ArticleCard({ a, bookmarked, read, rank, fading, group, dismiss, onBookmark, onRead }: Props) {
-  const { fmt } = useChannel();
+  const { fmt, slug } = useChannel();
+  const share = useChatShare();   // 로그인을 켠 빌드 + 로그인 상태에서만 [채팅에 올리기]
   const s = stars(a);
   const listId = `grp-${a.id}`;
   const gone = !!dismiss?.dismissed;
@@ -68,6 +70,7 @@ export default function ArticleCard({ a, bookmarked, read, rank, fading, group, 
         ? <button type="button" aria-label="되돌리기(새 뉴스에 다시 보이기)" title="되돌리기" className="readBtn dismissBtn" onClick={() => dismiss.onRestore(a.id)}><RotateCcw size={19} aria-hidden="true" /></button>
         : <button type="button" aria-label="치우기(새 뉴스에서 빼기)" title="치우기" className="readBtn dismissBtn" onClick={() => dismiss.onDismiss(a.id)}><EyeOff size={19} aria-hidden="true" /></button>)}
       <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={e => { pop(e); onBookmark(a); }} onAnimationEnd={unpop}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
+      {share && isSafeUrl(a.url) && <button type="button" aria-label="채팅에 올리기" title="채팅에 올리기" className="readBtn shareBtn" onClick={() => share(a, slug)}><MessageCirclePlus size={19} aria-hidden="true" /></button>}
     </div>
   </article>;
 }

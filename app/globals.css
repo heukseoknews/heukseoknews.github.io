@@ -321,6 +321,63 @@ html[data-auth="leaving"] body{visibility:hidden}
 .claimBar button:first-of-type{background:var(--accent);border-color:var(--accent);color:#fff}.claimBar button:disabled{opacity:.6}
 @media(hover:hover){.claimBar button:not(:first-of-type):not(:disabled):hover{border-color:var(--accent);color:var(--accent-strong)}}
 .bmTag.fixed{cursor:default;opacity:.85}
+/* ───── 채팅(/chat/, components/ChatRoom.tsx). 헤더 '채팅' 링크는 마이페이지 버튼과 같은 모양(.meBtn) ───── */
+.siteNav .utilNav ul .chatSlot{margin-right:8px}
+@media(max-width:640px){.siteNav .utilNav ul .chatSlot{margin-right:0}}
+.chatMain{max-width:1100px;margin:0 auto;padding:0 24px}
+.chatShell{position:relative;display:flex;flex-direction:column;height:var(--chat-h,calc(100dvh - 68px));min-height:240px}
+.chatTop{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;padding:8px 0;border-bottom:1px solid var(--line-soft)}
+.chatNote{margin:0;font-size:var(--fs-12);color:var(--muted)}
+.chatConn{font-size:var(--fs-12);color:#a54235}
+.chatList{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 2px}
+.chatMsgs{list-style:none;margin:0;padding:8px 0;display:flex;flex-direction:column;gap:8px}
+.chatDay{display:flex;align-items:center;gap:10px;margin:8px 0 2px;font-size:var(--fs-12);color:var(--muted)}.chatDay::before,.chatDay::after{content:"";flex:1;border-top:1px solid var(--line)}
+.msg{align-self:flex-start;max-width:min(80%,640px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:7px 12px 9px}
+.msg.mine{align-self:flex-end;background:var(--accent-soft);border-color:transparent}
+.msg.pending{opacity:.7}.msg.failed{opacity:1;border-color:#a54235}
+.msg.gone{background:transparent;border-style:dashed;border-color:var(--line)}
+.msgHead{display:flex;align-items:center;flex-wrap:wrap;gap:2px 8px;font-size:var(--fs-12);color:var(--muted);min-height:22px}
+.msgWho{color:var(--text-2);font-weight:700;overflow-wrap:anywhere}
+.msgBody{margin:2px 0 0;font-size:15px;line-height:1.55;color:var(--text);white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal}
+.msgBody.muted{color:var(--muted);font-size:var(--fs-14)}
+.msgAct{background:none;border:0;border-radius:6px;padding:2px 6px;font-size:var(--fs-12);color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.msgAct.danger{color:#a54235;font-weight:700}
+.msgConfirm{display:inline-flex;align-items:center;gap:2px;color:var(--text-2)}
+.msgState{color:var(--muted)}.msgFail{color:#a54235;font-size:var(--fs-12)}
+.msg>.msgFail{margin:4px 0 0}
+.chatArt{position:relative;display:flex;flex-direction:column;gap:2px;margin-top:6px;padding:8px 30px 8px 10px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--c-accent,var(--accent));border-radius:8px;color:var(--text);text-decoration:none;min-width:0}
+.chatArtTop{display:flex;align-items:center;flex-wrap:wrap;gap:2px 8px;font-size:var(--fs-12);color:var(--muted)}
+.chatArtCh{background:var(--c-soft,var(--accent-soft));color:var(--text-2);border-radius:var(--r-sm);padding:0 6px;font-weight:700}
+.chatArtTitle{font-size:var(--fs-14);font-weight:600;line-height:1.45;overflow-wrap:anywhere}
+.chatArtGo{position:absolute;top:9px;right:9px;color:var(--subtle)}
+.chatNew{position:sticky;bottom:8px;display:flex;align-items:center;gap:4px;width:max-content;margin:0 auto;min-height:36px;padding:0 14px;border:0;border-radius:var(--r-pill);background:var(--accent);color:#fff;font-size:var(--fs-13);font-weight:700;box-shadow:0 4px 12px #0002}
+.chatOlder{display:block;margin:8px auto 0}
+.chatEmpty{margin:0;padding:32px 0;text-align:center;font-size:var(--fs-14);color:var(--muted)}
+.chatDown{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:0;padding:56px 0;color:var(--muted);font-size:var(--fs-14)}
+.chatDown .readToggle{display:inline-flex;align-items:center;gap:5px}
+.chatForm{position:relative;border-top:1px solid var(--line);background:var(--bg);padding:8px 0 calc(8px + env(safe-area-inset-bottom))}
+.chatInputRow{display:flex;align-items:flex-end;gap:8px}
+.chatInput{flex:1;min-width:0;min-height:44px;max-height:160px;resize:none;border:1px solid var(--line-strong);border-radius:var(--r-md);padding:10px 12px;font:inherit;font-size:var(--fs-16);line-height:1.45;color:var(--text);background:var(--surface);overflow-y:auto}
+.chatInput:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.chatAttachBtn{display:inline-flex;align-items:center;gap:6px;min-height:44px;white-space:nowrap}
+.chatAttachBtn[aria-expanded="true"]{color:var(--brand);border-color:var(--brand)}
+.chatSend{width:44px;height:44px;justify-content:center;padding:0;border-radius:var(--r-md);flex-shrink:0}.chatSend:disabled{opacity:.45}
+.chatAttached{display:flex;align-items:flex-start;gap:6px;margin-bottom:8px}.chatAttached .chatArt{flex:1;margin:0}
+.chatHint{display:flex;align-items:center;gap:8px;margin:4px 0 0;font-size:var(--fs-12)}
+.chatCount{margin-left:auto;color:var(--muted)}.chatCount.over{color:#a54235;font-weight:700}
+.iconBtn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;flex-shrink:0;background:none;border:0;border-radius:8px;color:var(--muted)}
+.chatPick{position:absolute;left:0;right:0;bottom:100%;z-index:20;display:flex;flex-direction:column;max-height:min(60dvh,440px);margin-bottom:6px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px #1a28391f;padding:8px 10px}
+.chatPickHead{display:flex;align-items:center;justify-content:space-between;font-size:var(--fs-14)}
+.chatPickCh{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
+.chatPickTools{display:flex;gap:8px;align-items:center}.chatPickTools select{height:36px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--text-2);font-size:var(--fs-13);max-width:45%}
+.chatPickTools .msSearch{flex:1;margin:0}
+.chatPickList{list-style:none;margin:6px 0 0;padding:0;overflow-y:auto;min-height:0}
+.chatPickList button{display:flex;flex-direction:column;gap:2px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line-soft);border-left:3px solid var(--c-accent,var(--accent));padding:9px 8px;color:var(--text)}
+.chatPickList button:disabled{opacity:.5}
+.pickTitle{font-size:var(--fs-14);font-weight:600;line-height:1.4;overflow-wrap:anywhere}.pickMeta{font-size:var(--fs-12);color:var(--muted)}
+@media(hover:hover){.msgAct:hover,.iconBtn:hover{color:var(--accent-strong);background:var(--accent-soft)}.msgAct.danger:hover{color:#a54235}.chatPickList button:not(:disabled):hover{background:var(--bg)}.chatArt[href]:hover .chatArtTitle{color:var(--accent);text-decoration:underline}.chatNew:hover{background:var(--accent-strong)}}
+@media(max-width:680px){.chatMain{padding:0 12px}.msg{max-width:88%}}
+@media(max-width:480px){.chatAttachBtn{padding:0 11px}.chatAttachBtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}}
 /* ───── 미세 상호작용(누르는 느낌). transform·opacity·색만 바꾸고 크기·여백은 그대로(틀 측정 영향 없음). 0.12~0.2초.
    hover 는 (hover:hover) 안에서만, '동작 줄이기'를 켠 사용자는 모두 끈다(맨 아래). 색은 채널 변수(--accent 등)만 쓴다 ───── */
 :where(button,a.confirm,a.chBtn,a.meBtn,a.loginLink,a.acctItem,.meCh){transition:transform .14s ease,background-color .14s ease,border-color .14s ease,color .14s ease}

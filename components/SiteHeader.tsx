@@ -21,8 +21,9 @@ const MAIN = [['', '뉴스'], ['week/', '이번 주 핵심'], ['trends/', '키�
 
 /** 채널 페이지 공통 헤더(상단 고정): 워드마크(홈 /) · 채널명 · 주 메뉴 · 마이페이지. ≤640px 에서는 햄버거 메뉴로 접힌다.
  *  채널 이동 줄은 헤더 아래 ChannelSwitcher. 수집 지연일 때만 배지(링크 아님)를 보인다.
- *  me: 마이페이지(/me/) — 채널명 자리에 '마이페이지', 주 메뉴는 공개 채널의 뉴스로 가는 링크. */
-export default function SiteHeader({ me = false }: { me?: boolean }) {
+ *  me: 마이페이지(/me/) — 채널명 자리에 '마이페이지', 주 메뉴는 공개 채널의 뉴스로 가는 링크.
+ *  label: 채널과 무관한 다른 화면(채팅 /chat/)이 me 틀을 쓰면서 채널명 자리 글자만 바꿀 때. */
+export default function SiteHeader({ me = false, label }: { me?: boolean; label?: string }) {
   const pathname = usePathname();
   const ch = useChannel();
   const [open, setOpen] = useState(false);
@@ -54,7 +55,7 @@ export default function SiteHeader({ me = false }: { me?: boolean }) {
     <div className="siteHeaderInner">
       <div className="siteBrand">
         <Link href="/" className="brandHome" aria-label={`${SITE.name} 홈`}><Wordmark /></Link>
-        <span className={'chName' + (me ? '' : ' fixed')} style={me ? undefined : { width: CHANNEL_NAME_WIDTH }}>{me ? '마이페이지' : ch.name}</span>
+        <span className={'chName' + (me ? '' : ' fixed')} style={me ? undefined : { width: CHANNEL_NAME_WIDTH }}>{me ? (label ?? '마이페이지') : ch.name}</span>
       </div>
       <button ref={btn} type="button" className="menuBtn" aria-label={open ? '메뉴 닫기' : '메뉴 열기'} aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(o => !o)}>
         {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
