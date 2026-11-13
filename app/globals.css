@@ -294,8 +294,8 @@ html[data-auth="leaving"] body{visibility:hidden}
 .acctWho{margin:0;padding:8px 10px 10px;border-bottom:1px solid var(--line-soft);display:flex;flex-direction:column;line-height:1.4}.acctWho b{font-size:var(--fs-14);overflow-wrap:anywhere}.acctWho span{font-size:var(--fs-13);color:var(--muted)}
 .siteNav .utilNav ul .acctItem,.acctItem{display:flex;align-items:center;gap:8px;width:100%;min-height:40px;padding:0 10px;border:0;border-radius:var(--r-sm);background:none;color:var(--text-2);font-size:var(--fs-14);font-weight:500;text-decoration:none;text-align:left}
 .acctItem:hover{background:var(--bg);color:var(--accent-strong)}
-.siteNav .utilNav ul a.loginLink{font-weight:600;color:var(--accent-strong)}
-.homeTop nav>div{display:flex;align-items:center}.homeTop .acctSlot{display:flex;align-items:center}.homeTop .acctSlot+.acctSlot{margin-left:12px}
+.siteNav .utilNav ul a.loginLink{color:var(--accent-strong)}
+.homeTop nav>div{display:flex;align-items:center}.homeTop .acctSlot{display:flex;align-items:center}
 @media(max-width:640px){
  .siteNav .utilNav .acctBtn{display:none}
  .acctPanel{display:block;position:static;box-shadow:none;border:0;padding:0;min-width:0;max-width:none}

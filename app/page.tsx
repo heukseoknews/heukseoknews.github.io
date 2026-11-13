@@ -15,7 +15,7 @@ const meLink = <a href={ME_HOME}><UserRound size={18} aria-hidden="true" />마�
 export default function Home() {
   return <div className="home">
     <script dangerouslySetInnerHTML={{ __html: IMPORT_REDIRECT_JS }} />
-    <div className="homeTop"><nav aria-label="보조 메뉴">{AUTH_MODE === 'off' ? meLink : <AccountMenu as="div" meLink={meLink} meHref={ME_HOME} />}</nav></div>
+    <div className="homeTop"><nav aria-label="보조 메뉴">{AUTH_MODE === 'off' ? meLink : <AccountMenu as="div" meHref={ME_HOME} />}</nav></div>
     <main className="homeMain" id="content">
       <header className="homeHero">
         <h1><span className="srOnly">{SITE.name}</span><Wordmark /></h1>

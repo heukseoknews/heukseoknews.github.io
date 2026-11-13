@@ -4,7 +4,7 @@ import { authModeOf } from '../lib/authConfig.ts';
 import {
   type Account, type AccountRow, type AuthBackend, type KV, type PwFail, type SignInFail,
   CHANGE_PATH, LOGIN_ID_KEY, LOGIN_PATH, MSG, SESSION_KEY, accountKey, changeHref, changePassword, decideGate, enterChange,
-  gateScript, isValidId, login, loginHref, logout, normalizeId, passwordProblem, readAccount, refreshAccount, safeNext, sessionUser, toEmail,
+  gateScript, headerSlot, isValidId, login, signedState, loginHref, logout, normalizeId, passwordProblem, readAccount, refreshAccount, safeNext, sessionUser, toEmail,
 } from '../lib/auth.ts';
 
 // ---------- 아이디 → 내부 이메일 ----------
@@ -221,8 +221,29 @@ for (const mode of ['optional', 'required'] as const)
   assert.equal(kv.get(LOGIN_ID_KEY), 'kim01', '저장한 아이디 유지');
 }
 
-// ---------- 화면 코드: 스위치 꺼짐이면 지금 그대로, publishable 키만, 비밀번호 출력 없음 ----------
 const src = (f: string) => readFileSync(f, 'utf8');
+// ---------- 헤더 오른쪽 자리: 로그인 상태와 로그아웃 상태가 함께 보이지 않는다 ----------
+assert.equal(headerSlot('off', 'unknown'), 'me', '로그인 기능이 없으면 지금처럼 마이페이지 버튼');
+assert.equal(headerSlot('off', 'out'), 'me');
+for (const mode of ['optional', 'required'] as const) {
+  assert.equal(headerSlot(mode, 'in'), 'account', `${mode}: 로그인 → 계정 메뉴`);
+  assert.equal(headerSlot(mode, 'out'), 'login', `${mode}: 로그아웃 → 로그인 하나`);
+  assert.equal(headerSlot(mode, 'unknown'), 'none', `${mode}: 확인 전에는 비움`);
+}
+{
+  // 로그인 상태 → 로그아웃 → 헤더에 계정 메뉴 없음, 로그인 링크 있음(새로고침 없이 같은 저장소를 다시 읽은 결과)
+  const kv = kvOf({ [SESSION_KEY]: SESSION(), [accountKey('u1')]: JSON.stringify(ACC(false)) });
+  assert.equal(headerSlot('optional', signedState(kv)), 'account');
+  await logout(fake(kv), kv);
+  assert.equal(signedState(kv), 'out');
+  for (const mode of ['optional', 'required'] as const) assert.equal(headerSlot(mode, signedState(kv)), 'login');
+}
+const menu = src('components/AccountMenu.tsx');
+assert.ok(menu.includes('headerSlot(AUTH_MODE, acc.state)') && !menu.includes('meLink'), '켜진 빌드의 헤더는 headerSlot 으로만 정하고 마이페이지 버튼을 따로 그리지 않음');
+assert.ok(menu.includes('className="meBtn loginLink"'), '로그인 링크는 마이페이지·계정 버튼과 같은 모양·높이');
+assert.ok(menu.includes('notifyAuth();') && src('lib/useAccount.ts').includes('AUTH_EVENT'), '로그아웃 즉시 헤더 갱신');
+
+// ---------- 화면 코드: 스위치 꺼짐이면 지금 그대로, publishable 키만, 비밀번호 출력 없음 ----------
 assert.ok(src('app/layout.tsx').includes("{AUTH_MODE === 'off' ? children : <AuthGate>{children}</AuthGate>}"));
 assert.ok(src('components/SiteHeader.tsx').includes("{AUTH_MODE === 'off' ? <li>{meLink}</li> : <AccountMenu"));
 assert.ok(src('app/page.tsx').includes("{AUTH_MODE === 'off' ? meLink : <AccountMenu"));

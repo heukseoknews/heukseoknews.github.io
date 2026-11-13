@@ -61,7 +61,7 @@ export default function SiteHeader({ me = false }: { me?: boolean }) {
       </button>
       <div id="site-nav" className={'siteNav' + (open ? ' open' : '')}>
         <nav aria-label="사이트 메뉴"><ul>{mainItems}</ul></nav>
-        <nav aria-label="보조 메뉴" className="utilNav"><ul>{AUTH_MODE === 'off' ? <li>{meLink}</li> : <AccountMenu meLink={meLink} meHref={meHref(ME_HOME, ch.slug)} />}</ul></nav>
+        <nav aria-label="보조 메뉴" className="utilNav"><ul>{AUTH_MODE === 'off' ? <li>{meLink}</li> : <AccountMenu meHref={meHref(ME_HOME, ch.slug)} />}</ul></nav>
         {stale && finished && <span className="collectBadge warn" role="status" title={`마지막 수집 ${ch.fmt(finished)}`}>수집 지연</span>}
       </div>
     </div>

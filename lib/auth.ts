@@ -85,6 +85,20 @@ export const writeAccount = (kv: KV, userId: string, a: Account) => kv.set(accou
 /** 헤더에 보일 이름: 표시 이름, 없으면 아이디 */
 export const shownName = (a: Pick<Account, 'loginId' | 'displayName'>) => a.displayName?.trim() || a.loginId;
 
+// ───── 헤더 오른쪽 자리 ─────
+/** 헤더 오른쪽에 무엇을 보일지. 두 상태가 함께 보이는 일이 없게 한 곳에서 정한다.
+ *  - off(로그인 기능 없음): 지금처럼 마이페이지 버튼(기기 안 북마크·내 데이터)
+ *  - 로그인 상태: 계정 메뉴(표시 이름 → 마이페이지·로그아웃)
+ *  - 로그아웃 상태: '로그인' 하나
+ *  - 확인 전(정적 HTML·첫 렌더): 비워 둔다(로그아웃 상태에 다른 버튼이 잠깐 보이지 않게) */
+export type HeaderSlot = 'me' | 'account' | 'login' | 'none';
+export function headerSlot(mode: AuthMode, state: 'unknown' | 'out' | 'in'): HeaderSlot {
+  if (mode === 'off') return 'me';
+  return state === 'in' ? 'account' : state === 'out' ? 'login' : 'none';
+}
+/** 저장된 세션으로 본 로그인 여부(서버에 묻지 않음) */
+export const signedState = (kv: KV): 'in' | 'out' => sessionUser(kv) ? 'in' : 'out';
+
 // ───── 장벽 판정 ─────
 export type Gate = 'open' | 'login' | 'change';
 /** 어느 화면을 보일지. 서버에 묻지 않고 저장된 세션·사본만 본다(서버가 안 될 때도 같은 답 = 마지막으로 알려진 상태).

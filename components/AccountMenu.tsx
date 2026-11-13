@@ -2,17 +2,17 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LogOut, UserRound } from 'lucide-react';
+import { LogIn, LogOut, UserRound } from 'lucide-react';
 import { AUTH_MODE } from '../lib/authConfig';
-import { browserKV, LOGIN_PATH, loginHref, logout } from '../lib/auth';
+import { browserKV, headerSlot, LOGIN_PATH, loginHref, logout } from '../lib/auth';
 import { supabaseBackend } from '../lib/authBackend';
 import { notifyAuth, useAccount } from '../lib/useAccount';
 
-/** 헤더 오른쪽 계정 자리(로그인을 켠 빌드에서만 쓴다. 꺼진 빌드는 기존 마이페이지 버튼 그대로).
+/** 헤더 오른쪽 계정 자리(로그인을 켠 빌드에서만 쓴다. 꺼진 빌드는 기존 마이페이지 버튼 그대로). 무엇을 보일지는 lib/auth.ts headerSlot.
  *  로그인 상태: [표시 이름] 버튼 → 표시 이름·아이디, 마이페이지, 로그아웃. ≤640px(햄버거 안)에서는 버튼 없이 목록으로 펼친다.
- *  로그인 전·확인 전: 기존 마이페이지 버튼(meLink), optional 모드면 '로그인' 진입을 더한다.
+ *  로그아웃 상태: '로그인' 하나(마이페이지 버튼과 같은 모양·높이). 확인 전: 비움.
  *  표시 이름이 길어도 자리 폭이 넘치지 않게 말줄임(최대 폭 고정). */
-export default function AccountMenu({ meLink, meHref, as: Tag = 'li' }: { meLink: React.ReactNode; meHref: string; as?: 'li' | 'div' }) {
+export default function AccountMenu({ meHref, as: Tag = 'li' }: { meHref: string; as?: 'li' | 'div' }) {
   const acc = useAccount();
   const path = usePathname() || '/';
   const [open, setOpen] = useState(false);
@@ -29,10 +29,9 @@ export default function AccountMenu({ meLink, meHref, as: Tag = 'li' }: { meLink
     return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('mousedown', onDown); };
   }, [open]);
 
-  if (acc.state !== 'in') return <>
-    <Tag className="acctSlot">{meLink}</Tag>
-    {AUTH_MODE === 'optional' && acc.state === 'out' && <Tag className="acctSlot"><Link href={loginHref(path)} className="loginLink">로그인</Link></Tag>}
-  </>;
+  const slot = headerSlot(AUTH_MODE, acc.state);
+  if (slot === 'none') return null;
+  if (slot === 'login' || acc.state !== 'in') return <Tag className="acctSlot"><Link href={loginHref(path)} className="meBtn loginLink"><LogIn size={17} aria-hidden="true" />로그인</Link></Tag>;
 
   const name = acc.name || acc.loginId || '내 계정';
   const signOut = async () => {
