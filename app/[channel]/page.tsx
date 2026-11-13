@@ -14,7 +14,7 @@ import { facetOptions, matchesFacet } from '../../lib/facets';
 import { type PanelFilters, badgeCount, dateChip, dateState, defaultDate, onTabChange, panelChips, removeChip } from '../../lib/filterState';
 import { addDays, countByDate, dayHeading, kstDate, shiftMonth, todayKst } from '../../lib/dates';
 import { sourceOptions } from '../../lib/sources';
-import { isNewArticle, isUnreadNew, visibleInNewTab } from '../../lib/newsFilter';
+import { isNewArticle, isPendingNew, visibleInNewTab } from '../../lib/newsFilter';
 import { useNews } from '../../lib/useNews';
 import { useSaved } from '../../lib/useSaved';
 import { fillMissing, toArticle } from '../../lib/bookmarks';
@@ -49,11 +49,11 @@ export default function Home() {
   // 패널을 열면 첫 항목(언론사)으로 포커스. 닫을 때(Esc)는 onFilterKey 가 [필터] 버튼으로 돌려보낸다
   useEffect(() => { if (filterOpen) filterPanel.current?.querySelector<HTMLElement>('button, input')?.focus(); }, [filterOpen]);
   const [calMonth, setCalMonth] = useState(todayKst().slice(0, 7));
-  const [showRead, setShowRead] = useState(false);            // 새 뉴스 탭: 읽은 기사 다시 보기(기본 숨김)
-  const [justRead, setJustRead] = useState<Set<string>>(new Set()); // 방금 읽어 곧 사라질 카드(짧은 페이드 후 제거)
+  const [includeDismissed, setIncludeDismissed] = useState(false); // 새 뉴스 탭: 치운 기사 포함(기본 꺼짐 = 숨김)
+  const [leaving, setLeaving] = useState<Set<string>>(new Set());    // 방금 치워 곧 사라질 카드(짧은 페이드 후 제거)
   const timers = useRef<number[]>([]);
   const savedApi = useSaved();
-  const { saved, ready, update, markRead, unmarkRead, setCompanies, readSet, bookmarkList, isBookmarked } = savedApi;
+  const { saved, ready, update, markRead, dismiss, undismiss, dismissedSet, setCompanies, readSet, bookmarkList, isBookmarked } = savedApi;
   // 기사 정보가 없는 옛 북마크(v1 이전분)는 기사 데이터를 불러오면 채운다. 채우기 전에는 북마크 탭에서 빼고 마이페이지에서만 보인다
   const bookmarkArticles = useMemo(() => bookmarkList.filter(b => !b.missing).map(toArticle), [bookmarkList]);
   const companies = saved.companies;  // 선택한 보험사(비면 전체) — 사용자 상태에 저장(새로고침 후에도 유지)
@@ -61,44 +61,51 @@ export default function Home() {
   const { index, all, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : [shiftMonth(calMonth, -1), calMonth, shiftMonth(calMonth, 1)]);
   const baseline = saved.lastConfirmed;
   useEffect(() => { if (all.length && bookmarkList.some(b => b.missing)) update(s => fillMissing(s, all)); }, [all, bookmarkList, update]);
-  const [undo, setUndo] = useState<{ ids: string[]; n: number } | null>(null); // 읽음 버튼 직후 5초간 '되돌리기'(마지막 한 번만)
-  // 새 뉴스 탭에서 카드 하나 = 사건 하나: 카드를 읽으면 같은 사건의 아직 안 읽은 새 기사도 함께 읽음(아래 목록 계산 뒤에 채움)
-  const eventIds = useRef<(id: string) => string[]>(id => [id]);
+  const [undo, setUndo] = useState<{ ids: string[]; n: number } | null>(null); // 치우기 직후 5초간 '되돌리기'(마지막 한 번만)
+  // 새 뉴스 탭에서 카드 하나 = 사건 하나: 카드를 치우면 같은 사건의 아직 치우지 않은 새 기사도 함께 치운다(되돌리기는 치운 것 전부). 아래 목록 계산 뒤에 채움
+  const eventIds = useRef<(id: string, dismissed: boolean) => string[]>(id => [id]);
   const undoTimer = useRef<number | undefined>(undefined);
-  // 북마크: 저장하면 '정리'(폴더·태그·메모), 해제하면 '되돌리기' 안내. 안내는 한 번에 하나만(읽음 안내와 서로 닫음)
+  // 북마크: 저장하면 '정리'(폴더·태그·메모), 해제하면 '되돌리기' 안내. 안내는 한 번에 하나만(치우기 안내와 서로 닫음)
   const closeReadUndo = useCallback(() => { clearTimeout(undoTimer.current); setUndo(null); }, []);
   const bmFlow = useBookmarkFlow(savedApi, closeReadUndo);
   useEffect(() => () => { timers.current.forEach(clearTimeout); clearTimeout(undoTimer.current); }, []);
-  // 제목 클릭·휠클릭·Enter 로 읽음 처리. 새 뉴스 탭에서는 클릭 이벤트가 끝난 직후(새 탭 열기가 시작된 뒤)에 카드를 제거한다.
-  const handleRead = useCallback((id: string): string[] => {
-    const ids = tab === 'new' ? eventIds.current(id) : [id];
-    ids.forEach(markRead);
-    if (tab !== 'new') return ids;
-    setJustRead(s => { const n = new Set(s); ids.forEach(x => n.add(x)); return n; });
-    timers.current.push(window.setTimeout(() => setJustRead(s => { const n = new Set(s); ids.forEach(x => n.delete(x)); return n; }), 250));
-    return ids;
-  }, [markRead, tab]);
+  // 제목 클릭·휠클릭·Enter: 읽음 표시만(제목이 흐려짐). 목록에서 치우지 않으므로 읽은 뒤에도 북마크할 수 있다.
+  const handleRead = markRead;
 
-  // 카드의 '읽음' 버튼: 링크를 열었을 때와 같은 읽음 처리(handleRead→markRead)를 재사용하고 되돌리기 안내를 띄운다
-  const handleMarkRead = useCallback((id: string) => {
-    const ids = handleRead(id);
+  // 카드의 [치우기](새 뉴스 탭): 짧게 흐려진 뒤 목록에서 빠지고 '치웠습니다 [되돌리기]' 안내. 북마크·읽음과는 별개.
+  // 키보드로 치웠으면 카드가 빠진 뒤 다음 카드의 [치우기]로(마지막이면 앞 카드로) 포커스를 옮겨 이어서 쓸 수 있게 한다.
+  const handleDismiss = useCallback((id: string) => {
+    const ids = eventIds.current(id, false);
+    const card = document.querySelector<HTMLElement>(`article[data-bm-id="${CSS.escape(id)}"]`);
+    const hadFocus = !!card && card.contains(document.activeElement);
+    const near = (card?.nextElementSibling?.matches('.dayhead') ? card.nextElementSibling.nextElementSibling : card?.nextElementSibling) as HTMLElement | null;
+    const prev = (card?.previousElementSibling?.matches('.dayhead') ? card.previousElementSibling.previousElementSibling : card?.previousElementSibling) as HTMLElement | null;
+    const nextId = (near?.matches('article') ? near : prev?.matches('article') ? prev : null)?.dataset.bmId;
+    dismiss(ids);
+    setLeaving(s => { const n = new Set(s); ids.forEach(x => n.add(x)); return n; });
+    timers.current.push(window.setTimeout(() => {
+      setLeaving(s => { const n = new Set(s); ids.forEach(x => n.delete(x)); return n; });
+      if (hadFocus && nextId) requestAnimationFrame(() => document.querySelector<HTMLElement>(`article[data-bm-id="${CSS.escape(nextId)}"] .dismissBtn`)?.focus());
+    }, 250));
     bmFlow.clearToast();
     clearTimeout(undoTimer.current);
     setUndo(u => ({ ids, n: (u?.n ?? 0) + 1 }));
     undoTimer.current = window.setTimeout(() => setUndo(null), 5000);
-  }, [handleRead, bmFlow.clearToast]);
+  }, [dismiss, bmFlow.clearToast]);
   const handleUndo = useCallback(() => {
     if (!undo) return;
-    undo.ids.forEach(unmarkRead);
+    undismiss(undo.ids);
     clearTimeout(undoTimer.current);
     setUndo(null);
-  }, [undo, unmarkRead]);
+  }, [undo, undismiss]);
+  // '치운 기사 포함'에서 흐린 카드의 [되돌리기]: 같은 사건의 치운 기사를 함께 되살린다
+  const handleRestore = useCallback((id: string) => undismiss(eventIds.current(id, true)), [undismiss]);
 
   const relevantAll = useMemo(() => all.filter(isRelevant), [all]);  // 새 뉴스 건수·이번 주 핵심은 토글과 무관하게 관련 기사만 센다
   // 탭·카테고리·검색·안 읽은 것·관련도 조건을 적용한 기본 목록(최신순/중요도순 정렬 포함). 결과 0건 안내에서 조건 하나를 빼고 다시 계산하기 위해 함수로 둔다.
   const buildBase = (cat: string, searchText: string, unread: boolean, low: boolean): Article[] => {
     let r: Article[] = tab === 'bookmarks' ? bookmarkArticles : low ? all : relevantAll;
-    if (tab === 'new') r = r.filter(a => visibleInNewTab(a, { baseline, read: readSet, showRead, justRead }));
+    if (tab === 'new') r = r.filter(a => visibleInNewTab(a, { baseline, dismissed: dismissedSet, includeDismissed, leaving }));
     if (tab === 'press') r = r.filter(a => a.source_type === 'press');
     if (cat !== '전체') r = r.filter(a => a.category === cat); // '미분류'는 카테고리 버튼에 없고 '전체'에서만
     if (unread) r = r.filter(a => !readSet.has(a.id));
@@ -107,7 +114,7 @@ export default function Home() {
     return [...r].sort((a, b) => sort === 'important' ? stars(b) - stars(a) || b.published_at.localeCompare(a.published_at) : b.published_at.localeCompare(a.published_at));
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const base = useMemo(() => buildBase(category, search, unreadOnly, includeLow), [tab, all, category, search, sort, baseline, bookmarkArticles, unreadOnly, readSet, showRead, justRead, includeLow, relevantAll]);
+  const base = useMemo(() => buildBase(category, search, unreadOnly, includeLow), [tab, all, category, search, sort, baseline, bookmarkArticles, unreadOnly, readSet, dismissedSet, includeDismissed, leaving, includeLow, relevantAll]);
   const inDate = (a: Article) => !dateFilter || (kstDate(a.published_at) >= dateFilter.from && kstDate(a.published_at) <= dateFilter.to);
   type Skip = 'sources' | 'companies' | 'orgs' | 'date';
   const bySrc = (a: Article) => [a.source], byCo = (a: Article) => a.companies ?? [], byOrg = (a: Article) => a.orgs ?? [];
@@ -126,27 +133,25 @@ export default function Home() {
   // 북마크 탭은 묶지 않는다(저장한 기사 그대로). 건수: 카드 수(items)와 기사 수(rows)를 함께 보인다.
   const pool = useMemo(() => {
     let r = includeLow ? all : relevantAll;
-    if (tab === 'new') r = r.filter(a => visibleInNewTab(a, { baseline, read: readSet, showRead, justRead }));
+    if (tab === 'new') r = r.filter(a => visibleInNewTab(a, { baseline, dismissed: dismissedSet, includeDismissed, leaving }));
     if (tab === 'press') r = r.filter(a => a.source_type === 'press');
     return r;
-  }, [tab, all, relevantAll, includeLow, baseline, readSet, showRead, justRead]);
+  }, [tab, all, relevantAll, includeLow, baseline, dismissedSet, includeDismissed, leaving]);
   const clusterIdx = useMemo(() => clusterIndex(pool), [pool]);
   const items = useMemo(() => tab === 'bookmarks' ? single(rows) : sortItems(collapse(rows, clusterIdx), sort), [tab, rows, clusterIdx, sort]);
-  eventIds.current = (id: string) => {
+  eventIds.current = (id: string, dismissed: boolean) => {   // dismissed=false: 치울 것(아직 안 치운 새 기사), true: 되돌릴 것(치운 기사)
     const a = pool.find(x => x.id === id);
     const members = a?.cluster_id ? clusterIdx.get(a.cluster_id) ?? [] : [];
-    return [id, ...members.filter(m => m.id !== id && !readSet.has(m.id)).map(m => m.id)];
+    return [id, ...members.filter(m => m.id !== id && isNewArticle(m, baseline) && dismissedSet.has(m.id) === dismissed).map(m => m.id)];
   };
   const [openGroups, setOpenGroups] = useState<Set<string>>(new Set());  // 펼친 묶음(이번 방문 동안만, 기본 접힘)
   const toggleGroup = useCallback((cid: string) => setOpenGroups(s => { const n = new Set(s); if (n.has(cid)) n.delete(cid); else n.add(cid); return n; }), []);
   const perDay = useMemo(() => countByDate(items.map(it => it.lead)), [items]);
 
-  // 새 뉴스 건수(탭 배지): 마지막 확인 이후 수집 + 안 읽음. 읽은 기사는 빠진다(방금 읽어 사라지는 중인 카드는 이미 제외).
-  // 새 뉴스 건수(탭 배지): 사건 단위(같은 사건 묶음은 1건). 묶음이 없는 채널은 기사 수와 같다
-  const newCount = useMemo(() => { const seen = new Set<string>(); for (const a of relevantAll) if (isUnreadNew(a, baseline, readSet)) seen.add(a.cluster_id ?? a.id); return seen.size; }, [relevantAll, baseline, readSet]);
-  const hiddenReadCount = useMemo(() => relevantAll.filter(a => isNewArticle(a, baseline) && readSet.has(a.id) && !justRead.has(a.id)).length, [relevantAll, baseline, readSet, justRead]);
+  // 새 뉴스 건수(탭 배지): 마지막 확인 이후 수집 + 치우지 않음(읽기만 한 기사는 남는다). 사건 단위(같은 사건 묶음은 1건), 묶음이 없는 채널은 기사 수와 같다
+  const newCount = useMemo(() => { const seen = new Set<string>(); for (const a of relevantAll) if (isPendingNew(a, baseline, dismissedSet)) seen.add(a.cluster_id ?? a.id); return seen.size; }, [relevantAll, baseline, dismissedSet]);
   const lastPage = Math.max(1, Math.ceil(items.length / PAGE));
-  const curPage = Math.min(page, lastPage);  // 읽은 기사가 빠져 페이지 수가 줄어도 범위를 벗어나지 않게
+  const curPage = Math.min(page, lastPage);  // 치운 기사가 빠져 페이지 수가 줄어도 범위를 벗어나지 않게
   const pageItems = items.slice((curPage - 1) * PAGE, curPage * PAGE);
   const listReady = ready && (tab === 'bookmarks' || !loading);
   const markDone = () => { update(s => ({ ...s, lastConfirmed: new Date().toISOString() })); setPage(1); };
@@ -163,16 +168,17 @@ export default function Home() {
     dState !== 'default' && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dayHeading(dateFilter.from) : `${dayHeading(dateFilter.from)} ~ ${dayHeading(dateFilter.to)}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }) },
     unreadOnly && { key: 'unread', label: '안 읽은 것만', clear: () => setUnreadOnly(false) },
     includeLow && tab !== 'bookmarks' && { key: 'low', label: '관련도 낮은 기사 포함', clear: () => setIncludeLow(false) },
+    includeDismissed && tab === 'new' && { key: 'dismissed', label: '치운 기사 포함', clear: () => setIncludeDismissed(false) },
   ].filter(Boolean) as Active[];
   const activeCount = active.length;
   const filtering = active.length > 0 || !!dateFilter;  // 필터·검색·날짜가 걸려 있으면 펼친 묶음에서 맞은 기사를 구분해 보인다
   // 빈 화면: 필터·검색이 있으면 한 줄 + [필터 초기화], 없으면 원인별 한 줄(lib/emptyState.ts)
   // 기본 날짜(최근 3일)만이면 '최근 3일간 올라온 기사가 없습니다' + [전체 기간 보기], '오늘'을 직접 고르면 + [어제 보기]
   const empty = emptyKind({ filtered: active.some(f => f.key !== 'date'), date: dState, tab, channelArticles: all.length });
-  // 필터 패널(언론사·보험사·유관기관·체크 2개): 켜진 것은 칩으로, 칩에서 바로 해제(lib/filterState.ts)
-  const panel: PanelFilters = { sources, companies, orgs, unreadOnly, includeLow };
+  // 필터 패널(언론사·보험사·유관기관·체크 2개, 새 뉴스 탭은 '치운 기사 포함'까지 3개): 켜진 것은 칩으로, 칩에서 바로 해제(lib/filterState.ts)
+  const panel: PanelFilters = { sources, companies, orgs, unreadOnly, includeLow, includeDismissed };
   const setPanel = (n: PanelFilters) => {
-    setSources(n.sources); setOrgs(n.orgs); setUnreadOnly(n.unreadOnly); setIncludeLow(n.includeLow);
+    setSources(n.sources); setOrgs(n.orgs); setUnreadOnly(n.unreadOnly); setIncludeLow(n.includeLow); setIncludeDismissed(!!n.includeDismissed);
     if (n.companies !== companies) setCompanies(n.companies);  // 보험사는 사용자 상태에 저장되므로 바뀔 때만
     setPage(1);
   };
@@ -185,7 +191,7 @@ export default function Home() {
     setFilterOpen(false); filterBtn.current?.focus();
   };
   const resetFilters = () => {
-    setCategory('전체'); setSearch(''); setSources([]); setOrgs([]); setCompanies([]); setUnreadOnly(false); setIncludeLow(false);
+    setCategory('전체'); setSearch(''); setSources([]); setOrgs([]); setCompanies([]); setUnreadOnly(false); setIncludeLow(false); setIncludeDismissed(false);
     setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }); setPage(1);
   };
 
@@ -194,7 +200,7 @@ export default function Home() {
     <nav className="primary" aria-label="뉴스 보기">{TABS.map(t =>
       <button key={t} className={tab === t ? 'active' : ''} onClick={() => { setTab(t); setCategory('전체'); setPanel(onTabChange(panel)); }}>
         {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && (ready && !loading
-          ? <span className="count" aria-label={`안 읽은 새 뉴스 ${newCount}건`}>{newCount.toLocaleString()}</span>
+          ? <span className="count" aria-label={`새 뉴스 ${newCount}건`}>{newCount.toLocaleString()}</span>
           : <span className="count pending" aria-hidden="true" />)}  {/* 불러오기 전에도 자리를 잡아 탭 위치가 바뀌지 않게 */}
       </button>)}</nav>
     <div className="catOuter"><nav className="categories" aria-label="뉴스 카테고리">{['전체', ...ch.categories].map(c =>
@@ -210,6 +216,7 @@ export default function Home() {
         <MultiFilter label={L.orgs} options={orgOpts} selected={orgs} groups={ch.orgGroups} onChange={v => { setOrgs(v); setPage(1); }} />
         <label className="check" title="열어 본 기사는 읽음으로 표시됩니다."><input type="checkbox" checked={unreadOnly} onChange={e => { setUnreadOnly(e.target.checked); setPage(1); }} /> 안 읽은 것만</label>
         {tab !== 'bookmarks' && <label className="check" title="시장 속보·타 업종 기사 등"><input type="checkbox" checked={includeLow} onChange={e => { setIncludeLow(e.target.checked); setPage(1); }} /> 관련도 낮은 기사 포함</label>}
+        {tab === 'new' && <label className="check"><input type="checkbox" checked={includeDismissed} onChange={e => { setIncludeDismissed(e.target.checked); setPage(1); }} /> 치운 기사 포함</label>}
       <button type="button" className="filterReset" disabled={!activeCount} onClick={resetFilters}><RotateCcw size={14} aria-hidden="true" /> 필터 초기화{activeCount > 0 && <b>{activeCount}</b>}</button>
     </div>
     {chips.length > 0 && <div className="filterChips" role="group" aria-label="켜진 필터">
@@ -217,12 +224,11 @@ export default function Home() {
       {activeCount > 0 && <button type="button" className="chipClear" onClick={resetFilters}>필터 초기화</button>}  {/* 기본 날짜 칩만 있으면 되돌릴 것이 없다 */}
     </div>}
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />
-    {/* 목록 머리: 탭 이름·건수, 새 뉴스 탭은 읽은 기사 보기·마지막 확인·모두 확인. 불러오기 전에는 건수·확인 정보를 비워 둔다(정적 HTML 에 0건이 찍히지 않게). */}
+    {/* 목록 머리: 탭 이름·건수, 새 뉴스 탭은 마지막 확인·모두 확인(치운 기사는 필터의 '치운 기사 포함'). 불러오기 전에는 건수·확인 정보를 비워 둔다(정적 HTML 에 0건이 찍히지 않게). */}
     <div className="listHead">
       <h2>{ch.tabs[tab]}{listReady && <small>{countLabel(items.length, rows.length)}</small>}</h2>
       {loadingMore && <span className="listNote">과거 기사 불러오는 중…</span>}
       {tab === 'new' && listReady && <div className="listActions">
-        {(hiddenReadCount > 0 || showRead) && <button type="button" className="readToggle" aria-pressed={showRead} onClick={() => { setShowRead(v => !v); setPage(1); }}>{showRead ? '읽은 기사 숨기기' : `읽은 기사 ${hiddenReadCount.toLocaleString()}건 보기`}</button>}
         {baseline && <span className="lastConfirm" title={`마지막 확인 ${fmt(baseline)}`}>마지막 확인 {fmtShort(baseline)}</span>}
         <button type="button" className="confirm" onClick={markDone}><Check size={15} aria-hidden="true" /> 모두 확인</button>
       </div>}
@@ -236,9 +242,10 @@ export default function Home() {
       : pageItems.map((it, i) => { const a = it.lead; const d = kstDate(a.published_at); const head = sort === 'latest' && (i === 0 || d !== kstDate(pageItems[i - 1].lead.published_at));
         const group: CardGroup | undefined = it.clusterId ? { others: it.others, size: it.size, sources: it.sources, matched: it.matched, showMatch: filtering && it.matched.size < it.others.length + 1,  /* 모두 맞으면 구분할 필요 없음 */ open: openGroups.has(it.clusterId), onToggle: () => toggleGroup(it.clusterId!), isBookmarked, isRead: id => readSet.has(id) } : undefined;
         return <Fragment key={a.id}>{head && <div className="dayhead">{dayHeading(d)}<small>· {perDay[d]}건</small></div>}
-          <ArticleCard a={a} group={group} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} dim={tab === 'new' || tab === 'all'} fading={justRead.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={handleRead} onUnread={tab === 'new' && showRead ? unmarkRead : undefined} onMarkRead={tab === 'new' ? handleMarkRead : undefined} /></Fragment>; })}</section>
+          <ArticleCard a={a} group={group} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} fading={leaving.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={handleRead}
+            dismiss={tab === 'new' ? { dismissed: dismissedSet.has(a.id) && !leaving.has(a.id), onDismiss: handleDismiss, onRestore: handleRestore } : undefined} /></Fragment>; })}</section>
     {items.length > PAGE && <div className="pagination"><button disabled={curPage <= 1} onClick={() => setPage(curPage - 1)}>이전</button><span>{curPage} / {lastPage} 페이지</span><button disabled={curPage >= lastPage} onClick={() => setPage(curPage + 1)}>다음</button></div>}
     {bmFlow.toastNode}{bmFlow.editorNode}
-    {undo && <div className="undoToast" role="status" aria-live="polite"><span>읽음 처리했습니다</span><button type="button" onClick={handleUndo}>되돌리기</button></div>}
+    {undo && <div className="undoToast" role="status" aria-live="polite"><span>치웠습니다</span><button type="button" onClick={handleUndo}>되돌리기</button></div>}
   </>;
 }

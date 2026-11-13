@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { Article } from './news';
 import { addRead, pruneReads, removeRead } from './readState';
+import { addDismissed, pruneDismissed, removeDismissed } from './dismissed';
 import { useChannel } from './channelContext';
 import { userStateStore } from './storage';
 import { EMPTY_STATE, type UserState } from './userState';
@@ -12,7 +13,7 @@ const now = () => new Date().toISOString();
 /** 사용자 상태를 저장하면 같은 탭에 알린다(마이페이지 채널 탭 건수). 다른 탭은 storage 이벤트. */
 export const USER_STATE_EVENT = 'heukseok:user-state';
 
-/** 북마크·폴더·태그·읽음·확인시각·선택한 보험사: 채널별 사용자 상태. 저장은 어댑터(lib/storage.ts, 지금은 localStorage)가 맡는다. */
+/** 북마크·폴더·태그·읽음·치운 기사·확인시각·선택한 보험사: 채널별 사용자 상태. 저장은 어댑터(lib/storage.ts, 지금은 localStorage)가 맡는다. */
 export function useSaved() {
   const ch = useChannel();
   const [saved, setSaved] = useState<Saved>(EMPTY_STATE);
@@ -42,10 +43,14 @@ export function useSaved() {
   const removeGroup = useCallback((kind: GroupKind, id: string) => update(s => deleteGroup(s, kind, id, now())), [update]);
   const markRead = useCallback((id: string) => update(s => s.readAt[id] ? s : { ...s, readAt: pruneReads(addRead(s.readAt, id, now()), s.lastConfirmed) }), [update]);
   const unmarkRead = useCallback((id: string) => update(s => ({ ...s, readAt: removeRead(s.readAt, id) })), [update]);
+  // 새 뉴스 탭 '치우기'(읽음과 별개). 같은 사건의 여러 기사를 한 번에 치우고 되돌린다
+  const dismiss = useCallback((ids: string[]) => update(s => { const t = now(); const d = addDismissed(s.dismissed, ids, t); return d === s.dismissed ? s : { ...s, dismissed: pruneDismissed(d, t, s.lastConfirmed) }; }), [update]);
+  const undismiss = useCallback((ids: string[]) => update(s => { const d = removeDismissed(s.dismissed, ids); return d === s.dismissed ? s : { ...s, dismissed: d }; }), [update]);
   const setCompanies = useCallback((v: string[]) => update(s => ({ ...s, companies: v })), [update]);
   const readSet = useMemo(() => new Set(Object.keys(saved.readAt)), [saved.readAt]);
+  const dismissedSet = useMemo(() => new Set(saved.dismissed.map(e => e.id)), [saved.dismissed]);
   const bookmarkList = useMemo(() => liveBookmarks(saved), [saved]);
   const isBookmarked = useCallback((id: string) => isLive(saved.bookmarks[id]), [saved.bookmarks]);
   return { saved, ready, update, toggleBookmark, unbookmark, restore, editBookmark, addGroup, renameGroup: renameGroupFn, removeGroup,
-    markRead, unmarkRead, setCompanies, readSet, bookmarkList, isBookmarked };
+    markRead, unmarkRead, dismiss, undismiss, dismissedSet, setCompanies, readSet, bookmarkList, isBookmarked };
 }

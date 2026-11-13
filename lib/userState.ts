@@ -3,6 +3,7 @@
  *  v2(2026-11): 북마크에 사용자 메타(폴더·태그·메모)와 삭제 표시를 더했다. v1 은 읽을 때 자동으로 바꾼다. */
 import { type BookmarkData, type BookmarkEntry, type Group, cleanBookmarkData, liveBookmarks, liveGroups, mergeBookmarkData, migrateV1Bookmarks, purgeTombstones, validIso, withoutTombstones } from './bookmarks.ts';
 import { type ReadMap, migrateReads, pruneReads } from './readState.ts';
+import { type Dismissed, cleanDismissed, fromReads, mergeDismissed, pruneDismissed } from './dismissed.ts';
 import { DIRECTORY } from './directory.ts';
 
 export const SCHEMA_VERSION = 2;
@@ -10,27 +11,35 @@ export const FORMAT = 'heukseok-user-state';
 /** localStorage 키: heukseok-v2:insurance (v1 키 heukseok-v1:insurance 는 읽기만 하고 지우지 않는다) */
 export const storageKey = (channel: string, version = SCHEMA_VERSION) => `heukseok-v${version}:${channel}`;
 
-export type UserState = BookmarkData & { lastConfirmed: string | null; readAt: ReadMap; companies: string[] };
+/** dismissed: 새 뉴스 탭에서 치운 기사(lib/dismissed.ts). 저장값에 이 키가 없으면(이전 버전) 읽을 때 한 번 옛 '읽음=숨김' 기록에서 옮긴다. */
+export type UserState = BookmarkData & { lastConfirmed: string | null; readAt: ReadMap; dismissed: Dismissed; companies: string[] };
 export type StoredUserState = { schemaVersion: number; channel: string } & UserState;
 export type ExportFile = { format: typeof FORMAT; exported_at: string } & StoredUserState;
 export type LegacyKeys = { saved?: string; companies?: string };
 
-export const EMPTY_STATE: UserState = { bookmarks: {}, folders: {}, tags: {}, lastConfirmed: null, readAt: {}, companies: [] };
+export const EMPTY_STATE: UserState = { bookmarks: {}, folders: {}, tags: {}, lastConfirmed: null, readAt: {}, dismissed: [], companies: [] };
 
 const isObj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
 const strList = (v: unknown): string[] => Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : [];
 
 /** 저장소에서 읽은 값(v2, v1, 옛 actuary-news-hub-v3 형식)을 UserState 로. v1 북마크는 v2 로 바꾸고(정보가 없으면 id 보존),
  *  예전 readIds 배열도 이전한다. companies 를 따로 주면(옛 actuary-news-hub-companies-v1 키) 그 값을 쓴다.
- *  now 를 주면 기한이 지난 삭제 표시를 정리한다. */
+ *  dismissed 키가 없는 저장값(치우기 도입 전)은 그때 새 뉴스에서 숨겨져 있던 읽음 기록을 치운 기사로 옮긴다(목록이 갑자기 늘지 않게).
+ *  now 를 주면 기한이 지난 삭제 표시·치운 기록을 정리한다. */
+export const needsDismissMigration = (raw: unknown): boolean => !(isObj(raw) && Array.isArray(raw.dismissed));
+
 export function fromStored(raw: unknown, channel: string, companies?: unknown, now?: string): UserState {
   const j = isObj(raw) ? raw : {};
   const v2 = Number(j.schemaVersion) >= 2;
   const data: BookmarkData = v2 ? cleanBookmarkData(j, channel) : { bookmarks: migrateV1Bookmarks(j.bookmarks, channel), folders: {}, tags: {} };
+  const lastConfirmed = validIso(j.lastConfirmed) ? j.lastConfirmed : null;
+  const readAt = cleanReads(migrateReads(j as { readAt?: unknown; readIds?: unknown }));
+  const dismissed = needsDismissMigration(j) ? fromReads(readAt, lastConfirmed) : cleanDismissed(j.dismissed);
   const s: UserState = {
     ...data,
-    lastConfirmed: validIso(j.lastConfirmed) ? j.lastConfirmed : null,
-    readAt: cleanReads(migrateReads(j as { readAt?: unknown; readIds?: unknown })),
+    lastConfirmed,
+    readAt,
+    dismissed: now ? pruneDismissed(dismissed, now, lastConfirmed) : dismissed,
     companies: [...new Set(strList(companies !== undefined ? companies : j.companies))],
   };
   return now ? purgeTombstones(s, now) : s;
@@ -83,7 +92,7 @@ export function parseImport(raw: unknown, channel: string, legacy: LegacyKeys = 
 
 /** 기존 데이터와 병합.
  *  - 북마크·폴더·태그: 같은 항목은 수정 시각이 늦은 쪽(삭제 표시도 같은 기준, 같으면 기존 것). 그래서 지운 항목이 되살아나지 않는다.
- *  - 읽음: 합집합, 같은 기사는 더 이른 읽은 시각. 확인 시각은 더 늦은 쪽. 선택한 보험사는 기존 순서 뒤에 새 항목.
+ *  - 읽음: 합집합, 같은 기사는 더 이른 읽은 시각. 치운 기사: 합집합, 같은 기사는 늦은 시각. 확인 시각은 더 늦은 쪽. 선택한 보험사는 기존 순서 뒤에 새 항목.
  *  - 그 뒤 읽음 한도 규칙(pruneReads). */
 export function mergeStates(cur: UserState, inc: UserState): UserState {
   const readAt: ReadMap = { ...inc.readAt };
@@ -93,6 +102,7 @@ export function mergeStates(cur: UserState, inc: UserState): UserState {
     ...mergeBookmarkData(cur, inc),
     lastConfirmed: lc,
     readAt: pruneReads(readAt, lc),
+    dismissed: mergeDismissed(cur.dismissed, inc.dismissed),
     companies: [...new Set([...cur.companies, ...inc.companies])],
   };
 }

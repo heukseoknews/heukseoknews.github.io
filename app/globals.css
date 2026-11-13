@@ -48,8 +48,8 @@ footer.siteFooter{margin-top:0;background:#fff;border-top:1px solid var(--line);
  .collectBadge{align-self:flex-start;margin-top:12px}
  .siteFooterInner{padding:24px 16px 20px}
 }
-.article.isRead .headline{color:var(--muted)}.article.isRead .cardTitle{font-weight:500}.article.fading{opacity:0;transition:opacity .2s ease}
-.unreadBtn{background:none;border:1px solid var(--line);border-radius:6px;color:var(--text-2);font-size:var(--fs-12);padding:2px 8px}
+/* 읽음(링크를 연 기사): 모든 탭에서 제목 색만 흐리게(굵기는 그대로라 줄바꿈·카드 높이가 바뀌지 않는다). 치운 기사('치운 기사 포함'): 본문을 흐리게, 버튼 칸은 그대로 */
+.article.isRead .headline{color:var(--muted)}.article.isDismissed .articleMain{opacity:.55}.article.fading{opacity:0;transition:opacity .2s ease}
 .readToggle{background:#fff;border:1px solid var(--line);border-radius:40px;color:var(--text-2);font-size:12px;padding:7px 14px}.readToggle[aria-pressed="true"]{color:var(--brand);border-color:var(--brand);font-weight:700}
 .primary .count{margin-left:2px}
 

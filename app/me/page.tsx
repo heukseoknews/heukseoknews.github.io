@@ -67,7 +67,7 @@ export default function MyBookmarksPage() {
     const folder = folderOf(saved, b);
     const tg = tagsOf(saved, b);
     const read = readSet.has(b.id);
-    return <article key={b.id} data-bm-id={b.id} className={'article myBm' + (b.missing ? ' missing' : '')}>
+    return <article key={b.id} data-bm-id={b.id} className={'article myBm' + (read ? ' isRead' : '') + (b.missing ? ' missing' : '')}>
       <div className="articleMain">
         <div className="cardTop">
           {!b.missing && <span className={b.source_type === 'press' ? 'pill official' : 'pill'}>{b.category || '미분류'}</span>}

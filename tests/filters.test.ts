@@ -4,7 +4,7 @@ import { RECENT_DAYS, badgeCount, clearPanel, dateChip, dateChipLabel, dateState
 
 // 필터 접기: 켜진 필터만 칩으로, 칩에서 바로 해제, 초기화, 탭 이동 시 보험사 선택 유지
 const L = { sources: '언론사', companies: '보험사', orgs: '유관기관' };
-const none: PanelFilters = { sources: [], companies: [], orgs: [], unreadOnly: false, includeLow: false };
+const none: PanelFilters = { sources: [], companies: [], orgs: [], unreadOnly: false, includeLow: false, includeDismissed: false };
 assert.deepEqual(panelChips(none, L, 'new'), [], '아무것도 안 켜면 칩 없음');
 
 const f: PanelFilters = { sources: ['연합뉴스', '이데일리'], companies: ['삼성화재'], orgs: ['금융감독원'], unreadOnly: true, includeLow: true };

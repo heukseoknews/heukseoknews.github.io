@@ -1,5 +1,5 @@
 'use client';
-import { Bookmark, Check, ChevronDown, ExternalLink } from 'lucide-react';
+import { Bookmark, ChevronDown, EyeOff, ExternalLink, RotateCcw } from 'lucide-react';
 import { Article, isSafeUrl } from '../lib/news';
 import { useChannel } from '../lib/channelContext';
 import { stars } from '../lib/stars';
@@ -13,7 +13,11 @@ export type CardGroup = {
   isBookmarked: (id: string) => boolean; isRead: (id: string) => boolean;
 };
 
-type Props = { a: Article; bookmarked: boolean; read: boolean; rank?: number; dim?: boolean; fading?: boolean; group?: CardGroup; onBookmark: (a: Article) => void; onRead: (id: string) => void; onUnread?: (id: string) => void; onMarkRead?: (id: string) => void };
+/** 새 뉴스 탭에만: [치우기](목록에서 빼기)와, '치운 기사 포함'에서 흐린 카드의 [되돌리기]. 읽음·북마크와 별개다. */
+export type CardDismiss = { dismissed: boolean; onDismiss: (id: string) => void; onRestore: (id: string) => void };
+
+/** read: 링크를 연 기사(모든 탭에서 제목을 흐리게 + '읽음'). fading: 방금 치워 사라지는 중. */
+type Props = { a: Article; bookmarked: boolean; read: boolean; rank?: number; fading?: boolean; group?: CardGroup; dismiss?: CardDismiss; onBookmark: (a: Article) => void; onRead: (id: string) => void };
 
 /** 태그 표기 통일: 유관기관·보험사는 필터와 같은 정식명으로 먼저, 이어서 분류 키워드 태그(같은 이름은 한 번만). */
 const tagList = (a: Article) => [...new Set([...(a.orgs ?? []), ...(a.companies ?? []), ...a.tags])].slice(0, 4);
@@ -22,11 +26,12 @@ const tagList = (a: Article) => [...new Set([...(a.orgs ?? []), ...(a.companies 
 const pop = (e: React.MouseEvent<HTMLButtonElement>) => { const el = e.currentTarget; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); };
 const unpop = (e: React.AnimationEvent<HTMLButtonElement>) => e.currentTarget.classList.remove('pop');
 
-export default function ArticleCard({ a, bookmarked, read, rank, dim, fading, group, onBookmark, onRead, onUnread, onMarkRead }: Props) {
+export default function ArticleCard({ a, bookmarked, read, rank, fading, group, dismiss, onBookmark, onRead }: Props) {
   const { fmt } = useChannel();
   const s = stars(a);
   const listId = `grp-${a.id}`;
-  return <article data-bm-id={a.id} className={'article' + (dim && read ? ' isRead' : '') + (fading ? ' fading' : '')}><div className="articleMain">
+  const gone = !!dismiss?.dismissed;
+  return <article data-bm-id={a.id} className={'article' + (read ? ' isRead' : '') + (gone ? ' isDismissed' : '') + (fading ? ' fading' : '')}><div className="articleMain">
     {/* 위계: 분류 배지 줄 → 제목 → 출처·시간 → 중요도·태그 → 같은 사건 */}
     <div className="cardTop">
       {rank !== undefined && <span className="rank">{rank}</span>}
@@ -36,7 +41,7 @@ export default function ArticleCard({ a, bookmarked, read, rank, dim, fading, gr
       ? <a className="headline" href={a.url} target="_blank" rel="noopener noreferrer" onClick={() => onRead(a.id)} onAuxClick={e => { if (e.button === 1) onRead(a.id); }}>{a.title}<ExternalLink size={15} aria-hidden="true" /></a>
       : <span className="headline">{a.title} <small>(링크 없음)</small></span>}</h3>
     <div className="meta"><span>{a.source}</span><span className="dot" aria-hidden="true">·</span><time dateTime={a.published_at}>{fmt(a.published_at)}</time></div>
-    <div className="bottomMeta"><span>학습 중요도 {'★'.repeat(s)}{'☆'.repeat(Math.max(0, 5 - s))}</span>{tagList(a).map(t => <span className="tag" key={t}>#{t}</span>)}{read && <span className="read">읽음</span>}{read && onUnread && <button type="button" className="unreadBtn" onClick={() => onUnread(a.id)}>안 읽음으로</button>}</div>
+    <div className="bottomMeta"><span>학습 중요도 {'★'.repeat(s)}{'☆'.repeat(Math.max(0, 5 - s))}</span>{tagList(a).map(t => <span className="tag" key={t}>#{t}</span>)}{read && <span className="read">읽음</span>}{gone && <span className="read">치움</span>}</div>
     {group && group.size > 1 && (group.others.length
       ? <button type="button" className="groupToggle" aria-expanded={group.open} aria-controls={listId} onClick={group.onToggle}>
           같은 사건 {group.size.toLocaleString()}건{group.sources > 1 && <> · 매체 {group.sources}곳</>}<ChevronDown size={16} aria-hidden="true" className={group.open ? 'flip' : undefined} />
@@ -59,7 +64,9 @@ export default function ArticleCard({ a, bookmarked, read, rank, dim, fading, gr
     </ul>}
   </div>
     <div className="cardActions">
-      {onMarkRead && !read && <button type="button" aria-label="읽음 처리" title="읽음 처리" className="readBtn" onClick={() => onMarkRead(a.id)}><Check size={20} /></button>}
+      {dismiss && (gone
+        ? <button type="button" aria-label="되돌리기(새 뉴스에 다시 보이기)" title="되돌리기" className="readBtn dismissBtn" onClick={() => dismiss.onRestore(a.id)}><RotateCcw size={19} aria-hidden="true" /></button>
+        : <button type="button" aria-label="치우기(새 뉴스에서 빼기)" title="치우기" className="readBtn dismissBtn" onClick={() => dismiss.onDismiss(a.id)}><EyeOff size={19} aria-hidden="true" /></button>)}
       <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={e => { pop(e); onBookmark(a); }} onAnimationEnd={unpop}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
     </div>
   </article>;
