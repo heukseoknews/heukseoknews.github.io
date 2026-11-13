@@ -247,16 +247,16 @@ await t('main', async () => {
 
 // ── verify --apply 흐름(가짜 서버). 실제 Auth 서버처럼 트리거가 볼 때 app_metadata 가 아직 비어 있다(표시 이름 null) ──
 function fakeVerifyServer(opt = {}) {
-  const users = [], profiles = [], sec = [], states = [], rpcLog = [], secrets = [];
+  const users = [], profiles = [], sec = [], states = [], chats = [], rpcLog = [], secrets = [];
   let n = 0;
   const E = (s, c, m = '') => new ApiError(s, c, m);
   const own = (arr, id) => arr.find(r => r.user_id === id);
   const qv = (q, k) => (new RegExp(`${k}=eq\\.([^&]+)`).exec(q || '') || [])[1];
-  const tableOf = t => ({ profiles, account_security: sec, user_state: states }[t]);
+  const tableOf = t => ({ profiles, account_security: sec, user_state: states, chat_messages: chats }[t]);
   const onPassword = id => { const s = own(sec, id); s.must_change_password = s.reset_pending; s.reset_pending = false; };   // 0001 on_auth_password_changed
   const admin = {
     listUsers: async () => ({ users: users.map(u => ({ id: u.id, email: u.email })) }),
-    deleteUser: async id => { for (const arr of [users, profiles, sec, states]) for (let i = arr.length - 1; i >= 0; i--) if ((arr[i].user_id ?? arr[i].id) === id) arr.splice(i, 1); return {}; },
+    deleteUser: async id => { for (const arr of [users, profiles, sec, states, ...(opt.noChatCascade ? [] : [chats])]) for (let i = arr.length - 1; i >= 0; i--) if ((arr[i].user_id ?? arr[i].id) === id) arr.splice(i, 1); return {}; },
     createUser: async b => {
       const id = `v${++n}`, lid = b.email.split('@')[0];
       secrets.push(b.password);
@@ -266,7 +266,10 @@ function fakeVerifyServer(opt = {}) {
       return { id };                                                                                       // app_metadata 는 그 뒤에 기록
     },
     updateUser: async (id, b) => { users.find(u => u.id === id).password = b.password; secrets.push(b.password); onPassword(id); return {}; },
-    select: async (t, q) => tableOf(t).filter(r => !qv(q, 'user_id') || r.user_id === qv(q, 'user_id')).map(r => ({ ...r })),
+    select: async (t, q) => {
+      const inIds = (/user_id=in\.\(([^)]*)\)/.exec(q || '') || [])[1];
+      return tableOf(t).filter(r => (!qv(q, 'user_id') || r.user_id === qv(q, 'user_id')) && (!inIds || inIds.split(',').includes(r.user_id))).map(r => ({ ...r }));
+    },
     patch: async (t, q, row) => {
       const id = qv(q, 'user_id');
       if (t === 'profiles' && 'display_name' in row && opt.dropNameFix && users.find(u => u.id === id)?.email.startsWith(opt.dropNameFix)) return [];
@@ -280,6 +283,35 @@ function fakeVerifyServer(opt = {}) {
     const me = () => { if (!id || !users.some(u => u.id === id)) throw E(401, '42501', 'permission denied'); return id; };
     const ready = () => own(sec, me()).must_change_password === false;
     const mine = q => states.filter(r => r.user_id === me() && (!qv(q, 'user_id') || r.user_id === qv(q, 'user_id')) && (!qv(q, 'channel') || r.channel === qv(q, 'channel')));
+    // 0003 채팅 함수(같은 규칙의 간이판)
+    const ART_KEYS = ['id', 'cluster_id', 'channel', 'title', 'source', 'url', 'published_at'];
+    const artOk = a => a && typeof a === 'object' && Object.entries(a).every(([k, v]) => ART_KEYS.includes(k) && typeof v === 'string')
+      && ['insurance', 'ai', 'finance'].includes(a.channel) && /^https?:\/\/\S+$/i.test(a.url) && a.url.length <= 2048 && [...a.title].length <= 200 && !!a.id;
+    const chatRpc = async (fn, args) => {
+      if (!id) throw E(401, '42501', `permission denied for function ${fn}`);
+      if (!ready()) throw E(403, 'PT403', 'not_allowed');
+      const p = own(profiles, id);
+      if (fn === 'chat_list') {
+        const lim = Math.min(Math.max(args.p_limit ?? 100, 1), 200);
+        return chats.filter(r => args.p_before == null || r.id < args.p_before).sort((x, y) => y.id - x.id).slice(0, lim)
+          .map(({ id: i, user_id, author_name, body, article, created_at, deleted_at }) => ({ id: i, user_id, author_name, body, article, created_at, deleted_at }));
+      }
+      if (fn === 'chat_delete') {
+        const m = chats.find(r => r.id === args.p_id);
+        if (!m) throw E(404, 'PT404', 'not_found');
+        if (m.user_id !== id && !p.is_admin) throw E(403, 'PT403', 'not_allowed');
+        if (!m.deleted_at && !(opt.deleteKeepsBody)) Object.assign(m, { body: null, article: null, deleted_at: new Date().toISOString(), deleted_by: id });
+        return { id: m.id, deleted_at: m.deleted_at };
+      }
+      const b = String(args.p_body ?? '').trim();
+      if (!b || [...b].length > 500) throw E(422, 'PT422', 'body_length');
+      if (/[\u0001-\u0009\u000b-\u001f\u007f-\u009f]/.test(b)) throw E(422, 'PT422', 'body_format');
+      if (args.p_article != null && !artOk(args.p_article)) throw E(422, 'PT422', 'article_format');
+      if (!opt.noRateLimit && chats.filter(r => r.user_id === id).length >= 60) throw E(429, 'PT429', 'rate_limited');
+      const m = { id: chats.length + 1, user_id: id, author_name: p.display_name || '이름 없음', body: b, article: args.p_article ?? null, created_at: new Date().toISOString(), deleted_at: null, deleted_by: null };
+      chats.push(m);
+      return { id: m.id, created_at: m.created_at, author_name: m.author_name };
+    };
     return {
       signIn: async (email, password) => {
         const u = users.find(x => x.email === email);
@@ -288,6 +320,7 @@ function fakeVerifyServer(opt = {}) {
       },
       changeOwnPassword: async (np, cur) => { const u = users.find(x => x.id === me()); if (u.password !== cur) throw E(400, 'reauth'); u.password = np; secrets.push(np); onPassword(u.id); return {}; },
       select: async (t, q) => {
+        if (t === 'chat_messages') { if (!id) throw E(401, '42501', 'permission denied'); if (!ready()) return []; return chats.filter(r => !qv(q, 'id') || String(r.id) === qv(q, 'id')).map(r => ({ ...r })); }
         me();
         if (t === 'account_security') return sec.filter(r => r.user_id === id).map(r => ({ ...r }));
         if (t === 'profiles') return profiles.filter(r => r.user_id === id && (!qv(q, 'user_id') || qv(q, 'user_id') === id)).map(r => ({ ...r }));
@@ -306,8 +339,9 @@ function fakeVerifyServer(opt = {}) {
         if (tooBig(row)) throw E(400, '23514', 'limit');
         const rs = mine(q); rs.forEach(r => Object.assign(r, row)); return rs.map(r => ({ ...r }));
       },
-      remove: async q => { me(); return []; },
+      remove: async t => { me(); if (t === 'chat_messages') throw E(403, '42501', 'permission denied for table chat_messages'); return []; },
       rpc: async (fn, args = {}) => {
+        if (fn.startsWith('chat_')) return chatRpc(fn, args);
         if (fn !== 'set_display_name') throw E(404, 'PGRST202', 'not found');
         if (!id) throw E(401, '42501', 'permission denied for function set_display_name');
         const nm0 = args.new_name ?? '';
@@ -382,6 +416,21 @@ await t('verify-independent', async () => {
   assert.ok(s.R('5. zz-verify-b 비밀번호 변경 → 변경 필요 = false(트리거)'));
   assert.ok(s.R('10. 시험 계정 정리'));
   assert.ok(!s.results.some(r => r.name.startsWith('준비 단계 오류')), '중간에 멈추지 않음');
+});
+
+// 9) 채팅(0003): 정상 서버는 모두 통과(위 verify-flow), 서버가 규칙을 어기면 해당 항목만 실패
+await t('verify-chat', async () => {
+  const { results, R, line } = await runFakeVerify();
+  for (const n of ['2-2. anon chat_send 막힘', '4-2. A(변경 전) chat_send 막힘', '5-2. A chat_send 성공(응답 = id·created_at·author_name, 표시 이름)',
+    '5-3. 기사 첨부 javascript: 주소 거절', '5-3. 직접 delete 막힘', '5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)', '5-5. B 61번째 전송 거절']) assert.ok(R(n), n);
+  assert.match(line('10. 시험 계정의 채팅 글 함께 삭제'), /\d+건 → 0건/);
+  assert.ok(results.length > 60);
+  const c = await runFakeVerify({ noChatCascade: true });
+  assert.deepEqual(c.results.filter(r => !r.ok).map(r => r.name), ['10. 시험 계정의 채팅 글 함께 삭제(on delete cascade)']);
+  const r = await runFakeVerify({ noRateLimit: true });
+  assert.deepEqual(r.results.filter(x => !x.ok).map(x => x.name), ['5-5. B 61번째 전송 거절']);
+  const d = await runFakeVerify({ deleteKeepsBody: true });
+  assert.deepEqual(d.results.filter(x => !x.ok).map(x => x.name), ['5-4. A 본인 글 삭제 → 본문 비움·삭제 시각', '5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)']);
 });
 
 console.log(`admin script tests passed (${passed})`);

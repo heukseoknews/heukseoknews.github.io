@@ -129,6 +129,43 @@ select grantee, privilege_type from information_schema.routine_privileges
 
 되돌리기: 0002 파일 끝의 주석 두 줄(`drop function …`, `alter table … drop column …`)을 새 query 에 붙여 실행한다. 이미 바꾼 표시 이름은 그대로 남는다.
 
+## 2-2. 채팅 SQL 적용(0003)
+
+전체 채팅방(/chat/)의 표 `public.chat_messages` 와 서버 함수(`chat_send`·`chat_delete`·`chat_list`)를 만들고 Realtime 발행에 표를 넣는다. 0001·0002 를 적용한 뒤에 한다. 사이트 화면은 이 SQL 보다 먼저 배포돼도 깨지지 않는다(채팅 화면에 '채팅 준비 중입니다' 한 줄과 [다시 시도]만 보임).
+
+1. 대시보드 → **SQL Editor** → **New query**(새 쿼리 탭).
+2. `supabase/migrations/0003_chat.sql` **전체를 복사**해 붙여 넣고 **Run**. 'Success. No rows returned' 면 된다. 여러 번 실행해도 결과가 같다.
+   - `0001_init.sql 을 먼저 적용하세요` 로 멈추면 2장을 먼저 한다.
+   - 결과에 `supabase_realtime 발행이 없습니다` 알림이 보이면 아래 4번(Realtime 확인)을 본다.
+3. 확인 쿼리(새 query 에 붙여 Run):
+
+```sql
+-- 표 권한: authenticated 는 SELECT 만, anon 줄이 없어야 한다
+select grantee, string_agg(privilege_type, ',' order by privilege_type) from information_schema.role_table_grants
+ where table_schema = 'public' and table_name = 'chat_messages' and grantee in ('anon','authenticated','service_role') group by 1;
+-- 함수 실행 권한: chat_send·chat_delete·chat_list 각각 authenticated(+ postgres 등 관리 역할). anon·PUBLIC 없음
+select routine_name, grantee from information_schema.routine_privileges
+ where routine_schema = 'public' and routine_name in ('chat_send','chat_delete','chat_list') order by 1, 2;
+```
+
+4. **Realtime 이 켜졌는지** 확인(둘 다):
+   - SQL: 아래가 한 줄(`public | chat_messages`)이면 발행에 들어간 것이다.
+
+     ```sql
+     select schemaname, tablename from pg_publication_tables where pubname = 'supabase_realtime' and tablename = 'chat_messages';
+     ```
+
+   - 대시보드 → **Database** → **Publications** → `supabase_realtime` 의 테이블 목록에 `chat_messages` 가 켜져 있다(또는 **Table Editor** → chat_messages → 오른쪽 위 **Realtime on**).
+   - 화면에서: 두 기기(또는 창 두 개)로 /chat/ 을 열고 한쪽에서 글을 보내 다른 쪽에 새로 고침 없이 바로 보이면 된다. 방 위에 '연결 중'·'연결이 끊겨 다시 연결하는 중'이 계속 보이면 Realtime 설정을 다시 본다(그래도 글은 20초마다·탭을 다시 볼 때 보충된다).
+   - Realtime 이벤트도 표의 읽기 정책(RLS)을 따른다: 로그아웃·비밀번호 변경 전 사용자에게는 새 글 이벤트가 가지 않는다.
+5. 이어서 4장 `verify --apply` 를 돌린다. 2-2·4-2·5-2~5-5 번(채팅) 항목과 '10. 시험 계정의 채팅 글 함께 삭제'가 모두 ✓ 여야 한다.
+   - verify 는 시험 계정으로 채팅 글 약 65건(분당 상한 확인용 60건 포함)을 실제 방에 올렸다가 계정과 함께 지운다. 그동안 /chat/ 을 열어 둔 친구에게는 잠깐 보였다가 사라진다 — 사람이 적은 시간에 돌린다.
+6. 관리자 삭제 권한: 관리자 계정은 `profiles.is_admin = true` 여야 모든 글에 [삭제]가 보인다(Table Editor → profiles 에서 본인 행의 is_admin 을 켠다).
+
+보관 기간 정리(오래된 글 자동 삭제)는 아직 없다. 나중에 pg_cron 으로 N일 지난 글을 지우는 작업을 붙인다(0003 머리말 참고, `created_at` 인덱스 있음).
+
+되돌리기: 0003 파일 끝의 주석 네 줄(발행에서 빼기·함수·표 지우기)을 새 query 에 붙여 실행한다. 채팅 글이 모두 지워지고 화면은 '채팅 준비 중입니다'로 돌아간다.
+
 ## 3. 연결 확인(`check`, 읽기만)
 
 ```sh
@@ -169,8 +206,10 @@ node scripts/admin/verify.mjs --apply    # 실제 검증
   8. 내부 함수는 밖에서 부를 수 없다
   9. 관리자 초기화 뒤 다시 막히고, 새 비밀번호로 로그인해도 '변경 필요'가 유지된다
   - 표시 이름(0002, 2-1장): 로그인 안 한 요청·비밀번호 변경 전 호출은 막힘(2-1·4-1), 변경 후에는 자기 이름을 바꿀 수 있고 profiles 에 반영, 21자·빈 값·공백만·줄바꿈 거절, 다른 사용자 이름(대소문자·공백만 다른 것 포함) 거절, 10분 안 재변경 거절, profiles 직접 고치기는 여전히 막힘(5-1)
+  - 채팅(0003, 2-2장): 로그인 안 한 요청은 읽기·chat_send·chat_list·chat_delete 모두 막힘(2-2), 비밀번호 변경 전에는 읽기 0행·chat_list·chat_send 막힘(4-2), 변경 후 보낸 글을 다른 시험 계정이 chat_list·직접 읽기로 봄(작성자 = 표시 이름, 응답 어디에도 login_id 없음), 500자·기사 첨부 저장(5-2), 빈 글·공백만·501자·제어 문자·잘못된 기사 첨부(javascript: 주소·허용 안 한 키·너무 긴 제목·주소·잘못된 channel·문자열 아닌 값)와 직접 insert·update·delete 거절(5-3), 본인 글 삭제(본문 비움)·남의 글 삭제 거절·관리자 표시를 서비스 키로 잠시 준 계정은 삭제 가능·목록 페이지(5-4), 한 계정의 61번째 전송(1분 안) 거절(5-5), 계정을 지우면 채팅 글도 함께 지워짐(10)
 - 트리거는 login_id(와 '변경 필요')를 보장하고 표시 이름은 create/verify 가 계정을 만든 직후 채운다(Auth 서버가 app_metadata 를 사용자 행을 만든 뒤에 기록해 트리거 시점엔 비어 있다).
 - 마지막 줄이 `모두 통과(N건)` 이면 끝. 실패가 있으면 출력 전체를 그대로 공유한다(비밀이 들어 있지 않다).
+- 0003 을 아직 적용하지 않았으면 채팅 항목은 실패로 나온다(다른 항목에는 영향 없음).
 - 로그인을 4번 정도 하므로 로그인 제한(5분 30회)에 걸리지 않는다. 연달아 여러 번 돌릴 때만 5분 쉰다.
 
 ## 5. 관리자(본인) 계정 만들기
