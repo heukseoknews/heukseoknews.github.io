@@ -18,6 +18,10 @@ type Props = { a: Article; bookmarked: boolean; read: boolean; rank?: number; di
 /** 태그 표기 통일: 유관기관·보험사는 필터와 같은 정식명으로 먼저, 이어서 분류 키워드 태그(같은 이름은 한 번만). */
 const tagList = (a: Article) => [...new Set([...(a.orgs ?? []), ...(a.companies ?? []), ...a.tags])].slice(0, 4);
 
+/** 북마크 별을 누를 때만 짧은 '톡' 효과(.pop, app/globals.css bmPop). 같은 버튼을 연달아 눌러도 다시 시작한다 */
+const pop = (e: React.MouseEvent<HTMLButtonElement>) => { const el = e.currentTarget; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); };
+const unpop = (e: React.AnimationEvent<HTMLButtonElement>) => e.currentTarget.classList.remove('pop');
+
 export default function ArticleCard({ a, bookmarked, read, rank, dim, fading, group, onBookmark, onRead, onUnread, onMarkRead }: Props) {
   const { fmt } = useChannel();
   const s = stars(a);
@@ -49,14 +53,14 @@ export default function ArticleCard({ a, bookmarked, read, rank, dim, fading, gr
               ? <a className="groupTitle" href={o.url} target="_blank" rel="noopener noreferrer" onClick={() => onRead(o.id)} onAuxClick={e => { if (e.button === 1) onRead(o.id); }}>{o.title}</a>
               : <span className="groupTitle">{o.title}</span>}
           </div>
-          <button type="button" className="bookmark small" aria-label={bm ? '북마크 해제' : '북마크 추가'} aria-pressed={bm} onClick={() => onBookmark(o)}><Bookmark size={18} className={bm ? 'saved' : undefined} aria-hidden="true" /></button>
+          <button type="button" className="bookmark small" aria-label={bm ? '북마크 해제' : '북마크 추가'} aria-pressed={bm} onClick={e => { pop(e); onBookmark(o); }} onAnimationEnd={unpop}><Bookmark size={18} className={bm ? 'saved' : undefined} aria-hidden="true" /></button>
         </li>;
       })}
     </ul>}
   </div>
     <div className="cardActions">
       {onMarkRead && !read && <button type="button" aria-label="읽음 처리" title="읽음 처리" className="readBtn" onClick={() => onMarkRead(a.id)}><Check size={20} /></button>}
-      <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={() => onBookmark(a)}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
+      <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={e => { pop(e); onBookmark(a); }} onAnimationEnd={unpop}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
     </div>
   </article>;
 }
