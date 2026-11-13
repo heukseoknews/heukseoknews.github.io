@@ -51,6 +51,10 @@ export const MSG = {
   same: '지금 비밀번호와 다른 비밀번호를 정해 주세요.',
   mismatch: '새 비밀번호가 서로 다릅니다.',
   current: '현재 비밀번호가 맞지 않습니다.',
+  needCurrent: '현재 비밀번호를 입력해 주세요.',
+  pwRule: '8자 이상, 영문과 숫자를 섞고 아이디는 넣지 않습니다.',
+  changed: '바꿨습니다.',
+  forgot: '비밀번호를 잊었을 때는 관리자에게 문의해 주세요.',
   notApplied: '비밀번호 변경을 확인하지 못했습니다. 잠시 후 다시 시도해 주세요.',
   session: '로그인이 끝났습니다. 다시 로그인해 주세요.',
 } as const;
@@ -181,19 +185,29 @@ export async function enterChange(b: AuthBackend, kv: KV, o: { next: string | nu
   return a.mustChange ? { form: a } : { go: next };
 }
 
-/** 비밀번호 변경: 화면 규칙 → 서버 변경(현재 비밀번호 함께) → 서버의 '변경 필요'가 꺼졌는지 다시 읽어 확인 → next */
-export async function changePassword(b: AuthBackend, kv: KV, o: { current: string; next: string; confirm: string; loginId: string; nextPath: string | null; now?: string }): Promise<Outcome> {
+/** 비밀번호 변경의 공통 본체(첫 로그인 강제 변경·마이페이지 본인 변경이 함께 쓴다).
+ *  화면 규칙 → 서버 변경(현재 비밀번호 함께) → 서버의 '변경 필요'가 꺼졌는지 다시 읽어 확인 → 계정 사본 갱신.
+ *  세션은 그대로 둔다(다시 로그인시키지 않음). 비밀번호는 어디에도 저장하지 않는다. */
+export async function updateOwnPassword(b: AuthBackend, kv: KV, o: { current: string; next: string; confirm: string; loginId: string; now?: string }): Promise<{ ok: true } | { message: string } | { signIn: true }> {
   const userId = sessionUser(kv);
-  if (!userId) return { go: loginHref(safeNext(o.nextPath)) };
-  if (!o.current) return { message: MSG.current };
+  if (!userId) return { signIn: true };
+  if (!o.current) return { message: MSG.needCurrent };
   const bad = passwordProblem({ next: o.next, confirm: o.confirm, current: o.current, loginId: o.loginId });
   if (bad) return { message: bad };
   const r = await b.updatePassword(o.current, o.next);
-  if ('error' in r) return r.error === 'session' ? { go: loginHref(safeNext(o.nextPath)) } : { message: PW_MSG[r.error] };
+  if ('error' in r) return r.error === 'session' ? { signIn: true } : { message: PW_MSG[r.error] };
   const acc = await b.fetchAccount(userId);
   if ('error' in acc || acc.mustChange) return { message: MSG.notApplied };
   writeAccount(kv, userId, toAccount(acc, o.loginId, o.now ?? new Date().toISOString()));
-  return { go: safeNext(o.nextPath) };
+  return { ok: true };
+}
+
+/** 첫 로그인 강제 변경: 공통 본체 + 성공하면 next 로, 세션이 끝났으면 로그인 화면으로 */
+export async function changePassword(b: AuthBackend, kv: KV, o: { current: string; next: string; confirm: string; loginId: string; nextPath: string | null; now?: string }): Promise<Outcome> {
+  const r = await updateOwnPassword(b, kv, o);
+  if ('signIn' in r) return { go: loginHref(safeNext(o.nextPath)) };
+  if ('ok' in r) return { go: safeNext(o.nextPath) };
+  return r;
 }
 
 /** 앱을 열 때 뒤에서 계정 상태를 다시 읽는다. 서버가 안 되면 사본을 그대로 둔다(마지막 상태). 바뀐 판정을 돌려준다 */

@@ -4,7 +4,7 @@ import { authModeOf } from '../lib/authConfig.ts';
 import {
   type Account, type AccountRow, type AuthBackend, type KV, type PwFail, type SignInFail,
   CHANGE_PATH, LOGIN_ID_KEY, LOGIN_PATH, MSG, SESSION_KEY, accountKey, changeHref, changePassword, decideGate, enterChange,
-  gateScript, headerSlot, isValidId, login, signedState, loginHref, logout, normalizeId, passwordProblem, readAccount, refreshAccount, safeNext, sessionUser, toEmail,
+  gateScript, headerSlot, isValidId, login, signedState, loginHref, logout, normalizeId, passwordProblem, readAccount, refreshAccount, safeNext, sessionUser, toEmail, updateOwnPassword,
 } from '../lib/auth.ts';
 
 // ---------- 아이디 → 내부 이메일 ----------
@@ -200,6 +200,45 @@ for (const mode of ['optional', 'required'] as const)
   assert.ok(![...kv.m.values()].some(v => /oldpass1|newpass22/.test(v)), '비밀번호는 저장하지 않음');
 }
 
+// ---------- 마이페이지 본인 비밀번호 변경(첫 로그인 변경과 같은 본체) ----------
+{
+  const kv = kvOf({ [SESSION_KEY]: SESSION(), [accountKey('u1')]: JSON.stringify(ACC(false)) });
+  const b = fake(kv, { row: { loginId: 'kim01', displayName: '김일', mustChange: false } });
+  const U = (o: Partial<Parameters<typeof updateOwnPassword>[2]>) => updateOwnPassword(b, kv, { current: 'oldpass1', next: 'newpass22', confirm: 'newpass22', loginId: 'kim01', ...o });
+  assert.deepEqual(await U({ current: '' }), { message: MSG.needCurrent });
+  assert.deepEqual(await U({ next: 'short1', confirm: 'short1' }), { message: MSG.weak }, '최소 길이·영문·숫자(첫 로그인 화면과 같은 규칙)');
+  assert.deepEqual(await U({ next: 'oldpass1', confirm: 'oldpass1' }), { message: MSG.same }, '현재와 같은 값 거절');
+  assert.deepEqual(await U({ confirm: 'newpass23' }), { message: MSG.mismatch });
+  assert.deepEqual(await U({ next: 'mykim01pw', confirm: 'mykim01pw' }), { message: MSG.hasId });
+  assert.equal(b.calls.filter(c => c === 'update').length, 0, '화면 규칙에 걸리면 서버에 보내지 않음');
+  assert.deepEqual(await U({ current: 'wrongpw1' }), { message: MSG.current }, '현재 비밀번호 틀림: 한 줄');
+  b.pwFail = 'rate'; assert.deepEqual(await U({}), { message: MSG.rate }, '429: 로그인 화면과 같은 문구'); b.pwFail = undefined;
+  assert.equal(MSG.rate, '잠시 후 다시 시도해 주세요.');
+  b.down = true; assert.deepEqual(await U({}), { message: MSG.network }); b.down = false;
+  b.pwFail = 'session'; assert.deepEqual(await U({}), { signIn: true }); b.pwFail = undefined;
+  assert.deepEqual(await U({}), { ok: true });
+  assert.equal(sessionUser(kv), 'u1', '성공해도 로그인 상태 유지(다시 로그인시키지 않음)');
+  assert.ok(![...kv.m.values()].some(v => /oldpass1|newpass22|wrongpw1/.test(v)), '비밀번호는 저장하지 않음');
+  assert.equal(MSG.changed, '바꿨습니다.');
+  assert.ok(MSG.forgot.includes('관리자에게 문의'));
+}
+{
+  // 첫 로그인 화면(changePassword)과 마이페이지(PasswordPanel)가 같은 본체·입력칸을 쓴다(복사 없음)
+  const read = (f: string) => readFileSync(f, 'utf8');
+  const fields = read('components/PasswordFields.tsx');
+  assert.equal((fields.match(/type="password"/g) ?? []).length, 3);
+  assert.ok(fields.includes('autoComplete="current-password"') && (fields.match(/autoComplete="new-password"/g) ?? []).length === 2);
+  for (const f of ['components/ChangePasswordForm.tsx', 'components/PasswordPanel.tsx']) {
+    const s = read(f);
+    assert.ok(s.includes('<PasswordFields '), `${f}: 공용 입력칸`);
+    assert.ok(!s.includes('type="password"'), `${f}: 입력칸을 따로 만들지 않음`);
+    assert.ok(s.includes('method="post"'), `${f}: 스크립트가 없어도 비밀번호가 주소에 붙지 않게`);
+  }
+  assert.ok(read('components/LoginForm.tsx').includes('method="post"'));
+  assert.ok(read('components/PasswordPanel.tsx').includes('updateOwnPassword(supabaseBackend, browserKV,') && read('components/PasswordPanel.tsx').includes('MSG.forgot'));
+  assert.match(read('lib/auth.ts'), /export async function changePassword[\s\S]{0,200}const r = await updateOwnPassword\(b, kv, o\);/, '첫 로그인 변경은 공통 본체를 감쌈');
+}
+
 // ---------- 뒤에서 다시 읽기: 서버 오류면 마지막 상태 유지 ----------
 {
   const kv = kvOf({ [SESSION_KEY]: SESSION(), [accountKey('u1')]: JSON.stringify(ACC(false)) });
@@ -258,7 +297,7 @@ for (const f of ['lib/auth.ts', 'lib/authBackend.ts', 'lib/authConfig.ts', 'comp
   assert.ok(!/console\.(log|error|warn)\([^)]*(password|pw\b|cur\b|current\b|next\b)/i.test(s), `${f}: 비밀번호를 콘솔에 내지 않음`);
 }
 assert.ok(/name="username" autoComplete="username"/.test(src('components/LoginForm.tsx')) && src('components/LoginForm.tsx').includes('autoComplete="current-password"'));
-assert.ok(src('components/ChangePasswordForm.tsx').includes('autoComplete="new-password"'));
+assert.ok(src('components/PasswordFields.tsx').includes('autoComplete="new-password"'), '비밀번호 변경 입력칸(공용)');
 assert.match(src('app/login/layout.tsx'), /robots: \{ index: false, follow: false \}/, '로그인 화면 noindex');
 assert.match(src('.gitignore'), /^\.env\*$/m, '.env.local 제외');
 console.log('auth tests passed');

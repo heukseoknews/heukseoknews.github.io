@@ -44,7 +44,7 @@ export default function LoginForm() {
     pwRef.current?.focus();
   };
 
-  return <form className="authCard" onSubmit={submit} noValidate aria-busy={!ready}>
+  return <form className="authCard" method="post" onSubmit={submit} noValidate aria-busy={!ready}>
     <div className="authLogo"><Wordmark /></div>
     <h1>로그인</h1>
     <label className="authField"><span>아이디</span>

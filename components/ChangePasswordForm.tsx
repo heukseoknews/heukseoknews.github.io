@@ -4,6 +4,7 @@ import { AUTH_MODE } from '../lib/authConfig';
 import { browserKV, changePassword, enterChange, LOGIN_PATH, logout, type Account } from '../lib/auth';
 import { supabaseBackend } from '../lib/authBackend';
 import { notifyAuth } from '../lib/useAccount';
+import PasswordFields from './PasswordFields';
 import Wordmark from './Wordmark';
 
 const nextParam = () => new URLSearchParams(location.search).get('next');
@@ -47,22 +48,11 @@ export default function ChangePasswordForm() {
   };
 
   if (!ready) return <div className="authCard" aria-busy="true"><div className="authLogo"><Wordmark /></div><p className="authWait">확인하는 중…</p></div>;
-  return <form className="authCard" onSubmit={submit} noValidate>
+  return <form className="authCard" method="post" onSubmit={submit} noValidate>
     <div className="authLogo"><Wordmark /></div>
     <h1>비밀번호를 바꿔 주세요</h1>
     <p className="authLead">처음 받은 비밀번호는 바꾼 뒤에 이용할 수 있습니다.</p>
-    {/* 브라우저 비밀번호 관리자가 어느 계정의 비밀번호인지 알 수 있게(보이지 않음) */}
-    <input className="srOnly" name="username" autoComplete="username" value={account?.loginId ?? ''} readOnly tabIndex={-1} aria-hidden="true" />
-    <label className="authField"><span>현재 비밀번호</span>
-      <input ref={first} type="password" name="current-password" autoComplete="current-password" maxLength={200} value={cur} onChange={e => setCur(e.target.value)} />
-    </label>
-    <label className="authField"><span>새 비밀번호</span>
-      <input type="password" name="new-password" autoComplete="new-password" maxLength={200} value={pw} onChange={e => setPw(e.target.value)} aria-describedby="pwRule" />
-    </label>
-    <label className="authField"><span>새 비밀번호 확인</span>
-      <input type="password" name="new-password-confirm" autoComplete="new-password" maxLength={200} value={pw2} onChange={e => setPw2(e.target.value)} />
-    </label>
-    <p className="authHint" id="pwRule">8자 이상, 영문과 숫자를 섞고 아이디는 넣지 않습니다.</p>
+    <PasswordFields loginId={account?.loginId ?? ''} cur={cur} pw={pw} pw2={pw2} onCur={setCur} onPw={setPw} onPw2={setPw2} firstRef={first} />
     <p className="authMsg" role="alert">{msg}</p>
     <button type="submit" className="confirm authSubmit" disabled={busy}>{busy ? '바꾸는 중…' : '비밀번호 변경'}</button>
     <button type="button" className="authLink" onClick={signOut} disabled={busy}>로그아웃</button>
