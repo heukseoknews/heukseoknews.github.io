@@ -19,8 +19,9 @@
 
 ## 세션 영역
 여러 세션이 병렬로 일할 때 영역을 나눈다. 다른 영역의 수정이 필요하면 하지 말고 보고서에 이유와 최소 변경안을 적는다.
-- 화면 세션(A): app/, components/, lib/, public/, 프런트엔드 테스트, 화면 문구, docs/design-plan.md, docs/architecture.md.
-- 품질·수집 세션(B, 별도 worktree, 브랜치 quality): collector/, channels/*/ 설정 파일, scripts/audit/, supabase/, scripts/admin/, docs/data-contract.md, docs/article-quality*.md, docs/auth-runbook.md.
+- 화면 세션(A): app/, components/, lib/, public/, 프런트엔드 테스트, 화면 문구, docs/design-plan.md, docs/architecture.md(아래 로그인·채팅 세션 영역은 제외).
+- 품질·수집 세션(B, 별도 worktree, 브랜치 quality): collector/, channels/*/ 설정 파일, data 점검(scripts/audit/, docs/data-contract.md, docs/article-quality*.md).
+- 로그인·채팅 세션(별도 worktree, 브랜치 chat): supabase/ 마이그레이션, scripts/admin/, docs/auth-*.md, 로그인·채팅·계정 동기화 코드(app/login/, app/chat/, app/me/account/, components/의 Account*·AuthGate·Chat*·LoginForm·SyncNote, lib/의 auth*·chat*·sync*·useAccount, tests/auth·chat·sync.test.ts, tests/test_admin_scripts.py).
 - 예외: 화면 세션은 channels/<채널>/channel.json의 화면 문구(탭 이름 등)만 최소 변경할 수 있다.
 - 품질 세션의 push: `git pull --rebase origin main && git push origin quality:main`.
 
