@@ -4,7 +4,7 @@
  *  콘솔에는 상태·코드만 남긴다(본문·토큰은 넣지 않는다). 서버가 무응답이면 15초 뒤 'network' 로 실패시킨다. */
 import type { RealtimeChannel } from '@supabase/supabase-js';
 import { client } from './authBackend';
-import { type ChatBackend, ChatError, type ChatMessage, chatFailOf, toMessage } from './chat';
+import { type ChatBackend, ChatError, type ChatMessage, chatFailOf, isAdminValue, toMessage } from './chat';
 
 const TIMEOUT_MS = 15_000;
 type PgErr = { code?: string; message?: string } | null;
@@ -60,8 +60,9 @@ export const supabaseChat: ChatBackend = {
   },
   async isAdmin(userId) {
     try {
-      const { data } = await (await client()).from('profiles').select('is_admin').eq('user_id', userId).maybeSingle();   // 본인 행만 읽힌다(RLS)
-      return (data as { is_admin?: boolean } | null)?.is_admin === true;
+      const { data, error } = await (await client()).from('profiles').select('is_admin').eq('user_id', userId).maybeSingle();   // 본인 행만 읽힌다(RLS)
+      if (error) return false;   // 못 읽으면 관리자 아님([삭제]를 숨기는 쪽)
+      return isAdminValue((data as { is_admin?: unknown } | null)?.is_admin);
     } catch { return false; }
   },
   subscribe(onEvent, onState) {

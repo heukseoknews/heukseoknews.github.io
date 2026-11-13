@@ -9,7 +9,7 @@ import { getChannel } from '../lib/channels';
 import {
   BODY_MAX, BODY_NOTE, COUNT_FROM, COUNTS_EVERY_MS, DELETED_TEXT, NOT_READY, PAGE, SEND_GAP_MS,
   type ChatArticle, type ChatBackend, ChatError, type ChatEvent, type ChatMessage, type LinkState, type Outgoing, type ReadsState,
-  applyCounts, articleDate, bodyLength, canDelete, canFetchCounts, canSend, cleanBody, dayKey, dayLabel, dropMessages, enterAction, failNote, fetchSince,
+  applyCounts, articleDate, bodyLength, canDelete, deleteFailNote, canFetchCounts, canSend, cleanBody, dayKey, dayLabel, dropMessages, enterAction, failNote, fetchSince,
   firstId, isDeleted, isHttpUrl, lastId, markPlan, mergeMessages, nearBottom, readCountIds, readLabel, readsAfterFail, sendProblem, settleOutgoing, takePending, timeLabel,
 } from '../lib/chat';
 import { supabaseChat } from '../lib/chatBackend';
@@ -84,7 +84,8 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
       setPhase('ready');
     } catch { setPhase('down'); }
   }, [be]);
-  useEffect(() => { load(); be.isAdmin(me).then(setAdmin).catch(() => {}); }, [load, be, me]);
+  // 관리자 판정(0005: 글 삭제는 관리자만). 못 읽으면 관리자 아님 → [삭제]를 숨긴다
+  useEffect(() => { load(); be.isAdmin(me).then(v => setAdmin(v === true)).catch(() => setAdmin(false)); }, [load, be, me]);
 
   // 새로 들어온 글 중 남의 글 수(위로 읽는 중일 때 '새 글 N건')
   const countNew = (rows: ChatMessage[]) => {
@@ -261,7 +262,7 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
       setMsgs(cur => mergeMessages(cur, cur.filter(m => m.id === id).map(m => ({ ...m, body: null, article: null, deleted_at: new Date().toISOString() }))));
     } catch (e) {
       const k = e instanceof ChatError ? e.kind : 'network';
-      setDelNote({ id, text: k === 'forbidden' ? '지울 수 없습니다' : '지우지 못했습니다. 잠시 후 다시 시도해 주세요' });
+      setDelNote({ id, text: deleteFailNote(k) });
     } finally { setRemoving(null); }
   };
 
@@ -292,7 +293,7 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
             <li className={'msg' + (mine ? ' mine' : '') + (gone ? ' gone' : '')} data-id={m.id}>
               <div className="msgHead"><b className="msgWho">{m.author_name}</b><time dateTime={m.created_at}>{timeLabel(m.created_at)}</time>
                 {mine && !gone && readLabel(counts.get(m.id), reads) && <span className="msgRead">{readLabel(counts.get(m.id), reads)}</span>}
-                {canDelete(m, me, admin) && (removing === m.id ? <span className="msgState">지우는 중</span> : confirm === m.id
+                {canDelete(m, admin) && (removing === m.id ? <span className="msgState">지우는 중</span> : confirm === m.id
                   ? <span className="msgConfirm">지울까요? <button type="button" className="msgAct danger" onClick={() => remove(m.id)}>삭제</button><button type="button" className="msgAct" onClick={() => setConfirm(null)}>취소</button></span>
                   : <button type="button" className="msgAct" onClick={() => { setConfirm(m.id); setDelNote(null); }}>삭제</button>)}
               </div>

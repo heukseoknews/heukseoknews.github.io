@@ -3,7 +3,7 @@ import {
   BODY_MAX, DELETED_TEXT, PENDING_KEY, PENDING_TTL_MS, articleRefOf, bodyLength, bodyProblem, canDelete, chatFailOf, checkArticle, cleanBody,
   dayKey, dayLabel, dropMessages, enterAction, fetchSince, isDeleted, lastId, mergeMessages, nearBottom, savePending, settleOutgoing,
   takePending, timeLabel, toMessage, type ChatMessage, type Outgoing,
-  COUNTS_EVERY_MS, MARK_GAP_MS, applyCounts, canFetchCounts, canSend, failNote, markPlan, readCountIds, readLabel, readsAfterFail, sendProblem,
+  COUNTS_EVERY_MS, MARK_GAP_MS, deleteFailNote, isAdminValue, applyCounts, canFetchCounts, canSend, failNote, markPlan, readCountIds, readLabel, readsAfterFail, sendProblem,
 } from '../lib/chat.ts';
 
 // ---------- 글 검사(서버 chat_send 와 같은 기준) ----------
@@ -89,11 +89,17 @@ assert.equal(toMessage({ id: -1, user_id: 'u', created_at: 'x' }), null);
   assert.equal(ghost.body, null, '삭제 표시가 있으면 본문이 와도 그리지 않음');
   assert.equal(ghost.article, null);
 }
-assert.ok(canDelete(row(1), 'u1', false), '내 글');
-assert.ok(!canDelete(row(1), 'u2', false), '남의 글');
-assert.ok(canDelete(row(1), 'u2', true), '관리자는 모든 글');
-assert.ok(!canDelete(row(1, { body: null, deleted_at: 'x' }), 'u1', true), '지운 글에는 [삭제] 없음');
-assert.ok(!canDelete(row(1), null, true));
+// [삭제]는 관리자에게만(0005). 내 글이라도 관리자가 아니면 없다. 판정을 못 읽으면(null·undefined·다른 값) 숨김
+assert.ok(canDelete(row(1), true), '관리자는 모든 글');
+assert.ok(!canDelete(row(1, { user_id: 'u1' }), false), '일반 사용자의 내 글에도 [삭제] 없음');
+assert.ok(!canDelete(row(1), null), '판정 못 읽음 → 숨김');
+assert.ok(!canDelete(row(1), undefined), '판정 전 → 숨김');
+assert.ok(!canDelete(row(1, { body: null, deleted_at: 'x' }), true), '지운 글에는 [삭제] 없음');
+assert.equal(isAdminValue(true), true);
+for (const v of [false, null, undefined, 'true', 1, {}]) assert.equal(isAdminValue(v), false, `관리자 아님: ${JSON.stringify(v)}`);
+assert.equal(deleteFailNote(chatFailOf({ status: 403, code: 'PT403', message: 'not_allowed' })), '삭제 권한이 없습니다', 'PT403 → 권한 없음');
+assert.equal(deleteFailNote(chatFailOf({ status: 0, message: 'Failed to fetch' })), '지우지 못했습니다. 잠시 후 다시 시도해 주세요');
+assert.equal(deleteFailNote(chatFailOf({ status: 404, code: 'PT404', message: 'not_found' })), '지우지 못했습니다. 잠시 후 다시 시도해 주세요');
 
 // ---------- 목록 병합(중복 제거·순서·삭제 우선·보충) ----------
 {
@@ -175,7 +181,7 @@ assert.ok(canSend('', true) && canSend('글', false) && !canSend('  ', false), '
   // 저장 구분: 기사만 = body ''(삭제 아님), 삭제 = body null + deleted_at
   const only = toMessage({ id: 9, user_id: 'u', author_name: 'A', body: '', article: art, created_at: '2026-11-13T00:00:00Z', deleted_at: null })!;
   assert.equal(only.body, ''); assert.ok(!isDeleted(only), '기사만 있는 글은 삭제가 아님'); assert.deepEqual(only.article, art);
-  assert.ok(canDelete(only, 'u', false), '기사만 있는 글도 지울 수 있음');
+  assert.ok(canDelete(only, true), '기사만 있는 글도 관리자는 지울 수 있음');
   const del = mergeMessages([only], [toMessage({ id: 9, user_id: 'u', author_name: 'A', body: null, article: null, created_at: '2026-11-13T00:00:00Z', deleted_at: '2026-11-13T01:00:00Z' })]);
   assert.ok(isDeleted(del[0]) && del[0].article === null, '기사만 있는 글을 지우면 삭제 표시');
   // 0004 적용 전: 서버가 본문 길이로 거절 → '글을 함께 적어 주세요'

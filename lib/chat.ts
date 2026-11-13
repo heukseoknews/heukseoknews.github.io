@@ -114,8 +114,12 @@ export function toMessage(r: unknown): ChatMessage | null {
   };
 }
 export const isDeleted = (m: ChatMessage) => m.deleted_at !== null || m.body === null;
-/** [삭제] 버튼: 지우지 않은 글 중 내 글, 관리자는 모든 글 */
-export const canDelete = (m: ChatMessage, me: string | null, admin: boolean) => !isDeleted(m) && !!me && (m.user_id === me || admin);
+/** 관리자 판정: 서버에서 읽은 본인 profiles.is_admin 이 정확히 true 일 때만(못 읽음·null·그 밖의 값은 관리자 아님 → [삭제]를 숨기는 쪽) */
+export const isAdminValue = (v: unknown): boolean => v === true;
+/** [삭제] 버튼: 관리자에게만, 지우지 않은 글에(0005: 글 삭제는 관리자만 — 내 글이라도 관리자가 아니면 없음) */
+export const canDelete = (m: ChatMessage, admin: boolean | null | undefined) => admin === true && !isDeleted(m);
+/** 삭제 실패 안내: 서버가 권한 없음(PT403)을 돌려주면 '삭제 권한이 없습니다'(관리자 판정이 어긋났을 때) */
+export const deleteFailNote = (fail: ChatFail) => fail === 'forbidden' ? '삭제 권한이 없습니다' : '지우지 못했습니다. 잠시 후 다시 시도해 주세요';
 
 // ───── 목록 병합 ─────
 /** id 로 중복을 걸러 합치고 id 오름차순으로. 같은 id 는 지운 쪽이 이긴다(지운 글이 다시 살아나지 않게), 아니면 새로 받은 쪽.
