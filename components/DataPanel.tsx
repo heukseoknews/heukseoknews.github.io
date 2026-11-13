@@ -85,9 +85,7 @@ export default function DataPanel() {
     <td data-label="마지막 확인">{s.lastConfirmed ? fmt(s.lastConfirmed) : '없음'}</td><td data-label={`선택한 ${ch.filters.companies}`}>{s.companies.toLocaleString()}곳</td></tr>;
 
   return <>
-    <p className="meNote">{userId
-      ? <>북마크·목록·태그·메모·읽음 기록·선택한 {ch.filters.companies}는 내 계정에 저장되어 다른 기기와 맞춰집니다.</>
-      : <>북마크·목록·태그·메모·읽음 기록·선택한 {ch.filters.companies}는 이 브라우저에만 저장됩니다. 다른 기기로 옮길 때는 파일로 내려받아 가져오세요(기존 기록과 합쳐집니다).</>}</p>
+    {!userId && <p className="meNote">북마크·목록·태그·메모·읽음 기록·선택한 {ch.filters.companies}는 이 브라우저에만 저장됩니다. 다른 기기로 옮길 때는 파일로 내려받아 가져오세요(기존 기록과 합쳐집니다).</p>}
     {claimN > 0 && <div className="notice"><div><b>로그인 전 이 기기에 저장한 북마크 {claimN.toLocaleString()}개가 있습니다.</b></div><button type="button" className="confirm" onClick={claim}>내 계정에 합치기</button></div>}
     {error && <div className="error" role="alert"><AlertCircle size={17} /> {error}</div>}
     {done && <div className="notice" role="status"><div><b><CheckCircle2 size={14} /> {done}</b></div></div>}
