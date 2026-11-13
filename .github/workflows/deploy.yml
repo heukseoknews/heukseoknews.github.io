@@ -148,6 +148,10 @@ jobs:
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
           NEXT_PUBLIC_REQUIRE_LOGIN: ${{ vars.NEXT_PUBLIC_REQUIRE_LOGIN }}
 
+      # 배포 전 비밀 키 검사: 결과물에 비밀 키(sb_secret_…)·service_role·JWT 모양 키가 있으면 여기서 멈춘다(로그에는 파일 경로만)
+      - name: Check build output for secrets
+        run: node scripts/check-build-secrets.mjs out
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
