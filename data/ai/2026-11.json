@@ -1,5 +1,401 @@
 [
  {
+  "id": "270933f798e92fcd",
+  "title": "전장 검증된 자율 무인체계에 7억달러 투자…우크라이나계 '유포스', 영국서 생산 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42721",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:09:32+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "cc7ca18df29845e9",
+  "title": "구글, 영상 제작 AI 플로에 창작 도구 5종 추가…캐릭터 일관성·영상 후반 작업 강화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42720",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:39:32+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "도구"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "ad0f7e49dfe72a48",
+  "title": "구글, 제미나이 4 하이드로젠 공개…AI 에이전트 실행 속도 높이고 비용 낮춘다",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42719",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:31:06+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개"
+  ],
+  "score": 4,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "f455b5993b36bbbb",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "b4efda7b9edcf9f9",
+  "title": "ETRI, 사람·AI·환경 통합 평가하는 ‘트리니티’ 공개…95종 물체 활용해 사용자 맞춤형 작업계획 능력 측정",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42718",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:12:03+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "36f1b6a70e8c0a84",
+  "title": "[AI리더의 서가] AI 컴플라이언스 실무가이드",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217033",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "e815bfbf3cd20d57",
+  "title": "\"눈으로 보고 말로 묻는 AI 시대 연다\"...삼성전자, 구글과 AI 안경 30종 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42717",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:50:53+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "삼성전자",
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "ccc316a9ac4e9e71",
+  "title": "한국인공지능검증원, 오스트리아 AIT와 AI 신뢰성 검증 플랫폼 개발…AI 에이전트까지 평가 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42716",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:23:08+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "3a4abf8cc9511a91",
+  "title": "트럼프 \"젠슨 황 후임은 팀 쿡\"…엔비디아, 차기 CEO 물색 본격화",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217353",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:21:56+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "f455b5993b36bbbb",
+  "title": "구글, '제미나이 4 하이드로젠' 출시…상위 모델 '아르곤' 성능 추월",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217352",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:58:49+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시",
+   "모델"
+  ],
+  "score": 5,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "f455b5993b36bbbb",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
+ },
+ {
+  "id": "cbdc8f6b1c4c9f01",
+  "title": "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
+  "url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:42:51+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "launch"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "6a0b530a1c16bbaf",
+  "title": "FAA expands AI advice to manage air traffic congestion across entire US airspace",
+  "url": "https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:28:47+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "ab23a7fa21e24fb3",
+  "title": "Muse can now place calls to US businesses — if you pay",
+  "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:22:28+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "2450e380ac126deb",
+  "title": "[11월12일] \"2027년 AI 지능 폭발\"…빅테크 이어 외부 연구진도 잇따라 전망",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217310",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "cfcafc220d5be58b",
+  "title": "미국, 중국의 해외 GPU 임대 규제 추진…중국 기업들 확보 서둘러",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217351",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:33:23+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "규제",
+   "gpu"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "fb1ddd2a5ff741f6",
+  "title": "Nebius tests the neocloud playbook with $40 billion in planned spending",
+  "url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:27:10+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "562b8d374f78738b",
+  "title": "젠슨 황 떠난 엔비디아, '실질적 2인자' 크레스가 임시 CEO 맡아",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217350",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T20:56:23+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7b535a0b3441ad01",
+  "title": "젠슨 황 사임 후폭풍…백악관, 상무장관 경질 논의",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217349",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T20:36:17+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "e699e9bae2542438",
+  "title": "Jensen Huang was having a third affair, Reuters reports",
+  "url": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-12T20:26:47+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "67672a694e389b29",
+  "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+  "url": "https://openai.com/business/customer-stories/amplitude",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-12T20:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "0838bef2edd27f9f",
   "title": "Ars Live: Can the cloud survive drone strikes on data centers?",
   "url": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
@@ -638,6 +1034,28 @@
   "companies": [],
   "orgs": [
    "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "b9840fd67063a36a",
+  "title": "Gondola doubles revenue as its team builds more with Codex",
+  "url": "https://openai.com/business/customer-stories/gondola",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-12T12:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:53.907136+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "revenue"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
   ],
   "score_v2": 2
  },
