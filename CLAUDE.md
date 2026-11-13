@@ -26,10 +26,10 @@
 - 품질 세션의 push: `git pull --rebase origin main && git push origin quality:main`.
 
 ## Git·배포
-- 커밋은 파일을 지정해서 한다. git add -A, force push, 이력 재작성, 파일 삭제는 허락 없이 하지 않는다. 작업 단위로 커밋하고 코드·설정 변경과 data 변경(데이터 재작성 포함)은 커밋을 분리한다.
-- tsc·npm test·Python 테스트·빌드·비밀 키 검사가 모두 통과한 뒤에만 push한다.
-- push 전에 `git pull --rebase origin main`(자동 data 커밋과 다른 세션의 push가 있다). 충돌이 나면 멈추고 보고한다. push 전에 `gh run list`로 실행 중·대기 중인 워크플로가 없는지 확인한다.
-- push 후 Actions 성공과 배포된 version.json의 commit 일치, / /insurance/ /ai/ /finance/ 200을 확인한다.
+- 커밋은 파일을 지정해서 한다. force push와 reset --hard는 쓰지 않는다. git add -A, 이력 재작성, 파일 삭제는 허락 없이 하지 않는다. 작업 단위로 커밋하고 코드·설정 변경과 data 변경(데이터 재작성 포함)은 커밋을 분리한다.
+- push는 세션이 직접 한다. 작업이 끝나고 테스트·빌드가 통과하면 `git pull --rebase origin main`(자동 data 커밋과 다른 세션의 push가 있다) → 전체 테스트(아래 테스트 명령: tsc·npm test·Python 테스트·빌드·비밀 키 검사가 모두 통과해야 함) → `gh run list`로 실행 중·대기 중인 워크플로가 없는지 확인 → `git push origin HEAD:main` → Actions 성공, 배포된 version.json의 commit 일치, / /insurance/ /ai/ /finance/ 200 확인 → 보고.
+- rebase·push에서 충돌이 나면 임의로 해결하지 말고 멈추고 사용자에게 알린다.
+- supabase/, 수집 시각·수집기 변경처럼 서비스나 데이터에 바로 영향이 큰 작업은 push 전에 diff 요약을 보여 주고 승인을 받는다.
 - data/는 직접 편집하지 않는다. 바꿀 때는 공식 수집기 옵션(--quality, --reclassify, --normalize-sources, --dedupe-months 등)을 쓰고, 아래 "기존 기사 보존"의 dry-run 보고·승인 절차를 따른다.
 - 수동 수집은 gh workflow run으로 한다(오래된 실행의 Re-run은 옛 코드를 재배포한다).
 - 테스트 명령: `npx tsc --noEmit`, `npm test`, `for t in tests/test_*.py; do python3 "$t"; done`, `npm run build`, `node scripts/check-build-secrets.mjs out`. 화면 틀을 바꿨으면 `node scripts/measure-layout.mjs`(로그인 장벽 없는 빌드, Playwright 필요).
