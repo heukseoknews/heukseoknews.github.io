@@ -2844,6 +2844,27 @@
   "score_v2": 1
  },
  {
+  "id": "6131a988d2c71c4f",
+  "title": "잠자고 있는 포인트, 지역화폐로 바꿔 골목상권에서 쓴다",
+  "url": "https://www.fsc.go.kr/no010101/88142",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T04:05:34.367971+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "금융위원회 게시판",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ],
+  "department": "중소금융과",
+  "score_v2": 1
+ },
+ {
   "id": "912e5f152a90fcef",
   "title": "KB손보, 제천 옹달샘그룹홈에 60번째 'KB 희망의 집' 선물",
   "url": "https://www.insjournal.co.kr/news/articleView.html?idxno=33904",
@@ -7478,6 +7499,26 @@
   "cluster_size": 34,
   "cluster_sources": 33,
   "score_v2": 4
+ },
+ {
+  "id": "348bb488b9332bd1",
+  "title": "법 제정 앞서 가상자산 거래소 보안 고삐⋯해킹 의심 땐 입출금 선제 차단",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE85YVpxUUlDbm5tN0lvZE1qQnNjcmdVN09iMWFtMzBvTGNJUklTZnBnVTdkUVhQZExXSFNKLVJIV1pNd3hYVGY5S1YwTXVrWGlMcUZsUTM3UDEzaFpxZGpMSy1kOGtidWZkeEpOZ3MxcExuaDZS?oc=5",
+  "source": "이투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:30:00+00:00",
+  "collected_at": "2026-11-13T04:05:34.367971+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "해킹"
+  ],
+  "score": 2,
+  "feed_name": "기관·금융위원회",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "5b35537da162b4a9",
