@@ -33,8 +33,8 @@ export default function ArticleCard({ a, bookmarked, read, rank, fading, group, 
   const s = stars(a);
   const listId = `grp-${a.id}`;
   const gone = !!dismiss?.dismissed;
-  return <article data-bm-id={a.id} className={'article' + (read ? ' isRead' : '') + (gone ? ' isDismissed' : '') + (fading ? ' fading' : '')}><div className="articleMain">
-    {/* 위계: 분류 배지 줄 → 제목 → 출처·시간 → 중요도·태그 → 같은 사건 */}
+  return <article data-bm-id={a.id} className={'article' + (read ? ' isRead' : '') + (gone ? ' isDismissed' : '') + (fading ? ' fading' : '')}><div className="articleMain cardGrid">
+    {/* 위계: 분류 배지 줄 → 제목(+ 버튼 줄) → 출처·시간 → 중요도·태그 → 같은 사건 */}
     <div className="cardTop">
       {rank !== undefined && <span className="rank">{rank}</span>}
       <span className={a.source_type === 'press' ? 'pill official' : 'pill'}>{a.category}</span>
@@ -42,6 +42,15 @@ export default function ArticleCard({ a, bookmarked, read, rank, fading, group, 
     <h3 className="cardTitle">{isSafeUrl(a.url)
       ? <a className="headline" href={a.url} target="_blank" rel="noopener noreferrer" onClick={() => onRead(a.id)} onAuxClick={e => { if (e.button === 1) onRead(a.id); }}>{a.title}<ExternalLink size={15} aria-hidden="true" /></a>
       : <span className="headline">{a.title} <small>(링크 없음)</small></span>}</h3>
+    {/* 버튼 줄(가로): 왼쪽부터 [치우기(새 뉴스만)] [채팅에 올리기(로그인 중)] [북마크]. 오른쪽 정렬이라 북마크는 모든 탭에서 맨 오른쪽, 채팅은 그 왼쪽 고정.
+        넓은 화면은 칩·제목 줄 오른쪽, 좁은 화면(≤560px)은 매체·별점 줄 오른쪽(app/globals.css .cardGrid). 키보드 순서: 제목 → 버튼 → 같은 사건 */}
+    <div className="cardActions">
+      {dismiss && (gone
+        ? <button type="button" aria-label="되돌리기(새 뉴스에 다시 보이기)" title="되돌리기" className="readBtn dismissBtn" onClick={() => dismiss.onRestore(a.id)}><RotateCcw size={19} aria-hidden="true" /></button>
+        : <button type="button" aria-label="치우기(새 뉴스에서 빼기)" title="치우기" className="readBtn dismissBtn" onClick={() => dismiss.onDismiss(a.id)}><EyeOff size={19} aria-hidden="true" /></button>)}
+      {share && isSafeUrl(a.url) && <button type="button" aria-label="채팅에 올리기" title="채팅에 올리기" className="readBtn shareBtn" onClick={() => share(a, slug)}><MessageCirclePlus size={19} aria-hidden="true" /></button>}
+      <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={e => { pop(e); onBookmark(a); }} onAnimationEnd={unpop}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
+    </div>
     <div className="meta"><span>{a.source}</span><span className="dot" aria-hidden="true">·</span><time dateTime={a.published_at}>{fmt(a.published_at)}</time></div>
     <div className="bottomMeta"><span>학습 중요도 {'★'.repeat(s)}{'☆'.repeat(Math.max(0, 5 - s))}</span>{tagList(a).map(t => <span className="tag" key={t}>#{t}</span>)}{read && <span className="read">읽음</span>}{gone && <span className="read">치움</span>}</div>
     {group && group.size > 1 && (group.others.length
@@ -65,12 +74,5 @@ export default function ArticleCard({ a, bookmarked, read, rank, fading, group, 
       })}
     </ul>}
   </div>
-    <div className="cardActions">
-      {dismiss && (gone
-        ? <button type="button" aria-label="되돌리기(새 뉴스에 다시 보이기)" title="되돌리기" className="readBtn dismissBtn" onClick={() => dismiss.onRestore(a.id)}><RotateCcw size={19} aria-hidden="true" /></button>
-        : <button type="button" aria-label="치우기(새 뉴스에서 빼기)" title="치우기" className="readBtn dismissBtn" onClick={() => dismiss.onDismiss(a.id)}><EyeOff size={19} aria-hidden="true" /></button>)}
-      <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={e => { pop(e); onBookmark(a); }} onAnimationEnd={unpop}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
-      {share && isSafeUrl(a.url) && <button type="button" aria-label="채팅에 올리기" title="채팅에 올리기" className="readBtn shareBtn" onClick={() => share(a, slug)}><MessageCirclePlus size={19} aria-hidden="true" /></button>}
-    </div>
   </article>;
 }

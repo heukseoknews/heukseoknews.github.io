@@ -95,7 +95,7 @@ const count = (d: Dismissed) => [A, B, OLD].filter(x => isPendingNew(x, baseline
   assert.match(page, /tab === 'new' && <label className="check"><input type="checkbox" checked=\{includeDismissed\}/);
   assert.match(page, /dismissed: dismissedSet\.has\(a\.id\) && !leaving\.has\(a\.id\)/, '켠 상태에서 치운 카드는 흐리게 + [되돌리기]');
   const css = readFileSync('app/globals.css', 'utf8');
-  assert.match(css, /\.article\.isDismissed \.articleMain\{opacity:\.55\}/);
+  assert.match(css, /\.article\.isDismissed \.articleMain>:not\(\.cardActions\)\{opacity:\.55\}/, '본문만 흐리게, 버튼(되돌리기)은 그대로');
   assert.ok(!/\.article\.isRead \.cardTitle\{font-weight/.test(css), '읽음은 색만 바꿈(굵기 변화로 카드 높이가 바뀌지 않게)');
 }
 

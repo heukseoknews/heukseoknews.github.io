@@ -51,7 +51,7 @@ footer.siteFooter{margin-top:0;background:#fff;border-top:1px solid var(--line);
  .siteFooterInner{padding:24px 16px 20px}
 }
 /* 읽음(링크를 연 기사): 모든 탭에서 제목 색만 흐리게(굵기는 그대로라 줄바꿈·카드 높이가 바뀌지 않는다). 치운 기사('치운 기사 포함'): 본문을 흐리게, 버튼 칸은 그대로 */
-.article.isRead .headline{color:var(--muted)}.article.isDismissed .articleMain{opacity:.55}.article.fading{opacity:0;transition:opacity .2s ease}
+.article.isRead .headline{color:var(--muted)}.article.isDismissed .articleMain>:not(.cardActions){opacity:.55}.article.fading{opacity:0;transition:opacity .2s ease}
 .readToggle{background:#fff;border:1px solid var(--line);border-radius:40px;color:var(--text-2);font-size:12px;padding:7px 14px}.readToggle[aria-pressed="true"]{color:var(--brand);border-color:var(--brand);font-weight:700}
 .primary .count{margin-left:2px}
 
@@ -75,6 +75,17 @@ footer.siteFooter{margin-top:0;background:#fff;border-top:1px solid var(--line);
 .cardActions .bookmark,.cardActions .readBtn{width:44px;height:44px;display:flex;align-items:center;justify-content:center;padding:0;border-radius:10px}
 .readBtn{background:#fff;border:1px solid var(--line);color:var(--text-2)}@media(hover:hover){.readBtn:hover{background:var(--accent-soft);color:var(--brand);border-color:var(--brand)}}
 .cardActions button:focus-visible,.undoToast button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* 기사 카드(ArticleCard .cardGrid): 버튼 줄을 가로로 본문 grid 안에 둔다(세로로 쌓으면 버튼 3개가 카드 높이를 정해서).
+   넓은 화면: 칩 줄·제목 줄 오른쪽(두 줄에 걸쳐 높이를 늘리지 않음), 출처·중요도·같은 사건은 그 아래 전체 폭.
+   560px 이하: 제목은 전체 폭, 버튼 줄은 출처·중요도 두 줄 오른쪽 끝(420px 이하는 칩 줄 오른쪽). 눌리는 영역은 기본 44px, 마우스(hover·정밀 포인터)+넓은 화면만 36px.
+   마이페이지 카드(버튼 칸이 본문 밖)는 이 규칙과 무관하다. */
+.article>.cardGrid{flex:1;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:start;grid-template-areas:"top act" "title act" "meta meta" "bm bm" "grp grp" "list list"}
+.cardGrid>.cardTop{grid-area:top}.cardGrid>.cardTitle{grid-area:title}.cardGrid>.meta{grid-area:meta}.cardGrid>.bottomMeta{grid-area:bm}.cardGrid>.groupToggle{grid-area:grp;justify-self:start}.cardGrid>.groupList{grid-area:list}
+.cardGrid>.cardActions{grid-area:act;flex-direction:row;justify-content:flex-end;gap:6px}
+@media(hover:hover) and (pointer:fine) and (min-width:561px){.cardGrid>.cardActions .bookmark,.cardGrid>.cardActions .readBtn{width:36px;height:36px}}
+@media(max-width:560px){.article>.cardGrid{column-gap:10px;grid-template-areas:"top top" "title title" "meta act" "bm act" "grp grp" "list list"}.cardGrid>.cardActions{align-self:center}}
+/* 420px 이하: 버튼 44px×3 이면 출처·중요도 줄이 너무 좁아져 줄이 늘어난다 → 칩 줄 오른쪽(제목·출처는 전체 폭). 탭마다 버튼 수가 달라도 같은 자리 */
+@media(max-width:420px){.article>.cardGrid{grid-template-areas:"top act" "title title" "meta meta" "bm bm" "grp grp" "list list"}.cardGrid>.cardActions{align-self:start}}
 .undoToast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:14px;background:#1d2b3c;color:#fff;border-radius:12px;padding:6px 8px 6px 18px;font-size:13px;box-shadow:0 6px 20px #0003;max-width:calc(100vw - 32px)}
 .undoToast button{background:none;border:0;color:#9fd0ff;font-weight:700;font-size:13px;min-height:44px;padding:0 12px;border-radius:8px}
 .undoToast span,.undoToast button{white-space:nowrap}
