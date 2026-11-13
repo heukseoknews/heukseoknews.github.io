@@ -1,5 +1,1507 @@
 [
  {
+  "id": "75e3e3febabd39fd",
+  "title": "‘성수·옥수 이어 성동까지’… 인카금융서비스, 지역 복지관 3곳에 각 1,000만 원 릴레이 후원",
+  "url": "https://www.insjournal.co.kr/news/articleView.html?idxno=33912",
+  "source": "보험저널",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:45:55+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "보험저널",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "c5e0d9974e954098",
+  "title": "하나금융, MSCI ESG 평가서 3년 연속 최고 등급 ‘AAA’ 획득",
+  "url": "https://www.insnews.co.kr/news/articleView.html?idxno=93827",
+  "source": "한국보험신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:37:31+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "한국보험신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "477d2bffca54f3fb",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 1
+ },
+ {
+  "id": "4ebea4bae3c12322",
+  "title": "삼성화재, 스마트싱스 앱서 집 화재·누수 위험 진단",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5PWU9ManZPZ3hBS005RDNUY1VSaUlLWlNOX1JJWkZqX1J1Vm9MbzdVMnpvNmNMQ0V2NTZzWjFSb3hkeW16WFJzWlh0ZGpBU1dfSE1VaVU3ekM2WVNvY3dTTExlRDZBcHM1VkY2Ym1xdGtWdw?oc=5",
+  "source": "중앙이코노미뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:30:44+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·삼성화재(그 외)",
+  "relevant": true,
+  "companies": [
+   "삼성화재"
+  ],
+  "orgs": [],
+  "cluster_id": "e6bb94edaa268993",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 2
+ },
+ {
+  "id": "8a54c3e8dba93b56",
+  "title": "“우리 집 화재·누수 위험 몇 등급일까?”… 삼성화재, 스마트싱스 앱서 ‘착!한 우리집진단’ 선보여",
+  "url": "https://www.insjournal.co.kr/news/articleView.html?idxno=33910",
+  "source": "보험저널",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:30:06+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "보험저널",
+  "relevant": true,
+  "companies": [
+   "삼성화재"
+  ],
+  "orgs": [],
+  "cluster_id": "e6bb94edaa268993",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 2
+ },
+ {
+  "id": "a1a1d14391b54e42",
+  "title": "\"화재·누수 위험 한눈에\"… 삼성화재, 스마트싱스 내 '우리집진단' 제공",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE03MHA5WEdzSU0wVEJBc3lNdlUzN25reHlSc0I0dDJ2b3VVSTBZdWJ1TWp4TDQwbjY3bVYwcExrUzk5akZyMzFhM0dQcTlNRXBFMGoxcWhud3F2eGFCTUNVRld6R25ONXVrRHNR?oc=5",
+  "source": "뉴스드림",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:25:03+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·삼성화재(그 외)",
+  "relevant": true,
+  "companies": [
+   "삼성화재"
+  ],
+  "orgs": [],
+  "cluster_id": "e6bb94edaa268993",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 2
+ },
+ {
+  "id": "6ba12c2810ec8db3",
+  "title": "삼성화재, 스마트싱스서 주택 화재·누수 위험 진단",
+  "url": "http://www.fins.co.kr/news/articleView.html?idxno=110549",
+  "source": "보험매일",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:09:42+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "보험매일",
+  "relevant": true,
+  "companies": [
+   "삼성화재"
+  ],
+  "orgs": [],
+  "cluster_id": "e6bb94edaa268993",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 2,
+  "cluster_lead": true
+ },
+ {
+  "id": "e6bb94edaa268993",
+  "title": "삼성화재, 삼성전자 '스마트싱스'서 주택 화재·누수 위험 진단",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE16SnlpbTZHWWJTcU16YTJCLURmYW5qU3RvUEY3NFhhXzZXazNONElzVVFjTU8wRTZreDRHNU5QTExuZXVUT3NyS2pjR01CVm0tbHdpS3lseGdUakcyNXZFY2lOM2JEWGMycFExLUpBdkM?oc=5",
+  "source": "코리아리포트",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:08:42+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·삼성화재(그 외)",
+  "relevant": true,
+  "companies": [
+   "삼성화재"
+  ],
+  "orgs": [],
+  "cluster_id": "e6bb94edaa268993",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 2
+ },
+ {
+  "id": "e61c979d9c3e404d",
+  "title": "한화생명, 보조기기 특약 6개월 배타적사용권 획득",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9YR0dleEFEZm12cjY2dzRPQzZCcHJXVldNaFdWMG10eUlTYjQzN08xS3ZyTkhYUlRXMEN1S3JBaGZvaEl4WFhCTWw1OE1mWGpVOVpRYnF5VFRHODdha0Q2UmJlTzhMcmVVMG1TUXV4alo?oc=5",
+  "source": "코리아리포트",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:03:39+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "769a41910f780be8",
+  "title": "'패패패패패' 아직 한국에서 1승도 없다니, 前 국대 감독 구세주로 등극하나…30살 예비역 떴다→선수 등록 끝났다 \"의욕이 높다\"",
+  "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE03dVZVaTZOQm9pVzl1Wl84OGN1YWpaNHVvXzBzc242WWktdHp3M3hTaDhDUWZMTk51ZFJZTGVjaDBtb1ZsSjcycG1EcDc4cE9xR0VPMVFraW51cDA5eXJhTFRhcU9HZw?oc=5",
+  "source": "마이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:01:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "63a1f1f1f0451047",
+  "title": "연기금투자풀 대체투자 1.2조원…작년 말보다 7천억원 넘게 늘어",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5nZlBoNk0wYS1sRWxHN2dwMExKQXJUQmdnVUxXSE5FZVFIQlNoa1p2d2ZWeW9uZVFQZEJKc29rUXQtT1JZSEdCMnZXbThpck53YkE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T03:00:03+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "대체투자"
+  ],
+  "score": 2,
+  "feed_name": "주요 경제지·금융시장",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "688db14757c63526",
+  "title": "코리안리, 3Q 누적 순익 4016억원…사상 최대",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1aVDVydmxUT3dXWmxtN0JFX1BjZTVRUEpwTFJwWnRMUlJDbWRfQ190UFdTU242NXJmTWZ2Y2FRVFZwRThyZmRfczNGcnM5a1NJSlJMeVJKY3V5UGpkSGVSamRrLUg?oc=5",
+  "source": "PRESS9",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:48:12+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "위험관리·재보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "재보험",
+  "relevant": true,
+  "companies": [
+   "코리안리"
+  ],
+  "orgs": [],
+  "cluster_id": "617576222c5ea9ad",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 4
+ },
+ {
+  "id": "ad58d2954b2be341",
+  "title": "토스인슈어런스, 신입 설계사 육성 확대…500만원 지원",
+  "url": "http://www.fins.co.kr/news/articleView.html?idxno=110547",
+  "source": "보험매일",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:46:58+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "설계사"
+  ],
+  "score": 2,
+  "feed_name": "보험매일",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "aa1bb8e42588b0f8",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 2
+ },
+ {
+  "id": "a7171b2f4c9037f3",
+  "title": "DB손해보험, 경상수익성 개선과 주주환원 확대 병행",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1yYURkTUFRaGQ0NXFHcVBXdVVVamJ0YjBfazlndlBFUFNYaFVFamNJcGpEbmRXMFVVREFZdS0tOFUwZGxxZU9iNEFENjYxXzNPNjdpRjcxZERLRXU3MjJZckRBVlZ0OWRaT2FSaFJB?oc=5",
+  "source": "알파경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:46:20+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "주주환원"
+  ],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "DB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "618960e733170191",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
+ },
+ {
+  "id": "5985e601e05b19a2",
+  "title": "한화생명, '보조기기 지원금특약' 배타적사용권 획득",
+  "url": "http://www.fins.co.kr/news/articleView.html?idxno=110548",
+  "source": "보험매일",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:45:46+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "보험매일",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "4e09837443a00d97",
+  "title": "미래에셋생명, 3분기 순손실 339억⋯전년比 적자전환",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5mTFd0SThiM2o4Z2czdnI1T0cxd3plSjNta1pPdkZ0WkNaOUV4YUFRNnUwQW1zUFItdkRwNGczZTF2TG5SZ0xDNWwxZ1pYUElrQUV1a1dQTjdVTDJrS1NsbmdSOWo1SGdKRVhRckdsVGxlbXlT?oc=5",
+  "source": "이투데이",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:44:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "2317a8184b6f39f3",
+  "title": "한화생명, ‘보조기기 지원금특약’ 6개월 배타적사용권 획득",
+  "url": "https://www.insnews.co.kr/news/articleView.html?idxno=93826",
+  "source": "한국보험신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:43:25+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "한국보험신문",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "a51b3b40828f199a",
+  "title": "KB손해보험, 제천 옹달샘그룹홈에 ‘희망의 집’ 60호 선물",
+  "url": "https://www.insnews.co.kr/news/articleView.html?idxno=93825",
+  "source": "한국보험신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:43:18+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "한국보험신문",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "138e86ce52482c0a",
+  "title": "토스인슈어런스, 연말까지 신입 보험설계사 육성 ‘지원’",
+  "url": "https://www.insnews.co.kr/news/articleView.html?idxno=93824",
+  "source": "한국보험신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:43:13+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "보험경영·판매",
+  "sub_categories": [],
+  "tags": [
+   "설계사"
+  ],
+  "score": 3,
+  "feed_name": "한국보험신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "aa1bb8e42588b0f8",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
+  "id": "80b7c82b9d6022eb",
+  "title": "[지식재산이야기-351] 한화생명, 보조기기 지원금특약 배타적사용권 6개월 획득",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE94UlNDcDNpX2dMSlRhQUNuVzhBdGNKZ0Y4ODMxeE1BSXMtdG9yRGFCWGF3MUZ2ZjRXOGk0Q3luamYteFVjT1MtdHhCbkV2cExrUmVFUmZDU0RYTTV4bEZLNXdDWlJRTjd1djA0?oc=5",
+  "source": "파이낸셜신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:37:44+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "b2ba108b2a793910",
+  "title": "한화생명, 장애인 보조기기 비용 보장 특약 '배타적사용권'",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE94SVo3Y2hIbFNHQ2tmWk4zX2o4ODhzWV8xakhwdE1CSlowOEVvY0FUbEl2Unhaa2F5RGotdGdhdjVvU0pOSUg0N3RmUEUxT2xGRTdIZ1I0VExfazN1YXdXbNIBeEFVX3lxTE8zc3l0dDdZZHcwTUwwZzQxLUFiZWhtTWhrZkFYajVJd05FbXZKVnIzUWdjdlFvUGFNRGdNUjZyUjRENnZBOC1mUGJNRlVhZXBxVk1SazlvZGJvRFNQd1c3UUVNOGlDUDBMYnhfRlktZUoza3pwc1Rjbw?oc=5",
+  "source": "뉴시스",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:37:13+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "주요 경제지·보험",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "b3aa2c95a741195d",
+  "title": "한화생명, 장애인 보조기기 지원 특약 6개월 배타적사용권 획득",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9EX1pTVVNrUnJJRTNHLWI2X0l5TExLZzhaWlhwbUd1bzg2RDVid0J3NDNtUFpZX2lNTkNSY25JVTNkbVFZMVFwREdiR2xWNy1QUG9HNE1SS0VaSnRLMk4zRExZdlJLdXlwSWxocENoRzRVdw?oc=5",
+  "source": "인더스트리뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:34:38+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "생보사·삼성·한화",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "e38c997606533921",
+  "title": "DB손해보험, 3Q 순익 35% 증가…톡톡한 '포테그라 효과'",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5oLW5OLXBZbUdMUnZOdTFkbWFJNExDbFRxeU54T1ZEM3F6a3BlSTEzMjlsdTVVWDNaNW5nZUtnWXBhX2ZpT2R3SWNKUDhPYzJKUDdtclZjaGEtb2NibnF1X212MVU2VFpo0gFsQVVfeXFMTW05THZxQ2hRQjdaaTBvcVB5b0VEQnd3SFpFMEV2dkpSY28wU2E2SE8xTEt2WW42aGJudzJyZExSOTlYMzQzQ1N5LWVTQVJTeVZUVzJid1V2bFk4WW1vc1VJbUJOZmhvOXZlTkd2?oc=5",
+  "source": "블로터",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:30:27+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "DB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "2361bc6ab044b63f",
+  "cluster_size": 7,
+  "cluster_sources": 7,
+  "score_v2": 3
+ },
+ {
+  "id": "68ebca52d0087a77",
+  "title": "뮌헨재보험 독일 증시서 2.88% 상승 마감 : 기업주식정보",
+  "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE4xSjVtNHdvTG1SbEdzVkJHNGhFcG9rQTBWTmlDSlY2cEdPX1BvYWRiWGdGUDRia2QwakwxUWhIQ0RqLVh5MlQyZWhqOA?oc=5",
+  "source": "재경일보",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:28:05+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "금융시장·자산운용",
+  "sub_categories": [
+   "위험관리·재보험"
+  ],
+  "tags": [
+   "재보험",
+   "증시"
+  ],
+  "score": 4,
+  "feed_name": "재보험",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "f7eb56a91a6784f0",
+  "title": "KB손해보험, 제천 옹달샘그룹홈에 60번째 'KB 희망의 집' 선물",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9MV0dDTTFJbW9Sby10bHNwZ3AyWlM5Z1hLZmxIYmRCVk1mTTZjQVl1NFNCOEZsT0FUYXUyUnNqSVk4QldsRFowNlFyM3VNZDNtSTZKRklPNU51dHVNNTV1cmU2bjVqR2Y3NElr0gFvQVVfeXFMUFlqWi1iVG1LSG5ud1RsOEllMTJTLW1hbjZEcTRJLXU2dEtNdFhBMS0xWm52dHoyMmtYS1ViQTU4RU1YcGdFNTFNQ0JWRTJPWWpSRHlkaGUtQTc3em1pRkNrZ1YwNmxiTU9ZUUxPUGlN?oc=5",
+  "source": "글로벌E",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:26:19+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "8dd5819fae43f10e",
+  "title": "[리포트 브리핑]한화생명, '비연속적 요인에 의한 적자' 목표가 5,300원 - 한화투자증권",
+  "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1oUkxkY054R21xR21LTmEwcHYyMG50dnBnYlY2Y001eTM1TDBiak8xVVc1bEFmaG80Sk5DSnh1MGlPb0xqX1VQVWFpRURoQlhZMUtlRDNYSGx5Z2xX?oc=5",
+  "source": "뉴스핌",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:24:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "금융시장·자산운용"
+  ],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "생보사·삼성·한화",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4f193efdfdfd078f",
+  "title": "[리포트 브리핑]DB손해보험, '주요 투자포인트인 보험 수익성 개선을 재확인' 목표가 247,000원 - 한화투자증권",
+  "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5rSlVnN0VXeWpnYVcwaDNkTE9kcjZ1ZVFNYlRDRld3WmltU09CZndteWNTNFVLczBaam5BNklmakJ0SDNnVDd0VjFrcTMxZU90TmlLSjdEb2FZQlNp?oc=5",
+  "source": "뉴스핌",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:24:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "금융시장·자산운용"
+  ],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "DB손해보험"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a7a106cb8e2fa30e",
+  "title": "한화생명, '보조기기 지원금특약' 6개월 배타적사용권 획득",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE03c1N2UFJUNV9WaS0tSkVpc1pIbnNOclhKRzlwNkNidDBmUUlUc2VFQkhXRU9HZGhJdDlfNWQ5MEtwZGJpaXFrS0d0RW95dkJidGVVMEFNVFg5cnllOUU3SjRpdHpETGw1OUE?oc=5",
+  "source": "컨슈머타임스",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:22:04+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "36a8640ec4b3ef09",
+  "title": "[삼성화재의 글로벌 확장④] 캐노피우스 인수에도 ‘환원율 50%’ 유지…성장·배당 함께 간다",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5abHlUdVlpMDNLZFB3YTVtN2NEcEs1Q1lCZlQ4YjJqZU1Lc0k5Q2MyNnhWRzRYUTB1VDU2VlAwWC02c3FadmtwRjEwNUVsb2hoSnNES3EtVWFHaG8tcmxZWV9POXR4dl91Z3lPcFNHY2p2d9IBckFVX3lxTE5abHlUdVlpMDNLZFB3YTVtN2NEcEs1Q1lCZlQ4YjJqZU1Lc0k5Q2MyNnhWRzRYUTB1VDU2VlAwWC02c3FadmtwRjEwNUVsb2hoSnNES3EtVWFHaG8tcmxZWV9POXR4dl91Z3lPcFNHY2p2dw?oc=5",
+  "source": "팝콘뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:21:13+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배당"
+  ],
+  "score": 2,
+  "feed_name": "손보사·삼성화재(캐노피우스)",
+  "relevant": true,
+  "companies": [
+   "삼성화재",
+   "캐노피우스"
+  ],
+  "orgs": [],
+  "cluster_id": "d3b04d90f91775fd",
+  "cluster_size": 7,
+  "cluster_sources": 7,
+  "score_v2": 3
+ },
+ {
+  "id": "cf2ae30202f37bce",
+  "title": "미래에셋생명, 3Q 순손실 339억원…적자 전환",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBlLXVUUHBHS2w4LUtRWnExbHdqVlkxdFRQOFZSUEtRcXhKQS1GcWplRnJaNWVldWNwRWxwVW84emZCSDhGVTU5UUYtVk01UnlrR0hIZWtrZWtXVzVOWHl3SEhWd3A?oc=5",
+  "source": "PRESS9",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:20:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "363055434ef6df70",
+  "title": "제주도 '지수형 기후보험' 국제기후회의 데뷔…모범사례로 소개",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBfbXQxdmJzaFVnbjVBRHdmcWdGbGhsejl0WVg4WVpGcmhGd3FNZGx2ZXNYWDBRWUNBdFdmdTl3RTU5ZnVpcXI1TU9YV2ZuMzJyMHJkbHY5a0FVYThXWndvX9IBeEFVX3lxTE9RTHA1RTAyNnBwby1tSnhLUHc0Uk5RUUdqdUVXMlkxckZVS0dQQldhLXRpbEI4VTdva0F5WkIwa0hVbUtZRzdzbDhGSWNmdVJxLUh6QmhLU2ZCbjBwUVVEOXg2bGREeDRRdEtLYkEzMXJtNmxSSHlMQw?oc=5",
+  "source": "뉴시스",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:19:12+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "주요 경제지·보험",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "329a30f41d353772",
+  "title": "교보생명, 악사손해보험 지분 인수 관련 실사 마쳐…향후 검토 진행",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5QNm10YmhFV0wzXzhROHF1c3o1NEdDNDVBYkZVY2hxZEQ0X1pNTE9oS1VXZm9DNlVocFRhdXBMRmxWSWlxd1kzYWE2R0JORmp5VmNoUW1ZWmtOMTdHYUI5Z1dXbXRfbkxNS0hR?oc=5",
+  "source": "뉴스저널리즘",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:18:27+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "생명보험"
+  ],
+  "tags": [
+   "손해보험"
+  ],
+  "score": 3,
+  "feed_name": "생보사·교보·신한·농협",
+  "relevant": true,
+  "companies": [
+   "교보생명",
+   "AXA손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "98697c1098ce4868",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 3
+ },
+ {
+  "id": "469b278ff4556d34",
+  "title": "재보험사 코리안리, 美 법인 설립 검토… 해외 사업 확대",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQTURIay1aTGJpUzJ4b1JoY1NWTGhnOFBKcVdwVGxxWjFfQmVaeDNfX0dnbGI5QmJiTDYtSGlfRVh1NEx6dzFPOElhZ1F3VThFa1h2NVMxbUVXYkJNUXlBaXNhdl9yOFQ1R00xcXFrRU40QmRVSGRncXk4MEgwTUpCZdIBlAFBVV95cUxNeWlMQkM5M1JsWWowTXRuUl91T3E1V1BZeC1YUEt5UlpxLW9XaThUZkFhZjhLc1htQzFGQ2JXZGpIMzZHOXFzeVFPa3ZXbXptUVVMX3d6OFc3YU9qeE9CUERQMzVPYS1uU3N6c2VPSmdMTjFBWjlxQm1mSzdWbl9odEdJS015OExSM3l2U2l1YmY1RTR1?oc=5",
+  "source": "Chosunbiz",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:17:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "위험관리·재보험",
+  "sub_categories": [],
+  "tags": [
+   "재보험"
+  ],
+  "score": 5,
+  "feed_name": "재보험",
+  "relevant": true,
+  "companies": [
+   "코리안리"
+  ],
+  "orgs": [],
+  "cluster_id": "617576222c5ea9ad",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 4
+ },
+ {
+  "id": "7736b91f0bfedb27",
+  "title": "한화생명, 보조기기 지원금특약 6개월 배타적사용권 획득",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1mSWF5cmNxXzhTOWpkVHU4UVQ3T2VUZ3J1c01tMEZXQ2xSSVRVZmQ1bjQ4TjJ6NlZvMjRQWEsxeE1LSWdPa2VZMl85dk9HNUoyZWRycjN3WXduTnN0OVVnNlNuMUNqR3PSAWtBVV95cUxObmRUcFcwQ0NhNnFJNEZ6SXpTQVA4SzBoMHN0NnU0MndsX0Q2clljQ3V1dDZ3d1F1RWt0TjdHcWlBZTF3WE4zYVQ1S0E1VmlNd0tCUWxWXzU1U2ZtYXRlWXlkdVpCb2VJTjliRQ?oc=5",
+  "source": "현대경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:15:04+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "932bc1e10bc244e0",
+  "title": "휠체어·보청기 이용 시 보험금…한화생명, 6개월 배타적사용권",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBKMkNVQmRCV0ZPZlV1bXZFMVNKTGZESUZweW1EUHJfVXYwVXJYV3FBWllramVNWW5OMm9nTUJoV0lmY0NKUXY1TDNxQUFhaFRXR1p0SFhBUzVkaWJoTWVDNFBUemlac1Jxck40?oc=5",
+  "source": "라이센스뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:10:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "54b77c925fdad276",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
+ },
+ {
+  "id": "dfcf3ce15c37bda2",
+  "title": "KB손해보험, 아동 주거환경 개선…'희망의 집' 60호 완공",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1feDRhWXFVZFhtLTBpSmREUzhFbldBc3B3QnlLbEFvVjZvNGZpN2NOYVJ3NmsySFlwc3VleFpBWEIwR1BwMl95MmkwSzdTQTdYMkpnVEtuRk1pbXgxZGMwYnhfYXBEeGtkRlE?oc=5",
+  "source": "컨슈머타임스",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:05:43+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "a13fa7d4a2c81ca5",
+  "title": "미래에셋생명, 3분기 적자 전환…순손실 339억원",
+  "url": "http://www.fins.co.kr/news/articleView.html?idxno=110546",
+  "source": "보험매일",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:03:38+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "보험매일",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "e028256665128c6e",
+  "title": "[공시] 미래에셋생명, 3분기 영업손실 431억원.. 적자 전환",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOSjhWMFE1dU1UOWNWRWVac1I2OEJmWUFDN2g4UmFNZkhodzVBdWVmVEZmZnMzc2pCUVloSEhPM2h6RndxN1BEQjVFdlA2czFUOXFNcUY0c1dTT191NlE2Nkk4YUROdEowOUlESlZCYXdXU2VJTUtGQ2gwVUNlUDNaRklucVlLb2s?oc=5",
+  "source": "글로벌이코노믹",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:03:10+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "영업"
+  ],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "f03f067f5c9c2c52",
+  "title": "KB손보, 제천 옹달샘그룹홈에 60번째 ‘희망의 집’ 선물",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBWYkdyT3VBdkFkOTZWbVI2QTNpSTBpNnJ3a3JhQVY4UUdycFVjMHNWSUh5X1hQOGVZbGxIZHdzejhIdEMyNjFSR19fOWFzUXF5dDREOWNGZmJGQWdwb0NhTlpSNEI3YUppSHJNaA?oc=5",
+  "source": "뉴시안",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:03:09+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "b299cdbfb1bd055b",
+  "title": "미래에셋생명, 3분기 순손실 339억원..적자전환",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9NM1VuMldRYWFKWFp2d1ZLOFZTVi1UMGxTNUE3VFJUMmFuaGgxbVpVdk0walVGcjIxNWpKaEZoS3I0eXgzdkt0dUpQOENEd2pOVi0xdFlSOXlLZ0tzdVZF?oc=5",
+  "source": "스마트투데이",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:59:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "44fc76691dc34dd0",
+  "title": "NH농협생명, 노숙인 20명과 김포 농가서 구슬땀...새로운 자립 기회 제공",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9CWGtVY3pRdExRTk4yS18tS25rS0dsX2lXNTI3LXh6Q05tcEx0MzJqbFREWlZRVFhwZ0c5ZzZMWFBoWUd0NXgtcnFwejVwQWpSVElfOGl0V0QxUHVjejB0RHhfdkNBbkI4c0Yw?oc=5",
+  "source": "소비자경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:57:26+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·교보·신한·농협",
+  "relevant": true,
+  "companies": [
+   "NH농협생명"
+  ],
+  "orgs": [],
+  "cluster_id": "463581131a75a15e",
+  "cluster_size": 25,
+  "cluster_sources": 25,
+  "score_v2": 2
+ },
+ {
+  "id": "a73711e1fcb87e25",
+  "title": "KB손해보험, 제천 아동 공동생활가정 주거환경 개선…'희망의 집' 60호 완공",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5tc3FBV3dGZEJZMl9kUm9zOGFkbUFvTnJqY2xrSDF5aTloN2dmY3NIZ3JrNThnYU5aN0p3Vk9XWjU1cGtJS3p0dlJCM3VTNWVKUV9TNlVIVEVHOXFFTFpjZ2R6d1lyRkRONE03bTdKYw?oc=5",
+  "source": "이코노미사이언스",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:56:53+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "3901f0bfae3279c4",
+  "title": "미래에셋생명, 3분기 순손실 339억 적자 전환",
+  "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5NVHN5WTJlUUx4TzBjd2pLTTh1WWtNVS1vTENpUkw1a0pPSktMUmlwU3hoMDQ4UWFzc0M1R0YtZXlOSkVWakJ1azJDVVo1TFJzcDVnYmtxUDbSAVhBVV95cUxOTVRzeVkyZVFMeE8wY3dqS004dVlrTVUtb0xDaVJMNWtKT0pLTFJpcFN4aDA0OFFhc3NDNUdGLWV5TkpFVmpCdWsyQ1VaNUxSc3A1Z2JrcVA2?oc=5",
+  "source": "아주경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:56:39+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "086e2573c6d3bc75",
+  "title": "은행연합회 차기 회장 후보군 6명 확정",
+  "url": "https://www.insnews.co.kr/news/articleView.html?idxno=93823",
+  "source": "한국보험신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:55:28+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "한국보험신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "af7de1020fea7394",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 1,
+  "cluster_lead": true
+ },
+ {
+  "id": "fa479a4b8bcb7741",
+  "title": "“작성계약 차익거래도 이제 끝물?”… 4년 분급에 허위·가공계약 초기 돈벌이 막힌다",
+  "url": "https://www.insjournal.co.kr/news/articleView.html?idxno=33908",
+  "source": "보험저널",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:51:36+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "분급"
+  ],
+  "score": 2,
+  "feed_name": "보험저널",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "54b77c925fdad276",
+  "title": "휠체어·보청기 비용 부담 줄어들까…한화생명 파격 특약 내놨다",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE02em5naEQzdG9IOGZ6Z09fWTdXX29rQ2dwcFFlbDA0UmNJdUJGeWJiZHRDNVJlRDZBVGdDTFdVeGpRY251LU9hd3U1UmFJLVVxTjlwdFlxTnV1bmFsblJQZnBmS0VybDRPYWx5M0FiTVg?oc=5",
+  "source": "코리아데일리",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:51:14+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "54b77c925fdad276",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
+  "id": "2b54403ca5ef280e",
+  "title": "KB손보, 제천 옹달샘그룹홈 주거환경 개선 지원",
+  "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxORFZMbHI0WUVFUUc3a2IxdUowUDZRX3Q3M2gtWnZ1SDdIQWRXTkh5eHdQYlZkTHBDWFlIOG1oVHJTV2tKVzE1amRoTnl2ell3d3N2Z1k0MVRCd2pha0xmRWdsTWVGVjdZNHlUYk96U1ctNnRjZE5fWmhKejVVb0diV2xlYTA?oc=5",
+  "source": "글로벌이코노믹",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:50:45+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "41d810293de12cf9",
+  "title": "미래에셋생명, 2026년 3분기 영업손실 430억7500만원으로 적자전환",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBUUVlBd0M3VlBsRE9pOEhrakpxVHBROW1VcHlXVTN5dUV1Sm1hVXlDRzJic0FkR2pabnVXaGNTdGRhYWVLbE9aS0JyTjlzWFNDY3FqSUxfTzk5bW95Qmw1N0F0eXdqaTlsRGZsdHI0cFljYUlTRVF0UTVzZw?oc=5",
+  "source": "디지털투데이",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:50:03+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "영업"
+  ],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "689854fefca5193c",
+  "title": "미래에셋생명, 2026년 3분기 영업손실 452억8800만원으로 적자전환",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE00dm1oT0hLVlE0bmtvdEE1Mm05cDV5TFlBUTZscWtqS28wRDNKalp5Rjh0RXVpUExRWVEyOTZXT25aOWJDRks0dmk2N2RRVFdOZ3hEX25KZjZrdVpreFFmT01qR3g5cXN5ejcwZEF6OUdBX083Q3p4YlJFNA?oc=5",
+  "source": "디지털투데이",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:50:02+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "영업"
+  ],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "ae1845132ce0b300",
+  "title": "프리랜서 국민연금 납부예외 신청 쉬워진다",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNcjgyUTRhanA3V2wwTUZiQ3ZBdTA3RzRnUDZvYnVlMVFDZHJ4NUdzWkJ6ME4xSlhFMmM2cHlKQ241ZzNkdy1tOXdZT090UENOTFdYb2k0ZjZ0dDlLdDBHRHJUWXRqb2RmWDdlVklTYS1OTHlEMi14R25NS0dCMTBwLQ?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:47:59+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "주요 경제지·보험",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "446e9a96da6c6575",
+  "title": "남편 보험까지 깨서 주식 '올인'...누적 거래만 100억, 60대 계좌 보니 - 머니투데이",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9IUXhzRGUtMEtmbEFSY2wwYjhXbmwwdGd3WlpCNWlLdGpJOThiZ0dkZ01OZ2ZNeFl3VUh5eXh6dGJEQXNFWWVUc1N5WGM2Vlk0SGNrallxMy0yRDRHdWwyNTVuWE10VEYzd1M40gFwQVVfeXFMTzlLUUg2LXBCRmJVaWNSZks2UkJ2M2ZpUzlhUE9NRUJjckd2dnZCMExKOWcyWjk1dm0zVWRXdVEzSFNReGxoUFdDTnBhM1R1X0w2dUNlUGx3WGhOc0lyc29HRFkzR0YzS3UwM211THEtUw?oc=5",
+  "source": "머니투데이",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:47:57+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "주요 경제지·보험",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "c63594e0c5dd92b3",
+  "title": "[칼럼] 회사 돈으로 보험 들고 대표는 현금…법인보험 리베이트, 누구도 빠져나갈 수 없다",
+  "url": "https://www.insjournal.co.kr/news/articleView.html?idxno=33907",
+  "source": "보험저널",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:46:56+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "보험저널",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4d82e188461e0c95",
+  "title": "KB손해보험, 제천 옹달샘그룹홈에 60번째 'KB 희망의 집' 조성",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5qVi1kc2plVUY5Yi13bjZRTXRkbHFxaXltS3FyYU54cHVrNzN2ZTI2ZkVhdXhfVmwxc0pvYnpfSlBJWU1mQkMwYko4NVFVXzBjaV9LTEJWWlNSZ2FvSVcyaTlDYWtnTmZ3M2xRbHc1eWp2RE0?oc=5",
+  "source": "오늘경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:43:01+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "53dfc9de100cbd0d",
+  "title": "미래에셋생명, 3분기 339억원 순손실…일회성 요인에 적자 전환",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQc0dESngtNnNPUWNyRUFha1VSWkQzcTA4RVZ4VHQ2VmtkSHJaSFdTWU1FOGxna0lROElsYUowdmhEQnZtdGRKNVNydm1LOXRnNU9FVi1xRGlMc29SLUVXeWU1UGlrSm1JOC14REVraTFoQzcwSEtVZDZQc3NsWDNWMw?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:42:33+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "주요 경제지·보험",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "ce86301d0abebf8b",
+  "title": "한화생명, 장애인 보조기기 비용 보장한다… 생보업계 첫 배타적사용권",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE84UXlxbzJ6QjVtYmhVVFpldkZCZDdZQ1ZNcndVUHpqZ09UUWp3LU1sSkNEQjJYbGhVVGxpMFhrRng4UVpIaVdNdjZRVlNrVXRzSzVaTUtjSmhjUjVtQkhwRlBGVHFRVUl3dXB3bE43T18?oc=5",
+  "source": "Korea IT Times",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:42:31+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "생보",
+   "배타적사용권"
+  ],
+  "score": 3,
+  "feed_name": "생보업권·외국계",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "21b2797e00a73748",
+  "title": "KB손보, 11월 자동차보험 브랜드평판 1위… DB·현대해상 뒤이어",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA3VklWdWtvQWxyUnVBUjV5LWYwVGdMWEMtX01pNmxYc0NETVl1Wk1hMkpIbkQtRUdsZGI1QjZPYkswZEFUTjBQbXhJTTZOcU1XUWdFeUV6NHhLV01NY3YzZTRRcV9vMWY1NVI5VThfcGI3Z9IBckFVX3lxTFA3VklWdWtvQWxyUnVBUjV5LWYwVGdMWEMtX01pNmxYc0NETVl1Wk1hMkpIbkQtRUdsZGI1QjZPYkswZEFUTjBQbXhJTTZOcU1XUWdFeUV6NHhLV01NY3YzZTRRcV9vMWY1NVI5VThfcGI3Zw?oc=5",
+  "source": "팝콘뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:42:30+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "자동차보험"
+  ],
+  "tags": [
+   "자동차보험"
+  ],
+  "score": 3,
+  "feed_name": "자동차보험",
+  "relevant": true,
+  "companies": [
+   "KB손해보험",
+   "현대해상"
+  ],
+  "orgs": [],
+  "cluster_id": "ceb770ba0fb3d841",
+  "cluster_size": 7,
+  "cluster_sources": 7,
+  "score_v2": 2
+ },
+ {
+  "id": "d7746b7404ea05e0",
+  "title": "[GA 품질경영 시대] 1만5000 FC에 '손안의 교실'… 글로벌금융판매, '교육'으로 완전판매 다진다",
+  "url": "https://www.insjournal.co.kr/news/articleView.html?idxno=33891",
+  "source": "보험저널",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:34:41+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "GA"
+  ],
+  "score": 2,
+  "feed_name": "보험저널",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "c34155cc0fb7532e",
+  "title": "KB국민카드·KB손해보험, 항공권·숙박 할인 제공·60번째 ‘KB 희망의 집’ 완공",
+  "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9zbkpHbElBVWNJcXdxeTQzUHlkMV9maC1YbGRReXVhTkRUaFdRekFRaXk3ZGdGUm43WmhoMVZoek9nQUo0ZEtMNGVBbGdIUlhSR2Q3ZnlfYzBqRXd6a1ZuVUhkYlRrdw?oc=5",
+  "source": "여성소비자신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:33:47+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "a4312e8a66381593",
+  "title": "[속보] 미래에셋생명, 3분기 영업손실 430억원…전년 동기 대비 적자전환",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5RdHNCUUVEUWhsOERqelpxWFZJT1JVVmFmVGZGcWM1ZnF6Q3JNaXFyU1hhRk45dGcwRWZWc1ZyWE04ckhfNVJ0UHE3b0g3SFhBdVZPeHpCM1l4YzZ2bU1hRTFQRWJ1ZHJr?oc=5",
+  "source": "CBC뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:31:50+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "영업"
+  ],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "미래에셋생명"
+  ],
+  "orgs": [],
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "score_v2": 3
+ },
+ {
+  "id": "b0ebc949e3a71d94",
+  "title": "KB손보, 제천 공동생활가정에 ‘KB 희망의 집’ 선물",
+  "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5kUll2bFJWT1ZOOTdJVDFKNjdRY2JaQWRkNGdvU2JNS0hFRzR1Q3Zkd29Hc3RGNUVWV3J1cHRJRnZOMVFsdDI1RUlfc2lyOExpTENFQ3E1bV8?oc=5",
+  "source": "더트래커",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:30:10+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "KB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "912e5f152a90fcef",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 3
+ },
+ {
+  "id": "7a574f081c0e4bf9",
+  "title": "DB손해보험 자동차보험 흑자 전환…투자손익은 왜 줄었나",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9PaTBTNnE1SzRuZGF6bDlFcHRPdHRoX2YzTTVWdFlJMmxYRmpmQkVfcXl0Ulpia2oxbnBqOXBvQzNBT3EtaWN5dXdrNUJjclBCa1FLNFJqMk5jdHRoZXA4VVlHUVFyOGM?oc=5",
+  "source": "자본시장뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:30:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "자동차보험",
+  "sub_categories": [
+   "손해보험",
+   "금융시장·자산운용"
+  ],
+  "tags": [
+   "자동차보험",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "자동차보험",
+  "relevant": true,
+  "companies": [
+   "DB손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "ceb770ba0fb3d841",
+  "cluster_size": 7,
+  "cluster_sources": 7,
+  "score_v2": 2
+ },
+ {
+  "id": "71116312c361e5f5",
+  "title": "한화생명, '보조기기 지원금특약' 6개월 배타적사용권 획득",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1BdEhSeFNzYWZoWGFiZjVDOUVvdWRGLVZmTy1lQUE5bHBqRWx1ZlVUQ1VfdDB6aThnUW1kcXVUS0p3ektRdG5oeGxGRlNkRlNQLXdrYW9jR3k3VHZlLTV0ZEJsby1HNlpRRzY1Nw?oc=5",
+  "source": "ER 이코노믹리뷰",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:26:08+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "생보사·삼성·한화",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "39fe72b6848f4365",
+  "title": "보험 硏 \"의료배상책임보험 의무화, 미가입 제재 조항 빠져... 보완 입법 시급\"",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBuZGwzVTkxem5aNTVyR0MtMTNJZ0kxeS1sYlZ3dFg5bXVsOGlJOWRfR2FqWjV0MGdtMXVaVjM5ZHFYTHhIX3VNbk1PT0NzT1BUZ2Z0Z0ZOSWktdklnWFE4cGZfMFVxTUUwOXg4MFJlTWladw?oc=5",
+  "source": "중앙이코노미뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:23:01+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "제도·회계·건전성",
+  "sub_categories": [],
+  "tags": [
+   "제재"
+  ],
+  "score": 2,
+  "feed_name": "기관·보험연구원",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "f0137c5cfa2917c5",
+  "title": "삼성·KB도 두 자릿수...손보사 신계약 CSM 동반 감소 '우울'",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1hV2VMdGFwUGQ4OTFRZ0Vva2l4QUJaWFJHazdNdmd0cWlOaUZNOTVWYVhEQVRKVlJpT1E5VDFhemlSYnZUeG0tVWFLdVZoQ2tncHlteDNSOS1RcDduOUVYdHJNZHc5LW1WdU1ocDJvaHhXdmx0?oc=5",
+  "source": "파이낸셜포스트",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:22:12+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "제도·회계·건전성",
+  "sub_categories": [
+   "손해보험",
+   "보험경영·판매"
+  ],
+  "tags": [
+   "손보사",
+   "신계약",
+   "CSM"
+  ],
+  "score": 4,
+  "feed_name": "손보사·삼성화재(그 외)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "53ac4912edd17f62",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
   "id": "52f0460830f2eef8",
   "title": "KB손해보험, 60번째 ‘KB희망의집’ 선사…아동 주거안전성 제고",
   "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9tbm5kY1Q1dFN5cTZDSmJYNnpJSHg1X3pfOVNYZmcyR1pBdTZOVm1tdHZkVmxGcDRqZmJTQ05hSVZpb1YtNVNKeHhNMFJURVl3ajJjTV9WOFRKS3VZZDkyRVBaNkk?oc=5",
@@ -18,9 +1520,36 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
+ },
+ {
+  "id": "8a89903921a9ea40",
+  "title": "코리안리, 3분기 영업이익 720억원… 매출 1.4조원",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5WZHhGTHZHeS1tQXJ3WXlxdWhiZ1ZBaUo2MmRKUThJZ3RnU1oxR1RPSk9vWVEyeHpZYmRUZ0M2X0Q0c1NDM3g0bkJfalBPT1RYbE9MZVlRYjV1YU0yN1JjMDl1Sk9EMks4Wl82LQ?oc=5",
+  "source": "CEO경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:17:42+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "위험관리·재보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "영업"
+  ],
+  "score": 3,
+  "feed_name": "재보험",
+  "relevant": true,
+  "companies": [
+   "코리안리"
+  ],
+  "orgs": [],
+  "cluster_id": "617576222c5ea9ad",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 4
  },
  {
   "id": "7102f5ac82623177",
@@ -62,8 +1591,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -94,6 +1623,29 @@
   "score_v2": 3
  },
  {
+  "id": "3e02e48e659dbc7d",
+  "title": "코리안리, 3분기 순익 급감…누적은 사상 첫 4000억 돌파",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wYnJJU3ZxS0taZzYwMlRYdjZGOXg2dU1VWk11S1ZlN1AwSzdQaDRsZ0tKR2RjQmc1WEhsNEpPSnM0XzRjc0Vxa2hqSnhiT0l5OGk5UURzUzNUcC14SzBLR0cwTkUwdG1jRUNZV9IBb0FVX3lxTFB4LUNYMHdjSllPOVRQTmp1QzlWWmMxV0xXaUZ6cHhHcWp6Y0FMbGRJWVBBNHhMUkcxTDM3MWFBUzI1ODJQSUtSc0F5R0pyVVk3NjVDd0taNEVMZ3RfNXhjbWtjUGNWZTBRN3dmbUg3TQ?oc=5",
+  "source": "한스경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:09:43+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "위험관리·재보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "재보험",
+  "relevant": true,
+  "companies": [
+   "코리안리"
+  ],
+  "orgs": [],
+  "cluster_id": "617576222c5ea9ad",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 4
+ },
+ {
   "id": "7c87a5ec0ec05ddd",
   "title": "[카드] KB손해보험, 제천 옹달샘그룹홈에 '희망의 집' 60호 완공",
   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9LYU5Oby03RHJON2xtTTUwbUU5UllZNVNUQWpHazZodXBpTjBIMUZPVzN6TU13SzJyblBFbjJGelJJbjd0QmdJUmtVdlZSTVZpVXBWMHZxeXV2Uk01RUwtYw?oc=5",
@@ -112,8 +1664,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -141,8 +1693,8 @@
   ],
   "orgs": [],
   "cluster_id": "ceb770ba0fb3d841",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -168,8 +1720,8 @@
   ],
   "orgs": [],
   "cluster_id": "617576222c5ea9ad",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 9,
+  "cluster_sources": 9,
   "score_v2": 4
  },
  {
@@ -191,8 +1743,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -214,8 +1766,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -241,9 +1793,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "da920cc9fc9fcd55",
@@ -289,8 +1841,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -312,8 +1864,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -335,8 +1887,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -382,9 +1934,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "d6fc0ddfd761a774",
@@ -409,9 +1961,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3,
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4,
   "cluster_lead": true
  },
  {
@@ -440,9 +1992,33 @@
    "생명보험협회"
   ],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
+ },
+ {
+  "id": "3e728d95889834cb",
+  "title": "[리포트 브리핑]삼성생명, '3Q26 Re: 양호한 흐름 지속, 향후 배당 확대 기대' 목표가 400,000원 - 키움증권",
+  "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5kNlpEWE5sVnF1V084enhRdnZCQkJWOG01WHQ1Qy1SMXc3ZGFuaXo0TGcxa2Q2ZE82bWZVVjNRRlNxSzYzUEl6LTd5MzU4U1cwQmdaTEttb1NyeElZ?oc=5",
+  "source": "뉴스핌",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:43:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배당"
+  ],
+  "score": 2,
+  "feed_name": "생보사·삼성·한화",
+  "relevant": true,
+  "companies": [
+   "삼성생명"
+  ],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "2f5ce14f1fd81f3a",
@@ -467,8 +2043,8 @@
   ],
   "orgs": [],
   "cluster_id": "617576222c5ea9ad",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 9,
+  "cluster_sources": 9,
   "score_v2": 4
  },
  {
@@ -490,8 +2066,8 @@
   ],
   "orgs": [],
   "cluster_id": "617576222c5ea9ad",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 9,
+  "cluster_sources": 9,
   "score_v2": 4
  },
  {
@@ -540,9 +2116,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "af268c78a1ebdca6",
@@ -567,8 +2143,8 @@
   ],
   "orgs": [],
   "cluster_id": "617576222c5ea9ad",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 9,
+  "cluster_sources": 9,
   "score_v2": 4
  },
  {
@@ -621,9 +2197,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "3a31db9e1fe9880a",
@@ -644,8 +2220,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -667,8 +2243,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -696,10 +2272,37 @@
   ],
   "orgs": [],
   "cluster_id": "617576222c5ea9ad",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 9,
+  "cluster_sources": 9,
   "score_v2": 4,
   "cluster_lead": true
+ },
+ {
+  "id": "148aaa106906f8bf",
+  "title": "한화생명, ‘장애인 보조기기 지원금’ 배타적 사용권 획득",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5pWk5UT0M0dlF6d3FaclBieFdELXJON0RnN3ZIejhyUGdkcUJWQmk0VFl1cDEwNlBuTWZHYWVRQjg4amowcnl5R1Z6WVFuclVHVVk3bEFZU2V3NzV1MFNvaGRnbjJITU1w?oc=5",
+  "source": "FETV",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:25:28+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "f87dd68a27ce07c8",
@@ -744,9 +2347,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "811e5cc337a73fea",
@@ -798,9 +2401,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "5752605163151581",
@@ -825,9 +2428,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "c2b1333ce1450052",
@@ -872,9 +2475,9 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 10,
-  "cluster_sources": 10,
-  "score_v2": 3
+  "cluster_size": 21,
+  "cluster_sources": 21,
+  "score_v2": 4
  },
  {
   "id": "4ecf256686dedb2e",
@@ -900,8 +2503,8 @@
   ],
   "orgs": [],
   "cluster_id": "98697c1098ce4868",
-  "cluster_size": 2,
-  "cluster_sources": 2,
+  "cluster_size": 3,
+  "cluster_sources": 3,
   "score_v2": 3
  },
  {
@@ -923,8 +2526,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -946,8 +2549,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -987,8 +2590,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3
  },
  {
@@ -1138,7 +2741,11 @@
    "금융감독원"
   ],
   "department": "자본시장감독국",
-  "score_v2": 1
+  "score_v2": 1,
+  "cluster_id": "0af58ca0a9cd8daf",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "8dee2e8bb9404c46",
@@ -1165,6 +2772,51 @@
   "score_v2": 1
  },
  {
+  "id": "1a08cbb7787f66c3",
+  "title": "서울 가격상승폭 둔화·매물 증가…수도권 내년 1분기까지 4만 호 이상 입주",
+  "url": "https://www.fsc.go.kr/no010101/88140",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "금융위원회 게시판",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ],
+  "department": "금융정책과",
+  "score_v2": 1
+ },
+ {
+  "id": "0af58ca0a9cd8daf",
+  "title": "신뢰받는 자본시장, 현장에서 묻고 답을 찾다",
+  "url": "https://www.fsc.go.kr/no010101/88139",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "금융위원회 게시판",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ],
+  "department": "자본시장과,자산운용과,공정시장과",
+  "cluster_id": "0af58ca0a9cd8daf",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
+ },
+ {
   "id": "912e5f152a90fcef",
   "title": "KB손보, 제천 옹달샘그룹홈에 60번째 'KB 희망의 집' 선물",
   "url": "https://www.insjournal.co.kr/news/articleView.html?idxno=33904",
@@ -1183,8 +2835,8 @@
   ],
   "orgs": [],
   "cluster_id": "912e5f152a90fcef",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 3,
   "cluster_lead": true
  },
@@ -1254,8 +2906,8 @@
   ],
   "orgs": [],
   "cluster_id": "2361bc6ab044b63f",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -1328,7 +2980,10 @@
   "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "aa1bb8e42588b0f8",
+  "cluster_size": 3,
+  "cluster_sources": 3
  },
  {
   "id": "d3445519d422a027",
@@ -1422,7 +3077,11 @@
    "DB손해보험"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "618960e733170191",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "c12f6bc215b9c7aa",
@@ -1469,8 +3128,8 @@
   ],
   "orgs": [],
   "cluster_id": "ceb770ba0fb3d841",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -1613,8 +3272,8 @@
   ],
   "orgs": [],
   "cluster_id": "ceb770ba0fb3d841",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -1640,8 +3299,8 @@
   ],
   "orgs": [],
   "cluster_id": "ceb770ba0fb3d841",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -1919,8 +3578,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -2009,8 +3668,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -2150,8 +3809,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -2340,8 +3999,8 @@
   ],
   "orgs": [],
   "cluster_id": "738124b43ecaffef",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -2490,8 +4149,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -2533,8 +4192,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -2585,8 +4244,8 @@
   ],
   "orgs": [],
   "cluster_id": "2361bc6ab044b63f",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -2784,8 +4443,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -2835,6 +4494,29 @@
   ],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "c6a432cf765149dc",
+  "title": "삼성화재, 3분기 누적 순익 1조8655억원…전년비 4.6%↑",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9OLVZ0d3E0bUVaajdCcWR3XzE0cVNKcDY4ZnozTHB2a296QlVGZkZ6eGRRc2JCdVBQYkk1WEJTY3FrMi1xQkdyRjA2Vl9aZ1ZTSTRPaHBUTk5YZW5HYmE4LVFzbTFuRFNOMEYzOUZ2OTnSAXBBVV95cUxPTi1WdHdxNG1FWmo3QnFkd18xNHFTSnA2OGZ6M0xwdmtvekJVRmZGenhkUXNiQnVQUGJJNVhCU2NxazItcUJHckYwNlZfWmdWU0k0T2hwVE5OWGVuR2JhOC1Rc20xbkRTTjBGMzlGdjk5?oc=5",
+  "source": "글로벌경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T10:09:59+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "손보사·삼성화재(캐노피우스)",
+  "relevant": true,
+  "companies": [
+   "삼성화재"
+  ],
+  "orgs": [],
+  "cluster_id": "8e7718ed437f9cec",
+  "cluster_size": 34,
+  "cluster_sources": 33,
+  "score_v2": 4
  },
  {
   "id": "163a15124e097064",
@@ -2945,8 +4627,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -3022,8 +4704,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -3140,8 +4822,8 @@
   ],
   "orgs": [],
   "cluster_id": "2361bc6ab044b63f",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -3293,8 +4975,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -3316,8 +4998,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -3479,8 +5161,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -3506,8 +5188,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -3743,8 +5425,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -3870,8 +5552,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -4034,8 +5716,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -4155,8 +5837,8 @@
   ],
   "orgs": [],
   "cluster_id": "98697c1098ce4868",
-  "cluster_size": 2,
-  "cluster_sources": 2,
+  "cluster_size": 3,
+  "cluster_sources": 3,
   "score_v2": 3,
   "cluster_lead": true
  },
@@ -4203,6 +5885,29 @@
   "companies": [],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "730cb11717cced83",
+  "title": "농협생명, 서울시와 ‘생산적 사회공헌’…노숙인을 농촌 일꾼으로",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9oVkZOajk5bkVKNHlBYWNzeEZ4a2N0Y2w0OWZpVHRyVTZaWHVOMWV3MXNTWnZpUFg2QTBhMGM5amt4X2F6MTVRYVRZcVh6dk1nNFBqbTRDOGVvUUJIQnAybzFRYkRPNTdlY09JV05vemw3ZkU?oc=5",
+  "source": "스트레이트뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:26:43+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·교보·신한·농협",
+  "relevant": true,
+  "companies": [
+   "NH농협생명"
+  ],
+  "orgs": [],
+  "cluster_id": "463581131a75a15e",
+  "cluster_size": 25,
+  "cluster_sources": 25,
+  "score_v2": 2
  },
  {
   "id": "33fede00a4895286",
@@ -4315,8 +6020,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -4509,9 +6214,34 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
+ },
+ {
+  "id": "a223bc4075200ab1",
+  "title": "몸집 커지는 발행어음·IMA…금감원, 종투사에 건전성·이해상충 관리 주문",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hYlN3WlRkZERoZzIxd3VfVXZkZ2xTN0prcDZnRFIxOXc3ZmJZQjdlNkdjLTEwdE9nOGJNUHlNTmVYZWZ2Q0dOdHdmbnVxb3hrZUFYSFpGVm40dG5mNUlFYUxfWlNnbkotVG1J0gFvQVVfeXFMTndRc3luZXFoRC1tSTY2NFhBTDJmcWxHVnRiVE45MEdEYmlRTUxydUFMRXloUjM3b19nVlpxVUd3aThRYVE2c3U0WkMxWVhYLVhrRTlpN3ZyYWNwVGpueVAwVXk0ZnNILVh6WV9DbURZ?oc=5",
+  "source": "투데이신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:14:16+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "건전성"
+  ],
+  "score": 2,
+  "feed_name": "기관·금융감독원",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "cluster_id": "f724baace86606f8",
+  "cluster_size": 4,
+  "cluster_sources": 4,
+  "score_v2": 2
  },
  {
   "id": "4df753afdf129939",
@@ -4876,8 +6606,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -5045,8 +6775,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -5118,6 +6848,36 @@
   "score_v2": 3
  },
  {
+  "id": "408ff1f877fec79e",
+  "title": "[컨콜] 삼성화재 “주주환원·성장투자 균형…중장기 주주가치 극대화”",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9WNXAyQnJCUDdzVkEzS1hRMDZXdVVsWVhqa2p3OUdmYVNrb1BzOXVEd1JmTnlsbHJnYWQzQm14bkw3Z3U1Ynllei1OZnRfS09jWmJJSVphelpSSVcxY2FoampRdzNTWDB4MWRqZ00wdnPSAXBBVV95cUxPVjVwMkJyQlA3c1ZBM0tYUTA2V3VVbFlYamtqdzlHZmFTa29Qczl1RHdSZk55bGxyZ2FkM0JteG5MN2d1NWJ5ZXotTmZ0X0tPY1piSUlaYXpaUklXMWNhaGpqUXczU1gweDFkamdNMHZz?oc=5",
+  "source": "한국금융경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:51:25+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "금융시장·자산운용",
+   "보험경영·판매"
+  ],
+  "tags": [
+   "주주환원",
+   "투자",
+   "주가"
+  ],
+  "score": 2,
+  "feed_name": "손보사·삼성화재(캐노피우스)",
+  "relevant": true,
+  "companies": [
+   "삼성화재"
+  ],
+  "orgs": [],
+  "cluster_id": "d3b04d90f91775fd",
+  "cluster_size": 7,
+  "cluster_sources": 7,
+  "score_v2": 3
+ },
+ {
   "id": "1b79885e86fa84a4",
   "title": "삼성화재, 누적 순익 1조8655억…해외 재보험 확대",
   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1xZUJXUU1MV25qR0xQNkRsVGw2TEplaVN0OUdJNm52YVFEYTgtU0xkRFhXc0hiRnVUR1ZrS1FLZ0MyQ1pvQ0RaUW1KVUtWWEYwYzk2eXB4NG9SY29fWVhBcF9BWERtNjM4ZmhMc3JGeGvSAXRBVV95cUxOc0NCb3dyWTdBS0ZSbDVtX2dqZEZwd1VkX2FaY1lPbW5Gbm9zZDZKZGUxbV9BRWdndkQwTXBQaGNkc09nbnNaejJJdXh4ekJSZG1qeFB4SGZvbjFWNUFBX0hrWDNRWVB0bEs4Nmx3ajBCa2ZSUA?oc=5",
@@ -5140,8 +6900,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -5262,8 +7022,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -5313,8 +7073,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -5336,8 +7096,8 @@
   "companies": [],
   "orgs": [],
   "cluster_id": "76f19ad61d316ac6",
-  "cluster_size": 3,
-  "cluster_sources": 3,
+  "cluster_size": 4,
+  "cluster_sources": 4,
   "score_v2": 3
  },
  {
@@ -5459,8 +7219,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -5618,8 +7378,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -6019,8 +7779,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -6482,8 +8242,8 @@
   "companies": [],
   "orgs": [],
   "cluster_id": "76f19ad61d316ac6",
-  "cluster_size": 3,
-  "cluster_sources": 3,
+  "cluster_size": 4,
+  "cluster_sources": 4,
   "score_v2": 3
  },
  {
@@ -6619,8 +8379,8 @@
   ],
   "orgs": [],
   "cluster_id": "2361bc6ab044b63f",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -6892,8 +8652,8 @@
   ],
   "orgs": [],
   "cluster_id": "2361bc6ab044b63f",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -6923,6 +8683,30 @@
   "cluster_size": 5,
   "cluster_sources": 4,
   "score_v2": 2
+ },
+ {
+  "id": "1fe3d9b3e96cee92",
+  "title": "보험 손익 개선됐지만 투자 손익 ‘뚝’… DB손보 웃고, 삼성·메리츠 뒷걸음",
+  "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBMdkNiQjlhRDF6YWRTUkhZWjFIb0thakctUUFod1V5WVFLRFUxU2xDREVtS3ZIZnE3bDRzRzhodkNnSXZHVGxaVzVUa2xaUQ?oc=5",
+  "source": "디지털타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:51:35+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "금융시장·자산운용"
+  ],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "손보사·DB·KB",
+  "relevant": true,
+  "companies": [
+   "DB손해보험"
+  ],
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "9cbf1f0ae777396b",
@@ -7148,6 +8932,29 @@
   "score_v2": 3
  },
  {
+  "id": "38c0147625f1e4c3",
+  "title": "삼성생명, 올 3분기 누적 순이익 2.7조…3분기 보험손익 두 배↑",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBQYmFhMXNGX3FNcW9lUF9zMXZJZjkxZS1uUFRqSzN5V2xqMkJQY1E4S1JEYm4yNWtvQ055Y3kyTG1iYlA1b3QwYnc5dndpbG1ZTG14VTFvY0t6MTJ0dkZHUTdyQk01TnBmSXRaQlU3OA?oc=5",
+  "source": "뉴스톱",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:44:14+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·삼성·한화",
+  "relevant": true,
+  "companies": [
+   "삼성생명"
+  ],
+  "orgs": [],
+  "cluster_id": "0c7ca4011f2649a6",
+  "cluster_size": 19,
+  "cluster_sources": 19,
+  "score_v2": 4
+ },
+ {
   "id": "8e79f8b0ae70aa70",
   "title": "DB손보, 3분기 누적 순익 1.5조…보험익 55.8% 급증",
   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1zT2I4MlJ0alZ6SGJabjN6cGtPWVFYYVFKV2hQSGl4elhrSVN3S1pvU2owMVo5RmJ0QXdOWUgwcEwxd2VjNFp2SGZPb0RtZkdBSzVr?oc=5",
@@ -7235,8 +9042,8 @@
   ],
   "orgs": [],
   "cluster_id": "738124b43ecaffef",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -7426,8 +9233,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -7598,8 +9405,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -7654,8 +9461,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -7758,8 +9565,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -7805,8 +9612,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -7986,8 +9793,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8037,8 +9844,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -8060,8 +9867,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8138,8 +9945,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -8259,8 +10066,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8312,8 +10119,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -8340,8 +10147,8 @@
    "금융감독원"
   ],
   "cluster_id": "f724baace86606f8",
-  "cluster_size": 2,
-  "cluster_sources": 2,
+  "cluster_size": 4,
+  "cluster_sources": 4,
   "score_v2": 3
  },
  {
@@ -8367,6 +10174,34 @@
   ],
   "orgs": [],
   "score_v2": 2
+ },
+ {
+  "id": "52961753c3288be1",
+  "title": "금감원, IMA·발행어음 증권사에…고금리 경쟁 자제·건전성 관리 당부",
+  "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1MSTVBOUlWUXc0M0VQVUh0Z0RaTDRwRThFQVlqaUxpbjdqV0c3ekM4SnprWTM2X3Z1ZlVMZHRERGpsMzNMRjlSNDV5NWxMU3hWeUlaeFFCUnfSAVhBVV95cUxNTEk1QTlJVlF3NDNFUFVIdGdEWkw0cEU4RUFZamlMaW43aldHN3pDOEp6a1kzNl92dWZVTGR0RERqbDMzTEY5UjQ1eTVsTFN4VnlJWnhRQlJ3?oc=5",
+  "source": "아주경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:00:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "제도·회계·건전성",
+  "sub_categories": [
+   "금융시장·자산운용"
+  ],
+  "tags": [
+   "금리",
+   "건전성"
+  ],
+  "score": 2,
+  "feed_name": "기관·금융감독원",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "cluster_id": "f724baace86606f8",
+  "cluster_size": 4,
+  "cluster_sources": 4,
+  "score_v2": 3
  },
  {
   "id": "4970b263dbf63bf5",
@@ -8667,8 +10502,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8690,8 +10525,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8735,8 +10570,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8758,8 +10593,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8785,8 +10620,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8808,8 +10643,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -8889,8 +10724,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -8915,6 +10750,35 @@
   "cluster_size": 31,
   "cluster_sources": 31,
   "score_v2": 4
+ },
+ {
+  "id": "c68454610c4e9b38",
+  "title": "교보생명 3분기 퇴직연금 DC·IRP 수익률 1위",
+  "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9IUThmVUdBWExJTkowQ2RSV3JfejVnS2xZQ3o3YUhTOWowQ0V6aC0zUmVhQWF6bEgxX0k0T2JPOGZYaXhidXhuOW54VjhCRjdBdU1J0gFYQVVfeXFMUHZXVmhTUlpPRkM3S0ZZSi12bklHcUEtMWlMRWJaZ1NDXzVrRGcwLW9WbHkxSHd3akVqNDRWLVZwWmpwZ1QtRnZyVXVTdHlleS1vb3AzZTJZdA?oc=5",
+  "source": "SBS Biz",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:36:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매",
+   "금융시장·자산운용"
+  ],
+  "tags": [
+   "퇴직연금",
+   "수익률"
+  ],
+  "score": 2,
+  "feed_name": "생보사·교보·신한·농협",
+  "relevant": true,
+  "companies": [
+   "교보생명"
+  ],
+  "orgs": [],
+  "cluster_id": "0970f4e1184a5669",
+  "cluster_size": 28,
+  "cluster_sources": 28,
+  "score_v2": 3
  },
  {
   "id": "8abf1f1d686f7762",
@@ -8959,8 +10823,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -9056,8 +10920,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -9086,8 +10950,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -9309,8 +11173,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -9602,8 +11466,8 @@
   ],
   "orgs": [],
   "cluster_id": "d3b04d90f91775fd",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -9625,8 +11489,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -9649,8 +11513,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -9672,8 +11536,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -9699,8 +11563,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -9722,8 +11586,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -9751,8 +11615,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -9817,8 +11681,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -9840,8 +11704,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -9886,8 +11750,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -10023,8 +11887,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4,
   "cluster_lead": true
  },
@@ -10052,6 +11916,33 @@
   "score_v2": 3
  },
  {
+  "id": "c59971aae82717a1",
+  "title": "우리금융 ABL생명, 고객 참여형 'FC 챌린지' 서비스 출시",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE56eXBXMmNUV0tHaWVHUmV5VzRoTC16OVRWTzM5bll6NjJ1SXRhVWc3azhNaFQtNWFwVWlEWURIWVJPNW9WR1hVbll0RkFnblk1Nl8zalRLMjAyNUU1UktYUnpLN2pwM0nSAWtBVV95cUxNcUlYYXRLSVd6dVBYZnMtSVI0SXFRNndZX2JqZFFmUTFxSUcxN3UtSnU4cTk2WFV0UG9uNUFKSHN6Y3hXb3NBWUlxNndHUjVwRVpmSWRyTWc1cnBMTnc4cHM5a2Jub3l3OG93WQ?oc=5",
+  "source": "현대경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:20:09+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "출시"
+  ],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "ABL생명"
+  ],
+  "orgs": [],
+  "cluster_id": "738124b43ecaffef",
+  "cluster_size": 7,
+  "cluster_sources": 7,
+  "score_v2": 2
+ },
+ {
   "id": "1e119c29b8f8c03d",
   "title": "삼성화재, 3분기 누적 순익 1조8655억원…자동차보험 흑자 유지",
   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPcEtUZUxDZ1BjcTJBYTlHbnRpNktpckd5Z0UyUmgzVnY3bUd5Wk1Gbkdtbko3T09PazA2ekJocFdvbTRlbWpIaUtGQmhFSjVvUnU3dXg0MlUxUkNiLXNTdGpzOS1ReVBwUlAybk9OalhLd2ZVd3dtaFRRSEM2U2JwNndkamt2aUM1ZF9ldlNpdTVnVkcwZWtZOGxjRUpSdFEzWTEyVXA1N19PS3VCcDBQSmYtZEZxOElWd3Y0YnNKYkxOT0ZsY2NDdW8yOWs3SU5EV2VMb3U4X2ZuLXZxOHZVeEVIRmR0MjhxczZTWXl3?oc=5",
@@ -10074,8 +11965,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -10142,8 +12033,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -10214,8 +12105,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -10242,8 +12133,8 @@
   ],
   "orgs": [],
   "cluster_id": "d3b04d90f91775fd",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -10265,8 +12156,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -10390,8 +12281,8 @@
   ],
   "orgs": [],
   "cluster_id": "d3b04d90f91775fd",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -10501,8 +12392,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -10532,8 +12423,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -10555,8 +12446,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -10585,8 +12476,8 @@
   ],
   "orgs": [],
   "cluster_id": "d3b04d90f91775fd",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3
  },
  {
@@ -10608,8 +12499,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -10631,8 +12522,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2,
   "cluster_lead": true
  },
@@ -10678,8 +12569,8 @@
   ],
   "orgs": [],
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18,
+  "cluster_size": 19,
+  "cluster_sources": 19,
   "score_v2": 4
  },
  {
@@ -10701,8 +12592,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -10730,8 +12621,8 @@
   ],
   "orgs": [],
   "cluster_id": "d3b04d90f91775fd",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 3,
   "cluster_lead": true
  },
@@ -10778,8 +12669,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -10872,8 +12763,8 @@
   ],
   "orgs": [],
   "cluster_id": "738124b43ecaffef",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -10901,8 +12792,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -11069,8 +12960,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11389,8 +13280,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11441,8 +13332,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -11487,8 +13378,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -11510,8 +13401,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11556,8 +13447,8 @@
   ],
   "orgs": [],
   "cluster_id": "738124b43ecaffef",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -11585,8 +13476,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -11608,8 +13499,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11674,8 +13565,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11789,8 +13680,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11839,8 +13730,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11892,8 +13783,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -11915,8 +13806,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -12045,8 +13936,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -12101,8 +13992,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -12197,8 +14088,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -12276,8 +14167,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3,
   "cluster_lead": true
  },
@@ -12300,8 +14191,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -12469,8 +14360,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -12588,8 +14479,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -12633,6 +14524,29 @@
    "한화생명"
   ],
   "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "8a52b8eca39ea2d0",
+  "title": "iM라이프, 임직원이 직접 담근 김장김치로 이웃 겨울나기 지원",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9taTRjanZIb3RISExzNkZiX2drNld4WmdqbHRoekN5VE5FNGVrdy16MUhYVFJwTlhEWW5LeFZ2QnZnWUxjajg2TkR0Nm94UjNQVGJqWEhIVG9QZWl5a0lmUV8wanc?oc=5",
+  "source": "매일일보",
+  "source_type": "media",
+  "published_at": "2026-11-12T01:13:11+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "생보사·중소(국내)",
+  "relevant": true,
+  "companies": [
+   "iM라이프"
+  ],
+  "orgs": [],
+  "cluster_id": "5621241205e9d41a",
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -12750,8 +14664,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -12779,8 +14693,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -12808,8 +14722,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -12934,8 +14848,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -13007,8 +14921,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -13036,8 +14950,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -13119,8 +15033,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -13171,8 +15085,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -13290,8 +15204,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -13348,8 +15262,8 @@
   ],
   "orgs": [],
   "cluster_id": "0970f4e1184a5669",
-  "cluster_size": 27,
-  "cluster_sources": 27,
+  "cluster_size": 28,
+  "cluster_sources": 28,
   "score_v2": 3
  },
  {
@@ -13451,8 +15365,8 @@
   ],
   "orgs": [],
   "cluster_id": "738124b43ecaffef",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2
  },
  {
@@ -13568,8 +15482,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -13752,8 +15666,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2,
   "cluster_lead": true
  },
@@ -13776,8 +15690,8 @@
   ],
   "orgs": [],
   "cluster_id": "738124b43ecaffef",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "score_v2": 2,
   "cluster_lead": true
  },
@@ -13823,8 +15737,8 @@
   ],
   "orgs": [],
   "cluster_id": "5621241205e9d41a",
-  "cluster_size": 10,
-  "cluster_sources": 10,
+  "cluster_size": 11,
+  "cluster_sources": 11,
   "score_v2": 2
  },
  {
@@ -13898,8 +15812,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -13925,8 +15839,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4,
   "cluster_lead": true
  },
@@ -13949,8 +15863,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -14472,8 +16386,8 @@
   ],
   "department": "자본시장감독국/금융투자검사1국",
   "cluster_id": "f724baace86606f8",
-  "cluster_size": 2,
-  "cluster_sources": 2,
+  "cluster_size": 4,
+  "cluster_sources": 4,
   "score_v2": 1,
   "cluster_lead": true
  },
@@ -14677,8 +16591,8 @@
   ],
   "orgs": [],
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32,
+  "cluster_size": 34,
+  "cluster_sources": 33,
   "score_v2": 4
  },
  {
@@ -15002,8 +16916,8 @@
   "orgs": [],
   "score_v2": 4,
   "cluster_id": "8e7718ed437f9cec",
-  "cluster_size": 33,
-  "cluster_sources": 32
+  "cluster_size": 34,
+  "cluster_sources": 33
  },
  {
   "id": "b9c93fd7eb06dbf4",
@@ -15267,8 +17181,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -15519,8 +17433,8 @@
   ],
   "orgs": [],
   "cluster_id": "463581131a75a15e",
-  "cluster_size": 23,
-  "cluster_sources": 23,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 2
  },
  {
@@ -15848,8 +17762,8 @@
   ],
   "orgs": [],
   "cluster_id": "477d2bffca54f3fb",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 5,
+  "cluster_sources": 5,
   "score_v2": 2
  },
  {
@@ -16498,6 +18412,29 @@
   "cluster_size": 24,
   "cluster_sources": 24,
   "score_v2": 4
+ },
+ {
+  "id": "503cb3ff015243ca",
+  "title": "구글, 의료 현장에 AI 에이전트… 진료 기록·보험 심사 지원",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1BX1JUSDRtWHc4aVlzMmNYS2pUaXMwUTJOZzl5ekEtQjFUTzFlaXJORG1vQlAwaThqemNfMlpLTVowYm55OGFZTE50R2JFeVFwWl9FUWlDSWoycnZoeno1T2pCZjVFNWRHdmlfQ3AxNNIBc0FVX3lxTFBBbjVGNFpaeFktaTlPR3o2UE1PVzc0emFYa2E5ZHRHN1ZFTFpEazdENDU1bDVzWVktTTA2Q2gtc19KcnhSUV8zWUZYU1BsMW9fa21UcmxuaFYxNm5CeXRFYmJxckZIdVRxc25QcDhVWENnQ1E?oc=5",
+  "source": "한국클라우드신문",
+  "source_type": "media",
+  "published_at": "2026-11-11T10:11:43+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "사회·인구·기술 변화",
+  "sub_categories": [],
+  "tags": [
+   "AI"
+  ],
+  "score": 2,
+  "feed_name": "사회변화·보험",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "76f19ad61d316ac6",
+  "cluster_size": 4,
+  "cluster_sources": 4,
+  "score_v2": 3
  },
  {
   "id": "b719ed23ddae466c",
@@ -19264,8 +21201,8 @@
   "orgs": [],
   "score_v2": 3,
   "cluster_id": "76f19ad61d316ac6",
-  "cluster_size": 3,
-  "cluster_sources": 3,
+  "cluster_size": 4,
+  "cluster_sources": 4,
   "cluster_lead": true
  },
  {
@@ -20360,7 +22297,11 @@
    "미래에셋생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 3,
+  "cluster_id": "df6d8a96e6dba3c0",
+  "cluster_size": 11,
+  "cluster_sources": 10,
+  "cluster_lead": true
  },
  {
   "id": "6aa6ba91547bbe52",
@@ -20956,8 +22897,8 @@
   ],
   "orgs": [],
   "cluster_id": "477d2bffca54f3fb",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 5,
+  "cluster_sources": 5,
   "score_v2": 2
  },
  {
@@ -21181,8 +23122,8 @@
   ],
   "orgs": [],
   "cluster_id": "477d2bffca54f3fb",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 5,
+  "cluster_sources": 5,
   "score_v2": 2
  },
  {
@@ -21455,8 +23396,8 @@
   ],
   "orgs": [],
   "cluster_id": "477d2bffca54f3fb",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 5,
+  "cluster_sources": 5,
   "score_v2": 2,
   "cluster_lead": true
  },
@@ -22961,8 +24902,8 @@
   "orgs": [],
   "score_v2": 4,
   "cluster_id": "0c7ca4011f2649a6",
-  "cluster_size": 18,
-  "cluster_sources": 18
+  "cluster_size": 19,
+  "cluster_sources": 19
  },
  {
   "id": "ac450cddee1c7e0b",
@@ -23005,8 +24946,8 @@
   "orgs": [],
   "score_v2": 3,
   "cluster_id": "2361bc6ab044b63f",
-  "cluster_size": 6,
-  "cluster_sources": 6,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "cluster_lead": true
  },
  {
@@ -23363,6 +25304,26 @@
   "cluster_size": 2,
   "cluster_sources": 2,
   "score_v2": 3
+ },
+ {
+  "id": "8e0ebbd27efa1ac6",
+  "title": "[오늘의 이 종목] \"사상 최대 실적 달성한 삼양식품과 글로벌 영토 확장 가속화하는 달바글로벌의 성장 전략\" - 머니투데이",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBCYWxpSkYzRHVfbGZKM3Nnb1pXMnk2YjdyUW56Ukd4dHhtb211azRaUmVlMW9QSXhISDBWZWZtMTcwVXEwV2s0Yld0RnBzUVJVQ2hwTGNmUEZlRXJ6Z1JaVm5wMlk0UUVa0gFuQVVfeXFMTTB1R2FwSEoyaldGTVMwUkJCeG03UWcyMWNiTFVvRklxVGF5UG9xdnVaX093TmtaaTc0U2NzbF9iM0hMSlh5dzUwU0ZZLTZzQlJQckVCOS1DMzRBd3I4LXpqVzlmdTJILVNQdGdOOFE?oc=5",
+  "source": "머니투데이",
+  "source_type": "media",
+  "published_at": "2026-11-11T03:26:02+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "실적"
+  ],
+  "score": 2,
+  "feed_name": "주요 경제지·금융시장",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "a1913666aa4e7687",
@@ -27322,6 +29283,24 @@
   "score_v2": 2
  },
  {
+  "id": "27a278d90ebf4c24",
+  "title": "윌러가 누른 빅스텝 발작 버튼…중국이 美 데이터센터 중단시키나[박신영의 개장전 요것만]",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5mOUgtSWdUSUd3M0lkZFl1RzlDMllsYXp4aVlQeEdVWXNuVjE1bGZuWmlNYjQ3cXZQQTdFbWZnYWMxT2FVWVBLMHVUcDY0ckpJdEJVY1EwVmdhZw?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-10T15:23:09+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "주요 경제지·금융시장",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "f962d5c3de4562da",
   "title": "비르투스, 순유출 확대와 운용자산 감소 부담 부각",
   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9LUGFxZ3hlTWJRLTZ0bWo5aDMxU28yeGIyUGh4dl9fa0VXZG5fT3p1N3R5R3A5RDc5cHg3VmJDRXdXOWVMVVVKWW5Ta0U0d01makE?oc=5",
@@ -27431,8 +29410,8 @@
   "orgs": [],
   "score_v2": 2,
   "cluster_id": "ceb770ba0fb3d841",
-  "cluster_size": 5,
-  "cluster_sources": 5,
+  "cluster_size": 7,
+  "cluster_sources": 7,
   "cluster_lead": true
  },
  {
@@ -28282,7 +30261,11 @@
    "KB손해보험"
   ],
   "orgs": [],
-  "score_v2": 3
+  "score_v2": 4,
+  "cluster_id": "53ac4912edd17f62",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "86d2489e4a364536",
@@ -28995,8 +30978,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -29173,8 +31156,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -29456,8 +31439,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -29718,8 +31701,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -29744,8 +31727,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -29765,8 +31748,8 @@
   "companies": [],
   "orgs": [],
   "cluster_id": "af7de1020fea7394",
-  "cluster_size": 2,
-  "cluster_sources": 2,
+  "cluster_size": 3,
+  "cluster_sources": 3,
   "score_v2": 1
  },
  {
@@ -30098,8 +32081,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -30123,8 +32106,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -30148,8 +32131,31 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
+  "score_v2": 2
+ },
+ {
+  "id": "aa41f7ace8205c9b",
+  "title": "특약 설명 소홀했다가 소송 패소…금감원, 신탁사 유동성 관리 주문",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwcTdkQk8xUC1sQjdqY2hNeDQ4YW5wcUllUjVtWWV6V3hxYThUSkRlRldMdjVGMHMtZzg1MVJ6M0w5aTl3VXI3bGJvTVAxcHVtblHSAVNBVV95cUxQSEVkelZrS1oyelBxZk5IVmU2Y2Q1ZENFM0t6eXpkc1ZINW5OWGwzZlNITlQ5d0NoZVJPOVQ1WGVzV0VqblBNMVdJVHIxNEpZV3JEaw?oc=5",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-10T06:00:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "기관·금융감독원",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "cluster_id": "41a7c7c305fab130",
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2
  },
  {
@@ -30216,10 +32222,9 @@
   "companies": [],
   "orgs": [],
   "cluster_id": "af7de1020fea7394",
-  "cluster_size": 2,
-  "cluster_sources": 2,
-  "score_v2": 1,
-  "cluster_lead": true
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 1
  },
  {
   "id": "8831ba0cf20ab158",
@@ -31982,8 +33987,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -34662,8 +36667,8 @@
    "금융감독원"
   ],
   "cluster_id": "41a7c7c305fab130",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 10,
+  "cluster_sources": 10,
   "score_v2": 2,
   "cluster_lead": true
  },
@@ -36040,8 +38045,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -36343,8 +38348,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -37208,8 +39213,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -37390,8 +39395,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4,
   "cluster_lead": true
  },
@@ -37701,8 +39706,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -37730,8 +39735,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -38120,8 +40125,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -38712,8 +40717,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -38943,8 +40948,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -39552,8 +41557,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -39772,8 +41777,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -40102,8 +42107,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -40331,8 +42336,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -40468,8 +42473,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -40565,6 +42570,24 @@
   "score_v2": 3
  },
  {
+  "id": "4b2669515c789132",
+  "title": "[은행연합회 새 리더십] '리딩금융' 기틀 다진 윤종규…장기 재임·KB 견제론 변수 : 네이버 블로그",
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNMjRUQ1dHaG1lVElJa24zSnJKcVZDWW9RTWMzTE1yQ3F3eUFHanlJZ0tnMUN3MmtEVnVzNkZ2d0hCcDZ5VmVuamxUaGVfVjdXUHdUQkFvdW1WbTBPaExpX3JON0NPMzdBV2NFNTRaTC1sc0VuSEZkaHczZkRIWVVyQ1UtdmQ5UlJORzExNlpGaw?oc=5",
+  "source": "Naver Blog",
+  "source_type": "media",
+  "published_at": "2026-11-09T01:34:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "기관·손해보험협회",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "83dc41eaf4105f9e",
   "title": "차량 미운행 시 보험료 할인…롯데손보, ‘주차일수 할인특약’ 첫선",
   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOWUpBUjl4dVFPMlJ2Xy00VVd6S0xQNlMxenAwSjFlbEtYcThOMlMzS3VDM2x3eW15TUYzd1BZUTNtckpxcjdwVmtTTzJVNUwyR1JaRmtqX3ZYOXBNUmJHUTc5RGVvS2QxM2ZMb0VLREE1dUJzSUc3NW8xeHpZSS1wamhRUWc?oc=5",
@@ -40587,8 +42610,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -40610,8 +42633,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -40870,6 +42893,34 @@
   ],
   "orgs": [],
   "score_v2": 2
+ },
+ {
+  "id": "f76fc2e2048c35be",
+  "title": "\"차 안 탄 날 많을수록 보험료 할인\"…롯데손보, 업계 첫 주차일수 할인특약 출시",
+  "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9aUHU5eHdZdGk1YjlNMzhFM0t2UEF1MUxoUjBDdmtYbTRGVTJwZUgxZnVkX3JIcFZXcHBCQXNMOTJSdWpjbVFKcnVmaW54M3Z1RnE1MA?oc=5",
+  "source": "데일리안",
+  "source_type": "media",
+  "published_at": "2026-11-09T01:17:00+00:00",
+  "collected_at": "2026-11-13T03:50:49.045393+00:00",
+  "category": "손해보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "보험료",
+   "출시"
+  ],
+  "score": 2,
+  "feed_name": "손보사·중소·인터넷",
+  "relevant": true,
+  "companies": [
+   "롯데손해보험"
+  ],
+  "orgs": [],
+  "cluster_id": "84395414756991ea",
+  "cluster_size": 25,
+  "cluster_sources": 25,
+  "score_v2": 4
  },
  {
   "id": "d4006d943d1d0087",
@@ -41140,8 +43191,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -41551,8 +43602,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -41863,8 +43914,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -41933,8 +43984,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -42012,8 +44063,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -42040,8 +44091,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
@@ -42358,8 +44409,8 @@
   ],
   "orgs": [],
   "cluster_id": "84395414756991ea",
-  "cluster_size": 24,
-  "cluster_sources": 24,
+  "cluster_size": 25,
+  "cluster_sources": 25,
   "score_v2": 4
  },
  {
