@@ -353,7 +353,7 @@ export interface UserStateStore {
 | 키 | 내용 | 언제 |
 |---|---|---|
 | `heukseok-v1:<채널>` | 로그인 전·로그인 기능 없던 때의 기록(지금 사용자 데이터) | 읽기만. 지우지 않는다 |
-| `actuary-news-hub-v3` 등 옛 키 | 옛 사이트 기록 | 위 키가 없을 때 읽기만(지금과 같음) |
+| 옛 사이트 키(`channels/insurance/channel.json` 의 `storage.legacy_keys`) | 옛 사이트 기록 | 위 키가 없을 때 읽기만(지금과 같음) |
 | `heukseok-v1:<채널>@<사용자 id>` | 이 계정의 로컬 사본(화면이 읽고 쓰는 곳) | 로그인 중. 로그아웃 때 삭제 |
 | `heukseok-sync-v1:<채널>@<사용자 id>` | 기준본(마지막으로 서버와 맞춘 내용)·rev·보낼 것 있음 표시 | 로그인 중. 로그아웃 때 삭제 |
 | `heukseok-account-v1@<사용자 id>` | `{ displayName, mustChange, checkedAt }` — 게이트·메뉴용 사본 | 로그인 중. 로그아웃 때 삭제 |

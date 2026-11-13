@@ -42,7 +42,7 @@ npm run dev                                                  # http://localhost:
 ## 내 데이터(북마크·읽음)
 - 북마크·읽음·새 뉴스 확인 시각·선택한 보험사는 이 브라우저의 localStorage(`heukseok-v1:<채널>`)에만 저장되며 기기 간 동기화되지 않습니다. 저장은 어댑터(`lib/storage.ts`) 뒤에 있어 나중에 로그인·원격 저장소를 붙일 수 있습니다.
 - 헤더의 **내 데이터**(`/insurance/settings/`)에서 JSON 파일로 내려받기(백업)·가져오기(복원)를 할 수 있습니다. 가져오기는 미리보기 후 기존 데이터와 합칩니다.
-- 옛 사이트(actuary-news-hub)의 데이터 형식·이전 링크(`#import=…`) 규격: [docs/migration-localstorage.md](docs/migration-localstorage.md).
+- 옛 사이트의 데이터 형식·이전 링크(`#import=…`) 규격: [docs/migration-localstorage.md](docs/migration-localstorage.md).
 
 ## 학습 중요도(★) 산식
 - 산식·핵심어·상한은 `channels/insurance/score.json` 한 곳: `★ = 2 + (키워드 점수 3점 이상 +1, 6점 이상 +1) + (핵심어 1개 +1, 2개 이상 +2)`, 상한 5. 금융시장 카테고리인데 제목에 보험 관련 단어가 없으면(시장 속보) ★2 상한, 금리·대출 계열도 ★2 상한.

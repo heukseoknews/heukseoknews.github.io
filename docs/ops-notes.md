@@ -32,7 +32,7 @@
 ## 내 데이터(백업·가져오기)
 
 - 가져오기는 기존 기록을 지우지 않고 합친다. 겹치는 북마크·읽음은 하나로, 새 뉴스 확인 시각은 더 늦은 쪽을 쓴다. 합친 뒤에도 읽음 1,500건 한도 규칙을 적용한다.
-- '이전 사이트 기록'은 옛 actuary-news-hub 의 localStorage 형식이다(docs/migration-localstorage.md).
+- '이전 사이트 기록'은 옛 사이트의 localStorage 형식이다(docs/migration-localstorage.md).
 
 ## 데이터·링크
 
