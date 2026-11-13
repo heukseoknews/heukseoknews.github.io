@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-13T03:50:37.167677+00:00",
-  "finished_at": "2026-11-13T03:50:39.441568+00:00",
+  "started_at": "2026-11-13T03:59:58.984645+00:00",
+  "finished_at": "2026-11-13T04:00:01.188345+00:00",
   "candidates": 322,
-  "added": 7,
+  "added": 1,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 1385,
    "kept": 94,
@@ -36,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 12,
@@ -58,8 +58,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 906,
    "kept": 32,
@@ -80,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -105,8 +105,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -137,8 +137,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -162,8 +162,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -184,8 +184,8 @@
     "구글 '알파게놈 2', 유전자 변이 영향 세포별 예측…원인 변이 2배 찾아",
     "배추값 42% 폭락…전남광주, 과잉 물량 3만톤 격리에 58억 투입"
    ],
-   "oldest": "2026-11-11T09:23:00+00:00",
-   "newest": "2026-11-13T02:50:26+00:00",
+   "oldest": "2026-11-11T22:00:00+00:00",
+   "newest": "2026-11-13T03:51:26+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -194,8 +194,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -220,8 +220,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 17,
@@ -246,8 +246,8 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-13T03:50:37.167677+00:00",
-   "last_success_at": "2026-11-13T03:50:37.167677+00:00",
+   "last_run_at": "2026-11-13T03:59:58.984645+00:00",
+   "last_success_at": "2026-11-13T03:59:58.984645+00:00",
    "consecutive_failures": 0,
    "entries": 9,
    "kept": 9,
