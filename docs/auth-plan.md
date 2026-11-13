@@ -1,6 +1,7 @@
 # 로그인·동기화 설계 (Supabase)
 
-> 상태: 설계안(2026-11-12, 추가 결정 반영). 코드는 아직 없다. 구현은 10장의 단계 순서로 한다.
+> 상태: 2026-11-13 갱신. 단계 1(SQL·관리 스크립트·보안 검증 스크립트·실행 절차서)은 작성 완료이고, 실행은 관리자가 `docs/auth-runbook.md` 를 따라 한다. 화면(단계 2~)은 아직 없다. 구현은 10장의 단계 순서로 한다.
+> 실제 SQL 은 `supabase/migrations/0001_init.sql`, 관리 스크립트는 `scripts/admin/` 이다. 이 문서와 다르면 그 파일이 기준이다.
 > 근거: Supabase 공식 문서·가격표, 공식 저장소(supabase/auth, supabase-js) 소스. 공식 문서에서 확인하지 못한 것은 **(미확인)** 으로 적었고, 구현 단계에서 실측해 확정한다.
 > 문서 안의 키·비밀번호·주소는 모두 자리표시자다(`<프로젝트 ref>`, `<publishable 키>` 등). 실제 값은 저장소에 쓰지 않는다.
 
@@ -9,10 +10,12 @@
 - **구성**: 사이트는 지금처럼 정적 export(GitHub Pages)다. 브라우저가 `@supabase/supabase-js` 로 Supabase Auth(로그인)와 Postgres(사용자 상태·프로필)에 직접 붙는다. 서버 코드는 없다.
 - **로그인 방식**: 아이디형 계정만 쓴다. 카카오 등 외부 로그인은 쓰지 않는다. 나중에 병행 추가할 수 있게 계정 식별을 Supabase 사용자 id 에 묶고 로그인 방법을 `lib/auth.ts` 한 곳에 모은다(11장).
 - **계정**: 관리자가 만든다. 가입은 닫혀 있다. 아이디 `kim` → 내부 이메일 `kim@users.heukseok.invalid`(메일을 보내지 않는 경로만 쓴다). 표시 이름(댓글·채팅에 보이는 이름)은 아이디와 따로, 관리자가 정하고 사용자는 바꾸지 못한다.
-- **첫 로그인**: 초기 비밀번호(무작위 또는 학번)로 로그인하면 **비밀번호 변경 화면으로 강제 이동**하고, 바꾸기 전에는 다른 화면에 들어갈 수 없다. 서버 최소 길이가 8자이므로 이것이 핵심 보완 장치다(2.5).
-- **화면**: 처음 접속하면 `/login/`(noindex) → 로그인 후 홈. 로그인 여부는 브라우저에서 검사한다. 기사 데이터는 공개 정적 파일이므로 이 로그인은 **이용 구분**이지 열람 차단이 아니다.
+- **첫 로그인(확정)**: 초기 비밀번호는 **각자의 학번**이다. 학번으로 로그인하면 **비밀번호 변경 화면으로 강제 이동**하고, 바꾸기 전에는 다른 화면에 들어갈 수 없다. 서버도 바꾸기 전에는 동기화를 거절한다(4.1). 학번은 남이 알 수 있으므로 이것이 핵심 보완 장치다(2.5).
+- **화면(확정)**: 사이트 첫 화면은 **로그인 화면이 먼저**다. 처음 접속하면 `/login/`(noindex) → 로그인 후 홈. 로그인 여부는 브라우저에서 검사하는 **화면상의 안내 장벽**이고, 기사 데이터는 공개 정적 파일 그대로다(열람 차단이 아니다). 사용자 기록은 서버(RLS)가 막는다.
+- **서버 장애(확정)**: 로그인 서버가 멈추거나(무료 플랜 정지·장애) 연결이 안 되면, 이미 로그인한 사람은 기사 읽기와 이 기기의 북마크가 그대로 동작하고 **동기화만 멈춘다**(연결되면 다시 보냄). 새 로그인은 서버가 돌아올 때까지 안 된다(7.3).
 - **동기화**: 지금 구조(localStorage 가 즉시 반응하는 저장소)를 그대로 두고, 그 뒤에서 서버와 맞추는 **로컬 우선 동기화**를 붙인다. 충돌은 기존 `mergeStates`(첫 연결)와 새 3-방향 병합(이후)으로 푼다.
 - **권한**: 표 3개(`user_state`·`profiles`·`account_security`). 모든 표에 RLS + 표마다 필요한 GRANT 만 명시. 사용자는 본인 행만, 프로필·비밀번호 상태는 읽기만. anon 은 권한 없음. 검증 절차 포함(4.3).
+- **상한(확정)**: 실제 사용 한도(채널당 북마크 1,000·폴더 20·태그 50·메모 200자·북마크당 태그 10)는 **화면에서만** 검사한다. 서버는 악용 방지용 넉넉한 상한(북마크 3,000·폴더 100·태그 200·메모 1,000자·북마크당 태그 50·사용자당 채널 행 10·행 크기 4MB)만 둔다. 두 기기 기록을 합친 결과가 화면 한도를 넘어도 동기화가 거절되지 않게 하기 위해서다(3.3).
 - **비밀 키**: secret(service_role) 키는 관리자 PC 의 관리 스크립트에서만. 저장소·CI·브라우저 어디에도 없고, 테스트와 정기 점검으로 확인한다(1.4).
 - **개인정보 안내**: 푸터 한두 줄. 긴 처리방침 문서는 만들지 않는다(7.6).
 - **되돌리기**: 빌드 환경 변수(Supabase 주소·키)가 없으면 로그인 기능이 꺼지고 지금과 같은 로컬 전용 사이트로 빌드된다. GitHub 변수만 지우고 다시 배포하면 원상복구된다.
@@ -55,20 +58,20 @@
 
 **규칙**
 
-1. 쓰는 곳은 관리 스크립트(`scripts/admin/users.mjs`, 6.3) 하나뿐이다. 사이트 코드·빌드·GitHub Actions 는 secret 키가 필요 없다.
-2. 전용 키를 만든다: Settings → API Keys 에서 secret 키를 용도 이름(`admin-script`)으로 따로 만들어 쓰고, 기본 secret 키는 쓰지 않는다. 문제가 생기면 이 키만 지운다(새 키 체계는 secret 키를 여러 개 만들고 각각 폐기할 수 있다).
+1. 쓰는 곳은 관리 스크립트(`scripts/admin/users.mjs`·`verify.mjs`, 6.3) 하나뿐이다. 사이트 코드·빌드·GitHub Actions 는 secret 키가 필요 없다.
+2. 전용 키를 만든다: Settings → API Keys 에서 secret 키를 용도 이름(`admin_script`)으로 따로 만들어 쓰고, 기본 secret 키는 쓰지 않는다. 문제가 생기면 이 키만 지운다(새 키 체계는 secret 키를 여러 개 만들고 각각 폐기할 수 있다).
 3. 두지 않는 곳: 저장소의 모든 파일(무시 목록에 든 `.env.local` 포함), 저장소 폴더 안의 어떤 파일, GitHub Secrets·Variables, Actions 로그, 브라우저·번들, URL, 이슈·커밋 메시지, 대화창(Claude Code 포함).
-4. 넣는 방법: 명령을 칠 때 `read -s SUPABASE_SECRET_KEY` 로 화면에 보이지 않게 입력하고 같은 셸에서 스크립트를 실행한다. 셸 기록·파일에 남기지 않는다. 보관은 비밀번호 관리자에만.
-5. 스크립트 쪽 방어: 키를 `process.env` 로만 읽는다, `sb_secret_` 로 시작하지 않으면 거절한다, 키·비밀번호를 출력·로그하지 않는다(새로 만든 무작위 비밀번호만 한 번 출력), 브라우저 번들에 들어가지 않는 위치(`scripts/`)에 둔다, 사이트 코드에서 import 하지 않는다(테스트로 확인).
+4. 넣는 방법(확정): 관리자 맥의 `~/.heukseok/supabase.env`(권한 600, 경로는 `HEUKSEOK_SECRET_ENV` 로 바꿀 수 있음)에 한 줄로 두고, 스크립트가 이 파일에서만 읽는다. 셸 기록·저장소 폴더에 남기지 않는다. 원본 보관은 비밀번호 관리자에.
+5. 스크립트 쪽 방어(구현됨): 키 파일·계정 CSV 가 저장소 폴더 안에 있으면 거절한다, `sb_secret_` 로 시작하지 않으면 거절한다, 키·학번·비밀번호·토큰은 모든 출력에서 [가림] 으로 바꾼다, 브라우저 번들에 들어가지 않는 위치(`scripts/`)에 둔다, 사이트 코드에서 import 하지 않는다(`tests/test_no_secrets.py` 로 확인).
 6. Claude Code 는 secret 키를 받지 않고 다루지 않는다. RLS 검사도 시험 계정 로그인(publishable 키)으로만 한다.
 
 **검증(자동)**
 
 | 언제 | 무엇 | 실패 조건 |
 |---|---|---|
-| `npm test` 마다 | 저장소 추적 파일 전체 검색 | `sb_secret_` 로 시작하는 문자열, `"role":"service_role"` 을 담은 JWT 모양 문자열, `SUPABASE_SECRET_KEY=` 뒤에 값이 붙은 줄 |
+| CI(`tests/test_no_secrets.py`) 마다 | 저장소 추적 파일 전체 검색(`*.env`·`accounts*.csv`·학번 열 CSV 커밋 포함) | `sb_secret_` 로 시작하는 문자열, `"role":"service_role"` 을 담은 JWT 모양 문자열, `SUPABASE_SECRET_KEY=` 뒤에 값이 붙은 줄 |
 | 배포 빌드 직후(`deploy.yml`) | `out/` 전체(HTML·JS 청크) 검색 | 위와 같음 → 배포 중단 |
-| `npm test` 마다 | `app/`·`lib/`·`components/` 에서 `scripts/admin` import 또는 `SUPABASE_SECRET_KEY` 참조 | 1건이라도 있으면 실패 |
+| CI(`tests/test_no_secrets.py`) 마다 | `app/`·`lib/`·`components/` 에서 `scripts/admin` import 또는 `SUPABASE_SECRET_KEY` 참조 | 1건이라도 있으면 실패 |
 
 **검증(수동, 관리자)**
 
@@ -76,10 +79,10 @@
 |---|---|
 | 단계 1 시작 전 1회 | 전체 이력 검색 `git log -p --all \| grep -c 'sb_secret_'` = 0 |
 | 계정 작업 뒤마다 | 셸 기록에 키가 없는지(`history \| grep sb_secret_` 0건) |
-| 분기 1회 | Settings → API Keys 에서 secret 키 목록 확인 — `admin-script` 외 쓰지 않는 키 삭제. GitHub 저장소 Settings → Secrets and variables 에 Supabase secret 이 없는지 확인 |
+| 분기 1회 | Settings → API Keys 에서 secret 키 목록 확인 — `admin_script` 외 쓰지 않는 키 삭제. GitHub 저장소 Settings → Secrets and variables 에 Supabase secret 이 없는지 확인 |
 | 분기 1회 | 배포된 사이트 JS 청크에서 `sb_secret_` 검색 0건(자동 검사의 재확인) |
 
-**유출 시 순서**: ① `admin-script` 키 즉시 삭제(Settings → API Keys) ② 새 키 생성 ③ 원인 제거(파일·이력·로그). 공개 저장소 이력에 들어갔으면 키를 지운 뒤에 이력 정리 여부를 따로 정한다 ④ 대시보드 Users·`user_state` 에서 이상 변경 확인. 공개 GitHub 에 올라간 secret 키를 Supabase 가 자동 폐기한다는 안내가 있으나(블로그) 이것에 기대지 않는다.
+**유출 시 순서**(절차서 12장): ① `admin_script` 키 즉시 삭제(Settings → API Keys) ② 새 키 생성 ③ 원인 제거(파일·이력·로그). 공개 저장소 이력에 들어갔으면 키를 지운 뒤에 이력 정리 여부를 따로 정한다 ④ 대시보드 Users·`user_state` 에서 이상 변경 확인. 공개 GitHub 에 올라간 secret 키를 Supabase 가 자동 폐기한다는 안내가 있으나(블로그) 이것에 기대지 않는다.
 
 ## 2. 로그인 흐름
 
@@ -156,87 +159,29 @@
 
 | 표 | 행 | 내용 | 사용자 권한 |
 |---|---|---|---|
-| `profiles` | 사용자 1행 | 표시 이름 | 본인 행 읽기만(확장 때 로그인 사용자 전체 읽기, 11장) |
-| `account_security` | 사용자 1행 | 비밀번호 변경 필요 여부, 바꾼 시각 | 본인 행 읽기만 |
+| `profiles` | 사용자 1행 | 아이디(`login_id`)·표시 이름·관리자 표시(`is_admin`) | 본인 행 읽기만(확장 때 로그인 사용자 전체 읽기, 11장) |
+| `account_security` | 사용자 1행 | 비밀번호 변경 필요 여부, 바꾼 시각, 관리자 초기화 진행 표시 | 본인 행 읽기만 |
 | `user_state` | 사용자 × 채널 1행 | 북마크(기사 스냅샷·폴더·태그·메모·삭제 표시)·내 폴더·내 태그·읽음·확인 시각·보험사 | 본인 행 읽기·쓰기 |
 
 표시 이름과 비밀번호 상태를 다른 표로 나눈 이유: 댓글·채팅을 열면 표시 이름은 다른 사용자에게 보여야 하지만 비밀번호 상태는 본인만 봐야 한다. RLS 는 행 단위라 한 표에서 열마다 다르게 열기 어렵다.
 
-```sql
--- 001_schema.sql (단계 1, 관리자가 SQL Editor 에서 실행)
+실제 SQL 은 `supabase/migrations/0001_init.sql` 한 파일이다(관리자가 SQL Editor 에 붙여 넣어 실행, 여러 번 실행해도 결과가 같다 — 절차서 2장). 열 요약:
 
-create table public.profiles (
-  user_id      uuid        primary key references auth.users(id) on delete cascade,
-  display_name text        not null unique
-               check (char_length(display_name) between 1 and 20 and display_name = btrim(display_name)),
-  created_at   timestamptz not null default now()
-);
+| 표 | 열 |
+|---|---|
+| `profiles` | `user_id`(auth.users, 지우면 함께 삭제), `login_id`(아이디, 고유, 2.2 형식), `display_name`(표시 이름, 고유, 1~20자, 관리자가 정함), `is_admin`(기본 false — 지금은 권한에 쓰지 않고 댓글 관리 등 확장 때 쓸 자리), `created_at` |
+| `account_security` | `user_id`, `must_change_password`(기본 true), `password_changed_at`, `reset_pending`(관리자 초기화 진행 중, 6.3) |
+| `user_state` | `user_id`(기본 `auth.uid()`), `channel`, `schema_version`, `bookmarks`·`folders`·`tags`·`read_at`(jsonb 객체), `last_confirmed`, `companies`(jsonb 배열), `rev`, `created_at`, `updated_at`. 기본 키 `(user_id, channel)`, 행 크기 상한 4MB |
 
-create table public.account_security (
-  user_id              uuid        primary key references auth.users(id) on delete cascade,
-  must_change_password boolean     not null default true,
-  password_changed_at  timestamptz
-);
+트리거(함수는 Data API 에 노출되지 않는 `private` 스키마):
 
-create table public.user_state (
-  user_id        uuid        not null default auth.uid() references auth.users(id) on delete cascade,
-  channel        text        not null check (channel ~ '^[a-z0-9-]{1,32}$'),
-  schema_version int         not null default 2,             -- 브라우저 저장 형식과 같은 번호(3.3)
-  bookmarks      jsonb       not null default '{}'::jsonb,   -- { 기사 id: 북마크 | 삭제 표시 } (3.3)
-  folders        jsonb       not null default '{}'::jsonb,   -- { 폴더 id: { id, name, createdAt, updatedAt, deletedAt? } }
-  tags           jsonb       not null default '{}'::jsonb,   -- { 태그 id: 같은 모양 }
-  read_at        jsonb       not null default '{}'::jsonb,   -- { 기사 id: ISO 시각 }
-  last_confirmed timestamptz,
-  companies      jsonb       not null default '[]'::jsonb,   -- [정식명]
-  rev            bigint      not null default 1,             -- 낙관적 동시성(3.4)
-  updated_at     timestamptz not null default now(),
-  primary key (user_id, channel),
-  constraint user_state_size check (pg_column_size(bookmarks) + pg_column_size(folders) + pg_column_size(tags) + pg_column_size(read_at) + pg_column_size(companies) < 2000000)
-);
+- `auth.users` 에 계정이 생기면: `account_security`(변경 필요 = true)를 만들고, 이메일이 `<아이디>@users.heukseok.invalid` 이면 `profiles` 를 만든다. 아이디는 이메일 앞부분, 표시 이름은 관리 스크립트가 `app_metadata.display_name` 으로 넘긴 값(사용자가 고칠 수 없는 영역).
+- `auth.users` 의 비밀번호 해시가 실제로 바뀌면: `reset_pending` 이면(관리자 초기화) '변경 필요'를 그대로 두고, 아니면(본인 변경) 끈다.
+- `user_state` 를 쓸 때: 수정 시각을 서버 시계로, 서버 상한(3.3) 검사.
 
--- 트리거 함수는 Data API 에 노출되지 않는 private 스키마에 둔다
-create schema if not exists private;
-revoke all on schema private from public, anon, authenticated;
-
--- 수정 시각은 서버 시계로
-create function private.touch_updated_at() returns trigger
-  language plpgsql set search_path = '' as $$
-begin new.updated_at := now(); return new; end $$;
-create trigger user_state_touch before update on public.user_state
-  for each row execute function private.touch_updated_at();
-
--- 계정이 만들어지면 프로필(표시 이름 = 아이디로 임시)과 '변경 필요' 상태를 만든다
-create function private.handle_new_user() returns trigger
-  language plpgsql security definer set search_path = '' as $$
-begin
-  insert into public.profiles (user_id, display_name) values (new.id, split_part(new.email, '@', 1));
-  insert into public.account_security (user_id) values (new.id);
-  return new;
-end $$;
-create trigger on_auth_user_created after insert on auth.users
-  for each row execute function private.handle_new_user();
-
--- 비밀번호가 실제로 바뀌면 '변경 필요'를 끈다(사용자 변경·관리자 초기화 모두 여기를 지난다)
-create function private.handle_password_change() returns trigger
-  language plpgsql security definer set search_path = '' as $$
-begin
-  update public.account_security
-     set must_change_password = false, password_changed_at = now()
-   where user_id = new.id;
-  return new;
-end $$;
-create trigger on_auth_password_changed after update of encrypted_password on auth.users
-  for each row when (old.encrypted_password is distinct from new.encrypted_password)
-  execute function private.handle_password_change();
-
-revoke execute on all functions in schema private from public, anon, authenticated;
-```
-
-- `auth.users` 에 `after insert` 트리거로 프로필을 만드는 것은 공식 문서의 방식이다. `encrypted_password` 열에 거는 `after update` 트리거는 같은 방식의 응용이며 열 이름은 Auth 서버 소스 기준이다 **(단계 1 검사 항목 #13 으로 실측)**. 트리거 함수가 실패하면 계정 생성·비밀번호 변경 자체가 실패하므로 함수는 최소한으로 둔다.
-- 관리자가 비밀번호를 초기화해도 이 트리거가 '변경 필요'를 끈다. 그래서 관리 스크립트는 **비밀번호를 바꾼 다음** `must_change_password = true` 를 다시 켠다(6.3, 순서 중요).
+- `auth.users` 에 `after insert` 트리거로 프로필을 만드는 것은 공식 문서의 방식이다. `encrypted_password` 열에 거는 트리거는 같은 방식의 응용이며, 실제 동작은 `scripts/admin/verify.mjs` 5·9번이 확인한다. 트리거 함수가 실패하면 계정 생성·비밀번호 변경 자체가 실패하므로 함수는 최소한으로 둔다.
 - 기본 키가 `(user_id, …)` 로 시작하므로 RLS 조건에 인덱스가 따로 필요 없다.
 - 채널 목록은 DB 가 모른다(새 채널을 열 때 DB 변경 불필요).
-- 2MB 상한은 오류·악용으로 행이 커지는 것을 막는 안전장치다. `pg_column_size` 는 압축(TOAST) 뒤 크기라 JSON 문자열 크기보다 작게 잡힌다. JSON 기준으로도 3.2 의 '많음'(1.6MB)까지 들어간다.
 
 ### 3.2 크기 추정(실측, v2 형식)
 
@@ -249,7 +194,15 @@ revoke execute on all functions in schema private from public, anon, authenticat
 | 많음 | 1,000 | 200자(한도) | 5,000(HARD) | 약 1.6MB |
 
 - 10명 × 채널 3개 × 보통 ≈ **11MB**, 전원 '많음'이어도 ≈ 48MB. 무료 플랜 DB 500MB 의 2~10%. jsonb 는 큰 값을 압축(TOAST)하므로 실제로는 더 작다. `profiles`·`account_security` 는 합쳐 수 KB.
-- 한 행 2MB 상한에는 북마크 약 1,200건(메모를 모두 200자로 채운 경우)에서 닿는다. 채널당 북마크 상한(예: 1,000건)을 둘지는 동기화 구현(단계 3) 전에 정한다. 지금 브라우저 저장에는 상한이 없다.
+- 행 크기 상한은 **4MB**(확정)다. 이 검사는 압축(TOAST) **전** jsonb 크기로 평가된다(JSON 바이트보다 약 7% 큼). 실제 기사로 잰 값(SQL 시험 환경):
+
+| 경우 | 압축 전 크기 | 4MB 안 |
+|---|---:|---|
+| 화면 한도까지 채운 1기기(북마크 1,000·메모 모두 200자·읽음 5,000) | 약 1.7MB | 예 |
+| 두 기기를 합친 결과(북마크 2,000·메모 모두 200자·읽음 5,000) | 약 3.1MB | 예 |
+| 서버 상한(북마크 3,000·메모 평균 100자·읽음 5,000) | 약 3.7MB | 예 |
+| 서버 상한(북마크 3,000·메모 모두 200자·읽음 5,000) | 약 4.6MB | 아니요(행 크기 상한이 먼저 걸림, 받아들임) |
+
 - **egress(무료 월 5GB)가 더 빠듯하다**: 행 전체를 자주 내려받으면(10명 × 하루 30회 × 3채널 × 358KB ≈ 하루 320MB) 한도를 넘는다. 그래서 3.4 처럼 **`rev` 만 먼저 확인하고 바뀌었을 때만 행 전체를 받는다.** 올릴 때 응답도 `rev` 만 받는다. 이렇게 하면 실제로 바뀐 때만 받으므로 월 수백 MB 이하다.
 
 ### 3.3 형식(v2)과 병합 규칙
@@ -282,7 +235,22 @@ revoke execute on all functions in schema private from public, anon, authenticat
   북마크·폴더·태그는 `mergeStates3` 안에서도 `updatedAt` 규칙을 그대로 쓴다. 성질(테스트로 확인): `mergeStates3(b, x, b) = x`, `mergeStates3(b, b, y) = y`, 두 번 합쳐도 같다, 기준본이 없으면 `mergeStates` 와 같다.
 - 시계: `updatedAt` 은 기기 시계다. 두 기기 시계가 몇 분 어긋나면 그 사이 같은 북마크를 양쪽에서 고친 경우 늦게 고친 쪽이 질 수 있다(10명 규모에서 받아들임). 서버 `updated_at` 은 행 단위라 항목 비교에는 쓰지 않는다.
 - 30일 넘게 연결되지 않은 기기는 그 사이 지운 항목의 삭제 표시가 정리된 뒤라, 그 기기의 사본과 합치면 지운 항목이 되살아날 수 있다(받아들임).
-- 한도(폴더 20·태그 50)는 만들 때만 검사한다. 두 기기에서 따로 만들어 합친 결과가 한도를 넘어도 지우지 않고, 한도 아래로 줄 때까지 새로 만들기만 막는다.
+- 한도는 만들 때만 검사한다. 두 기기에서 따로 만들어 합친 결과가 한도를 넘어도 지우지 않고, 한도 아래로 줄 때까지 새로 만들기만 막는다.
+- **서버 상한과 화면 한도 분리(확정)**: 위 원칙이 지켜지도록 서버는 화면 한도로 막지 않고, 악용 방지용 넉넉한 상한만 둔다.
+
+| 항목 | 화면 한도(새로 만들 때만 막음) | 서버 상한(넘으면 저장 거절, 오류 23514) |
+|---|---|---|
+| 채널당 북마크(지운 표시 제외) | 1,000(세션 A 가 추가할 예정, 10.1) | 3,000 |
+| 폴더 | 20 | 100 |
+| 태그 | 50 | 200 |
+| 메모 | 200자 | 1,000자 |
+| 북마크당 태그 | 10 | 50 |
+| 사용자당 채널 행 | — | 10 |
+| 행 크기(압축 전) | — | 4MB |
+
+  - 메모와 북마크당 태그는 합칠 때 이어 붙지 않고 북마크 단위로 한쪽을 고르므로 화면 한도를 넘지 않는다. 서버 값은 API 를 직접 불러 한 항목을 키우는 것만 막는다.
+  - 이전 값보다 늘지 않는 변경은 상한을 넘어도 통과한다(상한 위의 행에서 줄이는 변경이 막히지 않게).
+  - 정상 사용으로는 서버 상한에 닿지 않으므로 동기화 쪽은 이 오류를 '동기화 실패'로만 다룬다.
 
 ### 3.4 서버와 주고받기(낙관적 동시성)
 
@@ -296,69 +264,21 @@ revoke execute on all functions in schema private from public, anon, authenticat
 
 ## 4. 접근 규칙(RLS)과 권한(GRANT)
 
-### 4.1 SQL 초안
+### 4.1 접근 규칙
 
 프로젝트 설정 전제(완료): Data API 의 **Automatically expose new tables 꺼짐**, **Enable automatic RLS 켜짐**. 따라서 새 표에는 역할별 권한이 자동으로 붙지 않는다고 보고, 표마다 필요한 GRANT 를 **모두 명시**한다. RLS 는 자동으로 켜지지만 SQL 에도 적어 둔다(다시 실행해도 같은 결과).
 
-```sql
--- 002_access.sql (단계 1, 001 다음에 실행)
+실제 SQL 은 `supabase/migrations/0001_init.sql` 의 'RLS·권한' 부분이다. 요점:
 
--- RLS (자동 RLS 가 켜져 있어도 명시)
-alter table public.profiles         enable row level security;
-alter table public.account_security enable row level security;
-alter table public.user_state       enable row level security;
-
--- 스키마 사용 권한
-grant usage on schema public to authenticated, service_role;
-
--- 기본: 아무 권한도 없는 상태에서 시작
-revoke all on table public.profiles, public.account_security, public.user_state from public, anon, authenticated;
-
--- authenticated(로그인 사용자): 필요한 것만
-grant select                         on table public.profiles         to authenticated;  -- 표시 이름 읽기만
-grant select                         on table public.account_security to authenticated;  -- 변경 필요 여부 읽기만
-grant select, insert, update, delete on table public.user_state       to authenticated;
-
--- service_role(관리 스크립트): RLS 는 우회하지만 표 권한은 별도로 필요
-grant select, insert, update, delete on table public.profiles, public.account_security, public.user_state to service_role;
-
--- anon(로그인 안 함): 어떤 표에도 권한 없음 → 42501
-
--- profiles: 본인 행만 읽기. 쓰기 정책 없음(표시 이름은 관리자만 바꾼다)
-create policy "profiles: 본인 행 읽기" on public.profiles for select to authenticated
-  using ((select auth.uid()) = user_id);
-
--- account_security: 본인 행만 읽기. 쓰기 정책 없음(트리거·관리자만 바꾼다)
-create policy "account_security: 본인 행 읽기" on public.account_security for select to authenticated
-  using ((select auth.uid()) = user_id);
-
--- user_state: 본인 행만, 그리고 비밀번호를 바꾼 계정만
-create function private.password_ready() returns boolean
-  language sql stable security definer set search_path = '' as $$
-  select coalesce((select not s.must_change_password
-                     from public.account_security s
-                    where s.user_id = (select auth.uid())), false)
-$$;
-revoke execute on function private.password_ready() from public, anon;  -- 함수는 기본으로 PUBLIC 실행 권한이 붙으므로 회수
-grant usage on schema private to authenticated;
-grant execute on function private.password_ready() to authenticated;
-
-create policy "user_state: 본인 행 읽기"   on public.user_state for select to authenticated
-  using ((select auth.uid()) = user_id and (select private.password_ready()));
-create policy "user_state: 본인 행 만들기" on public.user_state for insert to authenticated
-  with check ((select auth.uid()) = user_id and (select private.password_ready()));
-create policy "user_state: 본인 행 고치기" on public.user_state for update to authenticated
-  using ((select auth.uid()) = user_id and (select private.password_ready()))
-  with check ((select auth.uid()) = user_id and (select private.password_ready()));
-create policy "user_state: 본인 행 지우기" on public.user_state for delete to authenticated
-  using ((select auth.uid()) = user_id and (select private.password_ready()));
-```
+- 세 표 모두 RLS 를 켜고, `public`·`anon`·`authenticated` 의 권한을 모두 회수한 뒤 필요한 것만 준다. `service_role` 에도 표 권한을 명시한다(RLS 는 우회하지만 GRANT 는 필요).
+- `profiles`·`account_security`: 본인 행 읽기 정책 하나씩. 쓰기 권한(GRANT) 없음.
+- `user_state`: 읽기·만들기·고치기·지우기 정책을 따로 두고, 모두 `(select auth.uid()) = user_id and (select private.password_ready())`. `password_ready()` 는 '프로필이 있는 아이디 계정이고 비밀번호를 바꿨는가'다.
 
 - `(select auth.uid())` 처럼 감싸면 문장당 한 번만 계산된다(공식 권장). `for all` 정책을 쓰지 않고 작업별로 나눈다(공식 권장).
 - `profiles`·`account_security` 에는 authenticated 의 insert/update/delete 권한이 **GRANT 단계에서 없다**. 정책을 실수로 추가해도 권한 오류(42501)로 막힌다. 표시 이름을 사용자가 못 바꾸는 근거가 이것이다.
-- `user_state` 의 `password_ready()` 조건: 비밀번호를 바꾸지 않은 계정은 동기화 자체가 거절된다(화면 게이트를 우회해도 서버 기록에 닿지 못함). 함수는 `private` 스키마에 있어 Data API 로 직접 부를 수 없다. `private` 스키마에 authenticated 의 usage 를 주는 것은 정책 안에서 이 함수를 부르기 위해서이고, 표는 두지 않는다.
+- `user_state` 의 `password_ready()` 조건: 비밀번호를 바꾸지 않은 계정과 프로필이 없는 계정(아이디 계정이 아닌 경우)은 동기화 자체가 거절된다(화면 게이트를 우회해도 서버 기록에 닿지 못함). 함수는 `private` 스키마에 있어 Data API 로 직접 부를 수 없다. `private` 스키마에 authenticated 의 usage 를 주는 것은 정책 안에서 이 함수를 부르기 위해서이고, 표는 두지 않는다.
 - `update` 의 `with check` 가 `user_id` 를 남의 것으로 바꾸는 것을 막는다.
-- SQL 은 저장소의 `supabase/sql/001_schema.sql`, `002_access.sql` 에 두고(단계 1), 관리자가 SQL Editor 에서 실행한다. CLI 마이그레이션은 쓰지 않는다(사람 10명 규모에 과함).
+- SQL 은 저장소의 `supabase/migrations/0001_init.sql` 한 파일이고, 관리자가 SQL Editor 에서 실행한다(절차서 2장). CLI 마이그레이션은 쓰지 않는다(사람 10명 규모에 과함). 이후 변경은 `0002_….sql` 처럼 새 파일로 더한다.
 
 ### 4.2 권한 전체표(이 표와 실제가 같아야 한다)
 
@@ -384,7 +304,7 @@ select tablename, policyname, cmd, roles from pg_policies where schemaname = 'pu
 
 ### 4.3 검증 절차(SQL 을 바꿀 때마다)
 
-시험 계정 `test-a`, `test-b`, `test-c` 를 만든다(실사용 계정과 분리). `test-a`·`test-b` 는 비밀번호를 한 번 바꿔 둔 상태, `test-c` 는 바꾸지 않은 상태로 둔다. 스크립트 `scripts/audit/rls-check.mjs`(단계 1) — publishable 키와 시험 계정 아이디·비밀번호를 환경 변수로만 받는다. secret 키는 쓰지 않는다.
+**자동화(구현됨)**: `scripts/admin/verify.mjs`(절차서 4장)가 임시 시험 계정 2개(`zz-verify-a`·`zz-verify-b`, 무작위 비밀번호)를 만들어 아래 항목 대부분과 서버 상한·관리자 초기화를 확인하고, 끝나면 지운다. 아래 표는 확인 항목의 정의다.
 
 | # | 누구로 | 하는 일 | 기대 |
 |---|---|---|---|
@@ -395,7 +315,7 @@ select tablename, policyname, cmd, roles from pg_policies where schemaname = 'pu
 | 5 | B | 자기 행의 `user_id` 를 A 로 update | RLS 위반 오류 |
 | 6 | B | A 의 `user_state` delete | 0행 |
 | 7 | 로그인 없음(publishable 키만) | 세 표 select·insert | 모두 `42501` |
-| 8 | A | 2MB 넘는 `user_state` update | check 위반 |
+| 8 | A | 서버 상한(3.3) 초과 update / 화면 한도를 넘는 합친 결과 update | check 위반 / 성공 |
 | 9 | A | `profiles` 자기 행 select / B 의 행 select | 1행 / 0행 |
 | 10 | A | `profiles.display_name` update, `profiles` insert·delete | 모두 `42501` |
 | 11 | A | `account_security` 자기 행 select / `must_change_password` update | 1행(false) / `42501` |
@@ -405,8 +325,7 @@ select tablename, policyname, cmd, roles from pg_policies where schemaname = 'pu
 | 15 | A | `rpc('password_ready')` 등 private 함수 직접 호출 | 찾을 수 없음(노출 안 됨) |
 | 16 | A·C | 끝나면 자기 `user_state` 행 delete | 성공 |
 
-- 13 을 돌린 뒤 C 를 다시 '변경 전'으로 돌리는 것은 관리자가 한다(6.3 `reset-password test-c`).
-- 관리자 쪽 확인(관리자가 직접, secret 키 사용): 6.3 스크립트로 계정 생성 → `profiles` 표시 이름·`account_security` true 확인, `reset-password` 후 true 로 돌아오는지 확인.
+- `verify.mjs` 에서 C 의 역할은 A 가 비밀번호를 바꾸기 전 단계가 맡고, 관리자 초기화 뒤 다시 막히는지도 확인한다.
 - 보조 수단: SQL Editor 의 역할 전환(impersonation)으로 같은 조회를 해 본다. SQL Editor 기본 연결은 `postgres` 역할이라 RLS 를 우회하므로, 기본 상태의 결과를 검증으로 삼지 않는다.
 
 ## 5. 저장소 어댑터 연결
@@ -477,51 +396,44 @@ export interface UserStateStore {
 | 5 | 비밀번호 최소 길이 **8** | ✅ 완료 |
 | 6 | URL Configuration → Site URL `https://heukseoknews.github.io` | ✅ 완료 |
 | 7 | Data API: Automatically expose new tables **꺼짐**, Enable automatic RLS **켜짐** | ✅ 완료 |
-| 8 | **Require current password: 켬**, **Secure password change: 끔**(2.5) | ☐ 남음 |
-| 9 | 비밀번호 필수 문자 규칙: **끔으로 둠**(학번 초기 비밀번호를 허용하려면, 2.5) | ☐ 확인 |
-| 10 | Authentication → Rate Limits: 토큰 한도 5분 30회(7.2) | ☐ 남음 |
-| 11 | Settings → API Keys: publishable 키 확인, secret 키 `admin-script` 따로 만들기, **구 anon·service_role 키 비활성화**(1.4) | ☐ 남음 |
+| 8 | **Require current password: 켬**, **Secure password change: 끔**(2.5) | ✅ 완료 |
+| 9 | 비밀번호 필수 문자 규칙: **끔으로 둠**(학번 초기 비밀번호를 허용하려면, 2.5) | ☐ 확인(계정 생성 때 `weak_password` 가 나면 이 설정, 절차서 11장) |
+| 10 | Authentication → Rate Limits: 토큰 한도 5분 30회(7.2) | ✅ 완료 |
+| 11 | Settings → API Keys: publishable 키 확인, secret 키 `admin_script` 따로 만들기(맥의 `~/.heukseok/supabase.env`), **구 anon·service_role 키 비활성화**(1.4) | ✅ 완료 |
 | 12 | GitHub 저장소 Variables 에 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` 등록 | ☐ 남음 |
-| 13 | SQL Editor 에서 `001_schema.sql`, `002_access.sql` 실행(단계 1 에서 Claude 가 작성) → 4.2 권한 조회 | ☐ 단계 1 |
-| 14 | 시험 계정 `test-a`·`test-b`·`test-c`, 본인 계정 만들기(6.2) — **SQL 실행 뒤에** 만들어야 프로필이 자동으로 생긴다 | ☐ 단계 1 |
+| 13 | SQL Editor 에서 `supabase/migrations/0001_init.sql` 실행 → 확인 쿼리(절차서 2장) → `check`·`verify`(3·4장) | ☐ 남음(SQL 작성 완료) |
+| 14 | 본인(관리자) 계정 만들기(절차서 5장) — **SQL 실행 뒤에** 만들어야 프로필이 자동으로 생긴다. 시험 계정은 `verify` 가 만들고 지운다 | ☐ 남음 |
 
 ### 6.2 계정 만들기(사용자마다)
 
-- 정보: 아이디(2.2 형식), 표시 이름(실명·별명 자유, 1~20자, 다른 사람과 겹치지 않게), 초기 비밀번호.
-- **초기 비밀번호 — 둘 중 하나**
-  - 무작위(기본안): 스크립트가 16자 무작위로 만들어 한 번만 화면에 보여 준다. 1:1 메시지·대면으로 전달.
-  - 학번: 본인이 원하거나 전달이 번거로울 때. 8자 미만이면 쓸 수 없다(서버 최소 8자). 학번은 같은 반 사람이 알 수 있으므로 **계정을 건넬 때 바로 첫 로그인을 하도록** 하고, 관리자가 6.3 `pending` 으로 변경 여부를 확인한다. 3일 안에 바꾸지 않으면 무작위로 초기화한다. 학번 목록은 어디에도 적어 두지 않는다(스크립트 입력은 화면에 보이지 않게, 저장소·메모 금지).
-  - 어느 쪽이든 첫 로그인 때 비밀번호 변경 화면으로 강제 이동한다(2.5). 서버에서도 바꾸기 전에는 동기화가 거절된다.
-- **방법 A — 스크립트(권장)**: `create` 한 번으로 계정·표시 이름·'변경 필요'가 모두 정해진다(6.3).
-- **방법 B — 대시보드**: Authentication → Users → Add user → Create new user: 이메일 `<아이디>@users.heukseok.invalid`, 비밀번호, **Auto Confirm User** 체크 **(이 화면은 공식 문서에 설명이 없다 — 첫 계정 때 확인)**. 트리거가 표시 이름을 아이디로 임시로 넣으므로, SQL Editor 에서 바꾼다:
-  `update public.profiles set display_name = '<표시 이름>' where user_id = (select id from auth.users where email = '<아이디>@users.heukseok.invalid');`
+- 정보: 아이디(2.2 형식), 표시 이름(실명·별명 자유, 1~20자, 다른 사람과 겹치지 않게), 학번. 관리자 맥의 `~/.heukseok/accounts.csv`(열 `login_id,display_name,student_no`)에만 두고 저장소·메모에는 쓰지 않는다.
+- **초기 비밀번호(확정)**: 각자의 **학번**. 첫 로그인에서 반드시 바꾼다(화면 강제 + 서버 동기화 거절). 학번은 같은 반 사람이 알 수 있으므로, 계정은 로그인 화면이 배포된 **직후** 만들고 건네자마자 첫 로그인을 하게 한다. 관리자는 `list` 의 '비밀번호' 열로 바꿨는지 확인한다. 학번이 8자 미만이면 쓸 수 없다(서버 최소 8자).
+- **방법 — 스크립트**: `create --apply` 한 번으로 CSV 의 모든 계정·표시 이름·'변경 필요'가 정해진다(6.3). 이미 있는 아이디는 건너뛴다.
+- 대시보드에서 직접 만들지 않는다(표시 이름이 비고, 이메일 형식을 틀리면 프로필이 생기지 않는다). 만들었다면 지우고 스크립트로 다시 만든다(절차서 11장).
 
 ### 6.3 관리 스크립트(관리자 PC 에서만)
 
-`scripts/admin/users.mjs`(단계 4, 계정을 처음 만들기 전에 필요하면 단계 1 로 앞당김):
+`scripts/admin/users.mjs`(구현됨, 사용법은 절차서). 모두 기본이 모의 실행이고 `--apply` 를 붙여야 반영된다. 비밀 키는 `~/.heukseok/supabase.env` 에서, 프로젝트 주소는 `SUPABASE_URL` 또는 `--url` 로 받는다.
 
 ```
-read -s SUPABASE_SECRET_KEY && export SUPABASE_SECRET_KEY
-export SUPABASE_URL=https://<프로젝트 ref>.supabase.co
-node scripts/admin/users.mjs create <아이디> --name '<표시 이름>'          # 무작위 초기 비밀번호, 한 번만 출력
-node scripts/admin/users.mjs create <아이디> --name '<표시 이름>' --prompt # 초기 비밀번호(학번 등)를 보이지 않게 입력
-node scripts/admin/users.mjs set-name <아이디> '<표시 이름>'
-node scripts/admin/users.mjs reset-password <아이디> [--prompt]            # 새 초기 비밀번호 + '변경 필요' 다시 켬
-node scripts/admin/users.mjs pending                                      # 아직 비밀번호를 바꾸지 않은 계정과 만든 날
-node scripts/admin/users.mjs list                                         # 아이디·표시 이름·마지막 로그인
-node scripts/admin/users.mjs export <저장소 밖 경로>                        # 백업(7.3)
-unset SUPABASE_SECRET_KEY
+node scripts/admin/users.mjs check                        # 키·주소·SQL 적용·anon 차단 확인(읽기만)
+node scripts/admin/users.mjs create [--apply]             # ~/.heukseok/accounts.csv 일괄 생성(초기 비밀번호 = 학번)
+node scripts/admin/users.mjs reset-password <아이디> [--apply]  # 학번으로 다시 초기화 + '변경 필요' 켬
+node scripts/admin/users.mjs list                         # 아이디·표시 이름·비밀번호 변경 여부·상태·마지막 로그인
+node scripts/admin/users.mjs disable|enable <아이디> [--apply]  # 사용 중지·다시 사용
+node scripts/admin/verify.mjs [--apply]                   # 보안 자동 검증(4.3)
 ```
 
-- `create`: `auth.admin.createUser({ email, password, email_confirm: true })` → 트리거가 프로필·'변경 필요'를 만듦 → `profiles.display_name` 갱신. 표시 이름이 겹치면 계정을 만들기 전에 거절한다.
-- `reset-password`: `auth.admin.updateUserById(id, { password })` → (트리거가 '변경 필요'를 끔) → **그 다음에** `account_security.must_change_password = true`. 순서를 바꾸면 강제 변경이 풀린다. 끝나면 값이 true 인지 다시 읽어 확인하고 출력한다.
-- 키 규칙은 1.4 를 따른다(환경 변수로만, `sb_secret_` 접두 확인, 키·입력 비밀번호 출력 금지, `--prompt` 는 터미널 에코를 끈 입력).
+- `create`: Auth 관리 API 로 이메일 `<아이디>@users.heukseok.invalid`, 비밀번호 = 학번, `email_confirm: true`, `app_metadata: { login_id, display_name }` → 트리거가 프로필·'변경 필요'를 만듦 → 다시 읽어 확인.
+- `reset-password`: ① `reset_pending = true` ② 비밀번호를 학번으로(트리거가 `reset_pending` 을 보고 '변경 필요' 유지) ③ `must_change_password = true` 를 한 번 더 쓰고 ④ 다시 읽어 확인. ②가 실패하면 ①을 되돌린다.
+- 출력에 학번·비밀번호·키·토큰은 나오지 않는다([가림]).
 
 ### 6.4 비밀번호 초기화·표시 이름 변경·계정 삭제
 
-- 비밀번호를 잊으면: 관리자에게 말한다 → 관리자가 `reset-password`(무작위 권장) → 전달 → 사용자는 로그인하자마자 변경 화면으로. 메일 재설정은 쓰지 않는다.
-- 표시 이름을 바꾸고 싶으면: 관리자에게 말한다 → `set-name`. 사용자 화면에는 바꾸는 기능이 없다.
-- 삭제 요청: 대시보드 Users → 사용자 삭제. `on delete cascade` 로 세 표의 행이 함께 지워진다.
+- 비밀번호를 잊으면: 관리자에게 말한다 → 관리자가 `reset-password`(학번으로 초기화) → 사용자는 학번으로 로그인하자마자 변경 화면으로. 메일 재설정은 쓰지 않는다.
+- 표시 이름을 바꾸고 싶으면: 관리자에게 말한다 → 지금은 SQL Editor 에서 `profiles.display_name` 을 고친다(`set-name` 명령은 아직 없음, 10.1). 사용자 화면에는 바꾸는 기능이 없다.
+- 잠시 막기: `disable`(되돌리기 `enable`).
+- 삭제 요청: 대시보드 Users → 사용자 삭제. `on delete cascade` 로 세 표의 행이 함께 지워진다(절차서 10장).
 
 ## 7. 보안·개인정보 점검 목록
 
@@ -530,7 +442,7 @@ unset SUPABASE_SECRET_KEY
 - [x] 서버 최소 8자(설정 완료).
 - [ ] **첫 로그인 강제 변경**(2.5) — 서버 최소 길이가 짧은 것을 보완하는 핵심 장치. 화면 게이트 + 서버 동기화 거절(4.1) 두 겹.
 - [ ] 화면에서 새 비밀번호 규칙 검사: 8자 이상, 영문+숫자, 아이디 미포함.
-- [ ] 초기 비밀번호는 무작위 16자가 기본. 학번을 쓰면 3일 안 변경 확인(6.2).
+- [ ] 초기 비밀번호는 학번(확정). 로그인 화면 배포 직후 만들고 바로 첫 로그인, 관리자가 `list` 로 변경 여부 확인(6.2).
 - [ ] 유출 비밀번호 차단(HaveIBeenPwned)은 Pro 전용이라 없음 → 변경 화면에 "다른 사이트에서 쓰는 비밀번호는 피해 주세요." 한 줄.
 
 ### 7.2 무차별 대입
@@ -543,9 +455,9 @@ unset SUPABASE_SECRET_KEY
 ### 7.3 무료 플랜 일시 중지·백업 부재
 
 - 7일 동안 활동(DB 요청·API 호출·대시보드 방문)이 적으면 프로젝트가 멈춘다. 멈추기 약 1주 전과 멈춘 뒤 소유자에게 메일이 온다. 대시보드 "Resume project" 로 데이터 그대로 복구(정지 후 1년까지).
-- 멈춘 동안: 이미 로그인한 기기는 로컬 사본으로 계속 쓰고 동기화만 실패한다. **새 로그인은 불가** → 12장 결정 사항.
+- 멈춘 동안(장애도 같음, 확정): 이미 로그인한 기기는 기사 읽기와 이 기기의 북마크가 그대로 동작하고 **동기화만 멈춘다**(연결되면 다시 보냄). **새 로그인은 불가**다.
 - [ ] 사용자 10명이 매일 쓰면 멈출 일은 거의 없다. 방학 등을 대비해 관리자가 정지 예고 메일을 받으면 대시보드를 한 번 연다. (자동 유지 요청을 Actions 로 보내는 방법은 '어떤 요청이 활동으로 잡히는지' 공식 기준이 모호해 기본안에서 뺀다.)
-- [ ] 자동 백업 없음(무료) → 관리자가 월 1회 `supabase db dump --data-only -f <저장소 밖 경로>`(공식 CLI) 또는 6.3 `export`. 각 사용자도 내 데이터 → 파일로 내려받기(지금 기능 유지)로 스스로 백업할 수 있다.
+- [ ] 자동 백업 없음(무료) → 관리자가 월 1회 `supabase db dump --data-only -f <저장소 밖 경로>`(공식 CLI) 또는 `export` 명령(아직 없음, 10.1). 각 사용자도 내 데이터 → 파일로 내려받기(지금 기능 유지)로 스스로 백업할 수 있다.
 
 ### 7.4 저장하는 개인정보(최소화)
 
@@ -576,7 +488,7 @@ unset SUPABASE_SECRET_KEY
 > 저장하는 정보는 아이디·표시 이름과 북마크·읽음 기록뿐이며, 광고·방문 분석 도구는 쓰지 않습니다.
 > 계정과 기록 삭제는 운영자에게 요청해 주세요.
 
-- '읽음 기록'에 새 뉴스 확인 시각과 선택한 보험사(화면 설정)도 포함해 읽힌다고 본다. 더 정확히 쓰려면 "북마크·읽음 기록과 화면 설정"(12장 결정 7).
+- '읽음 기록'에 새 뉴스 확인 시각과 선택한 보험사(화면 설정)도 포함해 읽힌다고 본다. 더 정확히 쓰려면 "북마크·읽음 기록과 화면 설정"(12장 미정 5).
 - 로그인 시각·접속 정보가 Supabase 보안 로그에 짧게(무료 1시간) 남는 것은 서비스 운영 기록이므로 푸터에는 쓰지 않고 이 문서(7.4)에만 둔다.
 
 ## 8. 화면 영향
@@ -607,7 +519,7 @@ unset SUPABASE_SECRET_KEY
 
 ### 9.2 수동·반자동
 
-- RLS·GRANT: 4.2 권한 조회 + 4.3 절차(`scripts/audit/rls-check.mjs`, 시험 계정 3개). SQL 을 바꿀 때마다.
+- RLS·GRANT: 4.2 권한 조회 + 4.3 절차(`scripts/admin/verify.mjs`, 임시 시험 계정 2개). SQL 을 바꿀 때마다.
 - Playwright(결과는 /tmp): 로그인 안 한 상태로 `/`·`/insurance/`·`/ai/` → `/login/`(noindex) / 초기 비밀번호로 로그인 → 변경 화면으로 강제 이동, 주소창에 `/insurance/` 를 직접 쳐도 변경 화면으로 / 변경 후 홈 / 아이디 저장 / 틀린 비밀번호 문구 / 로그아웃 후 사용자 키 삭제 / 두 브라우저(같은 계정)에서 북마크 추가·삭제가 서로 전달 / 오프라인 중 변경 → 복구 후 전달 / 1440·390px 캡처.
 - 보안 점검: 7장 체크리스트, 1.4 수동 검증, 로그인 연속 실패로 429 문구 확인.
 
@@ -623,21 +535,29 @@ unset SUPABASE_SECRET_KEY
 | 단계 | 내용 | 완료 기준 | 되돌리기 |
 |---|---|---|---|
 | **0. 준비** (사용자) | 6.1 의 남은 항목 8~12 | 설정 확인, Variables 2개 | 설정 원복 |
-| **1. 표·권한·검사** (Claude 가 SQL·검사 스크립트 작성, 사용자가 SQL 실행·계정 생성) | `supabase/sql/001_schema.sql`·`002_access.sql`, `scripts/audit/rls-check.mjs`, (필요하면) `scripts/admin/users.mjs` 의 `create`·`reset-password`·`pending` | 4.2 권한표 일치, 4.3 의 로그인·비밀번호 변경이 필요 없는 항목(1~12, 15) 통과, 시험 계정 3개·본인 계정 생성 | `drop table` 세 개 + 트리거·함수 삭제 SQL(같이 작성) |
+| **1. 표·권한·검사** (Claude 작성 완료, 사용자가 실행) | `supabase/migrations/0001_init.sql`, `scripts/admin/users.mjs`(check·create·reset-password·list·disable·enable), `scripts/admin/verify.mjs`, `docs/auth-runbook.md` | 확인 쿼리가 4.2 권한표와 일치, `check`·`verify` 모두 통과, 본인 계정 생성 | `drop table` 세 개 + 트리거·함수 삭제 SQL(같이 작성) |
 | **2. 로그인·강제 변경·세션** (Claude) | `@supabase/supabase-js` 추가, `lib/supabase.ts`·`lib/auth.ts`, 게이트 스크립트, `/login/`, `/account/password/`, `/account/`, 홈·헤더 계정 메뉴, 푸터 안내, 비밀값 검사 테스트, deploy.yml 변수 전달·`out/` 검사 | 9.1 게이트·폼·아이디 테스트, 4.3 의 13·14 통과(트리거 실측), `.invalid` 계정으로 실제 로그인·강제 변경 성공(호스팅 실측), Playwright 로그인 흐름, 기존 동등성 검사 통과 | Variables 삭제 후 배포(코드 그대로 꺼짐), 또는 커밋 revert |
 | **3. 동기화** (Claude) | `mergeStates3`, `lib/sync.ts`, `accountStore`, `useSaved` 구독, 첫 로그인 합치기, 상태 표시, 로그아웃 시 정리 | 9.1 동기화 테스트, 4.3 의 16 까지 전체 통과, 두 브라우저·오프라인 시험, 1주 사용 중 데이터 유실 신고 없음 | `NEXT_PUBLIC_SYNC=off` |
-| **4. 운영** (Claude, 일부 사용자) | 관리 스크립트 나머지(`set-name`·`list`·`export`), 내 데이터 문구, docs 갱신(architecture·ops-notes) | 관리자 백업 1회 실행, 1.4 수동 검증 1회 | 커밋 revert |
+| **4. 운영** (Claude, 일부 사용자) | 관리 스크립트 나머지(`set-name`·`export`), 내 데이터 문구, docs 갱신(architecture·ops-notes) | 관리자 백업 1회 실행, 1.4 수동 검증 1회 | 커밋 revert |
 | **5. 다듬기** (선택) | Rate limit 조정 확인, CAPTCHA 검토, CSP meta 검토 | 7장 체크리스트 완료 | 설정 원복 |
 
 **사용자(관리자)가 직접 하는 일**
 
-- 완료: Supabase 프로젝트(서울 리전), 가입 허용 끔, 이메일 확인 끔, 비밀번호 최소 8자, Site URL, 새 표 자동 노출 끔·자동 RLS 켬.
-- 남음:
-  - 6.1 의 8~12: Require current password 켬·Secure password change 끔, 필수 문자 규칙 끔 확인, 토큰 요청 한도, secret 키 `admin-script` 생성과 구 키 비활성화, GitHub Variables 등록.
-  - 단계 1 의 SQL 실행과 권한 조회 결과 확인, 시험 계정 3개·본인 계정 생성, 시험 계정 비밀번호를 로컬 환경 변수로 보관.
-  - 운영: 계정 발급과 초기 비밀번호 전달, 학번을 쓴 계정의 3일 안 변경 확인(`pending`), 정지 예고 메일 확인, 월 1회 백업, 분기 1회 키 점검(1.4), 표시 이름 변경·삭제 요청 처리.
+- 완료: Supabase 프로젝트(서울 리전), 가입 허용 끔, 이메일 확인 끔, 비밀번호 최소 8자, Site URL, 새 표 자동 노출 끔·자동 RLS 켬, 현재 비밀번호 요구 켬·재인증 메일 끔, 토큰 요청 한도 5분 30회, secret 키 `admin_script` 생성과 구 키 비활성화.
+- 남음: 6.1 의 9(필수 문자 규칙 끔 확인)·12(GitHub Variables)·13(SQL 실행·`check`·`verify`)·14(본인 계정).
+- 운영: 계정 발급(로그인 화면 배포 직후, 학번 초기 비밀번호), `list` 로 변경 여부 확인, 정지 예고 메일 확인, 월 1회 백업, 분기 1회 키 점검(1.4), 표시 이름 변경·삭제 요청 처리.
 
-**Claude Code 가 하는 일**: 코드·테스트·문서, SQL·검사 스크립트·관리 스크립트 작성(실행은 관리자), Playwright 검증, 배포 확인. secret 키는 받지 않고 다루지 않는다(RLS 검사도 시험 계정 로그인으로만).
+### 10.1 남은 일
+
+| 누가 | 일 |
+|---|---|
+| 관리자 | 6.1 의 9·12·13·14(절차서 2~5장 순서) |
+| 세션 A(화면) | 단계 2(로그인·강제 변경·세션), 단계 3(동기화) |
+| 세션 A(화면) | **화면 북마크 한도 채널당 1,000건** 추가 — 지금 `lib/bookmarks.ts` 의 `LIMITS` 에 북마크 수 한도가 없다. 폴더·태그처럼 새로 만들 때만 막고, 합친 결과는 줄이지 않는다(3.3) |
+| 세션 A(화면) | 동기화가 서버 상한 오류(23514)를 받으면 '동기화 실패'로 처리 |
+| Claude(관리 스크립트) | 단계 4 의 `set-name`·`export` |
+
+**Claude Code 가 하는 일**: 코드·테스트·문서, SQL·검사 스크립트·관리 스크립트 작성(실행은 관리자), 배포 확인. secret 키·계정 파일은 읽지 않고, 실제 Supabase 에 요청하지 않는다.
 
 ## 11. 확장 지점(다음 단계, 방향만)
 
@@ -647,13 +567,29 @@ unset SUPABASE_SECRET_KEY
 - **전체 채팅방**: `chat_messages(id bigint identity pk, user_id uuid default auth.uid(), body text check (char_length(body) between 1 and 500), created_at timestamptz default now())`. 최근 것만 보관 — 넣을 때 트리거로 최근 500건(또는 30일)만 남긴다. 실시간은 Supabase Realtime(Postgres Changes 또는 Broadcast). 무료 한도: 동시 연결 200, 월 메시지 200만, 초당 100 — 10명에게 충분. RLS: select·insert 는 authenticated(insert 는 `password_ready()`), update 없음, delete 는 본인·관리자.
 - 공통: 모든 표는 `revoke all … from public, anon, authenticated` 후 필요한 권한만 `grant`(service_role 포함 명시), 작업별 정책, `(select auth.uid())`, 4.2 권한표와 4.3 검사 항목을 같이 늘린다. 글 내용은 React 텍스트로만 그린다(HTML 해석 금지). 신고·차단은 10명 규모라 관리자가 대시보드에서 처리.
 
-## 12. 정해야 할 것(관리자 결정)
+## 12. 결정 사항
 
-1. **로그인 서버가 멈췄을 때**(무료 플랜 정지·장애): 새 로그인 불가를 그대로 둘지(기본안), 연결 실패일 때만 로그인 없이 읽기 전용으로 열어 둘지.
-2. **검색 노출**: 로그인 게이트가 생기면 자바스크립트를 실행하는 검색 로봇은 로그인 화면(noindex)만 보게 되어 사실상 검색에서 빠진다. 그대로 둘지(기본안), 채널 페이지를 명시적으로 noindex 할지.
-3. **첫 로그인 합치기**를 묻고 합칠지(기본안), 묻지 않고 자동으로 합칠지.
-4. **새 비밀번호 화면 규칙**: 8자 이상 + 영문·숫자 + 아이디 미포함(기본안) 또는 8자 이상만. 토큰 요청 한도 5분 30회(기본안).
-5. **수집 상태 페이지**(`/<채널>/status/`)도 로그인 뒤에 둘지(기본안: 다른 페이지와 같이 로그인 필요).
-6. **초기 비밀번호**: 무작위를 기본으로 하고 학번은 예외로 둘지(기본안), 학번을 기본으로 할지. 학번 계정의 변경 기한(기본안 3일).
-7. **푸터 문구**: "아이디·표시 이름과 북마크·읽음 기록뿐"(기본안, 확인 시각·보험사 선택을 읽음 기록에 포함해 읽음) 또는 "…북마크·읽음 기록과 화면 설정".
-8. **표시 이름**: 서로 겹치지 않게 할지(기본안: unique), 헤더 메뉴에 표시 이름을 보일지 아이디를 보일지(기본안: 표시 이름, 메뉴 첫 줄에 아이디).
+### 확정
+
+| 항목 | 결정 |
+|---|---|
+| 사이트 첫 화면 | 로그인 화면이 먼저. 화면상의 안내 장벽이고 기사 데이터는 공개 그대로(0장·2.2) |
+| 로그인 서버 장애·정지 | 이미 로그인한 사람은 기사 읽기와 기기 북마크가 그대로, 동기화만 멈춤. 새 로그인은 서버가 돌아올 때까지 불가(7.3) |
+| 초기 비밀번호 | 각자의 학번, 첫 로그인에서 반드시 변경(화면 강제 + 서버 동기화 거절). 계정은 로그인 화면 배포 직후 만든다(6.2) |
+| 계정 목록 | 관리자 맥의 `~/.heukseok/accounts.csv` 에만. 저장소에 두지 않는다 |
+| secret 키 | `admin_script` 키, 관리자 맥의 `~/.heukseok/supabase.env` 에만(1.4) |
+| 내부 이메일 | `<아이디>@users.heukseok.invalid` |
+| 표시 이름 | 관리자가 정하고 서로 겹치지 않게(unique). 사용자는 바꿀 수 없음 |
+| 토큰 요청 한도 | 5분 30회(7.2) |
+| 상한 | 실제 사용 한도(북마크 1,000·폴더 20·태그 50·메모 200자·북마크당 태그 10)는 화면에서만. 서버는 악용 방지용(북마크 3,000·폴더 100·태그 200·메모 1,000자·북마크당 태그 50·채널 행 10)(3.3) |
+| 행 크기 상한 | 4MB(3.2) |
+| SQL 위치 | `supabase/migrations/0001_init.sql` 한 파일, SQL Editor 에서 실행 |
+
+### 미정
+
+1. **검색 노출**: 로그인 화면이 먼저 나오므로 자바스크립트를 실행하는 검색 로봇은 로그인 화면(noindex)만 보게 되어 사실상 검색에서 빠진다. 그대로 둘지(기본안), 채널 페이지를 명시적으로 noindex 할지.
+2. **첫 로그인 합치기**를 묻고 합칠지(기본안), 묻지 않고 자동으로 합칠지.
+3. **새 비밀번호 화면 규칙**: 8자 이상 + 영문·숫자 + 아이디 미포함(기본안) 또는 8자 이상만.
+4. **수집 상태 페이지**(`/<채널>/status/`)도 로그인 뒤에 둘지(기본안: 다른 페이지와 같이 로그인 필요).
+5. **푸터 문구**: "아이디·표시 이름과 북마크·읽음 기록뿐"(기본안, 확인 시각·보험사 선택을 읽음 기록에 포함해 읽음) 또는 "…북마크·읽음 기록과 화면 설정".
+6. **헤더 메뉴 이름**: 표시 이름을 보일지(기본안, 메뉴 첫 줄에 아이디) 아이디를 보일지.
