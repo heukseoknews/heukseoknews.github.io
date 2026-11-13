@@ -17,7 +17,7 @@ export default function WeekPage() {
   const ch = useChannel();
   const [category, setCategory] = useState('전체');
   const savedApi = useSaved();
-  const { saved, ready, markRead, readSet, isBookmarked } = savedApi;
+  const { ready, markRead, readSet, isBookmarked } = savedApi;
   const bmFlow = useBookmarkFlow(savedApi);
   const { all, failure, loading } = useNews(ch.slug); // 최근 2개월이면 7일 범위를 충분히 포함
   const today = todayKst();
@@ -33,7 +33,7 @@ export default function WeekPage() {
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
     <section className="articles">{loading || !ready ? <div className="empty">뉴스를 불러오는 중입니다…</div> : rows.length === 0
       ? <div className="empty"><Newspaper size={27} /><b>최근 7일 기사가 없습니다.</b></div>
-      : rows.map((a, i) => <ArticleCard key={a.id} a={a} rank={i + 1} group={a.cluster_id ? { others: (idx.get(a.cluster_id) ?? []).filter(o => o.id !== a.id).sort((x, y) => x.published_at.localeCompare(y.published_at)), size: Math.max(a.cluster_size ?? 1, idx.get(a.cluster_id)?.length ?? 1), sources: a.cluster_sources ?? 1, matched: new Set(), showMatch: false, open: open.has(a.cluster_id), onToggle: () => toggle(a.cluster_id!), isBookmarked, isRead: id => readSet.has(id) } : undefined} baseline={saved.lastConfirmed} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={markRead} />)}</section>
+      : rows.map((a, i) => <ArticleCard key={a.id} a={a} rank={i + 1} group={a.cluster_id ? { others: (idx.get(a.cluster_id) ?? []).filter(o => o.id !== a.id).sort((x, y) => x.published_at.localeCompare(y.published_at)), size: Math.max(a.cluster_size ?? 1, idx.get(a.cluster_id)?.length ?? 1), sources: a.cluster_sources ?? 1, matched: new Set(), showMatch: false, open: open.has(a.cluster_id), onToggle: () => toggle(a.cluster_id!), isBookmarked, isRead: id => readSet.has(id) } : undefined} bookmarked={isBookmarked(a.id)} read={readSet.has(a.id)} onBookmark={bmFlow.onBookmark} onRead={markRead} />)}</section>
     {bmFlow.toastNode}{bmFlow.editorNode}
   </>;
 }
