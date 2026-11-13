@@ -247,16 +247,16 @@ await t('main', async () => {
 
 // ── verify --apply 흐름(가짜 서버). 실제 Auth 서버처럼 트리거가 볼 때 app_metadata 가 아직 비어 있다(표시 이름 null) ──
 function fakeVerifyServer(opt = {}) {
-  const users = [], profiles = [], sec = [], states = [], chats = [], rpcLog = [], secrets = [];
+  const users = [], profiles = [], sec = [], states = [], chats = [], reads = [], rpcLog = [], secrets = [];
   let n = 0;
   const E = (s, c, m = '') => new ApiError(s, c, m);
   const own = (arr, id) => arr.find(r => r.user_id === id);
   const qv = (q, k) => (new RegExp(`${k}=eq\\.([^&]+)`).exec(q || '') || [])[1];
-  const tableOf = t => ({ profiles, account_security: sec, user_state: states, chat_messages: chats }[t]);
+  const tableOf = t => ({ profiles, account_security: sec, user_state: states, chat_messages: chats, chat_reads: reads }[t]);
   const onPassword = id => { const s = own(sec, id); s.must_change_password = s.reset_pending; s.reset_pending = false; };   // 0001 on_auth_password_changed
   const admin = {
     listUsers: async () => ({ users: users.map(u => ({ id: u.id, email: u.email })) }),
-    deleteUser: async id => { for (const arr of [users, profiles, sec, states, ...(opt.noChatCascade ? [] : [chats])]) for (let i = arr.length - 1; i >= 0; i--) if ((arr[i].user_id ?? arr[i].id) === id) arr.splice(i, 1); return {}; },
+    deleteUser: async id => { for (const arr of [users, profiles, sec, states, ...(opt.noChatCascade ? [] : [chats]), ...(opt.noReadsCascade ? [] : [reads])]) for (let i = arr.length - 1; i >= 0; i--) if ((arr[i].user_id ?? arr[i].id) === id) arr.splice(i, 1); return {}; },
     createUser: async b => {
       const id = `v${++n}`, lid = b.email.split('@')[0];
       secrets.push(b.password);
@@ -268,6 +268,9 @@ function fakeVerifyServer(opt = {}) {
     updateUser: async (id, b) => { users.find(u => u.id === id).password = b.password; secrets.push(b.password); onPassword(id); return {}; },
     select: async (t, q) => {
       const inIds = (/user_id=in\.\(([^)]*)\)/.exec(q || '') || [])[1];
+      const gte = (/last_read_id=gte\.(\d+)/.exec(q || '') || [])[1], neq = (/user_id=neq\.([^&]+)/.exec(q || '') || [])[1];
+      if (t === 'chat_reads' && gte) return reads.filter(r => r.last_read_id >= Number(gte) && r.user_id !== neq).map(r => ({ user_id: r.user_id }));
+      if (t === 'chat_messages' && /order=id\.desc/.test(q)) return chats.slice().sort((x, y) => y.id - x.id).slice(0, 1).map(r => ({ id: r.id }));
       return tableOf(t).filter(r => (!qv(q, 'user_id') || r.user_id === qv(q, 'user_id')) && (!inIds || inIds.split(',').includes(r.user_id))).map(r => ({ ...r }));
     },
     patch: async (t, q, row) => {
@@ -303,13 +306,20 @@ function fakeVerifyServer(opt = {}) {
         if (!m.deleted_at && !(opt.deleteKeepsBody)) Object.assign(m, { body: null, article: null, deleted_at: new Date().toISOString(), deleted_by: id });
         return { id: m.id, deleted_at: m.deleted_at };
       }
+      // 0004 읽음
+      const maxId = () => chats.reduce((m, r) => Math.max(m, r.id), 0);
+      const markRead = (uid, v) => { let r = reads.find(x => x.user_id === uid); if (!r) { r = { user_id: uid, last_read_id: 0 }; reads.push(r); } r.last_read_id = opt.readsCanDecrease ? v : Math.max(r.last_read_id, v); return r.last_read_id; };
+      if (fn === 'chat_mark_read') return markRead(id, Math.min(Math.max(Number(args.p_last_id) || 0, 0), opt.noReadClamp ? Infinity : maxId()));
+      if (fn === 'chat_read_counts') return chats.filter(m => (args.p_ids || []).slice(0, 200).includes(m.id) && !m.deleted_at).sort((x, y) => x.id - y.id)
+        .map(m => ({ id: m.id, read_count: reads.filter(r => (opt.countAuthor || r.user_id !== m.user_id) && r.last_read_id >= m.id).length, ...(opt.leakReaders ? { readers: reads.map(r => r.user_id) } : {}) }));
       const b = String(args.p_body ?? '').trim();
-      if (!b || [...b].length > 500) throw E(422, 'PT422', 'body_length');
+      if ([...b].length > 500 || (!b && (args.p_article == null || opt.noArticleOnly))) throw E(422, 'PT422', 'body_length');
       if (/[\u0001-\u0009\u000b-\u001f\u007f-\u009f]/.test(b)) throw E(422, 'PT422', 'body_format');
       if (args.p_article != null && !artOk(args.p_article)) throw E(422, 'PT422', 'article_format');
       if (!opt.noRateLimit && chats.filter(r => r.user_id === id).length >= 60) throw E(429, 'PT429', 'rate_limited');
       const m = { id: chats.length + 1, user_id: id, author_name: p.display_name || '이름 없음', body: b, article: args.p_article ?? null, created_at: new Date().toISOString(), deleted_at: null, deleted_by: null };
       chats.push(m);
+      markRead(id, m.id);
       return { id: m.id, created_at: m.created_at, author_name: m.author_name };
     };
     return {
@@ -320,6 +330,7 @@ function fakeVerifyServer(opt = {}) {
       },
       changeOwnPassword: async (np, cur) => { const u = users.find(x => x.id === me()); if (u.password !== cur) throw E(400, 'reauth'); u.password = np; secrets.push(np); onPassword(u.id); return {}; },
       select: async (t, q) => {
+        if (t === 'chat_reads') throw E(id ? 403 : 401, '42501', 'permission denied for table chat_reads');
         if (t === 'chat_messages') { if (!id) throw E(401, '42501', 'permission denied'); if (!ready()) return []; return chats.filter(r => !qv(q, 'id') || String(r.id) === qv(q, 'id')).map(r => ({ ...r })); }
         me();
         if (t === 'account_security') return sec.filter(r => r.user_id === id).map(r => ({ ...r }));
@@ -339,7 +350,7 @@ function fakeVerifyServer(opt = {}) {
         if (tooBig(row)) throw E(400, '23514', 'limit');
         const rs = mine(q); rs.forEach(r => Object.assign(r, row)); return rs.map(r => ({ ...r }));
       },
-      remove: async t => { me(); if (t === 'chat_messages') throw E(403, '42501', 'permission denied for table chat_messages'); return []; },
+      remove: async t => { me(); if (t === 'chat_messages' || t === 'chat_reads') throw E(403, '42501', 'permission denied for table chat_messages'); return []; },
       rpc: async (fn, args = {}) => {
         if (fn.startsWith('chat_')) return chatRpc(fn, args);
         if (fn !== 'set_display_name') throw E(404, 'PGRST202', 'not found');
@@ -418,6 +429,22 @@ await t('verify-independent', async () => {
   assert.ok(!s.results.some(r => r.name.startsWith('준비 단계 오류')), '중간에 멈추지 않음');
 });
 
+// 10) 기사만 있는 글·읽음(0004): 정상 서버는 모두 통과, 규칙을 어기면 해당 항목만 실패
+await t('verify-chat-reads', async () => {
+  const { R, line } = await runFakeVerify();
+  for (const n of ['2-3. anon chat_mark_read 막힘', '4-3. A(변경 전) chat_read_counts 막힘', '5-6. 본문 없이 기사만 전송(body 빈 문자열·기사 그대로)', '5-6. 본문도 기사도 없으면 거절',
+    '5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', '5-7. B 가 읽음 처리 → A 의 글 읽음 +1', '5-7. chat_reads 직접 읽기 막힘', '5-7. chat_reads 직접 지우기 막힘']) assert.ok(R(n), n);
+  assert.match(line('5-7. B 가 읽음 처리'), /0 → 1/);
+  assert.match(line('10. 시험 계정의 읽은 위치 함께 삭제'), /2행 → 0행/);
+  const fails = async o => (await runFakeVerify(o)).results.filter(r => !r.ok).map(r => r.name);
+  assert.deepEqual(await fails({ noArticleOnly: true }), ['5-6. 본문 없이 기사만 전송(body 빈 문자열·기사 그대로)', '5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)'], '기사만 있는 글을 거절하는 서버');
+  assert.deepEqual(await fails({ countAuthor: true }), ['5-7. 글쓴이 본인(A)은 세지 않음(서비스 키로 센 값과 같음)'], '글쓴이를 세는 서버');
+  assert.deepEqual(await fails({ leakReaders: true }), ['5-7. 응답은 id·read_count 만(누가 읽었는지·이름·login_id 없음)']);
+  assert.deepEqual(await fails({ readsCanDecrease: true }), ['5-7. last_read_id 는 줄어들지 않음']);
+  assert.deepEqual(await fails({ noReadClamp: true }), ['5-7. 최대 id 를 넘는 값은 최대 id 로']);
+  assert.deepEqual(await fails({ noReadsCascade: true }), ['10. 시험 계정의 읽은 위치 함께 삭제(on delete cascade)']);
+});
+
 // 9) 채팅(0003): 정상 서버는 모두 통과(위 verify-flow), 서버가 규칙을 어기면 해당 항목만 실패
 await t('verify-chat', async () => {
   const { results, R, line } = await runFakeVerify();
@@ -430,7 +457,7 @@ await t('verify-chat', async () => {
   const r = await runFakeVerify({ noRateLimit: true });
   assert.deepEqual(r.results.filter(x => !x.ok).map(x => x.name), ['5-5. B 61번째 전송 거절']);
   const d = await runFakeVerify({ deleteKeepsBody: true });
-  assert.deepEqual(d.results.filter(x => !x.ok).map(x => x.name), ['5-4. A 본인 글 삭제 → 본문 비움·삭제 시각', '5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)']);
+  assert.deepEqual(d.results.filter(x => !x.ok).map(x => x.name), ['5-4. A 본인 글 삭제 → 본문 비움·삭제 시각', '5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)', '5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', '5-7. 삭제된 글은 읽음 수에서 빠짐']);
 });
 
 console.log(`admin script tests passed (${passed})`);

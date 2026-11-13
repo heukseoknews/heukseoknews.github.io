@@ -18,22 +18,26 @@ export const STEPS = [
   '2. 로그인 안 한 요청(publishable 키): profiles·account_security·user_state 읽기·쓰기 모두 막힘',
   '2-1. 로그인 안 한 요청: set_display_name 호출 막힘(0002)',
   '2-2. 로그인 안 한 요청: chat_messages 읽기, chat_send·chat_list·chat_delete 호출 모두 막힘(0003)',
+  '2-3. 로그인 안 한 요청: chat_mark_read·chat_read_counts 호출, chat_reads 읽기 막힘(0004)',
   '3. A(비밀번호 변경 전): 자기 변경 필요 = true, user_state 읽기 0행·쓰기 막힘',
   '4. A: profiles(표시 이름·is_admin)·account_security(변경 필요) 고치기 막힘, profiles 만들기 막힘',
   '4-1. A(비밀번호 변경 전): set_display_name 호출 막힘',
   '4-2. A(비밀번호 변경 전): chat_messages 읽기 0행, chat_list·chat_send 막힘',
+  '4-3. A(비밀번호 변경 전): chat_mark_read·chat_read_counts 막힘(0004)',
   '5. A·B 비밀번호 변경(현재 비밀번호 필요) → 변경 필요 = false(트리거) → A user_state 쓰기·읽기 성공',
   '5-1. A 표시 이름(set_display_name): 거절 검사 먼저(21자·빈 값·공백만·제어 문자·B 의 이름 그대로·공백만 다름·대소문자만 다름) → 정상 변경·profiles 반영 → 바로 두 번째 변경 10분 제한 거절 → profiles 직접 고치기 여전히 막힘',
   '5-2. 채팅: A chat_send(응답 = id·created_at·표시 이름, login_id 없음) → B 가 chat_list·직접 읽기로 봄, 500자 허용·기사 첨부 저장',
   '5-3. 채팅 거절: 빈 글·공백만·501자·제어 문자, 기사 첨부(javascript: 주소·허용 안 한 키·너무 긴 제목·너무 긴 주소·잘못된 channel), 직접 insert·update·delete',
   '5-4. 채팅 삭제: A 본인 글 삭제(본문 비움) · B 가 A 의 글 삭제 거절 · B 에게 관리자 표시(is_admin)를 서비스 키로 임시로 주면 삭제됨 · 목록 페이지(p_limit·p_before)',
   '5-5. 채팅 분당 상한: B 가 60건 보낸 뒤 61번째 거절',
+  '5-6. 기사만 있는 글(0004): 본문 없이 기사만 전송됨(body = 빈 문자열) · 본문도 기사도 없으면 거절 · 삭제하면 본문·기사 비움',
+  '5-7. 읽음(0004): B 가 읽음 처리하면 A 의 글 읽음 +1, 글쓴이 본인은 세지 않음, 응답은 id·숫자만 · last_read_id 줄지 않음·최대 id 로 맞춤 · 삭제 글 제외 · chat_reads 직접 읽기·쓰기 막힘',
   '6. B: A 의 행 읽기 0행, 고치기·지우기 0행, A 의 user_id 로 만들기 막힘, 자기 행 user_id 를 A 로 바꾸기 막힘',
   '7. A: 서버 상한 초과(북마크 3,001·폴더 101·태그 201·메모 1,001자·북마크당 태그 51) 거절, 화면 한도를 넘는 합친 결과(북마크 2,000·폴더 40·태그 100)와 상한 경계(3,000·100·200) 저장 성공',
   '7-1. A: 사용자당 채널 행 10개 상한(11번째 거절)',
   '8. A: private 함수(password_ready) 직접 호출 불가',
   '9. 관리자 초기화(reset_pending → 비밀번호 변경 → 변경 필요 켬) 뒤 A 의 user_state 다시 막힘, 새 비밀번호로 로그인해도 변경 필요 유지',
-  '10. 시험 계정 삭제(행·채팅 글은 함께 삭제) — 실패해도 실행',
+  '10. 시험 계정 삭제(행·채팅 글·읽은 위치는 함께 삭제) — 실패해도 실행',
 ];
 
 const pw = () => 'Vf' + randomBytes(18).toString('base64url') + '9';   // 영문+숫자, 24자 이상
@@ -107,6 +111,9 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await denied('2-2. anon chat_send 막힘', () => anon.rpc('chat_send', { p_body: '익명 글' }));
     await denied('2-2. anon chat_list 막힘', () => anon.rpc('chat_list', {}));
     await denied('2-2. anon chat_delete 막힘', () => anon.rpc('chat_delete', { p_id: 1 }));
+    await denied('2-3. anon chat_mark_read 막힘', () => anon.rpc('chat_mark_read', { p_last_id: 1 }));
+    await denied('2-3. anon chat_read_counts 막힘', () => anon.rpc('chat_read_counts', { p_ids: [1] }));
+    await denied('2-3. anon chat_reads 읽기 막힘', () => anon.select('chat_reads', 'select=*&limit=1'));
 
     // 3·4. A 변경 전
     const tokens = {};
@@ -124,6 +131,8 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await rows0('4-2. A(변경 전) chat_messages 읽기 0행', () => asA.select('chat_messages', 'select=*'));
     await deniedWith('4-2. A(변경 전) chat_list 막힘', () => asA.rpc('chat_list', {}), 'not_allowed');
     await deniedWith('4-2. A(변경 전) chat_send 막힘', () => asA.rpc('chat_send', { p_body: '변경 전 글' }), 'not_allowed');
+    await deniedWith('4-3. A(변경 전) chat_mark_read 막힘', () => asA.rpc('chat_mark_read', { p_last_id: 1 }), 'not_allowed');
+    await deniedWith('4-3. A(변경 전) chat_read_counts 막힘', () => asA.rpc('chat_read_counts', { p_ids: [1] }), 'not_allowed');
 
     // 5. 비밀번호 변경
     for (const lid of [A, B]) {
@@ -243,6 +252,56 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     if (sent === 60) await deniedWith('5-5. B 61번째 전송 거절', () => send(asB, '분당 상한 검증 61'), 'rate_limited');
     else ok('5-5. B 61번째 전송 거절', false, '실행 안 함(앞 60건 실패)');
 
+    // 5-6. 기사만 있는 글(0004). 저장 구분: 기사만 = body ''(빈 문자열), 삭제 = body·article null + deleted_at
+    let mA;
+    await check('5-6. 본문 없이 기사만 전송(body 빈 문자열·기사 그대로)', async () => {
+      mA = await send(asA, '   ', art);
+      const r = await rowOf(asB, mA?.id);
+      return !!r && r.body === '' && r.deleted_at == null && r.article?.url === art.url;
+    });
+    await deniedWith('5-6. 본문도 기사도 없으면 거절', () => send(asA, '  ', null), 'body_length');
+    await check('5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', async () => {
+      await asA.rpc('chat_delete', { p_id: Number(mA?.id) });
+      const r = await rowOf(asB, mA?.id);
+      return !!r && r.body === null && r.article === null && r.deleted_at != null;
+    });
+
+    // 5-7. 읽음(0004). 실제 방에 다른 사람(친구)의 읽은 위치도 있으므로 B 가 읽기 전후의 차이로 본다
+    const counts = async (api, list) => { const r = await api.rpc('chat_read_counts', { p_ids: list.map(Number) }); return Array.isArray(r) ? r : []; };
+    const countOf = async (api, id) => (await counts(api, [id])).find(r => Number(r.id) === Number(id))?.read_count;
+    const maxId = async () => Number(((await admin.select('chat_messages', 'select=id&order=id.desc&limit=1')) || [])[0]?.id ?? 0);
+    let mR, c0;
+    await step('5-7. 준비: A 가 글 하나 보내기(보낸 사람의 읽은 위치는 그 글까지 올라감)', async () => { mR = await send(asA, '읽음 검증'); return true; });
+    await check('5-7. 보낸 사람(A)의 읽은 위치가 그 글 이상', async () => Number(((await admin.select('chat_reads', `select=last_read_id&user_id=eq.${ids[A]}`)) || [])[0]?.last_read_id) >= Number(mR?.id));
+    await check('5-7. 응답은 id·read_count 만(누가 읽었는지·이름·login_id 없음)', async () => {
+      const r = await counts(asB, [mR?.id]);
+      const t = JSON.stringify(r);
+      c0 = r[0]?.read_count;
+      return [r.length === 1 && Object.keys(r[0]).sort().join(',') === 'id,read_count' && Number.isInteger(c0) && !Object.values(ids).some(u => t.includes(u)) && !TEST_NAMES.some(n => t.includes(n)) && noLogin(r) && !!nameA && !t.includes(nameA), `읽음 ${c0}(글쓴이 A 는 세지 않음${c0 ? ', 방의 다른 사람 포함' : ''})`];
+    });
+    await check('5-7. B 가 읽음 처리 → A 의 글 읽음 +1', async () => {
+      const v = await asB.rpc('chat_mark_read', { p_last_id: Number(mR?.id) });
+      const c1 = await countOf(asA, mR?.id);
+      return [Number(v) >= Number(mR?.id) && c1 === c0 + 1, `${c0} → ${c1}(동시에 방을 읽은 사람이 있으면 다시 실행)`];
+    });
+    // 글쓴이 제외: 함수의 읽음 수 = 서비스 키로 직접 센 '글쓴이가 아닌 사용자 중 그 글까지 읽은 사람 수'(A 의 읽은 위치는 이미 그 글 이상)
+    await check('5-7. 글쓴이 본인(A)은 세지 않음(서비스 키로 센 값과 같음)', async () => {
+      await asA.rpc('chat_mark_read', { p_last_id: Number(mR?.id) });
+      const fn = await countOf(asB, mR?.id);
+      const direct = ((await admin.select('chat_reads', `select=user_id&last_read_id=gte.${Number(mR?.id)}&user_id=neq.${ids[A]}`)) || []).length;
+      return [fn === direct, `함수 ${fn} · 직접 ${direct}`];
+    });
+    await check('5-7. last_read_id 는 줄어들지 않음', async () => { const v = await asB.rpc('chat_mark_read', { p_last_id: 1 }); return Number(v) >= Number(mR?.id); });
+    await check('5-7. 최대 id 를 넘는 값은 최대 id 로', async () => {
+      const lo = await maxId(); const v = Number(await asB.rpc('chat_mark_read', { p_last_id: 9_000_000_000 })); const hi = await maxId();
+      return [v >= lo && v <= hi, `${v}(방의 최대 id ${lo}~${hi})`];
+    });
+    await check('5-7. 삭제된 글은 읽음 수에서 빠짐', async () => { const r = await counts(asB, [mA?.id, mR?.id]); return r.length === 1 && Number(r[0].id) === Number(mR?.id); });
+    await denied('5-7. chat_reads 직접 읽기 막힘', () => asB.select('chat_reads', 'select=*'));
+    await denied('5-7. chat_reads 직접 만들기 막힘', () => asB.insert('chat_reads', { user_id: ids[B], last_read_id: 1 }));
+    await denied('5-7. chat_reads 직접 고치기 막힘', () => asB.patch('chat_reads', `user_id=eq.${ids[B]}`, { last_read_id: 0 }));
+    await denied('5-7. chat_reads 직접 지우기 막힘', () => asB.remove('chat_reads', `user_id=eq.${ids[B]}`));
+
     // 6. 다른 사용자
     await rows0('6. B 가 A 의 행 읽기 0행', () => asB.select('user_state', `select=*&user_id=eq.${ids[A]}`));
     await rows0('6. B 가 A 의 행 고치기 0행', () => asB.patch('user_state', `user_id=eq.${ids[A]}&channel=eq.${CHANNEL}`, { companies: ['위조'] }));
@@ -293,8 +352,11 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
   } finally {
     // 10. 정리(지우기 전에 시험 계정의 채팅 글 수를 세어 두고, 지운 뒤 0건인지 본다 — on delete cascade)
     const chatQ = () => `select=id&user_id=in.(${TEST_IDS.map(l => ids[l]).filter(Boolean).join(',')})`;
-    let chatBefore = null;
-    if (Object.keys(ids).length) { try { chatBefore = ((await admin.select('chat_messages', chatQ())) || []).length; } catch { chatBefore = null; } }
+    let chatBefore = null, readsBefore = null;
+    if (Object.keys(ids).length) {
+      try { chatBefore = ((await admin.select('chat_messages', chatQ())) || []).length; } catch { chatBefore = null; }
+      try { readsBefore = ((await admin.select('chat_reads', chatQ().replace('select=id', 'select=user_id'))) || []).length; } catch { readsBefore = null; }
+    }
     for (const lid of TEST_IDS) {
       try {
         const id = ids[lid] || (await accounts(admin)).find(x => x.login_id === lid)?.user_id;
@@ -308,6 +370,10 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     if (chatBefore) {
       try { const left = ((await admin.select('chat_messages', chatQ())) || []).length; ok('10. 시험 계정의 채팅 글 함께 삭제(on delete cascade)', left === 0, `${chatBefore}건 → ${left}건`); }
       catch { ok('10. 시험 계정의 채팅 글 함께 삭제 확인', false, '확인 못 함'); }
+    }
+    if (readsBefore) {
+      try { const left = ((await admin.select('chat_reads', chatQ().replace('select=id', 'select=user_id'))) || []).length; ok('10. 시험 계정의 읽은 위치 함께 삭제(on delete cascade)', left === 0, `${readsBefore}행 → ${left}행`); }
+      catch { ok('10. 시험 계정의 읽은 위치 함께 삭제 확인', false, '확인 못 함'); }
     }
   }
   const bad = results.filter(r => !r.ok).length;

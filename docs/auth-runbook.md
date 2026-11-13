@@ -166,6 +166,34 @@ select routine_name, grantee from information_schema.routine_privileges
 
 되돌리기: 0003 파일 끝의 주석 네 줄(발행에서 빼기·함수·표 지우기)을 새 query 에 붙여 실행한다. 채팅 글이 모두 지워지고 화면은 '채팅 준비 중입니다'로 돌아간다.
 
+## 2-3. 채팅 기사만 보내기·읽음 수 SQL 적용(0004)
+
+기사만 있는 글(본문 없이 기사 첨부만)을 받게 `chat_send` 를 바꾸고, 글마다 '읽음 N'을 세는 표 `public.chat_reads` 와 함수 `chat_mark_read`·`chat_read_counts` 를 만든다. 0003 을 적용한 뒤에 한다. 사이트 화면은 이 SQL 보다 먼저 배포돼도 깨지지 않는다(읽음 표시가 숨고, 기사만 보내면 '전송 실패 — 글을 함께 적어 주세요'가 보인다. 채팅은 그대로).
+
+1. 대시보드 → **SQL Editor** → **New query**(새 쿼리 탭).
+2. `supabase/migrations/0004_chat_reads.sql` **전체를 복사**해 붙여 넣고 **Run**. 'Success. No rows returned' 면 된다. 여러 번 실행해도 결과가 같다.
+   - `0003_chat.sql 을 먼저 적용하세요` 로 멈추면 2-2장을 먼저 한다.
+3. 확인 쿼리(새 query 에 붙여 Run):
+
+```sql
+-- chat_reads 표 권한: service_role(와 postgres)만. anon·authenticated 줄이 없어야 한다(직접 읽기·쓰기 막힘)
+select grantee, string_agg(privilege_type, ',' order by privilege_type) from information_schema.role_table_grants
+ where table_schema = 'public' and table_name = 'chat_reads' group by 1;
+-- 함수 실행 권한: chat_send·chat_mark_read·chat_read_counts 각각 authenticated(+ postgres 등). anon·PUBLIC 없음
+select routine_name, grantee from information_schema.routine_privileges
+ where routine_schema = 'public' and routine_name in ('chat_send','chat_mark_read','chat_read_counts') order by 1, 2;
+-- Realtime 발행: chat_messages 한 줄만(chat_reads 는 없어야 한다 — 누가 읽었는지 이벤트로 새지 않게)
+select tablename from pg_publication_tables where pubname = 'supabase_realtime' and tablename like 'chat_%';
+```
+
+4. 화면 확인: 두 창으로 /chat/ 을 열고 한쪽에서 글을 보낸 뒤 다른 쪽에서 맨 아래까지 보면, 보낸 쪽 글의 시각 옆에 '읽음 1'이 20초 안에 보인다(상대가 글을 보내면 바로). [기사 첨부]로 기사만 고르고 글 없이 [보내기]가 된다.
+5. 이어서 4장 `verify --apply` 를 돌린다. 2-3·4-3·5-6·5-7 번과 '10. 시험 계정의 읽은 위치 함께 삭제'가 모두 ✓ 여야 한다.
+   - '5-7. B 가 읽음 처리 → A 의 글 읽음 +1' 은 그 순간 다른 사람이 방을 읽으면 +2 가 되어 실패할 수 있다. 그때는 한 번 더 돌린다.
+
+저장 구분: 보통 글 = 본문(1~500자) · 기사만 있는 글 = 본문 빈 문자열('') + 기사 · 삭제된 글 = 본문·기사 null + 삭제 시각. 읽음 수 = 글쓴이를 뺀 사용자 중 그 글까지 읽은 사람 수(숫자만, 누가 읽었는지는 나오지 않는다).
+
+되돌리기: 0004 파일 끝의 되돌리기 주석을 순서대로 새 query 에 붙여 실행한 뒤 0003 을 다시 실행한다. 읽음 기록과 기사만 있는 글이 지워진다.
+
 ## 3. 연결 확인(`check`, 읽기만)
 
 ```sh
@@ -206,10 +234,11 @@ node scripts/admin/verify.mjs --apply    # 실제 검증
   8. 내부 함수는 밖에서 부를 수 없다
   9. 관리자 초기화 뒤 다시 막히고, 새 비밀번호로 로그인해도 '변경 필요'가 유지된다
   - 표시 이름(0002, 2-1장): 로그인 안 한 요청·비밀번호 변경 전 호출은 막힘(2-1·4-1), 변경 후에는 자기 이름을 바꿀 수 있고 profiles 에 반영, 21자·빈 값·공백만·줄바꿈 거절, 다른 사용자 이름(대소문자·공백만 다른 것 포함) 거절, 10분 안 재변경 거절, profiles 직접 고치기는 여전히 막힘(5-1)
+  - 기사만 보내기·읽음(0004, 2-3장): 로그인 안 한 요청·비밀번호 변경 전 사용자는 chat_mark_read·chat_read_counts 막힘(2-3·4-3), 본문 없이 기사만 전송·본문도 기사도 없으면 거절·기사만 있는 글 삭제 시 본문·기사 비움(5-6), 읽음 처리하면 읽음 +1·글쓴이 본인 제외·응답은 id·숫자만·읽은 위치 줄지 않음·최대 id 로 맞춤·삭제 글 제외·chat_reads 직접 읽기·쓰기 막힘(5-7), 계정을 지우면 읽은 위치도 지워짐(10)
   - 채팅(0003, 2-2장): 로그인 안 한 요청은 읽기·chat_send·chat_list·chat_delete 모두 막힘(2-2), 비밀번호 변경 전에는 읽기 0행·chat_list·chat_send 막힘(4-2), 변경 후 보낸 글을 다른 시험 계정이 chat_list·직접 읽기로 봄(작성자 = 표시 이름, 응답 어디에도 login_id 없음), 500자·기사 첨부 저장(5-2), 빈 글·공백만·501자·제어 문자·잘못된 기사 첨부(javascript: 주소·허용 안 한 키·너무 긴 제목·주소·잘못된 channel·문자열 아닌 값)와 직접 insert·update·delete 거절(5-3), 본인 글 삭제(본문 비움)·남의 글 삭제 거절·관리자 표시를 서비스 키로 잠시 준 계정은 삭제 가능·목록 페이지(5-4), 한 계정의 61번째 전송(1분 안) 거절(5-5), 계정을 지우면 채팅 글도 함께 지워짐(10)
 - 트리거는 login_id(와 '변경 필요')를 보장하고 표시 이름은 create/verify 가 계정을 만든 직후 채운다(Auth 서버가 app_metadata 를 사용자 행을 만든 뒤에 기록해 트리거 시점엔 비어 있다).
 - 마지막 줄이 `모두 통과(N건)` 이면 끝. 실패가 있으면 출력 전체를 그대로 공유한다(비밀이 들어 있지 않다).
-- 0003 을 아직 적용하지 않았으면 채팅 항목은 실패로 나온다(다른 항목에는 영향 없음).
+- 0003 을 아직 적용하지 않았으면 채팅 항목은, 0004 를 아직 적용하지 않았으면 2-3·4-3·5-6·5-7 항목은 실패로 나온다(다른 항목에는 영향 없음).
 - 로그인을 4번 정도 하므로 로그인 제한(5분 30회)에 걸리지 않는다. 연달아 여러 번 돌릴 때만 5분 쉰다.
 
 ## 5. 관리자(본인) 계정 만들기
