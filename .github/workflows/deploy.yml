@@ -142,6 +142,11 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+        # 로그인 스위치(lib/authConfig.ts). 저장소 Settings → Variables 의 공개 값. 비어 있으면 로그인 없는 지금 사이트 그대로
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+          NEXT_PUBLIC_REQUIRE_LOGIN: ${{ vars.NEXT_PUBLIC_REQUIRE_LOGIN }}
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

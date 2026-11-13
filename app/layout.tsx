@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from 'next';
 import { shareMeta } from '../lib/meta';
 import { SITE } from '../lib/site';
+import AuthGate from '../components/AuthGate';
+import { gateScript } from '../lib/auth';
+import { AUTH_MODE } from '../lib/authConfig';
 import './globals.css';
 
 const title = `${SITE.name} | ${SITE.subtitle}`;
@@ -16,5 +19,8 @@ export const viewport: Viewport = { themeColor: '#1756A9' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Pretendard(자체 호스팅, scripts/sync-fonts.mjs 가 public/fonts/ 에 복사). 글자 범위별 조각만 받는다.
-  return <html lang="ko"><head><link rel="stylesheet" href="/fonts/pretendard/pretendard.css" /></head><body>{children}</body></html>;
+  // 로그인 스위치(lib/authConfig.ts): 꺼져 있으면 장벽·인라인 검사 없이 지금 사이트 그대로
+  const gate = gateScript(AUTH_MODE);
+  return <html lang="ko"><head>{gate && <script dangerouslySetInnerHTML={{ __html: gate }} />}<link rel="stylesheet" href="/fonts/pretendard/pretendard.css" /></head>
+    <body>{AUTH_MODE === 'off' ? children : <AuthGate>{children}</AuthGate>}</body></html>;
 }

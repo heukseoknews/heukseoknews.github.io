@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, UserRound, X } from 'lucide-react';
@@ -10,6 +11,10 @@ import { SITE } from '../lib/site';
 import { isStale } from '../lib/stale';
 import { useLastCollected } from '../lib/useSiteInfo';
 import Wordmark from './Wordmark';
+import { AUTH_MODE } from '../lib/authConfig';
+
+// 계정 메뉴는 로그인을 켠 빌드에서만 불러온다(꺼진 빌드의 번들에는 로그인 코드가 들어가지 않게)
+const AccountMenu = dynamic(() => import('./AccountMenu'));
 
 // 채널 안 경로(/<채널>/ 뒤). 주 메뉴는 기사 보기. 오른쪽 위는 마이페이지(내 북마크·내 데이터, 로그인 뒤 계정)
 const MAIN = [['', '뉴스'], ['week/', '이번 주 핵심'], ['trends/', '키워드 추이']] as const;
@@ -33,6 +38,9 @@ export default function SiteHeader({ me = false }: { me?: boolean }) {
     ? meChannels(CHANNELS.map(c => c.slug)).map(slug => link(channelHref(slug), `${CHANNELS.find(c => c.slug === slug)!.name} 뉴스`, false))
     : MAIN.map(item);
 
+  // 오른쪽 위: 마이페이지 버튼. 로그인을 켠 빌드에서는 로그인하면 계정 메뉴(표시 이름)로 바뀐다(AccountMenu)
+  const meLink = <Link href={meHref(ME_HOME, ch.slug)} className={'meBtn' + (me ? ' active' : '')} aria-current={me ? 'page' : undefined}><UserRound size={17} aria-hidden="true" />마이페이지</Link>;
+
   useEffect(() => { setOpen(false); }, [pathname]);
   useEffect(() => {
     if (!open) return;
@@ -53,9 +61,7 @@ export default function SiteHeader({ me = false }: { me?: boolean }) {
       </button>
       <div id="site-nav" className={'siteNav' + (open ? ' open' : '')}>
         <nav aria-label="사이트 메뉴"><ul>{mainItems}</ul></nav>
-        <nav aria-label="보조 메뉴" className="utilNav"><ul><li>
-          <Link href={meHref(ME_HOME, ch.slug)} className={'meBtn' + (me ? ' active' : '')} aria-current={me ? 'page' : undefined}><UserRound size={17} aria-hidden="true" />마이페이지</Link>
-        </li></ul></nav>
+        <nav aria-label="보조 메뉴" className="utilNav"><ul>{AUTH_MODE === 'off' ? <li>{meLink}</li> : <AccountMenu meLink={meLink} meHref={meHref(ME_HOME, ch.slug)} />}</ul></nav>
         {stale && finished && <span className="collectBadge warn" role="status" title={`마지막 수집 ${ch.fmt(finished)}`}>수집 지연</span>}
       </div>
     </div>
