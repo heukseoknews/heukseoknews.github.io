@@ -177,8 +177,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -315,8 +315,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -365,8 +365,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -417,6 +417,33 @@
   "cluster_lead": true
  },
  {
+  "id": "13125938ce89fd92",
+  "title": "한화생명, ‘보조기기 지원금 특약’ 배타적사용권 획득",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5HSnVveW1iNHBDTWVtTnphcGQyU2Z3SlZxUTAwN2RUYXBMTXduTXBCTDB4SW9RSGk4ZHdOX3VjUHFpaG9QNmhJUlNFRkNmTWk4RkxSNVJxRXY3MTRURzFLUEY1bVhQN2gyWlJUYw?oc=5",
+  "source": "뉴시안",
+  "source_type": "media",
+  "published_at": "2026-11-13T02:41:03+00:00",
+  "collected_at": "2026-11-13T03:59:59.238316+00:00",
+  "category": "생명보험",
+  "sub_categories": [
+   "보험경영·판매"
+  ],
+  "tags": [
+   "배타적사용권"
+  ],
+  "score": 2,
+  "feed_name": "기관·생명보험협회",
+  "relevant": true,
+  "companies": [
+   "한화생명"
+  ],
+  "orgs": [],
+  "cluster_id": "753d32c068a1fdba",
+  "cluster_size": 22,
+  "cluster_sources": 22,
+  "score_v2": 4
+ },
+ {
   "id": "80b7c82b9d6022eb",
   "title": "[지식재산이야기-351] 한화생명, 보조기기 지원금특약 배타적사용권 6개월 획득",
   "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE94UlNDcDNpX2dMSlRhQUNuVzhBdGNKZ0Y4ODMxeE1BSXMtdG9yRGFCWGF3MUZ2ZjRXOGk0Q3luamYteFVjT1MtdHhCbkV2cExrUmVFUmZDU0RYTTV4bEZLNXdDWlJRTjd1djA0?oc=5",
@@ -439,8 +466,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -466,8 +493,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -493,8 +520,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -637,8 +664,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -786,8 +813,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -1272,8 +1299,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -1449,8 +1476,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -1793,8 +1820,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -1934,8 +1961,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -1961,8 +1988,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4,
   "cluster_lead": true
  },
@@ -1992,8 +2019,8 @@
    "생명보험협회"
   ],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -2116,8 +2143,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -2197,8 +2224,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -2300,8 +2327,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -2347,8 +2374,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -2401,8 +2428,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -2428,8 +2455,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -2475,8 +2502,8 @@
   ],
   "orgs": [],
   "cluster_id": "753d32c068a1fdba",
-  "cluster_size": 21,
-  "cluster_sources": 21,
+  "cluster_size": 22,
+  "cluster_sources": 22,
   "score_v2": 4
  },
  {
@@ -9072,6 +9099,30 @@
   "cluster_size": 18,
   "cluster_sources": 18,
   "score_v2": 4
+ },
+ {
+  "id": "ab05a02e98c882b7",
+  "title": "교보생명, 계약을 지키는 경쟁력... 분급제 앞서 쌓은 15년",
+  "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE14aWlwOUNiS2o1ZzlPbXI3bURONlFSV2cxTllMSzhUVHNfQzFrMnVRWnlyelZTUmZlaUlIcUJwdGpqbUM4TTE1elEwM1B2bkdTM210VXlUb1ZZYXpyZ0hWY3pqQdIBZ0FVX3lxTE1FOHlMckJmX1VoUlNFUTdzYzRNYVhpODR1VGRXOVlBRnphRzc2Rm5PVk80emZsNWUtZXRQd3ZHOXNzV3UybjYtdExLSmh6SEdVR2lONTkzbVFiMTh0eHhKOEpoTHZvVUk?oc=5",
+  "source": "리버티코리아포스트",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:40:26+00:00",
+  "collected_at": "2026-11-13T03:59:59.238316+00:00",
+  "category": "보험경영·판매",
+  "sub_categories": [
+   "생명보험"
+  ],
+  "tags": [
+   "분급"
+  ],
+  "score": 3,
+  "feed_name": "생보사·교보·신한·농협",
+  "relevant": true,
+  "companies": [
+   "교보생명"
+  ],
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "673ddfacc6290f22",
@@ -16621,6 +16672,26 @@
   "cluster_size": 18,
   "cluster_sources": 18,
   "score_v2": 4
+ },
+ {
+  "id": "08456800c9428cb2",
+  "title": "AI 대출 위험 떠안는 보험사들…은행권 신용보험 활용 확대",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1jRGlCb1ZXSXZ4bTgwcU9KS000UmlyeDF3d3lMdl8xVUNKeGtJQzh4VVppc01lemdlcWNpeGJhbVVzdDZxUTBZQkFiTU02YUx5NHVyWVhucDFGemJoQm9IWFl3ZVFuSXZYdmVV?oc=5",
+  "source": "대한데일리",
+  "source_type": "media",
+  "published_at": "2026-11-11T23:46:53+00:00",
+  "collected_at": "2026-11-13T03:59:59.238316+00:00",
+  "category": "사회·인구·기술 변화",
+  "sub_categories": [],
+  "tags": [
+   "AI"
+  ],
+  "score": 2,
+  "feed_name": "사회변화·보험",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "f576182639e3ee98",
@@ -46831,6 +46902,29 @@
   "score_v2": 3
  },
  {
+  "id": "ed27d6310ca673de",
+  "title": "美 블루웨이브 덮친 외환시장…1360원대 환율 방향 가를 변수는 - 머니투데이",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE13NGZnSmJkTXVFX2gtZUtiUjdfYVpZYXAxdUt2UFMtbTJRdl9makVrTUhENC1rN2VBSkRYRHEwR2k2c3B5ckdRR0Q2S0VyQ01ndHZfd2Fvamtkc3g2d2UyNG15TjhhX3JabkFpX1NsX0JYUXo3Y3EyQ9IBfkFVX3lxTE9OQkNjeTE0VVd6Q2JoMVJLUXRhV0g0UkMwSjdXUmZ3cHVrNHI5eVQ5SUhYRElSYUY1aFVDUjlUNHZJdElvQ19ZNHRjNDZiXzcxMW03YlRSRHB0RU9kTXJ4Ui1iOHpvNkw0Y1pReTNTM1FJVldsYklZcXBvajlvQQ?oc=5",
+  "source": "머니투데이",
+  "source_type": "media",
+  "published_at": "2026-11-08T04:03:18+00:00",
+  "collected_at": "2026-11-13T03:59:59.238316+00:00",
+  "category": "금융시장·자산운용",
+  "sub_categories": [],
+  "tags": [
+   "환율"
+  ],
+  "score": 2,
+  "feed_name": "주요 경제지·금융시장",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "742b4f714d429364",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
+ },
+ {
   "id": "1db7a3fe829bd472",
   "title": "2030도 찾는 종신보험…한화생명, 생애자금 기능으로 가입층 넓힌다",
   "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE0tTkJnQlRoWEROdmFWd0E0UjV0TzVRQkJYRjZkTV93VGtIeTFxUmlOaU1HVmNVajNSVFZUbWk4UVlTX29VdS0xN3dWQQ?oc=5",
@@ -51126,7 +51220,11 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "742b4f714d429364",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "64c5d83805b56b8b",
