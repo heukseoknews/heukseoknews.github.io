@@ -417,3 +417,6 @@ button:disabled{cursor:default}
  *,*::before,*::after{animation:none!important;transition:none!important}
  :where(button,a.confirm,a.chBtn,a.meBtn,a.loginLink,.meCh):active{transform:none!important}
 }
+
+/* 새 뉴스: 확인 기록이 없을 때 작은 안내(최근 3일만 새 뉴스) */
+.listHead small.noBaseline{margin-left:8px;color:var(--subtle);white-space:nowrap}

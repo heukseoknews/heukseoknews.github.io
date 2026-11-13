@@ -19,6 +19,14 @@ export type LegacyKeys = { saved?: string; companies?: string };
 
 export const EMPTY_STATE: UserState = { bookmarks: {}, folders: {}, tags: {}, lastConfirmed: null, readAt: {}, dismissed: [], companies: [] };
 
+/** 두 시각 중 늦은 것(시각으로 비교 — Z·+00:00·마이크로초가 섞여도). 잘못된 값은 버린다. 둘 다 없으면 null */
+export function laterIso(a: string | null | undefined, b: string | null | undefined): string | null {
+  const ok = (v: string | null | undefined): v is string => validIso(v);
+  if (!ok(a)) return ok(b) ? b : null;
+  if (!ok(b)) return a;
+  return Date.parse(b) > Date.parse(a) ? b : a;
+}
+
 const isObj = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
 const strList = (v: unknown): string[] => Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : [];
 
@@ -97,7 +105,7 @@ export function parseImport(raw: unknown, channel: string, legacy: LegacyKeys = 
 export function mergeStates(cur: UserState, inc: UserState): UserState {
   const readAt: ReadMap = { ...inc.readAt };
   for (const [id, at] of Object.entries(cur.readAt)) readAt[id] = readAt[id] && readAt[id] < at ? readAt[id] : at;
-  const lc = [cur.lastConfirmed, inc.lastConfirmed].filter((x): x is string => !!x).sort().at(-1) ?? null;
+  const lc = laterIso(cur.lastConfirmed, inc.lastConfirmed);
   return {
     ...mergeBookmarkData(cur, inc),
     lastConfirmed: lc,

@@ -6,7 +6,7 @@
  *  - 마지막 확인 시각: 늦은 쪽. 치운 기사(dismissed): 서버에 저장하지 않으므로 이 기기 것 그대로. */
 import { mergeBookmarkData } from './bookmarks.ts';
 import { pruneReads } from './readState.ts';
-import { type UserState, fromStored } from './userState.ts';
+import { type UserState, fromStored, laterIso } from './userState.ts';
 
 /** 서버 행(user_state)의 내용 열. user_id·channel·rev·시각은 따로 다룬다 */
 export type Row = {
@@ -17,7 +17,7 @@ export type Row = {
 /** 3-방향 병합에 쓰는 기준본(크기를 줄이려고 읽음은 id 만) */
 export type Base = { readIds: string[]; companies: string[] };
 
-const iso = (v: string | null) => (v ? new Date(v).toISOString() : null);   // 서버 timestamptz(+00:00) → 화면과 같은 Z 형식
+const iso = (v: string | null) => (v && !Number.isNaN(Date.parse(v)) ? new Date(v).toISOString() : null);   // 서버 timestamptz(+00:00) → 화면과 같은 Z 형식(잘못된 값은 없음으로)
 
 export const toRow = (s: UserState): Row => ({
   schema_version: 2, bookmarks: s.bookmarks, folders: s.folders, tags: s.tags,
@@ -60,6 +60,6 @@ export function mergeStates3(base: Base | null, local: UserState, server: UserSt
     ...local.companies.filter(c => server.companies.includes(c) || !base || !hadCo.has(c)),
     ...server.companies.filter(c => !local.companies.includes(c) && (!base || !hadCo.has(c))),
   ];
-  const lc = [local.lastConfirmed, server.lastConfirmed].filter((x): x is string => !!x).sort().at(-1) ?? null;
+  const lc = laterIso(local.lastConfirmed, server.lastConfirmed);
   return { ...mergeBookmarkData(local, server), lastConfirmed: lc, readAt: pruneReads(readAt, lc), dismissed: local.dismissed, companies: [...new Set(companies)] };
 }

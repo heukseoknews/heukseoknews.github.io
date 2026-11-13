@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { isNewArticle, isPendingNew, visibleInNewTab } from '../lib/newsFilter.ts';
+import { NO_BASELINE_DAYS, isNewArticle, isPendingNew, visibleInNewTab } from '../lib/newsFilter.ts';
 import { DISMISS_HARD, KEEP_DAYS, addDismissed, cleanDismissed, fromReads, mergeDismissed, pruneDismissed, removeDismissed, type Dismissed } from '../lib/dismissed.ts';
 import { addRead } from '../lib/readState.ts';
 import { EMPTY_STATE, fromStored, mergeStates, toStored, type UserState } from '../lib/userState.ts';
@@ -17,8 +17,26 @@ assert.equal(late.published_at > baseline, false, '(참고) 발행시각 기준�
 
 // 확인 이전에 수집된 기사는 새 뉴스가 아님
 assert.equal(isNewArticle({ published_at: '2026-11-03T05:00:00+00:00', collected_at: '2026-11-03T09:00:00+00:00' }, baseline), false);
-// 첫 방문은 전체
-assert.equal(isNewArticle(late, null), true);
+// 기준 기록이 없으면(첫 방문·기록 유실) 최근 3일에 수집된 기사만
+const NOW = Date.parse('2026-11-05T00:00:00Z');
+assert.equal(NO_BASELINE_DAYS, 3);
+assert.equal(isNewArticle(late, null, NOW), true, '3일 안 수집');
+assert.equal(isNewArticle({ published_at: '2026-11-01T00:00:00+00:00', collected_at: '2026-11-01T23:59:00+00:00' }, null, NOW), false, '3일보다 전 수집은 새 뉴스 아님');
+{
+  // 2개월치 855건이 있어도 기록이 없을 때 새 뉴스는 최근 3일 것만
+  const arts = Array.from({ length: 855 }, (_, i) => ({ id: `n${i}`, published_at: '', collected_at: new Date(NOW - i * 2 * 3_600_000).toISOString() }));
+  const n = arts.filter(a => isPendingNew(a, null, new Set(['n0']), NOW)).length;
+  assert.equal(n, 35, '최근 72시간(2시간 간격 36건) 중 치운 1건 제외');
+}
+// 시각 비교: 글자가 아니라 시각(마이크로초·Z·+00:00 혼합)
+assert.equal(isNewArticle({ published_at: '', collected_at: '2026-11-04T09:00:00.000123+00:00' }, '2026-11-04T09:00:00.000Z'), false, '같은 밀리초는 새 기사 아님');
+assert.equal(isNewArticle({ published_at: '', collected_at: '2026-11-04T09:00:00.500000+00:00' }, '2026-11-04T09:00:00.499Z'), true, '마이크로초 형식도 비교');
+assert.equal(isNewArticle({ published_at: '', collected_at: '2026-11-04T10:00:00+01:00' }, '2026-11-04T09:30:00Z'), false, '+01:00 10:00 = 09:00Z → 확인 이전');
+assert.equal('2026-11-04T10:00:00+01:00' > '2026-11-04T09:30:00Z', true, '(참고) 글자 비교면 잘못 새 기사');
+assert.equal(isNewArticle({ published_at: '', collected_at: '2026-11-04T09:00:01+00:00' }, '2026-11-04T09:00:00.000Z'), true, '+00:00 과 Z 혼합');
+assert.equal(isNewArticle({ published_at: '', collected_at: 'not-a-date' }, null, NOW), false, '잘못된 시각은 새 기사 아님');
+assert.equal(isNewArticle({ published_at: '', collected_at: '' }, baseline), false, '시각 없음은 새 기사 아님');
+assert.equal(isNewArticle({ published_at: '2026-11-04T09:00:00+00:00', collected_at: '' }, baseline), true, '수집시각이 없으면 발행시각');
 // 확인 완료 직후 새로고침해도 기준 유지 → 같은 기사들은 계속 새 뉴스 아님
 assert.equal(isNewArticle(late, '2026-11-04T10:00:00+00:00'), false);
 
@@ -69,8 +87,9 @@ const count = (d: Dismissed) => [A, B, OLD].filter(x => isPendingNew(x, baseline
   // 치워도 새 뉴스 범위 밖 기사는 원래 안 나옴
   assert.equal(vis(OLD, [], true), false);
   assert.equal(isPendingNew(OLD, baseline, none), false);
-  // 첫 방문(기준 없음)은 치우지 않은 전체
-  assert.equal(visibleInNewTab(A, { baseline: null, dismissed: none, includeDismissed: false }), true);
+  // 기준 없음: 최근 3일 안이면 보임
+  assert.equal(visibleInNewTab(A, { baseline: null, dismissed: none, includeDismissed: false, now: NOW }), true);
+  assert.equal(visibleInNewTab(OLD, { baseline: null, dismissed: none, includeDismissed: false, now: Date.parse('2026-11-08T00:00:00Z') }), false);
 }
 
 // 3) '치운 기사 포함' 칩: 기본 꺼짐(숨김), 켜면 흐리게 보이고, 기본과 다르면 칩 + 배지, 새 뉴스 탭에만

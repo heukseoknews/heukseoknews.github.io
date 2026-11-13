@@ -15,7 +15,7 @@ import { type PanelFilters, badgeCount, dateChip, dateChipLabel, dateState, defa
 import { addDays, countByDate, dayHeading, kstDate, shiftMonth, todayKst } from '../../lib/dates';
 import { dataBounds, monthsBetween, nextOlder } from '../../lib/datePick';
 import { sourceOptions } from '../../lib/sources';
-import { isNewArticle, isPendingNew, visibleInNewTab } from '../../lib/newsFilter';
+import { NO_BASELINE_DAYS, isNewArticle, isPendingNew, visibleInNewTab } from '../../lib/newsFilter';
 import { useNews } from '../../lib/useNews';
 import { useSaved } from '../../lib/useSaved';
 import { fillMissing, toArticle } from '../../lib/bookmarks';
@@ -54,7 +54,7 @@ export default function Home() {
   const [leaving, setLeaving] = useState<Set<string>>(new Set());    // 방금 치워 곧 사라질 카드(짧은 페이드 후 제거)
   const timers = useRef<number[]>([]);
   const savedApi = useSaved();
-  const { saved, ready, update, markRead, dismiss, undismiss, dismissedSet, setCompanies, readSet, bookmarkList, isBookmarked } = savedApi;
+  const { saved, ready, settled, update, markRead, dismiss, undismiss, dismissedSet, setCompanies, readSet, bookmarkList, isBookmarked } = savedApi;
   // 기사 정보가 없는 옛 북마크(v1 이전분)는 기사 데이터를 불러오면 채운다. 채우기 전에는 북마크 탭에서 빼고 마이페이지에서만 보인다
   const bookmarkArticles = useMemo(() => bookmarkList.filter(b => !b.missing).map(toArticle), [bookmarkList]);
   const companies = saved.companies;  // 선택한 보험사(비면 전체) — 사용자 상태에 저장(새로고침 후에도 유지)
@@ -167,8 +167,9 @@ export default function Home() {
   // 달력: 데이터가 있는 날짜 범위(첫 기사~마지막 기사) 밖은 누를 수 없다
   const bounds = useMemo(() => dataBounds(all, indexMonths.map(m => m.month), loaded, today), [all, indexMonths, loaded, today]);
   const pageItems = items.slice((curPage - 1) * PAGE, curPage * PAGE);
-  const listReady = ready && (tab === 'bookmarks' || !loading);
-  const markDone = () => { update(s => ({ ...s, lastConfirmed: new Date().toISOString() })); setPage(1); };
+  // 새 뉴스 탭: 로그인 중이면 첫 동기화 응답 뒤에 건수·목록을 보인다(동기화 전 사본으로 계산한 값을 잠깐이라도 보이지 않게)
+  const listReady = ready && (tab === 'bookmarks' || !loading) && (tab !== 'new' || settled);
+  const markDone = () => { update(s => ({ ...s, lastConfirmed: new Date().toISOString() }), { pushNow: true }); setPage(1); };   // 서버에도 바로 올린다
 
   // 켜진 필터 목록: 필터 배지 개수·'필터 초기화'·빈 화면 판단에 쓴다
   const dState = dateState(dateFilter, tab, today);  // 기본 날짜(최근 3일)는 배지·초기화 숫자·빈 화면 판단에서 필터로 세지 않는다
@@ -213,7 +214,7 @@ export default function Home() {
     <h1 className="srOnly">{ch.name} 뉴스</h1>
     <nav className="primary" aria-label="뉴스 보기">{TABS.map(t =>
       <button key={t} className={tab === t ? 'active' : ''} onClick={() => { setTab(t); setCategory('전체'); setPanel(onTabChange(panel)); }}>
-        {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && (ready && !loading
+        {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && (settled && !loading
           ? <span className="count" aria-label={`새 뉴스 ${newCount}건`}>{newCount.toLocaleString()}</span>
           : <span className="count pending" aria-hidden="true" />)}  {/* 불러오기 전에도 자리를 잡아 탭 위치가 바뀌지 않게 */}
       </button>)}</nav>
@@ -240,7 +241,7 @@ export default function Home() {
     <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} bounds={bounds} />
     {/* 목록 머리: 탭 이름·건수, 새 뉴스 탭은 마지막 확인·모두 확인(치운 기사는 필터의 '치운 기사 포함'). 불러오기 전에는 건수·확인 정보를 비워 둔다(정적 HTML 에 0건이 찍히지 않게). */}
     <div className="listHead">
-      <h2>{ch.tabs[tab]}{listReady && <small>{countLabel(items.length, rows.length)}</small>}</h2>
+      <h2>{ch.tabs[tab]}{listReady && <small>{countLabel(items.length, rows.length)}</small>}{tab === 'new' && listReady && !baseline && <small className="noBaseline">확인 기록 없음 · 최근 {NO_BASELINE_DAYS}일</small>}</h2>
       {loadingMore && <span className="listNote">과거 기사 불러오는 중…</span>}
       {tab === 'new' && listReady && <div className="listActions">
         {baseline && <span className="lastConfirm" title={`마지막 확인 ${fmt(baseline)}`}>마지막 확인 {fmtShort(baseline)}</span>}
@@ -248,7 +249,7 @@ export default function Home() {
       </div>}
     </div>
     {failure && <div className="error"><AlertCircle size={17} /> {failure}</div>}
-    <section className="articles">{!ready || (loading && tab !== 'bookmarks') ? <div className="empty">뉴스를 불러오는 중입니다…</div> : pageItems.length === 0
+    <section className="articles">{!listReady ? <div className="empty">뉴스를 불러오는 중입니다…</div> : pageItems.length === 0
       ? <div className="empty" data-empty={empty}>{empty === 'noBookmarks' ? <Bookmark size={27} aria-hidden="true" /> : <Newspaper size={27} aria-hidden="true" />}<b>{EMPTY_TEXT[empty]}</b>
           {empty === 'filtered' && <button type="button" className="confirm" onClick={resetFilters}>필터 초기화</button>}
           {empty === 'noToday' && <button type="button" className="confirm" onClick={() => { const y = addDays(today, -1); setDateFilter({ from: y, to: y }); setCalMonth(y.slice(0, 7)); setPage(1); }}>어제 보기</button>}</div>
