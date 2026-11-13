@@ -1,10 +1,17 @@
-/** 북마크·폴더·태그(v2): 기사 스냅샷과 사용자 메타(폴더 1개·태그 여러 개·메모). 저장 위치와 무관한 순수 로직.
+/** 북마크·목록·태그(v2): 기사 스냅샷과 사용자 메타(목록 여러 개·태그 여러 개·메모). 저장 위치와 무관한 순수 로직.
+ *  목록(화면 이름)은 저장 형식·서버 열 이름이 'folders' 다(예전 '폴더'를 재사용). 2026-11-13 부터 북마크 하나를 여러 목록에 담는다(lists[]).
+ *  기본 '북마크'는 따로 저장하지 않는다: 살아 있는 북마크 전부가 기본 북마크다. 목록을 지워도 북마크는 기본 북마크로 남는다.
+ *  기준 키는 기사 id. cluster_id 는 저장할 때의 같은 사건 묶음 번호를 참고로만 남긴다(수집기가 묶음을 다시 계산해도 북마크는 id 로 그대로).
  *  지울 때는 바로 없애지 않고 삭제 표시(deletedAt)를 남긴다 — 다른 기기·서버와 합칠 때 지운 항목이 되살아나지 않게.
  *  형식·병합 규칙: docs/migration-localstorage.md, 서버 행: docs/auth-plan.md 3장. */
 import type { Article } from './news.ts';
 import { stars } from './stars.ts';
 
-export const LIMITS = { folders: 20, tags: 50, memo: 200, tagsPerBookmark: 10, groupName: 20 } as const;
+/** 화면 입력 한도(새로 만들 때만 막는다). folders = 직접 만든 목록(기본 '북마크' 제외) */
+export const LIMITS = { bookmarks: 1000, folders: 3, tags: 50, memo: 200, tagsPerBookmark: 10, groupName: 20 } as const;
+/** 두 기기·계정을 합친 결과의 화면 한도(넘으면 안내만, 지우지 않음)와 서버 상한(넘으면 서버가 저장을 거절 — supabase/migrations/0001_init.sql) */
+export const MERGED_LIMITS = { bookmarks: 2000, folders: 40, tags: 100 } as const;
+export const SERVER_LIMITS = { bookmarks: 3000, folders: 100, tags: 200 } as const;
 /** 삭제 표시를 지우는 기한(일). 이보다 오래 연결되지 않은 기기의 기록은 합칠 때 되살아날 수 있다. */
 export const TOMBSTONE_DAYS = 30;
 /** 시각을 모르는 옛 기록(v1 이전분·잘못된 값)의 수정 시각. 실제 수정은 항상 이보다 늦으므로 합칠 때 진다. */
@@ -18,11 +25,14 @@ export type Snapshot = {
   keywords: string[];
   companies: string[]; orgs: string[];
   published_at: string; collected_at?: string; score?: number;
+  /** 저장할 때의 같은 사건 묶음 번호(참고용). 기사를 찾는 기준은 id */
+  cluster_id?: string;
 };
 export type Bookmark = Snapshot & {
   id: string; channel: string;
   savedAt: string; updatedAt: string; deletedAt?: undefined;
-  folderId?: string; tags: string[]; memo: string;
+  /** 담긴 목록 id(여러 개). 비어 있으면 기본 '북마크'에만 있다. 옛 folderId 는 읽을 때 [folderId] 로 옮긴다 */
+  lists: string[]; tags: string[]; memo: string;
   /** 기사 정보를 찾지 못한 옛 북마크(id 만 남음). 기사 데이터를 불러오면 채운다. */
   missing?: true;
 };
@@ -60,7 +70,8 @@ export function snapshotOf(a: unknown): Snapshot | null {
     published_at: validIso(a.published_at) ? a.published_at : '',
   };
   if (validIso(a.collected_at)) s.collected_at = a.collected_at;
-  // ★은 화면과 같은 규칙(lib/stars.ts: score_v2 우선). 묶음 필드 등 다른 품질 필드는 스냅샷에 넣지 않는다
+  if (typeof a.cluster_id === 'string' && validId(a.cluster_id)) s.cluster_id = a.cluster_id;
+  // ★은 화면과 같은 규칙(lib/stars.ts: score_v2 우선). 묶음 필드는 cluster_id(참고용)만, 다른 품질 필드는 스냅샷에 넣지 않는다
   if (typeof a.score === 'number' && a.score >= 0 && a.score <= 5) s.score = stars({ score: a.score, score_v2: typeof a.score_v2 === 'number' ? a.score_v2 : undefined });
   return s;
 }
@@ -74,8 +85,8 @@ function cleanEntry(id: string, v: unknown, channel: string): BookmarkEntry | nu
   const savedAt = isoOr(o.savedAt, updatedAt);
   if (validIso(o.deletedAt)) return { id, channel, savedAt, updatedAt: updatedAt < o.deletedAt ? o.deletedAt : updatedAt, deletedAt: o.deletedAt };
   const snap = snapshotOf(o);
-  const b: Bookmark = { ...(snap ?? EMPTY_SNAPSHOT), id, channel, savedAt, updatedAt, tags: [...new Set(strList(o.tags).filter(validId))].slice(0, LIMITS.tagsPerBookmark), memo: cleanMemo(o.memo) };
-  if (validId(o.folderId)) b.folderId = o.folderId;
+  const lists = [...new Set([...strList(o.lists), ...(validId(o.folderId) ? [o.folderId] : [])].filter(validId))].slice(0, SERVER_LIMITS.folders);
+  const b: Bookmark = { ...(snap ?? EMPTY_SNAPSHOT), id, channel, savedAt, updatedAt, lists, tags: [...new Set(strList(o.tags).filter(validId))].slice(0, LIMITS.tagsPerBookmark), memo: cleanMemo(o.memo) };
   if (!snap) b.missing = true;
   return b;
 }
@@ -110,7 +121,7 @@ export function migrateV1Bookmarks(raw: unknown, channel: string): Record<string
     if (!validId(id) || out[id]) return;
     const snap = snapshotOf(a);
     const savedAt = snap ? (snap.collected_at || snap.published_at || UNKNOWN_TIME) : UNKNOWN_TIME;
-    const b: Bookmark = { ...(snap ?? EMPTY_SNAPSHOT), id, channel, savedAt, updatedAt: UNKNOWN_TIME, tags: [], memo: '' };
+    const b: Bookmark = { ...(snap ?? EMPTY_SNAPSHOT), id, channel, savedAt, updatedAt: UNKNOWN_TIME, lists: [], tags: [], memo: '' };
     if (!snap) b.missing = true;
     out[id] = b;
   };
@@ -123,10 +134,10 @@ export function migrateV1Bookmarks(raw: unknown, channel: string): Record<string
 
 export const liveBookmarks = (d: Pick<BookmarkData, 'bookmarks'>): Bookmark[] => Object.values(d.bookmarks).filter(isLive);
 export const isBookmarked = (d: Pick<BookmarkData, 'bookmarks'>, id: string) => isLive(d.bookmarks[id]);
-/** 살아 있는 폴더·태그(이름순) */
+/** 살아 있는 목록·태그(이름순) */
 export const liveGroups = (d: BookmarkData, kind: GroupKind): Group[] => Object.values(d[kind]).filter(isLiveGroup).sort((a, b) => a.name.localeCompare(b.name, 'ko') || a.id.localeCompare(b.id));
-/** 북마크의 폴더(지워졌거나 없는 폴더면 undefined) */
-export const folderOf = (d: BookmarkData, b: Bookmark): Group | undefined => (b.folderId && isLiveGroup(d.folders[b.folderId]) ? d.folders[b.folderId] : undefined);
+/** 북마크가 담긴 목록(지워진 목록은 빼고 이름순) */
+export const listsOf = (d: BookmarkData, b: Bookmark): Group[] => b.lists.map(l => d.folders[l]).filter(isLiveGroup).sort((a, b2) => a.name.localeCompare(b2.name, 'ko'));
 /** 북마크의 태그(지워진 태그는 빼고 이름순) */
 export const tagsOf = (d: BookmarkData, b: Bookmark): Group[] => b.tags.map(t => d.tags[t]).filter(isLiveGroup).sort((a, b2) => a.name.localeCompare(b2.name, 'ko'));
 
@@ -149,7 +160,7 @@ export function addBookmark<S extends WithBm>(s: S, a: Article, channel: string,
   if (isLive(s.bookmarks[a.id])) return s;
   const snap = snapshotOf(a);
   if (!snap) return s;
-  const b: Bookmark = { ...snap, id: a.id, channel, savedAt: now, updatedAt: now, tags: [], memo: '' };
+  const b: Bookmark = { ...snap, id: a.id, channel, savedAt: now, updatedAt: now, lists: [], tags: [], memo: '' };
   return { ...s, bookmarks: { ...s.bookmarks, [a.id]: b } };
 }
 
@@ -168,36 +179,41 @@ export function restoreBookmark<S extends WithBm>(s: S, prev: Bookmark, now: str
 export const toggleBookmark = <S extends WithBm>(s: S, a: Article, channel: string, now: string): S =>
   isLive(s.bookmarks[a.id]) ? removeBookmark(s, a.id, now) : addBookmark(s, a, channel, now);
 
-export type BookmarkPatch = { folderId?: string | null; tags?: string[]; memo?: string };
+export type BookmarkPatch = { lists?: string[]; tags?: string[]; memo?: string };
 
-/** 폴더·태그·메모 바꾸기. 지워진 폴더·태그는 받지 않고, 메모는 200자, 태그는 10개까지. 바뀐 것이 없으면 그대로. */
+/** 목록·태그·메모 바꾸기. 지워진 목록·태그는 받지 않고, 메모는 200자, 태그는 10개까지. 바뀐 것이 없으면 그대로.
+ *  목록에서 모두 빼도 북마크는 기본 '북마크'에 남는다(북마크 해제는 removeBookmark). */
 export function updateBookmark<S extends WithBm>(s: S, id: string, p: BookmarkPatch, now: string): S {
   const cur = s.bookmarks[id];
   if (!isLive(cur)) return s;
   const n: Bookmark = { ...cur };
-  if (p.folderId !== undefined) { if (p.folderId && isLiveGroup(s.folders[p.folderId])) n.folderId = p.folderId; else delete n.folderId; }
+  if (p.lists !== undefined) n.lists = [...new Set(p.lists)].filter(l => isLiveGroup(s.folders[l]));
   if (p.tags !== undefined) n.tags = [...new Set(p.tags)].filter(t => isLiveGroup(s.tags[t])).slice(0, LIMITS.tagsPerBookmark);
   if (p.memo !== undefined) n.memo = cleanMemo(p.memo);
-  if (n.folderId === cur.folderId && n.memo === cur.memo && n.tags.join() === cur.tags.join()) return s;
+  if (n.lists.join() === cur.lists.join() && n.memo === cur.memo && n.tags.join() === cur.tags.join()) return s;
   n.updatedAt = now;
   return { ...s, bookmarks: { ...s.bookmarks, [id]: n } };
 }
 
-/** 폴더·태그 id: 기기 사이에서 겹치지 않게 무작위 */
+/** 목록·태그 id: 기기 사이에서 겹치지 않게 무작위(목록은 예전 폴더와 같은 f_ 접두어) */
 export const newId = (kind: GroupKind) => `${kind === 'folders' ? 'f' : 't'}_${Math.random().toString(36).slice(2, 10)}${Date.now().toString(36).slice(-4)}`;
 
-const KIND_LABEL: Record<GroupKind, string> = { folders: '폴더', tags: '태그' };
+/** 화면 문구(받침에 맞춘 조사): 목록은·목록이, 태그는·태그가 */
+export const KIND_TEXT: Record<GroupKind, { name: string; eun: string; i: string }> = { folders: { name: '목록', eun: '목록은', i: '목록이' }, tags: { name: '태그', eun: '태그는', i: '태그가' } };
+/** 기본 '북마크'와 같은 이름의 목록은 만들지 않는다(헷갈리지 않게) */
+export const DEFAULT_LIST_NAME = '북마크';
 function checkName(s: WithBm, kind: GroupKind, name: string, except?: string): string {
   const n = cleanName(name);
-  if (!n) throw new Error(`${KIND_LABEL[kind]} 이름을 입력해 주세요.`);
-  if (liveGroups(s, kind).some(g => g.id !== except && g.name.toLowerCase() === n.toLowerCase())) throw new Error(`같은 이름의 ${KIND_LABEL[kind]}가 있습니다.`);
+  const t = KIND_TEXT[kind];
+  if (!n) throw new Error(`${t.name} 이름을 입력해 주세요.`);
+  if ((kind === 'folders' && n === DEFAULT_LIST_NAME) || liveGroups(s, kind).some(g => g.id !== except && g.name.toLowerCase() === n.toLowerCase())) throw new Error(`같은 이름의 ${t.i} 있습니다.`);
   return n;
 }
 
-/** 폴더·태그 만들기. 한도(폴더 20·태그 50)·빈 이름·같은 이름이면 Error(화면 문구). */
+/** 목록·태그 만들기. 한도(직접 만든 목록 3·태그 50)·빈 이름·같은 이름이면 Error(화면 문구). 한도를 이미 넘은 경우(합친 결과)도 만들기만 막는다. */
 export function createGroup<S extends WithBm>(s: S, kind: GroupKind, name: string, now: string, id = newId(kind)): { state: S; id: string } {
   const n = checkName(s, kind, name);
-  if (liveGroups(s, kind).length >= LIMITS[kind]) throw new Error(`${KIND_LABEL[kind]}는 ${LIMITS[kind]}개까지입니다.`);
+  if (liveGroups(s, kind).length >= LIMITS[kind]) throw new Error(`${KIND_TEXT[kind].eun} ${LIMITS[kind]}개까지입니다.`);
   return { state: { ...s, [kind]: { ...s[kind], [id]: { id, name: n, createdAt: now, updatedAt: now } } }, id };
 }
 
@@ -209,7 +225,7 @@ export function renameGroup<S extends WithBm>(s: S, kind: GroupKind, id: string,
   return { ...s, [kind]: { ...s[kind], [id]: { ...g, name: n, updatedAt: now } } };
 }
 
-/** 폴더·태그 지우기: 삭제 표시만 남긴다. 그 폴더·태그를 쓰던 북마크는 그대로 두고, 화면에서는 '폴더 없음'·태그 없음으로 보인다. */
+/** 목록·태그 지우기: 삭제 표시만 남긴다. 그 목록·태그에 담긴 북마크는 그대로(기본 '북마크'에 남는다). */
 export function deleteGroup<S extends WithBm>(s: S, kind: GroupKind, id: string, now: string): S {
   const g = s[kind][id];
   if (!isLiveGroup(g)) return s;
@@ -233,7 +249,7 @@ export function fillMissing<S extends WithBm>(s: S, articles: Article[]): S {
   return changed ? { ...s, bookmarks } : s;
 }
 
-/** 기한(30일)이 지난 삭제 표시를 지우고, 없어진 폴더·태그를 가리키는 참조를 정리한다. */
+/** 기한(30일)이 지난 삭제 표시를 지우고, 없어진 목록·태그를 가리키는 참조를 정리한다. */
 export function purgeTombstones<S extends WithBm>(s: S, now: string, days = TOMBSTONE_DAYS): S {
   const cut = new Date(Date.parse(now) - days * 86_400_000).toISOString();
   let changed = false;
@@ -245,13 +261,9 @@ export function purgeTombstones<S extends WithBm>(s: S, now: string, days = TOMB
   const folders = keep(s.folders), tags = keep(s.tags), bookmarks = keep(s.bookmarks);
   for (const [id, b] of Object.entries(bookmarks)) {
     if (!isLive(b)) continue;
-    const fid = b.folderId && !folders[b.folderId] ? undefined : b.folderId;
+    const ls = b.lists.filter(l => folders[l]);
     const tg = b.tags.filter(t => tags[t]);
-    if (fid !== b.folderId || tg.length !== b.tags.length) {
-      const n: Bookmark = { ...b, tags: tg };
-      if (fid === undefined) delete n.folderId;
-      bookmarks[id] = n; changed = true;
-    }
+    if (ls.length !== b.lists.length || tg.length !== b.tags.length) { bookmarks[id] = { ...b, lists: ls, tags: tg }; changed = true; }
   }
   return changed ? { ...s, bookmarks, folders, tags } : s;
 }
@@ -273,4 +285,21 @@ export function mergeBookmarkData(cur: BookmarkData, inc: BookmarkData): Bookmar
 export function withoutTombstones(d: BookmarkData): BookmarkData {
   const live = <T extends { deletedAt?: string }>(m: Record<string, T>) => Object.fromEntries(Object.entries(m).filter(([, v]) => !v.deletedAt));
   return { bookmarks: live(d.bookmarks), folders: live(d.folders), tags: live(d.tags) };
+}
+
+// ---------- 한도 확인(합치기·새로 만들기) ----------
+
+export type Counts = { bookmarks: number; folders: number; tags: number };
+export const countsOf = (d: BookmarkData): Counts => ({ bookmarks: liveBookmarks(d).length, folders: liveGroups(d, 'folders').length, tags: liveGroups(d, 'tags').length });
+/** 새 북마크를 더 담을 수 있는가(채널당 1,000, 이미 넘었으면 줄일 때까지 새로 담기만 막는다) */
+export const canAddBookmark = (d: BookmarkData) => liveBookmarks(d).length < LIMITS.bookmarks;
+/** 합친 결과 점검: over = 서버 상한을 넘어 저장할 수 없음, notes = 화면 한도를 넘음(지우지 않고 새로 만들기만 막힌다는 안내) */
+export function mergeCheck(d: BookmarkData): { over: boolean; notes: string[] } {
+  const c = countsOf(d);
+  const over = c.bookmarks > SERVER_LIMITS.bookmarks || c.folders > SERVER_LIMITS.folders || c.tags > SERVER_LIMITS.tags;
+  const notes: string[] = [];
+  if (c.bookmarks > LIMITS.bookmarks) notes.push(`북마크가 ${LIMITS.bookmarks.toLocaleString()}개를 넘어 줄이기 전까지 새로 담을 수 없습니다.`);
+  if (c.folders > LIMITS.folders) notes.push(`목록이 ${LIMITS.folders}개를 넘어 줄이기 전까지 새 목록을 만들 수 없습니다.`);
+  if (c.tags > LIMITS.tags) notes.push(`태그가 ${LIMITS.tags}개를 넘어 줄이기 전까지 새 태그를 만들 수 없습니다.`);
+  return { over, notes };
 }

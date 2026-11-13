@@ -28,3 +28,14 @@ export function useAccount(): AccountView {
     return { state: 'in', userId, loginId: a.loginId, name: shownName(a) };
   }, [snap]);
 }
+
+/** 계정 사본·동기화를 쓸 사용자: 로그인을 켠 빌드 + 로그인 + 비밀번호 변경 끝남. waiting: 아직 상태를 모름(첫 렌더) */
+export function useSyncUser(mode: 'off' | 'optional' | 'required'): { uid: string | null; waiting: boolean } {
+  const acct = useAccount();
+  return useMemo(() => {
+    if (mode === 'off') return { uid: null, waiting: false };
+    if (acct.state === 'unknown') return { uid: null, waiting: true };
+    if (acct.state !== 'in') return { uid: null, waiting: false };
+    return { uid: readAccount(browserKV, acct.userId)?.mustChange === false ? acct.userId : null, waiting: false };
+  }, [acct, mode]);
+}

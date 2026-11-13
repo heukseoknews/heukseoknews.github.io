@@ -1,12 +1,12 @@
-/** 마이페이지 북마크 목록의 순수 로직: 걸러내기(카테고리·검색·출처·보험사·기관·기간·읽음·폴더·태그), 정렬, 카테고리별 묶기. */
-import { type Bookmark, type BookmarkData, folderOf } from './bookmarks.ts';
+/** 마이페이지 북마크 목록의 순수 로직: 걸러내기(카테고리·검색·출처·보험사·기관·기간·읽음·목록·태그), 정렬, 카테고리별 묶기. */
+import { type Bookmark, type BookmarkData } from './bookmarks.ts';
 import { UNCATEGORIZED } from './news.ts';
 
 export type Period = 'all' | '7' | '30' | '90' | '365';
 export type ReadFilter = 'all' | 'unread' | 'read';
 export type SortKey = 'saved' | 'published';
-/** 폴더 선택: 전체, 폴더 없음, 폴더 id */
-export type FolderPick = 'all' | 'none' | string;
+/** 목록 선택: 'all' = 기본 '북마크'(모든 북마크), 그 밖은 직접 만든 목록 id */
+export type FolderPick = 'all' | string;
 export type MyFilters = {
   category: string; q: string; sources: string[]; companies: string[]; orgs: string[];
   period: Period; read: ReadFilter; folder: FolderPick; tags: string[];
@@ -32,8 +32,8 @@ export function matches(b: Bookmark, f: MyFilters, ctx: Ctx, skip?: Skip): boole
   if (f.read === 'unread' && ctx.read.has(b.id)) return false;
   if (f.read === 'read' && !ctx.read.has(b.id)) return false;
   if (skip !== 'folder' && f.folder !== 'all') {
-    const fid = folderOf(ctx.data, b)?.id;
-    if (f.folder === 'none' ? !!fid : fid !== f.folder) return false;
+    const g = ctx.data.folders[f.folder];
+    if (!g || g.deletedAt || !b.lists.includes(f.folder)) return false;
   }
   if (skip !== 'tags' && f.tags.length && !b.tags.some(t => f.tags.includes(t) && ctx.data.tags[t] && !ctx.data.tags[t].deletedAt)) return false;
   const q = f.q.trim().toLowerCase();

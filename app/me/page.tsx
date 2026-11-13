@@ -5,7 +5,7 @@ import { Bookmark as BookmarkIcon, ExternalLink, Filter, FolderClosed, Pencil, R
 import MultiFilter from '../../components/MultiFilter';
 import GroupManager from '../../components/GroupManager';
 import { useBookmarkFlow } from '../../components/BookmarkFlow';
-import { type Bookmark, type GroupKind, fillMissing, folderOf, liveGroups, tagsOf, toArticle } from '../../lib/bookmarks';
+import { type Bookmark, DEFAULT_LIST_NAME, type GroupKind, fillMissing, listsOf, liveGroups, tagsOf, toArticle } from '../../lib/bookmarks';
 import { channelHref } from '../../lib/channels';
 import { useChannel } from '../../lib/channelContext';
 import { facetOptions } from '../../lib/facets';
@@ -15,7 +15,7 @@ import { useSaved } from '../../lib/useSaved';
 
 const PAGE = 60;
 
-/** 마이페이지 · 내 북마크: 카테고리 칩 → 검색·필터·정렬 → 폴더·태그 → 카테고리별 목록. 채널은 마이페이지 틀(MeShell)이 정한다. */
+/** 마이페이지 · 내 북마크: 카테고리 칩 → 검색·필터·정렬 → 목록(기본 '북마크' + 직접 만든 목록)·태그 → 카테고리별 목록. 채널은 마이페이지 틀(MeShell)이 정한다. */
 export default function MyBookmarksPage() {
   const ch = useChannel();
   const L = ch.filters;
@@ -52,10 +52,10 @@ export default function MyBookmarksPage() {
   const srcOpts = useMemo(() => facetOptions(without('sources'), b => [b.source].filter(Boolean), f.sources), [bookmarkList, f, ctx]);
   const coOpts = useMemo(() => facetOptions(without('companies'), b => b.companies, f.companies, n => ch.companyGroup[n]), [bookmarkList, f, ctx]);
   const orgOpts = useMemo(() => facetOptions(without('orgs'), b => b.orgs, f.orgs, n => ch.orgGroup[n]), [bookmarkList, f, ctx]);
-  const folderCounts = useMemo(() => { const m = new Map<string, number>(); for (const b of without('folder')) { const k = folderOf(saved, b)?.id ?? 'none'; m.set(k, (m.get(k) ?? 0) + 1); } return m; }, [bookmarkList, f, ctx]);
+  const folderCounts = useMemo(() => { const m = new Map<string, number>(); const all = without('folder'); m.set('all', all.length); for (const b of all) for (const l of b.lists) m.set(l, (m.get(l) ?? 0) + 1); return m; }, [bookmarkList, f, ctx]);
   const tagCounts = useMemo(() => { const m = new Map<string, number>(); for (const b of without('tags')) for (const t of b.tags) m.set(t, (m.get(t) ?? 0) + 1); return m; }, [bookmarkList, f, ctx]);
   /* eslint-enable react-hooks/exhaustive-deps */
-  const usage = (kind: GroupKind, id: string) => bookmarkList.filter(b => (kind === 'folders' ? b.folderId === id : b.tags.includes(id))).length;
+  const usage = (kind: GroupKind, id: string) => bookmarkList.filter(b => (kind === 'folders' ? b.lists : b.tags).includes(id)).length;
   const cats = ['전체', ...ch.categories.filter(c => catCounts.has(c)), ...[...catCounts.keys()].filter(c => !ch.categories.includes(c))];
   const groups = useMemo(() => groupByCategory(rows.slice(0, shown), f.category === '전체' ? ch.categories : []), [rows, shown, f.category, ch.categories]);
   const panelCount = activeCount(f);
@@ -64,14 +64,14 @@ export default function MyBookmarksPage() {
   const onFilterKey = (e: React.KeyboardEvent) => { if (e.key === 'Escape' && !(e.target as HTMLElement).closest('.sourcePanel')) { setFilterOpen(false); filterBtn.current?.focus(); } };
 
   const card = (b: Bookmark) => {
-    const folder = folderOf(saved, b);
+    const inLists = listsOf(saved, b);
     const tg = tagsOf(saved, b);
     const read = readSet.has(b.id);
     return <article key={b.id} data-bm-id={b.id} className={'article myBm' + (read ? ' isRead' : '') + (b.missing ? ' missing' : '')}>
       <div className="articleMain">
         <div className="cardTop">
           {!b.missing && <span className={b.source_type === 'press' ? 'pill official' : 'pill'}>{b.category || '미분류'}</span>}
-          {folder && <span className="bmFolder"><FolderClosed size={14} aria-hidden="true" />{folder.name}</span>}
+          {inLists.map(l => <span key={l.id} className="bmFolder"><FolderClosed size={14} aria-hidden="true" />{l.name}</span>)}
         </div>
         <h3 className="cardTitle">{b.missing
           ? <span className="headline">기사 정보를 찾을 수 없음 <small>{b.id}</small></span>
@@ -88,7 +88,7 @@ export default function MyBookmarksPage() {
         {b.memo && <p className="bmMemo">{b.memo}</p>}
       </div>
       <div className="cardActions">
-        <button type="button" className="readBtn" aria-label="정리(폴더·태그·메모)" title="정리" onClick={() => flow.openEditor(b.id)}><Pencil size={18} aria-hidden="true" /></button>
+        <button type="button" className="readBtn" aria-label="정리(목록·태그·메모)" title="정리" onClick={() => flow.openEditor(b.id)}><Pencil size={18} aria-hidden="true" /></button>
         <button type="button" className="bookmark" aria-label="북마크 해제" aria-pressed="true" onClick={() => flow.onBookmark(toArticle(b))}><BookmarkIcon size={20} className="saved" aria-hidden="true" /></button>
       </div>
     </article>;
@@ -119,10 +119,10 @@ export default function MyBookmarksPage() {
     </div>
 
     <div className="meGroups">
-      <div className="meGroupRow" role="group" aria-label="폴더">
-        <span className="meGroupLabel">폴더</span>
-        {(['all', 'none'] as const).map(k => <button key={k} type="button" className={'meChip' + (f.folder === k ? ' on' : '')} aria-pressed={f.folder === k} onClick={() => set({ folder: k })}>
-          {k === 'all' ? '전체' : '폴더 없음'}{k === 'none' && <span className="catN">{(folderCounts.get('none') ?? 0).toLocaleString()}</span>}</button>)}
+      <div className="meGroupRow" role="group" aria-label="목록">
+        <span className="meGroupLabel">목록</span>
+        <button type="button" className={'meChip' + (f.folder === 'all' ? ' on' : '')} aria-pressed={f.folder === 'all'} onClick={() => set({ folder: 'all' })}>
+          <BookmarkIcon size={14} aria-hidden="true" />{DEFAULT_LIST_NAME}<span className="catN">{(folderCounts.get('all') ?? 0).toLocaleString()}</span></button>
         {folders.map(g => <button key={g.id} type="button" className={'meChip' + (f.folder === g.id ? ' on' : '')} aria-pressed={f.folder === g.id} onClick={() => set({ folder: f.folder === g.id ? 'all' : g.id })}>
           <FolderClosed size={14} aria-hidden="true" />{g.name}<span className="catN">{(folderCounts.get(g.id) ?? 0).toLocaleString()}</span></button>)}
       </div>
@@ -131,7 +131,7 @@ export default function MyBookmarksPage() {
         {tags.map(g => { const on = f.tags.includes(g.id); return <button key={g.id} type="button" className={'meChip' + (on ? ' on' : '')} aria-pressed={on} onClick={() => set({ tags: on ? f.tags.filter(t => t !== g.id) : [...f.tags, g.id] })}>
           #{g.name}<span className="catN">{(tagCounts.get(g.id) ?? 0).toLocaleString()}</span></button>; })}
       </div>}
-      <button type="button" className="readToggle meManage" aria-expanded={manageOpen} aria-controls="me-manage" onClick={() => setManageOpen(o => !o)}><Settings2 size={14} aria-hidden="true" /> 폴더·태그 관리</button>
+      <button type="button" className="readToggle meManage" aria-expanded={manageOpen} aria-controls="me-manage" onClick={() => setManageOpen(o => !o)}><Settings2 size={14} aria-hidden="true" /> 목록·태그 관리</button>
     </div>
     {manageOpen && <div id="me-manage" className="articles dataPanel">
       <GroupManager folders={folders} tags={tags} usage={usage} onCreate={addGroup} onRename={renameGroup} onDelete={removeGroup} />

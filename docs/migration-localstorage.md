@@ -22,7 +22,7 @@
 | `schemaVersion` | number | `2` |
 | `channel` | string | `insurance` |
 | `bookmarks` | `{ [id]: 북마크 \| 삭제 표시 }` | 아래 표 |
-| `folders` | `{ [id]: 묶음 }` | 내 폴더(살아 있는 것 20개까지). 북마크 하나는 폴더 하나에 |
+| `folders` | `{ [id]: 묶음 }` | 내 **목록**(2026-11-13, 예전 '폴더'를 재사용). 화면에서 새로 만들기는 3개까지(기본 '북마크'는 따로 저장하지 않음 = 살아 있는 북마크 전부), 이미 넘은 목록은 지우지 않음. 북마크 하나를 여러 목록에 담는다 |
 | `tags` | `{ [id]: 묶음 }` | 내 태그(살아 있는 것 50개까지). 북마크 하나에 10개까지 |
 | `readAt` | `{ [id]: ISO 시각 }` | 읽은 시각. 1,500건(SOFT)을 넘으면 마지막 확인 이전에 읽은 것부터, 보호 대상이 5,000건(HARD)을 넘으면 가장 오래된 것부터 지운다(`lib/readState.ts`) |
 | `dismissed` | `{ id, at }[]` | 새 뉴스 탭에서 치운 기사와 치운 시각(`lib/dismissed.ts`). 읽음과 별개라 링크를 열어도 생기지 않는다. 60일 지났고 마지막 확인 이전에 치운 것은 읽을 때 지우고, 3,000건을 넘으면 오래된 것부터 지운다. 이 키가 없는 저장값(2026-11-13 이전)은 처음 읽을 때 '마지막 확인 이후에 읽은 기록'(그때 새 뉴스에서 숨겨져 있던 것)을 한 번 옮겨 저장한다 |
@@ -37,10 +37,11 @@
 | `title`, `url`, `source`, `source_type`, `category`, `sub_categories`, `keywords`, `companies`, `orgs`, `published_at`, `collected_at?`, `score?` | 기사 스냅샷. `keywords` 는 기사 파일의 분류 키워드(`tags`)다 — 사용자 태그와 이름이 겹치지 않게 바꿔 담는다. 기사 파일의 다른 필드(수집 경로·부서 등)는 담지 않는다 |
 | `savedAt` | 북마크한 시각(저장순 정렬) |
 | `updatedAt` | 마지막으로 바꾼 시각(병합 기준) |
-| `folderId?`, `tags`, `memo` | 내 폴더 id, 내 태그 id 목록, 메모(200자) |
+| `lists`, `tags`, `memo` | 담긴 목록 id 목록(비면 기본 '북마크'에만), 내 태그 id 목록, 메모(200자). 옛 `folderId` 는 읽을 때 `lists: [folderId]` 로 옮긴다 |
+| `cluster_id?` | 저장할 때의 같은 사건 묶음 번호(참고용). 기사를 찾는 기준은 항상 기사 id |
 | `missing?` | `true` = 기사 정보를 찾지 못한 옛 북마크(id 만 보존). 기사 데이터를 불러오면 채운다 |
 
-삭제 표시: `{ id, channel, savedAt, updatedAt, deletedAt }`. 북마크·폴더·태그를 지우면 바로 없애지 않고 이 표시를 남긴다. 다른 기기·서버와 합칠 때 지운 항목이 되살아나지 않게 하기 위해서다. 30일이 지난 삭제 표시는 읽을 때 지운다(`TOMBSTONE_DAYS`). 지운 폴더·태그를 가리키던 북마크는 그대로 두고 화면에서 '폴더 없음'·태그 없음으로 보이며, 삭제 표시를 지울 때 참조도 정리한다.
+삭제 표시: `{ id, channel, savedAt, updatedAt, deletedAt }`. 북마크·폴더·태그를 지우면 바로 없애지 않고 이 표시를 남긴다. 다른 기기·서버와 합칠 때 지운 항목이 되살아나지 않게 하기 위해서다. 30일이 지난 삭제 표시는 읽을 때 지운다(`TOMBSTONE_DAYS`). 지운 목록·태그에 담겨 있던 북마크는 그대로 두고(기본 '북마크'에 남음) 그 목록·태그만 안 보이며, 삭제 표시를 지울 때 참조도 정리한다.
 
 묶음(폴더·태그): `{ id, name(20자), createdAt, updatedAt, deletedAt? }`. id 는 기기 사이에서 겹치지 않게 무작위(`f_…`, `t_…`). 같은 이름은 만들 수 없다(대소문자 무시).
 
@@ -50,7 +51,9 @@
 - 저장 시각을 모르므로 `savedAt` 은 수집 시각(없으면 발행 시각), `updatedAt` 은 고정값 `2000-01-01T00:00:00.000Z`. 여러 기기가 따로 이전해도 같은 값이 되어 합칠 때 충돌하지 않고, 실제로 고친 기록이 항상 이긴다.
 - 제목·링크가 없거나 id 만 있는 북마크(옛 형식의 id 배열 포함)는 버리지 않고 `missing: true` 로 보존한다. 화면이 기사 데이터를 불러오면 같은 id 의 기사로 채운다(`fillMissing`).
 
-코드: 순수 로직 `lib/userState.ts`(상태·가져오기·병합)와 `lib/bookmarks.ts`(북마크·폴더·태그), 저장소 어댑터 `lib/storage.ts`(localStorage 구현, 나중에 원격 저장소로 바꿀 자리), 화면 마이페이지 `app/me/`(내 북마크 `/me/`, 내 데이터 `/me/data/`, 채널은 `?ch=`).
+로그인 중(로그인을 켠 빌드, 비밀번호 변경 끝남)에는 같은 형식을 계정 사본 키 `heukseok-v2:<채널>@<사용자 id>` 에 두고 서버 `user_state` 와 맞춘다(`heukseok-sync-v1:<채널>@<사용자 id>` = rev·해시·기준본·보낼 것 있음, `heukseok-claimed-v1:<채널>` = 이 기기 기록을 합친 계정). 로그인 전 기록 키는 그대로 두고, 사용자가 '합치기'를 고를 때만 계정 사본에 합친다(docs/auth-plan.md 5장).
+
+코드: 순수 로직 `lib/userState.ts`(상태·가져오기·병합)와 `lib/bookmarks.ts`(북마크·목록·태그), 저장소 어댑터 `lib/storage.ts`(localStorage 구현, 나중에 원격 저장소로 바꿀 자리), 화면 마이페이지 `app/me/`(내 북마크 `/me/`, 내 데이터 `/me/data/`, 채널은 `?ch=`).
 
 새 키가 아직 없으면 옛 키(`actuary-news-hub-v3`, `actuary-news-hub-companies-v1`)를 읽는다(같은 origin 에서 띄운 경우 대비). 옛 키는 지우지 않는다. 옛 키 이름은 `channels/insurance/channel.json` 의 `storage.legacy_keys` 에 있다.
 

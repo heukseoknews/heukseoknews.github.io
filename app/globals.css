@@ -313,6 +313,14 @@ html[data-auth="leaving"] body{visibility:hidden}
 .nameForm input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}.nameForm .confirm{min-height:44px;font-size:var(--fs-14);font-weight:600;padding:0 18px;justify-content:center}.nameForm .confirm:disabled{opacity:.6}
 .nameMsg{margin:8px 0 0;min-height:20px;font-size:var(--fs-14);color:#a54235}.nameMsg.ok{color:var(--accent-strong)}.nameMsg:empty{min-height:0;margin:0}
 .pwForm{display:flex;flex-direction:column;gap:12px;max-width:440px}.pwForm .nameMsg{margin:0}.pwForm .dataActions{margin-top:0}.pwForm .dataActions .confirm{min-height:44px;font-size:var(--fs-14);font-weight:600;padding:0 18px}
+/* 북마크 동기화(로그인 중): 마이페이지 상태 한 줄, 헤더 계정 버튼의 작은 점(실패 시, 자리 차지 없음), 처음 로그인 '합치기' 질문 */
+.syncNote{margin:-6px 0 10px;font-size:var(--fs-12);color:var(--muted)}.syncNote.bad{color:#a54235}
+.acctBtn{position:relative}.syncDot{position:absolute;top:5px;right:5px;width:8px;height:8px;border-radius:50%;background:#C2410C;box-shadow:0 0 0 2px var(--surface)}
+.claimBar{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);z-index:61;display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;background:var(--surface);color:var(--text);border:1px solid var(--line-strong);border-radius:12px;padding:6px 8px 6px 16px;font-size:13px;box-shadow:0 6px 20px #0002;width:max-content;max-width:calc(100vw - 32px)}
+.claimBar span{flex:1 1 220px}.claimBar button{min-height:44px;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text-2);font-weight:600;font-size:13px}
+.claimBar button:first-of-type{background:var(--accent);border-color:var(--accent);color:#fff}.claimBar button:disabled{opacity:.6}
+@media(hover:hover){.claimBar button:not(:first-of-type):not(:disabled):hover{border-color:var(--accent);color:var(--accent-strong)}}
+.bmTag.fixed{cursor:default;opacity:.85}
 /* ───── 미세 상호작용(누르는 느낌). transform·opacity·색만 바꾸고 크기·여백은 그대로(틀 측정 영향 없음). 0.12~0.2초.
    hover 는 (hover:hover) 안에서만, '동작 줄이기'를 켠 사용자는 모두 끈다(맨 아래). 색은 채널 변수(--accent 등)만 쓴다 ───── */
 :where(button,a.confirm,a.chBtn,a.meBtn,a.loginLink,a.acctItem,.meCh){transition:transform .14s ease,background-color .14s ease,border-color .14s ease,color .14s ease}

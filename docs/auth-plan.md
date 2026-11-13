@@ -211,9 +211,9 @@
 
 | 항목 | 모양 |
 |---|---|
-| 북마크 | 기사 스냅샷(제목·링크·출처·분류·키워드·보험사·기관·발행 시각) + `savedAt`·`updatedAt`·`folderId?`·`tags`(내 태그 id)·`memo`(200자)·`missing?` |
+| 북마크 | 기사 스냅샷(제목·링크·출처·분류·키워드·보험사·기관·발행 시각·`cluster_id?` 참고용) + `savedAt`·`updatedAt`·`lists`(담긴 목록 id, 여러 개)·`tags`(내 태그 id)·`memo`(200자)·`missing?`. 기준 키는 기사 id |
 | 삭제 표시 | `{ id, channel, savedAt, updatedAt, deletedAt }` — 북마크·폴더·태그를 지우면 바로 없애지 않고 남긴다. 30일 뒤 정리 |
-| 폴더·태그 | `{ id, name, createdAt, updatedAt, deletedAt? }`, 폴더 20·태그 50(살아 있는 것) |
+| 목록(열 이름 `folders`)·태그 | `{ id, name, createdAt, updatedAt, deletedAt? }`, 직접 만든 목록 3·태그 50(살아 있는 것, 새로 만들 때만). 기본 '북마크'는 저장하지 않는다(살아 있는 북마크 전부) |
 
 | 항목 | 병합 규칙 | 삭제 전달 |
 |---|---|---|
@@ -240,8 +240,8 @@
 
 | 항목 | 화면 한도(새로 만들 때만 막음) | 서버 상한(넘으면 저장 거절, 오류 23514) |
 |---|---|---|
-| 채널당 북마크(지운 표시 제외) | 1,000(세션 A 가 추가할 예정, 10.1) | 3,000 |
-| 폴더 | 20 | 100 |
+| 채널당 북마크(지운 표시 제외) | 1,000(2026-11-13 화면에 적용) | 3,000 |
+| 목록(`folders`) | 3(2026-11-13, 예전 폴더 20) | 100 |
 | 태그 | 50 | 200 |
 | 메모 | 200자 | 1,000자 |
 | 북마크당 태그 | 10 | 50 |
@@ -371,6 +371,14 @@ export interface UserStateStore {
 2. [합치기] → `mergeStates(계정 사본, 로그인 전 기록)` → 계정 사본 저장 → 올리기 → `claimed` 기록. 원본 키는 지우지 않는다(되돌릴 수 있게).
 3. [나중에] → 내 데이터 화면에 '이 브라우저의 이전 기록 합치기' 버튼으로 남긴다.
 4. 묻는 이유: 같은 컴퓨터를 여러 사람이 쓰면 남의 기록이 내 계정에 섞일 수 있다.
+
+### 5.3-1 구현(2026-11-13)
+
+- 파일: `lib/syncMerge.ts`(행 변환·`mergeStates3`·해시), `lib/sync.ts`(한 번 맞추기, 저장소·서버 주입), `lib/syncBackend.ts`(Supabase, 본인 `user_id` 조건 + RLS, 15초 시간 제한), `lib/syncManager.ts`(언제 돌릴지·재시도), `lib/storage.ts` `accountStore`·`activeUserId`, `lib/claim.ts`·`lib/claimRun.ts`·`components/ClaimPrompt.tsx`(합치기), `components/SyncNote.tsx`(상태). 테스트 `tests/sync.test.ts`.
+- 기준본은 크기를 줄이려고 rev·내용 해시·읽음 id·보험사만 둔다(rev 가 같으면 서버 내용 = 마지막으로 맞춘 내용이므로 해시로 올릴지 정한다).
+- 치운 기사(`dismissed`)는 서버 열이 없어 기기 사본에만 둔다.
+- 로그아웃해도 계정 사본·기준본은 지우지 않는다(보내지 못한 변경이 있으면 잃지 않게). 로그아웃 상태 화면은 로그인 전 기록을 읽으므로 섞이지 않는다.
+- SQL 변경 없음(jsonb 안의 필드만 늘었다: `lists`, `cluster_id`).
 
 ### 5.4 동기화 상태 표시(최소)
 

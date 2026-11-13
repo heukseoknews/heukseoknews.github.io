@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { type Bookmark, LIMITS, UNKNOWN_TIME, addBookmark, createGroup, deleteGroup, fillMissing, folderOf, isBookmarked, isLive, liveBookmarks, liveGroups,
+import { type Bookmark, LIMITS, UNKNOWN_TIME, addBookmark, createGroup, deleteGroup, fillMissing, listsOf, isBookmarked, isLive, liveBookmarks, liveGroups,
   purgeTombstones, removeBookmark, renameGroup, restoreBookmark, snapshotOf, tagsOf, toArticle, toggleBookmark, updateBookmark } from '../lib/bookmarks.ts';
 import { EMPTY_STATE, type UserState, fromStored, mergeStates, toExportFile, toStored } from '../lib/userState.ts';
 import type { Article } from '../lib/news.ts';
@@ -41,17 +41,18 @@ const withMemo = updateBookmark(s, 'a', { memo: '중요' }, T(2));
 const undone = restoreBookmark(removeBookmark(withMemo, 'a', T(3)), bm(withMemo, 'a'), T(4));
 assert.equal(bm(undone, 'a').memo, '중요'); assert.equal(bm(undone, 'a').updatedAt, T(4));
 
-// ---------- 폴더·태그·메모 ----------
+// ---------- 목록(저장 이름 folders)·태그·메모 ----------
 let r = createGroup(s, 'folders', '  공부 자료 ', T(2), 'f_1'); s = r.state;
 assert.equal(s.folders.f_1.name, '공부 자료');
-assert.throws(() => createGroup(s, 'folders', '공부 자료', T(2)), /같은 이름의 폴더/);
-assert.throws(() => createGroup(s, 'folders', '   ', T(2)), /폴더 이름을 입력/);
+assert.throws(() => createGroup(s, 'folders', '공부 자료', T(2)), /같은 이름의 목록이 있습니다/);
+assert.throws(() => createGroup(s, 'folders', '   ', T(2)), /목록 이름을 입력/);
+assert.throws(() => createGroup(s, 'folders', '북마크', T(2)), /같은 이름의 목록이/, '기본 \'북마크\'와 같은 이름은 안 됨');
 s = createGroup(s, 'tags', 'IFRS17', T(2), 't_1').state;
 s = createGroup(s, 'tags', '킥스', T(2), 't_2').state;
-s = updateBookmark(s, 'a', { folderId: 'f_1', tags: ['t_2', 't_1', 't_1', 'nope'], memo: '  다시 읽기  ' }, T(3));
-assert.equal(bm(s, 'a').folderId, 'f_1'); assert.deepEqual(bm(s, 'a').tags, ['t_2', 't_1']); assert.equal(bm(s, 'a').memo, '다시 읽기'); assert.equal(bm(s, 'a').updatedAt, T(3));
+s = updateBookmark(s, 'a', { lists: ['f_1', 'f_1', 'nope'], tags: ['t_2', 't_1', 't_1', 'nope'], memo: '  다시 읽기  ' }, T(3));
+assert.deepEqual(bm(s, 'a').lists, ['f_1']); assert.deepEqual(bm(s, 'a').tags, ['t_2', 't_1']); assert.equal(bm(s, 'a').memo, '다시 읽기'); assert.equal(bm(s, 'a').updatedAt, T(3));
 assert.equal(updateBookmark(s, 'a', { memo: '다시 읽기' }, T(9)), s);  // 바뀐 게 없으면 수정 시각도 그대로
-assert.equal(folderOf(s, bm(s, 'a'))!.name, '공부 자료');
+assert.deepEqual(listsOf(s, bm(s, 'a')).map(l => l.name), ['공부 자료']);
 assert.deepEqual(tagsOf(s, bm(s, 'a')).map(t => t.name), ['킥스', 'IFRS17']);  // 이름순(ko: 한글 먼저)
 // 메모 200자 제한(코드 포인트 기준)
 assert.equal([...bm(updateBookmark(s, 'a', { memo: '가'.repeat(250) }, T(4)), 'a').memo].length, LIMITS.memo);
@@ -59,21 +60,23 @@ assert.equal([...bm(updateBookmark(s, 'a', { memo: '가'.repeat(250) }, T(4)), '
 s = renameGroup(s, 'folders', 'f_1', '공부', T(4));
 assert.equal(s.folders.f_1.name, '공부'); assert.equal(s.folders.f_1.updatedAt, T(4));
 assert.throws(() => renameGroup(s, 'tags', 't_1', '킥스', T(4)), /같은 이름의 태그/);
-// 지우기 = 삭제 표시. 쓰던 북마크는 '폴더 없음'·태그 없음으로 보인다
+// 지우기 = 삭제 표시. 담긴 북마크는 그대로(기본 '북마크'에 남고 그 목록 이름만 안 보임)
 const noFolder = deleteGroup(s, 'folders', 'f_1', T(5));
 assert.equal(noFolder.folders.f_1.deletedAt, T(5));
-assert.equal(folderOf(noFolder, bm(noFolder, 'a')), undefined);
+assert.deepEqual(listsOf(noFolder, bm(noFolder, 'a')), []);
+assert.ok(isBookmarked(noFolder, 'a'), '목록을 지워도 북마크는 남음');
 assert.equal(liveGroups(noFolder, 'folders').length, 0);
 assert.deepEqual(tagsOf(deleteGroup(s, 'tags', 't_1', T(5)), bm(s, 'a')).map(t => t.name), ['킥스']);
-// 지운 폴더에는 넣을 수 없다
-assert.equal(bm(updateBookmark(noFolder, 'a', { folderId: 'f_1' }, T(6)), 'a').folderId, undefined);
+// 지운 목록에는 넣을 수 없다
+assert.deepEqual(bm(updateBookmark(noFolder, 'a', { lists: ['f_1'] }, T(6)), 'a').lists, []);
 // 지운 이름으로 다시 만들 수 있다
 assert.doesNotThrow(() => createGroup(noFolder, 'folders', '공부', T(6)));
 
-// 한도: 폴더 20, 태그 50, 북마크당 태그 10
+// 한도: 직접 만든 목록 3, 태그 50, 북마크당 태그 10
 let lim: UserState = EMPTY_STATE;
-for (let i = 0; i < LIMITS.folders; i++) lim = createGroup(lim, 'folders', `폴더${i}`, T(1), `f_${i}`).state;
-assert.throws(() => createGroup(lim, 'folders', '하나 더', T(1)), /폴더는 20개까지/);
+assert.equal(LIMITS.folders, 3);
+for (let i = 0; i < LIMITS.folders; i++) lim = createGroup(lim, 'folders', `목록${i}`, T(1), `f_${i}`).state;
+assert.throws(() => createGroup(lim, 'folders', '하나 더', T(1)), /목록은 3개까지입니다/);
 lim = deleteGroup(lim, 'folders', 'f_0', T(2));
 assert.doesNotThrow(() => createGroup(lim, 'folders', '하나 더', T(2)));  // 지우면 다시 만들 수 있다
 for (let i = 0; i < LIMITS.tags; i++) lim = createGroup(lim, 'tags', `태그${i}`, T(1), `t_${i}`).state;
@@ -120,12 +123,12 @@ assert.equal(isBookmarked(mergeStates(aDel, exported), 'a'), false);
 
 // ---------- 삭제 표시 정리(30일) ----------
 let old: UserState = removeBookmark(addBookmark(EMPTY_STATE, art('o'), CH, T(1)), 'o', '2026-10-01T00:00:00.000Z');
-old = createGroup(old, 'folders', '옛 폴더', T(1), 'f_o').state;
+old = createGroup(old, 'folders', '옛 목록', T(1), 'f_o').state;
 old = deleteGroup(addBookmark(old, art('k'), CH, T(1)), 'folders', 'f_o', '2026-10-01T00:00:00.000Z');
-old = { ...old, bookmarks: { ...old.bookmarks, k: { ...bm(old, 'k'), folderId: 'f_o' } } };
+old = { ...old, bookmarks: { ...old.bookmarks, k: { ...bm(old, 'k'), lists: ['f_o'] } } };
 const purged = purgeTombstones(old, '2026-11-12T00:00:00.000Z');
 assert.equal(purged.bookmarks.o, undefined); assert.equal(purged.folders.f_o, undefined);
-assert.equal(bm(purged, 'k').folderId, undefined);  // 없어진 폴더 참조 정리
+assert.deepEqual(bm(purged, 'k').lists, []);  // 없어진 목록 참조 정리
 assert.equal(purgeTombstones(purged, '2026-11-12T00:00:00.000Z'), purged);  // 정리할 게 없으면 같은 객체
 const recent = removeBookmark(addBookmark(EMPTY_STATE, art('r'), CH, T(1)), 'r', T(1));
 assert.ok(purgeTombstones(recent, T(12)).bookmarks.r);  // 30일 안이면 남김
@@ -141,12 +144,12 @@ assert.equal(fillMissing(filled, []), filled);
 assert.equal(toArticle(bm(fromStored({ schemaVersion: 2, bookmarks: { n: { title: 't', url: 'u', savedAt: T(5), updatedAt: T(5), tags: [], memo: '' } } }, CH), 'n')).published_at, T(5));
 
 // ---------- 크기 추정: 10명 · 1인 북마크 수백 건 ----------
-// 실제 기사(data/insurance)로 북마크를 만들고 메모·태그·폴더를 한도까지 채운다.
+// 실제 기사(data/insurance)로 북마크를 만들고 메모·태그·목록을 채운다(목록은 옛 폴더 한도 20개로 넉넉히 — 크기 추정용).
 const dataDir = join(import.meta.dirname, '../data/insurance');
 const articles: Article[] = existsSync(dataDir) ? readdirSync(dataDir).filter(f => /^\d{4}-\d{2}\.json$/.test(f)).flatMap(f => JSON.parse(readFileSync(join(dataDir, f), 'utf8'))) : [];
 const sized = (n: number, memoChars: number, reads: number) => {
   let st: UserState = EMPTY_STATE;
-  for (let i = 0; i < LIMITS.folders; i++) st = createGroup(st, 'folders', `폴더 이름 ${i}`.slice(0, 20), T(1), `f_${i.toString(36)}abcdefgh`).state;
+  for (let i = 0; i < 20; i++) st = { ...st, folders: { ...st.folders, [`f_${i.toString(36)}abcdefgh`]: { id: `f_${i.toString(36)}abcdefgh`, name: `목록 이름 ${i}`, createdAt: T(1), updatedAt: T(1) } } };
   for (let i = 0; i < LIMITS.tags; i++) st = createGroup(st, 'tags', `태그 ${i}`, T(1), `t_${i.toString(36)}abcdefgh`).state;
   const tagIds = Object.keys(st.tags), folderIds = Object.keys(st.folders);
   const src = articles.length ? articles : Array.from({ length: n }, (_, i) => art(`a${i}`));
@@ -154,7 +157,7 @@ const sized = (n: number, memoChars: number, reads: number) => {
     const a = src[i % src.length];
     const id = i < src.length ? a.id : `${a.id.slice(0, 12)}${(i).toString(16).padStart(4, '0')}`;
     st = addBookmark(st, { ...a, id }, CH, new Date(Date.UTC(2026, 9, 1) + i * 60_000).toISOString());
-    st = updateBookmark(st, id, { folderId: folderIds[i % folderIds.length], tags: tagIds.slice(i % 40, i % 40 + 3), memo: '메모'.repeat(memoChars / 2) }, new Date(Date.UTC(2026, 10, 1) + i * 60_000).toISOString());
+    st = updateBookmark(st, id, { lists: [folderIds[i % folderIds.length], folderIds[(i + 1) % folderIds.length]], tags: tagIds.slice(i % 40, i % 40 + 3), memo: '메모'.repeat(memoChars / 2) }, new Date(Date.UTC(2026, 10, 1) + i * 60_000).toISOString());
   }
   st = { ...st, readAt: Object.fromEntries(Array.from({ length: reads }, (_, i) => [`${(i * 2654435761 % 2 ** 32).toString(16).padStart(8, '0')}${(i * 40503).toString(16).padStart(8, '0')}`, new Date(Date.UTC(2026, 9, 1) + i * 137_123).toISOString()])) };
   return Buffer.byteLength(JSON.stringify(toStored(CH, st)));

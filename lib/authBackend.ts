@@ -6,7 +6,8 @@ import { SESSION_KEY, type AuthBackend, type PwFail, type SignInFail } from './a
 import { nameFailOf, type NameBackend } from './displayName';
 
 let clientP: Promise<SupabaseClient> | null = null;
-function client(): Promise<SupabaseClient> {
+/** 같은 연결(세션 공유)을 동기화(lib/syncBackend.ts)도 쓴다 */
+export function client(): Promise<SupabaseClient> {
   if (AUTH_MODE === 'off') return Promise.reject(new Error('auth off'));
   return clientP ??= import('@supabase/supabase-js').then(({ createClient }) => createClient(AUTH_URL, AUTH_KEY, {
     auth: { storageKey: SESSION_KEY, persistSession: true, autoRefreshToken: true, detectSessionInUrl: false },

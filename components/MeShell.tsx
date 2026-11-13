@@ -6,13 +6,17 @@ import { ChannelProvider } from '../lib/channelContext';
 import { CHANNELS, getChannel } from '../lib/channels';
 import { ME_CHANNEL_KEY, meChannels, meHref, meMenu, pickChannel } from '../lib/me';
 import { AUTH_MODE } from '../lib/authConfig';
-import { userStateStore } from '../lib/storage';
+import { activeUserId, storeFor } from '../lib/storage';
 import { summarize } from '../lib/userState';
 import { USER_STATE_EVENT } from '../lib/useSaved';
 import { themeCss } from '../lib/theme';
 import { ChannelIcon } from './channelLook';
 import Footer from './Footer';
 import SiteHeader from './SiteHeader';
+import dynamic from 'next/dynamic';
+
+// 동기화 상태 줄: 로그인을 켠 빌드에서만 불러온다(꺼진 빌드의 번들에는 없음)
+const SyncNote = dynamic(() => import('./SyncNote'), { ssr: false });
 
 const LIST = meChannels(CHANNELS.map(c => c.slug));
 const MENU = meMenu(AUTH_MODE !== 'off');   // 로그인을 켠 빌드만 '계정'
@@ -31,7 +35,8 @@ export default function MeShell({ children }: { children: React.ReactNode }) {
     setSlug(pickChannel(new URLSearchParams(location.search).get('ch'), remembered, LIST));
   }, []);
   const refreshCounts = useCallback(() => {
-    setCounts(Object.fromEntries(LIST.map(s => [s, summarize(userStateStore.load(s, getChannel(s)?.storage?.legacy_keys)).bookmarks])));
+    const store = storeFor(activeUserId());   // 로그인 중이면 계정 사본의 건수
+    setCounts(Object.fromEntries(LIST.map(s => [s, summarize(store.load(s, getChannel(s)?.storage?.legacy_keys)).bookmarks])));
   }, []);
   useEffect(() => {
     refreshCounts();
@@ -55,6 +60,7 @@ export default function MeShell({ children }: { children: React.ReactNode }) {
     <SiteHeader me />
     <main className="shell meShell" id="content">
       <h1 className="meTitle">마이페이지</h1>
+      {AUTH_MODE !== 'off' && <SyncNote channel={cur} />}
       <nav className="meMenu" aria-label="마이페이지 메뉴"><ul>{MENU.map(m => {
         const on = norm(pathname) === m.href;
         return <li key={m.href}><Link href={meHref(m.href, cur)} aria-current={on ? 'page' : undefined} className={on ? 'on' : ''}>{m.label}</Link></li>;

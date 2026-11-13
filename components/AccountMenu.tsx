@@ -7,6 +7,7 @@ import { AUTH_MODE } from '../lib/authConfig';
 import { browserKV, headerSlot, LOGIN_PATH, loginHref, logout } from '../lib/auth';
 import { supabaseBackend } from '../lib/authBackend';
 import { notifyAuth, useAccount } from '../lib/useAccount';
+import { SyncDot } from './SyncNote';
 
 /** 헤더 오른쪽 계정 자리(로그인을 켠 빌드에서만 쓴다. 꺼진 빌드는 기존 마이페이지 버튼 그대로). 무엇을 보일지는 lib/auth.ts headerSlot.
  *  로그인 상태: [표시 이름] 버튼 → 표시 이름·아이디, 마이페이지, 로그아웃. ≤640px(햄버거 안)에서는 버튼 없이 목록으로 펼친다.
@@ -44,7 +45,7 @@ export default function AccountMenu({ meHref, as: Tag = 'li' }: { meHref: string
   };
   return <Tag className="acct" ref={box as never}>
     <button ref={btn} type="button" className="acctBtn" aria-expanded={open} aria-controls="acctPanel" onClick={() => setOpen(o => !o)}>
-      <UserRound size={17} aria-hidden="true" /><span className="acctName">{name}</span>
+      <UserRound size={17} aria-hidden="true" /><span className="acctName">{name}</span><SyncDot />
     </button>
     <div id="acctPanel" className={'acctPanel' + (open ? ' open' : '')}>
       <p className="acctWho"><b>{name}</b>{acc.loginId && <span>{acc.loginId}</span>}</p>

@@ -26,7 +26,7 @@ s = addBookmark(s, art('c', { category: '' }), 'insurance', T(3));
 s = createGroup(s, 'folders', '공부', T(1), 'f_1').state;
 s = createGroup(s, 'tags', 'IFRS17', T(1), 't_1').state;
 s = createGroup(s, 'tags', '킥스', T(1), 't_2').state;
-s = updateBookmark(s, 'a', { folderId: 'f_1', tags: ['t_1'], memo: '보고서에 인용' }, T(4));
+s = updateBookmark(s, 'a', { lists: ['f_1'], tags: ['t_1'], memo: '보고서에 인용' }, T(4));
 s = updateBookmark(s, 'b', { tags: ['t_2'] }, T(4));
 const list = liveBookmarks(s);
 const ctx = { data: s, read: new Set(['b']), now: Date.parse('2026-11-12T00:00:00Z') };
@@ -41,14 +41,15 @@ assert.deepEqual(ids({ period: '30' }), ['a', 'c']);            // 발행일 기
 assert.deepEqual(ids({ read: 'read' }), ['b']);
 assert.deepEqual(ids({ read: 'unread' }), ['a', 'c']);
 assert.deepEqual(ids({ folder: 'f_1' }), ['a']);
-assert.deepEqual(ids({ folder: 'none' }), ['b', 'c']);
+assert.deepEqual(ids({ folder: 'all' }), ['a', 'b', 'c'], "기본 '북마크' = 모든 북마크");
 assert.deepEqual(ids({ tags: ['t_1', 't_2'] }), ['a', 'b']);    // 태그는 하나라도(OR)
 assert.deepEqual(ids({ q: '인용' }), ['a']);                    // 메모 검색
 assert.deepEqual(ids({ q: '제목 B' }), ['b']);                  // 제목 검색(대소문자 무시)
 assert.deepEqual(ids({ category: '손해보험', tags: ['t_2'] }), []);  // 조건끼리는 AND
-// 지운 폴더·태그로는 걸러지지 않는다(폴더 없음으로 보임)
+// 지운 목록·태그로는 걸러지지 않는다(북마크는 기본 '북마크'에 남음)
 const s2 = deleteGroup(deleteGroup(s, 'folders', 'f_1', T(5)), 'tags', 't_1', T(5));
-assert.deepEqual(ids({ folder: 'none' }, { ...ctx, data: s2 }), ['a', 'b', 'c']);
+assert.deepEqual(ids({ folder: 'f_1' }, { ...ctx, data: s2 }), []);
+assert.deepEqual(ids({ folder: 'all' }, { ...ctx, data: s2 }), ['a', 'b', 'c']);
 assert.deepEqual(ids({ tags: ['t_1'] }, { ...ctx, data: s2 }), []);
 // 건수용: 한 조건만 빼고
 assert.equal(matches(list.find(b => b.id === 'b')!, { ...EMPTY_FILTERS, category: '손해보험' }, ctx, 'category'), true);

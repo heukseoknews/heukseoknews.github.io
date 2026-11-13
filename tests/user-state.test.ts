@@ -24,7 +24,7 @@ assert.deepEqual(fromStored('garbage', 'insurance'), EMPTY_STATE);
 // v1 북마크(기사 객체 전체) → 스냅샷 + 빈 메타. 저장 시각은 수집 시각, 수정 시각은 UNKNOWN_TIME(기기마다 같은 값)
 const a1 = bm(old, 'a');
 assert.equal(a1.title, 'ta'); assert.equal(a1.url, 'https://x/a'); assert.equal(a1.channel, 'insurance');
-assert.deepEqual(a1.keywords, ['a']); assert.deepEqual(a1.tags, []); assert.equal(a1.memo, ''); assert.equal(a1.folderId, undefined);
+assert.deepEqual(a1.keywords, ['a']); assert.deepEqual(a1.tags, []); assert.equal(a1.memo, ''); assert.deepEqual(a1.lists, []);
 assert.equal(a1.savedAt, '2026-11-01T01:00:00+00:00'); assert.equal(a1.updatedAt, UNKNOWN_TIME); assert.equal(a1.missing, undefined);
 assert.equal(a1.score, 3);
 // 기사 정보가 없는 북마크(id 만, 제목 없음, 이상한 값)도 버리지 않고 '정보 없음'으로 보존
@@ -41,7 +41,7 @@ assert.equal(liveBookmarks(fromStored({ schemaVersion: 1, bookmarks: v1Many }, '
 let st: UserState = { ...EMPTY_STATE, lastConfirmed: '2026-11-02T00:00:00.000Z', readAt: { a: '2026-11-01T02:00:00.000Z' }, companies: ['삼성화재'] };
 st = addBookmark(st, art('a'), 'insurance', T(3));
 st = { ...st, folders: { f_1: { id: 'f_1', name: '공부', createdAt: T(3), updatedAt: T(3) } }, tags: { t_1: { id: 't_1', name: 'IFRS17', createdAt: T(3), updatedAt: T(3) } } };
-st = { ...st, bookmarks: { ...st.bookmarks, a: { ...bm(st, 'a'), folderId: 'f_1', tags: ['t_1'], memo: '다시 읽기' }, z: { id: 'z', channel: 'insurance', savedAt: T(1), updatedAt: T(2), deletedAt: T(2) } } };
+st = { ...st, bookmarks: { ...st.bookmarks, a: { ...bm(st, 'a'), lists: ['f_1'], tags: ['t_1'], memo: '다시 읽기' }, z: { id: 'z', channel: 'insurance', savedAt: T(1), updatedAt: T(2), deletedAt: T(2) } } };
 const file = JSON.parse(JSON.stringify(toExportFile('insurance', st, new Date('2026-11-11T00:00:00Z'))));
 assert.equal(file.format, FORMAT); assert.equal(file.schemaVersion, 2); assert.equal(file.channel, 'insurance'); assert.equal(file.exported_at, '2026-11-11T00:00:00.000Z');
 assert.equal(file.bookmarks.z, undefined);  // 삭제 표시는 내보내지 않음

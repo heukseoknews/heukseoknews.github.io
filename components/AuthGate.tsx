@@ -5,6 +5,7 @@ import { AUTH_MODE } from '../lib/authConfig';
 import { browserKV, changeHref, decideGate, isAuthPath, loginHref, readAccount, refreshAccount, sessionUser } from '../lib/auth';
 import { supabaseBackend } from '../lib/authBackend';
 import { notifyAuth } from '../lib/useAccount';
+import ClaimPrompt from './ClaimPrompt';
 
 const here = () => location.pathname + location.search + location.hash;
 const go = (to: string) => { document.documentElement.setAttribute('data-auth', 'leaving'); location.replace(to); };
@@ -32,5 +33,5 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     });
     return () => { alive = false; off(); };
   }, [path]);
-  return <>{children}</>;
+  return <>{children}<ClaimPrompt /></>;   // ClaimPrompt: 처음 로그인하면 이 기기 북마크를 합칠지 묻기
 }

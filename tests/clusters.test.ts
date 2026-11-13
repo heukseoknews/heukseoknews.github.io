@@ -71,7 +71,8 @@ assert.deepEqual(wk.map(a => a.id), ['lead', 'solo']);
 // ---------- 북마크 회귀: 기사 단위 스냅샷, ★은 화면과 같은 값, 스키마 v2 그대로 ----------
 assert.equal(snapshotOf(m1)!.score, 5);                  // score_v2 반영
 assert.equal(snapshotOf(art('f', { score: 3 }))!.score, 3);
-assert.ok(!('cluster_id' in snapshotOf(L)!));             // 품질 필드는 스냅샷에 넣지 않음
+assert.equal(snapshotOf(L)!.cluster_id, L.cluster_id);   // 묶음 번호는 참고로만 저장(기준 키는 기사 id, 2026-11-13)
+for (const k of ['cluster_size', 'cluster_sources', 'cluster_lead']) assert.ok(!(k in snapshotOf(L)!), `${k}: 다른 묶음 필드는 넣지 않음`);
 let st = addBookmark(EMPTY_STATE, m1, 'insurance', T(12));
 st = addBookmark(st, m2, 'insurance', T(12));            // 같은 묶음의 다른 기사도 각각
 assert.deepEqual(Object.keys(st.bookmarks).sort(), ['m1', 'm2']);

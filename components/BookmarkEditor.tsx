@@ -1,13 +1,14 @@
 'use client';
 import { useEffect, useId, useRef, useState } from 'react';
 import { Plus, X } from 'lucide-react';
-import { type Bookmark, type BookmarkPatch, type Group, type GroupKind, LIMITS } from '../lib/bookmarks';
+import { type Bookmark, type BookmarkPatch, DEFAULT_LIST_NAME, type Group, type GroupKind, LIMITS } from '../lib/bookmarks';
 
 type Props = {
   bookmark: Bookmark;
+  /** 직접 만든 목록(기본 '북마크'는 항상 담겨 있어 고르지 않는다) */
   folders: Group[];
   tags: Group[];
-  /** 폴더·태그 만들기(실패하면 Error 를 던진다). 새 id 를 돌려준다. */
+  /** 목록·태그 만들기(실패하면 Error 를 던진다). 새 id 를 돌려준다. */
   onCreate: (kind: GroupKind, name: string) => string;
   onSave: (patch: BookmarkPatch) => void;
   onClose: () => void;
@@ -15,11 +16,11 @@ type Props = {
 
 const len = (s: string) => [...s].length;
 
-/** 북마크 정리 창: 폴더 하나, 태그 여러 개, 메모(200자). 모달 dialog(포커스 가둠·Esc 닫기는 브라우저 기본). 저장을 눌러야 반영된다. */
+/** 북마크 정리 창: 담을 목록(여러 개, 기본 '북마크'는 항상), 태그 여러 개, 메모(200자). 모달 dialog(포커스 가둠·Esc 닫기는 브라우저 기본). 저장을 눌러야 반영된다. */
 export default function BookmarkEditor({ bookmark, folders, tags, onCreate, onSave, onClose }: Props) {
   const ref = useRef<HTMLDialogElement>(null);
   const uid = useId();
-  const [folderId, setFolderId] = useState(bookmark.folderId && folders.some(f => f.id === bookmark.folderId) ? bookmark.folderId : '');
+  const [lists, setLists] = useState<string[]>(bookmark.lists.filter(l => folders.some(f => f.id === l)));
   const [picked, setPicked] = useState<string[]>(bookmark.tags.filter(t => tags.some(g => g.id === t)));
   const [memo, setMemo] = useState(bookmark.memo);
   const [newFolder, setNewFolder] = useState('');
@@ -35,7 +36,8 @@ export default function BookmarkEditor({ bookmark, folders, tags, onCreate, onSa
   const create = (kind: GroupKind, name: string, done: (id: string) => void) => {
     try { done(onCreate(kind, name)); setError(''); } catch (e) { setError(e instanceof Error ? e.message : String(e)); }
   };
-  const addFolder = () => create('folders', newFolder, id => { setFolderId(id); setNewFolder(''); });
+  const addFolder = () => create('folders', newFolder, id => { setLists(p => [...p, id]); setNewFolder(''); });
+  const toggleList = (id: string) => setLists(p => p.includes(id) ? p.filter(x => x !== id) : [...p, id]);
   const addTag = () => {
     if (picked.length >= LIMITS.tagsPerBookmark) { setError(`태그는 북마크 하나에 ${LIMITS.tagsPerBookmark}개까지입니다.`); return; }
     create('tags', newTag, id => { setPicked(p => [...p, id]); setNewTag(''); });
@@ -45,7 +47,8 @@ export default function BookmarkEditor({ bookmark, folders, tags, onCreate, onSa
     if (picked.length >= LIMITS.tagsPerBookmark) { setError(`태그는 북마크 하나에 ${LIMITS.tagsPerBookmark}개까지입니다.`); return; }
     setPicked([...picked, id]);
   };
-  const save = () => { onSave({ folderId: folderId || null, tags: picked, memo }); onClose(); };
+  // 목록은 원래 순서를 지켜 저장(바뀐 것이 없으면 수정 시각도 그대로)
+  const save = () => { onSave({ lists: [...bookmark.lists.filter(l => lists.includes(l)), ...lists.filter(l => !bookmark.lists.includes(l))], tags: picked, memo }); onClose(); };
   const enter = (fn: () => void) => (e: React.KeyboardEvent) => { if (e.key === 'Enter' && !e.nativeEvent.isComposing) { e.preventDefault(); fn(); } };
 
   return <dialog ref={ref} className="bmDialog" aria-labelledby={`${uid}-t`} onClose={onClose} onCancel={onClose}>
@@ -57,13 +60,14 @@ export default function BookmarkEditor({ bookmark, folders, tags, onCreate, onSa
       <p className="bmDialogTitle">{bookmark.missing ? '기사 정보를 찾을 수 없음' : bookmark.title}</p>
 
       <fieldset className="bmField">
-        <legend>폴더</legend>
-        <select aria-label="폴더" value={folderId} onChange={e => setFolderId(e.target.value)}>
-          <option value="">폴더 없음</option>
-          {folders.map(f => <option key={f.id} value={f.id}>{f.name}</option>)}
-        </select>
+        <legend>목록</legend>
+        <div className="bmTags">
+          <label className="bmTag on fixed"><input type="checkbox" checked disabled />{DEFAULT_LIST_NAME}</label>
+          {folders.map(f => <label key={f.id} className={'bmTag' + (lists.includes(f.id) ? ' on' : '')}>
+            <input type="checkbox" checked={lists.includes(f.id)} onChange={() => toggleList(f.id)} />{f.name}</label>)}
+        </div>
         {folders.length < LIMITS.folders && <div className="bmNew">
-          <input type="text" aria-label="새 폴더 이름" placeholder="새 폴더" maxLength={LIMITS.groupName} value={newFolder} onChange={e => setNewFolder(e.target.value)} onKeyDown={enter(addFolder)} />
+          <input type="text" aria-label="새 목록 이름" placeholder="새 목록" maxLength={LIMITS.groupName} value={newFolder} onChange={e => setNewFolder(e.target.value)} onKeyDown={enter(addFolder)} />
           <button type="button" className="readToggle" disabled={!newFolder.trim()} onClick={addFolder}><Plus size={14} aria-hidden="true" /> 만들기</button>
         </div>}
       </fieldset>
