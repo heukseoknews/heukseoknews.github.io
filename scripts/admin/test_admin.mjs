@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync, chmodSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { ApiError, REPO_ROOT, insideRepo, loadSecretKey, makeApi, makeOut, makeRedactor, parseCsv, parseEnvText, planCreate, resolveUrl, rowProblems, toEmail } from './lib.mjs';
+import { ApiError, REPO_ROOT, fmtKst, insideRepo, loadSecretKey, makeApi, makeOut, makeRedactor, parseCsv, parseEnvText, planCreate, resolveUrl, rowProblems, toEmail } from './lib.mjs';
 import { cmdCheck, cmdCreate, cmdList, cmdResetPassword, cmdSetDisabled } from './commands.mjs';
 import { main as usersMain } from './users.mjs';
 import { main as verifyMain, runVerify, STEPS, TEST_IDS } from './verify.mjs';
@@ -197,6 +197,22 @@ await t('list-disable-check', async () => {
   assert.equal(r2[0].ok, false); assert.ok(cap2.out.lines[0].includes('HEUKSEOK_ADMIN_BEARER=1'));
   const leaky = { select: async () => [] };
   assert.equal((await cmdCheck({ api: S.api, anonApi: leaky, out })).filter(r => !r.ok).length, 3, 'anon 이 읽히면 실패로 보고');
+});
+
+// 7-1) 시각 표시: 서버 UTC → 한국 시간(실행 환경 시간대와 무관), 없으면 '—'
+await t('kst', async () => {
+  assert.equal(fmtKst('2026-11-13T04:23:00Z'), '2026-11-13 13:23');
+  assert.equal(fmtKst('2026-11-13T04:23:45.123456+00:00'), '2026-11-13 13:23');   // Supabase 형식(마이크로초·+00:00)
+  assert.equal(fmtKst('2026-11-13T15:30:00Z'), '2026-11-14 00:30');               // 날짜 넘어감
+  assert.equal(fmtKst('2026-12-31T15:00:00Z'), '2027-01-01 00:00');               // 해 넘어감
+  for (const v of [null, undefined, '']) assert.equal(fmtKst(v), '—');
+  assert.equal(fmtKst('not-a-date'), '?');
+  const S = fakeServer([['kim', '김철수']]);
+  S.users[0].last_sign_in_at = '2026-11-13T04:23:00Z';
+  const { out } = capture();
+  await cmdList({ api: S.api, out });
+  assert.ok(out.lines.some(l => l.endsWith('마지막 로그인(한국 시간)')), out.lines.join('\n'));
+  assert.ok(out.lines.some(l => l.startsWith('kim | ') && l.endsWith('| 2026-11-13 13:23')), out.lines.join('\n'));
 });
 
 // 8) users.mjs main: 저장소 안 CSV 거절, 오류 출력에 키 없음(네트워크 호출 전에 끝남)

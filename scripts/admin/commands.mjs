@@ -1,8 +1,7 @@
 // 계정 관리 명령(create · reset-password · list · disable · enable · check). 모두 기본은 모의 실행이고 apply=true 일 때만 바꾼다.
 // api 는 lib.makeApi() 와 같은 모양(테스트에서는 가짜 객체). 출력은 out() 만 쓴다(가림 거침). 학번·비밀번호·키는 출력하지 않는다.
-import { accounts, fixNewProfile, planCreate, toEmail, ApiError } from './lib.mjs';
+import { accounts, fixNewProfile, fmtKst, planCreate, toEmail, ApiError } from './lib.mjs';
 
-const fmtDate = s => (s ? String(s).slice(0, 16).replace('T', ' ') : '—');
 const errText = e => (e instanceof ApiError ? e.message : '오류');   // 원문 오류 객체는 출력하지 않는다
 
 function reportPlan(out, plan) {
@@ -82,9 +81,9 @@ export async function cmdResetPassword({ api, out, loginId, rows, apply = false 
 export async function cmdList({ api, out }) {
   const list = await accounts(api);
   out(`계정 ${list.length}개`);
-  out('아이디 | 표시 이름 | 관리자 | 비밀번호 | 상태 | 마지막 로그인');
+  out('아이디 | 표시 이름 | 관리자 | 비밀번호 | 상태 | 마지막 로그인(한국 시간)');
   for (const a of list) {
-    out(`${a.login_id || '(프로필 없음)'} | ${a.display_name ?? '(미정)'} | ${a.is_admin ? '예' : '-'} | ${a.must_change === null ? '?' : a.must_change ? '변경 필요' : '변경함'} | ${a.disabled ? '사용 중지' : '사용 중'} | ${fmtDate(a.last_sign_in_at)}`);
+    out(`${a.login_id || '(프로필 없음)'} | ${a.display_name ?? '(미정)'} | ${a.is_admin ? '예' : '-'} | ${a.must_change === null ? '?' : a.must_change ? '변경 필요' : '변경함'} | ${a.disabled ? '사용 중지' : '사용 중'} | ${fmtKst(a.last_sign_in_at)}`);
   }
   return list;
 }

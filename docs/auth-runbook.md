@@ -181,7 +181,7 @@ node scripts/admin/verify.mjs --apply    # 실제 검증
 ```sh
 node scripts/admin/users.mjs create            # '대상 N건' 과 각 줄을 확인
 node scripts/admin/users.mjs create --apply
-node scripts/admin/users.mjs list
+node scripts/admin/users.mjs list              # 마지막 로그인은 한국 시간(YYYY-MM-DD HH:mm), 없으면 '—'
 ```
 
 3. 관리자 표시(지금은 화면·권한에 쓰지 않는 표시용, 나중에 댓글 관리 등에 씀): SQL Editor 에서
@@ -225,7 +225,7 @@ node scripts/admin/users.mjs create
    - `건너뜀`: 이미 있는 아이디(다시 실행해도 안전)
    - `검증 실패`: 그 줄만 만들지 않는다(줄 번호와 이유가 나온다 — 아이디 형식, 표시 이름 중복·길이, 학번 8자 미만 등). 고친 뒤 다시 실행한다.
 3. 반영: `node scripts/admin/users.mjs create --apply` → 마지막 줄 `끝: 만듦 N, 건너뜀 N, 검증 실패 N, 실패 N`.
-4. 확인: `node scripts/admin/users.mjs list` — 모두 '변경 필요'·'사용 중'.
+4. 확인: `node scripts/admin/users.mjs list` — 모두 '변경 필요'·'사용 중'. 마지막 로그인 열은 한국 시간이다(예: 서버 `04:23Z` → `13:23`).
 5. 전달: 각자에게 **아이디만** 알려 주고 "초기 비밀번호는 본인 학번, 처음 로그인하면 바로 새 비밀번호로 바꿔야 한다"고 안내한다.
 6. 학번은 같은 반 사람이 알 수 있으므로 **로그인 화면이 배포된 뒤에 만들고 바로 첫 로그인을 하도록** 한다. 며칠 뒤 `list` 에서 '변경 필요'가 남은 계정은 재촉하거나 `disable` 한다.
 

@@ -17,6 +17,18 @@ export const DEFAULT_CSV = join(DEFAULT_DIR, 'accounts.csv');
 export const toEmail = id => `${id}@${EMAIL_DOMAIN}`;
 export const loginOf = email => (email || '').toLowerCase().endsWith('@' + EMAIL_DOMAIN) ? email.toLowerCase().slice(0, -(EMAIL_DOMAIN.length + 1)) : null;
 
+// ───────── 시각 표시 ─────────
+// 서버 시각(UTC ISO)을 한국 시간 'YYYY-MM-DD HH:mm' 으로 보여 준다. 표시 전용이며 저장·전송 값은 바꾸지 않는다.
+// 맥(실행 환경)의 시간대 설정과 무관하게 항상 Asia/Seoul 로 바꾼다.
+const KST = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+export function fmtKst(s) {
+  if (!s) return '—';
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return '?';
+  const p = Object.fromEntries(KST.formatToParts(d).map(x => [x.type, x.value]));
+  return `${p.year}-${p.month}-${p.day} ${p.hour}:${p.minute}`;
+}
+
 // ───────── 출력 가림 ─────────
 /** 등록한 비밀 문자열과 비밀처럼 보이는 모양(sb_secret_…, JWT)을 [가림] 으로 바꾼다. */
 export function makeRedactor() {
