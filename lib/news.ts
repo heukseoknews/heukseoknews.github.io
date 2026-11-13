@@ -27,7 +27,6 @@ export const loadIndex = (channel: string) => getJson<DataIndex>(channel, 'index
 export const loadMonth = (channel: string, m: string) => getJson<Article[]>(channel, `${m}.json`);
 
 export function isSafeUrl(u: string) { return /^https?:\/\//i.test(u); }
-export function isGoogleDiscovery(a: Article) { return /(^|\.)news\.google\.com\//.test(a.url.replace(/^https?:\/\//, '')); }
 
 export type SourceStatus = {
   ok: boolean; last_run_at: string; last_success_at: string | null; consecutive_failures: number;

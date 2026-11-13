@@ -1,5 +1,6 @@
-/** 사용자 상태 저장소 어댑터. 지금은 이 브라우저의 localStorage 만 쓴다.
- *  나중에 로그인·원격 저장소를 붙일 때는 UserStateStore 를 구현한 다른 어댑터로 userStateStore 를 바꾸면 된다(docs/auth-plan.md 5장). */
+/** 사용자 상태 저장소 어댑터. 모두 이 브라우저의 localStorage 에 저장한다.
+ *  로그인 안 함: localStorageStore, 로그인 중: 계정별 기기 사본 accountStore(storeFor 가 고른다).
+ *  계정 사본과 서버의 동기화는 lib/sync*.ts 가 맡는다(docs/auth-plan.md 5장). */
 import { EMPTY_STATE, type LegacyKeys, type UserState, fromStored, laterIso, needsDismissMigration, storageKey, toStored } from './userState.ts';
 import { type KV, browserKV, readAccount, sessionUser } from './auth.ts';
 import { AUTH_MODE } from './authConfig.ts';
@@ -54,8 +55,6 @@ export const localStorageStore: UserStateStore = {
   save(channel, state) { return saveKeepingConfirmed(storageKey(channel), channel, state); },
   key: channel => storageKey(channel),
 };
-
-export const userStateStore: UserStateStore = localStorageStore;
 
 // ───────── 로그인 중: 계정별 기기 사본(docs/auth-plan.md 5.2) ─────────
 // 화면은 로그인 중에도 이 기기의 사본을 동기적으로 읽고 쓴다(클릭 즉시 반영, 서버가 멈춰도 동작). 서버와 맞추기는 lib/sync.ts 가 뒤에서.
