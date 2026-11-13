@@ -11,8 +11,9 @@ import { Article, isRelevant } from '../../lib/news';
 import type { TabId } from '../../lib/channels';
 import { useChannel } from '../../lib/channelContext';
 import { facetOptions, matchesFacet } from '../../lib/facets';
-import { type PanelFilters, badgeCount, dateChip, dateState, defaultDate, onTabChange, panelChips, removeChip } from '../../lib/filterState';
+import { type PanelFilters, badgeCount, dateChip, dateChipLabel, dateState, defaultDate, onTabChange, panelChips, removeChip } from '../../lib/filterState';
 import { addDays, countByDate, dayHeading, kstDate, shiftMonth, todayKst } from '../../lib/dates';
+import { dataBounds, monthsBetween, nextOlder } from '../../lib/datePick';
 import { sourceOptions } from '../../lib/sources';
 import { isNewArticle, isPendingNew, visibleInNewTab } from '../../lib/newsFilter';
 import { useNews } from '../../lib/useNews';
@@ -35,11 +36,11 @@ export default function Home() {
   const [includeLow, setIncludeLow] = useState(false);       // 관련도 낮은 기사 포함(기본 꺼짐, 탭을 옮겨도 유지)
   const [sort, setSort] = useState<'latest' | 'important'>('latest');
   const [page, setPage] = useState(1);
-  // 날짜 필터는 탭별로 보관한다. 전체 뉴스 탭만 처음에 '오늘'(KST)이 눌린 상태이고, '해제'한 선택은 새로고침 전까지 유지된다.
+  // 기간은 탭별로 보관한다(다른 필터와 같이 화면 상태 — 새로고침하면 기본으로). 기본은 모든 탭이 '기간 제한 없음'.
   const [dateFilters, setDateFilters] = useState<Partial<Record<Tab, DateFilter>>>({});
   const today = todayKst();
   const stored = dateFilters[tab];
-  const dateFilter: DateFilter = stored !== undefined ? stored : defaultDate(tab, today);  // '전체 뉴스' 기본은 최근 3일
+  const dateFilter: DateFilter = stored !== undefined ? stored : defaultDate(tab, today);  // 기본: 기간 제한 없음(null)
   const setDateFilter = (f: DateFilter) => setDateFilters(s => ({ ...s, [tab]: f }));
   const [sources, setSources] = useState<string[]>([]);  // 선택한 언론사(비면 전체) — 탭 이동 시 초기화
   const [orgs, setOrgs] = useState<string[]>([]);          // 선택한 유관기관(비면 전체) — 탭 이동 시 초기화, 저장하지 않음
@@ -57,8 +58,13 @@ export default function Home() {
   // 기사 정보가 없는 옛 북마크(v1 이전분)는 기사 데이터를 불러오면 채운다. 채우기 전에는 북마크 탭에서 빼고 마이페이지에서만 보인다
   const bookmarkArticles = useMemo(() => bookmarkList.filter(b => !b.missing).map(toArticle), [bookmarkList]);
   const companies = saved.companies;  // 선택한 보험사(비면 전체) — 사용자 상태에 저장(새로고침 후에도 유지)
-  // 달력 월의 KST 날짜는 UTC 월 샤드 경계에 걸칠 수 있어 앞뒤 월도 함께 불러온다
-  const { index, all, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : [shiftMonth(calMonth, -1), calMonth, shiftMonth(calMonth, 1)]);
+  // 불러올 월: 최근 2개월(useNews 기본) + 달력이 보는 달과 앞뒤 달(KST/UTC 월 경계) + 고른 기간에 걸친 달 + '기간 제한 없음'일 때 과거 달을 최근부터 순서대로(older 개).
+  // 검색은 전체 월. 과거 달은 합계 3MB 안이면 자동으로, 넘으면 목록 끝 페이지에 닿을 때 한 달씩(lib/datePick.ts nextOlder).
+  const [older, setOlder] = useState(0);
+  const [indexMonths, setIndexMonths] = useState<{ month: string; bytes: number }[]>([]);
+  const extraMonths = [shiftMonth(calMonth, -1), calMonth, shiftMonth(calMonth, 1), ...(dateFilter ? monthsBetween(dateFilter) : []), ...indexMonths.slice(2, 2 + older).map(m => m.month)];
+  const { index, all, loaded, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : extraMonths);
+  useEffect(() => { if (index) setIndexMonths(index.months); }, [index]);
   const baseline = saved.lastConfirmed;
   useEffect(() => { if (all.length && bookmarkList.some(b => b.missing)) update(s => fillMissing(s, all)); }, [all, bookmarkList, update]);
   const [undo, setUndo] = useState<{ ids: string[]; n: number } | null>(null); // 치우기 직후 5초간 '되돌리기'(마지막 한 번만)
@@ -152,6 +158,14 @@ export default function Home() {
   const newCount = useMemo(() => { const seen = new Set<string>(); for (const a of relevantAll) if (isPendingNew(a, baseline, dismissedSet)) seen.add(a.cluster_id ?? a.id); return seen.size; }, [relevantAll, baseline, dismissedSet]);
   const lastPage = Math.max(1, Math.ceil(items.length / PAGE));
   const curPage = Math.min(page, lastPage);  // 치운 기사가 빠져 페이지 수가 줄어도 범위를 벗어나지 않게
+  // '전체 뉴스'·기간 제한 없음: 과거 달을 한 달씩 이어서 불러온다(앞 달을 다 받은 뒤 다음 달)
+  useEffect(() => {
+    if (tab !== 'all' || dateFilter || search.trim() || loading || loadingMore || !indexMonths.length) return;
+    const n = nextOlder(indexMonths, older, curPage >= lastPage);
+    if (n !== older) setOlder(n);
+  }, [tab, dateFilter, search, loading, loadingMore, indexMonths, older, curPage, lastPage]);
+  // 달력: 데이터가 있는 날짜 범위(첫 기사~마지막 기사) 밖은 누를 수 없다
+  const bounds = useMemo(() => dataBounds(all, indexMonths.map(m => m.month), loaded, today), [all, indexMonths, loaded, today]);
   const pageItems = items.slice((curPage - 1) * PAGE, curPage * PAGE);
   const listReady = ready && (tab === 'bookmarks' || !loading);
   const markDone = () => { update(s => ({ ...s, lastConfirmed: new Date().toISOString() })); setPage(1); };
@@ -165,7 +179,7 @@ export default function Home() {
     sources.length > 0 && { key: 'sources', label: `${L.sources} ${sources.length}곳`, clear: () => setSources([]) },
     companies.length > 0 && { key: 'companies', label: `${L.companies} ${companies.length}곳`, clear: () => setCompanies([]) },
     orgs.length > 0 && { key: 'orgs', label: `${L.orgs} ${orgs.length}곳`, clear: () => setOrgs([]) },
-    dState !== 'default' && { key: 'date', label: `날짜: ${dateFilter ? (dateFilter.from === dateFilter.to ? dayHeading(dateFilter.from) : `${dayHeading(dateFilter.from)} ~ ${dayHeading(dateFilter.to)}`) : '전체'}`, clear: () => setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }) },
+    dState !== 'default' && dateFilter && { key: 'date', label: `기간: ${dateChipLabel(dateFilter, today)}`, clear: () => setDateFilter(null) },
     unreadOnly && { key: 'unread', label: '안 읽은 것만', clear: () => setUnreadOnly(false) },
     includeLow && tab !== 'bookmarks' && { key: 'low', label: '관련도 낮은 기사 포함', clear: () => setIncludeLow(false) },
     includeDismissed && tab === 'new' && { key: 'dismissed', label: '치운 기사 포함', clear: () => setIncludeDismissed(false) },
@@ -173,7 +187,7 @@ export default function Home() {
   const activeCount = active.length;
   const filtering = active.length > 0 || !!dateFilter;  // 필터·검색·날짜가 걸려 있으면 펼친 묶음에서 맞은 기사를 구분해 보인다
   // 빈 화면: 필터·검색이 있으면 한 줄 + [필터 초기화], 없으면 원인별 한 줄(lib/emptyState.ts)
-  // 기본 날짜(최근 3일)만이면 '최근 3일간 올라온 기사가 없습니다' + [전체 기간 보기], '오늘'을 직접 고르면 + [어제 보기]
+  // 기본은 기간 제한 없음이라 숨은 날짜 조건이 없다. '오늘'을 직접 고르고 0건이면 + [어제 보기]
   const empty = emptyKind({ filtered: active.some(f => f.key !== 'date'), date: dState, tab, channelArticles: all.length });
   // 필터 패널(언론사·보험사·유관기관·체크 2개, 새 뉴스 탭은 '치운 기사 포함'까지 3개): 켜진 것은 칩으로, 칩에서 바로 해제(lib/filterState.ts)
   const panel: PanelFilters = { sources, companies, orgs, unreadOnly, includeLow, includeDismissed };
@@ -183,8 +197,8 @@ export default function Home() {
     setPage(1);
   };
   const dChip = dateChip(dateFilter, today, tab);
-  const chips = [...(dChip ? [dChip] : []), ...panelChips(panel, L, tab)];  // 날짜 칩 맨 앞(기본 '최근 3일'도 보임, 전체 기간을 고르면 '전체 기간' 칩)
-  const filterBadge = badgeCount(chips, dState);  // 필터 버튼 배지: 기본 날짜는 세지 않음
+  const chips = [...(dChip ? [dChip] : []), ...panelChips(panel, L, tab)];  // 기간 칩 맨 앞(기간을 골랐을 때만)
+  const filterBadge = badgeCount(chips, dState);  // 필터 버튼 배지: 기간을 고르면 1
   // Esc: 패널 안 드롭다운이 열려 있으면 드롭다운만(MultiFilter 가 닫음), 아니면 패널을 닫고 [필터] 버튼으로 포커스
   const onFilterKey = (e: React.KeyboardEvent) => {
     if (e.key !== 'Escape' || !filterOpen || document.querySelector('#filterPanel .sourcePanel')) return;
@@ -220,10 +234,10 @@ export default function Home() {
       <button type="button" className="filterReset" disabled={!activeCount} onClick={resetFilters}><RotateCcw size={14} aria-hidden="true" /> 필터 초기화{activeCount > 0 && <b>{activeCount}</b>}</button>
     </div>
     {chips.length > 0 && <div className="filterChips" role="group" aria-label="켜진 필터">
-      {chips.map(c => <span key={c.key} className="chip">{c.kindLabel && <span className="chipKind">{c.kindLabel}</span>}{c.label}<button type="button" aria-label={`${c.kindLabel ? c.kindLabel + ' ' : ''}${c.label} 해제`} onClick={() => { if (c.kind === 'date') { if (dateFilter) setDateFilter(null); else setDateFilters(s => { const n = { ...s }; delete n[tab]; return n; }); setPage(1); } else setPanel(removeChip(panel, c)); }}><X size={13} aria-hidden="true" /></button></span>)}
-      {activeCount > 0 && <button type="button" className="chipClear" onClick={resetFilters}>필터 초기화</button>}  {/* 기본 날짜 칩만 있으면 되돌릴 것이 없다 */}
+      {chips.map(c => <span key={c.key} className="chip">{c.kindLabel && <span className="chipKind">{c.kindLabel}</span>}{c.label}<button type="button" aria-label={`${c.kindLabel ? c.kindLabel + ' ' : ''}${c.label} 해제`} onClick={() => { if (c.kind === 'date') { setDateFilter(null); setPage(1); } else setPanel(removeChip(panel, c)); }}><X size={13} aria-hidden="true" /></button></span>)}
+      {activeCount > 0 && <button type="button" className="chipClear" onClick={resetFilters}>필터 초기화</button>}
     </div>}
-    <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} />
+    <DateBar filter={dateFilter} onChange={f => { setDateFilter(f); setPage(1); }} counts={dayCounts} month={calMonth} onMonth={setCalMonth} bounds={bounds} />
     {/* 목록 머리: 탭 이름·건수, 새 뉴스 탭은 마지막 확인·모두 확인(치운 기사는 필터의 '치운 기사 포함'). 불러오기 전에는 건수·확인 정보를 비워 둔다(정적 HTML 에 0건이 찍히지 않게). */}
     <div className="listHead">
       <h2>{ch.tabs[tab]}{listReady && <small>{countLabel(items.length, rows.length)}</small>}</h2>
@@ -237,7 +251,6 @@ export default function Home() {
     <section className="articles">{!ready || (loading && tab !== 'bookmarks') ? <div className="empty">뉴스를 불러오는 중입니다…</div> : pageItems.length === 0
       ? <div className="empty" data-empty={empty}>{empty === 'noBookmarks' ? <Bookmark size={27} aria-hidden="true" /> : <Newspaper size={27} aria-hidden="true" />}<b>{EMPTY_TEXT[empty]}</b>
           {empty === 'filtered' && <button type="button" className="confirm" onClick={resetFilters}>필터 초기화</button>}
-          {empty === 'noRecent' && <button type="button" className="confirm" onClick={() => { setDateFilter(null); setPage(1); }}>전체 기간 보기</button>}
           {empty === 'noToday' && <button type="button" className="confirm" onClick={() => { const y = addDays(today, -1); setDateFilter({ from: y, to: y }); setCalMonth(y.slice(0, 7)); setPage(1); }}>어제 보기</button>}</div>
       : pageItems.map((it, i) => { const a = it.lead; const d = kstDate(a.published_at); const head = sort === 'latest' && (i === 0 || d !== kstDate(pageItems[i - 1].lead.published_at));
         const group: CardGroup | undefined = it.clusterId ? { others: it.others, size: it.size, sources: it.sources, matched: it.matched, showMatch: filtering && it.matched.size < it.others.length + 1,  /* 모두 맞으면 구분할 필요 없음 */ open: openGroups.has(it.clusterId), onToggle: () => toggleGroup(it.clusterId!), isBookmarked, isRead: id => readSet.has(id) } : undefined;

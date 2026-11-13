@@ -12,9 +12,9 @@ assert.equal(k({ channelArticles: 0 }), 'noData');                 // 새 채널
 assert.equal(k({ tab: 'new', channelArticles: 0 }), 'noData');
 assert.equal(k({ tab: 'new' }), 'noNew');
 assert.equal(k({ tab: 'bookmarks', channelArticles: 0 }), 'noBookmarks');  // 북마크는 데이터와 무관
-// '전체 뉴스' 날짜: 기본(최근 3일)만 → 최근 3일 문구 + [전체 기간 보기] / 직접 고른 날짜 → 조건에 맞는 기사 없음 / '오늘'을 직접 고름 → 오늘 문구 + [어제 보기]
-assert.equal(k({ tab: 'all' }), 'noRecent');
-assert.equal(EMPTY_TEXT.noRecent, '최근 3일간 올라온 기사가 없습니다');
+// '전체 뉴스' 기간: 기본은 제한 없음 → 숨은 날짜 조건이 없어 0건이면 데이터가 없는 것 / 직접 고른 기간 → 조건에 맞는 기사 없음 / '오늘'을 직접 고름 → 오늘 문구 + [어제 보기]
+assert.equal(k({ tab: 'all' }), 'none');
+assert.ok(!('noRecent' in EMPTY_TEXT), '최근 3일 기본 문구 없음');
 assert.equal(k({ tab: 'all', date: 'changed' }), 'filtered');
 assert.equal(k({ tab: 'all', date: 'today' }), 'noToday');
 assert.equal(EMPTY_TEXT.noToday, '오늘 올라온 기사가 아직 없습니다');
@@ -30,7 +30,7 @@ assert.equal(EMPTY_TEXT.noBookmarks, '북마크한 기사가 없습니다');
 const page = readFileSync('app/[channel]/page.tsx', 'utf8');
 for (const t of ['해제해도', '`해제하면 $', '하나씩 해제', 'emptyFilters', 'countWithout', 'countBase']) assert.ok(!page.includes(t), `page: ${t} 없음`);
 assert.ok(page.includes("{empty === 'filtered' && <button type=\"button\" className=\"confirm\" onClick={resetFilters}>필터 초기화</button>}"));
-assert.ok(page.includes("{empty === 'noRecent' && <button type=\"button\" className=\"confirm\" onClick={() => { setDateFilter(null); setPage(1); }}>전체 기간 보기</button>}"));
+assert.ok(!page.includes('noRecent') && !page.includes('전체 기간 보기'));
 assert.ok(page.includes("{empty === 'noToday' &&") && page.includes('어제 보기'));
 // 필터 초기화는 카테고리·검색·언론사·보험사·기관·안 읽은 것만·관련도 낮음·날짜를 모두 되돌린다
 const reset = /const resetFilters = \(\) => \{([\s\S]*?)\n  \};/.exec(page)![1];

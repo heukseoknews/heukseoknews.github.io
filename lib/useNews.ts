@@ -28,5 +28,6 @@ export function useNews(channel: string, extra: string[] | 'all' = []) {
   const baseMonths = index?.months.slice(0, 2).map(x => x.month) ?? [];
   const loading = !failure && (!index || baseMonths.some(m => !(m in byMonth)));
   const loadingMore = !loading && wanted.some(m => !(m in byMonth)); // 검색·달력 이동으로 과거 월을 추가로 읽는 중
-  return { index, all, failure, loading, loadingMore };
+  const loaded = useMemo(() => Object.keys(byMonth), [byMonth]);   // 불러온 월(성공·실패 모두) — 달력의 데이터 범위 계산에 쓴다
+  return { index, all, loaded, failure, loading, loadingMore };
 }
