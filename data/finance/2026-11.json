@@ -1,5 +1,4927 @@
 [
  {
+  "id": "6fc0bbf562030d25",
+  "title": "[컨콜노트] 한화생명 “기본자본비율 56.8% 하회 전망”",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226436",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:18:42+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대한금융신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "1f909882d387c3b4",
+  "title": "젠슨 황 퇴진·미 수출통제 ‘이중 악재’…엔비디아발 쇼크 오나",
+  "url": "https://www.sedaily.com/article/20113891",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:18:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "696d2f92af8e63a3",
+  "title": "美연준, 2027년 FOMC 일정 공개…기준금리 결정 8번→7번",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE83TGhZSDQ3UXJZeGlDZkN6UTdxaG1fVlRkemtyMllLSGVRTlR2S2d5MDBjVl9GSEd4c2xMWDk5Q3VyR2pCSWs2NkV6VFN1cXoyanA4aWY2UXRQN1dSM3RBZg?oc=5",
+  "source": "뉴시스",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:15:48+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "연준",
+   "FOMC",
+   "기준금리",
+   "금리 결정"
+  ],
+  "score": 5,
+  "feed_name": "한은·기준금리",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "24aab02f9a9203fa",
+  "title": "[단독]코인 가격 94% 추락에 해킹까지...게임사 골칫거리 된 블록체인 게임",
+  "url": "https://www.sedaily.com/article/20113880",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:08:37+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "코인",
+   "해킹",
+   "블록체인"
+  ],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "255079cff1ef3800",
+  "title": "한화생명, 3분기 누적 순익 8656억…전년比 12.6%↑",
+  "url": "https://biz.heraldcorp.com/article/10935996",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:06:48+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "259ff7f02db18d32",
+  "title": "[카드사 건전성 진단⑧] 삼성카드 ROA 2.1%·연체율 1.0%…고금리 속 돋보인 재무 경쟁력",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE15MWJTRl91ZzVGTWRCTGlZUEVhaUhNOEV4Rk14a1N2bEZCTzFIelpFYmZTX29HQkxGajVaTEFmUjlfWGpUc0pOb3B4VmpqTDZjNHktb1hDSXpCOUdkVHZPN0VLSEbSAWhBVV95cUxQN0xMbzhXYV9oYXR1Z2xBbHlFNVBCcC1reHJrM0NCS3lhNlMwTWNReTNpaG5XUmRFVk05MXZvbmEwVzNJSWI1SWZxWFhNckJPaHl6ZndSZWN6Y0JTUXhMT0FtRVJYeU16SQ?oc=5",
+  "source": "경인방송 뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T01:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "카드사",
+   "건전성",
+   "연체율",
+   "금리"
+  ],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [
+   "삼성카드"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "80757f481bb8129b",
+  "title": "대출 규제·집값 부담에 '소형 아파트' 전성시대…서울 전용 60㎡ 이하 상승률 1위",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBXZ0o3V0NuR055QlFYQUJmZEhwdl9saktvUjFwUExlcUZWM0VVWjJQb181WV9vdUhuVGNrMFpSWUFwZHpDZ3hlWUdZRHhBZklRT3NoLVFYRHVKMWY5MUVDU3NBR0ZKN0ZMVFlxOQ?oc=5",
+  "source": "와이드경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:58:25+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "대출",
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "cce0c940576ec172",
+  "title": "증권사 3분기 실적 급감…미래에셋 적자 전환·한국투자 순익 70% 감소",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5zSmw1RFZPMWs5amEzVGtQTHVQZjRzZzh1dW1aYVdxNkR2dWJLYXRBMHRuV3NIQUQ3T1J5VTAzYmVsQnBwVFRLY096Q3cxc1BjUEd4NTVybWc0MVVhTFJuNDdFVGVrc2xDX01BUGxR?oc=5",
+  "source": "폴리뉴스 Polinews",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:57:43+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "49bf0a9dfe70aa66",
+  "title": "미래에셋증권, 3분기 누적 순익 2조5016억원…전년比 148.2%↑",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE52a2pKMU5NVDdLTFJFdUczNHRtdDNIUmVxOU0zT0NjeW9mMDhJbC01MzlGd1E2eHNBU1NDTW9ncURCbndGb280eWFFR0c3Q3AyVDEwdTVBRjhHT1hxam8xMXdsNWwxZXk1?oc=5",
+  "source": "뉴스워치",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:55:37+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "2a5e9b6255d35f20",
+  "title": "증시 하락 직격탄…증권사 3분기 '순이익 쇼크'",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1MSFhsV0t2SVJKMHNIc3dYMklLWDVBUWNyQmhxdXBJQ3NFa28yY3NuQVNFSWstcnJ2TXFzR3JMQ2M3SjFwaVlWdHhVZGR4bUY4cVV0U050b09uZw?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:55:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증시",
+   "증권사"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "7029b3273f625276",
+  "title": "은행연합회장 후보에 김한조·박종복·손병환·윤종규·윤종원·이원덕…23일 최종 후보 발표",
+  "url": "https://biz.heraldcorp.com/article/10935939",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:51:25+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "은행"
+  ],
+  "score": 2,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "은행연합회"
+  ]
+ },
+ {
+  "id": "5b6d827b3fd610c1",
+  "title": "은행연합회 차기 회장, 박종복·윤종규·윤종원 등 6인 압축",
+  "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02896246645645392",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:51:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "은행"
+  ],
+  "score": 2,
+  "feed_name": "이데일리 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "은행연합회"
+  ]
+ },
+ {
+  "id": "0eb8b7613a3a06be",
+  "title": "[분석]스페이스X 욕심이 부른 부메랑…미래에셋증권, ‘0주 참사’ 이어 대규모 적자 전환",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4ta0YxZVBlbGVPc0xmYUxxNjRweUt3ajE5NjNVNDVEVXVOQnJKMmg3d24wdWxxekVkcnViMzhROGNrYWZCNldMT0NTZnhPWGl6ZmZMS09MejNYdGZmN0FiaVFQSzFOWGZFS252bG53?oc=5",
+  "source": "알파경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:44:52+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "8512132a350b008c",
+  "title": "앤트로픽 IPO 앞두고 크레이머 경고…\"상장 직후 매수 신중\"",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1lUWg0cmQyTTJ6RE5PZERPRG8yeGJJdWZOR1g2Qi1MUFdnT0R2VUVtWmJXckVnNzljaGswNFNkVmEyVE0xOW9hUDhiYmdhalUyWlVQNUp5bHBrV0VBYzNvS1JZa0x3NVpxZjJTLUUyeFjSAXRBVV95cUxPanNkQnNzSE5uZWczZTZFUkhIYnIxUnkzWVUzb3hISWQyeXNqYVB2bXFJV1JkYzlxcXFGdVRad1JjTHlvQVVOeXR6eFF0c2dwTU1rbDJaWVhBSUpwa25Ld1FBbWwtWTlxanBRaU5mdnFrRGZXXw?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:41:48+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "IPO",
+   "상장",
+   "매수",
+   "수신"
+  ],
+  "score": 4,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c20437038a84cf69",
+  "title": "미래에셋증권(006800) 스페이스X 제외해도 부진. 주주환원도 아쉬움",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SNzlMQV83SGVKWmo4OTBNUTR6VzlmZ241UTgwa011NE5aVmd4ZHBSYkZQV3hVLUwwZkhMbHFrbk9Baks3NUdIV1FpSUFCQTlwejZKT1ZBVnZLWm9rTUdJ?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:41:42+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "주주"
+  ],
+  "score": 3,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b57761ac19608628",
+  "title": "삼성증권(016360) 업황 부진에도 주주환원 확대 기대감 유효",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5oOTR1bFVxOFhTdFBjNzFzb3pTaVFtRDgtXzB1Z3Jwck1MN0ZXN0NtWi1NbVAzRHFWVXRkVFpVXzNvYmFrTy0zLTE4bGRNanI2bWM4bzM2MDI4RFdzcFF3?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:41:32+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "주주"
+  ],
+  "score": 3,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "4e72208e9d07dce2",
+  "title": "삼성생명(032830) 밸류업 계획(진짜발표전최종본Final).docx",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0yRUlMSVR1bDRXcWRraHEwbFA5Z09HaHZCVDAtMVRzSi02dEh5clJxZmpsNEE0bEpHVjIzbHpZeU9zU2oyMlZwSXJOTkdwcHp0OGdNSjgzeEJrRE5jN1dV?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:41:27+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "밸류업"
+  ],
+  "score": 4,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "ccc1f68d088c2dcb",
+  "title": "삼성증권, 자산관리·기업금융 성장에 실적 개선…고액자산가 기반 확대",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1xWG5Ecm5UMVljZVkxZVpTckhfSldycWZVbVIySWVheG1VTUNwZXNMbHRQZGdQaV95WnNYQUNMVUxkQmtqbGxUeGRSdDRBdTJnaDdHQ05fQnZkWHh5NkJqYlhodmlSQkJyRmZwNkhBWQ?oc=5",
+  "source": "이코노미사이언스",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:31:57+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "39b7db3c3749b952",
+  "title": "상장 1년 뒤 주가 17% 하락…'IPO 회수처' 전락한 코스닥",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9KY2I1WnBrSWtUaHROUTN2eVFUMU9lbjVDTE9HM29fMFlhQ1pMTUdZSFBQMmtJRGpkcld3eUZ4c2QtbllTdjZtc2JWbFFYLXZjTjI5UVplR2JoOUYzNzVjbUgzOTRlTnpDNmRZMDliNmc?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:30:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "상장",
+   "IPO",
+   "코스닥",
+   "주가"
+  ],
+  "score": 4,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "b737de4c50268f0c",
+  "title": "[농협은행 검사방해④] 임기만료 강태영 행장 치명적...경영평가 '흠집'",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBBRV9IclFBcS01R1B6bmQ3cmFvdDNuVDF5M08zQWhyVkRfSUY5RkNkaWJ5WkpYNUNLaXUtMVpKekk0SnA0MFhQX1h2UFUwaDFJdXhQcnBzN1FtQlFad1d4dURmdVpGVW83R3psbHdR?oc=5",
+  "source": "데일리브리프",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:21:19+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "검사"
+  ],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "NH농협은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "a3257ba4de0a2d12",
+  "title": "NH투자증권, 해외사업 성장세…베트남 순익 3.5배·美 2.3배 증가",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE44blp3ZnZROXRKeVI0STU1eXBCTmN3Wks2U2lHbkNNRXpacmtqdTNHSzlENEFka2FmQ2I0aWpNUnZDdVpBeU1BZVp1MUlyak1KcmkxVTZUNWZ3Ym1aYXQ1d2x5X0VGbEdpZDYxLUtBcWI?oc=5",
+  "source": "1코노미뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:16:24+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "NH투자증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "33f0434d0569ac78",
+  "title": "[단독]KB캐피탈도 해킹…임직원·고객 1800여 명 개인정보 유출",
+  "url": "https://www.sedaily.com/article/20113826",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:11:51+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "해킹"
+  ],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "ec7cdea9f3ede773",
+  "title": "삼성생명, '안정적 이익 시현. 내년 초 주주환원 구체화' 증권사 발표에 강세",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1ZMGJQUi1vbUxKdHN1ZVpRWUhlN3YxeFZrTjBwXzFBQ1B3ZkJiQURPWU93MlpiY1NKd0R0UGFyNW5hR0pxV1VVWlFPcGVPSWdwMEE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:03:24+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사",
+   "주주"
+  ],
+  "score": 3,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "18cedbfa519fbe6b",
+  "title": "261112(보도참고) 지배구조 개선방안(’11.12일 발표) 관련 설명자료",
+  "url": "https://www.fsc.go.kr/no010101/88138",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "방안"
+  ],
+  "score": 2,
+  "feed_name": "금융위원회 보도자료",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ],
+  "department": "금융정책과,공정시장과"
+ },
+ {
+  "id": "997a630b4edc7895",
+  "title": "‘26년도 상반기 기술금융 테크평가 및 품질심사평가 결과",
+  "url": "https://www.fsc.go.kr/no010101/88137",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "금융위원회 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ],
+  "department": "산업금융과"
+ },
+ {
+  "id": "7ecb2c2f9a0e9057",
+  "title": "신뢰받는 자본시장, 현장에서 묻고 답을 찾다",
+  "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249834&menuNo=200218",
+  "source": "금융감독원",
+  "source_type": "press",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자본시장"
+  ],
+  "score": 4,
+  "feed_name": "금융감독원 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "department": "자본시장감독국"
+ },
+ {
+  "id": "8dee2e8bb9404c46",
+  "title": "26년도 상반기 기술금융 테크평가 및 품질심사평가 결과",
+  "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249830&menuNo=200218",
+  "source": "금융감독원",
+  "source_type": "press",
+  "published_at": "2026-11-13T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "금융감독원 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "department": "은행감독국"
+ },
+ {
+  "id": "7d08b73b53d11d1f",
+  "title": "[속보]은행연합회 회장 후보에 김한조·박종복·손병환·윤종규·윤종원·이원덕",
+  "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02535446645645392",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:45:48+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "은행"
+  ],
+  "score": 2,
+  "feed_name": "이데일리 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "은행연합회"
+  ]
+ },
+ {
+  "id": "6a835a685f316c88",
+  "title": "은행권 기술금융 334조원 돌파…하나·부산은행 평가 1위",
+  "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5HT2YzbkthNFV5N1JXbm9LVDdOaC0wUkFnYlFDcXZKbzdvZnVla1VyQnY3M0NKdmpqeURvVjV3bjNscDQxQUR5a1RhODI5TlNWOXpmSXo0OW3SAVhBVV95cUxOR09mM25LYTRVeTdSV25vS1Q3TmgtMFJBZ2JRQ3F2Sm83b2Z1ZWtVckJ2NzNDSnZqanlEb1Y1d24zbHA0MUFEeWtUYTgyOU5TVjl6Zkl6NDlt?oc=5",
+  "source": "아주경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:42:20+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인터넷·지방·국책은행",
+  "relevant": true,
+  "companies": [
+   "BNK금융"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c7673a9320c3427e",
+  "title": "삼성증권 \"HMM, 3분기 실적 운임 강세로 급증…당분간 호실적\"",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE93NFRvd0ZJUElLOWZham9pY0k3X0paOXhTa3dyWVNiS0JlTnRxMzlyRHQwVkdkN21XUTU5N09Hdnd0VGd5MjViTkFKcEZtNVJwUTdadlpwdE52UDTSAWBBVV95cUxQTU9nTXNzWVQ3WGlJOFZkV29NLVkxbDNUZ05mZGxnemZ2dVRvNGd2YzhGVXo5azFtRDJVejItUnZBa1lBWHkxMy05VDNKZkFhbXdFNFZ3Zml4YWpUM2xKQnM?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:39:11+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "5ef77abb35ff75ef",
+  "title": "\"앤트로픽 IPO에 공모물량 6배 수요\"…역대 최대 상장 전망",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhWkY0bVBuQjN0Sk95cnVwVjNEZVJickJxaFZFZzdBM19odThycHZFNG9VM3FIeG9MemxiQUVibXhXM1pCTFlIV08xVHdvTUQ2VkhkaHJ3aWx3NXJERjJBRNIBYEFVX3lxTFBhWkY0bVBuQjN0Sk95cnVwVjNEZVJickJxaFZFZzdBM19odThycHZFNG9VM3FIeG9MemxiQUVibXhXM1pCTFlIV08xVHdvTUQ2VkhkaHJ3aWx3NXJERjJBRA?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:24:57+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IPO",
+   "상장"
+  ],
+  "score": 4,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "6c8c63ce8631b35b",
+  "title": "국민카드, 비용효율화 빛났다…2분기 연속 연체율 개선",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9maEtNTHZ2RjdTYnhVdzBmRVhqaDE1aTcwemgtNXAwaUdOZUdEYkgydVVvUklyMy1FMjZXbTYtRjRHZWxDckpsdUQ3NkNVRW82ZEpTbU5MZ1JNUlZJMGN3?oc=5",
+  "source": "데이터뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:12:31+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [],
+  "tags": [
+   "연체율"
+  ],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [
+   "KB국민카드"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "6cbcd7d3903941eb",
+  "title": "삼성증권, 고배당·안정적 실적...투자 매력 부각-KB",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBXSC1WWlZmb09NMVlfY3RvSTYyTlhnVmM2NkpqeGRMZnJSYlJpWFdBU2xWc3F6bWFGaVVVa0JvakVLVmxPMXVXUzRseHI4RkctVEVSaUE1Z3M5N0VJZUFvWmhJN1I?oc=5",
+  "source": "PRESS9",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:05:34+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "배당",
+   "투자"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b21f9c66c463f304",
+  "title": "'공기관' 산업은행, 중수청 피고발…국고채 담합 의혹에 평판 추락하나",
+  "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9Fc2ZZTjNJMGprYldjTl9DMWZwS2pOdlZiRllyWVRvQm1VSFlnU1NMWExDOFJPN214XzBCdXlJb2FnMXhwV2JRV1RSbC1lZWtQ?oc=5",
+  "source": "톱데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T23:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "국고채"
+  ],
+  "score": 3,
+  "feed_name": "인터넷·지방·국책은행",
+  "relevant": true,
+  "companies": [
+   "KDB산업은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "545c610127334325",
+  "title": "미래에셋증권, 스페이스X 평가손실에 5023억원 적자…투자 쏠림 도마",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8tR3RyQk5HUVRxcngyU0kyUDlxR3ljTzdKV2Vkcy1yLXBiaWRiZC1vaDJSNFBYN2lOUGJiSDNkVG5XV3AyQkc1alp3QklkS0pHUDZxM245TkVhWFBIM1NWdk1FZ0NOOHUyYzlTYWJnRGk?oc=5",
+  "source": "비즈중앙",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:49:25+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "f8d147951004aceb",
+  "title": "카드사 신입 채용문 확 열렸다…보안 인력 모시기 활발 |",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5NXzRmVTVpMlJxZ2Z1UE40a2tnUFJWTlI3dnI0Tmx6eFJZb2E5XzloYW5tcW9qRExFdVg3REVWeE4wSFNiVmgzb0JzeEpGSm51NHVNWVJDOVBWdW5YWlpnMmtUNmFxcjF5OVlXdC1maFBwaGhE?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:28:44+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "카드사",
+   "보안"
+  ],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "dd140839927bb30c",
+  "title": "2금융권에 인뱅까지 가세…집단대출 시장 과열",
+  "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02020486645645392",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:00:03+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "대출"
+  ],
+  "score": 2,
+  "feed_name": "이데일리 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "7bc5c4c75fab03cf",
+  "title": "상반기 '실적 잔치' 끝났다…5대 증권사 3분기 순익 81% 급감",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBmRVJKcTZBSzZJYzd5cVVUNHlZSkhSM2t6UUVnLWdKcEZCSW1nTG1oRkxkWU8zdnFoYkREUEMzbjBGclp3ai1qZEJyVEhTYmZLXzNkNGVkUUlqNTZyQjJCetIBeEFVX3lxTE1Lc1JETVhIMzhtRjJNNXlEZm9YdzE1RVdmNjd4dzFZb216Wko5d2g4Ml9jSlktUXB5M3VCZG9PUUh2OUJxUjlTRm1kS3ZXaEhaei01TzVjakVsR1J3T1NRRnZDUXBGal91TnBJbk9zaUo2XzVpLUhxVA?oc=5",
+  "source": "뉴시스",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3aab266a80977ef3",
+  "title": "[IR 분석] 미래에셋증권, 단기 충격 극복 방안은…해외 진출로 정면 돌파하나",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1fUWxhU1JEdWRUdWFUREpnLVdRcklqS2FoUDZVdlQ4bGNTVFhNU1JDVjVqcHRCQ3pYRFVCVWlQLUJrcHdoVUJuV0tBbmJXRU5DNWhIZWdqQmZkdUo3N2ROUm9sZWY5N3BN?oc=5",
+  "source": "FETV",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "방안"
+  ],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "d5cf6fc9e5faa356",
+  "title": "[카드사 건전성 진단⑦] 현대카드, 연체율 1.1%로 업계 최저 수준…수익성도 3년 연속 개선",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zR1VVY0R4cXJQUXh2RTczVC1ycV9Tb3k4VGFVSVFaT010c1phVDI3ZUpFRmJQWmRkdDA3QU1vMm9PZFVrb28wVTd3Qk1ZcFd0ZXNHSlR1TFc0c3FEREhIZW9xdTjSAWhBVV95cUxNOG4xdnpwcGVDaUFNdTdXUnRJcVdmZGJzV0pxVkktNVlZWmNEOERfdVRzaWVpZXlnSUZibGhQcXhtczk5STZleHVKWDNOWVBLc1FSeGFCb1NZVmRnX2c0dUU1cmJaTmRCcg?oc=5",
+  "source": "경인방송 뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T22:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "카드사",
+   "건전성",
+   "연체율"
+  ],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [
+   "현대카드"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "06d1ecbb9fb27f74",
+  "title": "앤스로픽 IPO에 6배 주문 몰려…121兆 끌어 모은다",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPbVdtMmVCMEJMUGthWk44VXNsZFdDaHkweHl3NzdYSmZheWhQRkh0NkRTQzg2Y0pqOHEwaGxHeGM0a0ExS0loenY5ZDVEZVh2SEpWVm9IVDVyZERRRzV1QkpzRUpRcHc4dE5GWGkxRnVuOWZUMWhvLUktRWVYOWxJWA?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:48:34+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IPO"
+  ],
+  "score": 3,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "b45464954d52eac8",
+  "title": "증권사 실적 잔치 끝났나…증시 부진·금리 상승에 ‘급제동’",
+  "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxOUHJNdjB4ckdtbEZlZEw0MWFlaXFnVVByZHg2NnRmaUhQYWNVSVJIS0I0ZDJpcjdhVmZFSTJWMGZnSGs4ZER2QmM4NjJJOXNjb084QUpiTHBqTGl1WEdLT0l6RzNWVDBDZjdGREJicHp6eTJhcFgxWHprbnJyZF80SDB0aGpza2FvWUhha3hJcmRxVkFRa2xNM29DM2d5WHZKZlI5YU9oXzJuYllOQlljZkpsYXh3SzA0SlljVVRkVU1IX0RfMkR4ODdyS1JtLWRobmkxZ3Frd052Umg3aW5POUhmM09XSHU5TEpBQWtHSkNOMERMWXYxRVNFd3hYVnI1Ynd1YzFqZk5saVJTa2NGNFVjQl8tUVNBeEhHUUhxMy1Cd28?oc=5",
+  "source": "데일리안",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:30:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "증권사",
+   "증시",
+   "금리"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "4cf64110f54c88bf",
+  "title": "[KB증권 IMA 가는 길③] 제재 이력 남긴 KB증권…내부통제 변수 될까",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBNSXQ5eUVyWmdic2FZaGM1aUo4QlFTTnpSMFRRaEIzUTltWFBKbnN2NWUxNlpOOVJPT3ltZ1ctUnhBR1ZYUWNmcEdjNmJCUy1UbzZGUzZncjJIemlLd2JBY3hlRzhKYkJ4cTZn?oc=5",
+  "source": "뉴스저널리즘",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:10:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "IMA",
+   "내부통제",
+   "제재"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "KB증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "5bcc2d993fcdb729",
+  "title": "\"12월 FOMC 사라지고 금리 결정 연 7회만\"… '워시 연준', 통화정책 판 짠다",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1OTVY2Sm9GQlVtOGVjNmdNcFpSQnlQdEdvY3daQXpSeUVlMHROS2tkdVJGei16TThkeDg2Sl9IS3JQZlVhUWRDNThpVjRCcUFQZ3pYWXlRVmxzWU5yWVJCWVFZbXB0b3hSeG93N2NrQk0?oc=5",
+  "source": "위키리크스한국",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:05:48+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "FOMC",
+   "금리 결정",
+   "연준",
+   "통화정책",
+   "정책"
+  ],
+  "score": 5,
+  "feed_name": "한은·기준금리",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a9a91bfb87c96442",
+  "title": "[KB증권 IMA 가는 길②] IB 잔뼈 굵은 KB증권…모험자본엔 다른 셈법",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE45U1VtUDZsc2dqZjJpSEVuNkh4YUlyUDcxVlBkNHpHNGpmUlYxU0liaDQ0U3FCZUo5dTRVUnlkejNENndjbHJPMUZSd2tOazR0eFJTWnpvbUxXTmFtUFh6OWdCRFpyLVFWODlZ?oc=5",
+  "source": "뉴스저널리즘",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:05:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IMA"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "KB증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "ace4ea1ccf0d6c14",
+  "title": "금융위 “스테이블코인 기술기업 최대주주 가능...AI 결제 로드맵 연말 공개”",
+  "url": "https://www.sedaily.com/article/20113715",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:00:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "금융정책·감독",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "스테이블코인",
+   "주주",
+   "주가",
+   "결제"
+  ],
+  "score": 5,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "e817bfd401c75791",
+  "title": "해킹에 고개 숙인 금융보안원…금융위, 16일부터 특정감사",
+  "url": "https://www.sedaily.com/article/20113719",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:00:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "해킹",
+   "보안"
+  ],
+  "score": 3,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융보안원",
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "03d255b947359364",
+  "title": "하나은행, 금융위 상반기 기술금융 평가서 1위…2위 기업은행",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBHUWxMSTdlRElKOTJ4UGRTUWNMRk1pRnI0MEVuSTkwWjZZdnZUV3NoVzEwUFM4U3lpMENoQi1BS1Ywd2J3TFZyYmRuN3R0R296V2lIbEk3Q0FFVUXSAWBBVV95cUxNbzYtVGlyaTUwZnU0UlI3NDItNTZwQV9sV1o3RFo2VDI0a255WmYwRVpxc2RlRW8xSDZKRXl0Q0h6bDZ0M3lvcHBaYlZxWV9jM2lmRDI3X09ocDh0ZloyeEI?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:00:02+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [],
+  "score": 3,
+  "feed_name": "금융위원회",
+  "relevant": true,
+  "companies": [
+   "하나은행",
+   "IBK기업은행"
+  ],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "a50d3a3807366e0d",
+  "title": "2026년 10월 수출입물가지수 및 무역지수(잠정)",
+  "url": "https://www.bok.or.kr/portal/bbs/B0000501/view.do?nttId=11066540&menuNo=200690",
+  "source": "한국은행",
+  "source_type": "press",
+  "published_at": "2026-11-12T21:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "물가",
+   "지수"
+  ],
+  "score": 2,
+  "feed_name": "한국은행 보도자료",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "한국은행"
+  ]
+ },
+ {
+  "id": "568ba4b37fd4ee20",
+  "title": "기술신용평가 품질 개선…‘우수’ 기관 반년 새 4곳→11곳",
+  "url": "https://biz.heraldcorp.com/article/10935417",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "2204cbea3e46b51a",
+  "title": "환율·유가 떨어지니…10월 수입물가 한달 만에 하락",
+  "url": "https://biz.heraldcorp.com/article/10935402",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "환율",
+   "물가"
+  ],
+  "score": 3,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "66219829f792347f",
+  "title": "금융위, 상반기 기술금융 실적 발표…1위 하나·부산은행",
+  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1oQkZQQ0xMUEJBRF9IaWJLeUdIM3l5SWsxbHUwbURadWdpRW9tc3JUOU9jUWlnaHV5MTdVajY4Q21ORW5ZbXdEWEtOSjhZVXN1a0gteFFXS212eDNjM2JCN1JxRUZIWWg5cldmbjFNT0hLdjV6TTVpV9IBeEFVX3lxTE1oQkZQQ0xMUEJBRF9IaWJLeUdIM3l5SWsxbHUwbURadWdpRW9tc3JUOU9jUWlnaHV5MTdVajY4Q21ORW5ZbXdEWEtOSjhZVXN1a0gteFFXS212eDNjM2JCN1JxRUZIWWg5cldmbjFNT0hLdjV6TTVpVw?oc=5",
+  "source": "뉴시스",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [],
+  "score": 3,
+  "feed_name": "인터넷·지방·국책은행",
+  "relevant": true,
+  "companies": [
+   "BNK금융"
+  ],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "9c80b08dd1a2dd36",
+  "title": "[KB증권 IMA 가는 길①] 1.7조 증자로 몸집 키웠지만…ROE 방어는 숙제",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9BVUstZlFOVDY1blpIck8xUkFMdzlOeGVzRm9GZkYxbHVLSWtGWWNOS2VMaEVMZnE4ZUM3V0VZY0toaHpUaGRiTkhDdXFPLTQ2Tk5LZDh6YWtYbDdlckNDaXNNUHZWX1ZzT013?oc=5",
+  "source": "뉴스저널리즘",
+  "source_type": "media",
+  "published_at": "2026-11-12T21:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IMA"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "KB증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "962a896e6417986a",
+  "title": "로지스틱프로퍼티스, 금융비용 급증과 주주환원 미검토에 투자심리 위축",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5yR0RmV0tmcDBYWUdsRDVIdW5lR0p6MERpSVZPNEE0UEM2NVpkLURKVDZERGNMOEVBMHJUQ1JfbW0zWjFqV2hzMnBRTVR4eFBRNVE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T20:10:16+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "주주",
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "db2e766dcf8f3de2",
+  "title": "[실적 한파 속 생존법-中] 한투·NH·KB증권, 체질 개선으로 활로 모색",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE83ZTRMS0dteXZWbE5NRVgtdnZUMDFfV1JnRXZVRHNNOUhSUFJjRmdWcjh3ai1qNFFuUWUzNmdnZ0dsNi05TnBxcUxrbkNIckpZX25ZZEtiOXh0bFpPSlRuRUV0N0YydjlDcERVVldpSnTSAXRBVV95cUxNWkhuZXdtSGFUSEE5bjFhX3NTSUp2SWxMNkJMVXlKeVhlNW5KSGZIUXlsejRleWV1a1VqNmdERmJ3RGtIVGZBRTRGMF9UM0lMdDZQRUlnTnhZZUcwMnFfVDloZ2Z2VlhScVI2Z0JtTFhxUFRhYQ?oc=5",
+  "source": "포인트데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T19:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "KB증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "dffce400fb07f6a4",
+  "title": "[금융실적] 삼성증권, 3분기 순이익 3528억원…전년 동기 대비 14.1% 증가",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwSFRma0JZcFRvbkJ1Mm1ySExGc3IycFdSSkNYVzF2ZnZxTUhlR0s3d3FXNGh6dXZORFladXBtU054NEJ3cFNYbG9sVXNzdWdPODVzUnVhYUhUTjlnWkw1d1VRNk9ueDI4bmc?oc=5",
+  "source": "비즈월드",
+  "source_type": "media",
+  "published_at": "2026-11-12T16:38:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "ab2865e83ad4c1bf",
+  "title": "펠토스 테라퓨틱스, 자본 결손 전환과 합병 불확실성에 급락",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1mb1BRemZtd1NaOGV2bG9lUTZlNmc3aEYteWVKWUdTeWdqeGYyU3VDZ0g2VW1mM3RvcVVxbU5CcU01Znp2aW1GcFVoOTFxeWYtLWc?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T16:00:18+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "핀테크 기업",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "2c563d2db2d9ea14",
+  "title": "미래에셋증권, 3분기 4000억 손실 적자로 돌아서",
+  "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA5X0d5MlpyNkc0dXRvalQ4YnFXejRNSm0tbW9MQ2pnSlpkZ2QwN3JJYUtZQWttQ3BlQnluS1lsUm5KZ2RITnRmOEpaWEQ0SmlTenhubWFFMXZjbk9LbUtRUXNCLVRHUdIBZkFVX3lxTFA5X0d5MlpyNkc0dXRvalQ4YnFXejRNSm0tbW9MQ2pnSlpkZ2QwN3JJYUtZQWttQ3BlQnluS1lsUm5KZ2RITnRmOEpaWEQ0SmlTenhubWFFMXZjbk9LbUtRUXNCLVRHUQ?oc=5",
+  "source": "동아일보",
+  "source_type": "media",
+  "published_at": "2026-11-12T15:30:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "79bd7177487dc0a5",
+  "title": "권대영 1차관, 「월급방위대 TF」 킥오프 회의 개최",
+  "url": "http://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079949",
+  "source": "재정경제부",
+  "source_type": "press",
+  "published_at": "2026-11-12T15:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "재정경제부 보도자료",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "재정경제부(옛 기획재정부)"
+  ]
+ },
+ {
+  "id": "c0623f695309d4e4",
+  "title": "[보도참고] 2026년 11월 최근 경제동향",
+  "url": "http://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079950",
+  "source": "재정경제부",
+  "source_type": "press",
+  "published_at": "2026-11-12T15:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "재정경제부 보도자료",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "재정경제부(옛 기획재정부)"
+  ]
+ },
+ {
+  "id": "327ea8432cf26d55",
+  "title": "삼성증권, 3분기 영업이익 4490억원 … 전년비 11.7% 증가",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE83NzVjeTVuYmh0NGxTWEZVcExVbnVuX2lzeGNOR1lqZ1pfQ3p2dUtqNlVYeDRlQ1kxUlBNMktjNjlqN0hvdzRrRVpoLUpuRnBRM3NJdHI5OWVqaXhVQk9HWGR1RUdLRXhuZVFsQg?oc=5",
+  "source": "워크투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T13:52:32+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "8dafe109dc9a449b",
+  "title": "국고채 담합 과징금에 KB증권 적자…키움증권 순익 하향",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9IRXRQRVFjRXVIYXNUUkhmZ1pYQjBCNXJSdl9FazM1STlxTzZtU3hFT3k1N21QT2RoUVpwc2RweVE5OFhYdjhBbFE1dWV2WHpmbXJsN1ZrUkJEem0xa0EyZVk4eHpMcHk0YXRBUVVkNjU?oc=5",
+  "source": "코리아리포트",
+  "source_type": "media",
+  "published_at": "2026-11-12T13:17:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독",
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "국고채",
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "KB증권",
+   "키움증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "8efb9973dda5ed0d",
+  "title": "금융위, 회계처리기준 위반 해태제과에 감사인지정 3년 조치",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOOW5tMGZBdHprSFVwWk9rOWRjWEZmTzdhQURCQzE0YWs5eVdPSHlrdUE3UUdXaUlIT0M5a3FUeUp1SmtKMTBzUkZGU29QRy1GaDNNOFdVVTJkektjdkpWVUtDLXhLRUhfcm1GTC1JeGZYUEFXWnZQSGN1OHF3YmdlOQ?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T13:14:42+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "금융위원회",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "c4b579134ef368f2",
+  "title": "펠토스 테라퓨틱스, 3분기 매출 1540만 달러·108%↑..순손실 790만 달러 축소",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE43TTEtSnkxa0hLb0kzUlBtVGFsQ2pXR1U3M1BqeVAyTy1JYzI1UXZOZzVFNXprVlBpVzNhZDI2RWhCV3pMODJiR1cyaHhpVzJfYlE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T12:19:08+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "달러"
+  ],
+  "score": 2,
+  "feed_name": "핀테크 기업",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "f6a29f5f23ddd8ae",
+  "title": "미래에셋증권, 3분기 누적 세전이익 약 3조 4000억원·순이익 약 2조 5000억원 기록",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92STFDTEp6RDFGTmU2TktORFFqZ2xsWWh4emRGZ294TzJVRUNMMG84VGJqZVgzY1JOM1RpQ3BPaG1XeDRvbldfYnpaZ0xpOVNRYUpfYkF5WkFDT1Vkb1dSQjNzTXNZRlFK?oc=5",
+  "source": "한국NGO신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T11:29:09+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "e9009111d2f36ee5",
+  "title": "스테이블코인엑스, 16일 3분기 실적 발표…17일 웹캐스트 개최",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5GcHM3eThhcXc3a3d6ZnBybmhPMERtaWpXekRhbW1pck00QngwYXVaVnB3cGVNa2Z6MzFZN0paeXNZMkJFSzN2aTh5N2J5bUJsUEE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T11:22:35+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [
+   "스테이블코인"
+  ],
+  "score": 4,
+  "feed_name": "스테이블코인·토큰증권",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "6c88146da3e6b569",
+  "title": "삼성증권, 3분기 순익 14%↑…누적 1조 2919억",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBHdTctRWl6YVBjemlMS09Pakw2cDBST0xNWlZMSEQxaVY1Q19aLXZNV0pSS2VpdWVzaVVhcWtMaFE4U0ZwREt2WEJlbGxSYTg4YXRZS215MzhSU3BvWlcwRGd4OEZ5YU14eDAzWjlGWEU?oc=5",
+  "source": "코리아리포트",
+  "source_type": "media",
+  "published_at": "2026-11-12T11:18:54+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "935d9db16b5ab416",
+  "title": "사기·횡령에 해킹까지…하나은행 신뢰 '흔들'",
+  "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1HdHdXelpxS2hBUFFHekpobFRLSWdXeU56UDhReHI0RVZlSUlZcnZ4dU90TnNubHJlc09obGx1MVBSX1I1OUQzZEtUWGNWWG5KZXNudQ?oc=5",
+  "source": "부산경남대표방송 KNN 뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T11:13:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "해킹"
+  ],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "하나은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "18fe3b54ce930b94",
+  "title": "코인마켓 거래소 플라이빗도 해킹...고객 40명 정보유출",
+  "url": "https://www.sedaily.com/article/20113739",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T10:22:53+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "코인",
+   "거래소",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "712dff97172ac922",
+  "title": "삼성증권 \"WM 견조·IB 기여\"…3분기 누적순익 1조2918억원 [금융사 2026 3분기 실적]",
+  "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1Ma2x3MFk1UTlROVl5VHlSaFR1TFMzQnVvU2lsb3NXS2hydGRCOXhCX05IbWpxcHE3aThBOEEycU01cERHY2tjd2V6dGFobkdZREVoR0V3V3J6enRKTHE0QTlFejZmeVlUYnVNRHF6Uld2a1lZTE9rUFdTTWo?oc=5",
+  "source": "금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T10:19:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c61e8c5c5d530bfe",
+  "title": "\"금가분리 그림자규제 풀어야…韓가상자산도 글로벌 경쟁 터줘야\"",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSGVfVlVvTkl4MFdBMGJYNFBIRm9pZHR0cWRMUURLYUZIcS00MjJtd0l5bjVNM19KR1Nld2FVVzBobXI1UjFyV2tBNGpabnFBT0hWZ2c2ZWp0azFQRVFYaFlxeHotWUhUVG9ZalBzMDRhNDU3eVpaYjBleXJ2YXRfWQ?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:57:41+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "가상자산",
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "aac2e5ad4aacfb9b",
+  "title": "“공급 격차·전세 강세 속 대출 규제가 변수…‘차별화 장세’ 이어진다”",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1BWlJkN3QtcUh2eWliM1F0Rkp4TGV0eFFqbkQzNTBPRmdVSGt2aDlXS1hBVzM5WWl2em5IX2Z4cjhrN3hrcmh1TkszX2xiazU5eE1welV3WmRQZkNpVWIwaWcxTy1RSHZjZnfSAW5BVV95cUxQVmFvUmNpZkI2cnhQWjQwTnhrS3NHLWdiRFNLZTRzX3JrUmEyNk9RWEdZdE5lVDV0SG1HVV9iMkJ6cUFzZm1SY0FZUTd2T3RqZHV0M1VMbzRFS3RnWVVkd2ZsWkthaWVMZFVMSUhvdw?oc=5",
+  "source": "충청신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:45:17+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "대출",
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "6e2985944356294d",
+  "title": "해킹 공식 사과한 금융보안원…금융위, 특정감사 착수키로",
+  "url": "https://www.sedaily.com/article/20113730",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:31:29+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "해킹",
+   "보안"
+  ],
+  "score": 3,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융보안원",
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "fb41b6f0becf8f23",
+  "title": "미래에셋증권, 자사주 6500만주 소각…주주환원 강화",
+  "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5SbU5GSTNSQWpveFZiX082SHVEbk9ZSzFkdHZQSVNXN2FfUVFwaXk1aUljZ1V6aVc5UXk2MXdTeVBENlhCSm9uazJHRGZoakxqLTU3dGhreHh5M2xULU5RWlJwaw?oc=5",
+  "source": "쿠키뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:31:29+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주",
+   "주주"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "ded54a288293c5f4",
+  "title": "금리인하 신청 4배 늘었는데…상호금융 이자감면액 20% 감소",
+  "url": "https://www.sedaily.com/article/20113729",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:30:57+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "금리인하",
+   "이자"
+  ],
+  "score": 4,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "8a702f7a948e52ec",
+  "title": "금융위, 해킹당한 금융보안원 다음 주 특정감사 착수",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBPRjdTRDBiQ3NWeWk0X181ZXUyZDBOX0RTWFRjS3BJQXN0SjJPOVVjRWNyemVyd3ZOT25qckhCdmoxbkxndi1ZOW9CUExKVDlwd2ZvNUJrS2xiZ1Y2Zl92TWpkd2FLMzNvWVp4SEtzQno?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:21:56+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "해킹",
+   "보안"
+  ],
+  "score": 3,
+  "feed_name": "금융위원회",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회",
+   "금융보안원"
+  ]
+ },
+ {
+  "id": "051ee4e433721cb5",
+  "title": "금융위 “기술기업도 원화코인 컨소시엄 최대주주 가능”",
+  "url": "https://www.sedaily.com/article/20113705",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:10:39+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융",
+   "증권·자본시장",
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "코인",
+   "원화",
+   "주주",
+   "주가"
+  ],
+  "score": 3,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "5beec8e526104436",
+  "title": "[단독]AI 에이전트 도입 로드맵 이르면 연내 나온다",
+  "url": "https://www.sedaily.com/article/20113699",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:08:36+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "AI"
+  ],
+  "score": 3,
+  "feed_name": "서울경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a9281c346ae324a2",
+  "title": "삼성증권, 3분기 순이익 3528억원…전년比 14.1% 증가",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA0UDJZMGR4dnJWNVdCVHhib3V0eXptSlozQjJjNWdBemRYVE1IRHViVUNrOFZJUldwT3p4bGlNR1RVWG51N1NuRHBYZ3J3V2tMRXNTX2hoRkdmYTFRb1h0M2I1Ulc4TzcxbEljOXBSbWw?oc=5",
+  "source": "위키리크스한국",
+  "source_type": "media",
+  "published_at": "2026-11-12T09:06:35+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "a00b8b5f0ada6d33",
+  "title": "삼성증권 \"IMA 대비 배당성향 50%로…외국인 통합계좌 확대\" - 머니투데이",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE0wU0Z1NnhLd1lOVXVLVF9UeUw3S09OS1R5dzBSRm1LXzJuakhVa1l2ZFIwZUxtLU15a0pFYUtiZGxkWDIyZ3RJZTdiVllqdnFHdHlKZHZKcUZGbVNoeXpkTEVCblZDOUZC0gFuQVVfeXFMTVpjcjZWZmR4bmpWUzUyUDRLclRGUUdPdmQ0TjFvcE9wbjhxVlVKdERaTEZIU1ZfeFNVMlkyajJlWU44UkRfUlRpTnplWHZRSEJ6dmFjZ21wbE5ZMGlfdmZHcjNxNUVieENXOWRCRlE?oc=5",
+  "source": "머니투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:59:20+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IMA",
+   "배당",
+   "외국인"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b61cc56e5d750008",
+  "title": "[미리 본 토큰증권 시대 ③] 토큰증권 시대의 마지막 퍼즐…'스테이블코인 결제'",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5IdnhCNW1kTzBhSHdSOHo4LXUyXzRfRE45SFZvNXBxNVVQOG53dUdqc2xadDR4elZFS2p5bnNqaG94cEZQWHUxXzdkTi1ieWhlTWc?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:59:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "토큰증권",
+   "스테이블코인",
+   "증권",
+   "결제"
+  ],
+  "score": 5,
+  "feed_name": "스테이블코인·토큰증권",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "d51a6aa6cf139e79",
+  "title": "가상자산 거래소 '플라이빗'도 해킹…고객 40명 주민번호·납세정보 유출",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBwOURtVk5YdjBTVkhrYzVjOGFLM1RVNzdSNFRDcGJyUEU4YnRMQkdfNzhJME1yRHZOMFF2U3AzbnhIZHctaVhrZmJYSi15LXNWR1NlYmEwWHhZekNiVVk5VU5OLThPaGZERTltUkE4dkE?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:58:10+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "가상자산거래소",
+   "거래소",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "f555f74acc041b67",
+  "title": "삼성증권, 3분기 순이익 3528억…전 분기比 27.7%↓",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1BYWFrNkE0SklHelpwVzN3OWZqWDNwN1l6Ul9JSzhTVEpwSktyV1lBZUJsN2tVeWJyVFJuMG5oMnFSR09YWnJ1LWNZcU81bzZuMmZpc3M4TUQ2dlBjV3hYdkhDRExmUHFQa01MZmJsb9IBc0FVX3lxTE14SVI0OVNPWlhHenUya2ZrOE9EVUhib1hmSFFvNXllWmFBdEYwZ2lzNDFkZFFJUGlJTnk1eklvVlFLNEJHR3d0eHZQQk53VkxZR3Q1aWZsN1lmNGVramxPU2NndnM2MHczZy0zempRY0NQZmM?oc=5",
+  "source": "뉴스웍스",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:54:26+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b1dca82edde97910",
+  "title": "과징금 확정에 뒤바뀐 은행 순익 순위…국민은행 누적 1위로",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBjODF3T3RhLUN4YVl6d2xTdFpfYUJ3N1ZQTkNKanBjZ1JYZGxiYVQ5Z2tFZ3hyUmFsSHhrYzNKVGs2VnFNOTBkRkgtbkg4cUotbmhkNklrMXFocVBvYlZtNk5kcWhrNUI0LW1WS2ljeVVQVmc?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:53:18+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "KB국민은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "5e5ae87cfa3b0e6d",
+  "title": "당국 “지주회장 3년차 광고선전비 공시해야”",
+  "url": "https://www.sedaily.com/article/20113668",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:50:46+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [],
+  "tags": [
+   "당국"
+  ],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c9eeae2ce594c8d9",
+  "title": "금융지주 퇴임 회장, 고액 특별공로금·고문료 못 받는다",
+  "url": "https://www.sedaily.com/article/20113666",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:49:32+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "금융지주"
+  ],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "70457ff7662d4ded",
+  "title": "임추위 전원 독립이사로…견제 강화한다지만 과도한 개입 우려도",
+  "url": "https://www.sedaily.com/article/20113663",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:46:44+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "8eff6a351e58c14c",
+  "title": "[컨콜노트] 삼성생명“삼전 배당 활용법 내년 공개한다”",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226434",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:46:21+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "배당"
+  ],
+  "score": 3,
+  "feed_name": "대한금융신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a38d78227c99ed29",
+  "title": "[컨콜노트] 삼성증권 “발행어음 특판 경쟁 지양”",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226433",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:45:54+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "발행어음"
+  ],
+  "score": 3,
+  "feed_name": "대한금융신문",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "9c7230acc37336a2",
+  "title": "관리의 삼성증권도 3분기 영업익 33.6% 감소...고액자산가로 버텼다",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5lRXJGT0NiVUJBempQc29HNDZXRGpEWV96c014cXZ3UG9od0U5TXdOdUc4cUFsVU9HYUszVXhRd3Z2WHNxNVRoOGppZUZKeG5YR3FZSl9Vcm5HVlMweTQ3QTgzYkQ3a1A1ckE?oc=5",
+  "source": "비즈워치",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:41:09+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "f9e2d52be2e0750c",
+  "title": "국민연금, 금융지주 독립이사 추천 길 열렸다",
+  "url": "https://www.sedaily.com/article/20113652",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:40:06+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "금융지주"
+  ],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "df7d0b2188a53aaf",
+  "title": "금감원, AI해킹 탐지시스템 만든다",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5NSEV3Z3NsREd1RzRmLS1reTJZVUtHMjBkMUtrZmRzcjZKR2lsejJPeHN5bEUydjctdDhUT29HM3M5cTViVkpSbE96cWwxVnVKZXc?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:39:57+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "AI",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "금융감독원",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ]
+ },
+ {
+  "id": "f014713e7a77e985",
+  "title": "하락장·과징금·스페이스X … '악재 쓰나미' 휩쓸린 증권사",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBIbGQyR2YwNTJUT2tSQ1hndlZZM1BuQWRPZjBzbFZueEJCX3RTNGR6WEpNdXNTMk9ZdEVFRklhNzg5MHU4bnkxQ1BZNEh6R09VQmc?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:39:14+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "과징금",
+   "증권사"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3649c8d0ffbf2e67",
+  "title": "\"B2B로 사업체질 전환\"…패스트파이브 IPO 재도전",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4tNWRETnRQMWluNnlJWkZ4UUhfbGc3cGdObDhzN0pBYnE4d2NJTUs5Qk5WNndIWHV5b2dWeHVPYU1ZaEl3UGc2MHRYRkpPYUVPSTVFM3hWTnlpZw?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:38:06+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IPO"
+  ],
+  "score": 3,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "15320ab40f5507c4",
+  "title": "삼성생명·화재 순익 4.5조…3분기 투자손익은 ‘뚝’",
+  "url": "https://www.sedaily.com/article/20113644",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:36:44+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c1f0132dcb86eb9c",
+  "title": "[마켓인] 재생에너지엔 돈 몰리는데…기후재난 예방 투자는 '사각지대'",
+  "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=04565766645645064",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:36:03+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "이데일리 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "29e4ef506d87cad8",
+  "title": "삼성증권, 거래대금 감소에 순이익 주춤···WM·IB 앞세워 실적 방어",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1wU0U5dVhCcEE1ZXRsajVjcWZNRk95dU1BZTJJZEtFMEpBaXZTMi1OUnRRdkFqeE5ZZ0RKc3E5U283NHRSTFc4R0lyTDgyTjlNS0RTXzcyOGVRNTB6TnA1SmxGVm5LQkxPbXc?oc=5",
+  "source": "뉴스웨이",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:32:18+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "94363e6bad7f69c3",
+  "title": "삼성증권, 3분기 누적 순이익 1.29조…전년比 63.1%↑",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1adXF1NW9jOGtDQjUtbE9ncndMbkg0eVRYd1F2X3R5XzgyMnV1UkdBUTNYOGF3RnhINGFYWkxvNHBxQ2NCWjlsLU5YTkJudHhUS243Rk9FR05Lc2hfcXZJbFBfXzlGQVUycG9GdnU4bw?oc=5",
+  "source": "뉴스톱",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:31:25+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "efb19663a2db6e31",
+  "title": "불확실성 확대에 발행어음·IMA 리스크 관리 주문",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226432",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:31:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "발행어음",
+   "IMA"
+  ],
+  "score": 2,
+  "feed_name": "대한금융신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "7b8e73d3648a2e32",
+  "title": "삼성증권 3분기 순이익 3528억 원, 지난해보다 14.1% 늘어",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9HWXJMQ3pQcDdPVUlOb0JOdjltY1AxRmdQbEpBeF9LWUl3VFh3VzY4ZTV5SEJ0VkdvRWU5WGp0RVJ3XzdIeGF3RnZQM2xCdUZQQVFSMFVXNVpqbm5WYUlMMWNhU250SWVNX1RtYWl1V0JrQ2c?oc=5",
+  "source": "비즈니스포스트",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:30:13+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "fab11c76bd652173",
+  "title": "삼성증권 3분기 순익 3528억…전년比 14.1% 증가",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1hMmZsUS1uZlM0LU5lMU1OdF9yOGJUUUhYam9MLXAwSE1ZdXU5WHUxZlhWdklESWlvNE5WaHYtWDZwMXpNRlVYZldoVE01TG1LcVJ3cVVQamVYdzBRSDR2R3F0UnAyVmxaUXBvag?oc=5",
+  "source": "뉴시안",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:30:11+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "98b8d49400012688",
+  "title": "가상자산 해킹 의심만 돼도 … 거래소 입출금 즉시 막는다",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9GZDJ1em5nRkxGYkNqRlhoWnRaeUhaQkl0QUlXWkdEcnZKbTRsRzVuNURLWmFzeFJ3d2xvc3JlME1wNzdaVnVUaDRHR25yMVJuQlE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:28:40+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "가상자산",
+   "거래소",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "104658a0706a22cc",
+  "title": "삼성증권, 3분기 순익 3528억...전년 比 14.1%↑",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5zWThtaWdMYVlSVFd0TDlRSUZFTnFJNm9mTjQyOWdaNnpDZFBYcXVHSTFYX25vcXZhVEtfbVRTamRKcWxQckRMOEJKbVM0UEZBdzk5SjA4TUxNZTVzd202Z243MjlQYWdHWkxoX2FQZm9ReWs?oc=5",
+  "source": "디지털투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:28:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "fb34a059bfa15d15",
+  "title": "가상자산 해킹 의심만 돼도 선제적으로 입출금 차단",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wZkNFTmJtSkJwcThGZ1EtdkZhYlh6RlNGa2p5LV9XcEZWYWNmUGdhYThQUEZ1Skk2NWplTWlPVnNsYi0ya3Y5d1k1cmlYMHJyQXpNWHk1MWZBZw?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:27:28+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [
+   "가상자산",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a67d116c415011a3",
+  "title": "토스뱅크, 펀드 서비스 출시…1000원부터 투자 가능",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8ya1FpRTBtZFZORkRuWXlKc2hVcnpseWFlZ1JRdVlYR1VPdEV2RFRmTUtSNE8zQThrSVVVV0l5TFdQY2F4SW9ycjFYQjRjYVZHQUtNZjhBaFRzdw?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:27:12+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "펀드",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b25745e78f5b6903",
+  "title": "윤선주 “디지털자산, 기술·제도·인프라 함께 발전해야”",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Pb0R0VGNKYjcybU1keko3QnktZ2dDaWRaaWR4UDhwejczWlVYNWF4anhWbll3SjM3VF9SSTI0aVFoTlRIUFo5Q3hUbHRROS1lNkg4Rm5SaGdpbW81WVVQMnZwUnAxMThaWERPVmwtUGJEUVU?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:25:56+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [
+   "디지털자산"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c260332d02f03ca9",
+  "title": "삼성증권, 3Q 실적 업계 부진 속 ‘군계일학’",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1SbFd3cko0Z0lPRk9VUGgtVVRYRlZmWWdIV1ViOTZLRm1PMC1yTXVFaW5hSWFMSFVTcGhHbExtR3hKaW93NGllclFsRU8yelVSUkYwTTZiT0J5bDNKcVlhVjlhVXpBcENvUS1mVFVFRGg1dkdWQXJn0gF3QVVfeXFMTVJsV3dySjRnSU9GT1VQaC1VVFhGVmZZZ0hXVWI5NktGbU8wLXJNdUVpbmFJYUxIVVNwaEdsTG1HeEppb3c0aWVyUWxFTzJ6VVJSRjBNNmJPQnlsM0pxWWFWOWFVekFwQ29RLWZUVUVEaDV2R1ZBcmc?oc=5",
+  "source": "스트레이트뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:25:09+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "f4a5b08e7e85ee92",
+  "title": "국고채 담합 과징금 과도…금융권 \"이제 PD 누가 하나\"",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9IYkh5bU9hN1JfX0NUaWxXTk9rRENrb0FnYU0xMmRQR1JIc0U4VnNNNWhfSTR0ZkstSGRIQ21PV2x1dTRTR0pXZ3A1X2lRZFFpZW1ZNm1JZ2RYcXNlTXdmOU9kdUlxR0hwaHU3a3prak8?oc=5",
+  "source": "포인트데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:25:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "국고채",
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "ee2cbc8d5466819b",
+  "title": "NH투자증권, 각자 대표 체제 순항..첫 분기서 1등",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BUmU4S0dNNi03QWtMa3M0SWlzUFFwbUNaSV8yNnBoTndqU1JBY29hSTRqYmdmYWlfeXNXbmhSR0J0Y05ZS2tlb19rUVBEUjNPT21oa1E5bF9JTDc0S3Nn?oc=5",
+  "source": "스마트투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:25:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "NH투자증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "efed6dd7508c47c0",
+  "title": "임종룡 우리금융 회장 '보안·내부통제' 빛났다...해킹 공격 철벽 방어",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5ldm1GR0UyNk83Q0FpbEFMd0hhMXR6eFlYdUpiMjhfU2g4TmNfMTR3UHYyZzV0eTNhTDc2Mm9oNmQzWnlOZEtOM3hPNHRLSWZWd3pqcVFoU25MRTdkQnBJd2lKcWstNGg3OG4xcmV4YzFHTk3SAXdBVV95cUxOenBkMW5NT3VoUWpPTzBSdmJDNWpZREJwdFJtR1VHTW5NanY5VEJ1TURsNl9uR0RXYUhndy1rczljZFB0S2x6czBVSFJsUGJEZnN1bm0xaWNfQnZicHRTZmM5NGREd3FtVTFlNklWQV9Ub3dfejZLYw?oc=5",
+  "source": "인사이트코리아",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:24:47+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "내부통제",
+   "보안",
+   "해킹"
+  ],
+  "score": 4,
+  "feed_name": "소비자보호·내부통제",
+  "relevant": true,
+  "companies": [
+   "우리금융"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "1024d4fde17c8e56",
+  "title": "삼성증권, 3분기 연결기준 영업이익 4,490억원…전년동기대비 11,7% ↑",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5uUXd2ZmpnZVdsTmc4eXdlZTZPT3Yybnk0WHZBcFp0V281MURLLUVYQXlSejBjTllXcmJMZnRha2pVNVBvTzhIdU5ndW1RX19EdUp1X2N3SXhwZHlvZWJINTF3akw4U2QzeGQ0?oc=5",
+  "source": "백세시대",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:24:17+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "31573a18c5724766",
+  "title": "홍지선 \"집값 하락기 신호\"···전문가들 \"대출규제, 고가주택 조정 영향...하락장 판단 일러\"",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBEYmk0TW9CMXV6STNhYmVOVjlWLUs2SmZFZjlJaDJubW80NFpTc09zMkFPZXlrYXNqNjcyZkdpbmdNNmF5QXVlYXhnclhkODgxUm82VEFGbmo5NXRLXzRYYzNwT2laME5YV1E?oc=5",
+  "source": "뉴스웨이",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:16:09+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "대출",
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "d425d9a116c23b92",
+  "title": "“부동산 PF·일회성 비용에 발목…메리츠금융지주, 3분기 지배순이익 4707억원 그쳐 ‘어닝쇼크’”",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAwNDVDRllnQ1pOdWtQVzNYRUJMZklQSlp3Szc1UTZMekc2N1FsZGRIRlh4enY2Zjd1dXF0UWJObklaVml0aU1waTlDUWVDOHVOWlhndnlDVXFjNllVRDBnR0VMOHJJTXlQODdqbTVfMA?oc=5",
+  "source": "뉴스퀘스트",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:13:45+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "부동산PF",
+   "리츠",
+   "금융지주"
+  ],
+  "score": 4,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "f89a3bd9a4795d3b",
+  "title": "삼성증권, 3분기 순이익 3528억원…전분기比 28% 감소 By EBN",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9GdjZWa2lVd1lib1A5NHphcE1kZllyT2hOUDBWWUtWcmVpaGlRNE1MQ0pVRTZKc0N3aWxnX25uMlZCQUdldzgyajk1akpUUWhDaUk0SnBYRlRKY3JhQjZfb3I2WkdHSVhjUmV0OUY5Uko?oc=5",
+  "source": "Investing.com 한국어",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:05:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "3ae7fd6523df1037",
+  "title": "삼성증권, 3분기 순이익 3528억원…전년比 14.1%↑",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE45bjVMR0EwVFBiQXdnbkgzMWhnOFo5UG1hRWJQUUZYTndRQzMtdkFqRmVSRzFmY0IwZktsLWktNnl4TTdGRGxwMmc0dmJLREU0cnZmNWlDZlNDYTdZVEd6Z1A5VldiYmlaaWM0?oc=5",
+  "source": "뉴스저널리즘",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:04:47+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "100a682b868b39e2",
+  "title": "5대 증권사, 악재 속 3분기 부진… NH·삼성證은 순항",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE15aG1IOEF0eXZDbzZmRVROUDI5aTdkUldKZC0wcUpLdWtpMVI4TVFPMG1WT1AxUDFiNk1PM0RzZmQwQ1d4azlReGk2c2daS2tLMVFIWVF6eG5sY1JQbERqckloUEFkc21qMHJwZE9HOTNBd1kt0gF0QVVfeXFMTXlobUg4QXR5dkNvNmZFVE5QMjlpN2RSV0pkLTBxSkt1a2kxUjhNUU8wbVZPUDFQMWI2TU8zRHNmZDBDV3hrOVF4aTZzZ1pLa0sxUUhZUXp4bmxjUlBsRGpySWhQQWRzbWowcnBkT0c5M0F3WS0?oc=5",
+  "source": "IT조선",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:03:53+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사"
+  ],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "7441b8c32beb72db",
+  "title": "한화생명, 3분기 누적 순익 8656억…투자부문선 1073억 손실",
+  "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=04365686645645064",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:03:31+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "이데일리 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "20637edd1de96384",
+  "title": "과징금에 흑자가 적자로…증권사 주주환원에도 불똥 튀나",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQUkt0ZkJodlhreGU5bWI4V1VUNDBLY2ZDTC1RU0lRdWFhTXRpRU1fQ3hEMGg5eVVKMnRtaTFqeDlXdGVIR3kzejNOeFFmdzJSTENkT2VxbE9YUEtTVjRfUVJabmRYUXJIczJWWFBiNzNNMlJVeTQ1ZXBBaU5ZSVZUSw?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:03:22+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "과징금",
+   "증권사",
+   "주주"
+  ],
+  "score": 4,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "ff6af78c8a96e678",
+  "title": "삼성증권, 3분기 순익 27.7% 감소…WM·IB 성장에 누적 실적은 ‘호조’",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAtMGZVbVVmdHlJRGV4aHc4NHZXbWd4bjFlTnVkNmhoQWtRZks2LUtIbGlRNDFjWlQ0cmdCMURSXzNqb09wZmViMS1ld2FDV2ZuSGdQX3pqZ1MtY09TUW9LMA?oc=5",
+  "source": "마이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T08:02:45+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "5355d571c7c12bd4",
+  "title": "[게시판] 토스뱅크 \"국가고객만족도 인터넷은행 부문 3년 연속 1위\"",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5zeTZnV1ZaLWVDZUtLTGJrcDc3SUtXdzZLWGpWUHpzTDdCNnRxU0Z5NEJISUJ4QlNVUXdSdnJCellSTTRRbk5TQ1F2LUt5ajJmMWY1YVNjNlRJdXfSAWBBVV95cUxOY2o3X1o0Z1ZsTS1fbzFFOGVaemRZMlA1S1hHc29yaTRZVGxuM1g5Z01DR2R3cXFQYW43NGRwd1N3ODNtZERGeUdkNTQzZS1OaXRMbXRaZ3JLQlhkZ01DWmE?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:59:56+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "인터넷은행",
+   "은행"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "040ba4ea99ed7c5f",
+  "title": "삼성증권, 3분기 순익 3528억원…전년비 14.1% 증가",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE44QjNXekphZ0huNnREaTdpN3dLa3p0NkVSWUQ0X2xZQy04LWNyLXdaeEozN01XcHF0c2RkUjYyTGEyejVCQ3JNSklJVlNaTmVqZ1R6N3NQY1Z3Zw?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:59:27+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "3f1f384ecdf0b35d",
+  "title": "국고채 담합 과징금에 증권사 4분기 부담",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE0wQ3F0cWtXVWo4VWd6SE9EYk5KWmowY25rQ2Z3WUs5NFlfTi12NjBfdHZYaHloamp4TEZYLWZheWxtVDhUMzRKZTdjckJ1SHhGcnZySXdTYXBubFhva0VsV1RKWTZXNzFzNWROZWdR?oc=5",
+  "source": "세이프머니",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:59:20+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "국고채",
+   "과징금",
+   "증권사"
+  ],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "88b9cc765866f9d2",
+  "title": "삼성증권, 3분기 순익 3528억…WM 고객자산 579조 육박",
+  "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5QUFIwODFBcGZUMS1Wdy1nUVEwMnZTbWdicTAxdTdCT3VqbWZWMnRpMzRYNXpnbHNhNmUwYlItOExVZTFJMWxGOTc2UF92Qnd2VlNVY0ZuZFk?oc=5",
+  "source": "더트래커",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:58:56+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "39ecafe988045da8",
+  "title": "삼성증권, 3분기 순익 3528억 전년比 14% 증가",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1xVzY3YTBoQ3Nydk5ucEZrVmFEUElPMnJyZ2FQTmU4X2hmVkFOZHBFRjJnQlVESjR0ZUFkSThFWHMtYlZZS3Y1RTQ3MXkyblNpamRrTWI1eXVSSUpDWUlHb2s2cl9IcnJSWEEtZ1RwYXLSAXRBVV95cUxPcWdCcHl6TllUdGpfWXJXZGZuMnhaeWdNMDZfVU41RTFleWZKc0dWV3RqRVA0Qml1ZWNRRzRqbjctODZwenN3eWp5cV9BRmxNSWwydGpsZ1QwS0dlcVRqT1oxYjVYTlpURW1qQlJvY3BYU2RuQg?oc=5",
+  "source": "IT조선",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:58:24+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "603bee0c72ad4e7e",
+  "title": "토스뱅크, 1천원부터 투자하는 펀드 출시…통장 이자도 자동 투자",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4zcERVck9jYTdPYWJ3ekZhSGFCT2hZMExkU3RsSXZBTEgzRi10Yk93Y2djZ2xaWmRSM1RfZ09PSHQ5Y2NOa1lqWk9CWFZfSkhVVDFIa25aWEJjYVFKOGc2R2VSVUIyOVZTS2FMOXE1c2pRbWc?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:58:01+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융",
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "펀드",
+   "투자",
+   "이자"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "7e305b5523ad00a1",
+  "title": "[금융실적] 미래에셋증권, 3분기 누적 순이익 2조5016억원",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5zeHlndVFLVUFqSmp4V2kzY1VTMGdoeTFfSEY5a3NBUHNNalRYenhjN0Exa3dqYXpnQmtRMm0yRm1Cd21fM2FfeDdENmdwTkNlNjI2VzVWdlBvQWV6dUZnQ1dibl9SLWIzTVE?oc=5",
+  "source": "비즈월드",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:54:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "84f15a98932e507d",
+  "title": "삼성증권, 3분기 순이익 14% 증가…누적 순익 1조3000억원 육박",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5COXNkVWZudEJxaFFjTlJtUDhzQXRUSlBFNGJBOEI2NFR5Skc5Vm1KdVFMcVprSEluRGx0clM2OGZocFhLOHRja1pLbVNtOXRITlh4RlJCT1Rnb3otUVJBOTJrYU3SAWhBVV95cUxNNFZyazFqUTA3VWhqZHdXTXNvaXZQOUZSVTJuWWZ6MXRkWkZlblI1S3doeDVDSVR4QTZyZ1lTRW1IaXRSdkRaMWZScExDQnU5cHFDNDdOU21mMEI2a0daTGRFbmVTdmdwNw?oc=5",
+  "source": "경인방송 뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:53:35+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c9d2daf6ebfde543",
+  "title": "‘나스닥100 따라가기’…쉬운 펀드명 어때요",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226431",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:52:58+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "펀드"
+  ],
+  "score": 3,
+  "feed_name": "대한금융신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "bc7a2acc404ada52",
+  "title": "[초점] 삼성증권, 연간 순이익 1조6000억원 기대…배당 확대에도 ‘청신호’",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE56M3JkRkg5VkZNNkd2RndHSEd1MXJzcHhxMVNlN2QxcVFZb3UzYUJSbHJwdjlMYXlVUVV5ZEE0M1dod2xNQ1JxaVdOY2plUzRXRGNaWERSQ2lfRlc4OUxRbGxkU2vSAWhBVV95cUxNTUpqWGxTeDNudTdSanMwbVZqS3JUTHQzTEZtMTN4bnFyejRZT0J2R3hDNjVPVk1MSVdZdHpWd2NUOWdnSThWUndsdU5LaE4wVl82N045amdaSnNqWl9kc1JGVnM5UUVPbA?oc=5",
+  "source": "경인방송 뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:52:43+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "배당"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "900885c63d3f8c37",
+  "title": "삼성증권, 3분기 순이익 3천528억원…전년比 14.1% 증가",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE93ZXFmYjJfYjZXVmt5X1lUdWtabGs1ZzhuY3R1M2NKLWtyZl9jVDRkbTBlcnpaRWhIa1lUZnphQnFDNEJ5a1Fjdi11SmpfRG5PMGI0V3BtTkdLRXBxNWp3M05USno0NEE?oc=5",
+  "source": "청년일보",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:52:41+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "1d15961c077d8ada",
+  "title": "삼성증권, 3분기 순익 3528억…전분기 대비 27.7% 감소",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5raFo4VlFZX29fYlpZM0pBT0xYLUctSDZqY1VMNk1oUWduVHpSV0tyX3VaVDgzNE9YM2lqemZMMktpa09nVGw2S0U2aDBScTRqR09wSjFKU2d3MUlRSnA0SUoxTXpYajRycHfSAW5BVV95cUxOSDJKcDFpLXNsTjhDOExaeUhrcW5fQWNGLUJubHl4Q1ZySk1wR1N3LTNHdHV2X1EyYk9IeHhJZmxhOE5RQnRLeE91TkZZTTl2MW9kRHlpWFRmeVJTenJnVFBlMWwyRTJwb0JoWlN0Zw?oc=5",
+  "source": "파이낸셜투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:50:15+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b775e6f17691b00c",
+  "title": "미래에셋증권, 3분기 누적 순이익 2조5000억원…자사주 6500만주 소각 추진",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBLR0xVNTZlR1FTRjFFX2dicjhUdmdTTDFvekZMVFpPNmVjU1hpOGNWVjRvUlZqWTVoMW9nNl9fUVJ0ODZMWXpFOTVVWkp1QW5YVVZjVHhfWERveVJManRYVTZaQ1BOQXY1Q0tLZ1BR?oc=5",
+  "source": "폴리뉴스 Polinews",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:48:03+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "dab3dc880d547930",
+  "title": "[마켓인] 전력망·데이터센터 투자 열기 '후끈'…글로벌 인프라 펀드로 '뭉칫돈'",
+  "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=04286966645645064",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:47:07+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "펀드",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "이데일리 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "11ba4a40d867a2b7",
+  "title": "삼성증권 3분기 영업익 4,490억 원…전년比 11.7% 증가",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9JMWIyNmdUVnRPOHJETUJUNHFJWWx4WDFVZjBMYkppNU9vX0lOdVNjYUdzTnVral94Nk95bktYRS1KbTNTTldDWk55VmU2YTROT3l1VDVrN3JCX0s4Rjl4bnVHRE56QVZEMThSNmpxOVc?oc=5",
+  "source": "비즈중앙",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:45:16+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "08a489a6d91ed027",
+  "title": "미래에셋증권, 3분기 누적 순익 2.5조... 자사주 1.4조 소각 추진",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1CcnBYX3hIdE9BTDlHNFgyTnFaOHB0LTNmajFnUTlOV19uRVJNV005NG5hZk9zQkMyMWZUbnB5a0NxcmE4UjIycF9oOTZwOWpXUkZzVi1kSVFsY2xFRGZJOHhKWFA5NndjSGt1RWlGblY?oc=5",
+  "source": "시장경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:42:01+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b1cd7b2ed4415507",
+  "title": "증시 부진·금리 상승, 증권사 3분기 순이익 급감",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1kR0FSNzNkdjVZMmZscXV6ck1NaDlMY2lSMEZ0WWRYbHdTTWxXVk1fbWd5YldtdnhEODlhZnBOTzdaM085VVNNTkc0MjhfQnFXZWZVQ0lscVlTaWp3VXRSaHp6cG9yb0hMemZLNExGeUE0QQ?oc=5",
+  "source": "스페셜타임스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:39:01+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "증시",
+   "증권사",
+   "금리"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a8e5d5d11aea785c",
+  "title": "미래에셋증권, 3분기 5206억 세전손실…누적 이익 급증·해외법인 역대 최대",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA3cW9udnZvb3U4LUo1UHpoZjY5cFhjNTdORnU0bWNxUDhyTE1MN3I5Tmhmby1DeDlDQXVLaUlEMF9GM1doZGdpMlFCZmkxU3ZwQ3ZOVkFWc2tmWlJ2bDlkS2cwWWwzT1NuZ1pnN1JR?oc=5",
+  "source": "국제뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:38:11+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "7596d3b60ed66dcf",
+  "title": "삼성증권, 3분기 순이익 27.7% 감소…자산관리는 성장",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE4zTFdLNnQ1QzFhZV9ZS1E1Wk9XcW5ZekV0SmxVbVRWbDlOdzhYdVdIeFljYmwwbHJ4Ymx3TkM3aldPMnY2b1VOcm5oRVZYUDhXU0x4YTVLRTZlMllWSFJFZkxHdDhNT1ZSWlZXd01mTQ?oc=5",
+  "source": "서울신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:37:58+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "f5b585b12b2daf9b",
+  "title": "삼성증권, 3분기 순이익 3528억원…전년 동기 대비 16.5%↑",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0xQ3hLZUhCRmdENGFXR0lWSXFTczJKaEtRYjd4dVZYNG0xdnRzaVVkX0Y4ZV9SMmRJeC1QSHVyZE5yYlFMXy1TVTBVdThxVmNXVU9jWng1SGlkb1lvREQwS2lwRk1PV1RpRzNN?oc=5",
+  "source": "CEO스코어데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:37:31+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "fba31a7d9d939c20",
+  "title": "삼성증권, '큰손' 고객 52% 늘었다... 3분기 순익 3528억",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBKd2VJVHpRdXNGZkN1Skp2cFdHbjF3VTNVWFpVUnA2cHphZ0tYZ1p0UjFUNlJocTRVbld6aFQ0YWhYQWlpSmZPRzNyakltbkhaNkpQWlFXQnhqN3RhYWd0WnF1T2JIWUpXc3RxSzJncU0?oc=5",
+  "source": "시장경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:36:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "670bec25861e0079",
+  "title": "삼성증권, 3분기 순이익 3528억원…전년比 14.1%↑",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9DcE9FQ3Vub1NxemFGU1JiQkFwNEhFNjBKMXFnU2lIZWc2eXU3ODdNeE5PdzV4anFPeUJsQTFKU2R2LXRFYWx1ajVCRGNwUGhnZm1BbFVUdjFEWUw1Y1VWWXJhN20?oc=5",
+  "source": "디지털데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:36:04+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "da9f749ae69c7868",
+  "title": "순이익 4분의 1 토막 난 10대 증권사…실적쇼크 현실화",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBKeHMyMWFudU5idUhiX0QtSXVwT0RycWhUSVJ1VE0teUIwWkRvNm41TTdxUGlKc0JndWduSW1vODBmcTc2cmg0VEVmVENtQ1h1aklKUzlIU3VUQQ?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:31:57+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사"
+  ],
+  "score": 3,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "4576e3f98ba18e72",
+  "title": "24시간 감시 못하면 입출금 제한…금융당국, 코인 거래소 보안 고삐 죈다",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1OSHExVlktMXBHSlZqaU9UZ2FtcTJIcXcyVGJHSDdJY1VVMlRlbnp6RUpNX051UVhiNEZVLTJ0a1N1Qjc0d19HYkJzX0lBRllXd0YtWUpCMV85SXRzSHZXM2RvRXp4RE1jZmJFSDA3RkY?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:30:23+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "금융정책·감독",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "금융당국",
+   "코인",
+   "거래소",
+   "보안"
+  ],
+  "score": 3,
+  "feed_name": "금융위원회",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "cff8e9c6b642c91c",
+  "title": "가상자산 거래소 해킹 의심만 돼도 입출금 차단 가능해진다 [크립토360]",
+  "url": "https://biz.heraldcorp.com/article/10935354",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:30:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "가상자산거래소",
+   "거래소",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "d510175f0be9c225",
+  "title": "당국, 해킹의심 때 가상자산거래소 입출금 선제 차단 허용",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5SbGZmbENJSjVDNHVzal85NlhqR1lCMnp2LW01aHE0SGpEX3c4U2NDZ2R1NjBsRjZFWkxiUWJBVUE4UldodDhmSE1pdnkxS0ZMQ2hYdnFsWmtzZFnSAWBBVV95cUxPV1FLSnlOUnpvUm1FSU9CYjl3MFNTVlNua0hjbHZtM2N6MkQtblNvd041UEpQZ3NXM0owaWI5Sk5lQVo3WUwzQVdMUEtCMFY4blk2VFIzcEY0Rmg2VnBjbHI?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:30:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장",
+   "금융정책·감독"
+  ],
+  "tags": [
+   "가상자산거래소",
+   "거래소",
+   "당국",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "066c971deade2f12",
+  "title": "당국, 해킹의심 때 가상자산거래소 입출금 선제 차단 허용",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9YZVpGUklwRzJIbW9oM05YVHlzbHM5cUppdlhwZzU1MDE1REU3XzZNczVXYTAzYXk5bDBxbkVFSFhUWWM2UlUyTTlfbkRRcXdrWWc?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:30:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장",
+   "금융정책·감독"
+  ],
+  "tags": [
+   "가상자산거래소",
+   "거래소",
+   "당국",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "07dd77228bb65135",
+  "title": "가상자산거래소 해킹 의심 땐 입출금 차단",
+  "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBXMnY1dm50ZFY2SWttSXdtVU9JQTFDT2xJVDg5aVN6cGdxNXlaMlh6eXdfZjNCZWZUdTdpY3VqeENUbUxyaTVPT0ZLU2dlVC1fN25NRg?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:30:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "가상자산거래소",
+   "거래소",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "가상자산 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "907fcee240f3184b",
+  "title": "증시부진·금리상승에 '직격탄'…증권사 3분기 실적 줄줄이 악화(종합)",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9XdHU0YXFGRVozVTZNRDhXdFNieHpOOWZIOUI1YnNnOXhGUFp3UHRqNXVsQjU1NTFJU1UtbDNHSTF2NWxJaWp1SzVLNEU2dXVqc2U5bl9BMjVPVUNhMkF0LdIBYEFVX3lxTE9XdHU0YXFGRVozVTZNRDhXdFNieHpOOWZIOUI1YnNnOXhGUFp3UHRqNXVsQjU1NTFJU1UtbDNHSTF2NWxJaWp1SzVLNEU2dXVqc2U5bl9BMjVPVUNhMkF0LQ?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:29:50+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "증시",
+   "증권사",
+   "금리"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "a0b3917d3b959ef2",
+  "title": "증시부진·금리상승에 '직격탄'…증권사 3분기 실적 줄줄이 악화(종합)",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE10cnJDUVdaSUJJX1hDdHlEblNwalQxOTlMVWF5OWFLbWVicXhmaHhoRzg3T21wZXBWTmN4OWN2bXh4aVZxQThDZ3JnRTFuT1VUSHc?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:29:50+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "증시",
+   "증권사",
+   "금리"
+  ],
+  "score": 4,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "dbd6b07f1e8e6705",
+  "title": "삼성증권, 3분기 순익 3528억 전년比 14.1%↑…WM·IB 실적 견인",
+  "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1PMkRmSHFsc0h2NG4yd3JXQkVRUExFWFQ5Z2ZlMk9ZemFvRmVSaDJ0RXphX09UNWtJYWVqX3FjOXZOQklGQlN3U0lYZ3RaT2FPYXJMNVR6WV9qSnVPb0hpWkxsY25sc3FOOFNRSlBfWkYtZzVKWWotQS1QcEY?oc=5",
+  "source": "비욘드포스트",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:28:44+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "7683b84240020e2c",
+  "title": "상반기 잘나가던 대형 증권사들, 하반기 '급제동'…수천억 과징금에 추가 손실 우려",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBZaDlkSFVidmp4T1VDNWZYYmVJSXdsdTV3ZW9zM2VYemxGNGE1aFpqaGFTTURfM2Y0TFJ5UVZFdGk2US1aQUJzTG9scjRJMHY4a3BsQkk2VDFwWkZndmZ4X0JySFE5am1W?oc=5",
+  "source": "녹색경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:28:09+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "증권사",
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "6a12054b7b2dcd71",
+  "title": "3분기 10대 증권사 순이익 83% 급감 1조 하회...과징금·평가손 여파",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1BMnVZTnIwSExhd2IyTk1mMUVUd3p2eXpwc1E5NFFIZXVnaWxqbHhkOTVxREloQlRiaVN5WjRXeWpMc3RqMWlWMno1STRfZzUzckZvN3hFckx0VTVRbTZuekYzN3JRbVR6NkNmR0JQM0tVaUE?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:27:21+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "증권사",
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3a88714e84e95999",
+  "title": "DB손보, 3분기 누적 순익 1.6조…전년比 10.5%↑",
+  "url": "https://biz.heraldcorp.com/article/10935436",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:25:49+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "f6988a8b328a0f90",
+  "title": "정상혁 신한은행장, 역대 최대 실적 속 정보유출 책임이 연임 변수",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFByamFSdk5jdF8zWjUtUm52NXROS2l1ci03QWhObVJxSWRZWkdFempMNkdIMElOcWRlc1VoRERzT3RUR0g5bHd5a3BKbGZ2TmFTWWNuQV9DMXV3M2RkN3dGckJXMlBMbk1TNks4Mg?oc=5",
+  "source": "스페셜경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:25:26+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "신한은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "0ab08578bfa540ba",
+  "title": "'국고채 담합' 청구서 반영하는 증권사들…KB 적자전환·대신 적자 확대(종합) |",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE54UWVaaVVPdEVPMS1iMkJ4cXppWnZTU2NxQlpGanNiYkU2WUJZOXUzbm9jQi04YlF2NnRmZ0wwQjhNOGlqbXJkam1TbUF3Nl8tTDBMMjhsZVNTWG9iX0sxcE5JVkZILWxneTdtcUQ5LTdVbFJK?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:22:52+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "국고채",
+   "증권사"
+  ],
+  "score": 3,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3093602c79c9dcf4",
+  "title": "정진완 우리은행장, 연임 '청신호'…'실적 반등에 해킹도 방어'",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBVZXFZVWJOWWhQWmZRYjZGSXhER1pmN1ozVkEzZ1Q4ZDJxc3QxY2txVVVtN0s3dGppMl9ER0YwT3BRTmhRbE9JUkt5X1dpU0ZHbWhFcTF3YzFyNzBoLVNhTTFTVVF6aHFBQkhsTWJfQdIBb0FVX3lxTFBVZXFZVWJOWWhQWmZRYjZGSXhER1pmN1ozVkEzZ1Q4ZDJxc3QxY2txVVVtN0s3dGppMl9ER0YwT3BRTmhRbE9JUkt5X1dpU0ZHbWhFcTF3YzFyNzBoLVNhTTFTVVF6aHFBQkhsTWJfQQ?oc=5",
+  "source": "한국아이닷컴",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:22:50+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "해킹"
+  ],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "우리은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "9f15a58a9e620d30",
+  "title": "삼성증권, 3분기 순이익 3528억…전년比 14.1% 증가",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBnY0FKUFlfUTB2S2w4cjFtb1B2QW1tWGJycUVONGV4VHlBWXNBU2szeW9NaVB0b0lxMTJtUEhXMWpyVTNRSEg5UHFuSWloUDA3c2NsNmhldWpZN1FBSkVj?oc=5",
+  "source": "뉴스1",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:22:06+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "373e68f2e4ff4fe3",
+  "title": "하나은행, 퇴직연금 ETF 당일매매 도입…매도대금으로 즉시 재투자",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBRbkh3NnNjWmxLeFZHcE4xb0d0Z2FTMUJEUm0xdGRLdUdCZzJ2dnpqLTFnNkt4ZG01MDVnblQzNmY1ZG5rTkhrSW9YeHMxcUV2a1pPMEpnTXFjT1ByajY5bktfSnFhR1k?oc=5",
+  "source": "투데이e코노믹",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:20:22+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "ETF",
+   "매도",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "하나은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "bff0ba2e2e6c7170",
+  "title": "미래에셋증권, 3분기 영업손실에도 '1.4조 자사주 소각'...주주환원 확대",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1rc0FXR3VnbmQ2bDl5OXBBMnBTQUZzSFU4VHY1NDB6bHJDZUVQclJibGJIZmF2eHBJNmRCUXNlTko4R193VDZDUjNJUFdWeTAwSWlYR2FfMkRfY2FPdVlJ?oc=5",
+  "source": "조세일보",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:20:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주",
+   "주주"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "5fc8f66bc606a00e",
+  "title": "삼성증권, 3분기 순이익 3천528억…전년비 14.1% 증가 |",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBrMVI0QWE2T0VYdEdudWFXajdwQmN6a1ZQdXl5YUFSOVRldG92VVJHUzRLMlRXSXBkekRYZlowdzFrbldsMk5nWXNvTTVRVlI4UlNJdVVIOWtvODBSSVNCU3pTbTE4THVBRFdONWRFblRnMVFP?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:13:22+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "d450704f884da456",
+  "title": "[현장에서]고개 숙인 금융보안원…금융권 해킹 수습 기준 보여줘야",
+  "url": "http://www.edaily.co.kr/news/newspath.asp?newsid=04080326645645064",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:12:34+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [
+   "보안",
+   "해킹"
+  ],
+  "score": 2,
+  "feed_name": "이데일리 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융보안원"
+  ]
+ },
+ {
+  "id": "f4040c68461652f9",
+  "title": "삼성증권 3Q 누적 순익 1조2918억원…전년동기比 63%↑ - 머니투데이",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE80V19MS2JUaUNQTjF4eE1pdUlpUkdYcVBsbEpyV25XSFZ5c3ZNUnJGbWtKaFc1ekgyLXZySXJKMEhkTTVVY1RHNzZIV0tWMnBtZjAwdVpaRF9sOWh1RU56WXZaM2ZLeXV40gFuQVVfeXFMTy11ZEplb1o3N3lKWGNKU2RxMHdVeF9oU1Y3aGtZaTQ5VkNWTk9FeEZQcVF1QkhWbWt6TjJxX0hRSXl2VkFRZ0cyT0FJdnlwclNTQWdUTkpvM2dqUVUyOG5WZXduaTk1alh6c3dLb3c?oc=5",
+  "source": "머니투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:12:16+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "ab46c9f0515181e3",
+  "title": "삼성증권, 3분기 순이익 3528억…전년比 14.1%↑",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9PNGFUcjYwM29xcFVEcE95eUdyQjdhWVRUZDFJb3g4YTk4YjBRUHBrZmhpeVFZbjJhX1ZqelZZeC1nQXVvVlpybXZ3LXo2N3htd3JXYVlIeWxhWFh0QjROSkF1TjlBdThIbV8ybklXTnZNNE0?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:10:11+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c7ef0eb9e562f7da",
+  "title": "금융위원회, '해킹 공격' 금융보안원 다음 주 감사 착수",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBsVk1FWTFCZmc5U0tBVEVMSkJoZkFxYjNBbzVEVUlnaWpSVC12ZEloR0I5bGg2Tlo5dUZ5c2VVZUttQ0M4Q2gzRnBmblhmck9LNWk4VTE2ZEFIM0nSAWBBVV95cUxNb1lsMUI1aXI1NTVqNmNtREJqQVJOajhLdlZNNHJqR0dqRU50T0FCRW12OGcxZHRQMWwtbkpMQXY3LWNON0pWa1ZqQ3pQdlZIRXhTaFZTZDVDU1R6ZTBlYzQ?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:09:59+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "해킹",
+   "보안"
+  ],
+  "score": 3,
+  "feed_name": "금융위원회",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회",
+   "금융보안원"
+  ]
+ },
+ {
+  "id": "987cb26199170090",
+  "title": "삼성증권, 3분기 영업이익 4490억·당기순익 3528억",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBVMDFmeWQwSlpmZFJfNmdJTHJ2clpEZ1F2LXBhN2Jqb0VyWUNnckxaNTRsc1hZUkU5R1ZOSVg2TVFaNzc4YWFiZTl4aTRqUEFIeHlhb21vaFM1MlY1d3Q5OFR1Nzh6ZzQt?oc=5",
+  "source": "FETV",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:09:36+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "486bb09ecba8fc2c",
+  "title": "삼성증권, 3분기 순익 3528억원...WM·IB가 실적 견인",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE90S3JYWmlHMGtDOUtwMV9SYmpVOEpkcjZ0U2dkRzY4NTMySGo4ZU54Rlh4SHNibHh2dkhTSHlfSkNKN185TUM0REl4a3ZsSkl1Um41ZmdRdEF6ZmhJTlRHRXBTT2toc3NMMlHSAW5BVV95cUxNclRxY3VYU2pfZTU2WkZhRVRGazlfZTk0QnRRb0pQTmxlMkxfUV9yY0lhRTd0Q2E5b1hzRHVERDlheWd0c09Ja0d2aFNmVkxLN2h4bkFFQkdETkkwb2VKNlh0bFpaRkUzclgybHc5Zw?oc=5",
+  "source": "아시아에이",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:07:36+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "af2bb770c04afc90",
+  "title": "[2026 3분기 실적] 삼성증권, 순익 전년동기 대비 14.1% 증가 3528억원",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8tR0NHcGhDVzEzdmNIOXN5bUdSZldLbnpFZXJ5RGw1OGxuSDNKZUdsMEtJcjRlbU9GelRlUVQ5STRBUDdmQ1Q4RTU3RU5zbE1fYjV2aS1Nb2h4SG5YcTJhbERsTkw?oc=5",
+  "source": "인더뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:06:27+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "c9d60c01fc113d89",
+  "title": "삼성D 투자 '에스에프씨' 18~19일 공모주청약 [위클리 마켓]",
+  "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE04MkNQSHI5VUpISXlrcWxPbkVWRldwYTZ0Vk9VNGN2Ung5cnJsMUppelN3SkJDR2hBbE1sWlNtQWFVcVNsY29wYWlZY0hZdzB5M0JlVg?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:05:01+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "공모주",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "417665993a45adeb",
+  "title": "금보원장 “높은 보안 수준 유지 못해 송구” 해킹에 사과",
+  "url": "https://biz.heraldcorp.com/article/10935379",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:03:59+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "보안",
+   "해킹"
+  ],
+  "score": 2,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "금융보안원"
+  ]
+ },
+ {
+  "id": "1346d66cb323b924",
+  "title": "삼성증권, 3분기 순익 3528억원…전년比 14.1%↑",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1sdm1WdDVaQ0FkUEsySXc0TkJ3aUFrUXoxeVF5SlNaTW1WUG1wX3V0LU80eW1CRDUzTFZpYnM5Nkp5LTNWR0Jhcno5RVZvWnFUTHhfODl5LWduZ9IBVEFVX3lxTE5DWXBDc1RGY0NvV2R6NFM4Q0RJMTVqTmh4RTZFZ1JUZWtYSEZicVBGSnJjSGRMS3ZTYl9YVEJIc2YyYTFYVk9PcDd4MGphWTZ1Q0oxbA?oc=5",
+  "source": "더팩트",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:03:25+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "173fb2865d261d76",
+  "title": "임종룡과 '원팀' 통했다···'최연소 행장' 정진완, 우리은행 연임 청신호",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5UU1pmVlREUVdYcjVFQy1FUXRsT3pUXzJqSVp1bVJuZnN0cEVrS2plYUZRbmF0UlBoa0xOdUh5Y3ozNF9ERGdTaWRiSEJZNTFMX0NoRFBBZU5mM3hZMGJOTVF4dkFnRjAzRUJjdQ?oc=5",
+  "source": "스마트비즈",
+  "source_type": "media",
+  "published_at": "2026-11-12T07:01:24+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "우리은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "82d644798f58430c",
+  "title": "금융위 \"디지털자산법에 보안관리·해킹책임 규정 담는다\"",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSVlEeXhXLWZaMVlVTHRqcXI4cmtZOXpVbVMtVXNncnVfV3lnLU5FN3VjSDRlUW1KV3lLbGg1czRubjFDQ0Mtb21NeUI5SFZWQ0dYVlFybW16M1lVMkdnSG9WVWhUcDZESmJNZzZFamgyYUUzdjRiN3RCSGQyLU5jNA?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:59:25+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "디지털자산",
+   "보안",
+   "해킹"
+  ],
+  "score": 3,
+  "feed_name": "금융위원회",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "4e99133f14f353ee",
+  "title": "KB證, 국고채 과징금에 3분기 적전… 키움도 순익 정정",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFA5US1EYmN4dmNubXF1Tk8zaHZoRGV6aFp2U1JGZjl1Mk9wa2NzQmVodGtLX0lNRWRjNkRUR1ZYbGJqQUQ2S1NGM2ZtS3VRV0Q3ZG5jb2ZTb084ZjdJTHMtUmp6Sk9WXzFNQ1A2alJ4eVItd2U20gF0QVVfeXFMUDlRLURiY3h2Y25tcXVOTzNodmhEZXpoWnZTUkZmOXUyT3BrY3NCZWh0a0tfSU1FZGM2RFRHVlhsYmpBRDZLU0YzZm1LdVFXRDdkbmNvZlNvTzhmN0lMcy1SanpKT1ZfMU1DUDZqUnh5Ui13ZTY?oc=5",
+  "source": "IT조선",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:57:45+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "국고채",
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "e0de2c674506334b",
+  "title": "[컨콜노트] 삼성화재에 쏟아진 캐노피우스 ‘말말말’",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226430",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:40:22+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대한금융신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "78e8c17e5806d2f3",
+  "title": "국고채 담합 과징금에 증권사 실적 타격…신용도 영향은 제한적",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5sZDBkZlF5TmRLeHpSNTBsTDN0Y054ajh3R0paamNQVmxjVTN0YmtmdnVzMmpnX0xNSmJiSVVtcFNMbWxVbEJuMVVzeWpKQXdDWHdWQV9HUlc1NGNLY0ZrRUxZQ3ZBQ2s3S2RJbWJVRnUtM2JC?oc=5",
+  "source": "파이낸셜포스트",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:39:40+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "국고채",
+   "과징금",
+   "증권사"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c86af2cc40c0282c",
+  "title": "미래에셋증권, 3분기 적자전환…4056억 순손실 '어닝쇼크'",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE92YmlXaWswaDAweHphS3JCdlBOd1RyWnZRb29CUDl0OVdpX3Z5a29wenJEUlc2NV9iVlBFV3E4ZGV0dVpiOEpMUkY2WHRCb2NiWGxwVXlFREJxQQ?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:35:07+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "9ed827d7f1f9ec87",
+  "title": "토스뱅크, 1000원부터 투자 가능한 '펀드 서비스' 출시",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5GUllxUTdSY0tPREU3Z25oX0ptTnN2WDlLamlBckhGdk9RLWVFN1FibjYyYVZlelNZNjFMRUl1ODdfalZiaDJmTzRhbVZURnJETHVoRzBRZU1hUQ?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:33:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "펀드",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "5ff92da7a8c19879",
+  "title": "DSR제강, 최대주주 홍하종 등 주식 3400주 증가…친인척 홍진우 장내매수 영향",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE12eld0czRUbmRmb3JzQWlDa0VIVnJaUlFQQXRnQVlvUE12ckNiR2FkRlJvdnFQdG4xUjlZb1F5dWdsOTF6U1N1Q2hOc0ZXUW1vYlY1LVpPYVlxM1g1TWswUkRHbkJUaVdUdVlqcHN4cU14NC1jRkplamNRbw?oc=5",
+  "source": "디지털투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:32:08+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "DSR",
+   "주주",
+   "주식",
+   "매수"
+  ],
+  "score": 4,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "8f6b1310d863b831",
+  "title": "우리銀, 소부장 공급망 금융지원...대출금리 우대",
+  "url": "https://www.sedaily.com/article/20113549",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:29:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [
+   "대출금리"
+  ],
+  "score": 3,
+  "feed_name": "서울경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "2dee1f873302aa0d",
+  "title": "카카오페이 기부 마라톤 300억 걸음 돌파…소상공인 지원금 10억원 확정",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9zRlVGS2RpM21NWDBZQVBMeXh2UUZZY1YxRmxNbnFaVHc2U1hrLTBUWnFCNUUxQXhRYVlielpDYmlrb0tQVmUzb1JnQUJkUzN1YlE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:28:52+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "핀테크 기업",
+  "relevant": false,
+  "companies": [
+   "카카오페이"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "a2d68460ba69e2f7",
+  "title": "미래에셋증권, 3Q 4056억 순손실…1.4조 자사주 소각 추진",
+  "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBxekpxdldoNVVTMzIzMnVfWWIxc3ZWQmlrT2NycFMyazF1SU5kYTdpLW1qckJkQlZNbGdXNk5RN2ozTmloT1BrQVdtMnRobjg?oc=5",
+  "source": "딜사이트",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:24:40+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "94277de76bc8d8cb",
+  "title": "'국고채 담합' 과징금 은행권 최다 기업은행, 역성장 기로",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226429",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:24:04+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "국고채",
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "대한금융신문",
+  "relevant": true,
+  "companies": [
+   "IBK기업은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "e09917994995cdae",
+  "title": "삼성생명 \"해외 운용사·보험사 인수 검토…내년 초 주주환원 발표\"",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE51ZmlpQ1RYV2FyQmVXTkIwRXJKanFicXNfcGZyN2V5dUJkUWFYWENOUjF3VjRuWXBhYkJtaEQ0aV96cWxXZ045VjROWVZXaF9KbzhMWWp6Q3dBUjljcEVGbjc0cHEtUDFodlBmWkNmLTU?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:21:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "운용사",
+   "주주"
+  ],
+  "score": 3,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c08e30122ee44484",
+  "title": "“불편할 만큼 가까웠다”…젠슨 황 불륜 예고한 공매도 보고서 살펴보니",
+  "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBnckUtZzJUX2RsZUpBUllsMkhOOWhEcnhYd256Q2hMRHRLS1ltdngxdzdBbXpweTVmWDJEOW5ETmJKT2k0TzAxUl9HWTd0cVI0Q2NySHkwcmFVUQ?oc=5",
+  "source": "한국경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:15:32+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "공매도"
+  ],
+  "score": 4,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "56107937a8b83f9c",
+  "title": "코너스톤·사전수요예측 시행 임박…IPO 주관사, 기관 확보 경쟁 본격화",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOLWFyaWZoYjMxRjE5LWxlRUhCdzRuVWM5b2NDVTBJTFVEVEVVNXZ0MWc5NkVNNTYyYy0zMnl5X3kyelpGcHh1clVaQlFiMWhiY0hlb0hUdWhkQS0zRENfVDFqZXBBYUc5QlgtcEtfSUVZbXltb3hEUmdPM0JCemplUQ?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:13:28+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IPO"
+  ],
+  "score": 3,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c420d2a6bfd678a5",
+  "title": "코스닥 두드리는 유캐스트 \"유니콘 기업 도약 확신\"[IPO출사표]",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPanl4aHIzMWFET3FtT2FLLVA1NW1obVQxUFRWOXhZZkpYRVZDRndrYmhZbmJmdkIwTXN2MXMza0liT0ZKSE8xQzJ1eXdHOFNKNlowUE52SmU5X2dqdHhuZm43WUhRdGdSX3VWaG9vNzZGVW1ETHVYTnc1cU1KWmdQcw?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:12:34+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "코스닥",
+   "IPO"
+  ],
+  "score": 4,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "2294242ea6bafef8",
+  "title": "미래에셋증권, 3분기 누적 순익 2조5016억원…전년比 148% 증가",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5pcjNjdW5uM041aFk4UkZQVjVFSVQyWmkwQ29pVzIyTEt5NnR4NFc3WElSczhtWlpiM3JKaVRSUkU0dk9oNDRNdWFYVlFid2x0ZHR3WUIwUHk3UnBRODk1MkIwcld1LUowN0Y2TTZ2VlA?oc=5",
+  "source": "위키리크스한국",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:12:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "46ca003488b93959",
+  "title": "국고채 담합 과징금에 일부 증권사 손실…\"신용 영향은 제한적\"(종합)",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9BQnJWRk5EYUdnZTBxQXFzUDR1c2lFeWdHb1RoTWJkYnFTUEo3VzdWcmNOMXJBQU9JNVdIRTV5YlRrTUF3bnU5VW5jTS02T1JYV0tBYlVYbS0wMjkzcHl5QdIBYEFVX3lxTE9BQnJWRk5EYUdnZTBxQXFzUDR1c2lFeWdHb1RoTWJkYnFTUEo3VzdWcmNOMXJBQU9JNVdIRTV5YlRrTUF3bnU5VW5jTS02T1JYV0tBYlVYbS0wMjkzcHl5QQ?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:10:19+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "국고채",
+   "과징금",
+   "증권사"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3d136be6301ee580",
+  "title": "iM캐피탈, ‘창립 17주년 기념식’ 개최…지속가능한 성장 다짐",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226428",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:10:04+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대한금융신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "d00ed5c6449a3d2f",
+  "title": "'토스' 비바리퍼블리카, 무디스로부터 첫 국제 신용등급 'Baa3' 획득",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE40aFg3d0dvdXJ0OFRJVUZMMEZRbkROZ0Mtb0ZTRkNjOXV5Y2ZOQ1dadVZRUUtFakU0YmE2cTZJZHNCYVRTTllCdGZrdmc4X2pUbWtqNDE2bkVvRjDSAWBBVV95cUxNMktaSHVvYjF3WU9LWVRDVjlQZUh0SUhRM19tYkpRQUZCdHVvRFZReXZmWjA5MEp3SmdiVG5tVk15ckVjUXY1MExfdVZRd2xyT21yMTA1VkV1TnEyVk5XMVA?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:09:32+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "939c9972103d1161",
+  "title": "스페이스X에 웃었던 미래에셋, 3분기는 '침울'",
+  "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95bFgwVGs1TU51aU8wak9ubGJLbkNzRnhXSVlDV3o3WUNRN1hZMWd1Sy1rNDRwYjNvTTRMZXpJdENsQjJUbURIYVY1eVk4Yjl4VXdNUmxOMkRzRmVDTzB3Wg?oc=5",
+  "source": "뉴스토마토",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:03:39+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "9976560edcb4af45",
+  "title": "토스뱅크, 1000원부터 투자하는 펀드 서비스 출시",
+  "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE54aFhKZDhxVEpIWnZ3NER6c1MzRUNoYm5PUXZPUXhPTlQyMHhGdlVMUEI1MUxMYWU1MlRPaTc2emdwbXRqZlRRa2NKWDlCb3pvZ0p1LQ?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:03:10+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "펀드",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "6a36294dbdb902dd",
+  "title": "BNK부산은행 호치민지점, 부산기업 베트남 진출 복귀 지원 위한 업무협약 체결",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226427",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:02:19+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대한금융신문",
+  "relevant": true,
+  "companies": [
+   "BNK금융"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "8135f5b75b1e7343",
+  "title": "금융위기 내다본 하버드대 교수 “AI 거품 꺼지면 韓 매우 고통스러울 것”",
+  "url": "https://biz.heraldcorp.com/article/10935281",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:01:52+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "AI"
+  ],
+  "score": 3,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ]
+ },
+ {
+  "id": "af071d488797bd1b",
+  "title": "증권사 날벼락…국고채 입찰담합 과징금 1.3조 폭탄",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBGNVpCYVhZUzlWcjNVV0NnbDZuRl9lWC15eGt5czRGRjV6YnR3bUMzSFdHMUNneEs0WGZZMk5GWHBxMlMtMG4wYzhCZDA2OW1uVmF1ZHhKbmF5NXFCWmVkNUtudzZwZnVIWDJF?oc=5",
+  "source": "시사오늘",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:00:51+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "증권사",
+   "국고채",
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "d5a804f146478b55",
+  "title": "종투사들 소집한 금감원…발행어음 고금리 경쟁에 \"건전성 챙겨야\"",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBSNEhYQ0o2cVJhVmVKRnhWUWVKemNqR0hxd3A0VGEtaktrV3FCTGtXbFltaU52c0Nua0dDazVLeEZDUHdtaVlvS21RQzZzbzY4bnphWl9JUy0zRnRwOVBEcUhMcFFiTm9qcEtfVlZ0ZWo?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:00:15+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독",
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "종투사",
+   "발행어음",
+   "금리",
+   "건전성"
+  ],
+  "score": 4,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ]
+ },
+ {
+  "id": "1a667af5e3c406f3",
+  "title": "금감원, 증권사 발행어음·IMA 리스크 관리강화 주문…\"이해상충 방지 만전 기해야\"",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTHVfVnJEMzNuWmItQ0FGaU1hSVZMQnEzSzl0VUt2ODB4OU1LOGZHWWVGc0lnV0EyN3QyS1c4dGhHcFZqWDhJQ1NlS2dWM3lYZ0cwcEZPOERRM0JvenZQV0pnSkdKRF8tc1hXYzNOb0lTZ0lyRXNFb0VYZjlUdFZJbQ?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:00:03+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "증권사",
+   "발행어음",
+   "IMA"
+  ],
+  "score": 4,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ]
+ },
+ {
+  "id": "83948b7f8239af1e",
+  "title": "토큰증권 시행 3개월 앞으로…\"결제는 어떻게? 준비 미진\"",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04dXZ3bVZ0Q3JvX2Z4OG11TWUyNUFmZV9keWluVm9tVlBIWWF3ZkVCOGZ2R0tGOU5pRVFkV0pCZjdpQ3lnNlQzT204ckNJOW1mdHdVbUFHNWpkZXPSAWBBVV95cUxNN2VkaGc2RU9wbkNGdzhYNnQ5ZGtIUnRpMGR6RGsySmRac3N6ZkNzOS1lWXJhbWg5YVhHT0xFbWpXWXYtUEd2SkpUTEctMnhKd0lYcTMyeE16Z1Vtamhuc3o?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:00:01+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "토큰증권",
+   "증권",
+   "결제"
+  ],
+  "score": 4,
+  "feed_name": "스테이블코인·토큰증권",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "3a0a7fdc6a39e9b9",
+  "title": "금감원, 증권사 발행어음·IMA 내부통제 '고삐'…모범규준·TF 가동",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBVWkwtM3MzbHl6RzhDaTRSd3BBVnRINjFTQWVhTms3UGQ1YjJpbU95NmFMd2JacXZnOFlSaHdRQzAyeVI3V05hVzB5amM0UE5qZXdxVVRhX2FpSHBmUzh1aU1mQVR4d3BYVmgyNnZTRDBuNDjSAXNBVV95cUxQVVpMLTNzM2x5ekc4Q2k0UndwQVZ0SDYxU0FlYU5rN1BkNWIyaW1PeTZhTHdiWnF2ZzhZUmh3UUMwMnlSN1dOYVcweWpjNFBOamV3cVVUYV9haUhwZlM4dWlNZkFUeHdwWFZoMjZ2U0QwbjQ4?oc=5",
+  "source": "뉴스웍스",
+  "source_type": "media",
+  "published_at": "2026-11-12T06:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "증권사",
+   "발행어음",
+   "IMA",
+   "내부통제"
+  ],
+  "score": 5,
+  "feed_name": "소비자보호·내부통제",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ]
+ },
+ {
+  "id": "45afd7951625100d",
+  "title": "성과급 환수론 불붙었지만…신한은행 해킹, '클로백' 비켜간다",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBUY1JDekpVSlgyeTBqNmloel9TcEZzZGZRaEh5TmxFTS1Ub2pTblh2ZS1URHBOX2lfQVNTN2ZFUGE5SEdpb1RLc2dVLWF0dDFleTUyWDJfVnVqekF6cEhzbEZtZ0diYTVl?oc=5",
+  "source": "EBN",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:54:54+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "해킹"
+  ],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "신한은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "cc30390d9424e2f0",
+  "title": "1.6조 국고채 담합 청구서에 \"증권사 신용도 영향은 제한적\" |",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9wMDVmeGlzemZDaDBWb2VJMDJQbDIzeE9sYVZpWVlMUG95UUJBd3dSQXduQjZFb0lxejRFbndkMHlMdkFOcTBLd25JY3RodDJSdmMybnN5TXpnRjdhbGpqb1p0cXRycG5TQnVySnFET2RYLWNH?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:54:03+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "국고채",
+   "증권사"
+  ],
+  "score": 3,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "40170aacf2c75cfe",
+  "title": "DSR제강, 친인척 장내매수로 최대주주등 지분율 53.82%로 상승",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5UTkVvdXkyQnpwdTZpYUR3V3UwQnRxd0luajVNS2s4MklxVDZ0dWd2NGZRN2lEdUctWVhSTExxQk5pajgxbXhvS0NUSlB1V2hneXZHdlNwNmJ4WmFmb1hHejgzWnE1RmxBU1lEQWx3cE00Mzg?oc=5",
+  "source": "데이터투자",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:51:34+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "DSR",
+   "매수",
+   "주주"
+  ],
+  "score": 4,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "61783b42a32aaea4",
+  "title": "미래에셋증권, 스페이스X 평가손에 3분기 4056억 적자",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBzRUl5MjRBWEQ2MmREeE1CRGcyYlhsSjJ4VDRZMTF3cjJwa3hnVnR1NU9maWdoMU1RQXltSzVpb05qbEpTRXlVVHVYUXk0SkwyQU5ZaW1ac3dNcC1WRG9hZG0ySnhhNXJKdUVsMDZJTzBGWmZI?oc=5",
+  "source": "부산일보",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:47:36+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "29f5f8850e93523a",
+  "title": "미래에셋증권, 2026년 3분기 실적 및 신규 주주환원 정책 발표",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1RTVpXSDdEenBDNjA1bDVRZm9OZGk2T2pENlJodUQtVndCb0pqbXRNQ1pyQVF1RkFXOUpfTndIY0NfdTgzbWE4eHpfUFUxMXhnYk11eVRPcHpGZU45UW9pREd2dGZUNEU?oc=5",
+  "source": "일간대한뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:46:11+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "주주",
+   "정책"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "abe9460c3c4f6033",
+  "title": "미래에셋증권, 3분기 영업손실 5023억원…1.4조 자사주 소각",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE82RDR2TzNJWjdES0Nqc19WVGljM2p1d0pNMXFGZnlXeTFvaXJoLWh6TjlYcGRJLXNjQnUyUm1MN29NaWV0YkxEZnhDblJHX1VJNzJWWDZRQ1NfaGVYZWpqX3FuY1F3NEk3Snc?oc=5",
+  "source": "금융소비자뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:45:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "37d2c7af125fd0ef",
+  "title": "엔라이튼, 기술성평가 통과...내년 IPO '순항'",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOQktoSVQwYmlwcXEzRXRPbWZoVnBXbUFlc1N6enBzcFpjS3Qxd1VTdm02V0lBaUVWaDJmMldVclc0OVBQN2xsdnh1cEJ4QlVfb0F6MUxUV290MXd4UmxoeHFPdHpPNTF3SjVlcHM0bUhhYlRRcl9lZl82RVFZXzdWVA?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:40:09+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IPO"
+  ],
+  "score": 3,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "8202346c95134ad5",
+  "title": "“2730억 흑자가 591억 적자로”…KB·키움증권, 국고채 담합에 순익 정정",
+  "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1ORTllR0Q5eU1TNkh6RGFHbU85QVZWb3RnRmF0aGloQmJsTjNKeERDcXZRZnlsQmhabWtZSVF4MlJBZ3YzZkQxV2hLeTgyZ3dBckhsU0FCNGNoNGhFYVZURkZR?oc=5",
+  "source": "디지털데일리",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:39:28+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "국고채"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "키움증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "f721a457549eab51",
+  "title": "증시부진·금리상승에 증권사 3분기 실적 악화",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5URlpvVUF2U1p3VmhXS3NQWmd3Y1p5MjVTbXZpMkZpQWo1RUw0ZUdwY2kxTjB6bTU1bmFrT2JNdW1MT0JxeHV0SWNsSU9aTmhqMXc?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:37:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "증시",
+   "증권사",
+   "금리"
+  ],
+  "score": 4,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "5c28fd19cd6dd5ae",
+  "title": "토스뱅크, 펀드 서비스 출시…국내외 주식·채권 등 17종 구성",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1kTlhBd2R5U2drTDdmb0lDYXZVcWtwZ0dQWFJOZ1JrV2l5X19yT28yOTNXYXQtbTNTMlpRWDdjeWZYUERmZGlBNWJ0MkIzMWpyLWxKelNvZW45RTDSAWBBVV95cUxQaXNKSGNvQlFvczFHNDRrb2VhQldMamcyQlRVUGNXVGFnWGVvcTVSUmlLZzVqSVhWbC1aRWpWTTBWZFpTMGliTzhmcGZLRzRoZFo4ZS1xTlZybm9LcDhKMDY?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:34:19+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "펀드",
+   "주식",
+   "채권"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "3db06b96eafb032a",
+  "title": "토스뱅크, 펀드 서비스 출시…국내외 주식·채권 등 17종 구성",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBEVDZGMHhRSFFPbGZEQmRjUHMtSmljbnJGalZqMmFWY295cXhPbkRnbjc0X1JMTFFiUnhpSFowenJ2SFA4MGU0ZGtTbWZudEk4Q2c?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:34:19+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "펀드",
+   "주식",
+   "채권"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "2d390d0f66959150",
+  "title": "“AI 돈맥 어디로 흐르나”…5개국 발로 뛴 토스증권, 투자 지도 그렸다",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5Dbm5BNGI5TlN0VGh0RFJSbXJ4MUk1Qkl0Tm5hRjRPMGlBN0pFdk5EaHN0VllCNmllY1lLWHM4XzVJbnFoLXR0czVRZEFkUzcyc1E?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:32:57+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "AI",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "토스증권",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "712ba9724f80c185",
+  "title": "“통장 이자로 펀드 모은다”…토스뱅크, 1000원부터 투자 서비스",
+  "url": "https://biz.heraldcorp.com/article/10935198",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:31:39+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "핀테크·디지털금융",
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "펀드",
+   "이자",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": true,
+  "companies": [
+   "토스뱅크",
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "706bb0c0730cb1fd",
+  "title": "은행장 인선 첫 '스타트' 우리은행…정진완 행장 연임론 무게",
+  "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1tUG5pbTVZOFZLNEx3a0VLVHZsS25NSU12UkVLWXdMd1lLY2JFTFlWVHB5RHV4cnhFS3JwajNYR0ZjcUJZckpOVmQtSElZVGFpcEFKUVJxVjN0V1J4Tmc?oc=5",
+  "source": "아시아타임즈",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:30:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "우리은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "0cc993fe6d6f8654",
+  "title": "금융당국, '코스닥 추가 대책' 지라시에 \"사실무근…엄정 조치\"",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1NV1Y5aVpvREJxbUEwblZXbjN0NmJ4M0FrbF96ZXFYbUJYMXBoWWUyazZ5aEc3eDUxRndCUTh3VDFXYnZmVWJqd0xMdk15YWpZcWZVS1RvbU9yYkFhdUxKV3dZeWtTbmVxM3pSQTFUZ0w?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:24:10+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "금융당국",
+   "코스닥",
+   "대책"
+  ],
+  "score": 3,
+  "feed_name": "금융위원회",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "32fa87b525a6d43b",
+  "title": "공정위서 국고채 '과징금 폭탄' 맞은 증권가…금감원도 살펴본다",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9OYzY3bEljRkFVaW00VlNGRFJQYUpvZkFUVEpaYU1hY0kteC10bmN6NTdfNmNWMUhNSGJqQ1VPYklueHV4ZVZZMDdrQ2QwVmNSZkRGOF9tQ3VvbEszbHpFeGh5aVJqdW1uYi01ZmZSWlg?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:22:51+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "국고채",
+   "과징금",
+   "증권"
+  ],
+  "score": 5,
+  "feed_name": "금융감독원",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "공정거래위원회",
+   "금융감독원"
+  ]
+ },
+ {
+  "id": "666797042422924d",
+  "title": "더 거세진 ‘셀코리아’…외국인 9월보다 10월에 주식 6.8조 더 팔았다 [머니뭐니]",
+  "url": "https://biz.heraldcorp.com/article/10935172",
+  "source": "헤럴드경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:13:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "외국인",
+   "주식"
+  ],
+  "score": 2,
+  "feed_name": "헤럴드경제 금융",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "e9c8614b991da219",
+  "title": "NH투자증권, 전남 담양군에 희망나무 장학금 1500만원 전달",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBLMl9TWF9KNzJNY21EejVxUmJZYmlBN0hwcUh1UlJCbmNxaVJHbnhsamloTnNFSkRqU1NBdWtkZ1FzNjYwbXlWanVDa1NZNWFqc3NFR0ttQnFucWZiOWVn?oc=5",
+  "source": "스마트투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T05:09:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "NH투자증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "398973bcbf339724",
+  "title": "증권사 실적 '줄줄이 추락'…순이익 급감에 적자 전환 속출",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5taFAtWll2dHZUZUFkbHEzVUZEejA0N0pTOEVlVHNfNE9DWGhFaEZwZGVjaVVRcm5vV3BscmVDeVBhT01XVXNOWHdrVG40YXVmaFJLSnp5ekRoR0hGQk9OcHBqeHlUMlZoZm9HS2RMYm3SAXRBVV95cUxQU2hXaWU3OS0zcE1LSlBpZ1oweElvOWN2UUNUdWlTaTY5bnJLYVl6OWxqTWhZWlA4cWx6cTZ6aWt3ZGZrRHR5TEZSenZLaTlpbGFFWmVhclRTbmI1NGFhd0dTeHFqRGpCRXQwQjhsaDBJTlRFVw?oc=5",
+  "source": "산경투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:58:05+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "fa6eed558a543693",
+  "title": "상위·하위 카드 연체율差 0.87%p…조달·리스크 관리 ‘엇갈려’",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9vQlh6clM0bW1UX3N4bXNVUDlfd19VamMzTVVQcWx6blB3LU03ckgzdXFLOVZSU0dDLWF2TFNHQVFtaW1BWGZWYWsySXZEdFROejhib0hsWkctWGRBUWtMNUI2Zmdub1JEdGfSAW5BVV95cUxPLXNhLWV0al9ZMk9HTkJjZGVIUkd3eF8zSEthQVF0VnFnU2NRVnBKUFRPekVrcG1qNTV4RkNiY0JGRDFuVmdDMzhZRC10QzBxWWpPblgtX0FObmlsR2FJd2FmajlQR245ZUtOc3JFZw?oc=5",
+  "source": "파이낸셜투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:55:15+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [],
+  "tags": [
+   "연체율"
+  ],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "6ef1353912539202",
+  "title": "삼성, 화성 DSR타워서 ‘2026 나눔의 날’ 행사 개최",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE53LWlHcFA2WXQ1NDNkWjl2QUJpbTNQeGdEaEpBdmVQOFdXMS10MzFwcFhzbTJzZFNiZVRFWm44U2M0VVRXN2tUY1lBdHZDS19PT3E0TTZjTk1lRFYtVE1JaWZtazlNeUZ1Z2hocm5TNA?oc=5",
+  "source": "기호일보",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:47:52+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [],
+  "tags": [
+   "DSR"
+  ],
+  "score": 4,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "85009c8f4bd1d92a",
+  "title": "[컨콜노트]미래에셋증권 \"자사주 한 번에 전량 소각 안 한다”",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226425",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:43:07+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대한금융신문",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "1981884a6631d70f",
+  "title": "신한카드, 자본효율성 높이려 카드론 줄인다",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9wYnZaS1d6ZE9mdUZvelpDb3lxN2s4MjJVanZNU2o3WHdNV0FDa1JBZUh1Sk1FMXFxdnJJMlNEcUNZRXE3MVMxc0Fua1Z2ZHVsMFl4d1JMdWRDZ0twS2lVZHYxNVQ?oc=5",
+  "source": "PRESS9",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:40:31+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [
+   "카드론"
+  ],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [
+   "신한카드"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "bdfcd4f0fdf21077",
+  "title": "“회장 교체 9일 앞두고”…KB금융, 5000억 과징금 청구서 받아",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1XbGZmWUdoenhoMUF0NEJnS1N2TmFyT3BTLTAzLUh6dF92azRDY3ZIT2ZIelUtV0FPRkZ1dVRHTjlxVnBwWGhHM1VNUF8wc1J2SnlVaENZaWNkVnFOWWNvME03eG93SVR0OG56MnpPQQ?oc=5",
+  "source": "뉴스톱",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:35:59+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "KB금융"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "16250028c8924a74",
+  "title": "[머니 언박싱] 개인투자용 국채, 어떻게 투자할까",
+  "url": "https://www.kbanker.co.kr/news/articleView.html?idxno=226424",
+  "source": "대한금융신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:35:45+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "투자",
+   "국채"
+  ],
+  "score": 2,
+  "feed_name": "대한금융신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "f33e90a9d9080db7",
+  "title": "미래에셋증권, 스페이스X 평가손실에 3분기 적자전환...주주환원은 지속",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9aNndsbk83azA3X1RwZUVnTTlLeV9kOEdoQUExc1ZURm9uVmIzMkZLNzNudFlvdXB3a25ub1l4alozVnpES0E5VWtEWmdKU0Z6RW5la1RDbU0tWDhlNWM5NVRPUlh4TnJt?oc=5",
+  "source": "녹색경제신문",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:33:20+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "주주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b60011ceb7989052",
+  "title": "[IPO챗] 유캐스트 \"국방·공공 통신기술 기반 5G 방산시장 공략\"",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE40eE1nRi1rYVl4TzR1T1NpUWpRTFlDQlMzSXJ4ay1fWEFNSWpiQjlGWmlPSHZzMDRvXzJWNVVmQ3lDSlJWMnFHaTg1eDBKci11eXg3SXMyeUwzeFHSAWBBVV95cUxPc1NMWDVUM0hrQW1YSjdhNmZDM3BiUzJ1bkZVVnNaUmZHN2NyTFlGeHdscVBzYnVBZ090MWRMRzByQWw3RDg3dWZlMG9sbnlHOHJBSkRVYjlXZ2dPMmN5bHc?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:31:23+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IPO"
+  ],
+  "score": 3,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "50416cbd1fd78316",
+  "title": "[IPO챗] 유캐스트 \"국방·공공 통신기술 기반 5G 방산시장 공략\"",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5XaTV1VjFXWnBLaVp1c2NCdmZhMlozelFxZFFuU0R2MXBoelRwcUZPaDdudTNhcEF0QzE3aUlHZkJVQ2dsT3NaajkxQ3gwazE5MUE?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:31:23+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "IPO"
+  ],
+  "score": 3,
+  "feed_name": "IPO·공모",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "0f60225c05886324",
+  "title": "미래에셋증권, 3분기 누적 순이익 2조5016억원…자사주 6500만주 소각 추진",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAwVzVCR1dqQlJYMWtSVjIyTVVPdnJLc0lzR1ppVm9fVEpuaHNjdkwzekJaLUNmdDIzaWlBUnhXQlBkSUFnX1hpZ3J4RS1iSlhGVFpTeWJDeGdtdmpHTTBaRmEwcU9VRzl6dHFN?oc=5",
+  "source": "일간투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:30:23+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "b9ae0f23694b1c18",
+  "title": "폭락장에 장사 없었다…미래에셋증권, 사상 최대 실적 후 적자전환",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9jaXJxOHd0OUx6Mmt0Q3MtUXlQVms2S2pySUI2NTdiY0RXYWp6RnVTSldmU0N3dUVYb2hNb1VjM2pNNzQyaVBfNV9veG9abXVjVHNFUnJRdm9CZ0NKdXVORTJYZ0VqMzkwV1E?oc=5",
+  "source": "비즈워치",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:30:03+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "cdabff74537bc182",
+  "title": "테슬라 팔아 스페이스X로…서학개미 ‘머스크 제국’ 자금 이동 본격화",
+  "url": "https://www.sedaily.com/article/20113434",
+  "source": "서울경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:21:28+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "개미"
+  ],
+  "score": 2,
+  "feed_name": "서울경제 금융",
+  "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "371e5ecc0d794c7d",
+  "title": "미래에셋증권, 스페이스X 제외시 3800억 이익…'1.4조' 자사주 소각 - 머니투데이",
+  "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnMGdkOTRqeHZITEh2VEV3V2hIc2VtNVJQVkFER3cxS0otT2FaVUdoQlgzelhhekhoZnRnUTF5Y3RFa3ZjV05abHR4X19lVVZxTHBXS2tzbzBYY28teGp3VWFySm42Q2J5M254dHBR0gFuQVVfeXFMUGcwZ2Q5NGp4dkhMSHZURXdXaEhzZW01UlBWQURHdzFLSi1PYVpVR2hCWDN6WGF6SGhmdGdRMXljdEVrdmNXTlpsdHhfX2VVVnFMcFdLa3NvMFhjby14andVYXJKbjZDYnkzbnh0cFE?oc=5",
+  "source": "머니투데이",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:16:13+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "22a82e66931ce0bd",
+  "title": "미래에셋증권, 해외서 7130억원 벌었다…1조4000억원 자사주 소각 '승부수'",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE0xa3R3T0F6bjkxa21Dd1FzMWxkSGNnTXl2MjBQZ3k4V0E2MEpFV25MblRudUY1ekFIbmxWallmakllWGwtREduekxreFhyLUItc0dLNWVHVVBpRGg0bmhFMjdfOTTSAWhBVV95cUxPZWJwZFdrN1ExaHJ1dXd5OGdlRjNnNXpNaTBkbnlmSDhtWGxKa1dOLUh6LTQyd2hTcUQ1QmJBa2tvM2d4NzNpRF81LXl0MlBuVGlTcmlmeklIRk1NZnZocS10c3d5MDhvbg?oc=5",
+  "source": "경인방송 뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:16:04+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "자사주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "590a80d25efcc341",
+  "title": "[금융-라운지] 신한은행 / 미래에셋증권 / NH농협은행 / 한국투자증권 / 교보생명",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE53dzFEdnFWOVMyNjFvc3lkeGlfNXNGVkdPT0EtYXgxNjQ4a2JvWkY4X2cyWGYyYUltbWVVUW9LcUxXbWE5T1BwMEx1TURNVUhQaEZVWnBrQW1nZE1VcVJZelZrVXBDa3NfdnVvazhpcw?oc=5",
+  "source": "비즈니스리포트",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:02:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "신한은행",
+   "미래에셋증권",
+   "NH농협은행",
+   "한국투자증권"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "288b86b45ba70f07",
+  "title": "미래에셋증권, 누적 순익 2조5천억원 돌파…주주환원 35% 이상 확대",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9sd0t5VW5iTmVTRUJDNVdOSlVTS2VER0wxOHdjR1doVGdTN2FSaXlTZjVhNUFWaC16ZXlhbUUyMVUtZFBwWFY2aFFESFBSTnhBMDAxNTlCeXBUSUdJV0V0YWgySFrSAWhBVV95cUxPSHZlaU1UbE5yY1hjY1FxUWxNdnIzWVhBaUx1dVFYTGN0TVFrZGpxVDQxWUNQbVZ6QmktV1FQaXRKUTJXei1DYk1vOFVOZi1BQUVkal80RXpJRXVsV2JrSFlrWi1vdGV1dw?oc=5",
+  "source": "경인방송 뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-12T04:01:51+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "주주"
+  ],
+  "score": 3,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
   "id": "67db786cd4022762",
   "title": "3연임하면 수백억, 은행지주 회장님들의 민낯…아~거기, 그분이었네 [홍길용의 화식열전](924회)",
   "url": "https://biz.heraldcorp.com/article/10935052",
@@ -1023,6 +5945,31 @@
   "orgs": []
  },
  {
+  "id": "62426604bacc2854",
+  "title": "KB증권, 공정위 과징금에 3분기 적자전환…순익 3322억 감소",
+  "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1uVzVYSE1scFUwVEdUVmZZTlFHMXZQMEJrNElfYW1BMlNtWm1xZ20yTDNzR3JnXzdLOGtfQUo4RUZwVUNhZGhZNlYyZXN2N1U?oc=5",
+  "source": "딜사이트",
+  "source_type": "media",
+  "published_at": "2026-11-12T01:49:59+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "과징금"
+  ],
+  "score": 4,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "KB증권"
+  ],
+  "orgs": [
+   "공정거래위원회"
+  ]
+ },
+ {
   "id": "528017246e310605",
   "title": "삼성화재, 3분기 누적 순익 1.8조…전년比 4.6%↑",
   "url": "https://biz.heraldcorp.com/article/10934841",
@@ -1102,6 +6049,28 @@
   "companies": [
    "미래에셋증권"
   ],
+  "orgs": []
+ },
+ {
+  "id": "b58a3548595ca362",
+  "title": "홍콩 ELS사태 최종 과징금 3700억원...은행 실적에 충당부채 환입",
+  "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1Fd0Fxb0RBVWN6RmI3SUltTlV4Tm1wVUxnaUxhUnFjOVAzUVF6YU90eVEtaUtNZEo2alZlMTBremx3S19ORW9IVFZMekxJM1oxRTNxd0lLQTFnSTFDMUdfSUNsSkdiVnc4NlHSAW5BVV95cUxOSGdfWGRBc3ZjZTZnQk5na1Q4ckQtZGEtS2xzOFBJOXVxUGpJNWtoT1h0VkVUY3NqT0dweGwwUF9RUlQ4c3k3aVBvdG9pY2MybXFPSFJjWW5nZkJVUlFMTDNkUlFFakk3ck12SDZ0Zw?oc=5",
+  "source": "아시아에이",
+  "source_type": "media",
+  "published_at": "2026-11-12T01:45:13+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "과징금",
+   "은행"
+  ],
+  "score": 4,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [],
   "orgs": []
  },
  {
@@ -1196,6 +6165,25 @@
   ]
  },
  {
+  "id": "c3a8465d1d3a3355",
+  "title": "미래에셋증권, 3분기 5206억원 영업손실…올해 누적 영업이익 3.3조원",
+  "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSG41TFd4RHh3a3l3Q21NT21OOTBON0Q0dGk0M05IVFEwNkFoaHFIZUl2bG1JN2ZoYndUTXZLWE9sR1M5LVV5UWdQeU1MUUdmbEIwZGtDdDFzR0hZY1F2cE5CSTJKdVg0MFhJcmk4dGNJMFVKSlJyeGF4SGRuT19yT012T1lNZw?oc=5",
+  "source": "대한경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T01:33:25+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "대형 증권사",
+  "relevant": true,
+  "companies": [
+   "미래에셋증권"
+  ],
+  "orgs": []
+ },
+ {
   "id": "fa77690a1f032d50",
   "title": "미래에셋증권, 스페이스X에 웃고 울다…3분기 4056억 순손실",
   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5odi13UXNuajB6c0dFQm5RakFHeDVta3hPRWZ0WHRJWFdHb0MtQVVwNlIyNWFiMEJ6ZkI1bHI2aUVfckNVMnVxV3V0ZldrSmpGbkM4TU9fV0Y?oc=5",
@@ -1228,6 +6216,26 @@
   "score": 2,
   "feed_name": "이데일리 금융",
   "relevant": false,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "868b0c76a872f7fb",
+  "title": "젠슨 황의 ‘중국 문제’를 지적하고 엔비디아 공매도에 나선 31세 투자자 | 더구루",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5pMmRXMU9CdHRXMndtYUM4T2VNS01zdTFuZWc1aEpDa2w0MVhMbDZ0bkF2a3VINk1vdkE3N1owVDFZZXBKZUdKdlR0SmdSaVlXQ3ZUNjh0X2RFTF9OdjNB0gFfQVVfeXFMTmkyZFcxT0J0dFcyd21hQzhPZU1LTXN1MW5lZzVoSkNrbDQxWExsNnRuQXZrdUg2TW92QTc3WjBUMVllcEplR0p2VHRKZ1JpWVdDdlQ2OHRfZEVMX052M0E?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-12T01:30:21+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "공매도",
+   "투자자"
+  ],
+  "score": 4,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
   "companies": [],
   "orgs": []
  },
@@ -2275,6 +7283,28 @@
   "orgs": []
  },
  {
+  "id": "ba7d6d2fb087fe8f",
+  "title": "'눈덩이 빚' 굴리는 카드사들…대환대출 1.6조 '양날의 검' : 네이버 블로그",
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcjczR2JXOGptNEhCV003alpRcjNhWk9CakdibGM5WFZFTGd6cEF1c1VEbm9LWUhvaG9PSzFNal9GaUVsRGJjLUFSb1hHZTdydTBNNkZqam9DSUNWZUZlMHpXOGVpZUJiQmhsRFdTUFFRRHlSUXk0cWhjOGU2OTdWa0IyOVZkR1FWZzg5VEo4UQ?oc=5",
+  "source": "Naver Blog",
+  "source_type": "media",
+  "published_at": "2026-11-12T00:02:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "카드사",
+   "대출"
+  ],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
   "id": "3615d98c751fc662",
   "title": "카드사, '울며겨자 먹기' 중금리대출 늘리지만···조달비용·연체율 '이중고'",
   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5KYlh4V3dUUHgwcVpYRG5lQ0JXSXpoUGtaVmNoU3dyVEN6b29oMnFYNGI1YlJFUHBBQzlQN2V2NG9WSjN3NUc5em5QZWh2b2w1cmVETGdkWjNSMHZqemxkMGdFcEVGSXdIM3c?oc=5",
@@ -2464,6 +7494,128 @@
   "department": "감독혁신국"
  },
  {
+  "id": "cc57ffdca34d9267",
+  "title": "가상자산사업자에 대한 최고 수준의 보안 강화 조치를 통해 이용자의 자산과 정보를 철저히 지켜나가겠습니다.",
+  "url": "https://www.fsc.go.kr/no010101/88133",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [
+   "가상자산",
+   "보안"
+  ],
+  "score": 4,
+  "feed_name": "금융위원회 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ],
+  "department": "가상자산과,금융안전과"
+ },
+ {
+  "id": "d2ae159f06503348",
+  "title": "인터넷/SNS상 코스닥 추가대책에 대한 허위정보 관련 투자자 유의사항",
+  "url": "https://www.fsc.go.kr/no010101/88132",
+  "source": "금융위원회",
+  "source_type": "press",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "코스닥",
+   "대책",
+   "투자자"
+  ],
+  "score": 4,
+  "feed_name": "금융위원회 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융위원회"
+  ],
+  "department": "자본시장조사총괄과,자본시장과"
+ },
+ {
+  "id": "355b16ae1107ce98",
+  "title": "가상자산사업자에 대한 최고 수준의 보안 강화 조치를 통해 이용자의 자산과 정보를 철저히 지켜나가겠습니다",
+  "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249825&menuNo=200218",
+  "source": "금융감독원",
+  "source_type": "press",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [],
+  "tags": [
+   "가상자산",
+   "보안"
+  ],
+  "score": 4,
+  "feed_name": "금융감독원 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "department": "가상자산감독국"
+ },
+ {
+  "id": "f724baace86606f8",
+  "title": "증권사 발행어음, IMA 부문 C-level 임원 간담회 개최",
+  "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249824&menuNo=200218",
+  "source": "금융감독원",
+  "source_type": "press",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사",
+   "발행어음",
+   "IMA"
+  ],
+  "score": 5,
+  "feed_name": "금융감독원 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "department": "자본시장감독국/금융투자검사1국"
+ },
+ {
+  "id": "2d82a89b85aaee76",
+  "title": "인터넷, SNS상 코스닥 추가대책에 대한 허위정보 관련 투자자 유의사항",
+  "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249822&menuNo=200218",
+  "source": "금융감독원",
+  "source_type": "press",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "코스닥",
+   "대책",
+   "투자자"
+  ],
+  "score": 4,
+  "feed_name": "금융감독원 보도자료",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "금융감독원"
+  ],
+  "department": "조사1국/자본시장감독국"
+ },
+ {
   "id": "222988da1fa4bcaf",
   "title": "대표 생일 게시글에도 주주환원 요구…뿔난 에이피알 주주들",
   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB4WG1Cb1ZiTHoybU1RVlJpTE85dUlVWWw5dkN6TDlYZ044TUQzRzBMSlBXMUJXTGI4a2RlSDA5YnktZ2xuWDVHc3laZWcweE5hVllSOS1uTEkzcVoxTjVXNEx5M1ZFWmtRSGJjWnotQVk?oc=5",
@@ -2567,6 +7719,25 @@
   "companies": [
    "우리은행"
   ],
+  "orgs": []
+ },
+ {
+  "id": "9c2597f89f2679c9",
+  "title": "\"공매도, 또 너냐?\"…'반토막' 삼전닉스 반등 확률 90% 까닭",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNd3hSWGJSX01DZ3VsbEhTMElMZHVWYTV4eDRpWVhralJjNVdDSUtxY1E4Nm0tMy1TOEdsU3ZEdk1WSWdISTBWRERNbndlSkkxMVJmUzU3U2U0TXUzME53N3piWmUyOGxvcTlBSFFZcU9Gc05ZdTNmLVZveTByVHJHRw?oc=5",
+  "source": "이데일리",
+  "source_type": "media",
+  "published_at": "2026-11-11T23:35:30+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "공매도"
+  ],
+  "score": 4,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
   "orgs": []
  },
  {
@@ -2846,6 +8017,32 @@
   "source_type": "media",
   "published_at": "2026-11-11T22:40:14+00:00",
   "collected_at": "2026-11-12T04:19:15.973579+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책",
+   "증권·자본시장"
+  ],
+  "tags": [
+   "부실채권",
+   "채권",
+   "연체율"
+  ],
+  "score": 2,
+  "feed_name": "인터넷·지방·국책은행",
+  "relevant": true,
+  "companies": [
+   "IBK기업은행"
+  ],
+  "orgs": []
+ },
+ {
+  "id": "8a1a3eecee7d6018",
+  "title": "기업은행, 연내 부실채권 8천억 추가 매각…연체율 낮추기 '올인'",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBTdTU4SGlrN3VpcTdteE9KcVI2dUhCOHJTTWZjTGRMcWJ4dUFVd2phTXY1b01PcUE1cG9OZzdyelpJZm9GQzd5dThERnJmZnVCSEFLeEU2bjNCbXlSd2dpWGg5SXdtYmlVT3J6c1djQzlRQQ?oc=5",
+  "source": "KB Think",
+  "source_type": "media",
+  "published_at": "2026-11-11T22:40:02+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
   "category": "금융정책·감독",
   "sub_categories": [
    "은행·금리·통화정책",
@@ -3217,6 +8414,28 @@
   "orgs": []
  },
  {
+  "id": "d7c3df2497a7c511",
+  "title": "[금융] 해외부동산 펀드 손실, 불완전판매시 금융사 책임인정",
+  "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9Fd1NSekFZUE9Td3oyR3d4T1p0V2VTWDlIbl95aWRUQmNHd2pQS1piMk5rSmtpT3Vmb2ZPRjJvTEZteVJrV0ZHSlNTdjIzSTQ?oc=5",
+  "source": "로톡",
+  "source_type": "media",
+  "published_at": "2026-11-11T18:49:28+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "펀드",
+   "불완전판매"
+  ],
+  "score": 3,
+  "feed_name": "소비자보호·내부통제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
   "id": "17bd4a5f0877c818",
   "title": "브라이트스타로터리, 주주환원 확대와 이탈리아 로또 연장에 투자심리 개선",
   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE92dWYyRC1JbVZ3cndUYmZER3VsRjYxcXF6SU9SanFLeGF0STlZOW40TDhjRWpOanZrRWVyb3UxRWJfQlZTY0JKMGl1R0ZMOGdCbUE?oc=5",
@@ -3272,6 +8491,44 @@
   "score": 3,
   "feed_name": "재정경제부 보도자료",
   "relevant": true,
+  "companies": [],
+  "orgs": [
+   "재정경제부(옛 기획재정부)"
+  ]
+ },
+ {
+  "id": "763e0a6b3cf2ef45",
+  "title": "범부처 민생안정지원단, 청년 취업지원 현장 점검",
+  "url": "http://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079929",
+  "source": "재정경제부",
+  "source_type": "press",
+  "published_at": "2026-11-11T15:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "재정경제부 보도자료",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "재정경제부(옛 기획재정부)"
+  ]
+ },
+ {
+  "id": "b53d83edafd99e25",
+  "title": "국방분야 혁신제품 최초 지정",
+  "url": "http://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079935",
+  "source": "재정경제부",
+  "source_type": "press",
+  "published_at": "2026-11-11T15:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "재정경제부 보도자료",
+  "relevant": false,
   "companies": [],
   "orgs": [
    "재정경제부(옛 기획재정부)"
@@ -3450,6 +8707,29 @@
   "feed_name": "IPO·공모",
   "relevant": true,
   "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "810745c9e563a1d1",
+  "title": "KB금융 3Q 순익 1486억↓…국민은행 '환입'에 KB증권 '적자'",
+  "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9QWFFEU3BfMlYxa3RwZGFJTXJkN2JEMnIxNHpLYVBHWUxER1VZZjhYcXlzdHktc2hibkc5elBvUzFSOE9Fc0E?oc=5",
+  "source": "Daum",
+  "source_type": "media",
+  "published_at": "2026-11-11T10:04:58+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [],
+  "score": 3,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "KB금융",
+   "KB국민은행",
+   "KB증권"
+  ],
   "orgs": []
  },
  {
@@ -5994,6 +11274,29 @@
   "orgs": []
  },
  {
+  "id": "1cb490cb5dcc9f4a",
+  "title": "신한은행, 정보유출 사태 수습 분주… 고객에 보상 대책 발표",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBHdFF3blpiZ3BadjJtQkJHaUd0azdBaTVSenY1VEZyS1Z5SUg3eGdNVndtZjVXcmc5a3l2WkdZcDA5dWRCRHAzMU5wOS1tcFFJRWdTS0pVZVZrb3FLYUNvQVBMVjA5a1NNd1Bv0gFvQVVfeXFMUEVaLVJZRE9JU3VFd3JNT0pzOVdWUXpmZ2ltOGFyWjlfVlQ3djVGbVVzNXozTktHZWl6c1p0NnhhX05DYVhFY0N6NUl6SWhrSHNwOUM5Vkc1UVFvUW1wTnVsb21YTDNDSkFzNXdvNVpn?oc=5",
+  "source": "시사위크",
+  "source_type": "media",
+  "published_at": "2026-11-11T04:33:48+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "대책"
+  ],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "신한은행"
+  ],
+  "orgs": []
+ },
+ {
   "id": "ecb037a403b290ae",
   "title": "'공정위 1.4조 과징금'에도 증권주 충격 제한적…미래에셋·키움 상승 |",
   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBSSV8weUlHekdGdEZQV0lzaDJsakI1WDhXT1RYVlIxVjhXdWhnWHBIVnU5SEpDaTZlTVpoN0xrS0ZXYjJCT01PNzNhN09SUWRKcktWaTlfUlhZNzRnRjg2WFhXOUwwYlUxNmIxalAwdmlOUjdx?oc=5",
@@ -7640,6 +12943,31 @@
   "department": "자본시장감독국"
  },
  {
+  "id": "307ef0d13e73d153",
+  "title": "금감원에 '검사방해' 허위자료 냈다 적발…삼성증권에 무슨 일이 |",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBOV1dyLWY5U0dtZUtpaDJkdk56ZzFnZ3lSVXFHLVp2cGNVdjdQaHY2YjhwbDVqZ29rSGF5WVU0ZnpVRGZTU2JBNVZuMUc3dVhXU3RWSzVLTUZQUkRqSEoyTG5TOXdiVXRNZlNvQVJLQ2Jua04w?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-10T23:59:21+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "증권·자본시장"
+  ],
+  "tags": [
+   "검사"
+  ],
+  "score": 3,
+  "feed_name": "금융감독원",
+  "relevant": true,
+  "companies": [
+   "삼성증권"
+  ],
+  "orgs": [
+   "금융감독원"
+  ]
+ },
+ {
   "id": "333c3b7eeb20a2f8",
   "title": "금감원에 허위자료 냈다 '검사방해' 적발…삼성증권에 무슨 일이",
   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBRb1Q3YUNZU3Q1YXI0M0x3ZnpTX1FRR1NQLTFLa1FQRUJzWGo3UjVYWTV1V2o4LWNsVEJoa1RWdC1iaS1uY3FVeHVzZEtzSmFfYU13MnN1TlBCVHo1LUpCSFowcjJwRHBEYkI1T1A2alc?oc=5",
@@ -8211,6 +13539,25 @@
   ]
  },
  {
+  "id": "34ad60ad20534cdd",
+  "title": "한-ADB 고위급 연례협의 개최",
+  "url": "http://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079942",
+  "source": "재정경제부",
+  "source_type": "press",
+  "published_at": "2026-11-10T15:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "재정경제부 보도자료",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "재정경제부(옛 기획재정부)"
+  ]
+ },
+ {
   "id": "b4f4574429f09a09",
   "title": "앤트로픽, AI 악재에도 IPO 강행⋯최대 1.4조달러 목표",
   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9TamR4TU1naHh1SFhEbGQ3WllPeGRxTG84NVRDNzFQdC1WTVNVd2ozakZIcHN6RUl5T2dBSEF3QTFzbjdTVlFsR0Ricmd5U2tHWUE?oc=5",
@@ -8611,6 +13958,27 @@
    "두나무(업비트)"
   ],
   "orgs": []
+ },
+ {
+  "id": "1d51ec2df5280491",
+  "title": "신현송 한은 총재, BIS CPMI 의장 선임…非美·유럽 최초 |",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1NTUlXaXJEelFpUHJtSU1HdWFSOFVVZmJRczBpZ0hmRDFhX2dYS1VZMWlsNng4b1BUOEdrNWYwZ3ppeUZHU0pUNXJtRFJWMGwtWXZYRUd5Vm9fYThISkFhelhVOGRwRjJSdzYwN3hwQ0NQbENZ?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-10T10:09:15+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "한은 총재"
+  ],
+  "score": 2,
+  "feed_name": "한은·기준금리",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "한국은행"
+  ]
  },
  {
   "id": "42d2e47402bd30c0",
@@ -10227,6 +15595,25 @@
   ]
  },
  {
+  "id": "f96e3aa56e415bfe",
+  "title": "6개월전 젠슨 황 경고한 공매도업체…\"상당한 中 문제\"",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1sZkFZN0prOUg1X0NDdU1hSHhTMlotQW1NejU5OThENTZ3akg1Z3BiQkl6a0tiWTNEcWxiMzl5QWNJTXFZZGpTSWZNenA2b014RktQMUNWZzNJQVJvNmhSUnZSSDhKVFcxcGtRam5EeHU?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-10T05:56:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "공매도"
+  ],
+  "score": 4,
+  "feed_name": "자본시장 제도",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
   "id": "460fc64ab70d3882",
   "title": "D·CON 2026, 업비트 디지털자산 정책컨퍼런스",
   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE12ZldTUURCTGFUMHpvMlVoTmJTQS1EQjE2YkhraGo5MHJISWdidUpNVEZySFlhYkNNeVNBeWRNdkhiZ0IybGxiZVJsOW9IdkpmeTRWSDBobFcxaVJpUG9kRNIBYEFVX3lxTE12ZldTUURCTGFUMHpvMlVoTmJTQS1EQjE2YkhraGo5MHJISWdidUpNVEZySFlhYkNNeVNBeWRNdkhiZ0IybGxiZVJsOW9IdkpmeTRWSDBobFcxaVJpUG9kRA?oc=5",
@@ -10368,6 +15755,25 @@
   "orgs": [
    "은행연합회"
   ]
+ },
+ {
+  "id": "8ea37664c87874c1",
+  "title": "신한은행, 정보유출 고객에 1000만원 보험…피해 접수 ‘0건’",
+  "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBMX2VpRk9rLUNuSEgxZDRQQ1IyTy03ZEllTGRzbEstbUxYdXBVZXljdHlBZG1lSlVnVWZTd01FWWF0emVPaTVVaUhXTXgxTnRzeEZ2VnA4T09uNlU5cTIxRmo3V0U?oc=5",
+  "source": "디지털데일리",
+  "source_type": "media",
+  "published_at": "2026-11-10T05:35:30+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "은행·금리·통화정책",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "5대 은행",
+  "relevant": true,
+  "companies": [
+   "신한은행"
+  ],
+  "orgs": []
  },
  {
   "id": "ddbcf2bc9dc10d28",
@@ -11003,6 +16409,28 @@
   "orgs": []
  },
  {
+  "id": "72827e4b68763906",
+  "title": "AI 모의창구로 불완전판매 예방…한화손보, 금융AI챌린지 대상",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBDeGVRNnhXcFVpZ3U0V1djTVhUYjdZUkxoQktBNWtsVUxWb0JtMEF6bzNRUzVDZktTelFXNHZYSzl4Y3FVd19QN2lEUlk1eEtXR1E?oc=5",
+  "source": "매일경제",
+  "source_type": "media",
+  "published_at": "2026-11-10T01:16:38+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "핀테크·디지털금융",
+  "sub_categories": [
+   "금융정책·감독"
+  ],
+  "tags": [
+   "금융 AI",
+   "불완전판매"
+  ],
+  "score": 3,
+  "feed_name": "소비자보호·내부통제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
   "id": "7f49352b438deafc",
   "title": "[단독] 농협은행 AI 자회사 애자일소다, 해킹 피해 가능성",
   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE91U2ZmMER4ZjYwcG1lWHR4X3hYR1JRZDV4VFZuWDl3UTVkaFczTk9Ub3RKQnZja1pHYnpKUVRjRFpKY3dkallpTS1IM29seVR3RWFJdDJaZG9MOTlyQWdR?oc=5",
@@ -11310,6 +16738,28 @@
    "금융감독원"
   ],
   "department": "회계감독국/회계감리1국/감사인감리국"
+ },
+ {
+  "id": "8b36e938750babb2",
+  "title": "“대출을 받아 도박에 쓴다고?”…현역병 대출규제 추진에 대부업권 ‘발끈’",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0xek4wRHpFWmdYb1U1d3JBRm1OeHM1czVVWWYwdzUxQ2NRcTNUTUpsNnpCbFFoMUZVbk5OWGRLQTJpaFg5aWExMkg3VDNqZUd6SklrbDY2cXhGR1ZXU3lpSk4wR1cyVjdROWJF0gFvQVVfeXFMTVFHN2NLWGdGcXVRQUxEUjhQVmJIVXNSaFlkaTVDOERkVW4waGlzSEY0NEVJNWlhLTFVSEpiS1VxNHhjUGtBallYSmh6YkhYUE5CUkYxZXJCbl9BYjRIWmxHc1A3bkdOc1pxRzFCeGFF?oc=5",
+  "source": "한국아이닷컴",
+  "source_type": "media",
+  "published_at": "2026-11-09T23:51:01+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "대출",
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
  },
  {
   "id": "ba1abf68880b61a6",
@@ -11642,6 +17092,25 @@
   "relevant": true,
   "companies": [],
   "orgs": []
+ },
+ {
+  "id": "71e88e171956d779",
+  "title": "ADB 기후기술포럼(K-Hub) 파트너십 컨퍼런스 개최",
+  "url": "http://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079943",
+  "source": "재정경제부",
+  "source_type": "press",
+  "published_at": "2026-11-09T15:00:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "재정경제부 보도자료",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "재정경제부(옛 기획재정부)"
+  ]
  },
  {
   "id": "4576a307ea52de78",
@@ -13502,6 +18971,28 @@
   "orgs": []
  },
  {
+  "id": "6cd960db4a2b41aa",
+  "title": "84㎡·59㎡ 가격차 1.7억원 불과… 대출규제에 소형평형 인기 상한가",
+  "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9yV2FpYzMtMkloaldMYUNQZ05ZQm04THo1RUhBNDVfb2NHbzNwNHltbWF5dEc5YkFuUHoyMF85cUVVS3Q3UTRoVlExNmVVNUZ2?oc=5",
+  "source": "문화일보",
+  "source_type": "media",
+  "published_at": "2026-11-09T03:10:47+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "은행·금리·통화정책"
+  ],
+  "tags": [
+   "대출",
+   "규제"
+  ],
+  "score": 2,
+  "feed_name": "가계부채·대출규제",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
   "id": "9cef9a1d3e38010e",
   "title": "[인터뷰] 대표실도 전용차도 없다…'89년생 CEO' 토스증권 김규빈",
   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9wYTg4emlKZnlVNDk2NUx2V2ZyRC0zR09qN2NySHlRbHA4dDEzRnFPRS02ZWxrVmo1Z3A5bUJMOUpyNVhyNXo3Y0loLXhYay1YZ2h4VTlNR2ZyTW_SAWBBVV95cUxPUEpveVJGWDAzekJRSkRNT2JPTTRzd2lrbWxrQmlnWkJSZThFYzFLMWFDWENWVkVaekJBZXYyQUFUc2IzLUZwMGN2VFVWd0N0eEtkZFUwMXdJNGI3ZG4wcFU?oc=5",
@@ -14239,6 +19730,25 @@
   "orgs": []
  },
  {
+  "id": "44a0f5fc1f76cd88",
+  "title": "지난주 증권사 CP·전단채 17조4천145억원 발행…금주 만기 3조4천944억 |",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE94SHRDdmJIRnhUaHh0MlZjNTB4Sjlzcm5UVjVBVUdTczU5OE1OR2ttUFRTX19Bb1JscXpRNF9LdXBYODBWY2VPLUNXVmxPRUhQdUNQZlRwSGc4QzVlVDJleVZrU1hlMFNWWWliSzFLeGlTQXRQ?oc=5",
+  "source": "연합인포맥스",
+  "source_type": "media",
+  "published_at": "2026-11-08T23:27:44+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사"
+  ],
+  "score": 3,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
   "id": "74873831e8eef145",
   "title": "FT \"앤트로픽, 26일 이전 IPO 완료 방침\"",
   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9MaHp1cGpnQmNXZklRd0VMbkJpNTMwdE43MkZmelppYW80bWI4UHVJSWNQeFdZa1JXNHBEQnhJLUR3a3ZCODdfVVhaRXVHZVJwUnloMzhUZWdEdTTSAWBBVV95cUxOQXJPcGYtMFBpaVB1N2RoVzhoallCSDdscmZsT3lKVzVnS1pCUXoxazJrcm9Lc0ZfQ0JJZDQ4NE9QVXFrNW9tSlNLMkF2VGlLNDhpV2VuV2Z0OUs2bEtUY0w?oc=5",
@@ -14541,6 +20051,28 @@
    "토스뱅크",
    "비바리퍼블리카(토스)"
   ],
+  "orgs": []
+ },
+ {
+  "id": "a0b4fcaf64fe4924",
+  "title": "금융사 보안사고에 경영진 정조준… 첫 CEO 제재 나오나 - 머니투데이",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBTeUs0TnBfNGpuY0JBaUN6NGVnZWl1ZDJUclZSelFQTlNBdXJzNXBQc2dxOE5YNjFGc0dYdmRjSnVwZUxZdnVzX0tGcndDOWxMdmpMcms0TjlJWVpMUkpoTFVUUEtBOE160gFuQVVfeXFMTkYxd09IMnJRajFwMkNLTjRvZXp0UThtQ3NhU2pjUE9hMk15c3ZOVjE5ZVJCelZTWmtUT21lWDhjM3l6UVMtSEZNWHQ0dTgwQTk0WEFTZ19tZjN4ZkZxV2RCaUE5TnVLNTBncllHV1E?oc=5",
+  "source": "머니투데이",
+  "source_type": "media",
+  "published_at": "2026-11-08T18:26:00+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "금융정책·감독",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
+  "tags": [
+   "보안",
+   "제재"
+  ],
+  "score": 2,
+  "feed_name": "소비자보호·내부통제",
+  "relevant": true,
+  "companies": [],
   "orgs": []
  },
  {
@@ -15441,6 +20973,25 @@
   "orgs": []
  },
  {
+  "id": "8b86e4d8ed4b7165",
+  "title": "토스, 여성공학인 성장지원 우수기업 산업통상부 장관상",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBLRW1BWFZoQ29fVklxN3pxbVlsZ2tBaVhseE1OQ3RrU253ekd1QTAtR1JtZVpiY0R2SU50enhsdFctaXRsMTQwNWRFUVp4UXF1d1NESjVpT2ltN1XSAWBBVV95cUxON19KNFAxMDBYUktVOGFSa3F5V1hYdVJ1V2dFdXJRU1RKQWhHSndSUVRFbjh1eTctVVZ0Y0hhNzRzaTlmNG9hYWlabkNNd0RXMnZyaFptTFNLaV9mWGRPTVQ?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-07T01:25:18+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "핀테크 기업",
+  "relevant": true,
+  "companies": [
+   "비바리퍼블리카(토스)"
+  ],
+  "orgs": []
+ },
+ {
   "id": "eca9580fae6ff552",
   "title": "[다음주 경제] 금융권 가계대출 다시 늘었나",
   "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBOVTZReVByZzdQNG44MmVfdVZkOGszVWhBUHI0dEJ6aXlzV2ZaY05iXzZRekNxb2tLUEI0ZU9STVUyV09nNHZ4V1hUWUtaRUhVR1o5SjZxWkotT0HSAWBBVV95cUxPU1RyVkQzOEZNQnJwVlotbVZjeDdxVzItd0d2bnVVNS1NT1Via0RVZjNJZlJXdUxIeVRtZ0NuckFtb01jU28wWTdkUnFsUnZXMVhTQjVlMFZFNXB3R0dSQUM?oc=5",
@@ -15690,6 +21241,26 @@
    "증권사"
   ],
   "score": 3,
+  "feed_name": "증권업계",
+  "relevant": true,
+  "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "fe1a172023f71778",
+  "title": "증권사들, 신용융자 담보비율↓·반대매매 유예…'빚투 강제처분 완화' 호응",
+  "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBpbU82MEtwSWJGeDFPR2hvVFdmSi1MbnRHSGVsMFVjLW54UkJGcnFZM3VFdGtJNmhhSl8zX3dFby1qOW9DdzJYczNVMUFTUjRpZUZjV0lCMUJQTjjSAWBBVV95cUxQWlZWNXNKb3ZjRVFSUnRZZE9PY3JCRUlNdFlBZFBKLXQ2VUZBdnVPOHR4a2hoNmN4NmxZYS16S21MNXh3X2pZb1N2OC1OVWZLWTAtZGlsRjJWeWxLa18zWTk?oc=5",
+  "source": "연합뉴스",
+  "source_type": "media",
+  "published_at": "2026-11-06T13:46:04+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "증권·자본시장",
+  "sub_categories": [],
+  "tags": [
+   "증권사",
+   "신용융자"
+  ],
+  "score": 4,
   "feed_name": "증권업계",
   "relevant": true,
   "companies": [],
@@ -15973,6 +21544,25 @@
   "feed_name": "대한금융신문",
   "relevant": true,
   "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "61cbe9d676aeb5ae",
+  "title": "박창훈 신한카드 대표, 순익 1위 탈환…연임 ‘파란불’ [오늘의 리더]",
+  "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBzZ3BWR3YwNE92MDBKTnhGakk0Z0ZxVEFjLW9ObThuSV9LUjV4ZG1BVHRuLTZxYVR0T215TWI0Q0ZBLVEwLVpkUERzYlNFbkRHWlREbGlycWxzaTMtQWhoSGtqazZUTndFUExn?oc=5",
+  "source": "시사오늘",
+  "source_type": "media",
+  "published_at": "2026-11-06T06:22:40+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [
+   "신한카드"
+  ],
   "orgs": []
  },
  {
@@ -16308,6 +21898,26 @@
   "feed_name": "증권업계",
   "relevant": true,
   "companies": [],
+  "orgs": []
+ },
+ {
+  "id": "c7b2444de38a86c9",
+  "title": "삼성·신한카드 비용 부담에 '휘청'⋯3위 KB국민카드 '추격'",
+  "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBBUG9IZm1BUTU4NWgyak80MGI1X0xCQWdybThEcU9nX094RV9ERWR5UmxzRVFsU2dKNWpFcGZjaUE1LWxEZ3FHNkdsMA?oc=5",
+  "source": "아이뉴스24",
+  "source_type": "media",
+  "published_at": "2026-11-06T02:40:19+00:00",
+  "collected_at": "2026-11-13T01:27:51.017433+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "카드사",
+  "relevant": true,
+  "companies": [
+   "신한카드",
+   "KB국민카드"
+  ],
   "orgs": []
  },
  {
