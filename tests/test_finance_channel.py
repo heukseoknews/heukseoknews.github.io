@@ -71,6 +71,6 @@ assert all(f.get('timezone', 'Asia/Seoul') == 'Asia/Seoul' for f in feeds['rss']
 assert not any('fnnews.com' in f['url'] for f in feeds['rss']), '파이낸셜뉴스 시각 형식은 수집기가 읽지 못한다'
 assert len(feeds['queries']) <= 25
 ch = json.loads((ROOT / 'channels/finance/channel.json').read_text())
-assert ch['timezone'] == 'Asia/Seoul' and ch['schedule_utc'] == ['37 20 * * *']
+assert ch['timezone'] == 'Asia/Seoul' and ch['schedule_utc'] == ['45 22 * * *']
 assert '보험' not in json.dumps(ch, ensure_ascii=False), '금융 채널 화면 문구에 보험 표현 없음'
 print('finance channel tests passed')

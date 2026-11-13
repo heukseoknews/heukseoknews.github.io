@@ -2,11 +2,11 @@ name: Collect and deploy
 
 on:
   # 채널별 수집 시각은 channels/*/channel.json schedule_utc(이 목록 중 하나여야 함, tests/channels.test.ts 가 확인).
-  # GitHub 예약은 수 시간까지 늦을 수 있어 일찍 잡아 둔다.
+  # GitHub 예약은 수 시간까지 늦을 수 있어 일찍 잡아 둔다. 채널은 실행 시각이 아니라 cron 문자열로 고르므로(plan) 늦어져 UTC 날짜가 바뀌어도 같다.
   schedule:
-    - cron: '37 20 * * *'  # 20:37 UTC = 한국시간 05:37 — 모든 수집 채널
-    - cron: '37 4 * * *'   # 04:37 UTC = 13:37 — AI 채널(하루 3회)
-    - cron: '37 12 * * *'  # 12:37 UTC = 21:37 — AI 채널(하루 3회)
+    - cron: '45 22 * * *'  # 22:45 UTC = 한국시간 다음 날 07:45 — 모든 수집 채널
+    - cron: '45 6 * * *'   # 06:45 UTC = 15:45 — AI 채널(하루 3회, 8시간 간격)
+    - cron: '45 14 * * *'  # 14:45 UTC = 23:45 — AI 채널(하루 3회, 8시간 간격)
   workflow_dispatch:   # 수동 수집 + 배포: gh workflow run deploy.yml [-f channels=ai] (오래된 실행의 Re-run 은 옛 코드를 다시 배포하므로 쓰지 않는다)
     inputs:
       channels:
@@ -103,7 +103,7 @@ jobs:
             exit 1
           fi
 
-  # 예약 실행인데 수집할 채널이 없으면(예: AI 수집이 꺼진 상태의 04:37·12:37) 빌드·배포도 하지 않는다.
+  # 예약 실행인데 수집할 채널이 없으면(예: AI 수집이 꺼진 상태의 06:45·14:45 UTC) 빌드·배포도 하지 않는다.
   build:
     needs: [plan, collect]
     if: ${{ !cancelled() && (github.event_name != 'schedule' || needs.plan.outputs.channels != '[]') }}

@@ -5,7 +5,7 @@
  "description": "은행·금리, 증권·자본시장, 금융정책·감독, 핀테크 뉴스를 매일 아침 자동으로 모아 보여 줍니다.",
  "locale": "ko-KR",
  "timezone": "Asia/Seoul",
- "schedule_utc": ["37 20 * * *"],
+ "schedule_utc": ["45 22 * * *"],
  "collect": true,
  "tabs": {
   "new": "새 뉴스",

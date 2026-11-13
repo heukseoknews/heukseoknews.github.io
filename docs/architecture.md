@@ -22,7 +22,7 @@
 
 ```mermaid
 flowchart TD
-  A["① 시작<br/>Actions 스케줄(cron 37 20 * * * UTC = 05:37 KST) · workflow_dispatch<br/>(push 는 수집 없이 빌드·배포만)"] --> B
+  A["① 시작<br/>Actions 스케줄(cron 45 22 * * * UTC = 07:45 KST, AI 는 15:45·23:45 KST 추가) · workflow_dispatch<br/>(push 는 수집 없이 빌드·배포만)"] --> B
   B["② 소스별 가져오기<br/>collect.main → load_sources / boards.json<br/>RSS(3+금융위) · 구글 뉴스 검색(25 쿼리) · HTML 게시판(3)"] --> C
   C["③ 정규화<br/>collect_source: parse_date(KST 보정) · clean · 제목 끝 '- 언론사' 분리<br/>SourceAliases.resolve(출처 정규화) · strip_org_suffix"] --> D
   D["④ 필터(저장 전)<br/>링크·날짜 없음 · max_age_days(검색 피드 180일) · TitleFilter.is_junk<br/>Blocked.is_blocked"] --> E
@@ -236,7 +236,7 @@ origin 이 바뀌면(github.io 하위 경로 → 새 도메인) **모든 localSt
 | `next.config.mjs` | `basePath='/actuary-news-hub'` |
 | `lib/categories.ts`, `lib/entities.ts` | `config/*.json` 직접 import(채널이 여러 개면 빌드 시점 선택 필요) |
 
-**(c) 워크플로·스크립트·문서**: `deploy.yml` cron 주석(한국 시간 05:37)·한국어 메시지, `scripts/make-version.mjs`(`+09:00`, URL 주석), `scripts/probe/*`(UA·기관 목록), `scripts/audit/score_audit.py`·`keyword_collisions.py`(카테고리명·계리 정규식 — 일회성 감사), `package.json` name, `README.md`·`CLAUDE.md`·`AGENTS.md`의 저장소·사이트 URL, `tests/classify_samples.json`·`collector/test_*.py`(보험 도메인 전제).
+**(c) 워크플로·스크립트·문서**: `deploy.yml` cron 주석(한국 시간 07:45 등)·한국어 메시지, `scripts/make-version.mjs`(`+09:00`, URL 주석), `scripts/probe/*`(UA·기관 목록), `scripts/audit/score_audit.py`·`keyword_collisions.py`(카테고리명·계리 정규식 — 일회성 감사), `package.json` name, `README.md`·`CLAUDE.md`·`AGENTS.md`의 저장소·사이트 URL, `tests/classify_samples.json`·`collector/test_*.py`(보험 도메인 전제).
 
 ---
 
@@ -269,7 +269,7 @@ origin 이 바뀌면(github.io 하위 경로 → 새 도메인) **모든 localSt
 
 ### 7.1 `.github/workflows/deploy.yml` ("Collect and deploy")
 
-- **트리거**: `schedule`(cron `37 20 * * *` = 매일 05:37 KST), `workflow_dispatch`(수동), `push`(main). push 는 수집·데이터 커밋을 건너뛰고 빌드·배포만 한다.
+- **트리거**: `schedule`(cron `45 22 * * *` = 매일 07:45 KST 전 수집 채널, `45 6 * * *`·`45 14 * * *` = 15:45·23:45 KST AI 채널), `workflow_dispatch`(수동), `push`(main). push 는 수집·데이터 커밋을 건너뛰고 빌드·배포만 한다.
 - **권한**: `contents: write`, `pages: write`, `id-token: write`. **동시성**: 그룹 `collect-and-deploy`, `cancel-in-progress: false`(대기열로 직렬화).
 - **build 잡**(타임아웃 15분) 순서: checkout → (비 push) Python 3.12 + pip 캐시 → `pip install` → **`collector/test_*.py` 전부 실행** → `python collector/collect.py` → **Commit data**(`scripts/commit-data.sh`, `continue-on-error`) → **Record commit result**(`failed=true/false` 출력, 실패 시 `::error`·요약 경고) → Node 22 → `npm ci` → `npm test` → `npm run build`(= `sync-data` → `make-version` → `next build`) → Pages 아티팩트 업로드.
 - **deploy 잡**: `github-pages` 환경, `deploy-pages`. **report 잡**: `commit_failed == 'true'` 이면 배포가 끝난 뒤 `exit 1` 로 실행을 실패 처리(메일·빨간 표시).
@@ -277,8 +277,8 @@ origin 이 바뀌면(github.io 하위 경로 → 새 도메인) **모든 localSt
 - **version.json**: `commit`(7자리), `commit_message`, `built_at`(KST), `run_id`, `trigger`(schedule/workflow_dispatch/push/local), `data_collected_at`.
 
 ### 7.2 스케줄 지연 사례
-- GitHub 예약 실행은 수 시간 늦거나 건너뛸 수 있다(README 안내). 그래서 한국 시간 새벽 05:37 으로 일찍 잡고, 36시간을 넘기면 화면 상단에 지연 배너(`StaleNotice`, `lib/stale.ts` `STALE_HOURS=36`, 기준 `last_run.finished_at`)와 헤더 배지 경고가 뜬다.
-- 데이터 커밋 시각(UTC)으로 본 정황: 정시(20:37 UTC)가 아닌 날이 많고(11-07 23:56, 11-08 23:59, 11-11 00:53, 11-10 02:54 등 3~6시간 지연), 11-09 에는 커밋이 없다(건너뜀 가능성). 일부는 수동 실행일 수 있어 확정은 아니다.
+- GitHub 예약 실행은 수 시간 늦거나 건너뛸 수 있다(README 안내). 그래서 한국 시간 아침 07:45(전날 22:45 UTC)로 잡고(채널 선택은 cron 문자열로 하므로 늦어져 UTC 날짜가 바뀌어도 같다), 36시간을 넘기면 화면 상단에 지연 배너(`StaleNotice`, `lib/stale.ts` `STALE_HOURS=36`, 기준 `last_run.finished_at`)와 헤더 배지 경고가 뜬다.
+- 데이터 커밋 시각(UTC)으로 본 정황: 정시(당시 20:37 UTC)가 아닌 날이 많고(11-07 23:56, 11-08 23:59, 11-11 00:53, 11-10 02:54 등 3~6시간 지연), 11-09 에는 커밋이 없다(건너뜀 가능성). 일부는 수동 실행일 수 있어 확정은 아니다.
 - 커밋 `6ecf9b1` 에서 push 재시도·실패 후에도 배포·실행 실패 표시·예약 시각 조정·지연 안내가 들어갔다.
 
 ### 7.3 상태 페이지(`/<채널>/status/`)가 보여 주는 것
@@ -380,6 +380,6 @@ heukseoknews.github.io/                # 새 저장소(서비스 '흑석일보',
 | 화면 | `app/[channel]/…`(generateStaticParams), 채널 레지스트리 `lib/channels.ts`, 컨텍스트 `lib/channelContext.tsx`. 데이터 `/data/<채널>/…`. `/` 는 홈(워드마크·한 줄 소개·채널 카드, 정적·데이터 없음, `app/page.tsx`). 자동 이동은 없고 `#import=` 해시만 `/insurance/settings/` 로 보낸다. 헤더 아래 채널 이동 줄 `components/ChannelSwitcher.tsx`: 채널 목록·공개 여부는 `lib/directory.ts`(`status: live | soon`, live 만 링크, soon 은 '준비 중' 비활성 버튼이고 페이지가 있으면 noindex). 테마는 채널 `theme.json` 4색(`--accent`·`--accent-strong`·`--accent-soft`·`--accent-dark`)을 채널 레이아웃이 `:root` CSS 변수로 주입, 폴더 없는 예정 채널 색은 `lib/theme.ts` `PLANNED_THEMES` |
 | 사용자 상태 | `lib/userState.ts`(순수 로직) + `lib/storage.ts`(localStorage 어댑터). 키 `heukseok-v1:insurance`, 보험사 선택도 같은 덩어리. 옛 키 읽기·가져오기 지원. 형식: `docs/migration-localstorage.md` |
 | 내 데이터 | `/insurance/settings/` — JSON 백업·복원, `#import=` 해시 수신, 미리보기 후 합집합 병합 |
-| 워크플로 | `deploy.yml`: collect(채널 매트릭스, fail-fast false, 채널별 `data/<채널>` 커밋·아티팩트) → build(main 최신 + 이번 수집 아티팩트) → deploy → report(수집·커밋 실패 시 실행 실패 표시). cron 20:37 UTC 그대로 |
+| 워크플로 | `deploy.yml`: collect(채널 매트릭스, fail-fast false, 채널별 `data/<채널>` 커밋·아티팩트) → build(main 최신 + 이번 수집 아티팩트) → deploy → report(수집·커밋 실패 시 실행 실패 표시). cron 20:37 UTC 그대로(당시. 2026-11-13 에 22:45 UTC 로 바꿈) |
 | 동등성 검증 | `scripts/audit/equivalence_collector.py`, `scripts/audit/equivalence_site.ts`(옛 코드 사본과 비교: 재분류 결과 기사 필드, 분류 정확도, 빌드된 화면의 카테고리·건수·필터) |
 

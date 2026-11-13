@@ -41,15 +41,19 @@ for (const x of crons) assert.ok(used.has(x), `deploy.yml cron '${x}' 를 쓰는
 // 매트릭스 계획: 예약 시각별 채널, collect:false 제외, 수동 실행·push
 const real = loadChannels();
 assert.deepEqual(planChannels(real, 'push'), []);
-const ch = [{ slug: 'ai', schedule_utc: ['37 20 * * *', '37 4 * * *'], collect: true }, { slug: 'insurance', schedule_utc: ['37 20 * * *'] }];
-assert.deepEqual(planChannels(ch, 'schedule', '37 20 * * *'), ['ai', 'insurance']);
-assert.deepEqual(planChannels(ch, 'schedule', '37 4 * * *'), ['ai']);
+const ch = [{ slug: 'ai', schedule_utc: ['45 22 * * *', '45 6 * * *'], collect: true }, { slug: 'insurance', schedule_utc: ['45 22 * * *'] }];
+assert.deepEqual(planChannels(ch, 'schedule', '45 22 * * *'), ['ai', 'insurance']);
+assert.deepEqual(planChannels(ch, 'schedule', '45 6 * * *'), ['ai']);
 assert.deepEqual(planChannels(ch, 'schedule', '0 0 * * *'), []);
 assert.deepEqual(planChannels(ch, 'workflow_dispatch'), ['ai', 'insurance']);
 assert.deepEqual(planChannels(ch, 'workflow_dispatch', '', 'ai'), ['ai']);
-assert.deepEqual(planChannels([{ ...ch[0], collect: false }, ch[1]], 'schedule', '37 4 * * *'), [], 'collect:false 는 제외');
-// 보험 채널은 20:37 에 수집된다(지금과 같음)
-assert.ok(planChannels(real, 'schedule', '37 20 * * *').includes('insurance') && planChannels(real, 'workflow_dispatch').includes('insurance'));
+assert.deepEqual(planChannels([{ ...ch[0], collect: false }, ch[1]], 'schedule', '45 6 * * *'), [], 'collect:false 는 제외');
+// 보험 채널은 22:45 UTC(한국 07:45)에 수집된다
+assert.ok(planChannels(real, 'schedule', '45 22 * * *').includes('insurance') && planChannels(real, 'workflow_dispatch').includes('insurance'));
+// 실제 채널: 22:45 UTC 는 수집 채널 전체, 06:45·14:45 UTC 는 AI 만(수집이 켜져 있을 때)
+const collecting = real.filter(c => c.collect !== false).map(c => c.slug);
+assert.deepEqual(planChannels(real, 'schedule', '45 22 * * *'), collecting);
+for (const x of ['45 6 * * *', '45 14 * * *']) assert.deepEqual(planChannels(real, 'schedule', x), collecting.filter(s => s === 'ai'));
 
 // 공개 여부 = lib/directory.ts status(live | soon) 하나(channel.json 에 hidden 없음).
 const byDir = Object.fromEntries(DIRECTORY.map(d => [d.slug, d]));
