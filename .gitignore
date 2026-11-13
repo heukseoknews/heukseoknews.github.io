@@ -13,3 +13,9 @@ scripts/probe/out/
 # 비밀·계정 목록은 저장소에 두지 않는다(docs/auth-runbook.md)
 *.env
 accounts*.csv
+# 로그·테스트 산출물·편집기 설정
+*.log
+.pytest_cache/
+playwright-report/
+test-results/
+.vscode/
