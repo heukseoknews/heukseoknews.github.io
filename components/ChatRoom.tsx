@@ -7,10 +7,10 @@ import { loginHref } from '../lib/auth';
 import { useAccount, useSyncUser } from '../lib/useAccount';
 import { getChannel } from '../lib/channels';
 import {
-  BODY_MAX, BODY_NOTE, COUNT_FROM, DELETED_TEXT, FAIL_NOTE, NOT_READY, PAGE, ROOM_NOTE, SEND_GAP_MS,
-  type ChatArticle, type ChatBackend, ChatError, type ChatEvent, type ChatMessage, type LinkState, type Outgoing,
-  articleDate, bodyLength, bodyProblem, canDelete, cleanBody, dayKey, dayLabel, dropMessages, enterAction, fetchSince,
-  firstId, isDeleted, isHttpUrl, lastId, mergeMessages, nearBottom, settleOutgoing, takePending, timeLabel,
+  BODY_MAX, BODY_NOTE, COUNT_FROM, COUNTS_EVERY_MS, DELETED_TEXT, NOT_READY, PAGE, SEND_GAP_MS,
+  type ChatArticle, type ChatBackend, ChatError, type ChatEvent, type ChatMessage, type LinkState, type Outgoing, type ReadsState,
+  applyCounts, articleDate, bodyLength, canDelete, canFetchCounts, canSend, cleanBody, dayKey, dayLabel, dropMessages, enterAction, failNote, fetchSince,
+  firstId, isDeleted, isHttpUrl, lastId, markPlan, mergeMessages, nearBottom, readCountIds, readLabel, readsAfterFail, sendProblem, settleOutgoing, takePending, timeLabel,
 } from '../lib/chat';
 import { supabaseChat } from '../lib/chatBackend';
 import { channelColors } from './channelLook';
@@ -62,6 +62,13 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
   const anchor = useRef<number | null>(null);   // 이전 글을 앞에 붙일 때 보던 자리 유지(아래에서 잰 거리)
   const lastSend = useRef(0);
   const catching = useRef(false);
+  // 읽음(0004): 서버에 함수가 없으면 off → 읽음 표시를 숨기고 더 부르지 않는다(채팅은 그대로)
+  const [reads, setReads] = useState<ReadsState>('unknown');
+  const [counts, setCounts] = useState<Map<number, number>>(() => new Map());
+  const [newTick, setNewTick] = useState(0);   // 새 글이 들어옴 → 잠시 뒤 읽음 수 다시 가져오기
+  const readsRef = useRef(reads); readsRef.current = reads;
+  const phaseRef = useRef(phase); phaseRef.current = phase;
+  const mark = useRef<{ sent: number; at: number; timer: ReturnType<typeof setTimeout> | null }>({ sent: 0, at: 0, timer: null });
 
   // 첨부 대기: 기사 카드 [채팅에 올리기]에서 온 기사(한 번만)
   useEffect(() => { const st = session(); const a = st && takePending(st); if (a) setAttach(a); }, []);
@@ -88,6 +95,7 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
     if (!rows.length) return;
     const n = countNew(rows);
     if (n && !stick.current) setUnseen(u => u + n);
+    if (rows.some(m => m.id > lastId(msgsRef.current))) setNewTick(t => t + 1);
     setMsgs(cur => mergeMessages(cur, rows));
     setOut(o => rows.reduce((acc, m) => settleOutgoing(acc, m, me), o));
   }, [me]);   // eslint-disable-line react-hooks/exhaustive-deps
@@ -109,7 +117,7 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
   useEffect(() => {
     if (phase !== 'ready') return;
     const onEvent = (e: ChatEvent) => { if (e.type === 'drop') setMsgs(cur => dropMessages(cur, [e.id])); else absorb([e.row]); };
-    return be.subscribe(onEvent, s => { setLink(s); if (s === 'live') catchUp(); });
+    return be.subscribe(onEvent, s => { setLink(s); if (s === 'live') { catchUp(); fetchCounts(); } });
   }, [phase, be]);   // eslint-disable-line react-hooks/exhaustive-deps
   // 탭이 다시 보일 때·네트워크가 돌아올 때 보충, 끊겨 있는 동안은 20초마다 확인
   useEffect(() => {
@@ -119,6 +127,48 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
     const t = link === 'live' ? null : setInterval(catchUp, 20_000);
     return () => { document.removeEventListener('visibilitychange', onVis); window.removeEventListener('online', catchUp); if (t) clearInterval(t); };
   }, [phase, link, catchUp]);
+
+  // ───── 읽음 ─────
+  const visible = () => document.visibilityState === 'visible';
+  // 내 읽은 위치 알리기: 탭이 보이고 최신 글 쪽이 화면에 있을 때만, 3초 이상 간격으로 모아서(markPlan)
+  const flushMark = useCallback(function flush() {
+    const m = mark.current;
+    if (m.timer) return;   // 이미 모으는 중 — 그 타이머가 다시 판단한다
+    const want = lastId(msgsRef.current);
+    const plan = markPlan({ want, sent: m.sent, lastAt: m.at, now: Date.now(), visible: visible(), seeingLatest: stick.current, reads: readsRef.current });
+    if (plan.wait > 0) { m.timer = setTimeout(() => { m.timer = null; flush(); }, plan.wait); return; }
+    if (!plan.send) return;
+    const prev = m.sent;
+    m.sent = want; m.at = Date.now();
+    be.markRead(want)
+      .then(v => { m.sent = Math.max(m.sent, v); setReads(r => r === 'unknown' ? 'on' : r); })
+      .catch(e => { m.sent = prev; setReads(r => readsAfterFail(r, e instanceof ChatError ? e.kind : 'network')); });
+  }, [be]);
+  // 읽음 수: 내가 보낸 글만, 탭이 보일 때만
+  const fetchCounts = useCallback(async () => {
+    const ids = readCountIds(msgsRef.current, me);
+    if (!canFetchCounts({ ready: phaseRef.current === 'ready', visible: visible(), reads: readsRef.current, ids })) return;
+    try {
+      const rows = await be.readCounts(ids);
+      setCounts(c => applyCounts(c, ids, rows));
+      setReads(r => r === 'unknown' ? 'on' : r);
+    } catch (e) { setReads(r => readsAfterFail(r, e instanceof ChatError ? e.kind : 'network')); }
+  }, [be, me]);
+  useEffect(() => { if (phase === 'ready') flushMark(); }, [phase, msgs, flushMark]);
+  useEffect(() => {
+    if (phase !== 'ready') return;
+    fetchCounts();
+    const t = setInterval(fetchCounts, COUNTS_EVERY_MS);
+    const onVis = () => { if (visible()) { fetchCounts(); flushMark(); } };
+    document.addEventListener('visibilitychange', onVis);
+    return () => { clearInterval(t); document.removeEventListener('visibilitychange', onVis); };
+  }, [phase, fetchCounts, flushMark]);
+  useEffect(() => {
+    if (!newTick) return;
+    const t = setTimeout(fetchCounts, 1000);   // 새 글이 몰려와도 한 번만
+    return () => clearTimeout(t);
+  }, [newTick, fetchCounts]);
+  useEffect(() => () => { if (mark.current.timer) clearTimeout(mark.current.timer); }, []);
 
   // 스크롤: 맨 아래를 보고 있으면 따라 내려가고, 이전 글을 앞에 붙였으면 보던 자리를 지킨다
   useLayoutEffect(() => {
@@ -130,10 +180,12 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
   const onScroll = () => {
     const el = listRef.current;
     if (!el) return;
+    const was = stick.current;
     stick.current = nearBottom(el.scrollTop, el.scrollHeight, el.clientHeight);
     if (stick.current && unseen) setUnseen(0);
+    if (stick.current && !was) flushMark();   // 최신 글 쪽으로 내려왔을 때만(스크롤마다 부르지 않는다)
   };
-  const toBottom = () => { const el = listRef.current; stick.current = true; setUnseen(0); if (el) el.scrollTop = el.scrollHeight; };
+  const toBottom = () => { const el = listRef.current; stick.current = true; setUnseen(0); if (el) el.scrollTop = el.scrollHeight; flushMark(); };
   const loadOlder = async () => {
     if (older || !msgs.length) return;
     setOlder(true);
@@ -178,12 +230,13 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
   const send = () => {
     const now = Date.now();
     const raw = inputRef.current?.value ?? text;   // 입력창의 지금 값(같은 순간의 두 이벤트가 옛 상태를 읽지 않게)
-    const p = bodyProblem(raw);
+    const p = sendProblem(raw, !!attach);   // 기사를 첨부했으면 글이 없어도 된다
     if (p) { setNote(BODY_NOTE[p]); return; }
     const body = cleanBody(raw);
-    // 중복 전송 방지: 같은 내용을 0.5초 안에 다시 보내면 무시(서로 다른 짧은 글을 연달아 보내는 것은 막지 않는다)
-    if (now - lastSend.current < SEND_GAP_MS && body === lastBody.current) return;
-    lastSend.current = now; lastBody.current = body;
+    // 중복 전송 방지: 같은 내용(글 + 첨부)을 0.5초 안에 다시 보내면 무시(서로 다른 짧은 글을 연달아 보내는 것은 막지 않는다)
+    const sig = `${body}\u0000${attach?.id ?? ''}`;
+    if (now - lastSend.current < SEND_GAP_MS && sig === lastBody.current) return;
+    lastSend.current = now; lastBody.current = sig;
     const item: Outgoing = { key: keyOf(), body, article: attach, state: 'sending', at: now };
     if (inputRef.current) inputRef.current.value = '';
     setOut(o => [...o, item]); setText(''); setAttach(null); setNote(''); setPicking(false);
@@ -224,10 +277,7 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
   const n = bodyLength(cleanBody(text));
   let prevDay = '';
   return <div className="chatShell" ref={shellRef}>
-    <div className="chatTop">
-      <p className="chatNote">{ROOM_NOTE}</p>
-      {link !== 'live' && phase === 'ready' && <span className="chatConn" role="status">{link === 'connecting' ? '연결 중' : '연결이 끊겨 다시 연결하는 중'}</span>}
-    </div>
+    {link !== 'live' && phase === 'ready' && <p className="chatConn" role="status">{link === 'connecting' ? '연결 중' : '연결이 끊겨 다시 연결하는 중'}</p>}
     <div className="chatList" ref={listRef} onScroll={onScroll} aria-busy={phase === 'loading'}>
       {phase === 'loading' && <p className="chatEmpty">불러오는 중입니다…</p>}
       {phase === 'ready' && hasMore && <button type="button" className="readToggle chatOlder" onClick={loadOlder} disabled={older}>{older ? '불러오는 중…' : '이전 글 더 보기'}</button>}
@@ -241,12 +291,13 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
             {sep && <li className="chatDay" aria-hidden="false"><span>{dayLabel(m.created_at)}</span></li>}
             <li className={'msg' + (mine ? ' mine' : '') + (gone ? ' gone' : '')} data-id={m.id}>
               <div className="msgHead"><b className="msgWho">{m.author_name}</b><time dateTime={m.created_at}>{timeLabel(m.created_at)}</time>
+                {mine && !gone && readLabel(counts.get(m.id), reads) && <span className="msgRead">{readLabel(counts.get(m.id), reads)}</span>}
                 {canDelete(m, me, admin) && (removing === m.id ? <span className="msgState">지우는 중</span> : confirm === m.id
                   ? <span className="msgConfirm">지울까요? <button type="button" className="msgAct danger" onClick={() => remove(m.id)}>삭제</button><button type="button" className="msgAct" onClick={() => setConfirm(null)}>취소</button></span>
                   : <button type="button" className="msgAct" onClick={() => { setConfirm(m.id); setDelNote(null); }}>삭제</button>)}
               </div>
               {gone ? <p className="msgBody muted">{DELETED_TEXT}</p> : <>
-                <p className="msgBody">{m.body}</p>
+                {m.body && <p className="msgBody">{m.body}</p>}
                 {m.article && <ArticleChip a={m.article} />}
               </>}
               {delNote?.id === m.id && <p className="msgFail">{delNote.text}</p>}
@@ -254,10 +305,10 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
           </Fragment>;
         })}
         {out.map(o => <li key={o.key} className={'msg mine pending' + (o.state === 'failed' ? ' failed' : '')}>
-          <div className="msgHead">{o.state === 'sending' ? <span className="msgState">보내는 중</span> : <span className="msgFail" role="alert">전송 실패{o.fail && FAIL_NOTE[o.fail] ? ` — ${FAIL_NOTE[o.fail]}` : ''}</span>}
+          <div className="msgHead">{o.state === 'sending' ? <span className="msgState">보내는 중</span> : <span className="msgFail" role="alert">전송 실패{failNote(o) ? ` — ${failNote(o)}` : ''}</span>}
             {o.state === 'failed' && <><button type="button" className="msgAct" onClick={() => retry(o)}>다시 보내기</button><button type="button" className="msgAct" onClick={() => setOut(x => x.filter(y => y.key !== o.key))}>지우기</button></>}
           </div>
-          <p className="msgBody">{o.body}</p>
+          {o.body && <p className="msgBody">{o.body}</p>}
           {o.article && <ArticleChip a={o.article} />}
         </li>)}
       </ol>
@@ -270,7 +321,7 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
         <button type="button" className="readToggle chatAttachBtn" aria-expanded={picking} onClick={() => setPicking(p => !p)}><Newspaper size={16} aria-hidden="true" /><span>기사 첨부</span></button>
         <textarea ref={inputRef} className="chatInput" rows={1} value={text} placeholder="글 쓰기" aria-label="글 쓰기"
           onChange={e => { setText(e.target.value); if (note) setNote(''); }} onKeyDown={onKeyDown} enterKeyHint="send" />
-        <button type="submit" className="confirm chatSend" aria-label="보내기" disabled={!cleanBody(text)}><Send size={17} aria-hidden="true" /></button>
+        <button type="submit" className="confirm chatSend" aria-label="보내기" disabled={!canSend(text, !!attach)}><Send size={17} aria-hidden="true" /></button>
       </div>
       {(note || n >= COUNT_FROM) && <p className="chatHint">{note && <span className="msgFail">{note}</span>}{n >= COUNT_FROM && <span className={'chatCount' + (n > BODY_MAX ? ' over' : '')}>{n}/{BODY_MAX}</span>}</p>}
     </form>

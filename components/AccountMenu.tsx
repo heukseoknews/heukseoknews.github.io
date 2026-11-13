@@ -14,7 +14,7 @@ import ChatLink from './ChatLink';
  *  로그인 상태: [표시 이름] 버튼 → 표시 이름·아이디, 마이페이지, 로그아웃. ≤640px(햄버거 안)에서는 버튼 없이 목록으로 펼친다.
  *  로그아웃 상태: '로그인' 하나(마이페이지 버튼과 같은 모양·높이). 확인 전: 비움.
  *  표시 이름이 길어도 자리 폭이 넘치지 않게 말줄임(최대 폭 고정).
- *  로그인 상태의 헤더(li)에서는 왼쪽에 '채팅'(ChatLink)을 함께 둔다 — 같은 조건·같은 번들이라 따로 불러오지 않는다. */
+ *  로그인 상태에서는 왼쪽에 '채팅'(ChatLink)을 함께 둔다(채널·마이페이지 헤더와 홈 상단 줄 모두) — 같은 조건·같은 번들이라 따로 불러오지 않는다. */
 export default function AccountMenu({ meHref, as: Tag = 'li' }: { meHref: string; as?: 'li' | 'div' }) {
   const acc = useAccount();
   const path = usePathname() || '/';
@@ -45,7 +45,7 @@ export default function AccountMenu({ meHref, as: Tag = 'li' }: { meHref: string
     if (AUTH_MODE === 'required') { if (document.documentElement.getAttribute('data-auth') !== 'leaving') location.replace(LOGIN_PATH); }
     else { setBusy(false); setOpen(false); }
   };
-  return <>{Tag === 'li' && <ChatLink />}<Tag className="acct" ref={box as never}>
+  return <><ChatLink as={Tag} /><Tag className="acct" ref={box as never}>
     <button ref={btn} type="button" className="acctBtn" aria-expanded={open} aria-controls="acctPanel" onClick={() => setOpen(o => !o)}>
       <UserRound size={17} aria-hidden="true" /><span className="acctName">{name}</span><SyncDot />
     </button>

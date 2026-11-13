@@ -44,6 +44,20 @@ export const supabaseChat: ChatBackend = {
       if (error) fail('delete', status, error);
     });
   },
+  markRead(lastId) {
+    return withTimeout(async signal => {
+      const { data, error, status } = await (await client()).rpc('chat_mark_read', { p_last_id: lastId }).abortSignal(signal);
+      if (error) fail('markRead', status, error);
+      return Number(data) || 0;
+    });
+  },
+  readCounts(ids) {
+    return withTimeout(async signal => {
+      const { data, error, status } = await (await client()).rpc('chat_read_counts', { p_ids: ids }).abortSignal(signal);
+      if (error) fail('readCounts', status, error);
+      return ((data ?? []) as { id: unknown; read_count: unknown }[]).map(r => ({ id: Number(r.id), read_count: Number(r.read_count) }));
+    });
+  },
   async isAdmin(userId) {
     try {
       const { data } = await (await client()).from('profiles').select('is_admin').eq('user_id', userId).maybeSingle();   // 본인 행만 읽힌다(RLS)

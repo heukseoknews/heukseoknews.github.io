@@ -13,7 +13,6 @@ export const SEND_GAP_MS = 500;
 export const CHAT_CHANNELS = ['insurance', 'ai', 'finance'] as const;
 export const DELETED_TEXT = '삭제된 글입니다';
 export const NOT_READY = '채팅 준비 중입니다';
-export const ROOM_NOTE = '이 방의 글은 서버에 저장되고 관리자가 볼 수 있습니다.';
 
 /** 기사 첨부: 북마크 스냅샷과 같은 모양(그 기사 한 건만 공개된다. 목록·메모·태그는 넣지 않는다) */
 export type ChatArticle = { id: string; cluster_id?: string; channel: string; title: string; source?: string; url: string; published_at?: string };
@@ -38,6 +37,13 @@ export function bodyProblem(raw: string): BodyProblem | null {
   if (BAD_CHARS.test(b)) return 'invalid';
   return null;
 }
+/** 보내기 전 검사: 기사를 첨부했으면 본문이 비어 있어도 된다(기사만 있는 글, 0004). 아니면 bodyProblem 과 같다 */
+export function sendProblem(raw: string, hasArticle: boolean): BodyProblem | null {
+  const p = bodyProblem(raw);
+  return p === 'empty' && hasArticle ? null : p;
+}
+/** [보내기] 버튼을 켤지: 글이 있거나 첨부한 기사가 있으면 */
+export const canSend = (raw: string, hasArticle: boolean) => !!cleanBody(raw) || hasArticle;
 
 // ───── 기사 첨부 ─────
 const ID = /^[A-Za-z0-9_.:-]{1,64}$/;
@@ -199,7 +205,44 @@ export const FAIL_NOTE: Partial<Record<ChatFail, string>> = {
   length: '500자 이하로 써 주세요', format: '쓸 수 없는 문자가 있습니다', article: '첨부한 기사를 올릴 수 없습니다',
   rate: '잠시 후 다시 보내 주세요', auth: '다시 로그인해 주세요', forbidden: '보낼 수 없습니다',
 };
+/** 실패한 글의 안내. 기사만 보냈는데 서버가 본문 길이로 거절하면(0004 적용 전) 글을 함께 쓰라고 안내한다 */
+export function failNote(o: Pick<Outgoing, 'body' | 'article' | 'fail'>): string {
+  if (o.fail === 'length' && !o.body && o.article) return '글을 함께 적어 주세요';
+  return (o.fail && FAIL_NOTE[o.fail]) || '';
+}
 export const BODY_NOTE: Record<BodyProblem, string> = { empty: '', tooLong: '500자 이하로 써 주세요', invalid: '쓸 수 없는 문자가 있습니다' };
+
+// ───── 읽음 수(0004) ─────
+// 사용자마다 '어디까지 읽었는지' 한 줄(서버 chat_reads). 화면은 내가 보낸 글에만 '읽음 N'(0이면 숨김). 누가 읽었는지는 받지 않는다.
+/** 읽은 위치 알리기 간격(모아서 한 번) */
+export const MARK_GAP_MS = 3000;
+/** 읽음 수 다시 가져오기 간격(방이 보이는 동안) */
+export const COUNTS_EVERY_MS = 20_000;
+/** 읽음 기능 상태: unknown(아직 모름) · on · off(서버에 0004 없음 → 읽음 표시를 숨기고 더 부르지 않는다) */
+export type ReadsState = 'unknown' | 'on' | 'off';
+/** 읽음 호출이 실패했을 때: 함수가 없으면(0004 미적용) off, 그 밖(일시 오류)은 그대로 */
+export const readsAfterFail = (cur: ReadsState, fail: ChatFail): ReadsState => fail === 'unavailable' ? 'off' : cur;
+
+/** 읽은 위치를 지금 알릴지(send), 아니면 몇 ms 뒤에 다시 볼지(wait > 0). 탭이 보이고 최신 글 쪽이 화면에 있을 때만,
+ *  새로 읽은 것이 있을 때만, 마지막 호출에서 3초가 지났을 때만 보낸다(그 전이면 남은 시간만큼 모았다가 한 번). */
+export function markPlan(s: { want: number; sent: number; lastAt: number; now: number; visible: boolean; seeingLatest: boolean; reads: ReadsState }): { send: boolean; wait: number } {
+  if (s.reads === 'off' || !s.visible || !s.seeingLatest || s.want <= s.sent) return { send: false, wait: 0 };
+  const left = MARK_GAP_MS - (s.now - s.lastAt);
+  return left > 0 ? { send: false, wait: left } : { send: true, wait: 0 };
+}
+/** 읽음 수를 가져올지: 방이 열려 있고(ready), 탭이 보이고, 0004 가 없지 않고, 물어볼 글이 있을 때만 */
+export const canFetchCounts = (s: { ready: boolean; visible: boolean; reads: ReadsState; ids: number[] }) => s.ready && s.visible && s.reads !== 'off' && s.ids.length > 0;
+/** 읽음 수를 물어볼 글: 내가 보낸 지우지 않은 글 중 최근 200개 */
+export const readCountIds = (list: ChatMessage[], me: string | null) => list.filter(m => m.user_id === me && !isDeleted(m)).slice(-200).map(m => m.id);
+/** 받은 읽음 수를 합친다. 물어본 id 중 답에 없는 것(지운 글)은 뺀다 */
+export function applyCounts(prev: Map<number, number>, asked: number[], rows: { id: number; read_count: number }[]): Map<number, number> {
+  const next = new Map(prev);
+  for (const id of asked) next.delete(id);
+  for (const r of rows) if (Number.isSafeInteger(r.id) && Number.isInteger(r.read_count) && r.read_count >= 0) next.set(r.id, r.read_count);
+  return next;
+}
+/** 글 옆 표시: 읽음 기능이 켜져 있고 1 이상일 때만 '읽음 N' */
+export const readLabel = (n: number | undefined, reads: ReadsState) => reads === 'on' && n && n > 0 ? `읽음 ${n}` : '';
 
 // ───── 서버 연결(구현: lib/chatBackend.ts, 테스트·브라우저 확인은 가짜) ─────
 export type ChatEvent = { type: 'upsert'; row: ChatMessage } | { type: 'drop'; id: number };
@@ -210,6 +253,10 @@ export interface ChatBackend {
   send(body: string, article: ChatArticle | null): Promise<{ id: number; created_at: string; author_name: string }>;
   remove(id: number): Promise<void>;
   isAdmin(userId: string): Promise<boolean>;
+  /** 내 읽은 위치를 올린다(0004). 돌려주는 값 = 서버에 저장된 위치 */
+  markRead(lastId: number): Promise<number>;
+  /** 글별 읽음 수(0004). 삭제된 글은 빠진다 */
+  readCounts(ids: number[]): Promise<{ id: number; read_count: number }[]>;
   /** 실시간 연결. 끊기면 스스로 다시 붙고 onState('live') 를 다시 부른다. 돌려준 함수로 닫는다 */
   subscribe(onEvent: (e: ChatEvent) => void, onState: (s: LinkState) => void): () => void;
 }

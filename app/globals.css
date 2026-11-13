@@ -309,12 +309,15 @@ html[data-auth="leaving"] body{visibility:hidden}
 @media(hover:hover){.acctItem:hover{background:var(--bg);color:var(--accent-strong)}}
 .siteNav .utilNav ul a.loginLink{color:var(--accent-strong)}
 .homeTop nav>div{display:flex;align-items:center}.homeTop .acctSlot{display:flex;align-items:center}
+.homeTop .chatSlot{margin-right:12px}.homeTop a.chatLink{gap:6px;min-height:38px;padding:0 14px;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--surface);color:var(--text-2);font-weight:600}.homeTop a.chatLink.active{border-color:var(--accent);color:var(--accent-strong);background:var(--accent-soft)}
+@media(hover:hover){.homeTop a.chatLink:hover{border-color:var(--accent);color:var(--accent-strong)}}
 @media(max-width:640px){
  .siteNav .utilNav .acctBtn{display:none}
  .acctPanel{display:block;position:static;box-shadow:none;border:0;padding:0;min-width:0;max-width:none}
  .acctWho{padding:10px 4px;border-bottom:1px solid var(--line-soft)}
  .siteNav .utilNav ul .acctItem{min-height:48px;padding:0 4px;border-bottom:1px solid var(--line-soft);border-radius:0}
  .homeTop .acctBtn{max-width:160px;min-height:34px;padding:0 12px;font-size:var(--fs-13)}
+ .homeTop a.chatLink{min-height:34px;padding:0 12px}
  .homeTop .acctPanel{display:none;position:absolute;box-shadow:0 8px 20px #1a283914;border:1px solid var(--line);padding:6px;min-width:200px}
  .homeTop .acctPanel.open{display:block}
 }
@@ -337,9 +340,7 @@ html[data-auth="leaving"] body{visibility:hidden}
 @media(max-width:640px){.siteNav .utilNav ul .chatSlot{margin-right:0}}
 .chatMain{max-width:1100px;margin:0 auto;padding:0 24px}
 .chatShell{position:relative;display:flex;flex-direction:column;height:var(--chat-h,calc(100dvh - 68px));min-height:240px}
-.chatTop{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;padding:8px 0;border-bottom:1px solid var(--line-soft)}
-.chatNote{margin:0;font-size:var(--fs-12);color:var(--muted)}
-.chatConn{font-size:var(--fs-12);color:#a54235}
+.chatConn{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:5;margin:0;padding:2px 12px;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--surface);font-size:var(--fs-12);color:#a54235;white-space:nowrap;box-shadow:0 2px 8px #0000000f}
 .chatList{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:4px 2px}
 .chatMsgs{list-style:none;margin:0;padding:8px 0;display:flex;flex-direction:column;gap:8px}
 .chatDay{display:flex;align-items:center;gap:10px;margin:8px 0 2px;font-size:var(--fs-12);color:var(--muted)}.chatDay::before,.chatDay::after{content:"";flex:1;border-top:1px solid var(--line)}
@@ -354,7 +355,7 @@ html[data-auth="leaving"] body{visibility:hidden}
 .msgAct{background:none;border:0;border-radius:6px;padding:2px 6px;font-size:var(--fs-12);color:var(--muted);text-decoration:underline;text-underline-offset:2px}
 .msgAct.danger{color:#a54235;font-weight:700}
 .msgConfirm{display:inline-flex;align-items:center;gap:2px;color:var(--text-2)}
-.msgState{color:var(--muted)}.msgFail{color:#a54235;font-size:var(--fs-12)}
+.msgRead{color:var(--accent-strong);font-weight:600}.msgState{color:var(--muted)}.msgFail{color:#a54235;font-size:var(--fs-12)}
 .msg>.msgFail{margin:4px 0 0}
 .chatArt{position:relative;display:flex;flex-direction:column;gap:2px;margin-top:6px;padding:8px 30px 8px 10px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--c-accent,var(--accent));border-radius:8px;color:var(--text);text-decoration:none;min-width:0}
 .chatArtTop{display:flex;align-items:center;flex-wrap:wrap;gap:2px 8px;font-size:var(--fs-12);color:var(--muted)}

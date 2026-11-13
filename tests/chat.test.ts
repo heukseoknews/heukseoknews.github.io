@@ -3,6 +3,7 @@ import {
   BODY_MAX, DELETED_TEXT, PENDING_KEY, PENDING_TTL_MS, articleRefOf, bodyLength, bodyProblem, canDelete, chatFailOf, checkArticle, cleanBody,
   dayKey, dayLabel, dropMessages, enterAction, fetchSince, isDeleted, lastId, mergeMessages, nearBottom, savePending, settleOutgoing,
   takePending, timeLabel, toMessage, type ChatMessage, type Outgoing,
+  COUNTS_EVERY_MS, MARK_GAP_MS, applyCounts, canFetchCounts, canSend, failNote, markPlan, readCountIds, readLabel, readsAfterFail, sendProblem,
 } from '../lib/chat.ts';
 
 // ---------- 글 검사(서버 chat_send 와 같은 기준) ----------
@@ -162,5 +163,71 @@ assert.equal(chatFailOf({ status: 401, code: 'PT401', message: 'not_signed_in' }
 assert.equal(chatFailOf({ status: 401, code: 'PGRST301', message: 'JWT expired' }), 'auth');
 assert.equal(chatFailOf({ status: 0, message: 'Failed to fetch' }), 'network');
 assert.equal(chatFailOf({ status: 503, message: '' }), 'network');
+
+// ---------- 기사만 있는 글(0004) ----------
+assert.equal(sendProblem('', true), null, '입력창이 비어 있어도 첨부가 있으면 보냄');
+assert.equal(sendProblem('  \n ', true), null, '공백만 + 첨부');
+assert.equal(sendProblem('', false), 'empty', '글도 첨부도 없으면 안 됨');
+assert.equal(sendProblem('가'.repeat(501), true), 'tooLong', '첨부가 있어도 501자는 안 됨');
+assert.equal(sendProblem('a\u0007', true), 'invalid');
+assert.ok(canSend('', true) && canSend('글', false) && !canSend('  ', false), '[보내기] 버튼: 글 또는 첨부');
+{
+  // 저장 구분: 기사만 = body ''(삭제 아님), 삭제 = body null + deleted_at
+  const only = toMessage({ id: 9, user_id: 'u', author_name: 'A', body: '', article: art, created_at: '2026-11-13T00:00:00Z', deleted_at: null })!;
+  assert.equal(only.body, ''); assert.ok(!isDeleted(only), '기사만 있는 글은 삭제가 아님'); assert.deepEqual(only.article, art);
+  assert.ok(canDelete(only, 'u', false), '기사만 있는 글도 지울 수 있음');
+  const del = mergeMessages([only], [toMessage({ id: 9, user_id: 'u', author_name: 'A', body: null, article: null, created_at: '2026-11-13T00:00:00Z', deleted_at: '2026-11-13T01:00:00Z' })]);
+  assert.ok(isDeleted(del[0]) && del[0].article === null, '기사만 있는 글을 지우면 삭제 표시');
+  // 0004 적용 전: 서버가 본문 길이로 거절 → '글을 함께 적어 주세요'
+  assert.equal(failNote({ body: '', article: art, fail: 'length' }), '글을 함께 적어 주세요');
+  assert.equal(failNote({ body: '가', article: null, fail: 'length' }), '500자 이하로 써 주세요');
+  assert.equal(failNote({ body: '가', article: null, fail: 'network' }), '');
+}
+
+// ---------- 읽음 호출 모으기(3초) ----------
+{
+  assert.equal(MARK_GAP_MS, 3000); assert.equal(COUNTS_EVERY_MS, 20_000);
+  const base = { want: 10, sent: 5, lastAt: 0, now: 10_000, visible: true, seeingLatest: true, reads: 'unknown' as const };
+  assert.deepEqual(markPlan(base), { send: true, wait: 0 }, '새로 읽은 것이 있고 3초 지남 → 보냄');
+  assert.deepEqual(markPlan({ ...base, lastAt: 9_000 }), { send: false, wait: 2000 }, '3초 안이면 남은 시간만큼 모았다가');
+  assert.deepEqual(markPlan({ ...base, lastAt: 7_000 }), { send: true, wait: 0 }, '정확히 3초');
+  assert.deepEqual(markPlan({ ...base, sent: 10 }), { send: false, wait: 0 }, '새로 읽은 것 없음');
+  assert.deepEqual(markPlan({ ...base, visible: false }), { send: false, wait: 0 }, '탭이 숨겨져 있으면 알리지 않음');
+  assert.deepEqual(markPlan({ ...base, seeingLatest: false }), { send: false, wait: 0 }, '위로 읽는 중이면 알리지 않음');
+  assert.deepEqual(markPlan({ ...base, reads: 'off' }), { send: false, wait: 0 }, '0004 미적용');
+  // 3초 동안 여러 번 불러도 서버 호출은 처음 한 번 + 3초 뒤 한 번
+  let sent = 0, lastAt = -1e9, calls = 0, want = 0;
+  const timers: number[] = [];
+  for (let t = 0; t <= 6000; t += 100) {
+    want += 1;   // 0.1초마다 새 글
+    const p = markPlan({ want, sent, lastAt, now: t, visible: true, seeingLatest: true, reads: 'on' });
+    if (p.send) { calls++; sent = want; lastAt = t; } else if (p.wait) timers.push(p.wait);
+  }
+  assert.equal(calls, 3, `0·3·6초에만(실제 ${calls}번)`);
+}
+
+// ---------- 읽음 수: 탭이 보일 때만, 삭제 글 제외, 0004 미적용이면 숨김 ----------
+{
+  const ok = { ready: true, visible: true, reads: 'unknown' as const, ids: [1] };
+  assert.ok(canFetchCounts(ok));
+  assert.ok(!canFetchCounts({ ...ok, visible: false }), '탭이 숨겨진 동안은 가져오지 않음');
+  assert.ok(!canFetchCounts({ ...ok, ready: false }));
+  assert.ok(!canFetchCounts({ ...ok, ids: [] }), '내 글이 없으면 묻지 않음');
+  assert.ok(!canFetchCounts({ ...ok, reads: 'off' }), '0004 미적용');
+  const list = [row(1, { user_id: 'me' }), row(2, { user_id: 'x' }), row(3, { user_id: 'me', body: null, deleted_at: 'x' }), row(4, { user_id: 'me', body: '' , article: art as never })];
+  assert.deepEqual(readCountIds(list, 'me'), [1, 4], '내 글 중 지우지 않은 것만(기사만 있는 글 포함)');
+  assert.equal(readCountIds(Array.from({ length: 250 }, (_, i) => row(i + 1, { user_id: 'me' })), 'me').length, 200, '최근 200개');
+  const m1 = applyCounts(new Map([[1, 2], [3, 1]]), [1, 3], [{ id: 1, read_count: 4 }]);
+  assert.deepEqual([...m1], [[1, 4]], '답에 없는 id(지운 글)는 뺌');
+  assert.deepEqual([...applyCounts(new Map([[7, 1]]), [1], [])], [[7, 1]], '묻지 않은 id 는 그대로');
+  assert.equal(readLabel(3, 'on'), '읽음 3');
+  assert.equal(readLabel(0, 'on'), '', '0이면 표시 안 함');
+  assert.equal(readLabel(undefined, 'on'), '');
+  assert.equal(readLabel(3, 'off'), '', '0004 미적용이면 숨김');
+  assert.equal(readLabel(3, 'unknown'), '', '확인 전에는 숨김');
+  assert.equal(readsAfterFail('unknown', 'unavailable'), 'off', '함수 없음(PGRST202) → 끔');
+  assert.equal(readsAfterFail('on', 'network'), 'on', '일시 오류는 그대로');
+  assert.equal(readsAfterFail('unknown', 'forbidden'), 'unknown');
+}
 
 console.log('chat tests passed');
