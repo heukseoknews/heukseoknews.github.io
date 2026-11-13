@@ -1,6 +1,6 @@
 # 사용자 데이터 형식과 이전(localStorage)
 
-옛 사이트(`insurance-math.github.io/actuary-news-hub/`)에서 흑석일보(`heukseoknews.github.io`)로 북마크·읽음을 옮길 때와, 흑석일보 안에서 백업·복원할 때 쓰는 형식이다. 옛 사이트에 이전 버튼을 넣을 때 이 문서를 기준으로 삼는다.
+옛 사이트에서 흑석일보(`heukseoknews.github.io`)로 북마크·읽음을 옮길 때와, 흑석일보 안에서 백업·복원할 때 쓰는 형식이다. 옛 사이트에 이전 버튼을 넣을 때 이 문서를 기준으로 삼는다.
 
 주소(origin)가 바뀌면 브라우저는 localStorage 를 새로 시작한다. 그래서 옛 사이트에서 데이터를 꺼내 새 사이트의 **마이페이지 → 내 데이터** 화면(`/me/data/?ch=insurance`)으로 넘겨야 한다. 옛 주소 `/insurance/settings/` 는 해시를 유지한 채 이 화면으로 보낸다. 넘기는 방법은 둘이다.
 

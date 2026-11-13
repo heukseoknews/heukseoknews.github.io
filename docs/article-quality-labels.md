@@ -1,3 +1,5 @@
+> 상태: 완료·보관(2026-11-12 기준). 품질 개편의 현재 상태는 [article-quality-plan.md](article-quality-plan.md)를 본다.
+
 # 기사 품질 라벨 표(확인용)
 
 `scripts/audit/quality/labels_md.py` 로 생성. 원본은 `scripts/audit/quality/pairs_labeled.tsv`·`importance_labeled.tsv`. **두 판정자 모두 모델(A: 메인 세션, B: 라벨을 보지 않은 독립 서브에이전트)이라 사람 확인이 필요하다.** 고칠 때는 TSV 의 `final` 열을 바꾸고 평가·시뮬레이션 스크립트를 다시 돌린다.

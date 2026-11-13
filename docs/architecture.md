@@ -1,6 +1,6 @@
 # 수집 구조 문서 (이전 설계 기준)
 
-> 작성 기준: `Insurance-math/actuary-news-hub` main, 2026-11-11. 조사 전용 문서다(코드·데이터·배포 변경 없음).
+> 작성 기준: 옛 사이트 저장소 main, 2026-11-11. 조사 전용 문서다(코드·데이터·배포 변경 없음).
 > 목적: 새 저장소 `heukseoknews/heukseoknews.github.io`(서비스 이름 **흑석일보**, `https://heukseoknews.github.io/`)로 옮기고 **채널(보험·AI·금융)** 구조로 정리하기 전에, 현재 구조를 한 문서로 고정한다.
 > 숫자는 `python scripts/audit/funnel.py` 로 다시 뽑을 수 있다(`data/status.json`·`data/*.json` 읽기 전용).
 
@@ -226,14 +226,14 @@ origin 이 바뀌면(github.io 하위 경로 → 새 도메인) **모든 localSt
 | 위치 | 내용 |
 |---|---|
 | `app/layout.tsx` | 제목 'Actuary News Hub \| 보험계리 뉴스', 설명 문구 |
-| `components/SiteHeader.tsx`, `Footer.tsx` | 서비스 이름·부제('보험산업 · 보험계리 · 금융시장'), 소개 문구, 이슈 링크 `github.com/Insurance-math/actuary-news-hub/issues`, 저작자 표기 |
+| `components/SiteHeader.tsx`, `Footer.tsx` | 서비스 이름·부제('보험산업 · 보험계리 · 금융시장'), 소개 문구, 이슈 링크(옛 저장소의 issues), 저작자 표기 |
 | `app/page.tsx` | 탭 이름(새 뉴스/전체 뉴스/감독당국 보도자료/북마크), 감독당국 탭 = `source_type==='press'`, '미분류'는 카테고리 버튼 없음, `COMPANY_KEY`, '보험사' 라벨, 검색창·툴팁·안내 문구("금융위원회 · 금융감독원 …") |
 | `app/week/page.tsx` | '이번 주 핵심 기사' 문구 |
 | `components/ArticleCard.tsx` | press 일 때 `공식 RSS`/`검색으로 발견` 표기(`feed_name` 에 'RSS' 포함 여부) |
 | `lib/useSaved.ts` | localStorage 키 `actuary-news-hub-v3` |
 | `lib/format.ts`, `lib/version.ts`, `lib/facets.ts`, `lib/sources.ts` | `ko-KR`·`Asia/Seoul`·한국어 정렬, 날짜 미상 문구 |
 | `lib/news.ts` | `UNCATEGORIZED`, `source_type: 'media'\|'press'`, `companies`·`orgs` 필드 타입 |
-| `next.config.mjs` | `basePath='/actuary-news-hub'` |
+| `next.config.mjs` | `basePath='/<옛 저장소 이름>'` |
 | `lib/categories.ts`, `lib/entities.ts` | `config/*.json` 직접 import(채널이 여러 개면 빌드 시점 선택 필요) |
 
 **(c) 워크플로·스크립트·문서**: `deploy.yml` cron 주석(한국 시간 07:45 등)·한국어 메시지, `scripts/make-version.mjs`(`+09:00`, URL 주석), `scripts/probe/*`(UA·기관 목록), `scripts/audit/score_audit.py`·`keyword_collisions.py`(카테고리명·계리 정규식 — 일회성 감사), `package.json` name, `README.md`·`CLAUDE.md`·`AGENTS.md`의 저장소·사이트 URL, `tests/classify_samples.json`·`collector/test_*.py`(보험 도메인 전제).
@@ -308,7 +308,7 @@ origin 이 바뀌면(github.io 하위 경로 → 새 도메인) **모든 localSt
 ```
 heukseoknews.github.io/                # 새 저장소(서비스 '흑석일보', 사이트 루트 /)
 ├─ channels/
-│  ├─ insurance/                       # 현재 actuary-news-hub 의 config/ 를 그대로 옮김
+│  ├─ insurance/                       # 옛 사이트의 config/ 를 그대로 옮김
 │  │  ├─ channel.json                  # 이름·슬러그·로케일·타임존·탭·필터 종류·사용 기능 켜고 끄기
 │  │  ├─ sources.json                  # (feeds.json + RSS_SOURCES + boards.json 통합: kind=rss|google|board|api)
 │  │  ├─ categories.json
@@ -345,8 +345,8 @@ heukseoknews.github.io/                # 새 저장소(서비스 '흑석일보',
 
 | 항목 | 문제 | 대응 |
 |---|---|---|
-| **localStorage** | origin 이 `insurance-math.github.io` → `heukseoknews.github.io` 로 바뀌면 북마크·읽음·확인 시각이 **자동 이전되지 않는다**(origin 별 저장소) | 옛 사이트에 **'새 주소 안내 + 북마크 이전 버튼'**(아래 8.4). 새 사이트는 채널별 키(`heukseok-<channel>-v1` 등)를 쓰고, 옛 키 형식(`actuary-news-hub-v3`)을 읽어 들이는 가져오기 코드를 둔다 |
-| 링크·`basePath` | 새 저장소는 루트(`basePath ''`). 옛 주소의 공유 링크 `…/actuary-news-hub/…` 는 깨짐 | `next.config.mjs` 의 `basePath` 를 설정값으로. 옛 사이트는 안내 페이지로 유지(삭제하지 않음) |
+| **localStorage** | origin 이 옛 사이트 주소 → `heukseoknews.github.io` 로 바뀌면 북마크·읽음·확인 시각이 **자동 이전되지 않는다**(origin 별 저장소) | 옛 사이트에 **'새 주소 안내 + 북마크 이전 버튼'**(아래 8.4). 새 사이트는 채널별 키(`heukseok-<channel>-v1` 등)를 쓰고, 옛 키 형식(`actuary-news-hub-v3`)을 읽어 들이는 가져오기 코드를 둔다 |
+| 링크·`basePath` | 새 저장소는 루트(`basePath ''`). 옛 주소(저장소 이름 하위 경로)의 공유 링크는 깨짐 | `next.config.mjs` 의 `basePath` 를 설정값으로. 옛 사이트는 안내 페이지로 유지(삭제하지 않음) |
 | 데이터 경로 | `data/YYYY-MM.json` → `data/insurance/…` | 이전 시 기존 `data/` 를 `data/insurance/` 로 이동(id 가 URL 해시라 중복 없음). 클라이언트는 채널 경로로 fetch |
 | 코드 내 URL | Footer 이슈 링크, README, `make-version.mjs` 주석, `package.json` name, CLAUDE.md | 이전 작업 목록에 포함 |
 | Pages 설정 | 새 저장소의 Pages Source 를 'GitHub Actions' 로, `github-pages` 환경 규칙, 저장소 이름은 정확히 `heukseoknews.github.io` | 사용자가 설정(안내 필요) |
@@ -354,7 +354,7 @@ heukseoknews.github.io/                # 새 저장소(서비스 '흑석일보',
 | 검색 색인·공유 | 옛 URL 의 검색 결과·공유 | 옛 사이트 안내 페이지로 연결 |
 
 ### 8.4 옛 사이트 안내 + 북마크 이전 버튼 (제안)
-1. 옛 사이트(`insurance-math.github.io/actuary-news-hub/`)는 **유지**하고, 상단에 고정 배너: "흑석일보로 이전했습니다 → https://heukseoknews.github.io/". 수집은 이전 완료 후 중단하거나 느리게 둔다(데이터는 새 저장소가 기준).
+1. 옛 사이트는 **유지**하고, 상단에 고정 배너: "흑석일보로 이전했습니다 → https://heukseoknews.github.io/". 수집은 이전 완료 후 중단하거나 느리게 둔다(데이터는 새 저장소가 기준).
 2. **북마크·읽음 이전 버튼**: 옛 사이트에서 localStorage(`actuary-news-hub-v3`: 북마크 객체, 읽음 시각, 확인 시각)를 JSON 으로 만들어 새 주소로 이동한다. 방식은 둘 중 하나.
    - (권장) 새 주소의 `import` 페이지로 이동하며 **URL 해시(`#data=…` 압축 인코딩)** 로 전달 → 새 사이트가 읽어 자기 localStorage 에 합치고 해시를 지운다(서버 불필요, 키 충돌 시 병합, 읽음 한도 규칙 적용).
    - 대안: 옛 사이트에서 **JSON 파일 다운로드**, 새 사이트에서 **파일 가져오기**(사용자가 직접). 해시가 너무 길면(북마크 많을 때) 이쪽으로 안내.

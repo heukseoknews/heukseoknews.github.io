@@ -31,6 +31,7 @@ python3 -m venv .venv && .venv/bin/pip install -r collector/requirements.txt
 npm install && npm test && npm run build                     # out/ 생성
 npm run dev                                                  # http://localhost:3000/insurance/
 ```
+- 공유 이미지(public/og.png·favicon·apple-touch-icon)는 `scripts/make-share-images.mjs` 로 손으로 다시 만들고 결과를 커밋한다(빌드 때 실행하지 않음, Playwright 필요).
 
 ## 데이터
 - `data/<채널>/YYYY-MM.json`(발행시각 기준 월별), `index.json`(월 목록·건수·바이트·마지막 수집 시각), `status.json`(소스별 수집 결과), `trends.json`(키워드 주별 집계). 자동 삭제 없음.

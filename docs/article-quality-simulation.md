@@ -1,3 +1,5 @@
+> 상태: 완료·보관(2026-11-12 기준). 이후 실제 적용 기록은 [article-quality-plan.md](article-quality-plan.md) 12장을 본다.
+
 # 기사 품질 적용 시뮬레이션(3단계)
 
 생성 2026-11-12 13:03 · `scripts/audit/quality/simulate.py` · 플래그를 켠 상태로 **메모리에서만** 계산(data/ 변경 없음). 운영 코드(`collector/quality.py`)를 그대로 사용.

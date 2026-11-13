@@ -1,3 +1,5 @@
+> 상태: 완료·보관(2026-11-11 조사·계획 기준). AI 채널은 운영 중이고 현재 설정은 `channels/ai/`, 구조는 [architecture.md](architecture.md)를 본다.
+
 # AI 채널(/ai/) 사전 조사와 구현 계획
 
 > 작성 2026-11-11. 조사 전용 문서다(collector·app·channels 코드 변경 없음).

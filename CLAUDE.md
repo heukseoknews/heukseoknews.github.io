@@ -65,7 +65,8 @@
 
 ## 개인정보·공개
 - 공개 저장소다. 문서·코드·푸터에는 이름 'Seungu Sin'만 쓴다. 조직명, 이메일, 학교, IP, 로컬 경로는 쓰지 않는다(규칙에 그 값을 직접 적지도 않는다).
+- 예외: 옛 사이트 이전용 localStorage 키·URL 은 코드와 테스트에 남는다. 문서에는 이전에 필요한 키 이름만 두고, 옛 조직·저장소 이름은 '옛 사이트'로 쓴다.
 - 비밀번호·토큰·API 키를 저장소에 넣지 않는다. 저장소의 비밀 유출 검사 테스트가 통과해야 push한다.
 
 ## 문서
-docs/architecture.md(구조), ai-channel-plan.md, finance-channel-plan.md(채널 계획), design-plan.md(화면), data-contract.md(데이터 필드), article-quality-plan.md(기사 품질), auth-plan.md(로그인 설계), auth-runbook.md(계정 운영), ops-notes.md(운영 절차).
+docs/architecture.md(구조), ai-channel-plan.md, finance-channel-plan.md(채널 계획), design-plan.md(화면), data-contract.md(데이터 필드), article-quality-plan.md(기사 품질), auth-plan.md(로그인 설계), auth-runbook.md(계정 운영), ops-notes.md(운영 절차), migration-localstorage.md(사용자 데이터 형식·이전). 보관(완료된 조사): article-quality-current.md·article-quality-labels.md·article-quality-simulation.md(품질 측정), score-audit.md(점수 점검), source-survey.md(소스 조사).

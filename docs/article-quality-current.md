@@ -1,3 +1,5 @@
+> 상태: 완료·보관(2026-11-12 측정 기준). 품질 개편의 현재 상태는 [article-quality-plan.md](article-quality-plan.md)를 본다.
+
 # 기사 품질 현황(1단계 측정)
 
 생성 2026-11-12 · `scripts/audit/quality/current_state.py` · data/ 읽기 전용. 현재 ★ = 저장된 `score`(제목 키워드 산식, channels/<채널>/score.json).
