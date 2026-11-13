@@ -1,6 +1,6 @@
 // 계정 관리 명령(create · reset-password · list · disable · enable · check). 모두 기본은 모의 실행이고 apply=true 일 때만 바꾼다.
 // api 는 lib.makeApi() 와 같은 모양(테스트에서는 가짜 객체). 출력은 out() 만 쓴다(가림 거침). 학번·비밀번호·키는 출력하지 않는다.
-import { accounts, planCreate, toEmail, ApiError } from './lib.mjs';
+import { accounts, fixNewProfile, planCreate, toEmail, ApiError } from './lib.mjs';
 
 const fmtDate = s => (s ? String(s).slice(0, 16).replace('T', ' ') : '—');
 const errText = e => (e instanceof ApiError ? e.message : '오류');   // 원문 오류 객체는 출력하지 않는다
@@ -32,10 +32,8 @@ export async function cmdCreate({ api, out, rows, csvErrors = [], apply = false 
                                           app_metadata: { login_id: r.login_id, display_name: r.display_name } });
         const id = u && (u.id || (u.user && u.user.id));
         if (!id) throw new ApiError(0, 'no_id', '생성 응답에 사용자 id 가 없습니다');
-        // 트리거가 만든 프로필·'변경 필요'를 확인하고, 다르면 고친다
-        const [p] = (await api.select('profiles', `select=login_id,display_name&user_id=eq.${id}`)) || [];
-        if (!p) throw new ApiError(0, 'no_profile', '프로필이 만들어지지 않았습니다(SQL 적용 여부 확인)');
-        if (p.display_name !== r.display_name) await api.patch('profiles', `user_id=eq.${id}`, { display_name: r.display_name });
+        // 트리거가 만든 프로필·'변경 필요'를 확인하고, 다르면 고친다(트리거는 login_id 를 보장하고 표시 이름은 여기서 채움 — lib.fixNewProfile)
+        await fixNewProfile(api, id, r.display_name);
         const [s] = (await api.select('account_security', `select=must_change_password&user_id=eq.${id}`)) || [];
         if (!s || s.must_change_password !== true) await api.patch('account_security', `user_id=eq.${id}`, { must_change_password: true });
         created.push(r.login_id);

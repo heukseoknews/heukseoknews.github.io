@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { ApiError, REPO_ROOT, insideRepo, loadSecretKey, makeApi, makeOut, makeRedactor, parseCsv, parseEnvText, planCreate, resolveUrl, rowProblems, toEmail } from './lib.mjs';
 import { cmdCheck, cmdCreate, cmdList, cmdResetPassword, cmdSetDisabled } from './commands.mjs';
 import { main as usersMain } from './users.mjs';
-import { main as verifyMain, STEPS } from './verify.mjs';
+import { main as verifyMain, runVerify, STEPS, TEST_IDS } from './verify.mjs';
 
 const FAKE_KEY = ['sb', 'secret', 'x'.repeat(10) + 'TESTONLY' + 'y'.repeat(10)].join('_');   // 가짜(실제 키 아님)
 const SN = n => String(20990000 + n);                                                         // 가짜 학번(8자리)
@@ -227,6 +227,145 @@ await t('main', async () => {
   process.stdout.write = s => { outs.push(String(s)); return true; };
   try { assert.equal(await verifyMain(['--url', URL0]), 0); } finally { process.stdout.write = origOut; globalThis.fetch = origFetch; }
   assert.equal(outs.filter(l => /^\s+\d+(-\d+)?\./.test(l)).length, STEPS.length);
+});
+
+// ── verify --apply 흐름(가짜 서버). 실제 Auth 서버처럼 트리거가 볼 때 app_metadata 가 아직 비어 있다(표시 이름 null) ──
+function fakeVerifyServer(opt = {}) {
+  const users = [], profiles = [], sec = [], states = [], rpcLog = [], secrets = [];
+  let n = 0;
+  const E = (s, c, m = '') => new ApiError(s, c, m);
+  const own = (arr, id) => arr.find(r => r.user_id === id);
+  const qv = (q, k) => (new RegExp(`${k}=eq\\.([^&]+)`).exec(q || '') || [])[1];
+  const tableOf = t => ({ profiles, account_security: sec, user_state: states }[t]);
+  const onPassword = id => { const s = own(sec, id); s.must_change_password = s.reset_pending; s.reset_pending = false; };   // 0001 on_auth_password_changed
+  const admin = {
+    listUsers: async () => ({ users: users.map(u => ({ id: u.id, email: u.email })) }),
+    deleteUser: async id => { for (const arr of [users, profiles, sec, states]) for (let i = arr.length - 1; i >= 0; i--) if ((arr[i].user_id ?? arr[i].id) === id) arr.splice(i, 1); return {}; },
+    createUser: async b => {
+      const id = `v${++n}`, lid = b.email.split('@')[0];
+      secrets.push(b.password);
+      users.push({ id, email: b.email, password: b.password });
+      sec.push({ user_id: id, must_change_password: true, reset_pending: false });                       // 트리거(INSERT 직후)
+      profiles.push({ user_id: id, login_id: lid, display_name: opt.triggerFillsName ? b.app_metadata.display_name : null, display_name_changed_at: null });
+      return { id };                                                                                       // app_metadata 는 그 뒤에 기록
+    },
+    updateUser: async (id, b) => { users.find(u => u.id === id).password = b.password; secrets.push(b.password); onPassword(id); return {}; },
+    select: async (t, q) => tableOf(t).filter(r => !qv(q, 'user_id') || r.user_id === qv(q, 'user_id')).map(r => ({ ...r })),
+    patch: async (t, q, row) => {
+      const id = qv(q, 'user_id');
+      if (t === 'profiles' && 'display_name' in row && opt.dropNameFix && users.find(u => u.id === id)?.email.startsWith(opt.dropNameFix)) return [];
+      const rs = tableOf(t).filter(r => r.user_id === id); rs.forEach(r => Object.assign(r, row)); return rs.map(r => ({ ...r }));
+    },
+  };
+  const tooBig = r => (r.bookmarks && (Object.keys(r.bookmarks).length > 3000 || Object.values(r.bookmarks).some(b => b.memo.length > 1000 || b.tags.length > 50)))
+    || (r.folders && Object.keys(r.folders).length > 100) || (r.tags && Object.keys(r.tags).length > 200);
+  const anonFor = tok => {
+    const id = tok ? tok.slice(4) : null;
+    const me = () => { if (!id || !users.some(u => u.id === id)) throw E(401, '42501', 'permission denied'); return id; };
+    const ready = () => own(sec, me()).must_change_password === false;
+    const mine = q => states.filter(r => r.user_id === me() && (!qv(q, 'user_id') || r.user_id === qv(q, 'user_id')) && (!qv(q, 'channel') || r.channel === qv(q, 'channel')));
+    return {
+      signIn: async (email, password) => {
+        const u = users.find(x => x.email === email);
+        if (!u || u.password !== password || (opt.signInFails && email.startsWith(opt.signInFails))) throw E(400, 'invalid_credentials');
+        return { access_token: `tok-${u.id}` };
+      },
+      changeOwnPassword: async (np, cur) => { const u = users.find(x => x.id === me()); if (u.password !== cur) throw E(400, 'reauth'); u.password = np; secrets.push(np); onPassword(u.id); return {}; },
+      select: async (t, q) => {
+        me();
+        if (t === 'account_security') return sec.filter(r => r.user_id === id).map(r => ({ ...r }));
+        if (t === 'profiles') return profiles.filter(r => r.user_id === id && (!qv(q, 'user_id') || qv(q, 'user_id') === id)).map(r => ({ ...r }));
+        return ready() ? mine(q).map(r => ({ ...r })) : [];
+      },
+      insert: async (t, row) => {
+        me();
+        if (t !== 'user_state' || !ready() || (row.user_id && row.user_id !== id)) throw E(403, '42501', 'row-level security');
+        if (states.filter(s => s.user_id === id).length >= 10) throw E(400, 'P0001', 'channel limit');
+        const r = { user_id: id, ...row }; states.push(r); return [{ ...r }];
+      },
+      patch: async (t, q, row) => {
+        me();
+        if (t !== 'user_state' || 'user_id' in row) throw E(403, '42501', 'permission denied');
+        if (!ready()) return [];
+        if (tooBig(row)) throw E(400, '23514', 'limit');
+        const rs = mine(q); rs.forEach(r => Object.assign(r, row)); return rs.map(r => ({ ...r }));
+      },
+      remove: async q => { me(); return []; },
+      rpc: async (fn, args = {}) => {
+        if (fn !== 'set_display_name') throw E(404, 'PGRST202', 'not found');
+        if (!id) throw E(401, '42501', 'permission denied for function set_display_name');
+        const nm0 = args.new_name ?? '';
+        rpcLog.push(nm0);
+        if (opt.networkOn === nm0) throw E(0, 'network', 'fetch failed');
+        const p = own(profiles, me());
+        if (!ready()) throw E(403, 'PT403', 'password_change_required');
+        const nm = nm0.replace(/^ +| +$/g, '');
+        if (opt.acceptEmpty && nm === '') { p.display_name = '빈칸 버그'; p.display_name_changed_at = Date.now(); return p.display_name; }
+        if (!nm) throw E(422, 'PT422', 'name_empty');
+        if ([...nm].length > 20) throw E(422, 'PT422', 'name_too_long');
+        if (/[\u0000-\u001f\u007f-\u009f]/.test(nm)) throw E(422, 'PT422', 'name_invalid_char');
+        if (p.display_name === nm) return nm;
+        const norm = s => s.replace(/\s/g, '').toLowerCase();
+        if (profiles.some(o => o.user_id !== id && o.display_name && norm(o.display_name) === norm(nm))) throw E(409, 'PT409', 'name_taken');
+        if (p.display_name_changed_at && Date.now() - p.display_name_changed_at < 600000) throw E(429, 'PT429', 'too_soon');
+        p.display_name = nm; p.display_name_changed_at = Date.now(); return nm;
+      },
+    };
+  };
+  return { admin, anonFor, rpcLog, secrets, users };
+}
+const runFakeVerify = async (opt = {}) => {
+  const S = fakeVerifyServer(opt);
+  const lines = [], red = makeRedactor(), out = makeOut(red, s => lines.push(s));
+  const results = await runVerify({ admin: S.admin, anonFor: S.anonFor, out, redactor: red });
+  const text = lines.join('\n');
+  for (const s of S.secrets) assert.ok(!text.includes(s), '출력에 비밀번호 없음');
+  const R = name => { const r = results.filter(x => x.name === name); assert.equal(r.length, 1, `항목 하나: ${name}`); return r[0].ok; };
+  const line = name => lines.find(l => l.slice(2).startsWith(name)) || '';
+  return { S, results, R, line, text };
+};
+const NAME_REJECTS = ['5-1. 21자 거절', '5-1. 빈 값 거절', '5-1. 공백만 거절', '5-1. 제어 문자(줄바꿈) 거절', '5-1. B 의 이름 그대로 거절', '5-1. B 의 이름 공백만 다름 거절', '5-1. B 의 이름 대소문자만 다름 거절'];
+const NAME_AFTER = ['5-1. A 표시 이름 변경 성공(앞뒤 공백 지움)', '5-1. profiles 에 반영(변경 시각 기록)', '5-1. 바로 다시 바꾸기 10분 제한 거절', '5-1. 거절 뒤 이름 그대로', '5-1. A profiles 표시 이름 직접 고치기 여전히 막힘', '5-1. A display_name_changed_at 직접 고치기 막힘'];
+
+// 7) 정상 서버: 트리거는 login_id 만, 표시 이름은 스크립트가 채움 → 모든 항목 통과, 시험 계정 삭제
+await t('verify-flow', async () => {
+  const { S, results, R, line } = await runFakeVerify();
+  assert.deepEqual(results.filter(r => !r.ok).map(r => r.name), [], '모두 통과');
+  for (const lid of TEST_IDS) { assert.ok(R(`1. ${lid} 트리거가 login_id 로 프로필을 만듦`)); assert.match(line(`1. ${lid} 표시 이름 보정 뒤`), /트리거 결과 비어 있음 → 스크립트가 채움/); }
+  // 순서: 4-1(변경 전) → 거절 검사 전부 → 정상 변경 → 바로 두 번째 변경
+  assert.deepEqual(S.rpcLog, ['검증 새이름', '가'.repeat(21), '', '   ', '검증\n이름', '검증용 B', '검증용B', '검증용 b', '  검증 새이름  ', '검증 또다른이름']);
+  const names = results.map(r => r.name);
+  assert.ok(names.indexOf(NAME_REJECTS.at(-1)) < names.indexOf(NAME_AFTER[0]) && names.indexOf(NAME_AFTER[2]) < names.indexOf(NAME_AFTER[4]));
+  assert.ok(R('10. 시험 계정 정리')); assert.equal(S.users.length, 0);
+  // 트리거가 이미 채운 경우도 같은 결과(보정 없음)
+  const r2 = await runFakeVerify({ triggerFillsName: true });
+  assert.deepEqual(r2.results.filter(r => !r.ok).map(r => r.name), []);
+  assert.match(r2.line('1. zz-verify-a 표시 이름 보정 뒤'), /트리거가 이미 채움/);
+});
+
+// 8) 한 항목이 실패해도 남은 항목은 계속, 앞 검사의 성공 변경이 뒤 검사를 10분 제한으로 오탐지하게 하지 않음
+await t('verify-independent', async () => {
+  // B 표시 이름 보정이 안 됨 → 겹침 3건은 '실행 안 함' 실패, 정상 변경·10분 제한은 그대로 통과
+  const b = await runFakeVerify({ dropNameFix: 'zz-verify-b' });
+  assert.equal(b.R("1. zz-verify-b 표시 이름 보정 뒤 '검증용 B'"), false);
+  for (const n of NAME_REJECTS.slice(4)) { assert.equal(b.R(n), false); assert.match(b.line(n), /실행 안 함/); }
+  for (const n of [...NAME_REJECTS.slice(0, 4), ...NAME_AFTER]) assert.ok(b.R(n), n);
+  assert.ok(!b.S.rpcLog.includes('검증용 B'), 'B 이름이 없으면 겹침 요청을 보내지 않음');
+  // 거절돼야 할 요청이 성공(서버 버그) → 실패로 적고 되돌림, 뒤 검사는 10분 제한에 걸리지 않음
+  const e = await runFakeVerify({ acceptEmpty: true });
+  for (const n of ['5-1. 빈 값 거절', '5-1. 공백만 거절']) { assert.equal(e.R(n), false); assert.match(e.line(n), /이름이 바뀜 → 되돌림/); }
+  for (const n of [...NAME_REJECTS.slice(4), ...NAME_AFTER]) assert.ok(e.R(n), n);
+  // 한 요청이 네트워크 오류 → 그 항목만 실패, 다음 항목 계속
+  const w = await runFakeVerify({ networkOn: '가'.repeat(21) });
+  assert.equal(w.R('5-1. 21자 거절'), false);
+  assert.deepEqual(w.results.filter(r => !r.ok).map(r => r.name), ['5-1. 21자 거절']);
+  // A 로그인 실패 → A 로 하는 '막힘' 검사가 익명 요청으로 바뀌어 통과로 착각되지 않음, B·정리 단계는 계속
+  const s = await runFakeVerify({ signInFails: 'zz-verify-a' });
+  assert.equal(s.R('3. A 로그인'), false);
+  assert.equal(s.R('4. A profiles 표시 이름 고치기 막힘'), false); assert.match(s.line('4. A profiles 표시 이름 고치기 막힘'), /실행 못 함\(zz-verify-a 로그인 실패\)/);
+  assert.ok(s.R('5. zz-verify-b 비밀번호 변경 → 변경 필요 = false(트리거)'));
+  assert.ok(s.R('10. 시험 계정 정리'));
+  assert.ok(!s.results.some(r => r.name.startsWith('준비 단계 오류')), '중간에 멈추지 않음');
 });
 
 console.log(`admin script tests passed (${passed})`);

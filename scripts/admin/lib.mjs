@@ -237,3 +237,16 @@ export async function accounts(api) {
              disabled: banned, last_sign_in_at: u.last_sign_in_at || null, created_at: u.created_at || null };
   }).sort((a, b) => String(a.login_id).localeCompare(String(b.login_id)));
 }
+
+/** 계정을 만든 직후 프로필을 확인하고 표시 이름을 채운다(create·verify 공통, service_role 로 patch).
+ *  Auth 서버(관리 API 의 사용자 생성)는 auth.users 행을 provider 정보만으로 먼저 INSERT 하고 app_metadata 는 그 뒤에 쓴다.
+ *  그래서 on_auth_user_created 트리거가 보장하는 것은 login_id(이메일에서)·'변경 필요' 행까지이고, 표시 이름은 대개 비어 있다 → 여기서 채운다.
+ *  돌려주는 trigger 는 보정 전(트리거가 만든 그대로)의 값이다. 프로필이 아예 없으면 오류. */
+export async function fixNewProfile(api, id, displayName) {
+  const [p] = (await api.select('profiles', `select=login_id,display_name&user_id=eq.${id}`)) || [];
+  if (!p) throw new ApiError(0, 'no_profile', '프로필이 만들어지지 않았습니다(SQL 적용 여부 확인)');
+  const trigger = { login_id: p.login_id ?? null, display_name: p.display_name ?? null };
+  const fixed = trigger.display_name !== displayName;
+  if (fixed) await api.patch('profiles', `user_id=eq.${id}`, { display_name: displayName });
+  return { trigger, fixed };
+}
