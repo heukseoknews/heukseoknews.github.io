@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-13T04:05:36.039448+00:00",
-  "finished_at": "2026-11-13T04:05:38.358208+00:00",
-  "candidates": 322,
-  "added": 0,
+  "started_at": "2026-11-13T20:59:36.413884+00:00",
+  "finished_at": "2026-11-13T20:59:38.540264+00:00",
+  "candidates": 315,
+  "added": 43,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,23 +11,23 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
-   "entries": 1385,
-   "kept": 94,
+   "entries": 1386,
+   "kept": 91,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
     "junk_title": 1,
-    "too_old": 5
+    "too_old": 8
    },
    "filtered": [
     "[노이즈 제목] LifeVal"
    ],
-   "oldest": "2026-10-08T16:00:00+00:00",
-   "newest": "2026-11-12T20:00:00+00:00",
+   "oldest": "2026-10-09T07:00:00+00:00",
+   "newest": "2026-11-13T15:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -36,19 +36,19 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
    "entries": 100,
-   "kept": 12,
+   "kept": 13,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 88
+    "too_old": 87
    },
    "filtered": [],
-   "oldest": "2025-12-10T14:59:21+00:00",
+   "oldest": "2025-12-11T00:06:40+00:00",
    "newest": "2026-11-12T18:00:50+00:00",
    "at_limit": true,
    "needs_split": false,
@@ -58,20 +58,20 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
-   "entries": 906,
-   "kept": 32,
+   "entries": 907,
+   "kept": 33,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 68
+    "too_old": 67
    },
    "filtered": [],
-   "oldest": "2026-06-24T00:00:00+00:00",
-   "newest": "2026-11-12T19:07:35+00:00",
+   "oldest": "2026-06-24T16:00:13+00:00",
+   "newest": "2026-11-13T18:00:39+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -80,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -95,8 +95,8 @@
     "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
     "‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW"
    ],
-   "oldest": "2026-10-30T15:00:10+00:00",
-   "newest": "2026-11-12T14:00:59+00:00",
+   "oldest": "2026-11-03T07:00:12+00:00",
+   "newest": "2026-11-13T13:00:42+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -105,30 +105,30 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 12
+    "low_relevance": 11
    },
    "filtered": [
+    "The unfolding Jensen Huang scandal: a timeline",
+    "ElevenLabs’ new app combines meeting note-taking and dictation for teams",
+    "Israel’s VCs see opportunity for challengers in Nvidia’s turmoil",
+    "Jensen Huang didn’t show confidence in his successor, report says",
     "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
     "Muse can now place calls to US businesses — if you pay",
-    "The unfolding Jensen Huang scandal: a timeline",
     "Nebius tests the neocloud playbook with $40 billion in planned spending",
     "Jensen Huang was having a third affair, Reuters reports",
     "Google’s latest Search upgrade promises better answers to your most complicated questions",
-    "Jensen Huang’s exit puts Nvidia’s support for open source in question",
-    "Jensen Huang agrees to testify before Congress",
-    "Trump floats Apple chairman Tim Cook as Jensen Huang’s successor",
-    "Jensen Huang is out at Nvidia — who is Colette Kress, his interim replacement?"
+    "Jensen Huang’s exit puts Nvidia’s support for open source in question"
    ],
-   "oldest": "2026-11-12T03:13:10+00:00",
-   "newest": "2026-11-12T22:42:51+00:00",
+   "oldest": "2026-11-12T16:32:33+00:00",
+   "newest": "2026-11-13T19:37:57+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -137,8 +137,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -152,8 +152,8 @@
     "Nvidia CEO's affair becomes a national security problem",
     "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update."
    ],
-   "oldest": "2026-11-05T12:00:41+00:00",
-   "newest": "2026-11-12T22:28:47+00:00",
+   "oldest": "2026-11-05T21:39:40+00:00",
+   "newest": "2026-11-13T17:25:45+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -162,8 +162,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -173,19 +173,19 @@
     "low_relevance": 20
    },
    "filtered": [
+    "스페이스X·테슬라 합병 협상 진전...이르면 12월 발표",
+    "‘고독한 미식가’가 찾은 남도 음식…12월 일본 방송으로 만난다",
+    "노타, 3분기 역대 최대 매출 달성…플랫폼·솔루션 동반 도약",
+    "AMD, 양자컴퓨터 오류 수정에 GPU·SW 투입…엔비디아와 경쟁",
+    "앨리스 황, 중국 정보기관 포섭 의혹…딥시크·화웨이 연관도 드러나",
     "LGU+, 카테나-X 통한 국내 제조기업 글로벌 공급망 진입 지원",
     "마키나락스, 3분기 만에 지난해 연매출 실현...영업손실은 지속",
     "중국, 젠슨 황 사태에 반발…\"미국 기술 제재 구실 안 돼\"",
-    "트럼프 \"젠슨 황 후임은 팀 쿡\"…엔비디아, 차기 CEO 물색 본격화",
-    "미국, 중국의 해외 GPU 임대 규제 추진…중국 기업들 확보 서둘러",
-    "젠슨 황 떠난 엔비디아, '실질적 2인자' 크레스가 임시 CEO 맡아",
-    "젠슨 황 사임 후폭풍…백악관, 상무장관 경질 논의",
-    "젠슨 황, 엔비디아 CEO 사임…주가 14% 급락·후임 선정 착수",
-    "구글 '알파게놈 2', 유전자 변이 영향 세포별 예측…원인 변이 2배 찾아",
-    "배추값 42% 폭락…전남광주, 과잉 물량 3만톤 격리에 58억 투입"
+    "크로아티아, 농업용 태양광·ESS에 3000만유로 지원…규모별 최대 65% 차등 지원",
+    "IEA \"2031년까지 세계 태양광 3.6TW 증가…직전 6년 대비 2.4배 폭증\""
    ],
-   "oldest": "2026-11-11T22:00:00+00:00",
-   "newest": "2026-11-13T03:51:26+00:00",
+   "oldest": "2026-11-12T07:40:22+00:00",
+   "newest": "2026-11-13T09:44:26+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -194,24 +194,25 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 4
+    "low_relevance": 5
    },
    "filtered": [
+    "구글, 한국 정밀지도 국외반출 보안조건 이행…정부, 좌표표시 제거·군사시설 영상처리 확인",
     "전장 검증된 자율 무인체계에 7억달러 투자…우크라이나계 '유포스', 영국서 생산 확대",
     "젠슨 황, 엔비디아 CEO 전격 사임… 최고재무책임자 '크레스' 임시 CEO 선임",
     "IBM, 양자컴퓨터 연산 속도 최대 19배 향상…2027년 1,000큐비트 시대 연다",
     "ETRI, 국가보안기술연구소 신임 소장에 임정석 책임연구원 선임"
    ],
-   "oldest": "2026-11-10T08:23:20+00:00",
-   "newest": "2026-11-13T02:36:30+00:00",
+   "oldest": "2026-11-10T14:45:41+00:00",
+   "newest": "2026-11-13T13:55:14+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -220,11 +221,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
-   "entries": 20,
-   "kept": 17,
+   "entries": 19,
+   "kept": 16,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -237,7 +238,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-04T15:41:58+00:00",
-   "newest": "2026-11-13T02:55:13+00:00",
+   "newest": "2026-11-13T18:08:52+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -246,21 +247,22 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-13T04:05:36.039448+00:00",
-   "last_success_at": "2026-11-13T04:05:36.039448+00:00",
+   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
    "consecutive_failures": 0,
-   "entries": 9,
-   "kept": 9,
+   "entries": 4,
+   "kept": 4,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 1
+    "low_relevance": 2
    },
    "filtered": [
-    "I landed 4 job offers out of grad school and picked Meta. These 2 tactics helped me land my ideal offer."
+    "I landed 4 job offers out of grad school and picked Meta. These 2 tactics helped me land my ideal offer.",
+    "Muse Spark 1.4 leaks in a Meta pull request, already in internal use"
    ],
-   "oldest": "2026-11-10T05:18:03+00:00",
-   "newest": "2026-11-11T06:27:00+00:00",
+   "oldest": "2026-11-10T23:20:19+00:00",
+   "newest": "2026-11-13T17:04:24+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
