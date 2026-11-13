@@ -300,9 +300,11 @@ function fakeVerifyServer(opt = {}) {
           .map(({ id: i, user_id, author_name, body, article, created_at, deleted_at }) => ({ id: i, user_id, author_name, body, article, created_at, deleted_at }));
       }
       if (fn === 'chat_delete') {
+        // 0005: 관리자 판정을 글 찾기보다 먼저(관리자가 아니면 없는 id 에도 403). oldDeleteRule = 0005 전 규칙 '본인 또는 관리자'
+        if (!p.is_admin && !opt.oldDeleteRule) throw E(403, 'PT403', 'not_allowed');
         const m = chats.find(r => r.id === args.p_id);
         if (!m) throw E(404, 'PT404', 'not_found');
-        if (m.user_id !== id && !p.is_admin) throw E(403, 'PT403', 'not_allowed');
+        if (!p.is_admin && m.user_id !== id) throw E(403, 'PT403', 'not_allowed');
         if (!m.deleted_at && !(opt.deleteKeepsBody)) Object.assign(m, { body: null, article: null, deleted_at: new Date().toISOString(), deleted_by: id });
         return { id: m.id, deleted_at: m.deleted_at };
       }
@@ -433,11 +435,11 @@ await t('verify-independent', async () => {
 await t('verify-chat-reads', async () => {
   const { R, line } = await runFakeVerify();
   for (const n of ['2-3. anon chat_mark_read 막힘', '4-3. A(변경 전) chat_read_counts 막힘', '5-6. 본문 없이 기사만 전송(body 빈 문자열·기사 그대로)', '5-6. 본문도 기사도 없으면 거절',
-    '5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', '5-7. B 가 읽음 처리 → A 의 글 읽음 +1', '5-7. chat_reads 직접 읽기 막힘', '5-7. chat_reads 직접 지우기 막힘']) assert.ok(R(n), n);
+    '5-6. 관리자가 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', '5-7. B 가 읽음 처리 → A 의 글 읽음 +1', '5-7. chat_reads 직접 읽기 막힘', '5-7. chat_reads 직접 지우기 막힘']) assert.ok(R(n), n);
   assert.match(line('5-7. B 가 읽음 처리'), /0 → 1/);
   assert.match(line('10. 시험 계정의 읽은 위치 함께 삭제'), /2행 → 0행/);
   const fails = async o => (await runFakeVerify(o)).results.filter(r => !r.ok).map(r => r.name);
-  assert.deepEqual(await fails({ noArticleOnly: true }), ['5-6. 본문 없이 기사만 전송(body 빈 문자열·기사 그대로)', '5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)'], '기사만 있는 글을 거절하는 서버');
+  assert.deepEqual(await fails({ noArticleOnly: true }), ['5-6. 본문 없이 기사만 전송(body 빈 문자열·기사 그대로)', '5-6. 관리자가 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)'], '기사만 있는 글을 거절하는 서버');
   assert.deepEqual(await fails({ countAuthor: true }), ['5-7. 글쓴이 본인(A)은 세지 않음(서비스 키로 센 값과 같음)'], '글쓴이를 세는 서버');
   assert.deepEqual(await fails({ leakReaders: true }), ['5-7. 응답은 id·read_count 만(누가 읽었는지·이름·login_id 없음)']);
   assert.deepEqual(await fails({ readsCanDecrease: true }), ['5-7. last_read_id 는 줄어들지 않음']);
@@ -445,11 +447,21 @@ await t('verify-chat-reads', async () => {
   assert.deepEqual(await fails({ noReadsCascade: true }), ['10. 시험 계정의 읽은 위치 함께 삭제(on delete cascade)']);
 });
 
+// 11) 삭제는 관리자만(0005): 0005 전 서버(본인 삭제 허용)면 본인 삭제 항목만 실패, 관리자 표시는 언제나 꺼서 끝냄
+await t('verify-chat-delete-admin', async () => {
+  const { S, R } = await runFakeVerify();
+  for (const n of ['5-4. 비관리자 A 가 자기 글 삭제 거절', '5-4. 거절 뒤 A 의 글 그대로', '5-4. 비관리자 B 가 A 의 글 삭제 거절', '5-4. 이미 삭제된 글을 다시 지워도 오류 없음(그대로)',
+    '5-4. 정리 뒤 B 의 관리자 표시 꺼짐', '5-6. 비관리자 A 가 자기 기사만 있는 글 삭제 거절']) assert.ok(R(n), n);
+  assert.equal(S.users.length, 0, '시험 계정 삭제');
+  const old = await runFakeVerify({ oldDeleteRule: true });
+  assert.deepEqual(old.results.filter(r => !r.ok).map(r => r.name), ['5-4. 비관리자 A 가 자기 글 삭제 거절', '5-4. 거절 뒤 A 의 글 그대로', '5-6. 비관리자 A 가 자기 기사만 있는 글 삭제 거절'], '0005 적용 전 서버: 본인 삭제 항목만 실패');
+});
+
 // 9) 채팅(0003): 정상 서버는 모두 통과(위 verify-flow), 서버가 규칙을 어기면 해당 항목만 실패
 await t('verify-chat', async () => {
   const { results, R, line } = await runFakeVerify();
   for (const n of ['2-2. anon chat_send 막힘', '4-2. A(변경 전) chat_send 막힘', '5-2. A chat_send 성공(응답 = id·created_at·author_name, 표시 이름)',
-    '5-3. 기사 첨부 javascript: 주소 거절', '5-3. 직접 delete 막힘', '5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)', '5-5. B 61번째 전송 거절']) assert.ok(R(n), n);
+    '5-3. 기사 첨부 javascript: 주소 거절', '5-3. 직접 delete 막힘', '5-4. 관리자 B 가 A 의 기사 첨부 글 삭제(본문·첨부 비움)', '5-5. B 61번째 전송 거절']) assert.ok(R(n), n);
   assert.match(line('10. 시험 계정의 채팅 글 함께 삭제'), /\d+건 → 0건/);
   assert.ok(results.length > 60);
   const c = await runFakeVerify({ noChatCascade: true });
@@ -457,7 +469,7 @@ await t('verify-chat', async () => {
   const r = await runFakeVerify({ noRateLimit: true });
   assert.deepEqual(r.results.filter(x => !x.ok).map(x => x.name), ['5-5. B 61번째 전송 거절']);
   const d = await runFakeVerify({ deleteKeepsBody: true });
-  assert.deepEqual(d.results.filter(x => !x.ok).map(x => x.name), ['5-4. A 본인 글 삭제 → 본문 비움·삭제 시각', '5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)', '5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', '5-7. 삭제된 글은 읽음 수에서 빠짐']);
+  assert.deepEqual(d.results.filter(x => !x.ok).map(x => x.name), ['5-4. 관리자 B 가 A 의 글 삭제(본문 비움·삭제 시각)', '5-4. 관리자 B 가 A 의 기사 첨부 글 삭제(본문·첨부 비움)', '5-4. 이미 삭제된 글을 다시 지워도 오류 없음(그대로)', '5-6. 관리자가 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', '5-7. 삭제된 글은 읽음 수에서 빠짐']);
 });
 
 console.log(`admin script tests passed (${passed})`);

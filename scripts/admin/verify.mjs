@@ -28,9 +28,9 @@ export const STEPS = [
   '5-1. A 표시 이름(set_display_name): 거절 검사 먼저(21자·빈 값·공백만·제어 문자·B 의 이름 그대로·공백만 다름·대소문자만 다름) → 정상 변경·profiles 반영 → 바로 두 번째 변경 10분 제한 거절 → profiles 직접 고치기 여전히 막힘',
   '5-2. 채팅: A chat_send(응답 = id·created_at·표시 이름, login_id 없음) → B 가 chat_list·직접 읽기로 봄, 500자 허용·기사 첨부 저장',
   '5-3. 채팅 거절: 빈 글·공백만·501자·제어 문자, 기사 첨부(javascript: 주소·허용 안 한 키·너무 긴 제목·너무 긴 주소·잘못된 channel), 직접 insert·update·delete',
-  '5-4. 채팅 삭제: A 본인 글 삭제(본문 비움) · B 가 A 의 글 삭제 거절 · B 에게 관리자 표시(is_admin)를 서비스 키로 임시로 주면 삭제됨 · 목록 페이지(p_limit·p_before)',
+  '5-4. 채팅 삭제(0005, 관리자만): 비관리자 A 가 자기 글 삭제 거절·글 그대로 · 비관리자 B 가 A 의 글 삭제 거절 · B 에게 관리자 표시(is_admin)를 서비스 키로 임시로 주면 A 의 글 삭제(본문·첨부 비움)·이미 지운 글 다시 지워도 오류 없음 → 관리자 표시 끔 · 목록 페이지(p_limit·p_before)',
   '5-5. 채팅 분당 상한: B 가 60건 보낸 뒤 61번째 거절',
-  '5-6. 기사만 있는 글(0004): 본문 없이 기사만 전송됨(body = 빈 문자열) · 본문도 기사도 없으면 거절 · 삭제하면 본문·기사 비움',
+  '5-6. 기사만 있는 글(0004): 본문 없이 기사만 전송됨(body = 빈 문자열) · 본문도 기사도 없으면 거절 · 비관리자 본인 삭제 거절, 관리자가 지우면 본문·기사 비움',
   '5-7. 읽음(0004): B 가 읽음 처리하면 A 의 글 읽음 +1, 글쓴이 본인은 세지 않음, 응답은 id·숫자만 · last_read_id 줄지 않음·최대 id 로 맞춤 · 삭제 글 제외 · chat_reads 직접 읽기·쓰기 막힘',
   '6. B: A 의 행 읽기 0행, 고치기·지우기 0행, A 의 user_id 로 만들기 막힘, 자기 행 user_id 를 A 로 바꾸기 막힘',
   '7. A: 서버 상한 초과(북마크 3,001·폴더 101·태그 201·메모 1,001자·북마크당 태그 51) 거절, 화면 한도를 넘는 합친 결과(북마크 2,000·폴더 40·태그 100)와 상한 경계(3,000·100·200) 저장 성공',
@@ -222,23 +222,30 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await denied('5-3. 직접 update 막힘', () => asA.patch('chat_messages', `id=eq.${Number(m1?.id)}`, { body: '위조' }));
     await denied('5-3. 직접 delete 막힘', () => asA.remove('chat_messages', `id=eq.${Number(m1?.id)}`));
     await check('5-3. 직접 쓰기 시도 뒤에도 글 그대로', async () => (await rowOf(asB, m1?.id))?.body === '검증 채팅 1');
-    // 5-4. 삭제
-    await check('5-4. A 본인 글 삭제 → 본문 비움·삭제 시각', async () => {
-      await asA.rpc('chat_delete', { p_id: Number(m1?.id) });
-      const r = await rowOf(asB, m1?.id);
-      return !!r && r.body === null && r.article === null && r.deleted_at != null;
-    });
-    await deniedWith('5-4. B 가 A 의 글 삭제 거절', () => asB.rpc('chat_delete', { p_id: Number(m2?.id) }), 'not_allowed');
-    await check('5-4. 거절 뒤 A 의 글 그대로', async () => (await rowOf(asA, m2?.id))?.body === '기사 첨부 검증');
-    const madeAdmin = await step('5-4. 준비: B 에 관리자 표시(is_admin) 임시로 주기', async () => { await admin.patch('profiles', `user_id=eq.${ids[B]}`, { is_admin: true }); return true; });
-    if (madeAdmin) {
-      await check('5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)', async () => {
-        await asB.rpc('chat_delete', { p_id: Number(m2?.id) });
-        const r = await rowOf(asA, m2?.id);
-        return !!r && r.body === null && r.article === null && r.deleted_at != null;
+    // 5-4. 삭제(0005): 관리자만. 관리자 표시는 서비스 키로 잠시 주고, 검사가 실패해도 반드시 끈다
+    const asAdminB = async (label, names, fn) => {
+      const made = await step(`${label} 준비: B 에 관리자 표시(is_admin) 임시로 주기`, async () => { await admin.patch('profiles', `user_id=eq.${ids[B]}`, { is_admin: true }); return true; });
+      if (!made) { for (const n of names) ok(n, false, '실행 안 함(준비 실패)'); return; }
+      try { await fn(); }
+      finally { await step(`${label} 정리: B 관리자 표시 끄기`, () => admin.patch('profiles', `user_id=eq.${ids[B]}`, { is_admin: false })); }
+    };
+    const gone = r => !!r && r.body === null && r.article === null && r.deleted_at != null;
+    await deniedWith('5-4. 비관리자 A 가 자기 글 삭제 거절', () => asA.rpc('chat_delete', { p_id: Number(m1?.id) }), 'not_allowed');
+    await check('5-4. 거절 뒤 A 의 글 그대로', async () => { const r = await rowOf(asB, m1?.id); return r?.body === '검증 채팅 1' && r?.deleted_at == null; });
+    await deniedWith('5-4. 비관리자 B 가 A 의 글 삭제 거절', () => asB.rpc('chat_delete', { p_id: Number(m2?.id) }), 'not_allowed');
+    await check('5-4. 거절 뒤 A 의 기사 첨부 글 그대로', async () => { const r = await rowOf(asA, m2?.id); return r?.body === '기사 첨부 검증' && !!r?.article; });
+    const ADMIN_4 = ['5-4. 관리자 B 가 A 의 글 삭제(본문 비움·삭제 시각)', '5-4. 관리자 B 가 A 의 기사 첨부 글 삭제(본문·첨부 비움)', '5-4. 이미 삭제된 글을 다시 지워도 오류 없음(그대로)'];
+    await asAdminB('5-4.', ADMIN_4, async () => {
+      await check(ADMIN_4[0], async () => { await asB.rpc('chat_delete', { p_id: Number(m1?.id) }); return gone(await rowOf(asA, m1?.id)); });
+      await check(ADMIN_4[1], async () => { await asB.rpc('chat_delete', { p_id: Number(m2?.id) }); return gone(await rowOf(asA, m2?.id)); });
+      await check(ADMIN_4[2], async () => {
+        const before = await rowOf(asA, m1?.id);
+        const res = await asB.rpc('chat_delete', { p_id: Number(m1?.id) });
+        const r = await rowOf(asA, m1?.id);
+        return gone(r) && r.deleted_at === before?.deleted_at && Number(res?.id) === Number(m1?.id);
       });
-      await step('5-4. 정리: B 관리자 표시 끄기', () => admin.patch('profiles', `user_id=eq.${ids[B]}`, { is_admin: false }));
-    } else ok('5-4. 관리자 B 가 A 의 글 삭제(본문·첨부 비움)', false, '실행 안 함(준비 실패)');
+    });
+    await check('5-4. 정리 뒤 B 의 관리자 표시 꺼짐', async () => ((await admin.select('profiles', `select=is_admin&user_id=eq.${ids[B]}`)) || [])[0]?.is_admin === false);
     await check('5-4. 목록 페이지: p_limit 1 → 가장 최근 1건, p_before → 그보다 작은 id 만', async () => {
       const top = await list(asB, { p_limit: 1 });
       const older = await list(asB, { p_before: Number(m2?.id), p_limit: 200 });
@@ -260,11 +267,9 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
       return !!r && r.body === '' && r.deleted_at == null && r.article?.url === art.url;
     });
     await deniedWith('5-6. 본문도 기사도 없으면 거절', () => send(asA, '  ', null), 'body_length');
-    await check('5-6. 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', async () => {
-      await asA.rpc('chat_delete', { p_id: Number(mA?.id) });
-      const r = await rowOf(asB, mA?.id);
-      return !!r && r.body === null && r.article === null && r.deleted_at != null;
-    });
+    await deniedWith('5-6. 비관리자 A 가 자기 기사만 있는 글 삭제 거절', () => asA.rpc('chat_delete', { p_id: Number(mA?.id) }), 'not_allowed');
+    const ADMIN_6 = '5-6. 관리자가 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)';
+    await asAdminB('5-6.', [ADMIN_6], () => check(ADMIN_6, async () => { await asB.rpc('chat_delete', { p_id: Number(mA?.id) }); return gone(await rowOf(asB, mA?.id)); }));
 
     // 5-7. 읽음(0004). 실제 방에 다른 사람(친구)의 읽은 위치도 있으므로 B 가 읽기 전후의 차이로 본다
     const counts = async (api, list) => { const r = await api.rpc('chat_read_counts', { p_ids: list.map(Number) }); return Array.isArray(r) ? r : []; };
