@@ -3,7 +3,8 @@
 //   node scripts/admin/verify.mjs [--apply] [--url <프로젝트 URL>]
 // 하는 일: 임시 시험 계정 2개(zz-verify-a, zz-verify-b, 무작위 비밀번호 — 화면에 보이지 않음)를 만들고
 //   anon 차단, 비밀번호 변경 전 user_state 차단·변경 후 허용, 다른 사용자 행 접근 불가, 프로필·변경 필요 값 위조 불가,
-//   서버 상한(악용 방지: 북마크 3,000·폴더 100·태그 200·메모 1,000자)과 화면 한도를 넘는 합친 결과 허용, private 함수 비노출, 관리자 초기화 후 다시 차단을 확인한 뒤
+//   서버 상한(악용 방지: 북마크 3,000·폴더 100·태그 200·메모 1,000자)과 화면 한도를 넘는 합친 결과 허용, private 함수 비노출, 관리자 초기화 후 다시 차단,
+//   표시 이름 변경 함수(set_display_name, 0002)의 권한·검사를 확인한 뒤
 //   시험 계정을 지운다(중간에 실패해도 지운다). 필요: SUPABASE_URL, 비밀 키 파일, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.
 import { randomBytes } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
@@ -14,9 +15,12 @@ export const CHANNEL = 'zz-verify';
 export const STEPS = [
   '1. 시험 계정 2개 만들기(무작위 비밀번호, 출력 안 함) — 변경 필요 = 켬 확인',
   '2. 로그인 안 한 요청(publishable 키): profiles·account_security·user_state 읽기·쓰기 모두 막힘',
+  '2-1. 로그인 안 한 요청: set_display_name 호출 막힘(0002)',
   '3. A(비밀번호 변경 전): 자기 변경 필요 = true, user_state 읽기 0행·쓰기 막힘',
   '4. A: profiles(표시 이름·is_admin)·account_security(변경 필요) 고치기 막힘, profiles 만들기 막힘',
+  '4-1. A(비밀번호 변경 전): set_display_name 호출 막힘',
   '5. A·B 비밀번호 변경(현재 비밀번호 필요) → 변경 필요 = false(트리거) → A user_state 쓰기·읽기 성공',
+  '5-1. A: set_display_name 으로 자기 표시 이름 변경 → profiles 반영. 21자·빈 값·공백만·제어 문자 거절, B 의 이름(대소문자·공백만 다른 것 포함) 거절, 10분 안 재변경 거절, profiles 직접 고치기 여전히 막힘',
   '6. B: A 의 행 읽기 0행, 고치기·지우기 0행, A 의 user_id 로 만들기 막힘, 자기 행 user_id 를 A 로 바꾸기 막힘',
   '7. A: 서버 상한 초과(북마크 3,001·폴더 101·태그 201·메모 1,001자·북마크당 태그 51) 거절, 화면 한도를 넘는 합친 결과(북마크 2,000·폴더 40·태그 100)와 상한 경계(3,000·100·200) 저장 성공',
   '7-1. A: 사용자당 채널 행 10개 상한(11번째 거절)',
@@ -33,6 +37,11 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
   const denied = async (name, fn) => {   // 4xx 로 막히면 통과(성공하거나 5xx 면 실패)
     try { const d = await fn(); ok(name, false, `막히지 않음(${Array.isArray(d) ? d.length + '행' : '성공'})`); }
     catch (e) { ok(name, e instanceof ApiError && e.status >= 400 && e.status < 500, e instanceof ApiError ? `HTTP ${e.status} ${e.code}` : '오류'); }
+  };
+  // 4xx 로 막히고 오류 메시지에 기대한 키(0002 의 name_taken 등)가 있으면 통과
+  const deniedWith = async (name, fn, key) => {
+    try { await fn(); ok(name, false, '막히지 않음'); }
+    catch (e) { ok(name, e instanceof ApiError && e.status >= 400 && e.status < 500 && e.message.includes(key), e instanceof ApiError ? `HTTP ${e.status} ${e.code}` : '오류'); }
   };
   const rows0 = async (name, fn) => {
     try { const d = await fn(); ok(name, Array.isArray(d) && d.length === 0, `${Array.isArray(d) ? d.length : '?'}행`); }
@@ -60,6 +69,8 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
       await denied(`2. anon ${t} 쓰기 막힘`, () => anon.insert(t, t === 'user_state' ? { channel: CHANNEL } : { user_id: ids[A] }));
     }
 
+    await denied('2-1. anon set_display_name 호출 막힘', () => anon.rpc('set_display_name', { new_name: '아무개' }));
+
     // 3·4. A 변경 전
     const tokA = (await anonFor(null).signIn(toEmail(A), pass[A])).access_token; redactor.add(tokA);
     const asA = anonFor(tokA);
@@ -71,6 +82,7 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await denied('4. A profiles 만들기 막힘', () => asA.insert('profiles', { user_id: ids[A], login_id: 'zz-forged' }));
     await denied('4. A account_security 변경 필요 = false 위조 막힘', () => asA.patch('account_security', `user_id=eq.${ids[A]}`, { must_change_password: false }));
     ok('4. 위조 시도 뒤에도 변경 필요 = true', (await sec(ids[A]))?.must_change_password === true);
+    await deniedWith('4-1. A(변경 전) set_display_name 막힘', () => asA.rpc('set_display_name', { new_name: '검증 새이름' }), 'password_change_required');
 
     // 5. 비밀번호 변경
     const tokens = { [A]: tokA };
@@ -84,6 +96,24 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     const insA = await asA.insert('user_state', { channel: CHANNEL, bookmarks: {}, folders: {}, tags: {} });
     ok('5. A(변경 후) user_state 만들기 성공', Array.isArray(insA) && insA.length === 1);
     ok('5. A user_state 읽기 1행', ((await asA.select('user_state', `select=channel&channel=eq.${CHANNEL}`)) || []).length === 1);
+
+    // 5-1. 표시 이름 변경(0002). 검사 순서: 권한 → 길이·문자 → 겹침 → 10분 제한
+    const dn = async id => ((await admin.select('profiles', `select=display_name&user_id=eq.${id}`)) || [])[0]?.display_name;
+    const setName = n => asA.rpc('set_display_name', { new_name: n });
+    await deniedWith('5-1. 21자 거절', () => setName('가'.repeat(21)), 'name_too_long');
+    await deniedWith('5-1. 빈 값 거절', () => setName(''), 'name_empty');
+    await deniedWith('5-1. 공백만 거절', () => setName('   '), 'name_empty');
+    await deniedWith('5-1. 제어 문자(줄바꿈) 거절', () => setName('검증\n이름'), 'name_invalid_char');
+    await deniedWith('5-1. B 의 이름 그대로 거절', () => setName('검증용 B'), 'name_taken');
+    await deniedWith('5-1. B 의 이름 공백만 다름 거절', () => setName('검증용B'), 'name_taken');
+    await deniedWith('5-1. B 의 이름 대소문자만 다름 거절', () => setName('검증용 b'), 'name_taken');
+    const changed = await setName('  검증 새이름  ');
+    ok('5-1. A 표시 이름 변경 성공(앞뒤 공백 지움)', changed === '검증 새이름', typeof changed === 'string' ? '' : '응답 형식 다름');
+    ok('5-1. profiles 에 반영', (await dn(ids[A])) === '검증 새이름');
+    await deniedWith('5-1. 10분 안에 다시 바꾸기 거절', () => setName('검증 또다른이름'), 'too_soon');
+    ok('5-1. 거절 뒤 이름 그대로', (await dn(ids[A])) === '검증 새이름');
+    await denied('5-1. A profiles 표시 이름 직접 고치기 여전히 막힘', () => asA.patch('profiles', `user_id=eq.${ids[A]}`, { display_name: '직접' }));
+    await denied('5-1. A display_name_changed_at 직접 고치기 막힘', () => asA.patch('profiles', `user_id=eq.${ids[A]}`, { display_name_changed_at: null }));
 
     // 6. 다른 사용자
     await rows0('6. B 가 A 의 행 읽기 0행', () => asB.select('user_state', `select=*&user_id=eq.${ids[A]}`));

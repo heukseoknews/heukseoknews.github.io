@@ -305,3 +305,8 @@ html[data-auth="leaving"] body{visibility:hidden}
  .homeTop .acctPanel{display:none;position:absolute;box-shadow:0 8px 20px #1a283914;border:1px solid var(--line);padding:6px;min-width:200px}
  .homeTop .acctPanel.open{display:block}
 }
+/* 마이페이지 → 계정(표시 이름) */
+.nameNow{margin:0 0 12px;font-size:var(--fs-14);color:var(--text-2);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}.nameNow b{font-size:var(--fs-16);color:var(--text);overflow-wrap:anywhere}.nameNow span{font-size:var(--fs-13);color:var(--muted)}
+.nameForm{display:flex;gap:8px;max-width:440px}.nameForm input{flex:1;min-width:0;height:44px;border:1px solid var(--line-strong);border-radius:var(--r-md);padding:0 12px;font-size:var(--fs-16);color:var(--text);background:#fff}
+.nameForm input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}.nameForm .confirm{min-height:44px;font-size:var(--fs-14);font-weight:600;padding:0 18px;justify-content:center}.nameForm .confirm:disabled{opacity:.6}
+.nameMsg{margin:8px 0 0;min-height:20px;font-size:var(--fs-14);color:#a54235}.nameMsg.ok{color:var(--accent-strong)}.nameMsg:empty{min-height:0;margin:0}

@@ -3,6 +3,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { AUTH_KEY, AUTH_MODE, AUTH_URL } from './authConfig';
 import { SESSION_KEY, type AuthBackend, type PwFail, type SignInFail } from './auth';
+import { nameFailOf, type NameBackend } from './displayName';
 
 let clientP: Promise<SupabaseClient> | null = null;
 function client(): Promise<SupabaseClient> {
@@ -18,7 +19,7 @@ const isRate = (e: Err) => !!e && (e.status === 429 || e.code === 'over_request_
 /** 오류 원문은 개발자 콘솔에만(코드·상태만, 비밀번호·토큰은 넣지 않는다) */
 const note = (where: string, e: Err) => { if (e) console.error(`[auth] ${where}`, e.status ?? '', e.code ?? e.name ?? ''); };
 
-export const supabaseBackend: AuthBackend = {
+export const supabaseBackend: AuthBackend & NameBackend = {
   async signIn(email, password) {
     try {
       const { data, error } = await (await client()).auth.signInWithPassword({ email, password });
@@ -75,6 +76,19 @@ export const supabaseBackend: AuthBackend = {
         : 'other';
       return { error: kind };
     } catch (e) { note('updatePassword', e as Err); return { error: 'network' }; }
+  },
+
+  async setDisplayName(name) {
+    try {
+      const sb = await client();
+      const { data: s, error: se } = await sb.auth.getSession();
+      if (se) return { error: isNetwork(se) ? 'network' : 'signIn' };
+      if (!s.session) return { error: 'signIn' };
+      // 표시 이름은 이 서버 함수로만 바꾼다(supabase/migrations/0002_display_name.sql). profiles 직접 고치기는 서버가 막는다
+      const { data, error, status } = await sb.rpc('set_display_name', { new_name: name });
+      if (error) { note('setDisplayName', { status, code: error.code, message: error.message }); return { error: nameFailOf({ status, code: error.code, message: error.message }) }; }
+      return { name: typeof data === 'string' ? data : name };
+    } catch (e) { note('setDisplayName', e as Err); return { error: 'network' }; }
   },
 
   async signOut() {

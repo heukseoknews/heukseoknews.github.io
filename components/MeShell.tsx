@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChannelProvider } from '../lib/channelContext';
 import { CHANNELS, getChannel } from '../lib/channels';
-import { ME_CHANNEL_KEY, ME_MENU, meChannels, meHref, pickChannel } from '../lib/me';
+import { ME_CHANNEL_KEY, meChannels, meHref, meMenu, pickChannel } from '../lib/me';
+import { AUTH_MODE } from '../lib/authConfig';
 import { userStateStore } from '../lib/storage';
 import { summarize } from '../lib/userState';
 import { USER_STATE_EVENT } from '../lib/useSaved';
@@ -14,6 +15,7 @@ import Footer from './Footer';
 import SiteHeader from './SiteHeader';
 
 const LIST = meChannels(CHANNELS.map(c => c.slug));
+const MENU = meMenu(AUTH_MODE !== 'off');   // 로그인을 켠 빌드만 '계정'
 
 /** 마이페이지 틀: 헤더 · 마이페이지 메뉴(내 북마크·내 데이터) · 채널 탭 · 본문 · 푸터.
  *  채널은 ?ch= → 마지막으로 본 채널 → 첫 공개 채널 순서로 정하고, 본문은 그 채널의 ChannelProvider 안에서 그린다(채널 색도 바뀜).
@@ -53,7 +55,7 @@ export default function MeShell({ children }: { children: React.ReactNode }) {
     <SiteHeader me />
     <main className="shell meShell" id="content">
       <h1 className="meTitle">마이페이지</h1>
-      <nav className="meMenu" aria-label="마이페이지 메뉴"><ul>{ME_MENU.map(m => {
+      <nav className="meMenu" aria-label="마이페이지 메뉴"><ul>{MENU.map(m => {
         const on = norm(pathname) === m.href;
         return <li key={m.href}><Link href={meHref(m.href, cur)} aria-current={on ? 'page' : undefined} className={on ? 'on' : ''}>{m.label}</Link></li>;
       })}</ul></nav>

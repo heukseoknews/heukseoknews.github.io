@@ -9,7 +9,7 @@
 
 - **구성**: 사이트는 지금처럼 정적 export(GitHub Pages)다. 브라우저가 `@supabase/supabase-js` 로 Supabase Auth(로그인)와 Postgres(사용자 상태·프로필)에 직접 붙는다. 서버 코드는 없다.
 - **로그인 방식**: 아이디형 계정만 쓴다. 카카오 등 외부 로그인은 쓰지 않는다. 나중에 병행 추가할 수 있게 계정 식별을 Supabase 사용자 id 에 묶고 로그인 방법을 `lib/auth.ts` 한 곳에 모은다(11장).
-- **계정**: 관리자가 만든다. 가입은 닫혀 있다. 아이디 `kim` → 내부 이메일 `kim@users.heukseok.invalid`(메일을 보내지 않는 경로만 쓴다). 표시 이름(댓글·채팅에 보이는 이름)은 아이디와 따로, 관리자가 정하고 사용자는 바꾸지 못한다.
+- **계정**: 관리자가 만든다. 가입은 닫혀 있다. 아이디 `kim` → 내부 이메일 `kim@users.heukseok.invalid`(메일을 보내지 않는 경로만 쓴다). 표시 이름(헤더·댓글·채팅에 보이는 이름)은 아이디와 따로, 처음에는 관리자가 정하고 이후 사용자가 마이페이지 → 계정에서 바꾼다(서버 함수 `set_display_name` 하나로만, 0002).
 - **첫 로그인(확정)**: 초기 비밀번호는 **각자의 학번**이다. 학번으로 로그인하면 **비밀번호 변경 화면으로 강제 이동**하고, 바꾸기 전에는 다른 화면에 들어갈 수 없다. 서버도 바꾸기 전에는 동기화를 거절한다(4.1). 학번은 남이 알 수 있으므로 이것이 핵심 보완 장치다(2.5).
 - **화면(확정)**: 사이트 첫 화면은 **로그인 화면이 먼저**다. 처음 접속하면 `/login/`(noindex) → 로그인 후 홈. 로그인 여부는 브라우저에서 검사하는 **화면상의 안내 장벽**이고, 기사 데이터는 공개 정적 파일 그대로다(열람 차단이 아니다). 사용자 기록은 서버(RLS)가 막는다.
 - **서버 장애(확정)**: 로그인 서버가 멈추거나(무료 플랜 정지·장애) 연결이 안 되면, 이미 로그인한 사람은 기사 읽기와 이 기기의 북마크가 그대로 동작하고 **동기화만 멈춘다**(연결되면 다시 보냄). 새 로그인은 서버가 돌아올 때까지 안 된다(7.3).
@@ -169,7 +169,7 @@
 
 | 표 | 열 |
 |---|---|
-| `profiles` | `user_id`(auth.users, 지우면 함께 삭제), `login_id`(아이디, 고유, 2.2 형식), `display_name`(표시 이름, 고유, 1~20자, 관리자가 정함), `is_admin`(기본 false — 지금은 권한에 쓰지 않고 댓글 관리 등 확장 때 쓸 자리), `created_at` |
+| `profiles` | `user_id`(auth.users, 지우면 함께 삭제), `login_id`(아이디, 고유, 2.2 형식), `display_name`(표시 이름, 고유, 1~20자, 처음엔 관리자가 정하고 이후 사용자가 `set_display_name` 으로 바꿈), `display_name_changed_at`(사용자가 마지막으로 바꾼 시각, 0002 — 사용자가 직접 고칠 수 없음), `is_admin`(기본 false — 지금은 권한에 쓰지 않고 댓글 관리 등 확장 때 쓸 자리), `created_at` |
 | `account_security` | `user_id`, `must_change_password`(기본 true), `password_changed_at`, `reset_pending`(관리자 초기화 진행 중, 6.3) |
 | `user_state` | `user_id`(기본 `auth.uid()`), `channel`, `schema_version`, `bookmarks`·`folders`·`tags`·`read_at`(jsonb 객체), `last_confirmed`, `companies`(jsonb 배열), `rev`, `created_at`, `updated_at`. 기본 키 `(user_id, channel)`, 행 크기 상한 4MB |
 
@@ -275,7 +275,7 @@
 - `user_state`: 읽기·만들기·고치기·지우기 정책을 따로 두고, 모두 `(select auth.uid()) = user_id and (select private.password_ready())`. `password_ready()` 는 '프로필이 있는 아이디 계정이고 비밀번호를 바꿨는가'다.
 
 - `(select auth.uid())` 처럼 감싸면 문장당 한 번만 계산된다(공식 권장). `for all` 정책을 쓰지 않고 작업별로 나눈다(공식 권장).
-- `profiles`·`account_security` 에는 authenticated 의 insert/update/delete 권한이 **GRANT 단계에서 없다**. 정책을 실수로 추가해도 권한 오류(42501)로 막힌다. 표시 이름을 사용자가 못 바꾸는 근거가 이것이다.
+- `profiles`·`account_security` 에는 authenticated 의 insert/update/delete 권한이 **GRANT 단계에서 없다**. 정책을 실수로 추가해도 권한 오류(42501)로 막힌다. 표시 이름을 사용자가 직접 update 하지 못하는 근거가 이것이다. 사용자의 표시 이름 변경은 `public.set_display_name(new_name)`(security definer, authenticated 만 실행, 0002) 한 길로만 열려 있고, 함수가 로그인·아이디 계정·비밀번호 변경 완료(`private.password_ready()` 와 같은 조건)·1~20자·제어 문자 없음·다른 사용자와 겹침 없음(공백을 빼고 소문자로 비교)·10분에 한 번을 검사한 뒤 자기 행만 바꾼다.
 - `user_state` 의 `password_ready()` 조건: 비밀번호를 바꾸지 않은 계정과 프로필이 없는 계정(아이디 계정이 아닌 경우)은 동기화 자체가 거절된다(화면 게이트를 우회해도 서버 기록에 닿지 못함). 함수는 `private` 스키마에 있어 Data API 로 직접 부를 수 없다. `private` 스키마에 authenticated 의 usage 를 주는 것은 정책 안에서 이 함수를 부르기 위해서이고, 표는 두지 않는다.
 - `update` 의 `with check` 가 `user_id` 를 남의 것으로 바꾸는 것을 막는다.
 - SQL 은 저장소의 `supabase/migrations/0001_init.sql` 한 파일이고, 관리자가 SQL Editor 에서 실행한다(절차서 2장). CLI 마이그레이션은 쓰지 않는다(사람 10명 규모에 과함). 이후 변경은 `0002_….sql` 처럼 새 파일로 더한다.
@@ -431,7 +431,7 @@ node scripts/admin/verify.mjs [--apply]                   # 보안 자동 검증
 ### 6.4 비밀번호 초기화·표시 이름 변경·계정 삭제
 
 - 비밀번호를 잊으면: 관리자에게 말한다 → 관리자가 `reset-password`(학번으로 초기화) → 사용자는 학번으로 로그인하자마자 변경 화면으로. 메일 재설정은 쓰지 않는다.
-- 표시 이름을 바꾸고 싶으면: 관리자에게 말한다 → 지금은 SQL Editor 에서 `profiles.display_name` 을 고친다(`set-name` 명령은 아직 없음, 10.1). 사용자 화면에는 바꾸는 기능이 없다.
+- 표시 이름: 사용자가 마이페이지 → 계정에서 직접 바꾼다(0002 적용 뒤). 오류는 한 줄 — '이미 쓰는 이름입니다' / '20자 이하로 정해 주세요' / '잠시 뒤에 다시 바꿀 수 있습니다'(10분) / '로그인이 필요합니다'. 0002 를 적용하기 전에는 저장할 때 '아직 준비 중' 안내만 보인다. 관리자가 대신 바꿀 때는 SQL Editor 에서 `profiles.display_name` 을 고친다(이때는 10분 제한·겹침 검사가 함수 밖이라 unique 제약만 적용).
 - 잠시 막기: `disable`(되돌리기 `enable`).
 - 삭제 요청: 대시보드 Users → 사용자 삭제. `on delete cascade` 로 세 표의 행이 함께 지워진다(절차서 10장).
 
@@ -579,7 +579,7 @@ node scripts/admin/verify.mjs [--apply]                   # 보안 자동 검증
 | 계정 목록 | 관리자 맥의 `~/.heukseok/accounts.csv` 에만. 저장소에 두지 않는다 |
 | secret 키 | `admin_script` 키, 관리자 맥의 `~/.heukseok/supabase.env` 에만(1.4) |
 | 내부 이메일 | `<아이디>@users.heukseok.invalid` |
-| 표시 이름 | 관리자가 정하고 서로 겹치지 않게(unique). 사용자는 바꿀 수 없음 |
+| 표시 이름 | 처음엔 관리자가 정함. 사용자는 마이페이지 → 계정에서 `set_display_name`(0002)으로만 변경 — 1~20자, 대소문자·공백만 다른 이름도 겹침으로 거절, 10분에 한 번. profiles 직접 고치기는 계속 막힘 |
 | 토큰 요청 한도 | 5분 30회(7.2) |
 | 상한 | 실제 사용 한도(북마크 1,000·폴더 20·태그 50·메모 200자·북마크당 태그 10)는 화면에서만. 서버는 악용 방지용(북마크 3,000·폴더 100·태그 200·메모 1,000자·북마크당 태그 50·채널 행 10)(3.3) |
 | 행 크기 상한 | 4MB(3.2) |

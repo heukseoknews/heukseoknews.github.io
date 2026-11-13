@@ -110,6 +110,25 @@ select event_object_table, trigger_name from information_schema.triggers
 
 주의: SQL Editor 는 관리자(`postgres`) 권한으로 돌아 RLS 를 무시한다. 여기서 표가 보인다고 사용자에게도 보이는 것이 아니다. 실제 사용자 권한 확인은 4장 자동 검증으로 한다.
 
+## 2-1. 표시 이름 변경 SQL 적용(0002)
+
+사용자가 마이페이지 → 계정에서 자기 표시 이름을 바꾸게 하는 서버 함수(`public.set_display_name`)와 열(`profiles.display_name_changed_at`)을 만든다. 0001 을 적용한 뒤에 한다. 사이트 화면은 이 SQL 보다 먼저 배포돼도 깨지지 않는다(저장할 때 '아직 준비 중' 한 줄만 보임).
+
+1. 대시보드 → **SQL Editor** → **New query**(새 쿼리 탭. 0001 을 붙였던 탭을 다시 쓰지 않는다).
+2. `supabase/migrations/0002_display_name.sql` **전체를 복사**해 붙여 넣고 **Run**. 'Success. No rows returned' 면 된다. 여러 번 실행해도 결과가 같다.
+   - `0001_init.sql 을 먼저 적용하세요` 로 멈추면 2장을 먼저 한다.
+3. 확인 쿼리(새 query 에 붙여 Run):
+
+```sql
+select grantee, privilege_type from information_schema.routine_privileges
+ where routine_schema = 'public' and routine_name = 'set_display_name' order by 1;
+-- authenticated EXECUTE (+ postgres 등 관리 역할). anon·PUBLIC 줄이 없어야 한다
+```
+
+4. 이어서 4장 `verify --apply` 를 돌린다. 2-1·4-1·5-1 번(표시 이름) 항목이 모두 ✓ 여야 한다.
+
+되돌리기: 0002 파일 끝의 주석 두 줄(`drop function …`, `alter table … drop column …`)을 새 query 에 붙여 실행한다. 이미 바꾼 표시 이름은 그대로 남는다.
+
 ## 3. 연결 확인(`check`, 읽기만)
 
 ```sh
@@ -149,6 +168,7 @@ node scripts/admin/verify.mjs --apply    # 실제 검증
   7. 서버 상한(채널당 북마크 3,000·폴더 100·태그 200·메모 1,000자·북마크당 태그 50·사용자당 채널 10)을 넘으면 거절, 화면 한도를 넘는 '합친 결과'(북마크 2,000·폴더 40·태그 100)는 저장된다
   8. 내부 함수는 밖에서 부를 수 없다
   9. 관리자 초기화 뒤 다시 막히고, 새 비밀번호로 로그인해도 '변경 필요'가 유지된다
+  - 표시 이름(0002, 2-1장): 로그인 안 한 요청·비밀번호 변경 전 호출은 막힘(2-1·4-1), 변경 후에는 자기 이름을 바꿀 수 있고 profiles 에 반영, 21자·빈 값·공백만·줄바꿈 거절, 다른 사용자 이름(대소문자·공백만 다른 것 포함) 거절, 10분 안 재변경 거절, profiles 직접 고치기는 여전히 막힘(5-1)
 - 마지막 줄이 `모두 통과(N건)` 이면 끝. 실패가 있으면 출력 전체를 그대로 공유한다(비밀이 들어 있지 않다).
 - 로그인을 4번 정도 하므로 로그인 제한(5분 30회)에 걸리지 않는다. 연달아 여러 번 돌릴 때만 5분 쉰다.
 
