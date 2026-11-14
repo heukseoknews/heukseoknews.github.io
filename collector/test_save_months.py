@@ -37,6 +37,17 @@ try:
     # 같은 제목의 정기 공지라도 id 가 다르면 다른 달에 저장된다(id 기준만)
     assert collect.save([art('rep2', '사업보고서 등에 대한 조사,감리결과 조치', '2026-11-03T00:00:00+00:00', '2026-11-04T00:00:00+00:00', '금융위원회')], d) == 1
     assert collect.save([art('rep1', '사업보고서 등에 대한 조사,감리결과 조치', '2026-10-03T00:00:00+00:00', '2026-11-04T00:00:00+00:00', '금융위원회')], d) == 1
+    # 구글 링크로 저장된 기사를 직접 링크(다른 id)로 다시 받으면: 기존 id·발행·수집 시각·판정을 유지하고 url 만 직접 링크로 바꾼다
+    d2 = tmp / 'data-url'
+    collect.save([art('gold', '구글 링크로 먼저 들어온 기사', '2026-11-08T01:00:00+00:00', '2026-11-08T02:00:00+00:00', '대한금융신문')], d2)
+    direct = dict(art('dnew', '구글 링크로 먼저 들어온 기사', '2026-11-08T03:00:00+00:00', '2026-11-09T00:00:00+00:00', '대한금융신문'),
+                  url='https://www.kbanker.co.kr/news/articleView.html?idxno=1', relevant=False)
+    assert collect.save([direct], d2) == 0
+    kept = rows(d2, '2026-11')
+    assert len(kept) == 1 and kept[0]['id'] == 'gold', kept
+    assert kept[0]['url'] == 'https://www.kbanker.co.kr/news/articleView.html?idxno=1'
+    assert (kept[0]['published_at'], kept[0]['collected_at'], kept[0]['relevant']) == ('2026-11-08T01:00:00+00:00', '2026-11-08T02:00:00+00:00', True)
+    assert collect.save([direct], d2) == 0 and [a['id'] for a in rows(d2, '2026-11')] == ['gold'], '다시 받아도 그대로'
 
     # 2) 기존 중복 정리: 두 월 파일에 같은 id(이전 코드가 만든 상태)를 직접 만들고 dry-run → 적용
     cfg = tmp / 'cfg'

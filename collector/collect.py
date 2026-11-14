@@ -316,10 +316,16 @@ def save(rows, data_dir: Path, aliases=None, tfilter=None):
                 continue
             k = dedupe_key(a)
             if k in by_key:
-                better = prefer(a, by_key[k])  # 기존이 구글 링크이고 새 것이 직접 링크면 교체
-                if better is not by_key[k]:
-                    better['collected_at'] = by_key[k]['collected_at']
-                    by_key[k] = better; changed = True
+                old = by_key[k]
+                better = prefer(a, old)  # 기존이 구글 링크이고 새 것이 직접 링크면 교체
+                if better is not old:
+                    if better['id'] != old['id']:
+                        # 북마크·채팅 첨부가 기존 id 를 가리킨다: 기존 기사(id·발행·수집 시각·분류)는 그대로 두고 링크만 바꾼다
+                        if better['url'] != old['url']:
+                            by_key[k] = {**old, 'url': better['url']}; changed = True
+                    else:
+                        better['collected_at'] = old['collected_at']
+                        by_key[k] = better; changed = True
             elif a['id'] not in by_id:
                 by_key[k] = a; by_id.add(a['id']); added += 1; changed = True
         if changed:
