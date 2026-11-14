@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-13T20:59:36.413884+00:00",
-  "finished_at": "2026-11-13T20:59:38.540264+00:00",
-  "candidates": 315,
-  "added": 43,
+  "started_at": "2026-11-14T02:42:39.503692+00:00",
+  "finished_at": "2026-11-14T02:42:42.144484+00:00",
+  "candidates": 311,
+  "added": 17,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,10 +11,10 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
-   "entries": 1386,
+   "entries": 1387,
    "kept": 91,
    "skipped": {
     "no_link": 0,
@@ -36,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 13,
@@ -58,16 +58,16 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
    "entries": 907,
-   "kept": 33,
+   "kept": 31,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 67
+    "too_old": 69
    },
    "filtered": [],
    "oldest": "2026-06-24T16:00:13+00:00",
@@ -80,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -105,8 +105,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -127,8 +127,8 @@
     "Google’s latest Search upgrade promises better answers to your most complicated questions",
     "Jensen Huang’s exit puts Nvidia’s support for open source in question"
    ],
-   "oldest": "2026-11-12T16:32:33+00:00",
-   "newest": "2026-11-13T19:37:57+00:00",
+   "oldest": "2026-11-12T16:36:37+00:00",
+   "newest": "2026-11-13T22:43:00+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -137,8 +137,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -153,7 +153,7 @@
     "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update."
    ],
    "oldest": "2026-11-05T21:39:40+00:00",
-   "newest": "2026-11-13T17:25:45+00:00",
+   "newest": "2026-11-13T21:20:47+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -162,30 +162,30 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 20
+    "low_relevance": 25
    },
    "filtered": [
-    "스페이스X·테슬라 합병 협상 진전...이르면 12월 발표",
-    "‘고독한 미식가’가 찾은 남도 음식…12월 일본 방송으로 만난다",
-    "노타, 3분기 역대 최대 매출 달성…플랫폼·솔루션 동반 도약",
-    "AMD, 양자컴퓨터 오류 수정에 GPU·SW 투입…엔비디아와 경쟁",
-    "앨리스 황, 중국 정보기관 포섭 의혹…딥시크·화웨이 연관도 드러나",
-    "LGU+, 카테나-X 통한 국내 제조기업 글로벌 공급망 진입 지원",
-    "마키나락스, 3분기 만에 지난해 연매출 실현...영업손실은 지속",
-    "중국, 젠슨 황 사태에 반발…\"미국 기술 제재 구실 안 돼\"",
-    "크로아티아, 농업용 태양광·ESS에 3000만유로 지원…규모별 최대 65% 차등 지원",
-    "IEA \"2031년까지 세계 태양광 3.6TW 증가…직전 6년 대비 2.4배 폭증\""
+    "딥시크·문샷 등 중국 4개사, 수출 통제 '블랙웰' 사용 흔적 발견",
+    "[내면 지도 그리기] 42 Inner Mapping: 나를 찾는 지도",
+    "젠슨 황, 사임 직전 \"나는 쓰레기\"…두 번째 불륜 보도가 결정타",
+    "아모데이 \"컴퓨팅 수요 예측이 최대 경영 난제…과잉도 부족도 위험\"",
+    "광양 65세 이상 대상포진 예방접종, 누가 무료로 맞나…접종비 최대 31만원",
+    "미국 최대 규모 폐광 활용 태양광 사업, 1조 규모 1차 금융 조달 완료",
+    "중국 티베트 해발 4300m에 14시간 축열 태양열발전소 첫 연결...\"세계 최고도\"",
+    "2044년 중국 폐태양광서 은 쏟아진다… 연 739톤 정점 전망",
+    "MS, 전 세계 서비스 장애 복구 진전...\"원인은 네트워크 작업 오류\"",
+    "스페이스X·테슬라 합병 협상 진전...이르면 12월 발표"
    ],
-   "oldest": "2026-11-12T07:40:22+00:00",
-   "newest": "2026-11-13T09:44:26+00:00",
+   "oldest": "2026-11-12T19:47:53+00:00",
+   "newest": "2026-11-14T02:18:31+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -194,8 +194,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -221,11 +221,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
-   "entries": 19,
-   "kept": 16,
+   "entries": 18,
+   "kept": 15,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -237,8 +237,8 @@
     "[노이즈 제목] - Anthropic",
     "[노이즈 제목] - Anthropic"
    ],
-   "oldest": "2026-11-04T15:41:58+00:00",
-   "newest": "2026-11-13T18:08:52+00:00",
+   "oldest": "2026-11-09T18:59:16+00:00",
+   "newest": "2026-11-14T00:14:16+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -247,11 +247,11 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-13T20:59:36.413884+00:00",
-   "last_success_at": "2026-11-13T20:59:36.413884+00:00",
+   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
    "consecutive_failures": 0,
-   "entries": 4,
-   "kept": 4,
+   "entries": 3,
+   "kept": 3,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -261,7 +261,7 @@
     "I landed 4 job offers out of grad school and picked Meta. These 2 tactics helped me land my ideal offer.",
     "Muse Spark 1.4 leaks in a Meta pull request, already in internal use"
    ],
-   "oldest": "2026-11-10T23:20:19+00:00",
+   "oldest": "2026-11-11T06:27:00+00:00",
    "newest": "2026-11-13T17:04:24+00:00",
    "at_limit": false,
    "needs_split": false,
