@@ -166,8 +166,9 @@ def judge(title: str, kind: str, name: str | None, dept: str | None = None) -> t
         rel = True
     if not rel and company_relevant(title):  # 보험사가 제목에 나오면 '보험' 단어가 없어도 관련(스포츠 구단 기사 등 제외)
         rel = True
-    if not rel and name in ALWAYS_RELEVANT:  # 공식 AI 블로그 등 피드 자체가 주제인 소스(feeds.json always_relevant)
-        rel = True
+    if name in ALWAYS_RELEVANT:  # 공식 AI 블로그 등 피드 자체가 주제인 소스(feeds.json always_relevant)
+        # 단 제목 하향 패턴(고객 도입 사례 등, categories.json downgrade_patterns)에 걸리면 키워드가 있어도 관련도 낮음
+        rel = not load_classifier().downgraded(title, name)
     if not rel:
         c = {**c, 'category': UNCATEGORIZED, 'sub_categories': [], 'score': load_classifier().score(title, UNCATEGORIZED)[0]}
     else:

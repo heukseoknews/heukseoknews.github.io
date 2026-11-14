@@ -131,7 +131,12 @@ assert rel('Slice Into GFN Thursday: Phantom Blade Zero Launches on GeForce NOW'
 
 # 10) 고객 도입 사례 패턴(OpenAI·Anthropic 피드만): 미분류 + ★2 상한(공식 출처 +1 뒤에도)
 case = rel('Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot', 'press', 'OpenAI News')
-assert case[0] is True and case[1]['category'] == '미분류' and case[1]['score'] == 2
+assert case[0] is False and case[1]['category'] == '미분류' and case[1]['score'] <= 2   # always_relevant 피드라도 고객 사례는 관련도 낮음
+assert rel('DevRev delivers autonomous self-service with GPT-6.1 Sol', 'press', 'OpenAI News')[0] is False   # '… with GPT-…' 고객 사례
+for t, feed in [('Gondola doubles revenue as its team builds more with Codex', 'OpenAI News'), ('Case Study - Legora', 'Anthropic 공식(검색)')]:
+    assert rel(t, 'press', feed)[0] is (not collect.load_classifier().downgraded(t, feed)), t
+assert rel('How Grupo Boticário uses AI to strengthen human connections', 'press', 'OpenAI News')[0] is False
+assert rel('Introducing GPT-6.1 Terra', 'press', 'OpenAI News')[0] is True
 for t in ['How Grupo Boticário uses AI to strengthen human connections', 'SentinelOne cuts malware analysis from weeks to hours',
           'Singapore Airlines elevates travel & work with OpenAI technology', 'How AT&T is rethinking in-house legal work with OpenAI']:
     assert collect.load_classifier().downgraded(t, 'OpenAI News'), t
