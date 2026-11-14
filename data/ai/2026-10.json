@@ -256,10 +256,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "718617961cab3abc",
@@ -345,7 +345,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -367,10 +367,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "3e32bae570ff21ee",
@@ -449,12 +449,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1c5b51464767c2ad",
@@ -513,7 +513,7 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -560,10 +560,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a9c488820a62ac4a",
@@ -580,12 +580,12 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "35e334c198740f74",
@@ -640,12 +640,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "27334100e818b985",
@@ -682,7 +682,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -702,7 +702,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -788,12 +788,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1a543055a02f9816",
@@ -914,7 +914,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -976,7 +976,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -1125,7 +1125,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -1166,7 +1166,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -1188,12 +1188,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "39e60f901a735303",
@@ -1334,10 +1334,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "c9a6184923cc1a58",
@@ -1375,10 +1375,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "86dbfdb5b436c283",
@@ -1393,10 +1393,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "9e63539289a31c86",
@@ -1413,7 +1413,7 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -1437,12 +1437,12 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "32165ee6af8945a5",
@@ -1582,10 +1582,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "57c3309db5bedcde",
@@ -1604,7 +1604,7 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
@@ -1626,10 +1626,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a8b8c31de898145e",
@@ -1646,10 +1646,10 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "94ee28b93f9d2d83",
@@ -1664,7 +1664,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "OpenAI"
   ],
