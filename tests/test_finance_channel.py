@@ -1,4 +1,4 @@
-"""금융 채널 설정 단위 테스트(channels/finance/): 관련도·분류·시황 상한·스포츠 제외·채용 제외·기관 태그·타임존.
+"""금융 채널 설정 단위 테스트(channels/finance/): 관련도·분류·시황 상한·스포츠 제외·채용 기사 분류·기관 태그·타임존.
 엔진(collector/)은 바꾸지 않고 설정만 확인한다. 실행: .venv/bin/python tests/test_finance_channel.py"""
 import json, sys
 from pathlib import Path
@@ -48,8 +48,9 @@ for t in ['우리카드, 대한항공 꺾고 3연승', 'IBK기업은행 알토�
 assert judge('우리카드, 3분기 순이익 증가')[0]
 assert judge('하나은행, 예금금리 0.2%p 인하')[0]
 
-# 5) 채용 소식은 미분류
-assert judge('신한은행, 하반기 신입사원 공채 시작')[1] == '미분류'
+# 5) 채용 소식도 분류한다(은행권 취업 준비 목적, 2026-11-14 exclude 에서 채용 키워드 제거)
+assert judge('신한은행, 하반기 신입사원 공채 시작')[1] != '미분류'
+assert judge('카드사 신입 채용문 확 열렸다…보안 인력 모시기 활발')[0]
 
 # 6) 기관·회사 태그(약어 오탐 방지)
 ent = entities.tag_entities('한은, 금통위서 기준금리 동결', '연합뉴스', [])
