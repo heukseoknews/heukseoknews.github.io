@@ -41,6 +41,8 @@
 - 출처 이름 정규화(`channels/<채널>/source_aliases.json`): `domains` 는 새로 수집하는 기사(구글 뉴스 `<source url>`)에, `names` 는 이름 그대로 매핑한다. `names` 를 바꾸면 **다음 수집의 저장 단계가 저장된 기사 출처까지 자동으로 바꾸고**(`normalize_shards`, `--reclassify` 와 무관), 제목+출처가 같아진 기사는 합친다. 수집 전에 `python collector/collect.py --channel <채널> --normalize-sources --dry-run` 으로 바뀔 이름·사라질 기사·품질 필드 변화를 확인하고, `--dry-run` 없이 실행하면 수집 없이 바로 적용한다.
 - 같은 기사(같은 id = 같은 링크)는 한 월 파일에만 둔다. 피드가 같은 링크의 발행 시각을 나중에 바꿔 보내도(구글 뉴스에서 실제로 10-29 → 11-05 로 바뀐 사례) 처음 저장한 월·발행 시각을 유지한다(`collect.save`). 이전 코드로 생긴 중복은 `python collector/collect.py --channel <채널> --dedupe-months --dry-run` 으로 목록을 보고, `--dry-run` 없이 실행하면 먼저 수집된 사본만 남기고 index·trends·품질 필드를 다시 맞춘다. 같은 제목의 정기 공지는 id 가 달라 대상이 아니다.
 - 피드 날짜는 원문 문자열을 먼저 읽고(쉼표 뒤 공백 없음·요일 변형·'GMT+9'·'KST'·'YYYY.MM.DD' 등, collector/dates.py) 못 읽으면 feedparser 값을 쓴다. 그래도 읽지 못한 기사는 저장하지 않고, 소스별 건수를 status.json `skipped.no_date` 와 수집 로그 경고(원문 예시 3개)에 남긴다. 게시판도 날짜 없는 글 수를 같은 곳에 센다.
+- 수집할 때마다 기존 월 파일에도 현재 정규화 규칙(노이즈 제목·출처 이름)을 적용한다. 이때 지워진 기사(노이즈 제목 `junk_title`, 합쳐짐 `merged` + 남은 `kept_id`)는 status.json `normalize_removed` 에 최근 50건(id·제목·출처·월·이유·시각)과 수집 로그 경고로 남는다.
+- 데이터를 다시 쓰는 옵션(`--reclassify`, `--rescore`, `--quality`, `--dedupe-months`, `--normalize-sources`)은 모두 `--dry-run` 을 따르고, 결과의 `diff` 에 변경·삭제·id 변경(같은 제목+출처가 다른 id 로 남음)·사본 삭제 건수와 월 파일 크기·샘플을 낸다(collector/datadiff.py).
 - 화면 오류 문구는 일반 문장만 보여 주고, 원문 오류(HTTP 상태, 브라우저 영문 메시지)는 브라우저 console 에 남긴다.
 - 사이트 빌드 시각·commit 은 /version.json 에서 확인한다.
 

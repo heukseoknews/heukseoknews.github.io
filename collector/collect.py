@@ -293,12 +293,18 @@ def load_shard(path: Path):
         return []
 
 
-def save(rows, data_dir: Path, aliases=None, tfilter=None):
-    """월별 샤드에 병합(기존 id는 유지). 반환: 새로 추가된 건수."""
+def save(rows, data_dir: Path, aliases=None, tfilter=None, removed: list | None = None):
+    """월별 샤드에 병합(기존 id는 유지). 반환: 새로 추가된 건수.
+    removed: 주면 기존 데이터 정규화(normalize_shards)로 지운 기사 기록을 덧붙인다(status.json normalize_removed 용)."""
     data_dir.mkdir(parents=True, exist_ok=True)
-    fixed = normalize_shards(data_dir, aliases, tfilter)  # 기존 데이터도 현재 정규화 규칙으로 정리
+    gone: list = [] if removed is None else removed
+    n0 = len(gone)
+    fixed = normalize_shards(data_dir, aliases, tfilter, gone)  # 기존 데이터도 현재 정규화 규칙으로 정리
     if fixed:
         logging.info('기존 월 파일 %d개 정규화', fixed)
+    if len(gone) > n0:
+        logging.warning('기존 기사 정규화로 %d건 삭제(노이즈 제목·합침): %s', len(gone) - n0,
+                        ', '.join(f"{g['id']}({g['reason']})" for g in gone[n0:n0 + 10]))
     by_month: dict[str, list] = {}
     for a in rows:
         by_month.setdefault(a['published_at'][:7], []).append(a)
@@ -554,13 +560,19 @@ def skipped_stats(stats: dict) -> dict:
             'oldest': stats['oldest'], 'newest': stats['newest']}
 
 
-def write_status(data_dir: Path, started: str, results: dict, total: int, added: int, names: list[str], queries: set[str], boards: set[str], substitutes: dict[str, str] | None = None):
-    """실행 결과 저장. 이번에 실패해도 이전의 last_success_at은 유지한다."""
+NORMALIZE_LOG = 50  # status.json normalize_removed 에 남기는 최근 삭제 기록 수
+
+
+def write_status(data_dir: Path, started: str, results: dict, total: int, added: int, names: list[str], queries: set[str], boards: set[str],
+                 substitutes: dict[str, str] | None = None, removed: list | None = None):
+    """실행 결과 저장. 이번에 실패해도 이전의 last_success_at은 유지한다.
+    removed: 이번 실행에서 기존 데이터 정규화로 지운 기사. 이전 기록과 합쳐 최근 NORMALIZE_LOG 건(새 것 먼저)을 normalize_removed 에 둔다."""
     path = data_dir / 'status.json'
     try:
-        prev = json.loads(path.read_text(encoding='utf-8')).get('sources', {})
+        prev_all = json.loads(path.read_text(encoding='utf-8'))
     except (FileNotFoundError, ValueError):
-        prev = {}
+        prev_all = {}
+    prev = prev_all.get('sources', {})
     sources, blocked_total = {}, {}
     for name in names:
         r = results.get(name, {})
@@ -594,6 +606,9 @@ def write_status(data_dir: Path, started: str, results: dict, total: int, added:
                            'noted': [n for n, v in sources.items() if not v['ok'] and v.get('note')],
                            'blocked': blocked_total},
               'sources': sources}
+    log = [{**r, 'at': started} for r in (removed or [])] + prev_all.get('normalize_removed', [])
+    if log:
+        status['normalize_removed'] = log[:NORMALIZE_LOG]
     data_dir.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(status, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
 
@@ -654,6 +669,7 @@ def main():
     tfilter = TitleFilter.load(cdir / 'title_filters.json')
     blocked = Blocked.load(cdir / 'blocked_sources.json')
     unmapped: set[str] = set()
+    removed: list = []  # 기존 데이터 정규화로 지운 기사(status.json normalize_removed)
     articles, failed, results = {}, [], {}
     with ThreadPoolExecutor(max_workers=5) as pool:
         futs = {pool.submit(collect_source, s, now_iso, aliases, unmapped, tfilter, blocked, max_age if s[0] in queries else s[4].get('max_age_days')): s[0] for s in sources}
@@ -691,7 +707,7 @@ def main():
         rel = sum(1 for a in articles.values() if a['relevant'])
         logging.info('dry-run: 관련 %d건 / 관련도 낮음 %d건', rel, len(articles) - rel)
     else:
-        added = save(list(articles.values()), Path(args.data_dir), aliases, tfilter)
+        added = save(list(articles.values()), Path(args.data_dir), aliases, tfilter, removed)
         try:  # 같은 사건 묶기·중요도 v2(플래그가 켜진 채널만). 실패해도 수집 결과는 유지
             quality.run(Path(args.data_dir), cdir, datetime.fromisoformat(now_iso))
         except Exception as e:
@@ -699,7 +715,7 @@ def main():
         logging.info('후보 %d건, 신규 저장 %d건', len(articles), added)
     if not args.dry_run:
         names = [r[0] for r in sources] + [b['name'] for b in boards_cfg['boards']]
-        write_status(Path(args.data_dir), now_iso, results, len(articles), added, names, queries, {b['name'] for b in boards_cfg['boards']}, load_substitutes(cdir))
+        write_status(Path(args.data_dir), now_iso, results, len(articles), added, names, queries, {b['name'] for b in boards_cfg['boards']}, load_substitutes(cdir), removed)
         try:
             write_trends(Path(args.data_dir), cdir / 'keywords.json', channel.timezone())
         except Exception as e:  # 집계 실패가 수집을 막지 않는다

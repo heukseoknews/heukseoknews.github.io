@@ -87,21 +87,30 @@ def normalize_article(a: dict, aliases: SourceAliases | None = None) -> dict:
     return a
 
 
-def normalize_shards(data_dir: Path, aliases: SourceAliases | None = None, tfilter: TitleFilter | None = None) -> int:
-    """기존 월 파일의 제목/출처를 현재 규칙으로 다시 정리하고, 정리 결과 같아진 기사는 합친다. 바뀐 파일 수 반환."""
+def normalize_shards(data_dir: Path, aliases: SourceAliases | None = None, tfilter: TitleFilter | None = None,
+                     removed: list | None = None) -> int:
+    """기존 월 파일의 제목/출처를 현재 규칙으로 다시 정리하고, 정리 결과 같아진 기사는 합친다. 바뀐 파일 수 반환.
+    removed: 주면 지운 기사를 {month, id, title, source, reason('junk_title'|'merged'), kept_id(합친 경우)} 로 덧붙인다."""
     changed = 0
+    note = (lambda a, m, reason, **kw: removed.append({'month': m, 'id': a['id'], 'title': a['title'], 'source': a.get('source'), 'reason': reason, **kw})) \
+        if removed is not None else (lambda *a, **kw: None)
     for path in sorted(data_dir.glob('????-??.json')):
         rows = json.loads(path.read_text(encoding='utf-8'))
         before = json.dumps(rows, ensure_ascii=False)
         rows = [normalize_article(a, aliases) for a in rows]
-        if tfilter:
-            rows = [a for a in rows if not tfilter.is_junk(a['title'])]  # 기존 데이터에서도 노이즈 제목 제거
+        if tfilter:  # 기존 데이터에서도 노이즈 제목 제거
+            for a in rows:
+                if tfilter.is_junk(a['title']):
+                    note(a, path.stem, 'junk_title')
+            rows = [a for a in rows if not tfilter.is_junk(a['title'])]
         merged: dict[str, dict] = {}
         for a in rows:  # 정규화로 제목+출처가 같아진 기사는 합친다(직접 링크 우선, 수집시각은 더 이른 쪽 유지)
             k = dedupe_key(a)
             if k in merged:
                 first = min(a['collected_at'], merged[k]['collected_at'])
-                a = prefer(a, merged[k])
+                win = prefer(a, merged[k])
+                note(merged[k] if win is a else a, path.stem, 'merged', kept_id=win['id'])
+                a = win
                 a['collected_at'] = first
             merged[k] = a
         rows = sorted(merged.values(), key=lambda x: x['published_at'], reverse=True)
