@@ -15,6 +15,7 @@ from datetime import datetime
 from pathlib import Path
 
 import cluster
+import datadiff
 import score_v2
 from classify import load as load_classifier
 
@@ -128,9 +129,10 @@ def run(data_dir: Path, config_dir: Path, now: datetime | None = None, all_days:
         summary['check'] = check(rows)
         summary['files_changed'] = 0
         summary['would_change'] = [p.name for p, r in shards.items() if json.dumps(r, ensure_ascii=False, indent=1) + '\n' != before[p]]
+        summary['diff'] = datadiff.compare({p.stem: json.loads(s) for p, s in before.items()}, {p.stem: r for p, r in shards.items()})
     else:
         summary['files_changed'] = _write(shards, before)
-    logging.info('품질 후처리%s: %s', '(dry-run)' if dry_run else '', {k: v for k, v in summary.items() if k != 'check'})
+    logging.info('품질 후처리%s: %s', '(dry-run)' if dry_run else '', {k: v for k, v in summary.items() if k not in ('check', 'diff')})
     return summary
 
 

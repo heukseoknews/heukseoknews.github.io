@@ -64,6 +64,7 @@ try:
     assert len(dups) == 1 and dups[0]['id'] == 'dup1' and dups[0]['keep'][0] == '2026-10' and [x[0] for x in dups[0]['drop']] == ['2026-11']
     s = collect.dedupe_months(d, cfg, dry_run=True)
     assert s['removed'] == 1 and s['counts'] == {'2026-11': (4, 3)} and s['dry_run']
+    assert (s['diff']['copies_removed'], s['diff']['removed'], s['diff']['id_changed']) == (1, 0, 0), s['diff']   # 같은 id 가 10월에 남음
     assert {p.name: p.read_bytes() for p in d.glob('*.json')} == snap, 'dry-run 은 파일을 쓰지 않는다'
     s = collect.dedupe_months(d, cfg, dry_run=False)
     assert [a['id'] for a in rows(d, '2026-11')].count('dup1') == 0 and [a['id'] for a in rows(d, '2026-10')].count('dup1') == 1

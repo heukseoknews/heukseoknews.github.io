@@ -15,12 +15,13 @@ from urllib.parse import parse_qsl, quote, urlencode, urlsplit, urlunsplit
 import feedparser
 import requests
 import channel
+import datadiff
 import dates as feed_dates
 import quality
 from boards import fetch_board
 from classify import UNCATEGORIZED, classify, load as load_classifier
 from entities import company_relevant, sports_team_title, tag_entities
-from normalize import SourceAliases, TitleFilter, dedupe_key, is_google, normalize_shards, prefer, strip_org_suffix
+from normalize import SourceAliases, TitleFilter, dedupe_key, is_google, normalize_article, normalize_shards, prefer, strip_org_suffix
 from trends import write_trends
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s %(message)s')
@@ -361,23 +362,21 @@ def dedupe_months(data_dir: Path, config_dir: Path, dry_run: bool = True) -> dic
     적용하면 지운 뒤 index·trends 를 다시 만들고 품질 후처리(플래그가 켜진 경우)를 돌린다."""
     dups = cross_month_duplicates(data_dir)
     drop = {(m, d['id']) for d in dups for m, _, _ in d['drop']}
-    shards = {p: load_shard(p) for p in sorted(data_dir.glob('????-??.json'))}
+    shards = load_shards(data_dir)
     kept = {p: [a for a in rows if (p.stem, a['id']) not in drop] for p, rows in shards.items()}
-    Q = ('cluster_id', 'cluster_size', 'cluster_sources', 'cluster_lead', 'score_v2')
-    before = {(p.stem, a['id']): {k: a.get(k) for k in Q} for p, rows in kept.items() for a in rows}
-    sim = [dict(a) for rows in kept.values() for a in rows]
-    if any(quality.enabled(config_dir)):
-        quality.compute(sim, config_dir, force=quality.enabled(config_dir))
-    it = iter(sim)
+    Q = datadiff.QUALITY_FIELDS
+    sim = copy_shards(kept)  # 품질 후처리를 사본에서 미리 계산(파일은 건드리지 않음)
+    simulate_quality(sim, config_dir)
     q_changed = []
     for p, rows in kept.items():
-        for a in rows:
-            b = next(it)
-            new = {k: b.get(k) for k in Q}
-            if new != before[(p.stem, a['id'])]:
-                q_changed.append({'month': p.stem, 'id': a['id'], 'title': a['title'], 'before': before[(p.stem, a['id'])], 'after': new})
+        for a, b in zip(rows, sim[p.stem]):
+            old, new = {k: a.get(k) for k in Q}, {k: b.get(k) for k in Q}
+            if new != old:
+                q_changed.append({'month': p.stem, 'id': a['id'], 'title': a['title'], 'before': old, 'after': new})
+    diff = datadiff.compare(by_month(shards), sim)
+    logging.info('--dedupe-months%s: %s', '(dry-run)' if dry_run else '', datadiff.headline(diff))
     summary = {'duplicates': dups, 'removed': len(drop), 'counts': {p.stem: (len(shards[p]), len(kept[p])) for p in shards if len(shards[p]) != len(kept[p])},
-               'quality_changed': q_changed, 'dry_run': dry_run}
+               'quality_changed': q_changed, 'dry_run': dry_run, 'diff': diff}
     if not dry_run and drop:
         for p, rows in kept.items():
             if len(rows) != len(shards[p]):
@@ -400,14 +399,17 @@ def normalize_sources(data_dir: Path, config_dir: Path, dry_run: bool = True) ->
     try:
         if dry_run:
             shutil.copytree(data_dir, work)
-        rd = lambda d: {(p.stem, a['id']): a for p in sorted(d.glob('????-??.json')) for a in load_shard(p)}
-        before = rd(work)
+        flat = lambda m: {(k, a['id']): a for k, rows in m.items() for a in rows}
+        before_m = by_month(load_shards(work))
         changed_files = normalize_shards(work, aliases, tfilter)
         if changed_files:
             reindex(work, config_dir)
             quality.run(work, config_dir)
-        after = rd(work)
-        Q = ('cluster_id', 'cluster_size', 'cluster_sources', 'cluster_lead', 'score_v2')
+        after_m = by_month(load_shards(work))
+        before, after = flat(before_m), flat(after_m)
+        diff = datadiff.compare(before_m, after_m, key=lambda x: dedupe_key(normalize_article(dict(x), aliases)))  # 합쳐진 기사 = id 변경
+        logging.info('--normalize-sources%s: %s', '(dry-run)' if dry_run else '', datadiff.headline(diff))
+        Q = datadiff.QUALITY_FIELDS
         renamed: dict[str, int] = {}
         for k, a in before.items():
             if k in after and after[k]['source'] != a['source']:
@@ -420,18 +422,65 @@ def normalize_sources(data_dir: Path, config_dir: Path, dry_run: bool = True) ->
                 'removed': [{'month': k[0], 'id': k[1], 'title': a['title'], 'source': a['source']} for k, a in before.items() if k not in after],
                 'quality_changed': [{'month': k[0], 'id': k[1], 'title': a['title'][:40], 'before': {q: a.get(q) for q in Q}, 'after': {q: after[k].get(q) for q in Q}}
                                     for k, a in before.items() if k in after and any(a.get(q) != after[k].get(q) for q in Q)],
-                'other_fields_changed': other}
+                'other_fields_changed': other, 'diff': diff}
     finally:
         if dry_run:
             shutil.rmtree(work.parent, ignore_errors=True)
 
 
-def reclassify(data_dir: Path) -> None:
-    """저장된 모든 기사를 현재 categories.json 규칙으로 다시 분류. id·수집시각·발행시각 등은 건드리지 않는다."""
+def load_shards(data_dir: Path) -> dict[Path, list]:
+    return {p: load_shard(p) for p in sorted(data_dir.glob('????-??.json'))}
+
+
+def by_month(shards: dict[Path, list]) -> dict[str, list]:
+    return {p.stem: rows for p, rows in shards.items()}
+
+
+def copy_shards(shards: dict[Path, list]) -> dict[str, list]:
+    """{월: 기사 목록} 깊은 사본(비교·시뮬레이션용)."""
+    return {p.stem: json.loads(json.dumps(rows, ensure_ascii=False)) for p, rows in shards.items()}
+
+
+def simulate_quality(months: dict[str, list], config_dir: Path | None) -> None:
+    """메모리의 기사({월: 목록})에 품질 후처리(묶기·v2, 켜진 것만)를 계산해 쓴다. 파일은 건드리지 않는다."""
+    if config_dir is not None and any(quality.enabled(config_dir)):
+        quality.compute([a for rows in months.values() for a in rows], config_dir, force=quality.enabled(config_dir))
+
+
+def _refresh_index_counts(data_dir: Path) -> None:
+    idx_path = data_dir / 'index.json'
+    if idx_path.exists():  # 마지막 수집 시각(updated_at)은 유지하고 파일 크기·건수만 갱신
+        idx = json.loads(idx_path.read_text(encoding='utf-8'))
+        for m in idx.get('months', []):
+            f = data_dir / f"{m['month']}.json"
+            m['bytes'], m['count'] = f.stat().st_size, len(load_shard(f))
+        idx_path.write_text(json.dumps(idx, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+
+
+def _finish_rewrite(data_dir: Path, config_dir: Path | None, shards: dict[Path, list], before: dict[str, list], dirty: set, dry_run: bool) -> dict:
+    """재분류·재점수 공통 마무리. dry_run: 사본에 품질 후처리까지 계산해 비교만 / 적용: 바뀐 월 파일을 쓰고 index·품질 후처리 후 비교."""
+    if dry_run:
+        after = copy_shards(shards)
+        simulate_quality(after, config_dir)
+    else:
+        for p in dirty:
+            p.write_text(json.dumps(shards[p], ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+        _refresh_index_counts(data_dir)
+        if config_dir is not None:
+            quality.run(data_dir, config_dir)  # 플래그가 꺼져 있으면 아무것도 하지 않음
+        after = by_month(load_shards(data_dir))
+    return datadiff.compare(before, after)
+
+
+def reclassify(data_dir: Path, config_dir: Path | None = None, dry_run: bool = False) -> dict:
+    """저장된 모든 기사를 현재 categories.json 규칙으로 다시 분류. id·수집시각·발행시각 등은 건드리지 않는다.
+    dry_run: 파일을 쓰지 않고 바뀔 결과(품질 후처리 포함, config_dir 이 있으면)만 비교해 돌려준다."""
     total = changed = 0
     counts: dict[str, int] = {}
-    for path in sorted(data_dir.glob('????-??.json')):
-        rows = load_shard(path)
+    shards = load_shards(data_dir)
+    before = copy_shards(shards)
+    dirty_paths: set = set()
+    for path, rows in shards.items():
         dirty = False
         for a in rows:
             if 'relevant' in a:  # 관련도는 수집 때의 판정을 현재 규칙으로 다시 계산
@@ -447,17 +496,12 @@ def reclassify(data_dir: Path) -> None:
             total += 1
             counts[a['category']] = counts.get(a['category'], 0) + 1
         if dirty:
-            path.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    idx_path = data_dir / 'index.json'
-    if idx_path.exists():  # 마지막 수집 시각(updated_at)은 유지하고 파일 크기만 갱신
-        idx = json.loads(idx_path.read_text(encoding='utf-8'))
-        for m in idx.get('months', []):
-            f = data_dir / f"{m['month']}.json"
-            m['bytes'], m['count'] = f.stat().st_size, len(load_shard(f))
-        idx_path.write_text(json.dumps(idx, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    logging.info('재분류: 전체 %d건 중 %d건 변경', total, changed)
+            dirty_paths.add(path)
+    diff = _finish_rewrite(data_dir, config_dir, shards, before, dirty_paths, dry_run)
+    logging.info('재분류%s: 전체 %d건 중 %d건 변경 — %s', '(dry-run, 저장 안 함)' if dry_run else '', total, changed, datadiff.headline(diff))
     for k, v in sorted(counts.items(), key=lambda x: -x[1]):
         logging.info('  %s: %d건 (%.1f%%)', k, v, v / total * 100 if total else 0)
+    return {'dry_run': dry_run, 'total': total, 'changed': changed, 'categories': dict(sorted(counts.items(), key=lambda x: -x[1])), 'diff': diff}
 
 
 def reindex(data_dir: Path, config_dir: Path) -> None:
@@ -471,12 +515,14 @@ def reindex(data_dir: Path, config_dir: Path) -> None:
     logging.info('index·trends 재생성: 월 파일 %d개', len(months))
 
 
-def rescore(data_dir: Path, big: int = 2) -> dict:
+def rescore(data_dir: Path, big: int = 2, config_dir: Path | None = None, dry_run: bool = False) -> dict:
     """저장된 기사의 중요도(★)만 score.json 산식으로 다시 계산한다(분류·태그·id·시각은 그대로).
-    반환: 변경 요약(분포 전후, 변경 건수, 별점이 big 이상 바뀐 기사 목록)."""
+    반환: 변경 요약(분포 전후, 변경 건수, 별점이 big 이상 바뀐 기사 목록, diff). dry_run: 파일을 쓰지 않는다."""
     before, after, changes = {}, {}, []
-    for path in sorted(data_dir.glob('????-??.json')):
-        rows = load_shard(path)
+    shards = load_shards(data_dir)
+    snap = copy_shards(shards)
+    dirty_paths: set = set()
+    for path, rows in shards.items():
         dirty = False
         for a in rows:
             new = load_classifier().final_score(a['title'], a.get('feed_name'), classify(a['title'], a.get('feed_name'))['score'], a.get('source_type')) if a.get('relevant', True) else load_classifier().score(a['title'], UNCATEGORIZED)[0]
@@ -488,10 +534,12 @@ def rescore(data_dir: Path, big: int = 2) -> dict:
                 a['score'] = new
                 dirty = True
         if dirty:
-            path.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
-    summary = {'total': sum(before.values()), 'changed': len(changes), 'before': dict(sorted(before.items())), 'after': dict(sorted(after.items())),
-               'big_changes': [c for c in changes if abs(c['after'] - c['before']) >= big]}
-    logging.info('재점수: 전체 %d건 중 %d건 변경, 분포 %s -> %s', summary['total'], summary['changed'], summary['before'], summary['after'])
+            dirty_paths.add(path)
+    diff = _finish_rewrite(data_dir, config_dir, shards, snap, dirty_paths, dry_run)
+    summary = {'dry_run': dry_run, 'total': sum(before.values()), 'changed': len(changes), 'before': dict(sorted(before.items())), 'after': dict(sorted(after.items())),
+               'big_changes': [c for c in changes if abs(c['after'] - c['before']) >= big], 'diff': diff}
+    logging.info('재점수%s: 전체 %d건 중 %d건 변경, 분포 %s -> %s — %s', '(dry-run, 저장 안 함)' if dry_run else '', summary['total'], summary['changed'],
+                 summary['before'], summary['after'], datadiff.headline(diff))
     return summary
 
 
@@ -562,7 +610,7 @@ def main():
     ap.add_argument('--channel', default=channel.DEFAULT, help='채널 슬러그(설정 channels/<채널>/, 데이터 data/<채널>/)')
     ap.add_argument('--data-dir', default=None, help='기본: data/<채널>')
     ap.add_argument('--config-dir', default=None, help='기본: channels/<채널>')
-    ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--dry-run', action='store_true', help='파일을 쓰지 않음(수집·--reclassify·--rescore·--quality·--dedupe-months·--normalize-sources)')
     ap.add_argument('--backfill', action='store_true', help='게시판을 더 깊이(boards.json backfill_pages) 한 번 읽어 과거 글을 채움')
     ap.add_argument('--reindex', action='store_true', help='네트워크 없이 index.json(월 목록)과 trends.json 만 다시 만듦(월 파일을 옮기거나 지운 뒤)')
     ap.add_argument('--rescore', action='store_true', help='네트워크 없이 저장된 기사의 중요도(★)만 score.json 산식으로 다시 계산')
@@ -590,14 +638,11 @@ def main():
     if args.strip_quality:
         logging.info('품질 필드 제거: %d건', quality.strip_all(Path(args.data_dir)))
         return 0
-    if args.reclassify:
-        reclassify(Path(args.data_dir))
-        quality.run(Path(args.data_dir), cdir)  # 플래그가 꺼져 있으면 아무것도 하지 않음
+    if args.reclassify:  # --dry-run 이면 파일을 쓰지 않고 비교 결과만(품질 후처리 포함)
+        print(json.dumps(reclassify(Path(args.data_dir), cdir, dry_run=args.dry_run), ensure_ascii=False, indent=1))
         return 0
     if args.rescore:
-        summary = rescore(Path(args.data_dir))
-        print(json.dumps(summary, ensure_ascii=False, indent=1))
-        quality.run(Path(args.data_dir), cdir)
+        print(json.dumps(rescore(Path(args.data_dir), config_dir=cdir, dry_run=args.dry_run), ensure_ascii=False, indent=1))
         return 0
     if args.quality:  # --dry-run 이면 계산·검사만 하고 파일은 쓰지 않는다
         print(json.dumps(quality.run(Path(args.data_dir), cdir, all_days=args.quality_all, dry_run=args.dry_run), ensure_ascii=False, indent=1))

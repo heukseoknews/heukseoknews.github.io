@@ -37,6 +37,7 @@ try:
     assert {p.name: p.read_bytes() for p in d.glob('*.json')} == snap, 'dry-run 은 파일을 쓰지 않는다'
     assert s['renamed'] == {':: 위즈경제 :: → 위즈경제': 1}, s['renamed']          # a2 는 a1 과 합쳐져 사라짐(이름 변경으로 세지 않음)
     assert [x['id'] for x in s['removed']] == ['a2'] and s['other_fields_changed'] == []
+    assert (s['diff']['id_changed'], s['diff']['removed']) == (1, 0) and s['diff']['samples']['id_changed'][0]['new_id'] == 'a1'   # 합쳐짐 = id 변경
 
     s2 = collect.normalize_sources(d, cfg, dry_run=False)
     out = {a['id']: a for a in json.loads((d / '2026-11.json').read_text(encoding='utf-8'))}
