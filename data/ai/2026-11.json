@@ -1,5 +1,264 @@
 [
  {
+  "id": "fc1d70bba296bc73",
+  "title": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+  "url": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-14T21:41:22+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "238432e278b3a037",
+  "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+  "url": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-14T17:30:00+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "startup"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "299cfd655b5df2e6",
+  "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+  "url": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-14T16:34:15+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "government",
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "6a2a3c402127f451",
+  "title": "아마존, 전 세계 상품 정보 통합 추진…AI 쇼핑 주도권 지킨다",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217412",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T10:19:23+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "78b440983e2566f2",
+  "title": "\"사람의 움직임, 휴머노이드 로봇에 이식한다\"…엔비디아, 피지컬 AI 동작 변환 기술 오픈소스 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42732",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-14T10:16:46+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "오픈소스",
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "5adb02c844b4a3f7",
+  "title": "미 재무장관, 메가스피드 제재 지연에 상무부 공개 비판…러트닉 경질론까지",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217411",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T09:45:47+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "5016219f68e751b0",
+  "title": "오픈AI, AI 에이전트가 구매·결제하는 ‘챗GPT 월렛’ 공개…실제 카드번호 노출 없이 결제 수행",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42731",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-14T09:43:42+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개"
+  ],
+  "score": 4,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "bb0b6877390a77fb",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "a06fb52f211226ed",
+  "title": "엔비디아 직원들 \"젠슨 황 복귀시켜라\"…사내 게시물에 댓글 1600개",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217410",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T08:56:54+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "b6d70d9cb1195a0f",
+  "title": "머스크, 젠슨 황 퇴진에 영화로 경의…앞서 \"영입하면 영광\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217409",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T08:37:48+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "28b53895184dd3f0",
+  "title": "엔비디아, 차기 CEO로 Arm 하스 접촉설…이사회 \"공식 접촉 아직 없어\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217407",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T08:03:50+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "e486a330beb4dcac",
+  "title": "젠슨 황 투자에 제동 걸었던 CFO가 후임으로…엔비디아 전략 바뀌나",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217406",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T07:49:31+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "161dc4531f103d17",
+  "title": "말레이시아, 메가스피드 AI 칩 재수출 의혹 조사 착수",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217405",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T06:53:09+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "714d52b97ac51156",
   "title": "딥시크·문샷 등 중국 4개사, 수출 통제 '블랙웰' 사용 흔적 발견",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217397",
@@ -18,6 +277,24 @@
   "companies": [
    "DeepSeek"
   ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "3cdf30daa2001cc4",
+  "title": "[기고] AI 시대, ‘검색되는 브랜드’에서 ‘추천되는 브랜드’로",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217392",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-14T02:15:00+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
   "orgs": [],
   "score_v2": 2
  },
@@ -71,7 +348,11 @@
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 4
+  "score_v2": 4,
+  "cluster_id": "bb0b6877390a77fb",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "ee7ebd859a757f23",
@@ -1493,6 +1774,26 @@
   "score_v2": 3
  },
  {
+  "id": "62e3ccb4b37ae4ea",
+  "title": "Meta adds ability for Muse to call companies — Engadget",
+  "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNZVl3UHpQalNuSTI1NVo2bDFmMHotelE5UWZzZEZMZEIzMHRRdW1TeV9McTd4UW9YQm4tdHFjWm5kNjB4OHFaMmNjYWNXX09IUll1M0tyb2hNZXlkaFlOYk1Wdzc3Sy1HWmJCTWR1UnR3ZG5hazZ2Yzlvd09oMWZ4Z2ZNZkJhRENrUFRuOFU2N3VhcTVoaWxJX0F3TUc?oc=5",
+  "source": "UA.NEWS",
+  "source_type": "media",
+  "published_at": "2026-11-13T00:02:06+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "36f1b6a70e8c0a84",
   "title": "[AI리더의 서가] AI 컴플라이언스 실무가이드",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217033",
@@ -1778,6 +2079,26 @@
   "score_v2": 1
  },
  {
+  "id": "c0a1556a6162ed12",
+  "title": "Supported Regions Policy",
+  "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFB6VkJLRkJpUk5KQUJDZGhELWxZRGctaEpzcmdzdXNyam12MGswck56TUM1aGVFWFZQRmtNMUFsRWlsaG1JSmVNNDZoSklTZXdkbno1TWJjUVoyOHpKZVE?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-12T20:20:00+00:00",
+  "collected_at": "2026-11-14T22:45:47.971373+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "policy"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "67672a694e389b29",
   "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
   "url": "https://openai.com/business/customer-stories/amplitude",
@@ -2030,7 +2351,10 @@
    "Hugging Face"
   ],
   "orgs": [],
-  "score_v2": 3
+  "score_v2": 3,
+  "cluster_id": "5f3963726dbe36e6",
+  "cluster_size": 2,
+  "cluster_sources": 2
  },
  {
   "id": "039c74dda2a3b52c",
@@ -7167,7 +7491,11 @@
    "Hugging Face"
   ],
   "orgs": [],
-  "score_v2": 3
+  "score_v2": 3,
+  "cluster_id": "5f3963726dbe36e6",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "37e4452e64c861cf",

@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-14T02:42:39.503692+00:00",
-  "finished_at": "2026-11-14T02:42:42.144484+00:00",
-  "candidates": 311,
-  "added": 17,
+  "started_at": "2026-11-14T22:45:47.971373+00:00",
+  "finished_at": "2026-11-14T22:45:50.484717+00:00",
+  "candidates": 306,
+  "added": 15,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,20 +11,29 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 1387,
-   "kept": 91,
+   "kept": 89,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 0,
+    "low_relevance": 34,
     "junk_title": 1,
-    "too_old": 8
+    "too_old": 10
    },
    "filtered": [
-    "[노이즈 제목] LifeVal"
+    "Shield helps technicians hand off legacy portal work with OpenAI",
+    "How Amplitude ships product improvements in 1–2 days with OpenAI",
+    "Gondola doubles revenue as its team builds more with Codex",
+    "Holiday Extras is rethinking what it can build with Codex",
+    "Gilbert + Tobin rethinks the business of law with AI",
+    "Singapore Airlines elevates travel & work with OpenAI technology",
+    "CodeRabbit scales agentic software development and ships 20x more",
+    "Cult.fit builds operational muscle with Codex",
+    "Merge builds product and business tools with OpenAI technology",
+    "Franklin Templeton uses OpenAI to support investment research"
    ],
    "oldest": "2026-10-09T07:00:00+00:00",
    "newest": "2026-11-13T15:00:00+00:00",
@@ -36,16 +45,16 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 100,
-   "kept": 13,
+   "kept": 12,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 87
+    "too_old": 88
    },
    "filtered": [],
    "oldest": "2025-12-11T00:06:40+00:00",
@@ -58,16 +67,16 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 907,
-   "kept": 31,
+   "kept": 30,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 69
+    "too_old": 70
    },
    "filtered": [],
    "oldest": "2026-06-24T16:00:13+00:00",
@@ -80,8 +89,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -105,17 +114,19 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 11
+    "low_relevance": 12
    },
    "filtered": [
+    "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+    "Asian governments react to Nvidia CEO Jensen Huang’s exit",
     "The unfolding Jensen Huang scandal: a timeline",
     "ElevenLabs’ new app combines meeting note-taking and dictation for teams",
     "Israel’s VCs see opportunity for challengers in Nvidia’s turmoil",
@@ -123,12 +134,10 @@
     "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
     "Muse can now place calls to US businesses — if you pay",
     "Nebius tests the neocloud playbook with $40 billion in planned spending",
-    "Jensen Huang was having a third affair, Reuters reports",
-    "Google’s latest Search upgrade promises better answers to your most complicated questions",
-    "Jensen Huang’s exit puts Nvidia’s support for open source in question"
+    "Jensen Huang was having a third affair, Reuters reports"
    ],
-   "oldest": "2026-11-12T16:36:37+00:00",
-   "newest": "2026-11-13T22:43:00+00:00",
+   "oldest": "2026-11-12T17:17:58+00:00",
+   "newest": "2026-11-14T21:41:22+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -137,8 +146,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -162,8 +171,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -173,19 +182,19 @@
     "low_relevance": 25
    },
    "filtered": [
+    "미 재무장관, 메가스피드 제재 지연에 상무부 공개 비판…러트닉 경질론까지",
+    "엔비디아 직원들 \"젠슨 황 복귀시켜라\"…사내 게시물에 댓글 1600개",
+    "머스크, 젠슨 황 퇴진에 영화로 경의…앞서 \"영입하면 영광\"",
+    "엔비디아, 차기 CEO로 Arm 하스 접촉설…이사회 \"공식 접촉 아직 없어\"",
+    "젠슨 황 투자에 제동 걸었던 CFO가 후임으로…엔비디아 전략 바뀌나",
     "딥시크·문샷 등 중국 4개사, 수출 통제 '블랙웰' 사용 흔적 발견",
     "[내면 지도 그리기] 42 Inner Mapping: 나를 찾는 지도",
     "젠슨 황, 사임 직전 \"나는 쓰레기\"…두 번째 불륜 보도가 결정타",
     "아모데이 \"컴퓨팅 수요 예측이 최대 경영 난제…과잉도 부족도 위험\"",
-    "광양 65세 이상 대상포진 예방접종, 누가 무료로 맞나…접종비 최대 31만원",
-    "미국 최대 규모 폐광 활용 태양광 사업, 1조 규모 1차 금융 조달 완료",
-    "중국 티베트 해발 4300m에 14시간 축열 태양열발전소 첫 연결...\"세계 최고도\"",
-    "2044년 중국 폐태양광서 은 쏟아진다… 연 739톤 정점 전망",
-    "MS, 전 세계 서비스 장애 복구 진전...\"원인은 네트워크 작업 오류\"",
-    "스페이스X·테슬라 합병 협상 진전...이르면 12월 발표"
+    "광양 65세 이상 대상포진 예방접종, 누가 무료로 맞나…접종비 최대 31만원"
    ],
-   "oldest": "2026-11-12T19:47:53+00:00",
-   "newest": "2026-11-14T02:18:31+00:00",
+   "oldest": "2026-11-13T02:25:00+00:00",
+   "newest": "2026-11-14T10:19:23+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -194,8 +203,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -211,8 +220,8 @@
     "IBM, 양자컴퓨터 연산 속도 최대 19배 향상…2027년 1,000큐비트 시대 연다",
     "ETRI, 국가보안기술연구소 신임 소장에 임정석 책임연구원 선임"
    ],
-   "oldest": "2026-11-10T14:45:41+00:00",
-   "newest": "2026-11-13T13:55:14+00:00",
+   "oldest": "2026-11-11T00:01:37+00:00",
+   "newest": "2026-11-14T10:16:46+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -221,24 +230,25 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
-   "entries": 18,
-   "kept": 15,
+   "entries": 17,
+   "kept": 14,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 0,
+    "low_relevance": 1,
     "junk_title": 3
    },
    "filtered": [
     "[노이즈 제목] - Anthropic",
     "[노이즈 제목] - Anthropic",
+    "Case Study - Salesforce",
     "[노이즈 제목] - Anthropic"
    ],
-   "oldest": "2026-11-09T18:59:16+00:00",
-   "newest": "2026-11-14T00:14:16+00:00",
+   "oldest": "2026-11-09T18:56:17+00:00",
+   "newest": "2026-11-14T22:22:00+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -247,8 +257,8 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-14T02:42:39.503692+00:00",
-   "last_success_at": "2026-11-14T02:42:39.503692+00:00",
+   "last_run_at": "2026-11-14T22:45:47.971373+00:00",
+   "last_success_at": "2026-11-14T22:45:47.971373+00:00",
    "consecutive_failures": 0,
    "entries": 3,
    "kept": 3,
@@ -258,10 +268,10 @@
     "low_relevance": 2
    },
    "filtered": [
-    "I landed 4 job offers out of grad school and picked Meta. These 2 tactics helped me land my ideal offer.",
-    "Muse Spark 1.4 leaks in a Meta pull request, already in internal use"
+    "Muse Spark 1.4 leaks in a Meta pull request, already in internal use",
+    "Meta adds ability for Muse to call companies — Engadget"
    ],
-   "oldest": "2026-11-11T06:27:00+00:00",
+   "oldest": "2026-11-13T00:02:06+00:00",
    "newest": "2026-11-13T17:04:24+00:00",
    "at_limit": false,
    "needs_split": false,
