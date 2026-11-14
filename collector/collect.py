@@ -69,6 +69,13 @@ def load_substitutes(config_dir: Path) -> dict[str, str]:
     return {f['name']: f['substitute'] for f in load_json(config_dir / 'feeds.json', {}).get('rss', []) if f.get('substitute')}
 
 
+def split_failed(failed: list[str], substitutes: dict[str, str], results: dict) -> tuple[list[str], list[str]]:
+    """(진짜 실패, 대체 수집 중). 대체 수집 중 = RSS 가 실패했지만 같은 기관 게시판(feeds.json substitute) 수집이 성공한 피드."""
+    board_ok = {r.get('source') for r in results.values() if r.get('ok') and r.get('source')}
+    covered = [n for n in failed if substitutes.get(n) in board_ok]
+    return [n for n in failed if n not in covered], covered
+
+
 class Blocked:
     """blocked_sources.json: 저장하지 않을 출처."""
 
@@ -672,6 +679,7 @@ def main():
     unmapped: set[str] = set()
     removed: list = []  # 기존 데이터 정규화로 지운 기사(status.json normalize_removed)
     articles, failed, results = {}, [], {}
+    subs = load_substitutes(cdir)  # 점검 중이면 게시판이 대신 수집하는 RSS: 실패 로그를 경고가 아닌 정보로
     with ThreadPoolExecutor(max_workers=5) as pool:
         futs = {pool.submit(collect_source, s, now_iso, aliases, unmapped, tfilter, blocked, max_age if s[0] in queries else s[4].get('max_age_days')): s[0] for s in sources}
         for f in as_completed(futs):
@@ -684,7 +692,10 @@ def main():
             except Exception as e:
                 failed.append(name)
                 results[name] = {'ok': False, 'error': safe_error(e)}
-                logging.warning('%s 실패: %s', name, str(e)[:180])
+                if name in subs:
+                    logging.info('%s 실패(게시판 %s 로 대체 수집 예정): %s', name, subs[name], str(e)[:120])
+                else:
+                    logging.warning('%s 실패: %s', name, str(e)[:180])
     for i, spec in enumerate(boards_cfg['boards']):  # 게시판은 같은 사이트에 순서대로(요청 간격 유지)
         name = spec['name']
         if i:
@@ -716,12 +727,18 @@ def main():
         logging.info('후보 %d건, 신규 저장 %d건', len(articles), added)
     if not args.dry_run:
         names = [r[0] for r in sources] + [b['name'] for b in boards_cfg['boards']]
-        write_status(Path(args.data_dir), now_iso, results, len(articles), added, names, queries, {b['name'] for b in boards_cfg['boards']}, load_substitutes(cdir), removed)
+        write_status(Path(args.data_dir), now_iso, results, len(articles), added, names, queries, {b['name'] for b in boards_cfg['boards']}, subs, removed)
         try:
             write_trends(Path(args.data_dir), cdir / 'keywords.json', channel.timezone())
         except Exception as e:  # 집계 실패가 수집을 막지 않는다
             logging.warning('trends 집계 실패: %s', e)
-    logging.info('실패 피드: %s', ', '.join(failed) or '없음')
+    real, covered = split_failed(failed, subs, results)
+    logging.info('실패 피드: %s', ', '.join(real) or '없음')
+    if covered:
+        logging.info('점검 중(게시판으로 대체 수집): %s', ', '.join(covered))
+    for n in failed:
+        if n in subs and n not in covered:  # 대체할 게시판도 실패하면 경고
+            logging.warning('%s 실패, 대체 게시판(%s)도 수집하지 못함', n, subs[n])
     return 0  # 부분 실패는 워크플로를 실패시키지 않음
 
 

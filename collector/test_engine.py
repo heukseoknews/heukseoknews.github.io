@@ -206,4 +206,12 @@ assert st['future_clamped'] == 2 and st['newest'] == '2026-11-11T12:08:00+00:00'
 # 게시판(날짜만, 09:00 KST 관례)과 저장된 data 는 보정하지 않는다: make_article·reclassify 는 받은 시각 그대로
 assert collect.make_article('금융위, 실손보험 개선', 'https://x/b', '금융위원회', 'press', '2026-11-12T00:00:00+00:00', NOW, '금융위원회 게시판')['published_at'] == '2026-11-12T00:00:00+00:00'
 channel.use('insurance'); collect.ALWAYS_RELEVANT.clear()
+
+# 12) RSS 실패를 같은 기관 게시판이 대체하면 '대체 수집 중'(경고 아님), 게시판도 실패하면 진짜 실패
+res = {'금융위원회 RSS': {'ok': False}, '금융위원회 게시판': {'ok': True, 'source': '금융위원회'}, '보험매일': {'ok': False}}
+assert collect.split_failed(['금융위원회 RSS', '보험매일'], {'금융위원회 RSS': '금융위원회'}, res) == (['보험매일'], ['금융위원회 RSS'])
+res['금융위원회 게시판']['ok'] = False
+assert collect.split_failed(['금융위원회 RSS'], {'금융위원회 RSS': '금융위원회'}, res) == (['금융위원회 RSS'], [])
+assert collect.load_substitutes(channel.config_path('insurance')) == {'금융위원회 RSS': '금융위원회'}
+
 print('engine tests (ai) passed')
