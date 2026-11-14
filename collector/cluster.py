@@ -254,20 +254,22 @@ def _is_google(a: dict) -> bool:
     return urlsplit(a.get('url', '')).netloc.endswith('news.google.com')
 
 
-def lead_key(a: dict):
-    """대표 기사 우선순위: 공식 발표(press) > 관련 있음 > 높은 ★(score_v2, 없으면 score) > 직접 링크 > 먼저 발행 > id."""
-    return (a.get('source_type') == 'press', a.get('relevant', True), a.get('score_v2', a.get('score', 0)), not _is_google(a), -ts(a), a['id'])
+def lead_key(a: dict, low=None):
+    """대표 기사 우선순위: 공식 발표(press) > 관련 있음 > 낮은 가치 아님(low: 제목 판정 함수, score.json v2 low_value) > 높은 ★(score_v2, 없으면 score)
+    > 직접 링크 > 먼저 발행 > id. 시황·포토·사회공헌 같은 기사가 같은 사건 묶음의 대표 제목이 되지 않게 한다."""
+    return (a.get('source_type') == 'press', a.get('relevant', True), not (low(a) if low else False),
+            a.get('score_v2', a.get('score', 0)), not _is_google(a), -ts(a), a['id'])
 
 
-def mark_leads(rows: list[dict]) -> int:
-    """묶음마다 대표 1건에 cluster_lead=true, 나머지는 필드 제거. 반환: 대표 수."""
+def mark_leads(rows: list[dict], low=None) -> int:
+    """묶음마다 대표 1건에 cluster_lead=true, 나머지는 필드 제거. low: 낮은 가치 판정(기사 → bool, 없으면 쓰지 않음). 반환: 대표 수."""
     by: dict[str, list[dict]] = defaultdict(list)
     for a in rows:
         a.pop('cluster_lead', None)
         if a.get('cluster_id'):
             by[a['cluster_id']].append(a)
     for ms in by.values():
-        max(ms, key=lead_key)['cluster_lead'] = True
+        max(ms, key=lambda a: lead_key(a, low))['cluster_lead'] = True
     return len(by)
 
 

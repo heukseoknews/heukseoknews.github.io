@@ -11,6 +11,7 @@
 ★ = star_thresholds 로 raw 를 1~5로 바꾼 뒤, 보도 매체 수 가산(coverage_points)과 상한(시장 속보·금리·제목 패턴·낮은 가치)을 적용.
 관련도 낮은 기사(relevant=false)는 irrelevant_points 감점, ★ irrelevant_max_stars 상한, 보도 규모 가산 없음. 관련 기사는 최저 relevant_min_stars(기본 2).
 같은 사건 묶음이 있으면 묶음 안의 관련 기사는 모두 같은 사건 점수(관련 구성원 ★의 event_quantile 분위수, 기본 0.75)를 받는다(event_level, 기본 true).
+낮은 가치 제목(low_value)인 구성원은 사건 점수 계산에서 빠지고 제 점수를 유지한다(묶음 대표에서도 뒤로, cluster.lead_key).
 
 기존 score(★)·분류 결과는 바꾸지 않는다. 결과는 선택 필드 score_v2 로만 저장한다(docs/data-contract.md).
 """
@@ -134,22 +135,28 @@ class ScoreV2:
             if a.get('cluster_id'):
                 members.setdefault(a['cluster_id'], []).append(a)
         low_c = {cid: sum(self.low_value(x['title']) for x in ms) >= self.low_share * len(ms) for cid, ms in members.items()}
+        low_t = {a['id']: self.low_value(a['title']) for a in rows if a.get('cluster_id')}
         per = {}
         for a in rows:
             cid = a.get('cluster_id')
-            per[a['id']] = self.article_stars(a, a.get('cluster_sources', 1), low_c.get(cid) if cid else None)
+            # 묶음 기사: 묶음이 낮은 가치이거나 제목 자체가 낮은 가치면 낮은 가치(★ 상한·보도 규모 가산 없음)
+            per[a['id']] = self.article_stars(a, a.get('cluster_sources', 1), (low_c[cid] or low_t[a['id']]) if cid else None)
         if self.event_level:
             vals: dict[str, list[int]] = {}
+            vals_all: dict[str, list[int]] = {}
             for a in rows:
                 cid = a.get('cluster_id')
                 if cid and a.get('relevant', True):
-                    vals.setdefault(cid, []).append(per[a['id']][0])
+                    vals_all.setdefault(cid, []).append(per[a['id']][0])
+                    if not low_t[a['id']]:  # 낮은 가치 제목(시황·포토·사회공헌 등)은 사건 점수 계산에서 뺀다
+                        vals.setdefault(cid, []).append(per[a['id']][0])
             # 분위수: 오름차순 정렬 후 ceil(q·n)번째. 2~3건 묶음은 사실상 최고값, 큰 묶음은 키워드가 많은 제목 하나에 끌려가지 않는다
-            best = {cid: sorted(v)[max(0, math.ceil(self.event_quantile * len(v)) - 1)] for cid, v in vals.items()}
+            # 구성원이 모두 낮은 가치면 전체로 계산(어차피 낮은 가치 상한을 받는다)
+            best = {cid: sorted(v)[max(0, math.ceil(self.event_quantile * len(v)) - 1)] for cid, v in ((c, vals.get(c) or va) for c, va in vals_all.items())}
         dist: dict[int, int] = {}
         for a in rows:
             s = per[a['id']][0]
-            if self.event_level and a.get('cluster_id') and a.get('relevant', True):
+            if self.event_level and a.get('cluster_id') and a.get('relevant', True) and not low_t[a['id']]:  # 낮은 가치 기사는 제 점수 유지
                 s = best[a['cluster_id']]
             a['score_v2'] = s
             dist[s] = dist.get(s, 0) + 1

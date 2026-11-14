@@ -139,6 +139,11 @@ assert [a['id'] for a in r6 if a.get('cluster_lead')] == ['a001'], '직접 링�
 r6[2]['score'] = 3
 cluster.mark_leads(r6)
 assert [a['id'] for a in r6 if a.get('cluster_lead')] == ['a003'], '점수가 높으면 우선'
+r6[2]['title'] = '[13일 마감시황] Meta 주가 급등'
+cluster.mark_leads(r6, low=lambda a: '마감시황' in a['title'])
+assert [a['id'] for a in r6 if a.get('cluster_lead')] == ['a001'], '낮은 가치 제목(시황 등)은 점수가 높아도 대표에서 뒤로'
+cluster.mark_leads(r6)
+assert [a['id'] for a in r6 if a.get('cluster_lead')] == ['a003'], '판정 함수가 없으면 이전과 같다'
 
 # 8) 되돌리기
 assert cluster.strip(r6) == 3 and not any(k in a for a in r6 for k in cluster.FIELDS)

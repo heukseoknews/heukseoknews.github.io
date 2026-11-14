@@ -119,6 +119,7 @@ raw = base(1)
 - 플래그: `channels/<채널>/cluster.json` `enabled`, `channels/<채널>/score.json` `v2.enabled`. 2026-11-12 부터 두 채널 모두 **true**(12장).
 - 꺼져 있으면 `collector/quality.py` 는 파일을 읽지도 쓰지도 않는다. 보험 동등성(`scripts/audit/equivalence_collector.py`, 품질 플래그를 끈 설정 사본으로 실행) 차이 **0건** 확인(KDB생명 수정 전 기준).
 - 켜면: 매 수집의 `save` 직후 같은 사건 묶기 → v2 점수 → 대표 선택을 하고 바뀐 월 파일만 다시 쓴다. 실패해도 수집 결과는 유지(경고 로그). `--reclassify`·`--rescore` 뒤에도 같이 돈다.
+- 낮은 가치 제목(score.json v2 `low_value`: 시황·포토·사회공헌 등)은 묶음 대표에서 뒤로 밀리고(`cluster.lead_key`), 사건 점수 계산에서 빠지며 제 점수(★2 상한)를 유지한다(2026-11-14). 보험 dry-run: 대표 42건(21묶음) 교체, score_v2 22건 하락, 삭제·id 변경 0.
 - 처음 켤 때 과거분: `python collector/collect.py --channel <채널> --quality --quality-all`(저장된 전체 기간). `--dry-run` 을 붙이면 파일을 쓰지 않고 요약·일관성 검사만 출력한다.
 - 되돌리기: 플래그를 `false` 로 바꾸고 `python collector/collect.py --channel <채널> --strip-quality` → 다섯 필드만 지워져 월 파일·index.json 이 추가 전과 같은 바이트가 된다(테스트 `test_quality.py`, 실데이터 사본 시험). 화면은 필드가 없으면 기본값으로 동작한다. 절차는 [ops-notes.md](ops-notes.md).
 - 권장 순서: AI 채널 먼저(기사 적고 하루 3회 수집이라 확인이 빠름) → 1주 관찰 → 보험.

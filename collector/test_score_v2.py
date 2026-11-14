@@ -98,6 +98,18 @@ sv.category_points['은행'] = -1.0
 assert sv.raw({'title': '국민은행 소식', 'category': '은행', 'source_type': 'media'})[0] == 0.5
 assert f('국민은행 소식') == 2                # 관련 기사는 최저 ★2(★1 은 관련도 낮은 기사만)
 
+# 같은 사건 묶음: 낮은 가치 제목은 사건 점수 계산에서 빠지고 제 점수 유지(큰 묶음의 시황·이벤트 기사가 ★를 끌어올리거나 받지 않게)
+mk = lambda i, t: {'id': i, 'title': t, 'source': i, 'source_type': 'media', 'relevant': True, 'cluster_id': 'c', 'cluster_sources': 1,
+                   'category': classify.Classifier(cfg, {}).classify(t)['category']}
+grp = [mk('g1', '한은, 기준금리 동결'), mk('g2', '국민은행 소식'), mk('g3', '국민은행 소식 둘'), mk('g4', '국민은행 금리 이벤트')]
+sv.apply(grp)
+got = {a['id']: a['score_v2'] for a in grp}
+assert got['g4'] == 2, got                                         # 낮은 가치: 사건 점수를 받지 않음
+assert got['g1'] == got['g2'] == got['g3'], got                    # 나머지는 같은 사건 점수
+alllow = [mk('h1', '적금 이벤트'), mk('h2', '금리 이벤트')]
+sv.apply(alllow)
+assert {a['score_v2'] for a in alllow} == {2}                      # 모두 낮은 가치여도 동작
+
 # 되돌리기
 rows = [{'id': 'a', 'score_v2': 3}, {'id': 'b'}]
 assert score_v2.strip(rows) == 1 and 'score_v2' not in rows[0]

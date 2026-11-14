@@ -51,10 +51,12 @@ def compute(rows: list[dict], config_dir: Path, now: datetime | None = None, for
     out: dict = {}
     if use_c:
         out['cluster'] = cluster.assign(rows, ccfg, now)
+    sv = score_v2.ScoreV2(load_classifier(), vcfg) if (use_v or use_c) else None
     if use_v:
-        out['score_v2'] = score_v2.ScoreV2(load_classifier(), vcfg).apply(rows)
-    if use_c:
-        out['leads'] = cluster.mark_leads(rows)
+        out['score_v2'] = sv.apply(rows)
+    if use_c:  # 낮은 가치 제목(score.json v2 low_value: 시황·포토·사회공헌 등)은 대표에서 뒤로
+        low = (lambda a: sv.low_value(a['title'])) if (sv.low_terms or sv.low_res) else None
+        out['leads'] = cluster.mark_leads(rows, low)
     return out
 
 
