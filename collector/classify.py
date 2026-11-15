@@ -120,7 +120,8 @@ class Classifier:
         for r in hr.get('rules', []):
             # terms 는 띄어쓰기를 지키는 부분일치(소문자): 짧은 한글 낱말이 띄어쓰기를 지운 제목에서 우연히 맞는 것('삼성 금융'의 '성금', '3분기 부진'의 '기부')을 막는다
             rule = {'name': r['name'], 'cats': set(r.get('categories', [])), 'terms': [t.casefold() for t in r.get('terms', [])],
-                    'res': [re.compile(p) for p in r.get('patterns', [])], 'unless_ins': bool(r.get('unless_insurance_terms'))}
+                    'res': [re.compile(p) for p in r.get('patterns', [])], 'unless_ins': bool(r.get('unless_insurance_terms')),
+                    'unless_company': bool(r.get('unless_company'))}
             if not (rule['cats'] or rule['terms'] or rule['res']):
                 raise ValueError(f"hide_rules '{r['name']}': categories·terms·patterns 중 하나는 있어야 합니다")
             self.hide_rules.append(rule)
@@ -146,8 +147,9 @@ class Classifier:
         text, sq = title.casefold(), _squash(title)
         return self._any(self.press_inc, text, sq) and not self._any(self.press_inc_unless, text, sq)
 
-    def hide_rule(self, title: str, category: str) -> str | None:
-        """숨김 규칙에 걸리면 규칙 이름, 아니면 None. category 는 분류기 판단(미분류로 바꾸기 전)."""
+    def hide_rule(self, title: str, category: str, company: bool = False) -> str | None:
+        """숨김 규칙에 걸리면 규칙 이름, 아니면 None. category 는 분류기 판단(미분류로 바꾸기 전).
+        company: 제목에 companies.json 의 회사(보험사·재보험사 등)가 나오는지(unless_company 규칙은 이때 숨기지 않음)."""
         if not self.hide_rules:
             return None
         text, sq = title.casefold(), _squash(title)
@@ -158,7 +160,7 @@ class Classifier:
                 continue
             if (r['terms'] or r['res']) and not (any(t in text for t in r['terms']) or any(p.search(title) for p in r['res'])):
                 continue
-            if r['unless_ins'] and self._any(self.insurance_terms, text, sq):
+            if (r['unless_ins'] and self._any(self.insurance_terms, text, sq)) or (r['unless_company'] and company):
                 continue
             return r['name']
         return None

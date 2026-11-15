@@ -131,6 +131,11 @@ def sports_team_title(title: str) -> bool:
     return not any(m.find(rest, rest) >= 0 for m in biz)
 
 
+def has_company(title: str) -> bool:
+    """제목에 companies.json 의 회사(보험사·재보험사 등)가 나오는지(스포츠 맥락 여부와 무관)."""
+    return bool(load()[0].match(title))
+
+
 def company_relevant(title: str) -> bool:
     """제목에 보험사가 나오면 '보험' 단어가 없어도 관련 기사로 본다(companies.json relevance). 스포츠·연예 맥락이면 아니다."""
     if not _relevance_cfg().get('company_mention_is_relevant'):

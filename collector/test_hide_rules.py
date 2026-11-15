@@ -41,6 +41,10 @@ assert hide.hide_rule('증시 급락에 보험주 약세', '시장') is None    
 assert hide.hide_rule('증시 급락에 삼성화재 약세', '시장') is None                # 보험사 이름(insurance_company_categories)
 assert hide.hide_rule('증시 급락', '손해보험') is None                            # 다른 카테고리
 assert hide.hide_rule('봉사단체 후원금 횡령에 과징금', '손해보험') is None         # 보호어
+co = mk(hide_rules={'rules': [{'name': '시장 일반', 'categories': ['시장'], 'unless_insurance_terms': True, 'unless_company': True}]})
+assert co.hide_rule('코리안리 3분기 영업이익 급감…환율 영향', '시장') == '시장 일반'                 # 회사 정보를 안 주면 숨김
+assert co.hide_rule('코리안리 3분기 영업이익 급감…환율 영향', '시장', company=True) is None      # 재보험사 등 회사 이름(companies.json)
+assert hide.hide_rule('삼성화재 김장 봉사', '손해보험', company=True) == '사회공헌'                 # unless_company 없는 규칙은 그대로
 try:
     mk(hide_rules={'rules': [{'name': '빈 규칙'}]}); raise AssertionError('빈 규칙을 받아들임')
 except ValueError:
