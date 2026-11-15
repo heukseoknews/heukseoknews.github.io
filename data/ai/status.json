@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-15T09:57:34.310954+00:00",
-  "finished_at": "2026-11-15T09:57:37.059281+00:00",
-  "candidates": 302,
-  "added": 25,
+  "started_at": "2026-11-15T17:25:10.774777+00:00",
+  "finished_at": "2026-11-15T17:25:13.028192+00:00",
+  "candidates": 301,
+  "added": 1,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 1387,
    "kept": 85,
@@ -45,8 +45,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 12,
@@ -67,8 +67,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 907,
    "kept": 29,
@@ -89,8 +89,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -114,8 +114,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -146,8 +146,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -171,8 +171,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -193,8 +193,8 @@
     "MS, 전 세계 서비스 장애 완전 복구…팩스 부활에 밈까지 등장",
     "엔비디아 투자자들 \"젠슨 황 복귀 검토해야\"…머스크 등 거물 가세"
    ],
-   "oldest": "2026-11-13T07:18:35+00:00",
-   "newest": "2026-11-15T09:52:53+00:00",
+   "oldest": "2026-11-13T07:34:23+00:00",
+   "newest": "2026-11-15T09:59:15+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -203,8 +203,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -230,25 +230,24 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
-   "entries": 18,
-   "kept": 15,
+   "entries": 17,
+   "kept": 14,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 1,
+    "low_relevance": 0,
     "junk_title": 3
    },
    "filtered": [
     "[노이즈 제목] - Anthropic",
     "[노이즈 제목] - Anthropic",
-    "Case Study - Salesforce",
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-09T18:56:17+00:00",
-   "newest": "2026-11-15T06:30:28+00:00",
+   "newest": "2026-11-15T12:30:14+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -257,8 +256,8 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-15T09:57:34.310954+00:00",
-   "last_success_at": "2026-11-15T09:57:34.310954+00:00",
+   "last_run_at": "2026-11-15T17:25:10.774777+00:00",
+   "last_success_at": "2026-11-15T17:25:10.774777+00:00",
    "consecutive_failures": 0,
    "entries": 3,
    "kept": 3,
