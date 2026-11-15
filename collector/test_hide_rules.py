@@ -26,7 +26,12 @@ hide = mk(hide_rules={
         {'name': '시장 일반', 'categories': ['시장'], 'unless_insurance_terms': True},
     ]})
 assert hide.hide_rule('삼성화재, 김장 봉사 활동', '손해보험') == '사회공헌'
-assert hide.hide_rule('삼성화재 캠페인 동참', '손해보험') == '사회공헌'           # 띄어쓰기 무시 부분일치
+assert hide.hide_rule('삼성화재 캠페인 동참', '손해보험') == '사회공헌'
+assert hide.hide_rule('삼성화재 캠페인동참', '손해보험') is None                 # terms 는 띄어쓰기를 지킨다
+hide2 = mk(hide_rules={'rules': [{'name': '사회공헌', 'terms': ['성금', '기부', '일손', '김장']}]})
+for t in ['삼성화재, 英 특수보험사 품었다…삼성 금융 첫 해외 M&A', '보험사 3분기 부진', '[11일 손해보험 마감시황]', '김 장관, 보험업계 간담회']:
+    assert hide2.hide_rule(t, '손해보험') is None, t                              # 띄어쓰기를 지우면 우연히 맞는 사례
+assert hide2.hide_rule('농협생명, 농촌일손돕기', '손해보험') == '사회공헌'           # 낱말 안 일치는 그대로
 assert hide.hide_rule('삼성화재 캠페인 출범', '손해보험') is None                # '동참' 없는 캠페인은 숨기지 않음
 assert hide.hide_rule('삼성화재 주가 7,000원 하락 후 장마감', '손해보험') == '주가 단신'
 assert hide.hide_rule('삼성화재 주가 상승 중', '손해보험') == '주가 단신'

@@ -113,12 +113,13 @@ class Classifier:
         self.down_max = dp.get('max_score', self.max_score)
         self.down_step = int(dp.get('step', 0))
         self.down_hide = bool(dp.get('hide', True))
-        # 숨김 규칙: 관련 기사 중 확실한 잡음(사회공헌·사진·주가 단신, 보험과 무관한 시장 기사)을 관련도 낮음으로. protect_terms 가 제목에 있으면 숨기지 않는다
+        # 숨김 규칙: 관련 기사 중 확실한 잡음(사회공헌·사진·주가 단신, 보험과 무관한 시장 기사)을 관련도 낮음으로. protect_terms(띄어쓰기 무시)가 제목에 있으면 숨기지 않는다
         hr = cfg.get('hide_rules', {})
         self.hide_protect = m(hr.get('protect_terms', []))
         self.hide_rules = []
         for r in hr.get('rules', []):
-            rule = {'name': r['name'], 'cats': set(r.get('categories', [])), 'terms': m(r.get('terms', [])),
+            # terms 는 띄어쓰기를 지키는 부분일치(소문자): 짧은 한글 낱말이 띄어쓰기를 지운 제목에서 우연히 맞는 것('삼성 금융'의 '성금', '3분기 부진'의 '기부')을 막는다
+            rule = {'name': r['name'], 'cats': set(r.get('categories', [])), 'terms': [t.casefold() for t in r.get('terms', [])],
                     'res': [re.compile(p) for p in r.get('patterns', [])], 'unless_ins': bool(r.get('unless_insurance_terms'))}
             if not (rule['cats'] or rule['terms'] or rule['res']):
                 raise ValueError(f"hide_rules '{r['name']}': categories·terms·patterns 중 하나는 있어야 합니다")
@@ -155,7 +156,7 @@ class Classifier:
         for r in self.hide_rules:
             if r['cats'] and category not in r['cats']:
                 continue
-            if (r['terms'] or r['res']) and not (self._any(r['terms'], text, sq) or any(p.search(title) for p in r['res'])):
+            if (r['terms'] or r['res']) and not (any(t in text for t in r['terms']) or any(p.search(title) for p in r['res'])):
                 continue
             if r['unless_ins'] and self._any(self.insurance_terms, text, sq):
                 continue
