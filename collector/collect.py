@@ -164,18 +164,24 @@ def load_always_relevant(config_dir: Path) -> set[str]:
 def judge(title: str, kind: str, name: str | None, dept: str | None = None) -> tuple[bool, dict]:
     """(관련도, 분류 결과). 관련도 낮은 기사는 버리지 않고 relevant=False·미분류로 저장한다."""
     c = classify(title, name)
+    cl = load_classifier()
     rel = bool(c['relevant'])
-    if kind == 'press' and not load_classifier().press_ok(title):  # 공식 발표 글의 관련도 조건(categories.json press_relevance_keywords)
+    if kind == 'press' and not cl.press_ok(title):  # 공식 발표 글의 관련도 조건(categories.json press_relevance_keywords)
         rel = False
+    if kind == 'press' and cl.press_include(title):  # 금융회사 일반 규제어가 있는 공식 발표(categories.json press_include)
+        rel = True
     if rel and sports_team_title(title):  # 보험사와 이름이 같은 구단·연예 기사는 관련 없음(보험 사업 단서가 있으면 유지)
         rel = False
-    if dept and dept in RELEVANT_DEPTS:
+    dept_rel = bool(dept and dept in RELEVANT_DEPTS)
+    if dept_rel:
         rel = True
     if not rel and company_relevant(title):  # 보험사가 제목에 나오면 '보험' 단어가 없어도 관련(스포츠 구단 기사 등 제외)
         rel = True
+    if rel and not dept_rel and cl.hide_rule(title, c['category']):  # 확실한 잡음(categories.json hide_rules)은 관련도 낮음
+        rel = False
     if name in ALWAYS_RELEVANT:  # 공식 AI 블로그 등 피드 자체가 주제인 소스(feeds.json always_relevant)
-        # 단 제목 하향 패턴(고객 도입 사례 등, categories.json downgrade_patterns)에 걸리면 키워드가 있어도 관련도 낮음
-        rel = not load_classifier().downgraded(title, name)
+        # 단 제목 하향 패턴(고객 도입 사례 등, categories.json downgrade_patterns)에 걸리면 hide 설정에 따라 관련도 낮음
+        rel = not (cl.down_hide and cl.downgraded(title, name))
     if not rel:
         c = {**c, 'category': UNCATEGORIZED, 'sub_categories': [], 'score': load_classifier().score(title, UNCATEGORIZED)[0]}
     else:

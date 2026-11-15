@@ -107,9 +107,14 @@ class ScoreV2:
                 cap = min(cap, cl.market_max)
             if cl._any(cl.low, text, sq):
                 cap = min(cap, cl.low_max)
-            if cl.downgraded(title, a.get('feed_name')):
+            if cl.downgraded(title, a.get('feed_name')) and not cl.down_step:  # step 이면 상한 대신 한 단계 낮춤(down_step_of)
                 cap = min(cap, cl.down_max)
         return cap
+
+    def down_step_of(self, a: dict) -> int:
+        """제목 패턴 하향을 한 단계 낮춤(downgrade_patterns.step)으로 쓰는 채널에서, 이 기사에 적용할 감소폭(없으면 0)."""
+        cl = self.cl
+        return cl.down_step if self.use_caps and cl.down_step and cl.downgraded(a['title'], a.get('feed_name')) else 0
 
     def stars_of(self, raw: float) -> int:
         return 1 + bisect_right(self.thresholds, raw)
@@ -123,7 +128,7 @@ class ScoreV2:
             r += (self.low_points if low else -self.low_points)
             why = {**why, 'low': low}
         rel = a.get('relevant', True)
-        s = self.stars_of(r) + (0 if why['low'] or not rel else self.coverage_add(sources))
+        s = self.stars_of(r) + (0 if why['low'] or not rel else self.coverage_add(sources)) - (self.down_step_of(a) if rel else 0)
         cap = self.caps(a, why['low']) if rel else self.irrelevant_max  # 관련도 낮은 기사: 감점 + ★ 상한
         return max(self.relevant_min if rel else 1, min(5, s, cap)), r, why
 
@@ -157,7 +162,7 @@ class ScoreV2:
         for a in rows:
             s = per[a['id']][0]
             if self.event_level and a.get('cluster_id') and a.get('relevant', True) and not low_t[a['id']]:  # 낮은 가치 기사는 제 점수 유지
-                s = best[a['cluster_id']]
+                s = max(self.relevant_min, best[a['cluster_id']] - self.down_step_of(a))  # 하향 제목은 사건 점수에서도 한 단계 낮춤
             a['score_v2'] = s
             dist[s] = dist.get(s, 0) + 1
         return dict(sorted(dist.items()))

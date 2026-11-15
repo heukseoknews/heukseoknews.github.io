@@ -101,12 +101,28 @@ class Classifier:
         # 공식 발표(press) 기사의 관련도 조건: 제목에 이 낱말 중 하나가 없으면 관련도 낮음. 키가 없으면 조건 없음
         pk = cfg.get('press_relevance_keywords')
         self.press_re = re.compile('|'.join(map(re.escape, pk)), re.I) if pk else None
+        # 공식 발표 포함 조건: 제목에 keywords 중 하나가 있고 unless 가 없으면 관련 키워드·press_relevance_keywords 가 없어도 관련. 키가 없으면 쓰지 않음
+        pi = cfg.get('press_include', {})
+        self.press_inc, self.press_inc_unless = m(pi.get('keywords', [])), m(pi.get('unless', []))
         self.hints = cfg.get('feed_hints', {})
-        # 제목 패턴 하향(예: 고객 도입 사례): 정규식이 제목(소문자)에 맞으면 미분류 + ★ max_score 상한. feeds 를 주면 그 피드에만 적용
+        # 제목 패턴 하향(예: 고객 도입 사례): 정규식이 제목(소문자)에 맞으면 미분류 + ★ 낮춤. feeds 를 주면 그 피드에만 적용
+        # step 이 있으면 ★를 그만큼만 낮추고(관련 기사 최저 ★ 유지), 없으면 max_score 상한. hide=false 면 항상 관련 피드에서도 숨기지 않는다
         dp = cfg.get('downgrade_patterns', {})
         self.down_res = [re.compile(p) for p in dp.get('patterns', [])]
         self.down_feeds = set(dp.get('feeds', []))
         self.down_max = dp.get('max_score', self.max_score)
+        self.down_step = int(dp.get('step', 0))
+        self.down_hide = bool(dp.get('hide', True))
+        # 숨김 규칙: 관련 기사 중 확실한 잡음(사회공헌·사진·주가 단신, 보험과 무관한 시장 기사)을 관련도 낮음으로. protect_terms 가 제목에 있으면 숨기지 않는다
+        hr = cfg.get('hide_rules', {})
+        self.hide_protect = m(hr.get('protect_terms', []))
+        self.hide_rules = []
+        for r in hr.get('rules', []):
+            rule = {'name': r['name'], 'cats': set(r.get('categories', [])), 'terms': m(r.get('terms', [])),
+                    'res': [re.compile(p) for p in r.get('patterns', [])], 'unless_ins': bool(r.get('unless_insurance_terms'))}
+            if not (rule['cats'] or rule['terms'] or rule['res']):
+                raise ValueError(f"hide_rules '{r['name']}': categories·terms·patterns 중 하나는 있어야 합니다")
+            self.hide_rules.append(rule)
 
     def downgraded(self, title: str, feed_name: str | None = None) -> bool:
         if not self.down_res or (self.down_feeds and feed_name not in self.down_feeds):
@@ -119,9 +135,32 @@ class Classifier:
         return min(self.max_score, score + b) if b else score
 
     def final_score(self, title: str, feed_name: str | None, score: int, source_type: str | None) -> int:
-        """관련 기사의 최종 ★: 출처 유형 가산 후, 제목 패턴 하향이면 상한. 두 설정이 없으면 score 그대로(보험 채널)."""
+        """관련 기사의 최종 ★: 출처 유형 가산 후, 제목 패턴 하향이면 한 단계(step) 낮추거나 상한. 두 설정이 없으면 score 그대로(보험 채널)."""
         s = self.source_bonus(score, source_type)
-        return min(s, self.down_max) if self.downgraded(title, feed_name) else s
+        if not self.downgraded(title, feed_name):
+            return s
+        return max(self.base, s - self.down_step) if self.down_step else min(s, self.down_max)
+
+    def press_include(self, title: str) -> bool:
+        text, sq = title.casefold(), _squash(title)
+        return self._any(self.press_inc, text, sq) and not self._any(self.press_inc_unless, text, sq)
+
+    def hide_rule(self, title: str, category: str) -> str | None:
+        """숨김 규칙에 걸리면 규칙 이름, 아니면 None. category 는 분류기 판단(미분류로 바꾸기 전)."""
+        if not self.hide_rules:
+            return None
+        text, sq = title.casefold(), _squash(title)
+        if self._any(self.hide_protect, text, sq):
+            return None
+        for r in self.hide_rules:
+            if r['cats'] and category not in r['cats']:
+                continue
+            if (r['terms'] or r['res']) and not (self._any(r['terms'], text, sq) or any(p.search(title) for p in r['res'])):
+                continue
+            if r['unless_ins'] and self._any(self.insurance_terms, text, sq):
+                continue
+            return r['name']
+        return None
 
     def press_ok(self, title: str) -> bool:
         return self.press_re is None or bool(self.press_re.search(title))
@@ -166,8 +205,10 @@ class Classifier:
             category = UNCATEGORIZED
         sub = [c for c, _ in sorted(scores.items(), key=lambda x: -x[1]) if c != category and scores[c] > 0]
         score, _ = self.score(title, category)
-        if self.downgraded(title, feed_name):  # 고객 도입 사례 등: 카테고리 없이 낮은 ★
-            category, sub, score = UNCATEGORIZED, [], min(score, self.down_max)
+        if self.downgraded(title, feed_name):  # 고객 도입 사례 등: 카테고리 없이 낮은 ★(step 이면 final_score 에서 한 번만 낮춘다)
+            category, sub = UNCATEGORIZED, []
+            if not self.down_step:
+                score = min(score, self.down_max)
         return {'category': category, 'sub_categories': sub, 'tags': tags, 'score': score, 'relevant': relevant}
 
     # ---- 중요도(★) ----
