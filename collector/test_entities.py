@@ -58,10 +58,6 @@ RELEVANT = [
     "삼성화재, 배구단 후원 확대 보험 상품 출시",
     "흥국생명, 프로배구단 운영 비용 늘며 3분기 순익 감소",
     "KB손해보험, 신규 웹예능 연계 건강보험 출시",
-    "삼성생명 주가 7,500원 상승 후 장마감",
-    "NH농협생명 경영기획부문, 경기 안성 농가 찾아 농촌일손돕기 실시",
-    "[포토] 현대해상, 경기 성남시의료원 ‘마음도서관’ 개관",
-    "DB손보, 소방관에 ‘프로미 쿠키’와 손편지 전달",
     "금융감독원, 삼성생명 종합검사 착수…지급여력 점검",
     "[한화손보 펨테크 리포트 ③] '디시전 메이커' 잡았다…여성 팬덤이 끌어올릴 CSM의 선순환",
     "삼성화재, 英 캐노피우스 경영권 2조2647억원에 확보…해외사업 승부수",
@@ -70,6 +66,17 @@ RELEVANT = [
 ]
 for t in RELEVANT:
     assert collect.judge(t, 'media', '테스트')[0] is True, t
+# 사회공헌·사진·주가 단신: 스포츠 맥락은 아니고 보험사 관련이지만, 숨김 규칙(categories.json hide_rules)으로 관련도 낮음(2026-11-15 라벨 분석)
+import entities
+HIDDEN = [
+    "삼성생명 주가 7,500원 상승 후 장마감",
+    "NH농협생명 경영기획부문, 경기 안성 농가 찾아 농촌일손돕기 실시",
+    "[포토] 현대해상, 경기 성남시의료원 ‘마음도서관’ 개관",
+    "DB손보, 소방관에 ‘프로미 쿠키’와 손편지 전달",
+]
+for t in HIDDEN:
+    assert not entities.sports_team_title(t) and entities.company_relevant(t), t
+    assert collect.judge(t, 'media', '테스트')[0] is False and collect.load_classifier().hide_rule(t, '손해보험'), t
 # 제외어는 config 에서 온다(코드 하드코딩 아님): 파일에 있는 낱말이 실제로 쓰이고, '감독'은 '금융감독원' 안에서는 제외어가 아니다
 import entities
 assert '신인감독' in json.dumps(entities._context_cfg(), ensure_ascii=False) and not entities.sports_team_title('금융감독원, 삼성생명 검사')

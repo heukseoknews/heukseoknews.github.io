@@ -328,6 +328,30 @@
     "사회변화·보험": "사회·인구·기술 변화"
   },
   "press_relevance_keywords": ["보험", "실손", "K-ICS", "지급여력", "계리", "보험금", "보험료", "CSM"],
+  "press_include": {
+    "_comment": "공식 발표(press) 제목에 keywords 중 하나가 있으면(unless 낱말이 없을 때) press_relevance_keywords·관련 키워드가 없어도 관련. 금융회사 일반 규제(지배구조·내부통제·건전성·소비자보호 등) 발표용. 2026-11-15 라벨 분석(scripts/audit/labels). 수정 후 --reclassify.",
+    "keywords": ["지배구조", "내부통제", "건전성", "소비자보호", "책무구조", "불완전판매", "영업행위", "리스크관리", "경영실태평가"],
+    "unless": ["기업지배구조", "상장회사"]
+  },
+  "hide_rules": {
+    "_comment": "관련 기사 중 확실한 잡음을 관련도 낮음(relevant=false, 미분류)으로 저장. 한글 낱말은 띄어쓰기 무시 부분일치, patterns 는 원문 제목 정규식. categories 를 주면 그 카테고리(분류기 판단)에서만, unless_insurance_terms 면 제목에 score.json market_cap.insurance_terms·보험사 이름이 있을 때 제외. protect_terms 가 제목에 있으면 어느 규칙도 적용하지 않는다. 담당부서 관련 글(boards.json relevant_departments)은 숨기지 않는다. 2026-11-15 라벨 분석(scripts/audit/labels, 교차 검증) 근거. 애매한 홍보·행사 낱말은 여기 넣지 말고 score.json v2 low_value(★2 상한)에 둔다. 수정 후 --reclassify.",
+    "protect_terms": ["정보유출", "개인정보", "해킹", "제재", "과징금", "징계", "적자", "손실", "소비자피해", "불완전판매", "보험사기", "소송", "실적", "순익", "순이익", "출시"],
+    "rules": [
+      {
+        "name": "사회공헌·후원",
+        "terms": ["봉사", "기부", "후원", "캠페인 동참", "캠페인 참여", "사회공헌", "나눔", "도서관", "쉼터", "김장", "연탄", "헌혈", "일손", "집짓기", "사랑의 집", "손편지", "성금", "재능기부", "장학금", "플로깅"]
+      },
+      {
+        "name": "사진·주가 단신",
+        "patterns": ["\\[(포토|사진)", "주가 (\\d[\\d,]*원 )?(상승|하락)( 후 장마감| 중)$"]
+      },
+      {
+        "name": "보험과 무관한 시장 기사",
+        "categories": ["금융시장·자산운용"],
+        "unless_insurance_terms": true
+      }
+    ]
+  },
   "eval_focus": ["자동차보험"],
   "relevance_keywords": [
     "보험",
