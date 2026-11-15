@@ -334,8 +334,8 @@
     "unless": ["기업지배구조", "상장회사"]
   },
   "hide_rules": {
-    "_comment": "관련 기사 중 확실한 잡음을 관련도 낮음(relevant=false, 미분류)으로 저장. 한글 낱말은 띄어쓰기 무시 부분일치, patterns 는 원문 제목 정규식. categories 를 주면 그 카테고리(분류기 판단)에서만, unless_insurance_terms 면 제목에 score.json market_cap.insurance_terms·보험사 이름이 있을 때 제외. protect_terms 가 제목에 있으면 어느 규칙도 적용하지 않는다. 담당부서 관련 글(boards.json relevant_departments)은 숨기지 않는다. 2026-11-15 라벨 분석(scripts/audit/labels, 교차 검증) 근거. 애매한 홍보·행사 낱말은 여기 넣지 말고 score.json v2 low_value(★2 상한)에 둔다. 수정 후 --reclassify.",
-    "protect_terms": ["정보유출", "개인정보", "해킹", "제재", "과징금", "징계", "적자", "손실", "소비자피해", "불완전판매", "보험사기", "소송", "실적", "순익", "순이익", "출시"],
+    "_comment": "관련 기사 중 확실한 잡음을 관련도 낮음(relevant=false, 미분류)으로 저장. terms 는 띄어쓰기를 지키는 부분일치(대소문자 무시), patterns 는 원문 제목 정규식. categories 를 주면 그 카테고리(분류기 판단)에서만, unless_insurance_terms 면 제목에 score.json market_cap.insurance_terms·생명·손해보험 회사 키워드가 있을 때, unless_company 면 companies.json 의 회사(재보험사 등 포함)가 있을 때 제외. protect_terms 가 제목에 있으면 어느 규칙도 적용하지 않는다. 담당부서 관련 글(boards.json relevant_departments)은 숨기지 않는다. 2026-11-15 라벨 분석(scripts/audit/labels, 교차 검증) 근거. 애매한 홍보·행사 낱말은 여기 넣지 말고 score.json v2 low_value(★2 상한)에 둔다. 수정 후 --reclassify.",
+    "protect_terms": ["정보유출", "개인정보", "해킹", "제재", "과징금", "징계", "적자", "손실", "소비자피해", "불완전판매", "보험사기", "소송", "실적", "순익", "순이익", "영업이익", "출시"],
     "rules": [
       {
         "name": "사회공헌·후원",
@@ -348,7 +348,8 @@
       {
         "name": "보험과 무관한 시장 기사",
         "categories": ["금융시장·자산운용"],
-        "unless_insurance_terms": true
+        "unless_insurance_terms": true,
+        "unless_company": true
       }
     ]
   },
