@@ -357,7 +357,9 @@
     "meta superintelligence"
   ],
   "downgrade_patterns": {
-    "_comment": "고객 도입 사례 글(공식 블로그·검색): 카테고리 미분류, ★ max_score 상한. 제목은 소문자로 바꿔 정규식으로 찾는다. feeds 의 피드에만 적용.",
+    "_comment": "고객 도입 사례 글(공식 블로그·검색): 카테고리 미분류, ★ step 만큼 낮춤(관련 기사 최저 ★2 유지, step 이 있으면 max_score 는 쓰지 않음). hide=false: 숨기지 않는다(2026-11-15 라벨에서 고객 사례 4건 중 3건이 필요한 기사). 제목은 소문자로 바꿔 정규식으로 찾는다. feeds 의 피드에만 적용. 수정 후 --reclassify.",
+    "step": 1,
+    "hide": false,
     "feeds": [
       "OpenAI News",
       "Anthropic 공식(검색)"
