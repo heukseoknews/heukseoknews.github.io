@@ -1768,7 +1768,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [
    "OpenAI"
   ],
@@ -2749,7 +2749,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [
    "OpenAI"
   ],
@@ -3416,12 +3416,12 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "4922ca6fb0dd9299",
@@ -3436,12 +3436,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "e2eb397e38b4b5f8",
@@ -4426,10 +4426,10 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "db41dec20cf5bfb8",
@@ -6756,10 +6756,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "Anthropic 공식(검색)",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "e093e2a49aacf0cb",
@@ -6774,10 +6774,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "Anthropic 공식(검색)",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "c80f9e3167df2965",
@@ -6792,10 +6792,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "Anthropic 공식(검색)",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "d4b2651db8ab07cb",
@@ -6810,10 +6810,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "Anthropic 공식(검색)",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "8f0b399bf4dbc995",
@@ -6846,10 +6846,10 @@
   "tags": [],
   "score": 2,
   "feed_name": "Anthropic 공식(검색)",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "c86d08502069b5ef",
@@ -7606,7 +7606,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [
    "OpenAI"
   ],
@@ -8871,12 +8871,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "2e34e84f0999c607",
@@ -9520,7 +9520,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "Anthropic 공식(검색)",
-  "relevant": false,
+  "relevant": true,
   "companies": [
    "Anthropic"
   ],
@@ -9631,12 +9631,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "1750855042e8ceec",
@@ -9850,7 +9850,7 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [
    "OpenAI"
   ],
@@ -9935,7 +9935,7 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [
    "OpenAI"
   ],
@@ -10113,12 +10113,12 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "24379856c459e00a",
@@ -10253,7 +10253,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [
    "OpenAI"
   ],
@@ -10520,11 +10520,11 @@
   ],
   "score": 2,
   "feed_name": "OpenAI News",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 1
+  "score_v2": 2
  }
 ]

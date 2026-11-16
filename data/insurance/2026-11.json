@@ -2293,7 +2293,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -2301,7 +2301,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7bdf81a574d71514",
@@ -2876,22 +2876,20 @@
   "source_type": "media",
   "published_at": "2026-11-15T01:08:29+00:00",
   "collected_at": "2026-11-15T23:11:54.833398+00:00",
-  "category": "금융시장·자산운용",
-  "sub_categories": [
-   "제도·회계·건전성"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "국채",
    "금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "금융위원회"
   ],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "4a0e8fd16f183d6b",
@@ -3103,20 +3101,20 @@
   "source_type": "press",
   "published_at": "2026-11-15T00:00:00+00:00",
   "collected_at": "2026-11-15T23:11:54.833398+00:00",
-  "category": "미분류",
+  "category": "제도·회계·건전성",
   "sub_categories": [],
   "tags": [
    "소비자보호"
   ],
   "score": 2,
   "feed_name": "금융감독원 게시판",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "금융감독원"
   ],
   "department": "소비자보호감독총괄국",
-  "score_v2": 2
+  "score_v2": 3
  },
  {
   "id": "75b96d966e16cc1d",
@@ -3556,20 +3554,18 @@
   "source_type": "media",
   "published_at": "2026-11-14T12:40:30+00:00",
   "collected_at": "2026-11-14T22:45:46.154783+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "손해보험"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험",
    "NH농협생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0681f263fb637506",
@@ -5015,7 +5011,7 @@
   "source_type": "media",
   "published_at": "2026-11-13T21:39:30+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국고채",
@@ -5023,7 +5019,7 @@
   ],
   "score": 2,
   "feed_name": "보험매일",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -5754,17 +5750,17 @@
   "source_type": "media",
   "published_at": "2026-11-13T11:49:52+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·중소·인터넷",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "흥국생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "196c912f4df01bd7",
@@ -5972,12 +5968,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T11:25:00+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험"
   ],
@@ -5985,7 +5981,7 @@
   "cluster_id": "754ed80c150c4727",
   "cluster_size": 3,
   "cluster_sources": 3,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "6f1110d9c12c5cbb",
@@ -6013,12 +6009,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T11:23:00+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "주요 경제지·보험",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험"
   ],
@@ -6026,7 +6022,7 @@
   "cluster_id": "754ed80c150c4727",
   "cluster_size": 3,
   "cluster_sources": 3,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -6037,12 +6033,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T11:23:00+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험"
   ],
@@ -6050,7 +6046,7 @@
   "cluster_id": "754ed80c150c4727",
   "cluster_size": 3,
   "cluster_sources": 3,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "db1fd0871dd03448",
@@ -6170,12 +6166,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T11:04:00+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·중소·인터넷",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "흥국생명"
   ],
@@ -6183,7 +6179,7 @@
   "cluster_id": "9d360aa5d3fca2a4",
   "cluster_size": 2,
   "cluster_sources": 2,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "9d360aa5d3fca2a4",
@@ -6193,12 +6189,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T11:03:00+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "흥국생명"
   ],
@@ -6206,7 +6202,7 @@
   "cluster_id": "9d360aa5d3fca2a4",
   "cluster_size": 2,
   "cluster_sources": 2,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -6217,17 +6213,17 @@
   "source_type": "media",
   "published_at": "2026-11-13T11:02:00+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·중소·인터넷",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "흥국생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "c29e785a66126659",
@@ -6436,17 +6432,17 @@
   "source_type": "media",
   "published_at": "2026-11-13T10:46:52+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·중소·인터넷",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "흥국생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0fd0804cfddcb2c1",
@@ -9739,17 +9735,17 @@
   "source_type": "media",
   "published_at": "2026-11-13T06:23:18+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e6dae0923b43f2cd",
@@ -9909,12 +9905,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T06:16:39+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -9922,7 +9918,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "ad873d6fc67be5ea",
@@ -10708,12 +10704,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T05:38:58+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험"
   ],
@@ -10721,7 +10717,7 @@
   "cluster_id": "912e5f152a90fcef",
   "cluster_size": 42,
   "cluster_sources": 42,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f320532d9374d2cf",
@@ -14482,12 +14478,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T01:19:01+00:00",
   "collected_at": "2026-11-15T23:11:54.833398+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험"
   ],
@@ -14495,7 +14491,7 @@
   "cluster_id": "912e5f152a90fcef",
   "cluster_size": 42,
   "cluster_sources": 42,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "8a89903921a9ea40",
@@ -14532,7 +14528,7 @@
   "source_type": "media",
   "published_at": "2026-11-13T01:15:48+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "연준",
@@ -14540,7 +14536,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -14553,12 +14549,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T01:14:09+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험"
   ],
@@ -14566,7 +14562,7 @@
   "cluster_id": "912e5f152a90fcef",
   "cluster_size": 42,
   "cluster_sources": 42,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "08f6775a3792ea8f",
@@ -15334,12 +15330,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T00:27:44+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -15347,7 +15343,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "b9fa952b7cb489c1",
@@ -15730,12 +15726,12 @@
   "source_type": "media",
   "published_at": "2026-11-13T00:10:24+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "KB손해보험"
   ],
@@ -15743,7 +15739,7 @@
   "cluster_id": "912e5f152a90fcef",
   "cluster_size": 42,
   "cluster_sources": 42,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d54dbb53b65df66c",
@@ -15905,13 +15901,13 @@
   "tags": [],
   "score": 2,
   "feed_name": "금융위원회 게시판",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "금융위원회"
   ],
   "department": "금융정책과,공정시장과",
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "1bd3065be86ff246",
@@ -16989,12 +16985,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T20:49:00+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -17002,7 +16998,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "94baa65202ff5384",
@@ -17102,17 +17098,17 @@
   "source_type": "media",
   "published_at": "2026-11-12T18:15:01+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "be27c57b90e4426a",
@@ -17626,12 +17622,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T11:36:28+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -17639,7 +17635,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "3c849e1bb50f3fc1",
@@ -18066,7 +18062,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -18074,7 +18070,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "489c22bccdcac22b",
@@ -18143,7 +18139,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -18151,7 +18147,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a8b3e77ec635a6ce",
@@ -18436,7 +18432,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -18444,7 +18440,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "2b32ef7167c8b067",
@@ -19045,7 +19041,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -19053,7 +19049,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0b7d43af98da6509",
@@ -19455,7 +19451,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -19463,7 +19459,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "33fede00a4895286",
@@ -19861,14 +19857,14 @@
   "source_type": "media",
   "published_at": "2026-11-12T08:10:00+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -20187,14 +20183,14 @@
   "source_type": "media",
   "published_at": "2026-11-12T08:00:00+00:00",
   "collected_at": "2026-11-15T23:11:54.833398+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "생보사"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "생보업권·외국계",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -20737,12 +20733,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T07:46:00+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -20750,7 +20746,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e0c2e99e3f19bfd4",
@@ -21092,17 +21088,17 @@
   "source_type": "media",
   "published_at": "2026-11-12T07:35:50+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "주요 경제지·보험",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성화재"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "6eab6a852756c59c",
@@ -23249,12 +23245,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T06:27:00+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -23262,7 +23258,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f617abbdf916dc36",
@@ -23900,12 +23896,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T06:08:00+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -23913,7 +23909,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "bf203e16f4fd1ee8",
@@ -24552,12 +24548,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T05:43:00+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -24565,7 +24561,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "ba3b936a0b0ddaba",
@@ -25534,7 +25530,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -25542,7 +25538,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "304ed1601a43b4f3",
@@ -25674,12 +25670,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T04:41:19+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -25687,7 +25683,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "fd97d737e9d0115e",
@@ -25702,7 +25698,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -25710,7 +25706,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "ed3b4bffd6ad3838",
@@ -25743,12 +25739,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T04:38:27+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -25756,7 +25752,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "33f52fdcc8d6f9fd",
@@ -26252,7 +26248,8 @@
   "cluster_id": "946bea7fa03236cd",
   "cluster_size": 4,
   "cluster_sources": 2,
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_lead": true
  },
  {
   "id": "7e660a3ac7d730be",
@@ -26408,12 +26405,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T03:16:17+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -26421,7 +26418,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "79f548a62b6b5040",
@@ -26556,12 +26553,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T03:01:48+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -26569,7 +26566,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1256ecdcad46baeb",
@@ -26625,12 +26622,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T02:53:00+00:00",
   "collected_at": "2026-11-13T01:27:49.995948+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -26638,7 +26635,7 @@
   "cluster_id": "463581131a75a15e",
   "cluster_size": 31,
   "cluster_sources": 30,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d3b04d90f91775fd",
@@ -27496,7 +27493,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -27504,7 +27501,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "111eba07110ea8e6",
@@ -27798,7 +27795,7 @@
   "source_type": "media",
   "published_at": "2026-11-12T01:53:47+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -27806,7 +27803,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -28177,12 +28174,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T01:39:42+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보업권·외국계",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "AIA생명"
   ],
@@ -28190,7 +28187,7 @@
   "cluster_id": "03de123e990429a8",
   "cluster_size": 6,
   "cluster_sources": 6,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "86bdd9a0b19b38cc",
@@ -28711,7 +28708,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -28719,7 +28716,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "311c78c560ae1008",
@@ -29471,7 +29468,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -29479,7 +29476,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1e5c09c99bdbb3a2",
@@ -29575,7 +29572,7 @@
   "source_type": "media",
   "published_at": "2026-11-12T00:44:09+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -29583,7 +29580,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "31094907dc1eecda",
@@ -29650,12 +29647,12 @@
   "source_type": "media",
   "published_at": "2026-11-12T00:40:51+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보업권·외국계",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "AIA생명"
   ],
@@ -29663,7 +29660,7 @@
   "cluster_id": "03de123e990429a8",
   "cluster_size": 6,
   "cluster_sources": 6,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "963b61dd49bc1b7e",
@@ -29860,21 +29857,19 @@
   "source_type": "media",
   "published_at": "2026-11-12T00:29:08+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화생명"
   ],
   "orgs": [],
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_id": "0083a437996ff77e",
   "cluster_size": 35,
   "cluster_sources": 34
@@ -29956,7 +29951,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -29964,7 +29959,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -30026,7 +30021,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "iM라이프"
   ],
@@ -30034,7 +30029,7 @@
   "cluster_id": "5621241205e9d41a",
   "cluster_size": 12,
   "cluster_sources": 12,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7d98c073e80232b4",
@@ -30423,7 +30418,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "금융위원회 게시판",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "금융위원회"
@@ -30432,7 +30427,7 @@
   "cluster_id": "05467752d0456c50",
   "cluster_size": 2,
   "cluster_sources": 2,
-  "score_v2": 1,
+  "score_v2": 2,
   "cluster_lead": true
  },
  {
@@ -30521,7 +30516,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "금융감독원 게시판",
-  "relevant": false,
+  "relevant": true,
   "companies": [],
   "orgs": [
    "금융감독원"
@@ -30530,7 +30525,7 @@
   "cluster_id": "05467752d0456c50",
   "cluster_size": 2,
   "cluster_sources": 2,
-  "score_v2": 1
+  "score_v2": 2
  },
  {
   "id": "9d8b8992b9ec463b",
@@ -31167,10 +31162,8 @@
   "source_type": "media",
   "published_at": "2026-11-11T23:03:37+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "금융시장·자산운용",
-  "sub_categories": [
-   "사회·인구·기술 변화"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "AI",
    "장기금리",
@@ -31178,10 +31171,10 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "887acc4f7915d173",
@@ -31974,14 +31967,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T19:11:00+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -33200,12 +33193,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T09:21:36+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -33213,7 +33206,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "388262a7df3d72b9",
@@ -33495,12 +33488,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T09:00:00+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -33508,7 +33501,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "96ca88c321149966",
@@ -34170,12 +34163,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T08:32:00+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -34183,7 +34176,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "2bd2b48d6975a9fa",
@@ -34310,12 +34303,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T08:26:05+00:00",
   "collected_at": "2026-11-11T08:46:12.178012+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -34323,7 +34316,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d2976dd03eda8c39",
@@ -34965,12 +34958,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T08:07:14+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "한국보험신문",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협손해보험"
   ],
@@ -34978,7 +34971,7 @@
   "cluster_id": "bf6094e9823f54f0",
   "cluster_size": 8,
   "cluster_sources": 8,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "03372909fb18f361",
@@ -35384,12 +35377,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T07:54:46+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -35397,7 +35390,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "2c3dd313d5d0804a",
@@ -36107,14 +36100,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T07:37:02+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리인상"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -37151,16 +37144,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T06:46:17+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성생명"
   ],
@@ -37168,7 +37159,7 @@
   "cluster_id": "d5ba5c450cfdab13",
   "cluster_size": 2,
   "cluster_sources": 1,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "bb0229e3e625199a",
@@ -37242,16 +37233,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T06:44:27+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "손보사·삼성화재(그 외)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성화재"
   ],
@@ -37259,7 +37248,7 @@
   "cluster_id": "e289e01ae947b8fe",
   "cluster_size": 3,
   "cluster_sources": 1,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "30d6907372cf3ec5",
@@ -37269,16 +37258,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T06:42:17+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화생명"
   ],
@@ -37286,7 +37273,7 @@
   "cluster_id": "6ffd4159aa2646d0",
   "cluster_size": 3,
   "cluster_sources": 1,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "c69c7dd11ab13045",
@@ -37708,12 +37695,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T06:05:32+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -37721,7 +37708,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "46d877ee2b52bd81",
@@ -37731,12 +37718,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T06:04:31+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -37744,7 +37731,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "01e213cff47f39d1",
@@ -39011,12 +38998,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T05:07:53+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -39024,7 +39011,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "aff06f4b3d01ee53",
@@ -39057,12 +39044,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T05:05:10+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -39070,7 +39057,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7e65dad50a22632e",
@@ -39350,12 +39337,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T04:48:26+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -39363,7 +39350,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "29e57780619bfad3",
@@ -39723,12 +39710,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T03:45:47+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -39736,7 +39723,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "9b5ffc740eef65ef",
@@ -40333,12 +40320,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T02:30:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -40346,7 +40333,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "dec6165c07a8b97a",
@@ -40384,12 +40371,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T02:29:27+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -40397,7 +40384,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "34a55191e14b7f66",
@@ -40449,12 +40436,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T02:21:44+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -40462,7 +40449,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "23dd564d2f574685",
@@ -40500,12 +40487,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T02:16:36+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·메리츠·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -40513,7 +40500,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "44ac49d92a085045",
@@ -40599,7 +40586,7 @@
   "source_type": "media",
   "published_at": "2026-11-11T02:13:01+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -40607,7 +40594,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "31094907dc1eecda",
@@ -40827,12 +40814,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T02:00:02+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화손해보험"
   ],
@@ -40840,7 +40827,7 @@
   "cluster_id": "57b637f48b96c75c",
   "cluster_size": 32,
   "cluster_sources": 31,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "07a5c87f7654b0b1",
@@ -40870,7 +40857,7 @@
   "source_type": "media",
   "published_at": "2026-11-11T01:59:32+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리인상",
@@ -40878,7 +40865,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -41260,12 +41247,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T01:37:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -41273,7 +41260,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "78090b3f7744bb5b",
@@ -41376,17 +41363,15 @@
   "source_type": "media",
   "published_at": "2026-11-11T01:27:21+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -41735,16 +41720,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T01:00:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -41752,7 +41735,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "31094907dc1eecda",
@@ -41762,14 +41745,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T00:59:27+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "31094907dc1eecda",
@@ -41898,16 +41881,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T00:37:12+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성생명"
   ],
@@ -41915,7 +41896,7 @@
   "cluster_id": "946bea7fa03236cd",
   "cluster_size": 4,
   "cluster_sources": 2,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0fda7253365893e5",
@@ -41925,16 +41906,14 @@
   "source_type": "media",
   "published_at": "2026-11-11T00:37:04+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "손보사·삼성화재(그 외)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성화재"
   ],
@@ -41942,7 +41921,7 @@
   "cluster_id": "25ea3f5a8e22d010",
   "cluster_size": 6,
   "cluster_sources": 5,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "adf63dd758eb20f1",
@@ -42503,12 +42482,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T00:04:19+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보업권·외국계",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "라이나생명"
   ],
@@ -42516,7 +42495,7 @@
   "cluster_id": "074ec84c7f9456f7",
   "cluster_size": 7,
   "cluster_sources": 7,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "621d00a44f668160",
@@ -42674,12 +42653,12 @@
   "source_type": "media",
   "published_at": "2026-11-11T00:00:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -42687,7 +42666,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d1d5f668fa3bb662",
@@ -42745,12 +42724,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T23:59:54+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·손보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -42758,7 +42737,7 @@
   "cluster_id": "17aae4052f5a40e9",
   "cluster_size": 35,
   "cluster_sources": 35,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "583b07be07c50fbb",
@@ -43346,7 +43325,7 @@
   "source_type": "media",
   "published_at": "2026-11-10T22:54:40+00:00",
   "collected_at": "2026-11-11T00:53:13.992802+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리인상",
@@ -43354,7 +43333,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "138e63c3a22f5212",
@@ -43653,7 +43632,7 @@
   "source_type": "media",
   "published_at": "2026-11-10T21:17:08+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "연준",
@@ -43661,7 +43640,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -44011,12 +43990,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T14:59:00+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -44024,7 +44003,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "6ecc6a5f603b0110",
@@ -44154,16 +44133,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T13:09:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -44171,7 +44148,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "6a94bb5e3f0c9e19",
@@ -44251,12 +44228,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T12:26:28+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -44264,7 +44241,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "51caa20d165dafdc",
@@ -44410,12 +44387,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T11:38:00+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -44423,7 +44400,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "cce8f0f1b0d9b025",
@@ -44433,12 +44410,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T11:35:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -44446,7 +44423,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "71f1667214a569b5",
@@ -44456,12 +44433,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T11:32:02+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·손보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -44469,7 +44446,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "efc04d8f6fb74392",
@@ -44575,7 +44552,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -44583,7 +44560,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "c80383cda2e61a28",
@@ -44704,17 +44681,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T09:17:24+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -44805,12 +44780,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T09:01:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -44818,7 +44793,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "b65701d24a8b3d2b",
@@ -44925,17 +44900,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:45:53+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -44983,7 +44956,7 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:42:54+00:00",
   "collected_at": "2026-11-11T00:53:13.992802+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국채",
@@ -44991,10 +44964,10 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "8e74fe294db66bfc",
@@ -45047,17 +45020,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:40:00+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -45170,7 +45141,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -45178,7 +45149,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "b3596100f5f3ee96",
@@ -45257,12 +45228,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:30:46+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -45270,7 +45241,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1047ac37b51a84db",
@@ -45328,12 +45299,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:27:09+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -45341,7 +45312,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7c2891b284e0e577",
@@ -45351,12 +45322,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:21:30+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -45364,7 +45335,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "088b48416227a295",
@@ -45374,17 +45345,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:21:13+00:00",
   "collected_at": "2026-11-11T00:53:13.992802+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "주요 경제지·보험",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -45420,12 +45389,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T08:10:36+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -45433,7 +45402,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "9c0dc4a4612af5b8",
@@ -45492,7 +45461,7 @@
   "source_type": "media",
   "published_at": "2026-11-10T07:58:26+00:00",
   "collected_at": "2026-11-11T00:53:13.992802+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국고채",
@@ -45502,7 +45471,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -45544,17 +45513,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T07:55:05+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -45635,14 +45602,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T07:48:16+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "예금금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -45923,12 +45890,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T07:15:26+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -45936,7 +45903,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "bcb12459f9bdc2e2",
@@ -45946,12 +45913,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T07:09:17+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -45959,7 +45926,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "cac58716e7c6bffc",
@@ -46159,12 +46126,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:52:41+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -46172,7 +46139,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d5ba5c450cfdab13",
@@ -46182,16 +46149,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:49:08+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성생명"
   ],
@@ -46199,7 +46164,7 @@
   "cluster_id": "d5ba5c450cfdab13",
   "cluster_size": 2,
   "cluster_sources": 1,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -46230,16 +46195,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:44:41+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "손보사·삼성화재(그 외)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성화재"
   ],
@@ -46247,7 +46210,7 @@
   "cluster_id": "e289e01ae947b8fe",
   "cluster_size": 3,
   "cluster_sources": 1,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "9d44efd8aea9486d",
@@ -46280,16 +46243,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:43:46+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화생명"
   ],
@@ -46297,7 +46258,7 @@
   "cluster_id": "6ffd4159aa2646d0",
   "cluster_size": 3,
   "cluster_sources": 1,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "98982e887d6ff846",
@@ -46375,12 +46336,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:40:04+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -46388,7 +46349,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0c382761f4dfeb49",
@@ -46538,16 +46499,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:19:42+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -46555,7 +46514,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d525f091c18bd2aa",
@@ -46651,12 +46610,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:08:59+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -46664,7 +46623,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "947055ab56c1ffe8",
@@ -46722,17 +46681,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T06:04:39+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -46988,17 +46945,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:55:02+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -47062,12 +47017,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:51:48+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -47075,7 +47030,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "3fc331f570f95e56",
@@ -47106,12 +47061,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:50:00+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -47119,7 +47074,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "3c1f1b8d18fe7e72",
@@ -47154,17 +47109,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:48:41+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -47212,12 +47165,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:43:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -47225,7 +47178,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "df40f9df5f54ae92",
@@ -47402,16 +47355,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:27:39+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -47419,7 +47370,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "eee1a6183c4613f1",
@@ -47497,17 +47448,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:20:49+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -47525,16 +47474,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:17:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -47542,7 +47489,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "c19b9861f3ba0298",
@@ -47552,16 +47499,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:16:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -47569,7 +47514,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "942dc4d9cb124b21",
@@ -47610,7 +47555,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -47618,7 +47563,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "2f498516a1017552",
@@ -47653,12 +47598,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:10:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -47666,7 +47611,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "dafa85fc4c15c02b",
@@ -47694,12 +47639,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T05:08:19+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -47707,7 +47652,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "5a8e502b47f6ad17",
@@ -47882,12 +47827,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T04:54:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -47895,7 +47840,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "12cb16d80438f3c8",
@@ -47905,16 +47850,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T04:50:50+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -47922,7 +47865,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "fc50fc4c7feeb134",
@@ -47952,12 +47895,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T04:49:51+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -47965,7 +47908,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "dbff25f3962e5a70",
@@ -48069,12 +48012,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T04:09:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -48082,7 +48025,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a526b3699da57524",
@@ -48234,7 +48177,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -48242,7 +48185,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "97645ebafaba3665",
@@ -48252,17 +48195,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T03:17:06+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -48452,12 +48393,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T02:33:19+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -48465,7 +48406,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "408421b82d03fd19",
@@ -48475,12 +48416,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T02:31:57+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -48488,7 +48429,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "ada9294590b9cb05",
@@ -48498,12 +48439,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T02:31:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -48511,7 +48452,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "ecfbb1fd805c64ab",
@@ -48637,12 +48578,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T02:23:02+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "한국보험신문",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -48650,7 +48591,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f7da64d063ddbc8d",
@@ -48660,17 +48601,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T02:21:56+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "한국보험신문",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -48905,7 +48844,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "한국보험신문",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -48913,7 +48852,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a80ad43ab7a6dede",
@@ -48965,12 +48904,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T02:01:05+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -48978,7 +48917,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a813355db15c553b",
@@ -48988,12 +48927,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T02:01:04+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -49001,7 +48940,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "401c16990f83e79d",
@@ -49035,14 +48974,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:59:21+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국고채"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -49055,12 +48994,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:54:11+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49068,7 +49007,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d2e4b62910df5c4f",
@@ -49078,12 +49017,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:51:35+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -49091,7 +49030,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "dc37cc11f9e5f17b",
@@ -49101,12 +49040,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:51:14+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49114,7 +49053,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f37e6dbacf78c253",
@@ -49124,16 +49063,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:51:01+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -49141,7 +49078,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "bd2bc0283482a6ea",
@@ -49200,7 +49137,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -49208,7 +49145,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "205e7dc9ec4d0fc5",
@@ -49264,12 +49201,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:38:23+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -49277,7 +49214,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "5b731109e76f641a",
@@ -49312,12 +49249,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:37:21+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -49325,7 +49262,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "77bc8fa0b180385b",
@@ -49335,12 +49272,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:37:09+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49348,7 +49285,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "8d9c8bf74b49248a",
@@ -49358,17 +49295,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:36:57+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -49386,12 +49321,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:35:39+00:00",
   "collected_at": "2026-11-11T08:46:12.178012+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -49399,7 +49334,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d13fe4900896df40",
@@ -49432,12 +49367,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:33:44+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -49445,7 +49380,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e3de328bbb8de7cc",
@@ -49455,12 +49390,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:32:47+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49468,7 +49403,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "b3157fc9f32dae2a",
@@ -49554,17 +49489,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:28:45+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -49582,12 +49515,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:28:31+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49595,7 +49528,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d9d292b8a4fe56fa",
@@ -49629,14 +49562,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:27:39+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "손보사"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "보험매일",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "9eb788bf76d97252",
@@ -49657,7 +49590,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -49665,7 +49598,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e9ed946aa6c0befc",
@@ -49675,12 +49608,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:25:42+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·손보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49688,7 +49621,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "79b2644a70f25f9f",
@@ -49772,17 +49705,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:17:40+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -49800,14 +49731,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:17:15+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "생보"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -49852,16 +49783,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:16:02+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
-  "sub_categories": [
-   "사회·인구·기술 변화"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "간병"
   ],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49869,7 +49798,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7f172b29e0fc0b36",
@@ -49904,12 +49833,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:15:39+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -49917,7 +49846,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a97c51131389846a",
@@ -49952,16 +49881,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:15:02+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -49969,7 +49896,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7498bc0b9a86e7d4",
@@ -49979,17 +49906,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:14:39+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "보험매일",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -50007,12 +49932,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:14:01+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50020,7 +49945,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e9e820b299bae19e",
@@ -50030,12 +49955,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:13:23+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50043,7 +49968,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7b4bfde401ac2776",
@@ -50053,12 +49978,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:12:44+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50066,7 +49991,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f2f648829f2e632d",
@@ -50081,7 +50006,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -50089,7 +50014,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "31800a5c4e22b04a",
@@ -50099,12 +50024,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:12:32+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -50112,7 +50037,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f2d7ca8dfbd074d9",
@@ -50149,12 +50074,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:07:31+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -50162,7 +50087,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "21b533ed74a0a396",
@@ -50172,12 +50097,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T01:07:06+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험사·생보사",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "교보생명"
   ],
@@ -50185,7 +50110,7 @@
   "cluster_id": "21b533ed74a0a396",
   "cluster_size": 29,
   "cluster_sources": 29,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e8a441b06c39b7d3",
@@ -50315,12 +50240,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:54:49+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50328,7 +50253,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "4a7996ef02ab0fe3",
@@ -50338,17 +50263,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:53:32+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생명보험",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·손해보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -50366,12 +50289,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:53:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50379,7 +50302,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "21d56d72b2477079",
@@ -50456,17 +50379,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:50:38+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -50535,12 +50456,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:47:13+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50548,7 +50469,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "b36db7ff5ad30dd6",
@@ -50558,16 +50479,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:46:25+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -50575,7 +50494,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f0aa6840931e9e7c",
@@ -50585,12 +50504,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:43:01+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50598,7 +50517,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "45a758067874a27a",
@@ -50608,17 +50527,17 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:42:21+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "한국보험신문",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협손해보험"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "29df3de36eaa34be",
@@ -50653,12 +50572,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:41:06+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "한국보험신문",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50666,7 +50585,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "27355a0ff768fcc5",
@@ -50681,7 +50600,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB생명"
   ],
@@ -50689,7 +50608,7 @@
   "cluster_id": "27355a0ff768fcc5",
   "cluster_size": 9,
   "cluster_sources": 9,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -50750,17 +50669,15 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:37:00+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "생보",
    "캠페인"
   ],
-  "score": 3,
+  "score": 2,
   "feed_name": "기관·생명보험협회",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [
    "생명보험협회"
@@ -50778,12 +50695,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:36:42+00:00",
   "collected_at": "2026-11-14T02:42:38.539811+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50791,7 +50708,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e7ca0c28c2b14196",
@@ -50877,16 +50794,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:34:38+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성생명"
   ],
@@ -50894,8 +50809,7 @@
   "cluster_id": "946bea7fa03236cd",
   "cluster_size": 4,
   "cluster_sources": 2,
-  "score_v2": 2,
-  "cluster_lead": true
+  "score_v2": 1
  },
  {
   "id": "8436812f73bbc9fc",
@@ -50929,12 +50843,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:34:12+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50942,7 +50856,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "692567dad0146b76",
@@ -50983,12 +50897,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:27:22+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -50996,7 +50910,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "453a89504a7f70ba",
@@ -51006,12 +50920,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:23:07+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51019,7 +50933,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "229ff2293961945a",
@@ -51076,12 +50990,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:20:23+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51089,7 +51003,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "c8dbffd4aac3cf84",
@@ -51099,12 +51013,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:19:01+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51112,7 +51026,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "65ad99758c27995a",
@@ -51183,16 +51097,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:11:25+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "생보사·중소(국내)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -51200,7 +51112,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "57c44d1a37cb9bdd",
@@ -51234,12 +51146,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:10:15+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51247,7 +51159,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "ff7dff9e884f6984",
@@ -51257,16 +51169,14 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:09:08+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "ABL생명"
   ],
@@ -51274,7 +51184,7 @@
   "cluster_id": "ff7dff9e884f6984",
   "cluster_size": 38,
   "cluster_sources": 33,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d42d3e60c334625b",
@@ -51307,12 +51217,12 @@
   "source_type": "media",
   "published_at": "2026-11-10T00:07:13+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51320,7 +51230,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -51547,12 +51457,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T23:51:13+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51560,7 +51470,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7e7d3cc4d724c53c",
@@ -51570,12 +51480,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T23:50:17+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51583,7 +51493,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "22abce545e03d05e",
@@ -51758,12 +51668,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T23:32:16+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51771,7 +51681,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "5b9915540b07e970",
@@ -51781,12 +51691,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T23:28:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51794,7 +51704,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "5a33a3bd9d37115c",
@@ -51804,12 +51714,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T23:26:18+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51817,7 +51727,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "942878ce12f747a9",
@@ -51902,12 +51812,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T23:18:09+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
@@ -51915,7 +51825,7 @@
   "cluster_id": "9bf3a20757d21401",
   "cluster_size": 44,
   "cluster_sources": 44,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "fa60a01626706625",
@@ -52377,7 +52287,7 @@
   "source_type": "media",
   "published_at": "2026-11-09T22:00:00+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "연준",
@@ -52385,7 +52295,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -52594,17 +52504,17 @@
   "source_type": "media",
   "published_at": "2026-11-09T21:00:00+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "cf37e980639590ec",
@@ -53075,12 +52985,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T11:45:10+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험매일",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -53088,7 +52998,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "66770476d5e5c2e5",
@@ -53692,12 +53602,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T08:52:39+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -53705,7 +53615,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a18bf7f0b16955c0",
@@ -53833,12 +53743,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T08:45:50+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -53846,7 +53756,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "78a4ad34d8f0c550",
@@ -54459,12 +54369,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T07:37:34+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "기관·보험연구원",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -54472,7 +54382,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "7bed73a7fac13702",
@@ -54734,16 +54644,14 @@
   "source_type": "media",
   "published_at": "2026-11-09T06:50:17+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "손보사·삼성화재(그 외)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성화재"
   ],
@@ -54751,7 +54659,7 @@
   "cluster_id": "e289e01ae947b8fe",
   "cluster_size": 3,
   "cluster_sources": 1,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -54924,14 +54832,14 @@
   "source_type": "media",
   "published_at": "2026-11-09T06:43:42+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -54944,16 +54852,14 @@
   "source_type": "media",
   "published_at": "2026-11-09T06:43:08+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화생명"
   ],
@@ -54961,7 +54867,7 @@
   "cluster_id": "6ffd4159aa2646d0",
   "cluster_size": 3,
   "cluster_sources": 1,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -55537,7 +55443,7 @@
   "source_type": "media",
   "published_at": "2026-11-09T05:41:35+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -55545,7 +55451,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "7b47216f445fbe4e",
@@ -55639,12 +55545,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T05:34:24+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -55652,7 +55558,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e063fd7f2fd21a45",
@@ -55753,12 +55659,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T05:23:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -55766,7 +55672,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e10b51a1562b5082",
@@ -56132,12 +56038,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T04:36:09+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -56145,7 +56051,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "b85768586cb7934a",
@@ -56155,12 +56061,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T04:19:07+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -56168,7 +56074,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "23948872b8ac0c9a",
@@ -56178,12 +56084,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T04:19:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -56191,7 +56097,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "418d16a42e128b53",
@@ -56294,12 +56200,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T03:31:04+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -56307,7 +56213,7 @@
   "cluster_id": "6655611298204535",
   "cluster_size": 4,
   "cluster_sources": 4,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "f4d4ceafe2964b6a",
@@ -56365,12 +56271,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T03:07:16+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -56378,7 +56284,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "89837f4887a772a9",
@@ -56579,12 +56485,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T02:53:18+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -56592,7 +56498,7 @@
   "cluster_id": "6655611298204535",
   "cluster_size": 4,
   "cluster_sources": 4,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0905d82bfdc865ba",
@@ -56644,14 +56550,14 @@
   "source_type": "media",
   "published_at": "2026-11-09T02:38:22+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "69f5ab0aa98b59f2",
@@ -56668,14 +56574,14 @@
   "source_type": "media",
   "published_at": "2026-11-09T02:38:22+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "69f5ab0aa98b59f2",
@@ -56729,12 +56635,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T02:33:14+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -56742,7 +56648,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "5880e5f254b6c07e",
@@ -56942,12 +56848,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T02:15:51+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "한국보험신문",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -56955,7 +56861,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1a888718caf1c3e3",
@@ -57109,12 +57015,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T02:09:42+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -57122,7 +57028,7 @@
   "cluster_id": "6655611298204535",
   "cluster_size": 4,
   "cluster_sources": 4,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "773e0f9c36e4610a",
@@ -57265,12 +57171,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T01:59:16+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -57278,7 +57184,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "da1a012e078b9f87",
@@ -57361,12 +57267,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T01:51:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -57374,7 +57280,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "56ac3fee348cdea7",
@@ -57384,12 +57290,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T01:47:11+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -57397,7 +57303,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "a17ec6eac780d8a4",
@@ -57407,12 +57313,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T01:47:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -57420,7 +57326,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "78c29b6f24d3d03a",
@@ -57659,12 +57565,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T01:30:07+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -57672,7 +57578,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "15a7f1747b828eb5",
@@ -57749,12 +57655,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T01:27:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -57762,7 +57668,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "eb81b9dadb21fd9a",
@@ -57823,12 +57729,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T01:18:58+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -57836,7 +57742,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "71f08261a8aa6775",
@@ -58194,12 +58100,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:59:18+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -58207,7 +58113,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0c6617889dff1e66",
@@ -58508,16 +58414,14 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:34:19+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "손보사·삼성화재(그 외)",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "삼성화재"
   ],
@@ -58525,7 +58429,7 @@
   "cluster_id": "25ea3f5a8e22d010",
   "cluster_size": 6,
   "cluster_sources": 5,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d11230314145326e",
@@ -58535,12 +58439,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:33:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -58548,7 +58452,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "82b10bc52efe328a",
@@ -58635,12 +58539,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:27:24+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -58648,7 +58552,7 @@
   "cluster_id": "6655611298204535",
   "cluster_size": 4,
   "cluster_sources": 4,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -58659,21 +58563,19 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:26:51+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
-  "sub_categories": [
-   "금융시장·자산운용"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "주가"
   ],
   "score": 2,
   "feed_name": "생보사·삼성·한화",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "한화생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "30b36c0ad2cca36f",
@@ -58706,12 +58608,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:23:21+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·DB·KB",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -58719,7 +58621,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "68689ad5aee15ebe",
@@ -58747,12 +58649,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:21:21+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -58760,7 +58662,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "3baa9d0bad455822",
@@ -58770,12 +58672,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:19:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -58783,7 +58685,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "74ba062f1964952e",
@@ -58793,12 +58695,12 @@
   "source_type": "media",
   "published_at": "2026-11-09T00:17:30+00:00",
   "collected_at": "2026-11-10T02:54:20.923080+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "주요 경제지·보험",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "DB손해보험"
   ],
@@ -58806,7 +58708,7 @@
   "cluster_id": "74ba062f1964952e",
   "cluster_size": 17,
   "cluster_sources": 17,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1295c7f5d99ea7bf",
@@ -58923,7 +58825,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -58931,7 +58833,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "d36646bfd05149f8",
@@ -59276,12 +59178,12 @@
   "source_type": "media",
   "published_at": "2026-11-08T23:58:44+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "보험저널",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -59289,7 +59191,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -59372,14 +59274,14 @@
   "source_type": "media",
   "published_at": "2026-11-08T23:33:18+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -59490,7 +59392,7 @@
   "source_type": "media",
   "published_at": "2026-11-08T23:00:03+00:00",
   "collected_at": "2026-11-08T23:59:23.122824+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -59498,7 +59400,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "33829f72f1316547",
@@ -59768,7 +59670,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -59776,7 +59678,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "746129438957ea9e",
@@ -60179,7 +60081,7 @@
   "source_type": "media",
   "published_at": "2026-11-08T20:00:06+00:00",
   "collected_at": "2026-11-08T23:59:23.122824+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리",
@@ -60187,10 +60089,10 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "c490f1190e7bc6fa",
@@ -61066,7 +60968,7 @@
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -61074,7 +60976,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "3ae5b36f9d1a6725",
@@ -61223,12 +61125,12 @@
   "source_type": "media",
   "published_at": "2026-11-08T10:39:48+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -61236,7 +61138,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "561197bfcd940cfd",
@@ -61434,12 +61336,12 @@
   "source_type": "media",
   "published_at": "2026-11-08T09:06:00+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보사·교보·신한·농협",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "NH농협생명"
   ],
@@ -61447,7 +61349,7 @@
   "cluster_id": "469534dab6ac0eff",
   "cluster_size": 16,
   "cluster_sources": 16,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "775bc37d5a3b231b",
@@ -61887,14 +61789,14 @@
   "source_type": "media",
   "published_at": "2026-11-08T04:03:18+00:00",
   "collected_at": "2026-11-13T03:59:59.238316+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "742b4f714d429364",
@@ -62421,7 +62323,7 @@
   "source_type": "media",
   "published_at": "2026-11-07T21:35:01+00:00",
   "collected_at": "2026-11-07T23:56:16.599312+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -62429,7 +62331,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "5e5484610f6c8362",
@@ -62446,7 +62348,7 @@
   "source_type": "media",
   "published_at": "2026-11-07T21:35:01+00:00",
   "collected_at": "2026-11-07T23:56:16.599312+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -62454,7 +62356,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "5e5484610f6c8362",
@@ -62878,7 +62780,7 @@
   "source_type": "media",
   "published_at": "2026-11-07T01:34:00+00:00",
   "collected_at": "2026-11-08T23:59:23.122824+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -62886,7 +62788,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "33829f72f1316547",
@@ -63358,7 +63260,7 @@
   "source_type": "media",
   "published_at": "2026-11-06T09:47:48+00:00",
   "collected_at": "2026-11-07T00:18:23.626222+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국채",
@@ -63366,10 +63268,10 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "3c1a702b728aad0a",
@@ -64221,7 +64123,7 @@
   "source_type": "media",
   "published_at": "2026-11-06T04:55:00+00:00",
   "collected_at": "2026-11-06T08:37:28.506238+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "증시",
@@ -64230,7 +64132,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -64313,17 +64215,17 @@
   "source_type": "media",
   "published_at": "2026-11-06T04:27:27+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "생명보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "생보업권·외국계",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "메트라이프생명"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "6cc9165edd575185",
@@ -65579,7 +65481,7 @@
   "source_type": "media",
   "published_at": "2026-11-05T19:57:16+00:00",
   "collected_at": "2026-11-07T23:56:16.599312+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리동결",
@@ -65587,7 +65489,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -65676,14 +65578,14 @@
   "source_type": "media",
   "published_at": "2026-11-05T12:52:40+00:00",
   "collected_at": "2026-11-05T15:31:33.894774+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리인상"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -65696,7 +65598,7 @@
   "source_type": "media",
   "published_at": "2026-11-05T12:04:00+00:00",
   "collected_at": "2026-11-05T15:31:33.894774+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "기준금리",
@@ -65704,7 +65606,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -66144,17 +66046,17 @@
   "source_type": "media",
   "published_at": "2026-11-05T08:00:00+00:00",
   "collected_at": "2026-11-07T23:56:16.599312+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "e9bb792d20c0cf63",
@@ -66188,7 +66090,7 @@
   "source_type": "media",
   "published_at": "2026-11-05T07:55:40+00:00",
   "collected_at": "2026-11-07T00:18:23.626222+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국고채",
@@ -66196,7 +66098,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2,
@@ -66213,7 +66115,7 @@
   "source_type": "media",
   "published_at": "2026-11-05T07:40:41+00:00",
   "collected_at": "2026-11-07T23:56:16.599312+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국고채",
@@ -66221,7 +66123,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -66388,7 +66290,8 @@
   "cluster_id": "d120b248672600cb",
   "cluster_size": 4,
   "cluster_sources": 4,
-  "score_v2": 2
+  "score_v2": 3,
+  "cluster_lead": true
  },
  {
   "id": "056550ed32333173",
@@ -66398,17 +66301,15 @@
   "source_type": "media",
   "published_at": "2026-11-05T07:21:40+00:00",
   "collected_at": "2026-11-05T15:31:33.894774+00:00",
-  "category": "금융시장·자산운용",
-  "sub_categories": [
-   "제도·회계·건전성"
-  ],
+  "category": "미분류",
+  "sub_categories": [],
   "tags": [
    "대출금리",
    "소비자보호"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -66543,14 +66444,14 @@
   "source_type": "media",
   "published_at": "2026-11-05T06:36:16+00:00",
   "collected_at": "2026-11-12T01:59:56.438245+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -67032,14 +66933,14 @@
   "source_type": "media",
   "published_at": "2026-11-05T03:58:14+00:00",
   "collected_at": "2026-11-05T05:37:54.778483+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "기준금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -67962,17 +67863,17 @@
   "source_type": "media",
   "published_at": "2026-11-04T23:33:21+00:00",
   "collected_at": "2026-11-05T03:45:29.098800+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "금리"
   ],
   "score": 2,
   "feed_name": "보험매일",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "864f9151ded1b24b",
@@ -68790,17 +68691,17 @@
   "source_type": "media",
   "published_at": "2026-11-04T08:35:41+00:00",
   "collected_at": "2026-11-11T08:27:45.041769+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "손보사·현대해상",
-  "relevant": true,
+  "relevant": false,
   "companies": [
    "현대해상"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "64e92d1d0e0666e3",
@@ -68859,14 +68760,14 @@
   "source_type": "media",
   "published_at": "2026-11-04T08:32:12+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -68991,16 +68892,14 @@
   "source_type": "media",
   "published_at": "2026-11-04T07:47:02+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "한국보험신문",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
-  "relevant": true,
+  "sub_categories": [],
+  "relevant": false,
   "companies": [
    "신한EZ손해보험"
   ],
@@ -69008,7 +68907,7 @@
   "cluster_id": "014e9015157ada92",
   "cluster_size": 3,
   "cluster_sources": 3,
-  "score_v2": 2,
+  "score_v2": 1,
   "cluster_lead": true
  },
  {
@@ -69070,14 +68969,14 @@
   "source_type": "media",
   "published_at": "2026-11-04T07:35:01+00:00",
   "collected_at": "2026-11-05T03:45:29.098800+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -69134,7 +69033,7 @@
   "source_type": "media",
   "published_at": "2026-11-04T07:28:20+00:00",
   "collected_at": "2026-11-06T08:37:28.506238+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "국채",
@@ -69142,10 +69041,10 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "1fefcf5fcdce150d",
@@ -69225,14 +69124,14 @@
   "source_type": "media",
   "published_at": "2026-11-04T06:37:34+00:00",
   "collected_at": "2026-11-05T03:45:29.098800+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -69383,7 +69282,7 @@
   "source_type": "media",
   "published_at": "2026-11-04T05:44:26+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권",
    "장기금리"
@@ -69391,7 +69290,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -69820,7 +69719,7 @@
   "source_type": "media",
   "published_at": "2026-11-04T01:19:32+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "엔화",
    "장기금리"
@@ -69828,7 +69727,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -70370,16 +70269,14 @@
   "source_type": "media",
   "published_at": "2026-11-03T23:56:07+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "주요 경제지·보험",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
-  "relevant": true,
+  "sub_categories": [],
+  "relevant": false,
   "companies": [
    "신한EZ손해보험"
   ],
@@ -70387,7 +70284,7 @@
   "cluster_id": "014e9015157ada92",
   "cluster_size": 3,
   "cluster_sources": 3,
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "89ee856d57dce22f",
@@ -71005,7 +70902,7 @@
   "source_type": "media",
   "published_at": "2026-11-03T08:13:14+00:00",
   "collected_at": "2026-11-05T03:45:29.098800+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "증시",
@@ -71014,7 +70911,7 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -71303,7 +71200,7 @@
   "source_type": "media",
   "published_at": "2026-11-03T06:52:58+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "보금자리론",
    "금리"
@@ -71311,7 +71208,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "2be8927eb3c7bb9f",
@@ -71472,17 +71369,17 @@
   "source_type": "media",
   "published_at": "2026-11-03T06:03:17+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "0a68ce9cd6f32d08",
@@ -71523,7 +71420,7 @@
   "source_type": "media",
   "published_at": "2026-11-03T05:58:00+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "대출금리",
    "신용대출"
@@ -71531,10 +71428,10 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "dd1a2d1cba52cb3f",
@@ -71625,7 +71522,7 @@
   "source_type": "media",
   "published_at": "2026-11-03T05:01:47+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권",
    "ETF"
@@ -71633,7 +71530,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "d120b248672600cb",
@@ -71866,14 +71763,14 @@
   "source_type": "media",
   "published_at": "2026-11-03T02:04:21+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -72040,7 +71937,7 @@
   "source_type": "media",
   "published_at": "2026-11-03T01:08:44+00:00",
   "collected_at": "2026-11-04T12:30:40.381838+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권",
    "ETF"
@@ -72048,7 +71945,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "d120b248672600cb",
@@ -72323,21 +72220,19 @@
   "source_type": "media",
   "published_at": "2026-11-03T00:07:32+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "손해보험",
+  "category": "미분류",
   "tags": [
    "캠페인"
   ],
   "score": 2,
   "feed_name": "한국보험신문",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
-  "relevant": true,
+  "sub_categories": [],
+  "relevant": false,
   "companies": [
    "NH농협손해보험"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "709e6f6fee22d492",
@@ -72531,7 +72426,7 @@
   "source_type": "media",
   "published_at": "2026-11-02T23:53:35+00:00",
   "collected_at": "2026-11-04T13:04:31.556545+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "채권",
@@ -72539,14 +72434,13 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "d120b248672600cb",
   "cluster_size": 4,
   "cluster_sources": 4,
-  "score_v2": 2,
-  "cluster_lead": true
+  "score_v2": 2
  },
  {
   "id": "bf4ff508d990f11b",
@@ -72556,7 +72450,7 @@
   "source_type": "media",
   "published_at": "2026-11-02T23:51:01+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "증시",
    "자사주",
@@ -72564,10 +72458,8 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "sub_categories": [
-   "보험경영·판매"
-  ],
-  "relevant": true,
+  "sub_categories": [],
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -73026,7 +72918,7 @@
   "source_type": "media",
   "published_at": "2026-11-02T07:33:15+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "금리",
    "국채",
@@ -73035,10 +72927,10 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "84391b628f6d63d4",
@@ -73139,7 +73031,7 @@
   "source_type": "media",
   "published_at": "2026-11-02T06:57:07+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "보금자리론",
    "금리"
@@ -73147,7 +73039,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "2be8927eb3c7bb9f",
@@ -73183,14 +73075,14 @@
   "source_type": "media",
   "published_at": "2026-11-02T06:56:00+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -73203,14 +73095,14 @@
   "source_type": "media",
   "published_at": "2026-11-02T06:34:03+00:00",
   "collected_at": "2026-11-07T23:56:16.599312+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "sub_categories": [],
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -73346,7 +73238,7 @@
   "source_type": "media",
   "published_at": "2026-11-02T05:30:40+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "보금자리론",
    "금리"
@@ -73354,7 +73246,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "2be8927eb3c7bb9f",
@@ -73371,14 +73263,14 @@
   "source_type": "media",
   "published_at": "2026-11-02T05:28:56+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -73551,7 +73443,7 @@
   "source_type": "media",
   "published_at": "2026-11-02T04:56:05+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권",
    "AI",
@@ -73559,10 +73451,8 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "sub_categories": [
-   "사회·인구·기술 변화"
-  ],
-  "relevant": true,
+  "sub_categories": [],
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -73954,14 +73844,14 @@
   "source_type": "media",
   "published_at": "2026-11-02T01:55:00+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "환율"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -74327,7 +74217,7 @@
   "source_type": "media",
   "published_at": "2026-11-02T00:19:00+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권",
    "금리",
@@ -74336,7 +74226,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -75122,16 +75012,14 @@
   "source_type": "media",
   "published_at": "2026-11-01T15:00:00+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권"
   ],
   "score": 2,
   "feed_name": "한국보험신문",
-  "sub_categories": [
-   "제도·회계·건전성"
-  ],
-  "relevant": true,
+  "sub_categories": [],
+  "relevant": false,
   "companies": [],
   "orgs": [
    "금융위원회"

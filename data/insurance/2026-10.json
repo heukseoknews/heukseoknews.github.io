@@ -54,7 +54,7 @@
   "source_type": "media",
   "published_at": "2026-10-31T04:02:04+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "국고채",
    "금리"
@@ -62,7 +62,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -168,7 +168,7 @@
   "source_type": "media",
   "published_at": "2026-10-30T05:06:44+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "엔화",
    "금리"
@@ -176,7 +176,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "e62b1025f6c19f15",
@@ -622,7 +622,7 @@
   "source_type": "media",
   "published_at": "2026-10-29T23:56:38+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "자산운용",
    "금리",
@@ -631,7 +631,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -644,14 +644,14 @@
   "source_type": "media",
   "published_at": "2026-10-29T21:10:00+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "예금금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -807,7 +807,7 @@
   "source_type": "media",
   "published_at": "2026-10-29T08:57:23+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "기준금리",
    "연준",
@@ -816,7 +816,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -967,7 +967,7 @@
   "source_type": "media",
   "published_at": "2026-10-29T02:58:31+00:00",
   "collected_at": "2026-11-04T11:56:37.110629+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "채권",
    "AI",
@@ -975,10 +975,8 @@
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
-  "sub_categories": [
-   "사회·인구·기술 변화"
-  ],
-  "relevant": true,
+  "sub_categories": [],
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -1037,14 +1035,14 @@
   "source_type": "media",
   "published_at": "2026-10-29T01:50:00+00:00",
   "collected_at": "2026-11-04T12:18:59.814500+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "기준금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -1078,14 +1076,14 @@
   "source_type": "media",
   "published_at": "2026-10-29T00:45:27+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "국고채"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -1149,14 +1147,14 @@
   "source_type": "press",
   "published_at": "2026-10-29T00:00:00+00:00",
   "collected_at": "2026-11-11T07:40:09.268061+00:00",
-  "category": "미분류",
+  "category": "제도·회계·건전성",
   "sub_categories": [],
   "tags": [
    "소비자보호"
   ],
   "score": 2,
   "feed_name": "금융감독원 게시판",
-  "relevant": false,
+  "relevant": true,
   "department": "감독혁신국",
   "companies": [],
   "orgs": [
@@ -1165,7 +1163,7 @@
   "cluster_id": "cec9cd8719fb49e1",
   "cluster_size": 2,
   "cluster_sources": 2,
-  "score_v2": 2
+  "score_v2": 3
  },
  {
   "id": "3a9b1846c84fb3d0",
@@ -1298,14 +1296,14 @@
   "source_type": "press",
   "published_at": "2026-10-29T00:00:00+00:00",
   "collected_at": "2026-11-11T07:41:30.945508+00:00",
-  "category": "미분류",
+  "category": "제도·회계·건전성",
   "sub_categories": [],
   "tags": [
    "소비자보호"
   ],
   "score": 2,
   "feed_name": "금융위원회 게시판",
-  "relevant": false,
+  "relevant": true,
   "department": "구조개선정책과",
   "companies": [],
   "orgs": [
@@ -1314,7 +1312,7 @@
   "cluster_id": "cec9cd8719fb49e1",
   "cluster_size": 2,
   "cluster_sources": 2,
-  "score_v2": 2,
+  "score_v2": 3,
   "cluster_lead": true
  },
  {
@@ -1346,7 +1344,7 @@
   "source_type": "media",
   "published_at": "2026-10-28T20:44:45+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "뉴욕증시",
    "금리동결"
@@ -1354,7 +1352,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -1367,7 +1365,7 @@
   "source_type": "media",
   "published_at": "2026-10-28T20:20:37+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "금리인상",
    "Fed"
@@ -1375,7 +1373,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "cluster_id": "e62b1025f6c19f15",
@@ -1392,17 +1390,17 @@
   "source_type": "media",
   "published_at": "2026-10-28T20:10:00+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "금리"
   ],
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 1
  },
  {
   "id": "fbbbd0f1778feda4",
@@ -1412,7 +1410,7 @@
   "source_type": "media",
   "published_at": "2026-10-28T19:33:10+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "연준",
    "금리동결"
@@ -1420,7 +1418,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -1433,7 +1431,7 @@
   "source_type": "media",
   "published_at": "2026-10-28T18:22:52+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "연준",
    "금리동결",
@@ -1443,7 +1441,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
@@ -1456,7 +1454,7 @@
   "source_type": "media",
   "published_at": "2026-10-28T18:12:47+00:00",
   "collected_at": "2026-11-04T11:23:54.199912+00:00",
-  "category": "금융시장·자산운용",
+  "category": "미분류",
   "tags": [
    "Fed",
    "기준금리"
@@ -1464,7 +1462,7 @@
   "score": 2,
   "feed_name": "주요 경제지·금융시장",
   "sub_categories": [],
-  "relevant": true,
+  "relevant": false,
   "companies": [],
   "orgs": [],
   "score_v2": 2
