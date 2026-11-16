@@ -2,8 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import {
-  BATCH, CHANNEL_GUIDE, COMMON, LABEL_KEY, applyAction, emptyStore, exportName, firstUnlabeled, isNick, keyAction, mergeRows, parseImport, parseStore,
-  sampleFor, sampleOrder, seedFor, setAnnotator, summary, toExport,
+  BATCH, LABEL_KEY, applyAction, emptyStore, firstUnlabeled, keyAction, mergeRows, parseImport, parseStore, sampleOrder, seedFor, summary, toExport,
 } from '../lib/label.ts';
 
 // ───── 표본 추출: 재현성 ─────
@@ -72,6 +71,44 @@ assert.deepEqual(parseStore(JSON.stringify(m.store)), m.store);
 assert.deepEqual(parseStore('{broken'), emptyStore());
 assert.deepEqual(parseStore(null), emptyStore());
 
+// ───── 저장값 호환: 옛 형식·닉네임판(2026-11-16, 되돌림) 형식 모두 읽힌다 ─────
+{
+  const own = { insurance: { i1: { score: 2, labeled_at: '2026-11-14T00:00:00.000Z' } } };
+  const newFmt = {
+    version: 1, labels: own, sessions: { insurance: { month: 'all', size: BATCH, cursor: 7 } }, channel: 'insurance',
+    annotator: 'alice', keep: { insurance: ['i1'] },
+    others: { bob: { insurance: { i1: { score: 0, labeled_at: '2026-11-16T09:00:00.000Z' }, i2: { score: 3, labeled_at: '2026-11-16T09:00:00.000Z' } } } },
+  };
+  const ns = parseStore(JSON.stringify(newFmt));
+  assert.equal(ns.labels.insurance.i1.score, 2, '내 라벨은 다른 사람 라벨이 늦어도 그대로');
+  assert.equal(ns.labels.insurance.i2.score, 3, '다른 사람 라벨은 내 라벨이 없는 기사에만 더함');
+  assert.deepEqual(ns.sessions.insurance, { month: 'all', size: BATCH, cursor: 7 }, '진행 위치 유지');
+  assert.deepEqual(Object.keys(ns).sort(), ['channel', 'labels', 'sessions', 'version'], 'annotator·keep·others 는 저장 형식에서 빠짐');
+  // 닉네임판이 내보낸 파일(annotator 필드)도 가져올 수 있고, 내보내기는 옛 네 필드
+  const imp = parseImport(JSON.stringify([{ channel: 'ai', id: 'z1', score: 1, labeled_at: '2026-11-16T01:00:00.000Z', annotator: 'alice' }]));
+  assert.deepEqual(imp.rows, [{ channel: 'ai', id: 'z1', score: 1, labeled_at: '2026-11-16T01:00:00.000Z' }]);
+  for (const r of toExport(mergeRows(ns, imp.rows).store)) assert.deepEqual(Object.keys(r), ['channel', 'id', 'score', 'labeled_at']);
+}
+// 사용자의 실제 라벨(보험 150·AI 89, scripts/audit/labels): 옛 형식·새 형식 저장값 모두 그대로 읽히고, 라벨을 매길 때의 기사 목록에서 보험 진행률 150/150
+{
+  const real = JSON.parse(readFileSync('scripts/audit/labels/labels-2026-11-15.json', 'utf8')) as { channel: string; id: string; score: 0 | 1 | 2 | 3; labeled_at: string }[];
+  const old = mergeRows(emptyStore(), real).store;
+  const asStored = { ...old, sessions: { insurance: { month: 'all', size: BATCH, cursor: BATCH }, ai: { month: 'all', size: BATCH, cursor: 89 } } };
+  for (const raw of [asStored, { ...asStored, annotator: 'owner', keep: { insurance: Object.keys(old.labels.insurance) } }]) {
+    const st2 = parseStore(JSON.stringify(raw));
+    assert.equal(Object.keys(st2.labels.insurance).length, 150); assert.equal(Object.keys(st2.labels.ai).length, 89);
+    assert.deepEqual(toExport(st2), toExport(old), '내보내기 내용도 같다');
+    assert.deepEqual([st2.sessions.insurance.cursor, st2.sessions.ai.cursor], [BATCH, 89]);
+    const lastAt = real.filter(r => r.channel === 'insurance').map(r => r.labeled_at).sort().at(-1)!;
+    const arts = readdirSync('data/insurance').filter(f => /^\d{4}-\d{2}\.json$/.test(f))
+      .flatMap(f => JSON.parse(readFileSync(join('data/insurance', f), 'utf8')) as { id: string; published_at: string; collected_at: string }[]);
+    const then = arts.filter(x => x.collected_at <= lastAt);                       // 라벨을 매길 때 있던 기사
+    const ids2 = sampleOrder(then, seedFor('insurance')).map(x => x.id);
+    assert.deepEqual(summary(ids2, st2.labels.insurance).done, 150, '보험 150건 진행률 유지');
+    assert.equal(firstUnlabeled(ids2, st2.labels.insurance), 150);
+  }
+}
+
 // ───── 키보드 조작 기본 흐름 ─────
 assert.deepEqual(keyAction('0'), { type: 'score', score: 0 });
 assert.deepEqual(keyAction('3'), { type: 'score', score: 3 });
@@ -102,82 +139,6 @@ k = press(emptyStore(), ['ArrowLeft', 'x']);
 assert.equal(k.sessions.ai.cursor, 0, '처음에서 ←, 모르는 키는 그대로');
 assert.equal(firstUnlabeled(q, { a1: { score: 1, labeled_at: '2026-11-14T00:00:00Z' } }), 1);
 assert.deepEqual(summary(q, press(emptyStore(), ['2', '2', '0']).labels.ai), { done: 3, total: 3, dist: { 0: 1, 1: 0, 2: 2, 3: 0 } });
-
-// ───── 닉네임 ─────
-for (const v of ['kim', 'Kim2026', 'a', 'A23456789012345']) assert.ok(isNick(v), v);
-for (const v of ['', 'A234567890123456', '김철수', 'kim lee', 'kim_lee', 'kim-1', 1, null]) assert.ok(!isNick(v), String(v));
-
-// ───── 사람별 표본: 처음 30건은 모두 같고, 31번째부터 닉네임 시드 ─────
-assert.equal(COMMON, 30);
-const common = sampleOrder(pool, seedFor('insurance'), 'all', 10_000).map(x => x.id);
-assert.deepEqual(sampleFor(pool, 'insurance', undefined).map(x => x.id), a, '닉네임이 없으면 예전 표본 그대로');
-const qa = sampleFor(pool, 'insurance', 'alice').map(x => x.id), qb = sampleFor(pool, 'insurance', 'bob').map(x => x.id);
-assert.equal(qa.length, BATCH); assert.equal(new Set(qa).size, BATCH, '중복 없음');
-assert.deepEqual(qa.slice(0, COMMON), common.slice(0, COMMON), '처음 30건 = 공통 시드');
-assert.deepEqual(qb.slice(0, COMMON), qa.slice(0, COMMON), '처음 30건은 모든 사람이 같다');
-assert.notDeepEqual(qb.slice(COMMON), qa.slice(COMMON), '31번째부터는 사람마다 다르다');
-assert.ok(qa.slice(COMMON).filter(id => qb.slice(COMMON).includes(id)).length < 60, '뒤쪽 겹침은 우연 수준');
-assert.deepEqual(sampleFor([...pool].reverse(), 'insurance', 'alice').map(x => x.id), qa, '같은 닉네임이면 재현');
-assert.deepEqual(sampleFor(pool, 'insurance', 'alice', 'all', 2 * BATCH).map(x => x.id).slice(0, BATCH), qa, '표본 더 뽑기는 뒤에 이어 붙음');
-const octA = sampleFor(pool, 'insurance', 'alice', '2026-10').map(x => x.id);
-assert.ok(octA.length === 100 && octA.slice(0, COMMON).join() === common.filter(id => pool.find(p => p.id === id)!.published_at.startsWith('2026-10')).slice(0, COMMON).join(), '기간 표본도 공통 30건 먼저');
-
-// ───── 기존 라벨(닉네임 없음) 호환: 닉네임을 정하면 이미 매긴 기사가 공통 30건 바로 뒤에 남는다 ─────
-let legacy = emptyStore();
-const old150 = a;                                          // 예전 표본(공통 시드 앞 150건)을 다 매긴 사람
-for (const [i, id] of old150.entries()) legacy = mergeRows(legacy, [{ channel: 'insurance', id, score: (i % 4) as 0 | 1 | 2 | 3, labeled_at: '2026-11-14T00:00:00.000Z' }]).store;
-const named = setAnnotator(legacy, 'owner');
-assert.equal(named.annotator, 'owner');
-assert.deepEqual([...named.keep!.insurance].sort(), [...old150].sort());
-const qo = sampleFor(pool, 'insurance', 'owner', 'all', BATCH, named.keep!.insurance).map(x => x.id);
-assert.deepEqual(qo, old150, '예전에 매긴 150건이 그대로 표본 150건(진행률 유지)');
-assert.equal(summary(qo, named.labels.insurance).done, BATCH);
-const qo300 = sampleFor(pool, 'insurance', 'owner', 'all', 2 * BATCH, named.keep!.insurance).map(x => x.id);
-assert.deepEqual(qo300.slice(0, BATCH), old150); assert.equal(new Set(qo300).size, 2 * BATCH, '더 뽑으면 닉네임 시드의 새 기사');
-// 라벨을 더 매겨도 표본 순서는 그대로(keep 은 닉네임을 정할 때만 바뀜)
-const more = applyAction({ ...named, sessions: { insurance: { month: 'all', size: 2 * BATCH, cursor: BATCH } } }, 'insurance', qo300, { type: 'score', score: 1 }, '2026-11-16T00:00:00.000Z');
-assert.deepEqual(sampleFor(pool, 'insurance', 'owner', 'all', 2 * BATCH, more.keep!.insurance).map(x => x.id), qo300);
-assert.equal(setAnnotator(named, 'owner'), named, '같은 닉네임이면 그대로');
-assert.equal(setAnnotator(named, '김철수'), named, '형식이 아니면 그대로');
-assert.ok(setAnnotator(more, 'owner2').keep!.insurance.includes(qo300[BATCH]), '닉네임을 바꾸면 그때까지 매긴 기사도 keep 에');
-
-// ───── 내보내기: annotator 필드·파일 이름 ─────
-const mineSt = setAnnotator(applyAction(emptyStore(), 'ai', ['x1'], { type: 'score', score: 3 }, '2026-11-16T01:00:00.000Z'), 'alice');
-assert.deepEqual(toExport(mineSt), [{ channel: 'ai', id: 'x1', score: 3, labeled_at: '2026-11-16T01:00:00.000Z', annotator: 'alice' }]);
-assert.equal(exportName('alice', '2026-11-16'), 'heukseok-labels-alice-2026-11-16.json');
-assert.equal(exportName(undefined, '2026-11-16'), 'heukseok-labels-2026-11-16.json');
-
-// ───── 가져오기: annotator 가 다르면 서로 덮어쓰지 않는다 ─────
-const imp = parseImport(JSON.stringify([
-  { channel: 'ai', id: 'x1', score: 0, labeled_at: '2026-11-16T09:00:00.000Z', annotator: 'bob' },     // 다른 사람: 내 x1 을 바꾸지 않음
-  { channel: 'ai', id: 'x1', score: 1, labeled_at: '2026-11-16T09:00:00.000Z', annotator: 'carol' },   // 또 다른 사람: bob 과도 따로
-  { channel: 'ai', id: 'x2', score: 2, labeled_at: '2026-11-16T09:00:00.000Z', annotator: 'alice' },   // 내 닉네임 → 내 라벨
-  { channel: 'ai', id: 'x3', score: 2, labeled_at: '2026-11-16T09:00:00.000Z' },                        // 닉네임 없음(예전 파일) → 내 라벨
-  { channel: 'ai', id: 'x4', score: 2, labeled_at: '2026-11-16T09:00:00.000Z', annotator: '김철수' },    // 형식 아님 → 건너뜀
-]));
-assert.equal(imp.skipped, 1);
-const mg = mergeRows(mineSt, imp.rows);
-assert.deepEqual([mg.added, mg.updated, mg.others], [2, 0, 2]);
-assert.equal(mg.store.labels.ai.x1.score, 3, '내 라벨 유지');
-assert.equal(mg.store.others!.bob.ai.x1.score, 0);
-assert.equal(mg.store.others!.carol.ai.x1.score, 1);
-assert.equal(mg.store.labels.ai.x2.score, 2); assert.equal(mg.store.labels.ai.x3.score, 2);
-const bobLater = mergeRows(mg.store, [{ channel: 'ai', id: 'x1', score: 3, labeled_at: '2026-11-16T10:00:00.000Z', annotator: 'bob' }]);
-assert.deepEqual([bobLater.store.others!.bob.ai.x1.score, bobLater.store.others!.carol.ai.x1.score, bobLater.store.labels.ai.x1.score], [3, 1, 3], '같은 사람 안에서만 나중 라벨 우선');
-// 내보내면 모든 사람 라벨이 각자 닉네임으로 나가고, 다시 가져와도 같다(왕복)
-const ex = toExport(mg.store);
-assert.deepEqual(ex.map(r => `${r.annotator}:${r.id}:${r.score}`), ['alice:x1:3', 'alice:x2:2', 'alice:x3:2', 'bob:x1:0', 'carol:x1:1']);
-assert.deepEqual(toExport(mergeRows({ ...emptyStore(), annotator: 'alice' }, parseImport(JSON.stringify(ex)).rows).store), ex);
-// 저장값 왕복(닉네임·keep·다른 사람 라벨)
-assert.deepEqual(parseStore(JSON.stringify(mg.store)), mg.store);
-assert.equal(parseStore(JSON.stringify({ ...mg.store, annotator: 'bad name' })).annotator, undefined);
-// 저장소 저장 키는 그대로(예전 라벨이 그대로 읽힌다)
-assert.deepEqual(parseStore(JSON.stringify(legacy)).labels, legacy.labels);
-
-// ───── 화면: 채널 안내 한 줄·닉네임 ─────
-for (const w of ['금융: 은행권 취업 공부', '보험: 계리사·리스크관리 공부와 보험업 취업', 'AI: AI 연구 동향', '목적에 맞는 채널']) assert.ok(CHANNEL_GUIDE.includes(w), w);
-const toolSrc = readFileSync('components/LabelTool.tsx', 'utf8');
-assert.ok(toolSrc.includes('{CHANNEL_GUIDE}') && toolSrc.includes('exportName(store.annotator') && toolSrc.includes('sampleFor(all, channel, store.annotator'));
 
 // ───── 화면: 색인 제외·메뉴 미노출·눈가림 ─────
 const page = readFileSync('app/label/page.tsx', 'utf8');
