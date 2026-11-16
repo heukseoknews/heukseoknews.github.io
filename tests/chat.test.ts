@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync as readSrc } from 'node:fs';
 import {
   BODY_MAX, DELETED_TEXT, PENDING_KEY, PENDING_TTL_MS, articleRefOf, bodyLength, bodyProblem, canDelete, chatFailOf, checkArticle, cleanBody,
   dayKey, dayLabel, dropMessages, enterAction, fetchSince, isDeleted, lastId, mergeMessages, nearBottom, savePending, settleOutgoing,
@@ -236,4 +237,9 @@ assert.ok(canSend('', true) && canSend('글', false) && !canSend('  ', false), '
   assert.equal(readsAfterFail('unknown', 'forbidden'), 'unknown');
 }
 
+// 채팅 페이지 색: 어디서 들어오든 포털 공통 색(globals.css :root) 하나 — 채널 테마 CSS 를 넣지 않는다
+{
+  const chatPage = readSrc('app/chat/page.tsx', 'utf8');
+  assert.ok(!/themeCss|themeVars|<style/.test(chatPage), '채팅 페이지는 채널 색을 넣지 않음');
+}
 console.log('chat tests passed');
