@@ -1,0 +1,71 @@
+{
+ "sources": {
+  "ccfddl": {
+   "last_attempt_at": "2026-11-16T09:28:14.134632+00:00",
+   "validators": {
+    "AI/nips.yml": {
+     "etag": "W/\"37d0173ea10b1d215439af8dc43d089e6593b9623db17bb7fcce0d1a481afd1e\"",
+     "v": 2
+    },
+    "AI/icml.yml": {
+     "etag": "W/\"9258797439b0eee31f311884ab9da9d9c931be938d08db4bf839fe5459c10002\"",
+     "v": 2
+    },
+    "AI/iclr.yml": {
+     "etag": "W/\"e99bb489cac33d7e26bb3aec7b1c85b639f6023b833561c7725da36219e7a357\"",
+     "v": 2
+    },
+    "AI/aaai.yml": {
+     "etag": "W/\"789b567c77f1a2bd053fa943f58d86020cf2f253bbadfae27b6a9471c7bb5879\"",
+     "v": 2
+    },
+    "AI/ijcai.yml": {
+     "etag": "W/\"bc65c53d56131e996f2fe70f94c5a4a55c0799472788ce6baa1d5d708af578a8\"",
+     "v": 2
+    },
+    "AI/acl.yml": {
+     "etag": "W/\"f5dde7733a328fea8ce8c10e5b9bba3ceca6c246d373bde83259d1885ec488c9\"",
+     "v": 2
+    },
+    "AI/emnlp.yml": {
+     "etag": "W/\"cd1fcf8682717568e5578d95ef21e697e409123e4f592e9950ddf43d5488093d\"",
+     "v": 2
+    },
+    "AI/naacl.yml": {
+     "etag": "W/\"6d6a613661b84e126b2802c943815d1e13dd1bbfda20edd620eab2b22384d566\"",
+     "v": 2
+    },
+    "AI/cvpr.yml": {
+     "etag": "W/\"47ac5bd40717edfd6e6165a85f061224d64dbcc0bd0582289f940d329330eab7\"",
+     "v": 2
+    },
+    "AI/iccv.yml": {
+     "etag": "W/\"8a9448f4792d48be138b364e2a00b58947463fa95d5ec0a4f584d389bf3d299c\"",
+     "v": 2
+    },
+    "AI/eccv.yml": {
+     "etag": "W/\"c10a9ecf58cac0a2995dccd110a282891a4e98cf893937a26e2fa9b2be65e647\"",
+     "v": 2
+    },
+    "DB/sigkdd.yml": {
+     "etag": "W/\"e08705fbf4bc616c1904edc6b010875ef7eadc8118b9b54b0b8bbb062fcd96c9\"",
+     "v": 2
+    }
+   },
+   "errors": [],
+   "ok": true,
+   "last_success_at": "2026-11-16T09:28:14.134632+00:00",
+   "count": 98,
+   "channel": "ai"
+  },
+  "kidi": {
+   "last_attempt_at": "2026-11-16T09:28:14.134632+00:00",
+   "ok": true,
+   "last_error_at": "2026-11-16T09:25:43.155915+00:00",
+   "channel": "insurance",
+   "last_success_at": "2026-11-16T09:28:14.134632+00:00",
+   "count": 12
+  }
+ },
+ "updated_at": "2026-11-16T09:28:14.134632+00:00"
+}
