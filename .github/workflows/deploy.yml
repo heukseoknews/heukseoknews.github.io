@@ -106,14 +106,19 @@ jobs:
 
   # 일정 캘린더 자동 수집(collector/calendar_collect.py, docs/calendar.md): 한국 03:45 예약 실행(18:45 UTC)에만 붙인다. 출처당 하루 한 번.
   # 실패해도(출처 오류는 data/calendar/status.json 에 기록, 이전 일정 유지) 뉴스 수집·배포는 계속된다.
+  # 채널 수집 잡이 끝난 뒤에 돈다(needs: collect + !cancelled(), 채널 잡이 실패해도 돈다): data 커밋 push 가 채널 잡들과 동시에 몰려 재시도 3회를 넘기지 않게.
   calendar:
-    if: github.event_name == 'schedule' && github.event.schedule == '45 18 * * *'
+    needs: [plan, collect]
+    if: ${{ !cancelled() && github.event_name == 'schedule' && github.event.schedule == '45 18 * * *' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       contents: write
     steps:
+      # 채널 잡이 push 한 data 커밋 위에서 시작한다(push 재시도 줄이기)
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
