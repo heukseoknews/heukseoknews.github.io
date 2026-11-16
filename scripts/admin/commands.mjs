@@ -124,6 +124,7 @@ export async function cmdCheck({ api, anonApi, bearerApi, out }) {
   await step('표 profiles 읽기(service_role)', async () => { await api.select('profiles', 'select=user_id&limit=1'); return 'SQL 적용됨'; });
   await step('표 account_security 읽기(service_role)', async () => { await api.select('account_security', 'select=user_id&limit=1'); });
   await step('표 user_state 읽기(service_role)', async () => { await api.select('user_state', 'select=user_id&limit=1'); });
+  await step('표 article_feedback 읽기(service_role)', async () => { await api.select('article_feedback', 'select=user_id&limit=1'); return '0006 적용됨'; });
   if (anonApi) {
     for (const t of ['profiles', 'account_security', 'user_state']) {
       await step(`로그인 안 한 요청(publishable 키)으로 ${t} 읽기 차단`, async () => {
@@ -131,6 +132,11 @@ export async function cmdCheck({ api, anonApi, bearerApi, out }) {
         throw new ApiError(200, 'exposed', '읽혔습니다 — anon 권한을 확인하세요');
       });
     }
+    // 0006: 권한 거절(401·403)만 '막힘'. 표가 없어서 나는 404 는 실패(적용 전)
+    await step('로그인 안 한 요청(publishable 키)으로 article_feedback 읽기 차단', async () => {
+      try { await anonApi.select('article_feedback', 'select=user_id&limit=1'); } catch (e) { if (e instanceof ApiError && (e.status === 401 || e.status === 403)) return `막힘(HTTP ${e.status})`; throw e; }
+      throw new ApiError(200, 'exposed', '읽혔습니다 — anon 권한을 확인하세요');
+    });
   } else out('· publishable 키가 없어 anon 차단 확인은 건너뜀(NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY 를 주면 확인)');
   const bad = results.filter(r => !r.ok).length;
   out(bad ? `확인 실패 ${bad}건 — 절차서 '문제가 생겼을 때' 참고` : '모두 정상');

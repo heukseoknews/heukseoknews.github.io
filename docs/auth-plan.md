@@ -477,6 +477,7 @@ node scripts/admin/verify.mjs [--apply]                   # 보안 자동 검증
 | 비밀번호 변경 필요 여부·바꾼 시각 | `account_security` | |
 | 마지막 로그인 시각, 세션의 IP·브라우저 정보 | Supabase Auth | Supabase 가 보안 목적으로 남김(감사 로그 무료 1시간) |
 | 채널별 북마크·읽은 기사와 시각·새 뉴스 확인 시각·선택한 보험사 | `user_state` | 사이트 기능에 필요한 것만 |
+| 기사 피드백(관련 없음·도움 됨, 기사 id·채널·시각) | `article_feedback`(0006) | 본인만 읽고 씀. 분석은 가명 내보내기로(docs/feedback.md) |
 
 - 분석·광고 스크립트 없음(지금과 같음). `user_metadata`(사용자가 고칠 수 있는 영역)에 아무것도 넣지 않는다.
 - 공개 저장소 규칙: 실제 아이디·표시 이름 목록, 학번, 사용자 수 이외의 정보를 문서·코드·커밋 메시지에 쓰지 않는다.
@@ -573,6 +574,7 @@ node scripts/admin/verify.mjs [--apply]                   # 보안 자동 검증
 - **표시 이름 공개**: 댓글·채팅을 열 때 `profiles` 의 select 정책을 "로그인 사용자 전체"로 넓힌다(`using (true)` to authenticated). `account_security` 는 계속 본인만. `auth.users` 는 노출하지 않는다.
 - **댓글**: `comments(id bigint identity pk, channel text, article_id text /* 16자리 기사 id */, user_id uuid default auth.uid(), body text check (char_length(body) between 1 and 1000), created_at timestamptz default now(), deleted_at timestamptz)`, 인덱스 `(channel, article_id, created_at)`. 화면에는 `profiles.display_name` 을 붙여 보인다. RLS: select 는 authenticated 전체(`deleted_at is null`), insert 는 `user_id = auth.uid()` 이고 `password_ready()`, update(본문 수정·삭제 표시)는 본인만, 실제 delete 는 관리자만. 같은 기사가 다른 채널에도 있을 수 있어 키는 `(channel, article_id)`.
 - **전체 채팅방**: `chat_messages(id bigint identity pk, user_id uuid default auth.uid(), body text check (char_length(body) between 1 and 500), created_at timestamptz default now())`. 최근 것만 보관 — 넣을 때 트리거로 최근 500건(또는 30일)만 남긴다. 실시간은 Supabase Realtime(Postgres Changes 또는 Broadcast). 무료 한도: 동시 연결 200, 월 메시지 200만, 초당 100 — 10명에게 충분. RLS: select·insert 는 authenticated(insert 는 `password_ready()`), update 없음, delete 는 본인·관리자.
+- **기사 피드백**(구현됨, 0006): `article_feedback(user_id, channel, article_id, signal, created_at, updated_at)`, 기본키 `(user_id, channel, article_id)`, 본인 행만 4개 작업(`password_ready()`), anon 권한 없음. 설계는 docs/feedback.md, 적용은 docs/auth-runbook.md 2-5장.
 - 공통: 모든 표는 `revoke all … from public, anon, authenticated` 후 필요한 권한만 `grant`(service_role 포함 명시), 작업별 정책, `(select auth.uid())`, 4.2 권한표와 4.3 검사 항목을 같이 늘린다. 글 내용은 React 텍스트로만 그린다(HTML 해석 금지). 신고·차단은 10명 규모라 관리자가 대시보드에서 처리.
 
 ## 12. 결정 사항

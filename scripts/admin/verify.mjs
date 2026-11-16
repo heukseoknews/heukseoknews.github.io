@@ -4,7 +4,8 @@
 // 하는 일: 임시 시험 계정 2개(zz-verify-a, zz-verify-b, 무작위 비밀번호 — 화면에 보이지 않음)를 만들고
 //   anon 차단, 비밀번호 변경 전 user_state 차단·변경 후 허용, 다른 사용자 행 접근 불가, 프로필·변경 필요 값 위조 불가,
 //   서버 상한(악용 방지: 북마크 3,000·폴더 100·태그 200·메모 1,000자)과 화면 한도를 넘는 합친 결과 허용, private 함수 비노출, 관리자 초기화 후 다시 차단,
-//   표시 이름 변경 함수(set_display_name, 0002)의 권한·검사, 채팅(chat_messages·chat_send·chat_list·chat_delete, 0003)의 권한·검사를 확인한 뒤
+//   표시 이름 변경 함수(set_display_name, 0002)의 권한·검사, 채팅(chat_messages·chat_send·chat_list·chat_delete, 0003)의 권한·검사,
+//   기사 피드백(article_feedback, 0006)의 본인 행 권한·검사를 확인한 뒤
 //   시험 계정을 지운다(채팅 시험 글은 on delete cascade 로 함께 지워지는지 확인)(중간에 실패해도 지운다). 한 항목이 실패해도 남은 항목은 계속 돌린다(계정 만들기 실패만 중단). 필요: SUPABASE_URL, 비밀 키 파일, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY.
 import { randomBytes } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
@@ -19,11 +20,13 @@ export const STEPS = [
   '2-1. 로그인 안 한 요청: set_display_name 호출 막힘(0002)',
   '2-2. 로그인 안 한 요청: chat_messages 읽기, chat_send·chat_list·chat_delete 호출 모두 막힘(0003)',
   '2-3. 로그인 안 한 요청: chat_mark_read·chat_read_counts 호출, chat_reads 읽기 막힘(0004)',
+  '2-4. 로그인 안 한 요청: article_feedback 읽기·쓰기 막힘(권한 거절 401·403 — 표가 없어서 나는 404 는 실패, 0006)',
   '3. A(비밀번호 변경 전): 자기 변경 필요 = true, user_state 읽기 0행·쓰기 막힘',
   '4. A: profiles(표시 이름·is_admin)·account_security(변경 필요) 고치기 막힘, profiles 만들기 막힘',
   '4-1. A(비밀번호 변경 전): set_display_name 호출 막힘',
   '4-2. A(비밀번호 변경 전): chat_messages 읽기 0행, chat_list·chat_send 막힘',
   '4-3. A(비밀번호 변경 전): chat_mark_read·chat_read_counts 막힘(0004)',
+  '4-4. A(비밀번호 변경 전): article_feedback 읽기 0행·만들기 막힘(0006)',
   '5. A·B 비밀번호 변경(현재 비밀번호 필요) → 변경 필요 = false(트리거) → A user_state 쓰기·읽기 성공',
   '5-1. A 표시 이름(set_display_name): 거절 검사 먼저(21자·빈 값·공백만·제어 문자·B 의 이름 그대로·공백만 다름·대소문자만 다름) → 정상 변경·profiles 반영 → 바로 두 번째 변경 10분 제한 거절 → profiles 직접 고치기 여전히 막힘',
   '5-2. 채팅: A chat_send(응답 = id·created_at·표시 이름, login_id 없음) → B 가 chat_list·직접 읽기로 봄, 500자 허용·기사 첨부 저장',
@@ -32,12 +35,13 @@ export const STEPS = [
   '5-5. 채팅 분당 상한: B 가 60건 보낸 뒤 61번째 거절',
   '5-6. 기사만 있는 글(0004): 본문 없이 기사만 전송됨(body = 빈 문자열) · 본문도 기사도 없으면 거절 · 비관리자 본인 삭제 거절, 관리자가 지우면 본문·기사 비움',
   '5-7. 읽음(0004): B 가 읽음 처리하면 A 의 글 읽음 +1, 글쓴이 본인은 세지 않음, 응답은 id·숫자만 · last_read_id 줄지 않음·최대 id 로 맞춤 · 삭제 글 제외 · chat_reads 직접 읽기·쓰기 막힘',
-  '6. B: A 의 행 읽기 0행, 고치기·지우기 0행, A 의 user_id 로 만들기 막힘, 자기 행 user_id 를 A 로 바꾸기 막힘',
+  '5-8. 피드백(0006): A 가 도움 됨 기록 → created_at 은 서버 시각(보낸 값 무시) → 관련 없음으로 바꾸기 → 잘못된 signal·channel·article_id·같은 기사 두 번째 행 거절 → 취소(지우기) 뒤 0행',
+  '6. B: A 의 행 읽기 0행, 고치기·지우기 0행, A 의 user_id 로 만들기 막힘, 자기 행 user_id 를 A 로 바꾸기 막힘(user_state·article_feedback)',
   '7. A: 서버 상한 초과(북마크 3,001·폴더 101·태그 201·메모 1,001자·북마크당 태그 51) 거절, 화면 한도를 넘는 합친 결과(북마크 2,000·폴더 40·태그 100)와 상한 경계(3,000·100·200) 저장 성공',
   '7-1. A: 사용자당 채널 행 10개 상한(11번째 거절)',
   '8. A: private 함수(password_ready) 직접 호출 불가',
   '9. 관리자 초기화(reset_pending → 비밀번호 변경 → 변경 필요 켬) 뒤 A 의 user_state 다시 막힘, 새 비밀번호로 로그인해도 변경 필요 유지',
-  '10. 시험 계정 삭제(행·채팅 글·읽은 위치는 함께 삭제) — 실패해도 실행',
+  '10. 시험 계정 삭제(행·채팅 글·읽은 위치·피드백은 함께 삭제) — 실패해도 실행',
 ];
 
 const pw = () => 'Vf' + randomBytes(18).toString('base64url') + '9';   // 영문+숫자, 24자 이상
@@ -67,6 +71,11 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
   const deniedWith = async (name, fn, key) => {
     try { await fn(); ok(name, false, '막히지 않음'); }
     catch (e) { ok(name, is4xx(e) && e.message.includes(key), why(e)); }
+  };
+  // 권한으로 막힘(401·403)일 때만 통과. 표가 없을 때(404·PGRST205)를 '막힘'으로 착각하지 않게 새 표(0006)에 쓴다
+  const deniedPerm = async (name, fn) => {
+    try { const d = await fn(); ok(name, false, `막히지 않음(${Array.isArray(d) ? d.length + '행' : '성공'})`); }
+    catch (e) { ok(name, e instanceof ApiError && (e.status === 401 || e.status === 403), why(e)); }
   };
   const rows0 = async (name, fn) => {
     try { const d = await fn(); ok(name, Array.isArray(d) && d.length === 0, `${Array.isArray(d) ? d.length : '?'}행`); }
@@ -114,6 +123,9 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await denied('2-3. anon chat_mark_read 막힘', () => anon.rpc('chat_mark_read', { p_last_id: 1 }));
     await denied('2-3. anon chat_read_counts 막힘', () => anon.rpc('chat_read_counts', { p_ids: [1] }));
     await denied('2-3. anon chat_reads 읽기 막힘', () => anon.select('chat_reads', 'select=*&limit=1'));
+    const fbRow = (uid, aid = 'zzverify1', signal = 'useful') => ({ user_id: uid, channel: CHANNEL, article_id: aid, signal });
+    await deniedPerm('2-4. anon article_feedback 읽기 막힘', () => anon.select('article_feedback', 'select=*&limit=1'));
+    await deniedPerm('2-4. anon article_feedback 쓰기 막힘', () => anon.insert('article_feedback', fbRow(ids[A])));
 
     // 3·4. A 변경 전
     const tokens = {};
@@ -133,6 +145,8 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await deniedWith('4-2. A(변경 전) chat_send 막힘', () => asA.rpc('chat_send', { p_body: '변경 전 글' }), 'not_allowed');
     await deniedWith('4-3. A(변경 전) chat_mark_read 막힘', () => asA.rpc('chat_mark_read', { p_last_id: 1 }), 'not_allowed');
     await deniedWith('4-3. A(변경 전) chat_read_counts 막힘', () => asA.rpc('chat_read_counts', { p_ids: [1] }), 'not_allowed');
+    await check('4-4. A(변경 전) article_feedback 읽기 0행', async () => { const d = await asA.select('article_feedback', 'select=*'); return [Array.isArray(d) && d.length === 0, `${d?.length ?? '?'}행`]; });
+    await deniedPerm('4-4. A(변경 전) article_feedback 만들기 막힘', () => asA.insert('article_feedback', fbRow(ids[A])));
 
     // 5. 비밀번호 변경
     for (const lid of [A, B]) {
@@ -307,6 +321,18 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await denied('5-7. chat_reads 직접 고치기 막힘', () => asB.patch('chat_reads', `user_id=eq.${ids[B]}`, { last_read_id: 0 }));
     await denied('5-7. chat_reads 직접 지우기 막힘', () => asB.remove('chat_reads', `user_id=eq.${ids[B]}`));
 
+    // 5-8. 기사 피드백(0006): 본인 행 기록·바꾸기·취소, 검사, 서버 시각
+    const fbQ = (uid, aid = 'zzverify1') => `user_id=eq.${uid}&channel=eq.${CHANNEL}&article_id=eq.${aid}`;
+    await check('5-8. A 피드백 기록(도움 됨)', async () => { const r = await asA.insert('article_feedback', { ...fbRow(ids[A]), created_at: '2000-01-01T00:00:00Z' }); return Array.isArray(r) && r.length === 1 && r[0].signal === 'useful'; });
+    await check('5-8. 피드백 created_at 은 서버 시각(보낸 값 무시)', async () => { const r = ((await asA.select('article_feedback', `select=created_at&${fbQ(ids[A])}`)) || [])[0]; return [!!r && !String(r.created_at).startsWith('2000'), r ? String(r.created_at).slice(0, 10) : '없음']; });
+    await check('5-8. A 피드백 바꾸기(관련 없음)', async () => { const r = await asA.patch('article_feedback', fbQ(ids[A]), { signal: 'irrelevant' }); return Array.isArray(r) && r.length === 1 && r[0].signal === 'irrelevant'; });
+    await denied('5-8. 잘못된 signal 거절', () => asA.insert('article_feedback', fbRow(ids[A], 'zzverify2', 'like')));
+    await denied('5-8. 잘못된 channel 거절', () => asA.insert('article_feedback', { ...fbRow(ids[A], 'zzverify2'), channel: 'Bad Channel' }));
+    await denied('5-8. 잘못된 article_id 거절', () => asA.insert('article_feedback', fbRow(ids[A], '../x')));
+    await denied('5-8. 같은 기사 두 번째 행 거절(기본키)', () => asA.insert('article_feedback', fbRow(ids[A])));
+    await check('5-8. A 피드백 취소(지우기) 뒤 0행', async () => { await asA.remove('article_feedback', fbQ(ids[A])); return ((await asA.select('article_feedback', `select=article_id&${fbQ(ids[A])}`)) || []).length === 0; });
+    await step('5-8. 준비: A 피드백 다시 기록(6·10 단계용)', () => asA.insert('article_feedback', fbRow(ids[A])));
+
     // 6. 다른 사용자
     await rows0('6. B 가 A 의 행 읽기 0행', () => asB.select('user_state', `select=*&user_id=eq.${ids[A]}`));
     await rows0('6. B 가 A 의 행 고치기 0행', () => asB.patch('user_state', `user_id=eq.${ids[A]}&channel=eq.${CHANNEL}`, { companies: ['위조'] }));
@@ -315,6 +341,13 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     await step('6. 준비: B 자기 user_state 만들기', () => asB.insert('user_state', { channel: CHANNEL }));
     await denied('6. B 가 자기 행 user_id 를 A 로 바꾸기 막힘', () => asB.patch('user_state', `user_id=eq.${ids[B]}&channel=eq.${CHANNEL}`, { user_id: ids[A] }));
     await rows0('6. B profiles 에서 A 행 읽기 0행', () => asB.select('profiles', `select=*&user_id=eq.${ids[A]}`));
+    await rows0('6. B 가 A 의 피드백 읽기 0행', () => asB.select('article_feedback', `select=*&user_id=eq.${ids[A]}`));
+    await rows0('6. B 가 A 의 피드백 고치기 0행', () => asB.patch('article_feedback', `user_id=eq.${ids[A]}`, { signal: 'irrelevant' }));
+    await rows0('6. B 가 A 의 피드백 지우기 0행', () => asB.remove('article_feedback', `user_id=eq.${ids[A]}`));
+    await deniedPerm('6. B 가 A 의 user_id 로 피드백 만들기 막힘', () => asB.insert('article_feedback', fbRow(ids[A], 'zzverify3')));
+    await step('6. 준비: B 자기 피드백 기록', () => asB.insert('article_feedback', fbRow(ids[B], 'zzverify4')));
+    await deniedPerm('6. B 가 자기 피드백 user_id 를 A 로 바꾸기 막힘', () => asB.patch('article_feedback', fbQ(ids[B], 'zzverify4'), { user_id: ids[A] }));
+    await check('6. 그 뒤에도 A 의 피드백 그대로 1행(관리 키로 확인)', async () => { const r = (await admin.select('article_feedback', `select=signal&user_id=eq.${ids[A]}`)) || []; return [r.length === 1 && r[0].signal === 'useful', `${r.length}행`]; });
 
     // 7. 서버 상한(악용 방지용 넉넉한 값). 화면 한도(1,000·20·50·200자·10)를 넘는 합친 결과는 통과해야 한다
     const many = (n, f) => Object.fromEntries(Array.from({ length: n }, (_, i) => [`x${i}`, f(i)]));
@@ -351,16 +384,18 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
       const tokA2 = await step('9. 초기화한 비밀번호로 A 로그인', () => signIn(A, tmp));
       await check('9. 초기화한 비밀번호로 로그인한 뒤에도 변경 필요 = true(로그인이 해시를 다시 쓰지 않음)', async () => !!tokA2 && (await sec(ids[A]))?.must_change_password === true);
       await rows0('9. 새로 로그인한 A 의 user_state 읽기 0행(막힘)', () => asUser(tokA2, A).select('user_state', 'select=*'));
+      await check('9. 초기화 뒤 A 의 피드백 읽기 0행(막힘)', async () => { const d = await asUser(tokA2, A).select('article_feedback', 'select=*'); return [Array.isArray(d) && d.length === 0, `${d?.length ?? '?'}행`]; });
     }
   } catch (e) {
     ok('준비 단계 오류(남은 단계 중단)', false, e instanceof ApiError ? e.message : '오류');
   } finally {
     // 10. 정리(지우기 전에 시험 계정의 채팅 글 수를 세어 두고, 지운 뒤 0건인지 본다 — on delete cascade)
     const chatQ = () => `select=id&user_id=in.(${TEST_IDS.map(l => ids[l]).filter(Boolean).join(',')})`;
-    let chatBefore = null, readsBefore = null;
+    let chatBefore = null, readsBefore = null, fbBefore = null;
     if (Object.keys(ids).length) {
       try { chatBefore = ((await admin.select('chat_messages', chatQ())) || []).length; } catch { chatBefore = null; }
       try { readsBefore = ((await admin.select('chat_reads', chatQ().replace('select=id', 'select=user_id'))) || []).length; } catch { readsBefore = null; }
+      try { fbBefore = ((await admin.select('article_feedback', chatQ().replace('select=id', 'select=user_id'))) || []).length; } catch { fbBefore = null; }
     }
     for (const lid of TEST_IDS) {
       try {
@@ -375,6 +410,10 @@ export async function runVerify({ admin, anonFor, out, redactor }) {
     if (chatBefore) {
       try { const left = ((await admin.select('chat_messages', chatQ())) || []).length; ok('10. 시험 계정의 채팅 글 함께 삭제(on delete cascade)', left === 0, `${chatBefore}건 → ${left}건`); }
       catch { ok('10. 시험 계정의 채팅 글 함께 삭제 확인', false, '확인 못 함'); }
+    }
+    if (fbBefore) {
+      try { const left = ((await admin.select('article_feedback', chatQ().replace('select=id', 'select=user_id'))) || []).length; ok('10. 시험 계정의 피드백 함께 삭제(on delete cascade)', left === 0, `${fbBefore}행 → ${left}행`); }
+      catch { ok('10. 시험 계정의 피드백 함께 삭제 확인', false, '확인 못 함'); }
     }
     if (readsBefore) {
       try { const left = ((await admin.select('chat_reads', chatQ().replace('select=id', 'select=user_id'))) || []).length; ok('10. 시험 계정의 읽은 위치 함께 삭제(on delete cascade)', left === 0, `${readsBefore}행 → ${left}행`); }

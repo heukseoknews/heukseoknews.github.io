@@ -219,6 +219,33 @@ select display_name from public.profiles where is_admin;
 
 되돌리기: 0005 파일 끝의 주석(0004 시점의 chat_delete 본문)을 새 query 에 붙여 실행한다. 화면까지 예전처럼 본인 글에 [삭제]를 보이려면 `lib/chat.ts` canDelete 도 되돌린다.
 
+## 2-5. 기사 피드백 SQL 적용(0006)
+
+기사 카드의 [관련 없음] [도움 됨] 기록을 담는 표 `public.article_feedback` 을 만든다(설계·분석 주의는 docs/feedback.md). 본인 행만 읽고 쓸 수 있고(비밀번호를 바꾼 계정만), 로그인 안 한 요청은 막힌다. **화면(버튼)을 배포하기 전에 적용한다.** 0001 을 적용한 뒤에 한다.
+
+1. 대시보드 → **SQL Editor** → **New query**(새 쿼리 탭).
+2. `supabase/migrations/0006_article_feedback.sql` **전체를 복사**해 붙여 넣고 **Run**. 'Success. No rows returned' 면 된다. 여러 번 실행해도 결과가 같다.
+   - `0001_init.sql 을 먼저 적용하세요` 로 멈추면 2장을 먼저 한다.
+3. 확인 쿼리(새 query 에 하나씩 붙여 Run):
+
+```sql
+-- 표 권한: authenticated·service_role 에 DELETE,INSERT,SELECT,UPDATE, anon 줄 없음
+select grantee, string_agg(privilege_type, ',' order by privilege_type) from information_schema.role_table_grants
+ where table_schema = 'public' and table_name = 'article_feedback' group by 1 order by 1;
+-- RLS 켜짐(true), 정책 4개(DELETE·INSERT·SELECT·UPDATE, 모두 authenticated)
+select rowsecurity from pg_tables where schemaname = 'public' and tablename = 'article_feedback';
+select policyname, cmd, roles from pg_policies where schemaname = 'public' and tablename = 'article_feedback' order by cmd;
+-- 트리거 2개: article_feedback_limit, article_feedback_stamp
+select trigger_name from information_schema.triggers where event_object_table = 'article_feedback' group by 1 order by 1;
+```
+
+4. 이어서 3장 `check` 를 돌린다. `표 article_feedback 읽기(service_role)` 와 `로그인 안 한 요청(publishable 키)으로 article_feedback 읽기 차단` 이 ✓ 여야 한다(표가 없으면 둘 다 ✗).
+5. 4장 `verify --apply` 를 돌리면 2-4·4-4·5-8·6·9·10 의 피드백 항목까지 확인한다(임시 시험 계정 2개를 만들고 지운다).
+
+화면은 이 SQL 보다 먼저 배포돼도 깨지지 않는다(표가 없으면 버튼 상태만 비고, 누르면 '저장하지 못했습니다' 안내 후 되돌림). 그래도 순서는 SQL → 화면.
+
+되돌리기: 0006 파일 끝의 주석(표·함수 삭제)을 새 query 에 붙여 실행한다. 모든 피드백 기록이 지워진다.
+
 ## 3. 연결 확인(`check`, 읽기만)
 
 ```sh
@@ -232,9 +259,11 @@ node scripts/admin/users.mjs check
 ✓ 표 profiles 읽기(service_role) — SQL 적용됨
 ✓ 표 account_security 읽기(service_role)
 ✓ 표 user_state 읽기(service_role)
+✓ 표 article_feedback 읽기(service_role) — 0006 적용됨
 ✓ 로그인 안 한 요청(publishable 키)으로 profiles 읽기 차단 — 막힘(HTTP 401)
 ✓ 로그인 안 한 요청(publishable 키)으로 account_security 읽기 차단 — 막힘(HTTP 401)
 ✓ 로그인 안 한 요청(publishable 키)으로 user_state 읽기 차단 — 막힘(HTTP 401)
+✓ 로그인 안 한 요청(publishable 키)으로 article_feedback 읽기 차단 — 막힘(HTTP 401)
 모두 정상
 ```
 
@@ -260,9 +289,11 @@ node scripts/admin/verify.mjs --apply    # 실제 검증
   9. 관리자 초기화 뒤 다시 막히고, 새 비밀번호로 로그인해도 '변경 필요'가 유지된다
   - 표시 이름(0002, 2-1장): 로그인 안 한 요청·비밀번호 변경 전 호출은 막힘(2-1·4-1), 변경 후에는 자기 이름을 바꿀 수 있고 profiles 에 반영, 21자·빈 값·공백만·줄바꿈 거절, 다른 사용자 이름(대소문자·공백만 다른 것 포함) 거절, 10분 안 재변경 거절, profiles 직접 고치기는 여전히 막힘(5-1)
   - 기사만 보내기·읽음(0004, 2-3장): 로그인 안 한 요청·비밀번호 변경 전 사용자는 chat_mark_read·chat_read_counts 막힘(2-3·4-3), 본문 없이 기사만 전송·본문도 기사도 없으면 거절·기사만 있는 글 삭제 시 본문·기사 비움(5-6), 읽음 처리하면 읽음 +1·글쓴이 본인 제외·응답은 id·숫자만·읽은 위치 줄지 않음·최대 id 로 맞춤·삭제 글 제외·chat_reads 직접 읽기·쓰기 막힘(5-7), 계정을 지우면 읽은 위치도 지워짐(10)
+  - 기사 피드백(0006, 2-5장): 로그인 안 한 요청은 읽기·쓰기 막힘(2-4, 권한 거절 401·403 만 통과 — 표가 없어 나는 404 는 실패), 비밀번호 변경 전에는 읽기 0행·만들기 막힘(4-4), 변경 후 본인 기록·바꾸기·취소, created_at 은 서버 시각, 잘못된 signal·channel·article_id·같은 기사 두 번째 행 거절(5-8), 다른 사용자는 A 의 피드백 읽기·고치기·지우기 0행·A 의 user_id 로 만들기·자기 행 user_id 바꾸기 막힘(6), 관리자 초기화 뒤 다시 막힘(9), 계정을 지우면 피드백도 함께 지워짐(10)
   - 채팅(0003, 2-2장): 로그인 안 한 요청은 읽기·chat_send·chat_list·chat_delete 모두 막힘(2-2), 비밀번호 변경 전에는 읽기 0행·chat_list·chat_send 막힘(4-2), 변경 후 보낸 글을 다른 시험 계정이 chat_list·직접 읽기로 봄(작성자 = 표시 이름, 응답 어디에도 login_id 없음), 500자·기사 첨부 저장(5-2), 빈 글·공백만·501자·제어 문자·잘못된 기사 첨부(javascript: 주소·허용 안 한 키·너무 긴 제목·주소·잘못된 channel·문자열 아닌 값)와 직접 insert·update·delete 거절(5-3), 삭제는 관리자만(0005, 2-4장): 비관리자는 자기 글·남의 글 모두 삭제 거절·글 그대로, 관리자 표시를 서비스 키로 잠시 준 계정은 삭제 가능(본문·첨부 비움)·이미 지운 글 다시 지워도 오류 없음·끝나면 관리자 표시 끔, 목록 페이지(5-4), 한 계정의 61번째 전송(1분 안) 거절(5-5), 계정을 지우면 채팅 글도 함께 지워짐(10)
 - 트리거는 login_id(와 '변경 필요')를 보장하고 표시 이름은 create/verify 가 계정을 만든 직후 채운다(Auth 서버가 app_metadata 를 사용자 행을 만든 뒤에 기록해 트리거 시점엔 비어 있다).
 - 마지막 줄이 `모두 통과(N건)` 이면 끝. 실패가 있으면 출력 전체를 그대로 공유한다(비밀이 들어 있지 않다).
+- 0006 을 아직 적용하지 않았으면 피드백 항목(2-4·4-4·5-8·6·9 의 피드백 줄)만 실패로 나온다.
 - 0003 을 아직 적용하지 않았으면 채팅 항목은, 0004 를 아직 적용하지 않았으면 2-3·4-3·5-6·5-7 항목은, 0005 를 아직 적용하지 않았으면 '5-4. 비관리자 A 가 자기 글 삭제 거절'·'5-4. 거절 뒤 A 의 글 그대로'·'5-6. 비관리자 A 가 자기 기사만 있는 글 삭제 거절' 은 실패로 나온다(다른 항목에는 영향 없음).
 - 로그인을 4번 정도 하므로 로그인 제한(5분 30회)에 걸리지 않는다. 연달아 여러 번 돌릴 때만 5분 쉰다.
 

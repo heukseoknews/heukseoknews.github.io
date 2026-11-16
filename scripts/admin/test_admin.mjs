@@ -196,7 +196,12 @@ await t('list-disable-check', async () => {
   const r2 = await cmdCheck({ api: deny, anonApi: anon, bearerApi: S.api, out: cap2.out });
   assert.equal(r2[0].ok, false); assert.ok(cap2.out.lines[0].includes('HEUKSEOK_ADMIN_BEARER=1'));
   const leaky = { select: async () => [] };
-  assert.equal((await cmdCheck({ api: S.api, anonApi: leaky, out })).filter(r => !r.ok).length, 3, 'anon 이 읽히면 실패로 보고');
+  assert.equal((await cmdCheck({ api: S.api, anonApi: leaky, out })).filter(r => !r.ok).length, 4, 'anon 이 읽히면 실패로 보고');
+  // 0006 적용 전: article_feedback 이 없으면(404) 서비스 키 읽기·anon 차단 두 항목만 실패(404 를 '막힘'으로 보지 않음)
+  const noFb = { ...S.api, select: async (t, q) => { if (t === 'article_feedback') throw new ApiError(404, 'PGRST205', 'not found'); return S.api.select(t, q); } };
+  const anonNoFb = { select: async t => { throw new ApiError(t === 'article_feedback' ? 404 : 401, 'x', 'x'); } };
+  assert.deepEqual((await cmdCheck({ api: noFb, anonApi: anonNoFb, out })).filter(r => !r.ok).map(r => r.name),
+    ['표 article_feedback 읽기(service_role)', '로그인 안 한 요청(publishable 키)으로 article_feedback 읽기 차단']);
 });
 
 // 7-1) 시각 표시: 서버 UTC → 한국 시간(실행 환경 시간대와 무관), 없으면 '—'
@@ -247,16 +252,19 @@ await t('main', async () => {
 
 // ── verify --apply 흐름(가짜 서버). 실제 Auth 서버처럼 트리거가 볼 때 app_metadata 가 아직 비어 있다(표시 이름 null) ──
 function fakeVerifyServer(opt = {}) {
-  const users = [], profiles = [], sec = [], states = [], chats = [], reads = [], rpcLog = [], secrets = [];
+  const users = [], profiles = [], sec = [], states = [], chats = [], reads = [], fbs = [], rpcLog = [], secrets = [];
   let n = 0;
   const E = (s, c, m = '') => new ApiError(s, c, m);
   const own = (arr, id) => arr.find(r => r.user_id === id);
   const qv = (q, k) => (new RegExp(`${k}=eq\\.([^&]+)`).exec(q || '') || [])[1];
-  const tableOf = t => ({ profiles, account_security: sec, user_state: states, chat_messages: chats, chat_reads: reads }[t]);
+  const tableOf = t => {
+    if (t === 'article_feedback' && opt.noFeedbackTable) throw E(404, 'PGRST205', 'Could not find the table');
+    return { profiles, account_security: sec, user_state: states, chat_messages: chats, chat_reads: reads, article_feedback: fbs }[t];
+  };
   const onPassword = id => { const s = own(sec, id); s.must_change_password = s.reset_pending; s.reset_pending = false; };   // 0001 on_auth_password_changed
   const admin = {
     listUsers: async () => ({ users: users.map(u => ({ id: u.id, email: u.email })) }),
-    deleteUser: async id => { for (const arr of [users, profiles, sec, states, ...(opt.noChatCascade ? [] : [chats]), ...(opt.noReadsCascade ? [] : [reads])]) for (let i = arr.length - 1; i >= 0; i--) if ((arr[i].user_id ?? arr[i].id) === id) arr.splice(i, 1); return {}; },
+    deleteUser: async id => { for (const arr of [users, profiles, sec, states, ...(opt.noChatCascade ? [] : [chats]), ...(opt.noReadsCascade ? [] : [reads]), ...(opt.noFeedbackCascade ? [] : [fbs])]) for (let i = arr.length - 1; i >= 0; i--) if ((arr[i].user_id ?? arr[i].id) === id) arr.splice(i, 1); return {}; },
     createUser: async b => {
       const id = `v${++n}`, lid = b.email.split('@')[0];
       secrets.push(b.password);
@@ -286,6 +294,33 @@ function fakeVerifyServer(opt = {}) {
     const me = () => { if (!id || !users.some(u => u.id === id)) throw E(401, '42501', 'permission denied'); return id; };
     const ready = () => own(sec, me()).must_change_password === false;
     const mine = q => states.filter(r => r.user_id === me() && (!qv(q, 'user_id') || r.user_id === qv(q, 'user_id')) && (!qv(q, 'channel') || r.channel === qv(q, 'channel')));
+    // 0006 article_feedback(같은 규칙의 간이판): anon 권한 없음, 본인 행만(RLS), 비밀번호 변경 전 0행·쓰기 막힘, 값 검사, 기본키, 서버 시각
+    const fbTable = () => { if (opt.noFeedbackTable) throw E(404, 'PGRST205', 'Could not find the table'); if (!id) throw E(401, '42501', 'permission denied for table article_feedback'); };
+    const fbMatch = q => r => (!qv(q, 'user_id') || r.user_id === qv(q, 'user_id')) && (!qv(q, 'channel') || r.channel === qv(q, 'channel')) && (!qv(q, 'article_id') || r.article_id === qv(q, 'article_id'));
+    const fbMine = q => fbs.filter(r => (opt.feedbackOpen || r.user_id === id) && fbMatch(q)(r));
+    const fbValid = r => ['irrelevant', 'useful'].includes(r.signal) && /^[a-z0-9-]{1,32}$/.test(r.channel) && /^[A-Za-z0-9_-]{1,64}$/.test(r.article_id);
+    const feedback = {
+      select: q => { fbTable(); if (!ready()) return []; return fbMine(q).map(r => ({ ...r })); },
+      insert: row => {
+        fbTable();
+        if (!ready() || (row.user_id && row.user_id !== id)) throw E(403, '42501', 'new row violates row-level security policy for table "article_feedback"');
+        const r = { user_id: id, ...row };
+        if (!fbValid(r)) throw E(400, '23514', 'check constraint');
+        if (fbs.some(x => x.user_id === r.user_id && x.channel === r.channel && x.article_id === r.article_id)) throw E(409, '23505', 'duplicate key');
+        const now = new Date().toISOString();
+        Object.assign(r, { created_at: opt.feedbackKeepsCreatedAt && row.created_at ? row.created_at : now, updated_at: now });
+        fbs.push(r); return [{ ...r }];
+      },
+      patch: (q, row) => {
+        fbTable();
+        if ('user_id' in row && row.user_id !== id) throw E(403, '42501', 'new row violates row-level security policy for table "article_feedback"');
+        if (!ready()) return [];
+        const rs = fbMine(q);
+        if ('signal' in row && !['irrelevant', 'useful'].includes(row.signal)) throw E(400, '23514', 'check constraint');
+        rs.forEach(r => Object.assign(r, row, { updated_at: new Date().toISOString() })); return rs.map(r => ({ ...r }));
+      },
+      remove: q => { fbTable(); if (!ready()) return []; const rs = fbMine(q); for (const r of rs) fbs.splice(fbs.indexOf(r), 1); return rs.map(r => ({ ...r })); },
+    };
     // 0003 채팅 함수(같은 규칙의 간이판)
     const ART_KEYS = ['id', 'cluster_id', 'channel', 'title', 'source', 'url', 'published_at'];
     const artOk = a => a && typeof a === 'object' && Object.entries(a).every(([k, v]) => ART_KEYS.includes(k) && typeof v === 'string')
@@ -332,6 +367,7 @@ function fakeVerifyServer(opt = {}) {
       },
       changeOwnPassword: async (np, cur) => { const u = users.find(x => x.id === me()); if (u.password !== cur) throw E(400, 'reauth'); u.password = np; secrets.push(np); onPassword(u.id); return {}; },
       select: async (t, q) => {
+        if (t === 'article_feedback') return feedback.select(q);
         if (t === 'chat_reads') throw E(id ? 403 : 401, '42501', 'permission denied for table chat_reads');
         if (t === 'chat_messages') { if (!id) throw E(401, '42501', 'permission denied'); if (!ready()) return []; return chats.filter(r => !qv(q, 'id') || String(r.id) === qv(q, 'id')).map(r => ({ ...r })); }
         me();
@@ -340,19 +376,21 @@ function fakeVerifyServer(opt = {}) {
         return ready() ? mine(q).map(r => ({ ...r })) : [];
       },
       insert: async (t, row) => {
+        if (t === 'article_feedback') return feedback.insert(row);
         me();
         if (t !== 'user_state' || !ready() || (row.user_id && row.user_id !== id)) throw E(403, '42501', 'row-level security');
         if (states.filter(s => s.user_id === id).length >= 10) throw E(400, 'P0001', 'channel limit');
         const r = { user_id: id, ...row }; states.push(r); return [{ ...r }];
       },
       patch: async (t, q, row) => {
+        if (t === 'article_feedback') return feedback.patch(q, row);
         me();
         if (t !== 'user_state' || 'user_id' in row) throw E(403, '42501', 'permission denied');
         if (!ready()) return [];
         if (tooBig(row)) throw E(400, '23514', 'limit');
         const rs = mine(q); rs.forEach(r => Object.assign(r, row)); return rs.map(r => ({ ...r }));
       },
-      remove: async t => { me(); if (t === 'chat_messages' || t === 'chat_reads') throw E(403, '42501', 'permission denied for table chat_messages'); return []; },
+      remove: async (t, q) => { if (t === 'article_feedback') return feedback.remove(q); me(); if (t === 'chat_messages' || t === 'chat_reads') throw E(403, '42501', 'permission denied for table chat_messages'); return []; },
       rpc: async (fn, args = {}) => {
         if (fn.startsWith('chat_')) return chatRpc(fn, args);
         if (fn !== 'set_display_name') throw E(404, 'PGRST202', 'not found');
@@ -470,6 +508,24 @@ await t('verify-chat', async () => {
   assert.deepEqual(r.results.filter(x => !x.ok).map(x => x.name), ['5-5. B 61번째 전송 거절']);
   const d = await runFakeVerify({ deleteKeepsBody: true });
   assert.deepEqual(d.results.filter(x => !x.ok).map(x => x.name), ['5-4. 관리자 B 가 A 의 글 삭제(본문 비움·삭제 시각)', '5-4. 관리자 B 가 A 의 기사 첨부 글 삭제(본문·첨부 비움)', '5-4. 이미 삭제된 글을 다시 지워도 오류 없음(그대로)', '5-6. 관리자가 기사만 있는 글 삭제 → 본문·기사 비움(삭제와 구분)', '5-7. 삭제된 글은 읽음 수에서 빠짐']);
+});
+
+// 12) 기사 피드백(0006): 정상 서버는 모두 통과, 규칙을 어기면 해당 항목만 실패, 표가 없으면(적용 전) 피드백 항목만 실패
+await t('verify-feedback', async () => {
+  const { R, line } = await runFakeVerify();
+  for (const n of ['2-4. anon article_feedback 읽기 막힘', '2-4. anon article_feedback 쓰기 막힘', '4-4. A(변경 전) article_feedback 읽기 0행', '4-4. A(변경 전) article_feedback 만들기 막힘',
+    '5-8. A 피드백 기록(도움 됨)', '5-8. 피드백 created_at 은 서버 시각(보낸 값 무시)', '5-8. A 피드백 바꾸기(관련 없음)', '5-8. 잘못된 signal 거절', '5-8. 같은 기사 두 번째 행 거절(기본키)',
+    '5-8. A 피드백 취소(지우기) 뒤 0행', '6. B 가 A 의 피드백 읽기 0행', '6. B 가 A 의 user_id 로 피드백 만들기 막힘', '6. B 가 자기 피드백 user_id 를 A 로 바꾸기 막힘',
+    '6. 그 뒤에도 A 의 피드백 그대로 1행(관리 키로 확인)', '9. 초기화 뒤 A 의 피드백 읽기 0행(막힘)']) assert.ok(R(n), n);
+  assert.match(line('10. 시험 계정의 피드백 함께 삭제'), /2행 → 0행/);
+  const fails = async o => (await runFakeVerify(o)).results.filter(r => !r.ok).map(r => r.name);
+  assert.deepEqual(await fails({ feedbackOpen: true }), ['6. B 가 A 의 피드백 읽기 0행', '6. B 가 A 의 피드백 고치기 0행', '6. B 가 A 의 피드백 지우기 0행', '6. 그 뒤에도 A 의 피드백 그대로 1행(관리 키로 확인)'], '다른 사람 행이 보이는 서버');
+  assert.deepEqual(await fails({ feedbackKeepsCreatedAt: true }), ['5-8. 피드백 created_at 은 서버 시각(보낸 값 무시)']);
+  assert.deepEqual(await fails({ noFeedbackCascade: true }), ['10. 시험 계정의 피드백 함께 삭제(on delete cascade)']);
+  // 0006 적용 전(표 없음, 404): '막힘' 항목이 404 를 통과로 착각하지 않고, 피드백 항목만 실패한다
+  const missing = await fails({ noFeedbackTable: true });
+  assert.ok(missing.length > 0 && missing.every(n => /피드백|article_feedback/.test(n)), missing.join(' / '));
+  assert.ok(missing.includes('2-4. anon article_feedback 읽기 막힘') && missing.includes('6. B 가 A 의 user_id 로 피드백 만들기 막힘'));
 });
 
 console.log(`admin script tests passed (${passed})`);
