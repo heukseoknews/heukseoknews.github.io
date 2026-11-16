@@ -177,10 +177,10 @@ footer.siteFooter{margin-top:0;background:#fff;border-top:1px solid var(--line);
 .catOuter{padding:3px;margin:15px -3px 13px}
 /* 홈 상단 줄: 오른쪽 '내 데이터' */
 .homeTop{background:var(--surface);border-bottom:1px solid var(--line)}
-.homeTop nav{max-width:1100px;margin:0 auto;padding:0 24px;height:48px;display:flex;align-items:center;justify-content:flex-end}
+.homeTop nav{max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:flex-end}
 .homeTop a{display:inline-flex;align-items:center;gap:6px;color:var(--text-2);font-size:var(--fs-14);font-weight:500;text-decoration:none;border-radius:6px;padding:6px 4px}
 @media(hover:hover){.homeTop a:hover{color:var(--accent)}}.homeTop a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media(max-width:640px){.homeTop nav{padding:0 16px;height:44px}.homeTop a{font-size:var(--fs-13)}}
+@media(max-width:640px){.homeTop nav{padding:0 16px;height:56px}.homeTop a{font-size:var(--fs-13)}}
 /* 북마크 정리 창(모달 dialog) */
 .bmDialog{width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 32px);border:1px solid var(--line);border-radius:var(--r-lg);padding:0;color:var(--text);background:var(--surface);box-shadow:0 12px 40px rgba(22,32,43,.18)}
 .bmDialog::backdrop{background:rgba(22,32,43,.4)}
