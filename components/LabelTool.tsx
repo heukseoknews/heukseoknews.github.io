@@ -4,8 +4,9 @@ import { getChannel } from '../lib/channels';
 import { fmt } from '../lib/format';
 import {
   BATCH, LABEL_CHANNELS, LABEL_KEY, type LabelAction, type LabelStore, PURPOSE, SCALE, SCORES,
-  applyAction, defaultSession, emptyStore, firstUnlabeled, keyAction, mergeRows, parseImport, parseStore, sampleOrder, seedFor, summary, toExport,
+  applyAction, defaultSession, emptyStore, firstUnlabeled, keyAction, mergeRows, parseImport, parseStore, queueFor, summary, toExport,
 } from '../lib/label';
+import { LABEL_FIXED } from '../lib/labelFixed';
 import { isSafeUrl } from '../lib/news';
 import { useNews } from '../lib/useNews';
 import s from './LabelTool.module.css';
@@ -42,7 +43,8 @@ function Labeler({ channel, store, setStore }: Props) {
   const session = store.sessions[channel] ?? defaultSession();
   const labels = store.labels[channel];
   const ready = !!index && index.months.every(m => loaded.includes(m.month));
-  const queue = useMemo(() => (ready ? sampleOrder(all, seedFor(channel), session.month, session.size) : []), [ready, all, channel, session.month, session.size]);
+  // 고정 목록(lib/label-fixed) 먼저, 그 뒤 해시 순. 없어진 기사는 빠지고 진행률은 실제로 보이는 수
+  const queue = useMemo(() => (ready ? queueFor(all, channel, LABEL_FIXED[channel] ?? [], session.month, session.size) : []), [ready, all, channel, session.month, session.size]);
   const ids = useMemo(() => queue.map(a => a.id), [queue]);
   const cursor = Math.min(session.cursor, ids.length);
   const art = queue[cursor];

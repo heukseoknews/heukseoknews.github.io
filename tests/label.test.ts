@@ -2,8 +2,10 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import {
-  BATCH, LABEL_KEY, applyAction, emptyStore, firstUnlabeled, keyAction, mergeRows, parseImport, parseStore, sampleOrder, seedFor, summary, toExport,
+  BATCH, LABEL_KEY, applyAction, emptyStore, firstUnlabeled, keyAction, mergeRows, parseImport, parseStore, queueFor, sampleOrder, seedFor, summary, toExport,
 } from '../lib/label.ts';
+
+const walk = (d: string): string[] => readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
 
 // ───── 표본 추출: 재현성 ─────
 const mk = (i: number, month = '2026-11') => ({ id: (i * 2654435761 % 2 ** 32).toString(16).padStart(8, '0') + i.toString(16).padStart(8, '0'), published_at: `${month}-0${1 + (i % 9)}T00:00:00+00:00` });
@@ -109,6 +111,59 @@ assert.deepEqual(parseStore(null), emptyStore());
   }
 }
 
+// ───── 고정 표본(lib/label-fixed/<채널>.json): 목록 먼저, 그 뒤 해시 순 ─────
+{
+  const fx = pool.slice(0, 5).map(x => x.id).reverse();                        // 목록 순서 그대로 앞에
+  const q1 = queueFor(pool, 'insurance', [...fx, 'gone-id-1'], 'all', 20).map(x => x.id);
+  assert.deepEqual(q1.slice(0, 5), fx, '고정 목록이 먼저, 목록 순서대로');
+  assert.equal(q1.length, 20, '없어진 id 는 건너뛰고 나머지를 해시 순으로 채움');
+  assert.ok(!q1.includes('gone-id-1'));
+  const restOrder = sampleOrder(pool.filter(x => !fx.includes(x.id)), seedFor('insurance'), 'all', 15).map(x => x.id);
+  assert.deepEqual(q1.slice(5), restOrder, '뒤는 목록에 없는 기사의 기존 해시 순');
+  assert.equal(new Set(q1).size, 20, '목록 기사는 뒤에서 다시 나오지 않음');
+  assert.deepEqual(queueFor(pool, 'insurance', [], 'all', BATCH).map(x => x.id), a, '목록이 비면 예전 표본과 같다');
+  const big = pool.slice(0, 160).map(x => x.id);
+  assert.equal(queueFor(pool, 'insurance', big, 'all', BATCH).length, 160, '목록이 size 보다 길면 목록 전체');
+  assert.deepEqual(queueFor(pool, 'insurance', big, 'all', 2 * BATCH).slice(0, 160).map(x => x.id), big, '표본 더 뽑기는 목록 뒤에 이어 붙음');
+  const octIds = new Set(pool.filter(x => x.published_at.startsWith('2026-10')).map(x => x.id));
+  const fxMix = [pool[0].id, [...octIds][0]];
+  assert.deepEqual(queueFor(pool, 'insurance', fxMix, '2026-10', 3).map(x => x.id)[0], [...octIds][0], '기간을 고르면 목록에서도 그 달 기사만');
+}
+// 고정 목록 파일: 기사 id 만, 채널별 건수, 사용자 라벨과의 관계
+{
+  const real = JSON.parse(readFileSync('scripts/audit/labels/labels-2026-11-15.json', 'utf8')) as { channel: string; id: string; score: 0 | 1 | 2 | 3; labeled_at: string }[];
+  const lists: Record<string, string[]> = {};
+  for (const ch of ['insurance', 'ai', 'finance']) {
+    const raw = readFileSync(`lib/label-fixed/${ch}.json`, 'utf8');
+    const ids = JSON.parse(raw);
+    assert.ok(Array.isArray(ids) && ids.every((x: unknown) => typeof x === 'string' && /^[0-9a-f]{16}$/.test(x)), `${ch}: 기사 id 문자열만`);
+    assert.equal(new Set(ids).size, ids.length, `${ch}: 중복 없음`);
+    lists[ch] = ids;
+  }
+  assert.deepEqual([lists.insurance.length, lists.ai.length, lists.finance.length], [150, 100, 100]);
+  const lab = (ch: string) => real.filter(r => r.channel === ch).map(r => r.id);
+  assert.deepEqual([...lists.insurance].sort(), lab('insurance').sort(), '보험 = 사용자가 매긴 150건');
+  assert.ok(lab('ai').every(id => lists.ai.includes(id)), 'AI 는 매긴 89건을 모두 포함');
+  // 지금 데이터로 화면 표본을 만들면: 보험 150/150(새 기사가 끼어들지 않음), AI 89/100 다음부터
+  const st = mergeRows(emptyStore(), real).store;
+  const arts = (ch: string) => readdirSync(`data/${ch}`).filter(f => /^\d{4}-\d{2}\.json$/.test(f))
+    .flatMap(f => JSON.parse(readFileSync(join(`data/${ch}`, f), 'utf8')) as { id: string; published_at: string }[]);
+  const qi = queueFor(arts('insurance'), 'insurance', lists.insurance).map(x => x.id);
+  assert.deepEqual(qi, lists.insurance.filter(id => qi.includes(id)), '보험 표본 = 고정 목록');
+  assert.deepEqual([summary(qi, st.labels.insurance).done, qi.length], [150, 150], '보험 150/150');
+  assert.equal(firstUnlabeled(qi, st.labels.insurance), 150, '보험은 끝까지 매긴 상태');
+  const qa2 = queueFor(arts('ai'), 'ai', lists.ai).map(x => x.id);
+  assert.equal(summary(qa2.slice(0, 100), st.labels.ai).done, 89, 'AI 고정 100건 중 매긴 89건');
+  // 저장된 진행 위치·라벨은 저장값에서 그대로
+  const kept = parseStore(JSON.stringify({ ...st, sessions: { insurance: { month: 'all', size: BATCH, cursor: BATCH }, ai: { month: 'all', size: BATCH, cursor: 89 } } }));
+  assert.deepEqual([kept.sessions.insurance.cursor, kept.sessions.ai.cursor, Object.keys(kept.labels.insurance).length], [BATCH, 89, 150]);
+  // 화면은 고정 목록 표본을 쓰고, 목록을 다시 만드는 스크립트는 두지 않는다
+  const toolSrc = readFileSync('components/LabelTool.tsx', 'utf8');
+  assert.ok(toolSrc.includes('queueFor(all, channel, LABEL_FIXED[channel]') && !toolSrc.includes('sampleOrder('));
+  const scripts = walk('scripts').filter(f => /\.(m?[jt]s|py|sh)$/.test(f) && readFileSync(f, 'utf8').includes('label-fixed'));
+  assert.deepEqual(scripts, [], '고정 목록 갱신 스크립트 없음');
+}
+
 // ───── 키보드 조작 기본 흐름 ─────
 assert.deepEqual(keyAction('0'), { type: 'score', score: 0 });
 assert.deepEqual(keyAction('3'), { type: 'score', score: 3 });
@@ -145,7 +200,6 @@ const page = readFileSync('app/label/page.tsx', 'utf8');
 assert.match(page, /robots:\s*\{\s*index:\s*false,\s*follow:\s*false\s*\}/, 'noindex');
 const tool = readFileSync('components/LabelTool.tsx', 'utf8');
 assert.ok(!/\bart\.(score|score_v2|category|sub_categories|tags|cluster_\w+|relevant|companies|orgs|feed_name|department)\b/.test(tool), '내부 판단값을 화면에 쓰지 않음');
-const walk = (d: string): string[] => readdirSync(d).flatMap(f => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
 const linking = [...walk('app'), ...walk('components'), ...walk('lib')].filter(f => /\.(tsx?|css)$/.test(f) && f !== join('app', 'label', 'page.tsx'))
   .filter(f => /['"`]\/label\b/.test(readFileSync(f, 'utf8')));
 assert.deepEqual(linking, [], '/label/ 은 어디에도 링크하지 않음');

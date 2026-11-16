@@ -1,6 +1,7 @@
 /** 기사 라벨링(/label/): 기사별 '필요 정도' 0~3 을 이 브라우저(localStorage)에만 모은다.
  *  나중에 제거 규칙·점수 모델의 정답 데이터로 쓴다. 눈가림 라벨링이라 화면에는 ★·분류·묶음 같은 내부 판단값을 보여 주지 않는다.
- *  표본 순서: 채널별 고정 시드 + 기사 id 의 해시 순. 기사가 새로 수집돼도 기존 기사끼리의 순서는 그대로다. */
+ *  표본 순서: 채널별 고정 기사 목록(lib/label-fixed/<채널>.json) 먼저, 그 뒤는 채널별 고정 시드 + 기사 id 의 해시 순(queueFor).
+ *  고정 목록은 새로 수집된 기사가 앞에 끼어들어 이미 매긴 기사가 뒤로 밀리지 않게 하려는 것이다. */
 
 export const LABEL_KEY = 'heukseok-label-v1';
 export const BATCH = 150;
@@ -41,6 +42,22 @@ export function sampleOrder<T extends HasId>(articles: T[], seed: string, month 
   }
   pool.sort((x, y) => x.k - y.k || (x.a.id < y.a.id ? -1 : x.a.id > y.a.id ? 1 : 0));
   return pool.slice(0, Math.max(0, size)).map(x => x.a);
+}
+
+/** 표본(고정 목록 먼저): 채널 고정 목록(lib/label-fixed/<채널>.json, 기사 id, 한 번 정하면 바꾸지 않음)에서 지금 불러온 기사에 있고
+ *  기간에 맞는 것을 목록 순서대로 먼저, 그 뒤에 목록에 없는 기사를 기존 방식(sampleOrder, 해시 순)으로 잇는다.
+ *  없어진 id 는 건너뛴다(진행률은 실제로 보이는 기사 수). 길이 = max(size, 목록에서 보이는 수). */
+export function queueFor<T extends HasId>(articles: T[], channel: string, fixed: readonly string[], month = 'all', size = BATCH): T[] {
+  const byId = new Map(articles.map(a => [a.id, a]));
+  const fixedSet = new Set(fixed);
+  const head: T[] = [];
+  const used = new Set<string>();
+  for (const id of fixed) {
+    const a = byId.get(id);
+    if (a && !used.has(id) && inMonth(a, month)) { used.add(id); head.push(a); }
+  }
+  const rest = sampleOrder(articles.filter(a => !fixedSet.has(a.id)), seedFor(channel), month, Math.max(size, head.length) - head.length);
+  return [...head, ...rest];
 }
 
 // ───────── 저장 형식 ─────────
