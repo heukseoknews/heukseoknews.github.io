@@ -1,0 +1,21 @@
+{
+ "_comment": "일정 캘린더(/calendar/) 수동 입력. 공식 페이지에서 직접 읽어 확인한 일정만 넣는다(확인하지 못한 날짜는 넣지 않음). 형식·필드는 docs/calendar.md. checked = 공식 페이지에서 확인한 날(한국 날짜).",
+ "events": [
+  { "id": "manual:fpsb:cfp-2026:apply", "title": "2026 CFP 자격시험 원서 접수", "org": "한국FPSB", "kind": "exam", "channel": "finance",
+    "start": "2026-09-15", "end": "2026-11-02T23:59:00+09:00", "tz": "KST", "link": "https://korea.fpsb.org/exam/", "source": "manual", "checked": "2026-11-16" },
+  { "id": "manual:fpsb:cfp-2026:exam", "title": "2026 CFP 자격시험", "org": "한국FPSB", "kind": "exam", "channel": "finance",
+    "start": "2026-11-21T10:00:00+09:00", "end": "2026-11-21T15:00:00+09:00", "tz": "KST", "link": "https://korea.fpsb.org/exam/", "source": "manual", "checked": "2026-11-16" },
+  { "id": "manual:kii:aiu-32:apply", "title": "제32회 보험심사역 원서 접수", "org": "보험연수원", "kind": "exam", "channel": "insurance",
+    "start": "2026-03-03T10:00:00+09:00", "end": "2026-03-12T18:00:00+09:00", "tz": "KST", "link": "https://www.in.or.kr/main/certification/aiu/schedule.do", "source": "manual", "checked": "2026-11-16" },
+  { "id": "manual:kii:aiu-32:exam", "title": "제32회 보험심사역 시험", "org": "보험연수원", "kind": "exam", "channel": "insurance",
+    "start": "2026-04-04", "tz": "KST", "link": "https://www.in.or.kr/main/certification/aiu/schedule.do", "source": "manual", "checked": "2026-11-16" },
+  { "id": "manual:kii:aiu-32:result", "title": "제32회 보험심사역 합격자 발표", "org": "보험연수원", "kind": "exam", "channel": "insurance",
+    "start": "2026-04-23T10:00:00+09:00", "tz": "KST", "link": "https://www.in.or.kr/main/certification/aiu/schedule.do", "source": "manual", "checked": "2026-11-16" },
+  { "id": "manual:kii:aiu-33:apply", "title": "제33회 보험심사역 원서 접수", "org": "보험연수원", "kind": "exam", "channel": "insurance",
+    "start": "2026-08-11T10:00:00+09:00", "end": "2026-08-20T18:00:00+09:00", "tz": "KST", "link": "https://www.in.or.kr/main/certification/aiu/schedule.do", "source": "manual", "checked": "2026-11-16" },
+  { "id": "manual:kii:aiu-33:exam", "title": "제33회 보험심사역 시험", "org": "보험연수원", "kind": "exam", "channel": "insurance",
+    "start": "2026-09-12", "tz": "KST", "link": "https://www.in.or.kr/main/certification/aiu/schedule.do", "source": "manual", "checked": "2026-11-16" },
+  { "id": "manual:kii:aiu-33:result", "title": "제33회 보험심사역 합격자 발표", "org": "보험연수원", "kind": "exam", "channel": "insurance",
+    "start": "2026-10-01T10:00:00+09:00", "tz": "KST", "link": "https://www.in.or.kr/main/certification/aiu/schedule.do", "source": "manual", "checked": "2026-11-16" }
+ ]
+}
