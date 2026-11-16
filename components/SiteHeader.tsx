@@ -18,6 +18,7 @@ const AccountMenu = dynamic(() => import('./AccountMenu'));
 
 // 채널 안 경로(/<채널>/ 뒤). 주 메뉴는 기사 보기. 오른쪽 위는 마이페이지(내 북마크·내 데이터, 로그인 뒤 계정)
 const MAIN = [['', '뉴스'], ['week/', '이번 주 핵심'], ['trends/', '키워드 추이']] as const;
+const CALENDAR = '/calendar/';
 
 /** 채널 페이지 공통 헤더(상단 고정): 워드마크(홈 /) · 채널명 · 주 메뉴 · 마이페이지. ≤640px 에서는 햄버거 메뉴로 접힌다.
  *  채널 이동 줄은 헤더 아래 ChannelSwitcher. 수집 지연일 때만 배지(링크 아님)를 보인다.
@@ -35,9 +36,9 @@ export default function SiteHeader({ me = false, label }: { me?: boolean; label?
   const link = (href: string, label: string, current = isCurrent(href)) =>
     <li key={href}><Link href={href} aria-current={current ? 'page' : undefined} className={current ? 'active' : ''}>{label}</Link></li>;
   const item = ([sub, label]: readonly [string, string]) => link(channelHref(ch.slug, sub), label);
-  const mainItems = me
+  const mainItems = [...(me
     ? meChannels(CHANNELS.map(c => c.slug)).map(slug => link(channelHref(slug), `${CHANNELS.find(c => c.slug === slug)!.name} 뉴스`, false))
-    : MAIN.map(item);
+    : MAIN.map(item)), link(CALENDAR, '일정')];   // 일정(/calendar/)은 채널과 무관한 포털 화면이라 모든 헤더 끝에
 
   // 오른쪽 위: 마이페이지 버튼. 로그인을 켠 빌드에서는 로그인하면 계정 메뉴(표시 이름)로 바뀐다(AccountMenu)
   const meLink = <Link href={meHref(ME_HOME, ch.slug)} className={'meBtn' + (me ? ' active' : '')} aria-current={me ? 'page' : undefined}><UserRound size={17} aria-hidden="true" />마이페이지</Link>;
