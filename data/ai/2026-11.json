@@ -1,5 +1,488 @@
 [
  {
+  "id": "0a74023f0d253586",
+  "title": "미국, 중국의 해외 GPU 우회 이용 차단…새 수출 규제 발표",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217467",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-16T20:13:33+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "규제",
+   "gpu"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "1738f67eaaddba29",
+  "title": "California state AG sues OpenAI over rogue agent incidents",
+  "url": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T20:07:13+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "a9995c40a3422c04",
+  "title": "How the World’s Most Advanced AI Infrastructure Supply Chain Invents the Future",
+  "url": "https://blogs.nvidia.com/blog/ai-infrastructure-supply-chain/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T20:00:37+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "NVIDIA Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "21550db8855da891",
+  "title": "Trump says ex-Nvidia CEO Jensen Huang’s affair with an alleged Chinese spy did not threaten national security",
+  "url": "https://techcrunch.com/2026/11/16/trump-says-ex-nvidia-ceo-jensen-huangs-affair-with-an-alleged-chinese-spy-did-not-threaten-national-security/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T19:12:02+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "national security",
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7f59634912f807d8",
+  "title": "US moves to cut China’s remote access to AI chips",
+  "url": "https://arstechnica.com/tech-policy/2026/11/us-moves-to-cut-chinas-remote-access-to-ai-chips/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-16T19:10:09+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "chip"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "a962a9aff8c6e655",
+  "title": "Sam Altman on Nvidia without Jensen Huang: the industry will be ‘fine’",
+  "url": "https://techcrunch.com/2026/11/16/sam-altman-on-nvidia-without-jensen-huang-the-industry-will-be-fine/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T18:11:10+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "474a91e84ee7b824",
+  "title": "FBI says Artex AI open-source hacking tool used to breach networks in ‘under three hours’",
+  "url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T17:36:43+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "open source",
+   "tool"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "b5b8d2f9cb551dda",
+  "title": "Jordan Belfort’s new AI voice startup, Tone, wants to sell like the ‘Wolf of Wall Street’",
+  "url": "https://techcrunch.com/2026/11/16/jordan-belforts-new-ai-voice-startup-tone-wants-to-sell-like-the-wolf-of-wall-street/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T17:10:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "startup"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "음성·오디오"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "af037def51a6f595",
+  "title": "OpenAI will embed safety researchers to investigate AI subversion",
+  "url": "https://techcrunch.com/2026/11/16/openai-will-embed-apollo-researchers-to-investigate-ai-subversion/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T17:02:43+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "safety"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "37e7777f21965965",
+  "title": "OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM",
+  "url": "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T17:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "release"
+  ],
+  "score": 4,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "2d7a5d6b20fff3cd",
+  "title": "Broadening access to AI for scientists",
+  "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T17:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "dd659f011024f04f",
+  "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+  "url": "https://openai.com/index/strengthening-online-child-safety",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T17:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "tool"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "742a0adaef2e2544",
+  "title": "Lambda Boosts AI Factory Resiliency and Efficiency With NVIDIA Photonics",
+  "url": "https://blogs.nvidia.com/blog/lambda-photonics/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T16:00:51+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "NVIDIA Blog",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "0dc8b1c6d09938c1",
+  "title": "NVIDIA Expands Slurm to Bring Quantum Computing Into Supercomputing",
+  "url": "https://blogs.nvidia.com/blog/slurm-quantum-computing-supercomputing/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T16:00:47+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "891aa0f995d12bb5",
+  "title": "NVIDIA Sweeps MLPerf Training and Endpoints as Vera Rubin Debuts With Leading Performance",
+  "url": "https://blogs.nvidia.com/blog/mlperf-training-endpoints-vera-rubin/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T16:00:25+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "debut"
+  ],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4e397e27d38f36ea",
+  "title": "NVIDIA CUDA-X Libraries Give Agents the Tools to Accelerate Scientific Discovery",
+  "url": "https://blogs.nvidia.com/blog/cuda-x-libraries-agents-accelerate-scientific-discovery/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T16:00:16+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "cuda",
+   "agent",
+   "tool"
+  ],
+  "score": 4,
+  "feed_name": "NVIDIA Blog",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "bcc40eb1eee4216c",
+  "title": "CUDA at 20: How the Platform Transformed Scientific Computing",
+  "url": "https://blogs.nvidia.com/blog/20-years-cuda/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T16:00:11+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "cuda"
+  ],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "8f02058f4a02dc51",
+  "title": "NVIDIA Announces Rubin HPC — A New GPU to Accelerate Agents for Science, Engineering and Analytics",
+  "url": "https://blogs.nvidia.com/blog/rubin-hpc/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T16:00:01+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "gpu",
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "NVIDIA Blog",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "aca925b15bf1ae05",
+  "title": "Audible turns to AI to help users discover audiobooks",
+  "url": "https://techcrunch.com/2026/11/16/audible-turns-to-ai-to-help-users-discover-audiobooks/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T15:52:19+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7e98012e3d470136",
+  "title": "US tightens AI chip export controls to deter Chinese companies from accessing compute remotely",
+  "url": "https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T15:02:34+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "export control",
+   "chip"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "2108ac63e6edcc1d",
+  "title": "Google Maps can now build trip itineraries with real-time details about each stop",
+  "url": "https://techcrunch.com/2026/11/16/google-maps-can-now-build-trip-itineraries-with-real-time-details-about-each-stop/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T14:48:13+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "d2aab40818f3b91a",
+  "title": "Updating our coordinated vulnerability disclosure policy timelines",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVmdyVmc1MjVDcWtuV0NsWG44R3ZzQU5rX1BkVHNkR1NlN2w4cFRselR2dTVLOS1EcjlRbU1idlVSMW11bGFWaFZjN2tydks4VkJUR1dlcXY3b2dZX1k5aE5NMUxFck5kQWZtcXlKNHF3bC1ZZXJTa0xjMDNIN1l3TlF6ZzlwMF8z?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-16T14:32:51+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "policy"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "39ceb2e8ab2f8ae0",
+  "title": "Jensen Huang allies build a \"war room\" to get him back at Nvidia",
+  "url": "https://arstechnica.com/ai/2026/11/jensen-huang-allies-build-a-war-room-to-get-him-back-at-nvidia/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-16T14:06:16+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "806db9cd3ae0f854",
   "title": "Freshworks alums raise $53M to take on Salesforce, HubSpot with AI-native CRM",
   "url": "https://techcrunch.com/2026/11/16/freshworks-alums-raise-53m-to-take-on-salesforce-hubspot-with-ai-native-crm/",
@@ -16,6 +499,28 @@
   "companies": [],
   "orgs": [],
   "score_v2": 2
+ },
+ {
+  "id": "d91fd06de7b8771e",
+  "title": "Science at the Frontier: How scientists use ChatGPT",
+  "url": "https://openai.com/index/science-at-the-frontier",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T12:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
  },
  {
   "id": "55788e34ef00f1e1",
@@ -311,6 +816,24 @@
   "score_v2": 2
  },
  {
+  "id": "9fe6d2ae73e55f52",
+  "title": "Our first phase of embedded assessments",
+  "url": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T08:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "707e46ac5a544410",
   "title": "젠슨 황이 키운 동남아 AI 컴퓨팅 사업…미국 규제 강화에 위기",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217446",
@@ -531,6 +1054,48 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "21b4758ab52123ac",
+  "title": "Advancing computer-use agents for healthcare teams",
+  "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T06:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "21e886491b30cfff",
+  "title": "More ways to move care forward with ChatGPT for Healthcare",
+  "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T06:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
   "score_v2": 2
  },
  {
@@ -1015,6 +1580,31 @@
   ],
   "orgs": [],
   "score_v2": 4
+ },
+ {
+  "id": "8ec21efa2c622734",
+  "title": "Hugging Face and OpenRouter join forces to make open-weight models easy to run",
+  "url": "https://huggingface.co/blog/openrouter",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-16T00:00:00+00:00",
+  "collected_at": "2026-11-16T20:41:11.466209+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "open-weight",
+   "model"
+  ],
+  "score": 5,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [
+   "Hugging Face"
+  ],
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "61200927e23c6bf1",

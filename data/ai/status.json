@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-16T12:53:34.552539+00:00",
-  "finished_at": "2026-11-16T12:53:37.165725+00:00",
-  "candidates": 307,
-  "added": 4,
+  "started_at": "2026-11-16T20:41:11.466209+00:00",
+  "finished_at": "2026-11-16T20:41:13.800856+00:00",
+  "candidates": 313,
+  "added": 28,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,23 +11,23 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
-   "entries": 1391,
-   "kept": 88,
+   "entries": 1397,
+   "kept": 94,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
     "junk_title": 1,
-    "too_old": 11
+    "too_old": 5
    },
    "filtered": [
     "[노이즈 제목] LifeVal"
    ],
-   "oldest": "2026-10-14T07:00:00+00:00",
-   "newest": "2026-11-16T09:00:00+00:00",
+   "oldest": "2026-10-16T00:00:00+00:00",
+   "newest": "2026-11-16T17:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -36,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 12,
@@ -58,20 +58,20 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
-   "entries": 907,
-   "kept": 29,
+   "entries": 908,
+   "kept": 30,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 71
+    "too_old": 70
    },
    "filtered": [],
-   "oldest": "2026-06-24T16:00:13+00:00",
-   "newest": "2026-11-13T18:00:39+00:00",
+   "oldest": "2026-06-26T00:00:00+00:00",
+   "newest": "2026-11-16T00:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -80,23 +80,24 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 3
+    "low_relevance": 4
    },
    "filtered": [
-    "A New Dawn in the Cloud: ‘Warhammer 40,000: Dawn of War IV’ Is Coming to GeForce NOW",
-    "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
-    "‘Hogwarts Legacy’ Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW"
+    "NVIDIA Expands Slurm to Bring Quantum Computing Into Supercomputing",
+    "NVIDIA Sweeps MLPerf Training and Endpoints as Vera Rubin Debuts With Leading Performance",
+    "CUDA at 20: How the Platform Transformed Scientific Computing",
+    "A New Dawn in the Cloud: ‘Warhammer 40,000: Dawn of War IV’ Is Coming to GeForce NOW"
    ],
-   "oldest": "2026-11-03T16:00:45+00:00",
-   "newest": "2026-11-16T00:00:28+00:00",
+   "oldest": "2026-11-09T05:00:00+00:00",
+   "newest": "2026-11-16T20:00:37+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -105,30 +106,27 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 11
+    "low_relevance": 7
    },
    "filtered": [
-    "SNL gathers all the tech tycoons for a lesson in dating and spycraft",
+    "Trump says ex-Nvidia CEO Jensen Huang’s affair with an alleged Chinese spy did not threaten national security",
+    "Sam Altman on Nvidia without Jensen Huang: the industry will be ‘fine’",
+    "Google Maps can now build trip itineraries with real-time details about each stop",
+    "‘SNL’ gathers all the tech tycoons for a lesson in dating and spycraft",
     "Where was Nvidia’s security team?",
     "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
-    "Asian governments react to Nvidia CEO Jensen Huang’s exit",
-    "The unfolding Jensen Huang scandal: a timeline",
-    "ElevenLabs’ new app combines meeting note-taking and dictation for teams",
-    "Israel’s VCs see opportunity for challengers in Nvidia’s turmoil",
-    "Jensen Huang didn’t show confidence in his successor, report says",
-    "Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump",
-    "Muse can now place calls to US businesses — if you pay"
+    "Asian governments react to Nvidia CEO Jensen Huang’s exit"
    ],
-   "oldest": "2026-11-12T21:27:10+00:00",
-   "newest": "2026-11-16T12:30:00+00:00",
+   "oldest": "2026-11-13T22:43:00+00:00",
+   "newest": "2026-11-16T20:07:13+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -137,23 +135,24 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 3
+    "low_relevance": 4
    },
    "filtered": [
+    "Jensen Huang allies build a \"war room\" to get him back at Nvidia",
     "Ars Live: What drone attacks on data centers mean for modern life in the cloud",
     "Nvidia CEO's affair becomes a national security problem",
     "“Does Meta think we can’t read?” Meta abandons sketchy commercial terms update."
    ],
-   "oldest": "2026-11-05T21:39:40+00:00",
-   "newest": "2026-11-13T21:20:47+00:00",
+   "oldest": "2026-11-06T16:19:12+00:00",
+   "newest": "2026-11-16T19:10:09+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -162,17 +161,18 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 20
+    "low_relevance": 21
    },
    "filtered": [
+    "미국, 중국의 해외 GPU 우회 이용 차단…새 수출 규제 발표",
     "알리바바 '큐원4 맥스' 정식 출시…성능 높이고 작업 비용 67% 절감",
     "같은 전남인데 저수율 52.5%p 차이…구례 33.5% 최저·여순광 86% 최고",
     "전남광주, 호남·전라선 고속열차 우선 배정 건의...\"이용객 9.2% 증가에 따른 좌석난 해소\"",
@@ -181,11 +181,10 @@
     "트럼프, 시진핑 회담서 젠슨 황 의혹 거론 안 할 듯…희토류 협상 집중",
     "LGU+, 클라우드 기반 보안 플랫폼 'U+SASE' 출시",
     "포티넷코리아, 김종덕 신임 지사장 선임...20년만에 친정 복귀",
-    "태양광 혜택 사라지자… 네덜란드 가정용 배터리 설치 '폭증'",
-    "중국, 30시간 체공 태양광 무인기 시험비행…한국 기록은 170시간"
+    "태양광 혜택 사라지자… 네덜란드 가정용 배터리 설치 '폭증'"
    ],
-   "oldest": "2026-11-15T00:00:00+00:00",
-   "newest": "2026-11-16T09:31:44+00:00",
+   "oldest": "2026-11-15T00:10:00+00:00",
+   "newest": "2026-11-16T20:13:33+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -194,8 +193,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -222,8 +221,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
    "entries": 19,
    "kept": 16,
@@ -238,8 +237,8 @@
     "[노이즈 제목] - Anthropic",
     "[노이즈 제목] - Anthropic"
    ],
-   "oldest": "2026-11-09T18:56:17+00:00",
-   "newest": "2026-11-16T10:25:26+00:00",
+   "oldest": "2026-11-10T02:49:04+00:00",
+   "newest": "2026-11-16T15:48:43+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -248,20 +247,18 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:34.552539+00:00",
-   "last_success_at": "2026-11-16T12:53:34.552539+00:00",
+   "last_run_at": "2026-11-16T20:41:11.466209+00:00",
+   "last_success_at": "2026-11-16T20:41:11.466209+00:00",
    "consecutive_failures": 0,
-   "entries": 4,
-   "kept": 4,
+   "entries": 3,
+   "kept": 3,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 1
+    "low_relevance": 0
    },
-   "filtered": [
-    "Muse Spark 1.4 leaks in a Meta pull request, already in internal use"
-   ],
-   "oldest": "2026-11-13T17:04:24+00:00",
+   "filtered": [],
+   "oldest": "2026-11-15T07:03:39+00:00",
    "newest": "2026-11-16T01:55:29+00:00",
    "at_limit": false,
    "needs_split": false,
