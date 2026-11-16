@@ -1,5 +1,63 @@
 [
  {
+  "id": "806db9cd3ae0f854",
+  "title": "Freshworks alums raise $53M to take on Salesforce, HubSpot with AI-native CRM",
+  "url": "https://techcrunch.com/2026/11/16/freshworks-alums-raise-53m-to-take-on-salesforce-hubspot-with-ai-native-crm/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T12:30:00+00:00",
+  "collected_at": "2026-11-16T12:53:34.552539+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "55788e34ef00f1e1",
+  "title": "아마존, 지상 640km에 우주 인터넷망 구축…인공지능 시대 글로벌 통신 인프라 확장",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42748",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-16T11:57:31+00:00",
+  "collected_at": "2026-11-16T12:53:34.552539+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7ca14af23d058c18",
+  "title": "정부, 수능 앞두고 AI 악용 부정행위 차단 총력…적발 시 합격 취소·수사 의뢰",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42747",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-16T11:03:21+00:00",
+  "collected_at": "2026-11-16T12:53:34.552539+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "정부"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "190da14561831c00",
   "title": "“AI가 연구하고, 설계하고, 검증한다”…알리바바, 신약 개발·제조 혁신할 ‘큐웬4 맥스’ 공개",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42746",
@@ -932,6 +990,31 @@
    "LLM·NLP"
   ],
   "score_v2": 2
+ },
+ {
+  "id": "60f3c7381bc61eae",
+  "title": "The King’s Trust and OpenAI launch £1m partnership",
+  "url": "https://openai.com/index/the-kings-trust-and-openai",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T00:00:00+00:00",
+  "collected_at": "2026-11-16T12:53:34.552539+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "launch",
+   "partnership"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "61200927e23c6bf1",
@@ -7742,7 +7825,10 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "42f0786ec0b8a45f",
+  "cluster_size": 5,
+  "cluster_sources": 1
  },
  {
   "id": "e093e2a49aacf0cb",
@@ -7760,7 +7846,10 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "42f0786ec0b8a45f",
+  "cluster_size": 5,
+  "cluster_sources": 1
  },
  {
   "id": "c80f9e3167df2965",
@@ -7778,7 +7867,10 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "42f0786ec0b8a45f",
+  "cluster_size": 5,
+  "cluster_sources": 1
  },
  {
   "id": "d4b2651db8ab07cb",
@@ -7796,7 +7888,10 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "42f0786ec0b8a45f",
+  "cluster_size": 5,
+  "cluster_sources": 1
  },
  {
   "id": "8f0b399bf4dbc995",
@@ -7832,7 +7927,11 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "42f0786ec0b8a45f",
+  "cluster_size": 5,
+  "cluster_sources": 1,
+  "cluster_lead": true
  },
  {
   "id": "c86d08502069b5ef",
