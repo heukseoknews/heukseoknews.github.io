@@ -432,3 +432,5 @@ button:disabled{cursor:default}
 /* 기사 피드백 버튼(로그인 중, components/ArticleCard.tsx)·실패 안내 */
 .fbBtn[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent-strong);border-color:var(--accent)}.fbToast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;max-width:min(92vw,420px);padding:10px 16px;border-radius:var(--r-md);background:var(--text);color:var(--surface);font-size:var(--fs-14);text-align:center}
 .authNote{margin:2px 0 0;text-align:center;font-size:var(--fs-13);color:var(--muted)}
+/* 헤더 '채팅' 안 읽은 수 배지(components/ChatLink.tsx): 자리는 늘 같은 폭('99+'까지), 0 은 흐리게, 있으면 강조색 */
+.chatBadge{display:inline-block;width:34px;padding:0;border-radius:var(--r-pill);font-size:var(--fs-12);font-weight:700;line-height:18px;text-align:center;font-variant-numeric:tabular-nums;background:var(--line-soft);color:var(--subtle)}.chatBadge.on{background:var(--accent);color:var(--surface)}.chatBadge.hidden{visibility:hidden}.chatSlot{flex-shrink:0}.chatLink{white-space:nowrap}

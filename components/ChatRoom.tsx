@@ -15,6 +15,7 @@ import {
 import { supabaseChat } from '../lib/chatBackend';
 import { channelColors } from './channelLook';
 import ChatAttach from './ChatAttach';
+import { notifyChatRead } from '../lib/chatUnread';
 
 /** /chat/ 화면의 상태 분기: 로그인 꺼진 빌드·로그아웃·확인 전 → 방(Room). 실제 방은 로그인 + 비밀번호 변경 끝난 사용자만. */
 export default function ChatRoom() {
@@ -142,7 +143,7 @@ export function Room({ me, be }: { me: string; be: ChatBackend }) {
     const prev = m.sent;
     m.sent = want; m.at = Date.now();
     be.markRead(want)
-      .then(v => { m.sent = Math.max(m.sent, v); setReads(r => r === 'unknown' ? 'on' : r); })
+      .then(v => { m.sent = Math.max(m.sent, v); setReads(r => r === 'unknown' ? 'on' : r); notifyChatRead(); })   // 헤더 '채팅' 배지 → 0
       .catch(e => { m.sent = prev; setReads(r => readsAfterFail(r, e instanceof ChatError ? e.kind : 'network')); });
   }, [be]);
   // 읽음 수: 내가 보낸 글만, 탭이 보일 때만
