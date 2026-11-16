@@ -7,7 +7,7 @@
 저장하는 것은 제목·기관·날짜·링크·종류·채널·출처·확인일(+ 식별용 id, 원래 시간대 표기)뿐이다. 공고 본문은 저장하지 않는다.
 
 실패 허용: 가져오기·파싱이 실패하거나 결과가 이전보다 비정상적으로 적으면(이전엔 있었는데 0건, 또는 절반 미만) 그 출처의 이전 일정을
-그대로 두고 status 에 실패와 시각만 남긴다. 출처마다 하루 한 번(MIN_INTERVAL_H)만 요청한다(--force 로 무시).
+그대로 두고 status 에 실패와 시각만 남긴다. 출처마다 하루 한 번만 요청한다(6시간 안에 다시 실행하면 건너뜀 — MIN_INTERVAL_H, --force 로 무시).
   python collector/calendar_collect.py [--dry-run] [--force] [--data-dir data/calendar]
 """
 from __future__ import annotations
@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 UA = 'ActuaryNewsHub/3.0 (personal schedule reader; metadata only)'
 DELAY_S = 1.2           # 같은 사이트 요청 간격(CLAUDE.md: 1.2초 이상)
-MIN_INTERVAL_H = 20     # 출처당 하루 한 번
+MIN_INTERVAL_H = 6      # 같은 출처를 6시간 안에 다시 받지 않음(수집은 하루 한 번 03:45 예약 실행에서만 돈다)
 PARSER_VERSION = 2      # 파서를 바꾸면 올린다: 저장된 ETag 와 버전이 다르면 조건부 요청을 하지 않고 새로 받아 다시 파싱
 KST = timezone(timedelta(hours=9))
 KINDS = ('exam', 'job', 'conf', 'admission')   # 시험·채용·학회·입시

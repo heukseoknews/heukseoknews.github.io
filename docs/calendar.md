@@ -41,7 +41,7 @@
 ## 자동 수집(`python collector/calendar_collect.py [--dry-run] [--force]`)
 - **ccfddl**(github.com/ccfddl/ccf-deadlines, MIT): `channels/ai/calendar.json` 의 학회별 YAML. 초록 마감·논문 마감·결과 발표(`decision_deadline`)는 YAML 의 시간대(`AoE`·`UTC±N`·`PT`, 없으면 AoE)를 붙인 시각으로, 학회 개최는 날짜로 저장한다(여러 도시 표기 등 단순하지 않은 날짜는 넣지 않음). 올해-1년 이후 회차만. `ETag`/`If-Modified-Since` 로 바뀐 파일만 받는다(파서를 바꾸면 `PARSER_VERSION` 을 올려 다시 받게 한다).
 - **보험개발원 보험전문인시험**(certi.kidi.or.kr, 정적 HTML): 표마다 위 제목(`제49회 보험전문인 제1차시험 일정표`)으로 회차를 읽고, 시행 공고·원서 접수·시험·합격자 발표만 넣는다(영어성적·경력 서류 등은 뺌). 시각이 있는 칸은 `+09:00`.
-- 요청: 출처마다 하루 한 번(20시간 안에 다시 실행하면 건너뜀), 같은 사이트는 1.2초 간격, 로그인·접근 제한 우회 없음.
+- 요청: 출처마다 하루 한 번(수집은 03:45 예약 실행에서만 돌고, 6시간 안에 다시 실행하면 건너뜀), 같은 사이트는 1.2초 간격, 로그인·접근 제한 우회 없음.
 - **실패 허용**: 가져오기·파싱이 실패하거나 결과가 비정상적으로 적으면(이전엔 있었는데 0건, 이전 4건 이상에서 절반 미만) 그 출처의 이전 일정을 그대로 두고 `status.json` 에 `ok:false`, `error`, `last_error_at` 만 남긴다. ccfddl 은 학회 하나가 실패하면 그 학회만 이전 일정을 쓴다(`errors`). 화면은 출처별 마지막 성공 시각과 최근 실패를 보여 준다.
 - 실행 시점: `.github/workflows/deploy.yml` 의 `calendar` 잡. 한국 03:45 예약 실행(cron `45 18 * * *`)에만 돈다(다른 예약·수동 실행·push 에는 돌지 않음). 결과는 `data/calendar` 만 커밋(`scripts/commit-data.sh`)하고, 같은 실행의 빌드가 아티팩트로 받아 배포한다.
 
