@@ -1,13 +1,14 @@
 // node scripts/admin/test_admin.mjs — 계정 관리 스크립트 단위 테스트(Supabase 에 요청하지 않음, 가짜 서버 사용).
 // 실행: tests/test_admin_scripts.py 가 CI 에서 부른다. 가짜 키·학번은 실행 중에 만들어 저장소 비밀 검사에 걸리지 않게 한다.
 import assert from 'node:assert/strict';
-import { mkdtempSync, writeFileSync, chmodSync, rmSync } from 'node:fs';
+import { mkdtempSync, writeFileSync, chmodSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { ApiError, REPO_ROOT, fmtKst, insideRepo, loadSecretKey, makeApi, makeOut, makeRedactor, parseCsv, parseEnvText, planCreate, resolveUrl, rowProblems, toEmail } from './lib.mjs';
 import { cmdCheck, cmdCreate, cmdList, cmdResetPassword, cmdSetDisabled } from './commands.mjs';
 import { main as usersMain } from './users.mjs';
 import { main as verifyMain, runVerify, STEPS, TEST_IDS } from './verify.mjs';
+import { DEFAULT_OUT, exportFile, fetchAll, pseudonymize, run as runFeedback, stats as fbStats } from './feedback.mjs';
 
 const FAKE_KEY = ['sb', 'secret', 'x'.repeat(10) + 'TESTONLY' + 'y'.repeat(10)].join('_');   // 가짜(실제 키 아님)
 const SN = n => String(20990000 + n);                                                         // 가짜 학번(8자리)
@@ -526,6 +527,47 @@ await t('verify-feedback', async () => {
   const missing = await fails({ noFeedbackTable: true });
   assert.ok(missing.length > 0 && missing.every(n => /피드백|article_feedback/.test(n)), missing.join(' / '));
   assert.ok(missing.includes('2-4. anon article_feedback 읽기 막힘') && missing.includes('6. B 가 A 의 user_id 로 피드백 만들기 막힘'));
+});
+
+// 13) 피드백 통계·가명 내보내기(scripts/admin/feedback.mjs): 사용자 정보 없음, 저장소 안 폴더 거절, 페이지 넘김
+await t('feedback-export', async () => {
+  const U1 = '11111111-1111-4111-8111-111111111111', U2 = '22222222-2222-4222-8222-222222222222';
+  const rows = [
+    { user_id: U2, channel: 'ai', article_id: 'b2', signal: 'useful', created_at: '2026-11-16T02:00:00+00:00' },
+    { user_id: U1, channel: 'insurance', article_id: 'a1', signal: 'irrelevant', created_at: '2026-11-16T01:00:00+00:00' },
+    { user_id: U1, channel: 'ai', article_id: 'b2', signal: 'irrelevant', created_at: '2026-11-16T03:00:00+00:00' },
+  ];
+  const ps = pseudonymize(rows);
+  assert.deepEqual(ps, [
+    { channel: 'insurance', id: 'a1', signal: 'irrelevant', user: 'u1', created_at: '2026-11-16T01:00:00+00:00' },
+    { channel: 'ai', id: 'b2', signal: 'useful', user: 'u2', created_at: '2026-11-16T02:00:00+00:00' },
+    { channel: 'ai', id: 'b2', signal: 'irrelevant', user: 'u1', created_at: '2026-11-16T03:00:00+00:00' },
+  ], '처음 나온 순서대로 u1·u2, 같은 사람은 같은 번호');
+  const text = JSON.stringify(ps);
+  assert.ok(!text.includes(U1) && !text.includes(U2) && !text.includes('user_id'), '실제 user_id 없음');
+  for (const r of ps) assert.deepEqual(Object.keys(r), ['channel', 'id', 'signal', 'user', 'created_at']);
+  assert.deepEqual(fbStats(rows), { total: 3, users: 2, byChannel: { ai: 2, insurance: 1 }, bySignal: { irrelevant: 2, useful: 1 },
+    cross: { ai: { irrelevant: 1, useful: 1 }, insurance: { irrelevant: 1, useful: 0 } } });
+  // 페이지 넘김(1,000행씩)
+  const many = Array.from({ length: 2345 }, (_, i) => ({ user_id: U1, channel: 'ai', article_id: `x${i}`, signal: 'useful', created_at: '2026-11-16T00:00:00Z' }));
+  const qs = [];
+  const pager = { select: async (tb, q) => { qs.push(q); const off = Number(/offset=(\d+)/.exec(q)[1]), lim = Number(/limit=(\d+)/.exec(q)[1]); assert.equal(tb, 'article_feedback'); return many.slice(off, off + lim); } };
+  assert.equal((await fetchAll(pager)).length, 2345); assert.equal(qs.length, 3);
+  // 경로: 기본은 저장소 밖, 저장소 안 폴더는 서버에 묻기 전에 거절
+  assert.ok(!DEFAULT_OUT.startsWith(process.cwd()) && DEFAULT_OUT.endsWith('/.heukseok/feedback-export'));
+  assert.match(exportFile('/tmp/x', new Date('2026-11-16T09:05:00Z'), () => false), /\/tmp\/x\/feedback-20261116-0905\.json$/);
+  assert.throws(() => exportFile('scripts/admin', new Date()), /저장소 안/);
+  let asked = 0;
+  await assert.rejects(runFeedback({ cmd: 'export', out: 'scripts/admin' }, { api: { select: async () => { asked++; return []; } }, out: () => {} }), /저장소 안/);
+  assert.equal(asked, 0, '저장소 안이면 서버에 묻지 않음');
+  // 내보내기 실행: 쓰는 내용은 가명 행, 출력에 user_id 없음
+  const lines = []; let written = null;
+  await runFeedback({ cmd: 'export', out: '/tmp/fb' }, { api: { select: async () => rows }, out: s => lines.push(s), repoCheck: () => false, write: (p, r) => { written = { p, r }; } });
+  assert.deepEqual(written.r, ps); assert.ok(lines.join('\n').includes('3건') && !lines.join('\n').includes(U1));
+  const sl = []; await runFeedback({ cmd: 'stats' }, { api: { select: async () => rows }, out: s => sl.push(s) });
+  assert.ok(sl[0].includes('전체 3건 · 사용자 2명') && !sl.join('\n').includes(U1));
+  // .gitignore 가 내보낸 파일 이름을 막는다
+  assert.match(readFileSync('.gitignore', 'utf8'), /^feedback-export\/$/m);
 });
 
 console.log(`admin script tests passed (${passed})`);

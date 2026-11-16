@@ -13,6 +13,9 @@ scripts/probe/out/
 # 비밀·계정 목록은 저장소에 두지 않는다(docs/auth-runbook.md)
 *.env
 accounts*.csv
+# 피드백 가명 내보내기(scripts/admin/feedback.mjs — 기본은 저장소 밖 ~/.heukseok/feedback-export/, 저장소 안 폴더는 스크립트가 거절)
+feedback-export/
+feedback-*.json
 # 로그·테스트 산출물·편집기 설정
 *.log
 .pytest_cache/
