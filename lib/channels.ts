@@ -26,6 +26,8 @@ export type ChannelMeta = {
   slug: string; name: string; subtitle: string; description: string; locale: string; timezone: string;
   /** 수집 시각(UTC cron). .github/workflows/deploy.yml 의 schedule 중 하나여야 한다(tests/channels.test.ts). */
   schedule_utc: string[];
+  /** 순위순 정렬의 시간 감쇠 반감기(시간). 없으면 lib/rank.ts DEFAULT_HALF_LIFE_H */
+  rank_half_life_hours?: number;
   tabs: Record<TabId, string>; filters: Record<FilterId, string>;
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
   /** false 면 워크플로가 이 채널을 수집하지 않는다(설정만 준비된 상태). */

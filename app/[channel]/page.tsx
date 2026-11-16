@@ -2,8 +2,8 @@
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Bookmark, Check, Newspaper, Search, ShieldCheck, Clock3, AlertCircle, SlidersHorizontal, Filter, RotateCcw, X } from 'lucide-react';
 import ArticleCard, { type CardGroup } from '../../components/ArticleCard';
-import { clusterIndex, collapse, countLabel, single, sortItems } from '../../lib/clusters';
-import { stars } from '../../lib/stars';
+import { clusterIndex, collapse, countLabel, single } from '../../lib/clusters';
+import { DEFAULT_HALF_LIFE_H, SORT_KEY, SORT_LABEL, type SortMode, type SortPrefs, latestItems, parseSortPrefs, rankItems, rankReference, sortFor } from '../../lib/rank';
 import { EMPTY_TEXT, emptyKind } from '../../lib/emptyState';
 import DateBar, { DateFilter } from '../../components/DateBar';
 import MultiFilter from '../../components/MultiFilter';
@@ -34,7 +34,9 @@ export default function Home() {
   const [search, setSearch] = useState('');
   const [unreadOnly, setUnreadOnly] = useState(false);
   const [includeLow, setIncludeLow] = useState(false);       // 관련도 낮은 기사 포함(기본 꺼짐, 탭을 옮겨도 유지)
-  const [sort, setSort] = useState<'latest' | 'important'>('latest');
+  // 정렬(순위순/최신순): 탭별 선택을 이 브라우저에 저장. 기본은 새 뉴스 = 순위순, 나머지 = 최신순(lib/rank.ts)
+  const [sortPrefs, setSortPrefs] = useState<SortPrefs>({});
+  useEffect(() => { try { setSortPrefs(parseSortPrefs(localStorage.getItem(SORT_KEY))); } catch { /* 저장소 접근 불가 */ } }, []);
   const [page, setPage] = useState(1);
   // 기간은 탭별로 보관한다(다른 필터와 같이 화면 상태 — 새로고침하면 기본으로). 기본은 모든 탭이 '기간 제한 없음'.
   const [dateFilters, setDateFilters] = useState<Partial<Record<Tab, DateFilter>>>({});
@@ -42,6 +44,12 @@ export default function Home() {
   const stored = dateFilters[tab];
   const dateFilter: DateFilter = stored !== undefined ? stored : defaultDate(tab, today);  // 기본: 기간 제한 없음(null)
   const setDateFilter = (f: DateFilter) => setDateFilters(s => ({ ...s, [tab]: f }));
+  const sort: SortMode = sortFor(sortPrefs, tab);
+  const chooseSort = (m: SortMode) => {
+    const next = { ...sortPrefs, [tab]: m };
+    setSortPrefs(next); setPage(1);
+    try { localStorage.setItem(SORT_KEY, JSON.stringify(next)); } catch { /* 저장 불가면 이번 방문에만 */ }
+  };
   const [sources, setSources] = useState<string[]>([]);  // 선택한 언론사(비면 전체) — 탭 이동 시 초기화
   const [orgs, setOrgs] = useState<string[]>([]);          // 선택한 유관기관(비면 전체) — 탭 이동 시 초기화, 저장하지 않음
   const [filterOpen, setFilterOpen] = useState(false);     // [필터] 버튼으로 펼치는 패널
@@ -108,7 +116,7 @@ export default function Home() {
   const handleRestore = useCallback((id: string) => undismiss(eventIds.current(id, true)), [undismiss]);
 
   const relevantAll = useMemo(() => all.filter(isRelevant), [all]);  // 새 뉴스 건수·이번 주 핵심은 토글과 무관하게 관련 기사만 센다
-  // 탭·카테고리·검색·안 읽은 것·관련도 조건을 적용한 기본 목록(최신순/중요도순 정렬 포함). 결과 0건 안내에서 조건 하나를 빼고 다시 계산하기 위해 함수로 둔다.
+  // 탭·카테고리·검색·안 읽은 것·관련도 조건을 적용한 기본 목록(최신순; 카드 정렬은 items). 결과 0건 안내에서 조건 하나를 빼고 다시 계산하기 위해 함수로 둔다.
   const buildBase = (cat: string, searchText: string, unread: boolean, low: boolean): Article[] => {
     let r: Article[] = tab === 'bookmarks' ? bookmarkArticles : low ? all : relevantAll;
     if (tab === 'new') r = r.filter(a => visibleInNewTab(a, { baseline, dismissed: dismissedSet, includeDismissed, leaving }));
@@ -117,10 +125,10 @@ export default function Home() {
     if (unread) r = r.filter(a => !readSet.has(a.id));
     const q = searchText.trim().toLowerCase();
     if (q) r = r.filter(a => [a.title, a.source, a.category, ...a.tags, ...(a.companies ?? []), ...(a.orgs ?? [])].join(' ').toLowerCase().includes(q));
-    return [...r].sort((a, b) => sort === 'important' ? stars(b) - stars(a) || b.published_at.localeCompare(a.published_at) : b.published_at.localeCompare(a.published_at));
+    return [...r].sort((a, b) => b.published_at.localeCompare(a.published_at));  // 카드 순서는 아래 items 에서 정렬 방식대로
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const base = useMemo(() => buildBase(category, search, unreadOnly, includeLow), [tab, all, category, search, sort, baseline, bookmarkArticles, unreadOnly, readSet, dismissedSet, includeDismissed, leaving, includeLow, relevantAll]);
+  const base = useMemo(() => buildBase(category, search, unreadOnly, includeLow), [tab, all, category, search, baseline, bookmarkArticles, unreadOnly, readSet, dismissedSet, includeDismissed, leaving, includeLow, relevantAll]);
   const inDate = (a: Article) => !dateFilter || (kstDate(a.published_at) >= dateFilter.from && kstDate(a.published_at) <= dateFilter.to);
   type Skip = 'sources' | 'companies' | 'orgs' | 'date';
   const bySrc = (a: Article) => [a.source], byCo = (a: Article) => a.companies ?? [], byOrg = (a: Article) => a.orgs ?? [];
@@ -144,7 +152,10 @@ export default function Home() {
     return r;
   }, [tab, all, relevantAll, includeLow, baseline, dismissedSet, includeDismissed, leaving]);
   const clusterIdx = useMemo(() => clusterIndex(pool), [pool]);
-  const items = useMemo(() => tab === 'bookmarks' ? single(rows) : sortItems(collapse(rows, clusterIdx), sort), [tab, rows, clusterIdx, sort]);
+  const items = useMemo(() => {
+    const list = tab === 'bookmarks' ? single(rows) : collapse(rows, clusterIdx);
+    return sort === 'rank' ? rankItems(list, { refMs: rankReference(dateFilter, Date.now(), today), halfLifeH: ch.rank_half_life_hours ?? DEFAULT_HALF_LIFE_H }) : latestItems(list);
+  }, [tab, rows, clusterIdx, sort, dateFilter, today, ch.rank_half_life_hours]);
   eventIds.current = (id: string, dismissed: boolean) => {   // dismissed=false: 치울 것(아직 안 치운 새 기사), true: 되돌릴 것(치운 기사)
     const a = pool.find(x => x.id === id);
     const members = a?.cluster_id ? clusterIdx.get(a.cluster_id) ?? [] : [];
@@ -223,7 +234,8 @@ export default function Home() {
     <div className="toolbar" onKeyDown={onFilterKey}>
       <div className="search"><Search size={16} /><input aria-label="뉴스 검색" placeholder={`기사 제목·${L.sources}·${L.companies} 검색`} value={search} onChange={e => { setSearch(e.target.value); setPage(1); }} /></div>
       <button ref={filterBtn} type="button" className={'filterToggle' + (filterBadge ? ' on' : '')} aria-expanded={filterOpen} aria-controls="filterPanel" onClick={() => setFilterOpen(o => !o)}><Filter size={15} aria-hidden="true" /> 필터{filterBadge > 0 && <b aria-label={`켜진 필터 ${filterBadge}개`}>{filterBadge}</b>}</button>
-      <label className="sort"><SlidersHorizontal size={15} /><select value={sort} onChange={e => { setSort(e.target.value as 'latest' | 'important'); setPage(1); }}><option value="latest">최신순</option><option value="important">중요도순</option></select></label>
+      <div className="sort sortToggle" role="group" aria-label="정렬"><SlidersHorizontal size={15} aria-hidden="true" />{(['rank', 'latest'] as SortMode[]).map(m =>
+        <button key={m} type="button" aria-pressed={sort === m} onClick={() => chooseSort(m)}>{SORT_LABEL[m]}</button>)}</div>
     </div>
     <div ref={filterPanel} id="filterPanel" className="filterPanel" role="group" aria-label="필터" hidden={!filterOpen} onKeyDown={onFilterKey}>
         <MultiFilter label={L.sources} options={sourceOpts} selected={sources} onChange={v => { setSources(v); setPage(1); }} />

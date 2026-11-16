@@ -6,6 +6,7 @@
  "locale": "ko-KR",
  "timezone": "Asia/Seoul",
  "schedule_utc": ["45 18 * * *"],
+ "rank_half_life_hours": 36,
  "collect": true,
  "tabs": {
   "new": "새 뉴스",
