@@ -100,4 +100,5 @@ assert.ok(readFileSync('components/SiteHeader.tsx', 'utf8').includes("link(CALEN
 const page = readFileSync('app/calendar/page.tsx', 'utf8');
 assert.ok(!/themeCss|themeVars|<style/.test(page), '일정 화면은 채널 색을 넣지 않음(포털 공통 색)');
 assert.ok(page.includes('{NOTICE}'));
+assert.ok(page.includes('https://github.com/ccfddl/ccf-deadlines') && page.includes('MIT 라이선스'), 'ccfddl 출처(MIT) 표기');
 console.log('calendar tests passed');

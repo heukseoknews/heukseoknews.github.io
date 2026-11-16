@@ -68,6 +68,7 @@ export default function CalendarPage() {
               </li>; })}</ul>
           </div>)}
       </section>
+      <p className="calStatus">학회 마감일 출처: <a href="https://github.com/ccfddl/ccf-deadlines" target="_blank" rel="noopener noreferrer">ccfddl/ccf-deadlines</a> (MIT 라이선스)</p>
     </main>
     <Footer />
   </ChannelProvider>;
