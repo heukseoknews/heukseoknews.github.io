@@ -174,3 +174,4 @@ python scripts/audit/quality/labels_md.py > docs/article-quality-labels.md
 - 회귀 방지: `tests/test_label_eval.py`(라벨 239건을 현재 설정으로 다시 판정), 엔진 `collector/test_hide_rules.py`.
 - 라벨 기준(설정을 고를 때 본 라벨이라 낙관적일 수 있음): 보험 라벨 2+ 숨김 2→1건, 라벨 0 숨김 24→33/50, 숨김 20%→31%. AI 라벨 2+ 숨김 9→6건.
 - 실데이터 사본 `--reclassify`: 보험 313건 관련도 변경(숨김 308·보임 5), AI 45건 보임, 삭제·id 변경 0, 적용 뒤 `--rescore`·재분류 재실행 변화 0. 보험 하루 표시(대표) 11월 1~14일 평균 64.8→59.3건.
+- 남은 문제(기록만, 2026-11-15 결정으로 이번엔 고치지 않음) — AI ★ 순위: 라벨 0~1 인데 ★4 이상 7건. ① 묶음 사건 점수가 구성원 전체에 붙음 3건(Muse Ember 15개 매체 묶음 2건, ChatGPT Wallet 2개 매체 묶음 1건 — 같은 사건 중복 보도는 사람이 낮게 봄, 라벨도 2·2·0·2·1 로 갈림). ② 출시 단서가 넓게 맞음 3건('Introducing … Program', '출시량'이 출시 사건으로, 스마트글라스 기기). ③ AI 와 무관한 인수(OpenAI acquires Orchestra Bio)에 인수 가점 1건. AI ★v2 와 라벨의 Spearman 0.27(보험 0.64). 고치기 전에 AI 라벨을 더 모은다.
