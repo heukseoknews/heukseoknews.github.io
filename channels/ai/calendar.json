@@ -1,0 +1,25 @@
+{
+ "_comment": "일정 캘린더(/calendar/) 자동 수집 출처. ccfddl(github.com/ccfddl/ccf-deadlines, MIT)의 학회별 YAML. conferences 의 path 는 ccfddl 저장소 conference/ 아래 경로(KDD 는 DB/sigkdd.yml). 화면 기본 표시 학회 = 이 목록. 초록·논문 마감, 결과 발표, 학회 개최를 가져온다. docs/calendar.md",
+ "sources": [
+  {
+   "id": "ccfddl",
+   "type": "ccfddl",
+   "base_url": "https://raw.githubusercontent.com/ccfddl/ccf-deadlines/main/conference/",
+   "license": "MIT",
+   "conferences": [
+    { "name": "NeurIPS", "path": "AI/nips.yml" },
+    { "name": "ICML", "path": "AI/icml.yml" },
+    { "name": "ICLR", "path": "AI/iclr.yml" },
+    { "name": "AAAI", "path": "AI/aaai.yml" },
+    { "name": "IJCAI", "path": "AI/ijcai.yml" },
+    { "name": "ACL", "path": "AI/acl.yml" },
+    { "name": "EMNLP", "path": "AI/emnlp.yml" },
+    { "name": "NAACL", "path": "AI/naacl.yml" },
+    { "name": "CVPR", "path": "AI/cvpr.yml" },
+    { "name": "ICCV", "path": "AI/iccv.yml" },
+    { "name": "ECCV", "path": "AI/eccv.yml" },
+    { "name": "KDD", "path": "DB/sigkdd.yml" }
+   ]
+  }
+ ]
+}

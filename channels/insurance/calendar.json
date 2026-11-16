@@ -1,0 +1,11 @@
+{
+ "_comment": "일정 캘린더(/calendar/) 자동 수집 출처. 보험개발원 보험전문인시험 일정표(정적 HTML): 보험계리사·손해사정사·보험중개사 회차별 시행 공고·원서 접수·시험·합격자 발표. docs/calendar.md",
+ "sources": [
+  {
+   "id": "kidi",
+   "type": "kidi",
+   "url": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
+   "org": "보험개발원"
+  }
+ ]
+}
