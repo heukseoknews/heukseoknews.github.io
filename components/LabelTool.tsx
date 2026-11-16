@@ -3,8 +3,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { getChannel } from '../lib/channels';
 import { fmt } from '../lib/format';
 import {
-  BATCH, LABEL_CHANNELS, LABEL_KEY, type LabelAction, type LabelStore, PURPOSE, SCALE, SCORES,
-  applyAction, defaultSession, emptyStore, firstUnlabeled, keyAction, mergeRows, parseImport, parseStore, sampleOrder, seedFor, summary, toExport,
+  BATCH, CHANNEL_GUIDE, LABEL_CHANNELS, LABEL_KEY, type LabelAction, type LabelStore, PURPOSE, SCALE, SCORES,
+  applyAction, defaultSession, emptyStore, exportName, firstUnlabeled, isNick, keyAction, mergeRows, parseImport, parseStore, sampleFor, setAnnotator, summary, toExport,
 } from '../lib/label';
 import { isSafeUrl } from '../lib/news';
 import { useNews } from '../lib/useNews';
@@ -18,21 +18,42 @@ export default function LabelTool() {
   const [store, setStore] = useState<LabelStore | null>(null);
   useEffect(() => { setStore(readStore()); }, []);
   useEffect(() => { if (store) writeStore(store); }, [store]);
+  const [renaming, setRenaming] = useState(false);
   if (!store) return <main className={`shell ${s.wrap}`} id="content"><p className={s.note}>불러오는 중…</p></main>;
   const channel = store.channel ?? 'insurance';
+  const nickForm = <NickForm initial={store.annotator ?? ''} onSave={n => { setStore(p => p && setAnnotator(p, n)); setRenaming(false); }}
+    onCancel={store.annotator ? () => setRenaming(false) : undefined} />;
   return <main className={`shell ${s.wrap}`} id="content">
     <h1 className={s.title}>기사 라벨링</h1>
     <section className={s.guide} aria-label="점수 기준">
       <ol className={s.scale}>{SCORES.map(n => <li key={n}><b>{n}</b> {SCALE[n]}</li>)}</ol>
       <p className={s.purpose}><b>{getChannel(channel)?.name ?? channel}</b> {PURPOSE[channel]}</p>
     </section>
+    {!store.annotator ? nickForm : <>
+    <p className={s.chGuide}>{CHANNEL_GUIDE}</p>
     <nav className={s.channels} aria-label="채널">
       {LABEL_CHANNELS.map(ch => <button key={ch} type="button" aria-pressed={ch === channel} className={ch === channel ? s.on : ''}
         onClick={() => setStore(p => p && { ...p, channel: ch })}>{getChannel(ch)?.name ?? ch}</button>)}
     </nav>
     {/* 채널을 바꾸면 새로 마운트(useNews 의 월 캐시가 채널별이 아니라서) */}
     <Labeler key={channel} channel={channel} store={store} setStore={setStore} />
+    {renaming ? nickForm : <p className={s.nick}>닉네임 <b>{store.annotator}</b> <button type="button" className={s.linkBtn} onClick={() => setRenaming(true)}>바꾸기</button></p>}
+    </>}
   </main>;
+}
+
+/** 닉네임 입력(영문·숫자 15자). 내보내는 파일에 annotator 로 들어간다. */
+function NickForm({ initial, onSave, onCancel }: { initial: string; onSave: (n: string) => void; onCancel?: () => void }) {
+  const [v, setV] = useState(initial);
+  const [err, setErr] = useState('');
+  return <form className={s.nickForm} onSubmit={e => { e.preventDefault(); const n = v.trim(); if (isNick(n)) onSave(n); else setErr('영문·숫자 15자 이내로 입력해 주세요.'); }}>
+    <label htmlFor="labelNick">닉네임</label>
+    <input id="labelNick" value={v} maxLength={15} autoComplete="off" spellCheck={false} placeholder="영문·숫자 15자 이내"
+      aria-describedby="labelNickNote" onChange={e => { setV(e.target.value); setErr(''); }} />
+    <button type="submit" className={s.small}>{initial ? '바꾸기' : '시작'}</button>
+    {onCancel && <button type="button" className={s.small} onClick={onCancel}>취소</button>}
+    <p id="labelNickNote" className={s.note} role={err ? 'alert' : undefined}>{err || '내보내는 파일에 함께 기록됩니다.'}</p>
+  </form>;
 }
 
 type Props = { channel: string; store: LabelStore; setStore: React.Dispatch<React.SetStateAction<LabelStore | null>> };
@@ -42,7 +63,8 @@ function Labeler({ channel, store, setStore }: Props) {
   const session = store.sessions[channel] ?? defaultSession();
   const labels = store.labels[channel];
   const ready = !!index && index.months.every(m => loaded.includes(m.month));
-  const queue = useMemo(() => (ready ? sampleOrder(all, seedFor(channel), session.month, session.size) : []), [ready, all, channel, session.month, session.size]);
+  const keep = store.keep?.[channel];
+  const queue = useMemo(() => (ready ? sampleFor(all, channel, store.annotator, session.month, session.size, keep) : []), [ready, all, channel, store.annotator, session.month, session.size, keep]);
   const ids = useMemo(() => queue.map(a => a.id), [queue]);
   const cursor = Math.min(session.cursor, ids.length);
   const art = queue[cursor];
@@ -53,8 +75,8 @@ function Labeler({ channel, store, setStore }: Props) {
   const setSession = (patch: Partial<typeof session>) => setStore(p => p && { ...p, sessions: { ...p.sessions, [channel]: { ...(p.sessions[channel] ?? defaultSession()), ...patch } } });
   const act = (a: LabelAction) => { setMsg(''); setStore(p => p && applyAction(p, channel, ids, a, new Date().toISOString())); };
 
-  // 처음 열 때·기간을 바꿀 때: 첫 미라벨 기사부터
-  const startKey = `${session.month}`;
+  // 처음 열 때·기간이나 닉네임을 바꿀 때: 첫 미라벨 기사부터
+  const startKey = `${session.month}:${store.annotator ?? ''}`;
   const started = useRef('');
   useEffect(() => {
     if (!ready || started.current === startKey) return;
@@ -84,7 +106,7 @@ function Labeler({ channel, store, setStore }: Props) {
     const blob = new Blob([JSON.stringify(rows, null, 1)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `heukseok-labels-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = exportName(store.annotator, new Date().toISOString().slice(0, 10));
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     setMsg(`${rows.length}건을 내보냈습니다.`);
@@ -95,7 +117,7 @@ function Labeler({ channel, store, setStore }: Props) {
       const { rows, skipped } = parseImport(await f.text());
       const r = mergeRows(store, rows);
       setStore(p => p && mergeRows(p, rows).store);
-      setMsg(`가져옴: 새 라벨 ${r.added}건, 바뀐 라벨 ${r.updated}건${skipped ? `, 형식이 맞지 않아 건너뜀 ${skipped}건` : ''}.`);
+      setMsg(`가져옴: 새 라벨 ${r.added}건, 바뀐 라벨 ${r.updated}건${r.others ? `, 다른 사람 라벨 ${r.others}건(따로 보관)` : ''}${skipped ? `, 형식이 맞지 않아 건너뜀 ${skipped}건` : ''}.`);
     } catch (e) { setMsg(e instanceof Error ? e.message : '가져오지 못했습니다.'); }
     if (fileRef.current) fileRef.current.value = '';
   };

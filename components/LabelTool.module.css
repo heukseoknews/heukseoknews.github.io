@@ -6,7 +6,15 @@
 .scale b{color:var(--accent-strong);margin-right:2px}
 .purpose{margin:var(--s2) 0 0;color:var(--text-2)}
 .purpose b{margin-right:6px}
-.channels{display:flex;gap:var(--s2);margin:var(--s4) 0 var(--s3)}
+.chGuide{margin:var(--s4) 0 0;color:var(--text-2);font-size:var(--fs-14)}
+.channels{display:flex;gap:var(--s2);margin:var(--s2) 0 var(--s3)}
+.nickForm{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2);margin:var(--s4) 0}
+.nickForm label{font-weight:700;font-size:var(--fs-14)}
+.nickForm input{border:1px solid var(--line-strong);border-radius:var(--r-sm);padding:6px 10px;font-size:var(--fs-16);width:14em;max-width:100%}
+.nickForm .note{flex-basis:100%;margin:0}
+.nick{color:var(--muted);font-size:var(--fs-13);margin-top:var(--s3)}
+.nick b{color:var(--text-2)}
+.linkBtn{border:0;background:none;color:var(--accent);padding:0 4px;font-size:var(--fs-13);text-decoration:underline}
 .channels button{border:1px solid var(--line-strong);background:var(--surface);color:var(--text-2);border-radius:var(--r-pill);padding:6px 16px;font-size:var(--fs-14)}
 .channels button.on{background:var(--accent-strong);border-color:var(--accent-strong);color:var(--surface);font-weight:700}
 .bar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s4);font-size:var(--fs-14);color:var(--muted)}
