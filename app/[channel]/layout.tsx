@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
 import ChannelSwitcher from '../../components/ChannelSwitcher';
+import FeedbackProvider from '../../components/FeedbackProvider';
 import Footer from '../../components/Footer';
 import SiteHeader from '../../components/SiteHeader';
 import StaleNotice from '../../components/StaleNotice';
@@ -38,7 +39,8 @@ export default async function ChannelLayout({ children, params }: Params & { chi
     {css && <style dangerouslySetInnerHTML={{ __html: css }} />}
     <SiteHeader />
     <ChannelSwitcher />
-    <main className="shell" id="content"><StaleNotice />{children}</main>
+    {/* 기사 피드백(로그인했을 때만 카드에 버튼): 채널 화면 전체에서 본인 피드백을 한 번에 읽는다 */}
+    <main className="shell" id="content"><StaleNotice /><FeedbackProvider>{children}</FeedbackProvider></main>
     <Footer />
   </ChannelProvider>;
 }

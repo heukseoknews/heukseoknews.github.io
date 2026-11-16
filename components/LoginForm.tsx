@@ -4,6 +4,7 @@ import { AUTH_MODE } from '../lib/authConfig';
 import { browserKV, changeHref, login, LOGIN_ID_KEY, readAccount, safeNext, sessionUser } from '../lib/auth';
 import { supabaseBackend } from '../lib/authBackend';
 import Wordmark from './Wordmark';
+import { FEEDBACK_NOTE } from '../lib/feedback';
 
 const nextParam = () => new URLSearchParams(location.search).get('next');
 
@@ -56,5 +57,6 @@ export default function LoginForm() {
     <label className="authCheck"><input type="checkbox" checked={remember} onChange={e => setRemember(e.target.checked)} disabled={!ready} /> 아이디 저장</label>
     <p className="authMsg" role="alert">{msg}</p>
     <button type="submit" className="confirm authSubmit" disabled={!ready || busy}>{busy ? '로그인 중…' : '로그인'}</button>
+    <p className="authNote">{FEEDBACK_NOTE}</p>
   </form>;
 }

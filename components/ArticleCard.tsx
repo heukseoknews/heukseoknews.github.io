@@ -1,9 +1,11 @@
 'use client';
-import { Bookmark, ChevronDown, EyeOff, ExternalLink, MessageCirclePlus, RotateCcw } from 'lucide-react';
+import { Bookmark, ChevronDown, EyeOff, ExternalLink, MessageCirclePlus, RotateCcw, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Article, isSafeUrl } from '../lib/news';
 import { useChannel } from '../lib/channelContext';
 import { stars } from '../lib/stars';
 import { useChatShare } from '../lib/chatShare';
+import { FEEDBACK_NOTE, SIGNALS, SIGNAL_LABEL } from '../lib/feedback';
+import { useFeedback } from './FeedbackProvider';
 
 /** 같은 사건 묶음(대표 카드에만). others: 불러온 같은 묶음 기사(대표 제외), size·sources: 데이터의 묶음 기사 수·매체 수. */
 export type CardGroup = {
@@ -30,6 +32,7 @@ const unpop = (e: React.AnimationEvent<HTMLButtonElement>) => e.currentTarget.cl
 export default function ArticleCard({ a, bookmarked, read, rank, fading, group, dismiss, onBookmark, onRead }: Props) {
   const { fmt, slug } = useChannel();
   const share = useChatShare();   // 로그인을 켠 빌드 + 로그인 상태에서만 [채팅에 올리기]
+  const fb = useFeedback();       // 로그인(비밀번호 변경 끝남)일 때만 [관련 없음] [도움 됨]. 묶음이면 이 카드(대표 기사) id 에 기록
   const s = stars(a);
   const listId = `grp-${a.id}`;
   const gone = !!dismiss?.dismissed;
@@ -42,9 +45,13 @@ export default function ArticleCard({ a, bookmarked, read, rank, fading, group, 
     <h3 className="cardTitle">{isSafeUrl(a.url)
       ? <a className="headline" href={a.url} target="_blank" rel="noopener noreferrer" onClick={() => onRead(a.id)} onAuxClick={e => { if (e.button === 1) onRead(a.id); }}>{a.title}<ExternalLink size={15} aria-hidden="true" /></a>
       : <span className="headline">{a.title} <small>(링크 없음)</small></span>}</h3>
-    {/* 버튼 줄(가로): 왼쪽부터 [치우기(새 뉴스만)] [채팅에 올리기(로그인 중)] [북마크]. 오른쪽 정렬이라 북마크는 모든 탭에서 맨 오른쪽, 채팅은 그 왼쪽 고정.
+    {/* 버튼 줄(가로): 왼쪽부터 [관련 없음][도움 됨](로그인 중) [치우기(새 뉴스만)] [채팅에 올리기(로그인 중)] [북마크]. 오른쪽 정렬이라 북마크는 모든 탭에서 맨 오른쪽, 채팅은 그 왼쪽 고정.
         넓은 화면은 칩·제목 줄 오른쪽, 좁은 화면(≤560px)은 매체·별점 줄 오른쪽(app/globals.css .cardGrid). 키보드 순서: 제목 → 버튼 → 같은 사건 */}
     <div className="cardActions">
+      {fb && SIGNALS.map(sig => { const on = fb.signalOf(a.id) === sig;
+        return <button key={sig} type="button" aria-pressed={on} aria-label={on ? `${SIGNAL_LABEL[sig]}(누름, 다시 누르면 취소)` : SIGNAL_LABEL[sig]}
+          title={`${SIGNAL_LABEL[sig]} — ${FEEDBACK_NOTE}`} className={'readBtn fbBtn' + (on ? ' on' : '')} onClick={() => fb.press(a.id, sig)}>
+          {sig === 'useful' ? <ThumbsUp size={18} aria-hidden="true" /> : <ThumbsDown size={18} aria-hidden="true" />}</button>; })}
       {dismiss && (gone
         ? <button type="button" aria-label="되돌리기(새 뉴스에 다시 보이기)" title="되돌리기" className="readBtn dismissBtn" onClick={() => dismiss.onRestore(a.id)}><RotateCcw size={19} aria-hidden="true" /></button>
         : <button type="button" aria-label="치우기(새 뉴스에서 빼기)" title="치우기" className="readBtn dismissBtn" onClick={() => dismiss.onDismiss(a.id)}><EyeOff size={19} aria-hidden="true" /></button>)}
