@@ -1,5 +1,407 @@
 [
  {
+  "id": "d527d910c08f8423",
+  "title": "오픈AI, 의료 AI 에이전트 임상 안전성 99% 평가…보험 승인·진료 의뢰까지 업무 자동화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42760",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T01:38:26+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "안전"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "4dee5838b5e6a346",
+  "title": "\"AI 로봇이 뇌혈관 시술하는 시대 오나\"…레머디 로보틱스, 6,200만 달러 투자 유치",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42759",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T01:26:44+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "투자 유치"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "7c61b17d19cd3511",
+  "title": "EU, 고위험 AI 도입 전 기본권 영향평가 구체화…기업·공공기관용 질문지 초안 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42758",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T01:17:10+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "모델·제품 출시",
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "공개",
+   "eu",
+   "도입",
+   "위험"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "19f53caa9bc47d4f",
+  "title": "음성으로 가전 10만1,000종 이상 제어…스위치봇, 스마트홈 통합 허브 출시",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42757",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:57:54+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "출시"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "음성·오디오"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "ff2df7bd50ff0e54",
+  "title": "오픈AI 올트먼 “AI에 인간의 미래 통제권 넘겨선 안 돼”…초지능 시대 인간의 선택권 강조",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42756",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:47:28+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "e2d9235123b3d9c9",
+  "title": "메이사, GPS 없이 조난자 찾는 드론 AI 개발…다중 드론 자율 수색 기술 확보 나서",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42755",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:35:10+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "27eaa2ddd492c629",
+  "title": "업스테이지·코히어, 소버린 AI 동맹 구축…한국어 특화 AI 모델과 에이전틱 AI 플랫폼 결합",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42754",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:31:26+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "업스테이지"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "11cf8b8eabee1f9b",
+  "title": "AI로 만든 영화·애니메이션 등 64개 작품 공개…콘진원, 콘텐츠 창작 인재 양성 성과 선보여",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42753",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:26:14+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개",
+   "선보"
+  ],
+  "score": 4,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "ef1ea232b3a12a1c",
+  "title": "KAIST·칭화대, 한중 기계공학 복수학위 석사과정 개설…로봇·첨단제조 인재 공동 양성",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42752",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:17:25+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "3b5a453e57f25fc2",
+  "title": "델 테크놀로지스, 기업용 에이전틱 AI 인프라 확장…데이터 처리·운영 자동화 강화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42751",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:06:11+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "b79b1b44cd510921",
+  "title": "삼성전자, 교실에 '갤럭시 XR' 도입…20만 명 AI 교육 넘어 몰입형 학습 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42750",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:00:18+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "도입"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "삼성전자"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7ee9eaf512b10bac",
+  "title": "[AI리더의 서가] 실전 AI 프로젝트 완주의 기술",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217281",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-17T00:00:00+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "fe023ceca2fe56df",
+  "title": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+  "url": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T23:32:32+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "valuation",
+   "startup"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "9634b5e75ef12012",
+  "title": "NVIDIA DGX Spark Developer Kit Turns a Desk Into a Supercomputing Lab",
+  "url": "https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-16T23:00:05+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "developer"
+  ],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "150a4c2c4547ed1e",
+  "title": "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
+  "url": "https://arstechnica.com/ai/2026/11/robo-soldier-startup-backed-by-eric-trump-misses-payroll-may-collapse/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-16T22:58:27+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "startup"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "f04ef5ffcb234bc3",
+  "title": "美 증시, AI 빅테크 7개 종목 일제히 하락…엔비디아 4.1% 급락에 나스닥 2.5%↓",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42749",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-16T22:34:48+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "e9c996a0e3b8ea61",
+  "title": "All the questions Nvidia should answer on Tuesday — but probably won’t",
+  "url": "https://techcrunch.com/2026/11/16/all-the-questions-nvidia-should-answer-on-tuesday-but-probably-wont/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-16T22:03:02+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "0e29841b60e63d5c",
+  "title": "[11월16일] 젠슨 황 복귀설에 시장 반색…그러나 스파이 의혹만이 문제가 아니다",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217442",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-16T22:00:00+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "시장"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "8f10b264ca802661",
+  "title": "트럼프, 젠슨 황 CEO 복귀 지지…엔비디아 이사회는 논의 안 해",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217468",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-16T20:54:00+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "0a74023f0d253586",
   "title": "미국, 중국의 해외 GPU 우회 이용 차단…새 수출 규제 발표",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217467",
@@ -1605,6 +2007,24 @@
   ],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "3d4aeac88b69acfa",
+  "title": "At Holiday Extras, dots get to work before anyone asks",
+  "url": "https://openai.com/business/customer-stories/holiday-extras-dots",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-16T00:00:00+00:00",
+  "collected_at": "2026-11-17T02:07:16.040931+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "61200927e23c6bf1",
