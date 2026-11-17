@@ -38,3 +38,20 @@
 플래그를 끄고 `python collector/collect.py --channel <채널> --strip-quality` 를 실행하면 위 다섯 필드만 지워지고 월 파일·index.json 은 필드 추가 전과 같은 바이트가 된다(임시 사본으로 시험 통과). 화면은 필드가 없으면 기본값으로 동작하므로 따로 바꿀 것이 없다. 자세한 절차는 [ops-notes.md](ops-notes.md).
 
 설계·실험 근거: [article-quality-plan.md](article-quality-plan.md)
+
+## 3. 로컬 LLM 점수 파일(선택, 2026-11-17 추가)
+
+기사 파일과 별도인 `data/<채널>/llm/<YYYY-MM>.json`. `scripts/local/llm_score.py --apply`(또는 `--merge --apply`)만 쓴다. 기사 파일·index.json 은 바뀌지 않고, 화면은 아직 읽지 않는다. 파일이 없거나 기사 id 가 없으면 점수 없음으로 본다.
+
+| 키·필드 | 타입 | 의미 |
+|---|---|---|
+| 최상위 키 | string | 기사 `id`. 월은 그 기사가 있는 월 파일과 같다 |
+| 값 | array | 점수 기록 목록. 같은 (`model`, `prompt_version`)은 한 번만 있고, 버전이 바뀌면 기록이 덧붙는다(덮어쓰지 않음) |
+| `score_ev` | number 0~5 (소수 셋째 자리) | logprobs 기대값. 못 구한 기록에는 없음 |
+| `score_int` | int 0~5 | 모델이 고른 정수 |
+| `model`·`model_digest`·`ollama_version` | string | 점수를 만든 모델·다이제스트·Ollama 버전 |
+| `prompt_version` | string | `scripts/local/prompts/<채널>.json` 의 버전 |
+| `provisional` | bool | 라벨 예시 없는 임시 프롬프트면 true(금융) |
+| `scored_at` | string(UTC, `Z`) | 채점 시각 |
+
+LLM 점수는 후하게 매겨지는 경향이 있어 순서 신호로만 쓰고 숨김(관련도) 판단에는 쓰지 않는다. 설계·실험·운영: [llm-scoring.md](llm-scoring.md).

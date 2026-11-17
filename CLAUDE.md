@@ -69,4 +69,4 @@
 - 비밀번호·토큰·API 키를 저장소에 넣지 않는다. 저장소의 비밀 유출 검사 테스트가 통과해야 push한다.
 
 ## 문서
-docs/architecture.md(구조), ai-channel-plan.md, finance-channel-plan.md(채널 계획), design-plan.md(화면), data-contract.md(데이터 필드), article-quality-plan.md(기사 품질), auth-plan.md(로그인 설계), auth-runbook.md(계정 운영), ops-notes.md(운영 절차), migration-localstorage.md(사용자 데이터 형식·이전). 보관(완료된 조사): article-quality-current.md·article-quality-labels.md·article-quality-simulation.md(품질 측정), score-audit.md(점수 점검), source-survey.md(소스 조사).
+docs/architecture.md(구조), ai-channel-plan.md, finance-channel-plan.md(채널 계획), design-plan.md(화면), data-contract.md(데이터 필드), article-quality-plan.md(기사 품질), auth-plan.md(로그인 설계), auth-runbook.md(계정 운영), ops-notes.md(운영 절차), migration-localstorage.md(사용자 데이터 형식·이전), llm-scoring.md(로컬 LLM 점수). 보관(완료된 조사): article-quality-current.md·article-quality-labels.md·article-quality-simulation.md(품질 측정), score-audit.md(점수 점검), source-survey.md(소스 조사).
