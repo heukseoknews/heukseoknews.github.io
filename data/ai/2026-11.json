@@ -1,5 +1,394 @@
 [
  {
+  "id": "af36944b8f532014",
+  "title": "Google expands access to Gemini Tasks, which can help with calls, purchases",
+  "url": "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T19:02:20+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "92ead912d06bbf7e",
+  "title": "Google to keep Gemini chats for 2 months, up from 72 hours, even with history off",
+  "url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T18:48:23+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "6420ccdcb0b076c3",
+  "title": "As decision model use skyrockets, is customization the next frontier?",
+  "url": "https://techcrunch.com/2026/11/17/as-decision-model-use-skyrockets-is-customization-is-the-next-frontier/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T18:10:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "5a600a844d9b7ef8",
+  "title": "Pedestal AI raises $4.7 million to agentify the supply chain",
+  "url": "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T18:04:16+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "raises"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "a9995c40a3422c04",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
+ },
+ {
+  "id": "8f6af8c44a4a1bfb",
+  "title": "Introducing GPT-6.2 Astra and Sol",
+  "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-17T17:45:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introducing"
+  ],
+  "score": 5,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "3818d6ccd2a7f7a1",
+  "title": "Proton’s Lumo, a privacy-focused alternative to ChatGPT and Claude, arrives on desktop",
+  "url": "https://techcrunch.com/2026/11/17/protons-lumo-a-privacy-focused-alternative-to-chatgpt-and-claude-arrives-on-desktop/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T17:32:25+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "정책·규제·안전"
+  ],
+  "tags": [
+   "privacy"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "OpenAI",
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "0fd37b922e47061f",
+  "title": "AI models can be tricked into identifying civilians as military targets by telling them it’s a game",
+  "url": "https://techcrunch.com/2026/11/17/ai-models-can-be-tricked-into-identifying-civilians-as-military-targets-by-telling-them-its-a-game/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T17:20:41+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "0f23f3a02ee9e0a1",
+  "title": "Google makes it easier to use Gemini without training AI on your data",
+  "url": "https://arstechnica.com/ai/2026/11/google-will-let-you-opt-out-of-ai-training-in-gemini-without-losing-your-history/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-17T16:50:10+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "89be98d92d9e645f",
+  "title": "Jensen Huang says he would be ‘honored’ if allowed to return as Nvidia CEO",
+  "url": "https://techcrunch.com/2026/11/17/jensen-huang-says-he-would-be-honored-if-allowed-to-return-as-nvidia-ceo/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T16:44:15+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "179fb295e1eefeff",
+  "title": "Daydream’s new AI agent acts as your personal stylist — and can shop for you, too",
+  "url": "https://techcrunch.com/2026/11/17/daydreams-new-ai-agent-acts-as-your-personal-stylist-and-can-shop-for-you-too/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T16:32:55+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "e04686f80cf8e47e",
+  "title": "Voyage Labs raises $12 million for a specialized AI travel assistant",
+  "url": "https://techcrunch.com/2026/11/17/voyage-labs-raises-12-million-for-a-specialized-ai-travel-assistant/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T15:00:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "raises"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "4794d4873562de76",
+  "title": "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
+  "url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T14:50:58+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "raises"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "e1d42d0d1265ac53",
+  "title": "Science Corporation’s brain tech is worth $3.5 billion after new funding",
+  "url": "https://techcrunch.com/2026/11/17/science-corporations-brain-tech-is-worth-3-5-billion-after-new-funding/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T14:26:46+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "funding"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "1c3d3bc22915fae9",
+  "title": "Nvidia’s first big move after Jensen Huang’s exit targets national security",
+  "url": "https://techcrunch.com/2026/11/17/nvidias-first-big-move-after-jensen-huangs-exit-targets-national-security/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T14:05:30+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "national security"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "c183b19404c14629",
+  "title": "Grok Bot took unapproved actions, ignored orders to stop, and then denied it",
+  "url": "https://arstechnica.com/security/2026/11/grok-bot-took-unapproved-actions-ignored-orders-to-stop-and-then-denied-it/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-17T14:00:29+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "xAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "011b27afc6a841bf",
+  "title": "Ian Buck Kicks Off NVIDIA’s Week at SC26 as Science Enters the Age of Agents",
+  "url": "https://blogs.nvidia.com/blog/ian-buck-sc26/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-17T14:00:10+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "NVIDIA Blog",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "dc9b00f988f99db7",
+  "title": "Spotify’s new tool aims to stop deepfakes from being attributed to real artists",
+  "url": "https://techcrunch.com/2026/11/17/spotifys-new-tool-aims-to-stop-deepfakes-from-being-attributed-to-real-artists/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T14:00:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "deepfake",
+   "tool"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "862ace6e09921e90",
+  "title": "벤츠, 독일·미국서 도심 자율주행 기술 확대…목적지까지 AI 운전 지원",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42771",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T12:50:58+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
   "id": "f53c3aa8acab278a",
   "title": "AI가 일하는 방식 바꿨지만 교육 효과도 컸다…OECD, 13년간 직무 변화 분석",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42770",
@@ -267,6 +656,24 @@
   "score_v2": 2
  },
  {
+  "id": "3dbeb52e8c6a02ba",
+  "title": "“광영동의 어제와 오늘을 담다”… 광양시, 지역의 역사를 기록한 석재 아트월 조성",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217510",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-17T08:45:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "e78fe3356a632006",
   "title": "광주 자율주행차 30일 첫 운행…연말까지 약 120대 도로 투입 전망",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217507",
@@ -284,6 +691,24 @@
   "orgs": [
    "월드모델·로보틱스"
   ],
+  "score_v2": 1
+ },
+ {
+  "id": "ac1103c63761cf70",
+  "title": "EviBridge: Encoding Predictive Visual Evidence for Proactive Interaction",
+  "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9fejZDZDB2MHFMbFp4eUQwWHJrTzNGSHpraDdHT0RoR0s0M3NYWlIzTUZoaWJUblA4RHBQYVhYVlpuYi1yMld3RktvNEJzZmYw?oc=5",
+  "source": "alphaXiv",
+  "source_type": "media",
+  "published_at": "2026-11-17T08:02:11+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
   "score_v2": 1
  },
  {
@@ -1140,6 +1565,48 @@
   "score_v2": 2
  },
  {
+  "id": "3b3be741a87f5e21",
+  "title": "Introducing OpenAI for Chile",
+  "url": "https://openai.com/index/introducing-openai-for-chile",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-17T00:00:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introducing"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "b43ef08ac3ed4f7a",
+  "title": "Astra for Law leads in legal intelligence",
+  "url": "https://openai.com/index/astra-law-6-2",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-17T00:00:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "law"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "fe023ceca2fe56df",
   "title": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
   "url": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months/",
@@ -1343,7 +1810,11 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 3,
+  "cluster_id": "a9995c40a3422c04",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "21550db8855da891",
@@ -7476,6 +7947,32 @@
   "score_v2": 3
  },
  {
+  "id": "35bcc4b3dafe10f2",
+  "title": "ChatGPT Ads increases its market presence in 44 countries",
+  "url": "https://openai.com/ads/blog/chatgpt-ads-increases-its-market-presence",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-12T00:00:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "market"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
   "id": "294df6909ab04034",
   "title": "ETRI, 국가보안기술연구소 신임 소장에 임정석 책임연구원 선임",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42699",
@@ -12300,6 +12797,24 @@
   "companies": [],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "81209450b91a7acb",
+  "title": "How VistaPrint helps small businesses get the word out",
+  "url": "https://openai.com/ads/customers/vistaprint",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-09T00:00:00+00:00",
+  "collected_at": "2026-11-17T19:25:13.474112+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "aec9995e93555871",
