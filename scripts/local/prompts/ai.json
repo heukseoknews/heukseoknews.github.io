@@ -1,0 +1,72 @@
+{
+ "channel": "ai",
+ "prompt_version": "v1-e2ev",
+ "provisional": false,
+ "note": "사람 라벨(scripts/audit/labels/labels-2026-11-15.json)에서 고른 예시 8건, 사람 라벨 0·1·2·3 → 예시 점수 0·1·3·5. docs/llm-scoring.md",
+ "purpose": "AI 대학원 연구자를 지망하는 사람. 새 모델 공개, 연구 breakthrough, 오픈소스 모델·도구, 주요 연구 기관·기업의 기술 발표가 중요하고, 단순 비즈니스·인사·주가 소식은 덜 중요하다.",
+ "scale": "0 = 불필요(독자 목적과 무관), 5 = 꼭 봐야 함, 그 사이는 중요할수록 큰 수",
+ "label_map": {
+  "0": 0,
+  "1": 1,
+  "2": 3,
+  "3": 5
+ },
+ "examples": [
+  {
+   "id": "d458704933992cfa",
+   "title": "Google rolls out Gemini 4 Hydrogen, finally replacing 3.8 Flash",
+   "source": "Ars Technica",
+   "label": 3,
+   "score": 5
+  },
+  {
+   "id": "55ff14dc4213127d",
+   "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+   "source": "OpenAI",
+   "label": 1,
+   "score": 1
+  },
+  {
+   "id": "c8f167ac4cb5d53a",
+   "title": "엔비디아, CEO 스캔들에 AI 투자 불안 겹쳐…이틀간 시총 627조 증발",
+   "source": "AI타임스",
+   "label": 2,
+   "score": 3
+  },
+  {
+   "id": "51b214e93a44df78",
+   "title": "젠슨 황, 불륜 인정 1년 전부터 '성 스캔들 전문' PR 업체 고용",
+   "source": "AI타임스",
+   "label": 0,
+   "score": 0
+  },
+  {
+   "id": "1cfb6291fa158d05",
+   "title": "OpenAI acquires Orchestra Bio",
+   "source": "OpenAI",
+   "label": 0,
+   "score": 0
+  },
+  {
+   "id": "28b53895184dd3f0",
+   "title": "엔비디아, 차기 CEO로 Arm 하스 접촉설…이사회 \"공식 접촉 아직 없어\"",
+   "source": "AI타임스",
+   "label": 1,
+   "score": 1
+  },
+  {
+   "id": "295354ff422b0d4d",
+   "title": "Introducing Images 2.6",
+   "source": "OpenAI",
+   "label": 2,
+   "score": 3
+  },
+  {
+   "id": "84ec87286cb35a64",
+   "title": "LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+   "source": "Hugging Face",
+   "label": 3,
+   "score": 5
+  }
+ ]
+}
