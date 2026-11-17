@@ -13,6 +13,8 @@ export type Article = {
   cluster_sources?: number; // 묶음 매체 수(없으면 1)
   cluster_lead?: true;     // 묶음 대표(묶음당 1건)
   score_v2?: number;       // 중요도 v2(★1~5). 화면은 lib/stars.ts stars() 로 읽는다
+  // 화면에서만 붙이는 값(데이터 파일에는 없음): 로컬 LLM 기대값(0~5)과 채널 가중치. lib/stars.ts
+  llm_ev?: number; llm_w?: number;
 };
 export const isRelevant = (a: { relevant?: boolean }) => a.relevant !== false;
 export type DataIndex = { updated_at: string | null; months: { month: string; count: number; bytes: number }[] };

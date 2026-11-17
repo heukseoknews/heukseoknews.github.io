@@ -434,3 +434,5 @@ button:disabled{cursor:default}
 .authNote{margin:2px 0 0;text-align:center;font-size:var(--fs-13);color:var(--muted)}
 /* 헤더 '채팅' 안 읽은 수 배지(components/ChatLink.tsx): 자리는 늘 같은 폭('99+'까지), 0 은 흐리게, 있으면 강조색 */
 .chatBadge{display:inline-block;width:34px;padding:0;border-radius:var(--r-pill);font-size:var(--fs-12);font-weight:700;line-height:18px;text-align:center;font-variant-numeric:tabular-nums;background:var(--line-soft);color:var(--subtle)}.chatBadge.on{background:var(--accent);color:var(--surface)}.chatBadge.hidden{visibility:hidden}.chatSlot{flex-shrink:0}.chatLink{white-space:nowrap}
+/* 섞은 ★(로컬 LLM, lib/stars.ts): 모양은 기존 ★ 글자 그대로, 누르면 설명 한 줄이 아래 줄로(카드 밖으로 넘치지 않음) */
+.starBtn{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:help;text-decoration:underline dotted;text-underline-offset:3px;text-decoration-thickness:1px}.starBtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}.starNote{flex-basis:100%;font-size:var(--fs-12);color:var(--muted)}

@@ -7,6 +7,7 @@
  "timezone": "Asia/Seoul",
  "schedule_utc": ["45 18 * * *"],
  "rank_half_life_hours": 36,
+ "llm": {"w": 0.3, "prompt_version": "v1-e2ev-noex"},
  "collect": true,
  "tabs": {
   "new": "새 뉴스",

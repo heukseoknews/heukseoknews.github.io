@@ -8,6 +8,8 @@ import { addDays, dayHeading, todayKst } from '../../../lib/dates';
 import { weeklyHighlights } from '../../../lib/highlights';
 import { useChannel } from '../../../lib/channelContext';
 import { useNews } from '../../../lib/useNews';
+import { useLlmScores } from '../../../lib/useLlmScores';
+import { WEEKLY_USES_LLM, llmSettings, withLlm } from '../../../lib/llmScore';
 import { useSaved } from '../../../lib/useSaved';
 import { useBookmarkFlow } from '../../../components/BookmarkFlow';
 
@@ -19,7 +21,10 @@ export default function WeekPage() {
   const savedApi = useSaved();
   const { ready, markRead, readSet, isBookmarked } = savedApi;
   const bmFlow = useBookmarkFlow(savedApi);
-  const { all, failure, loading } = useNews(ch.slug); // 최근 2개월이면 7일 범위를 충분히 포함
+  const { all: rawAll, loaded, failure, loading } = useNews(ch.slug); // 최근 2개월이면 7일 범위를 충분히 포함
+  const llm = useMemo(() => (WEEKLY_USES_LLM ? llmSettings(ch) : null), [ch]);   // 켜면 채널 화면과 같은 섞은 ★. 지금은 임시로 끔(점수 파일도 안 불러옴)
+  const evs = useLlmScores(ch.slug, loaded, llm);
+  const all = useMemo(() => withLlm(rawAll, evs, llm?.w ?? 0), [rawAll, evs, llm]);
   const today = todayKst();
   const rows = useMemo(() => weeklyHighlights(all, today, LIMIT, category), [all, today, category]);  // 같은 사건은 대표 하나만
   const idx = useMemo(() => clusterIndex(all.filter(isRelevant)), [all]);

@@ -41,7 +41,7 @@
 
 ## 3. 로컬 LLM 점수 파일(선택, 2026-11-17 추가)
 
-기사 파일과 별도인 `data/<채널>/llm/<YYYY-MM>.json`. `scripts/local/llm_score.py --apply`(또는 `--merge --apply`)만 쓴다. 기사 파일·index.json 은 바뀌지 않고, 화면은 아직 읽지 않는다. 파일이 없거나 기사 id 가 없으면 점수 없음으로 본다.
+기사 파일과 별도인 `data/<채널>/llm/<YYYY-MM>.json`. `scripts/local/llm_score.py --apply`(또는 `--merge --apply`)만 쓴다. 기사 파일·index.json 은 바뀌지 않는다. 화면은 채널 `channel.json` 의 `llm.w` 가 0 보다 클 때만 읽어 ★에 섞는다([llm-scoring.md](llm-scoring.md) 9절). 파일이 없거나 기사 id 가 없으면 점수 없음으로 본다.
 
 | 키·필드 | 타입 | 의미 |
 |---|---|---|

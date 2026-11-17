@@ -1,8 +1,9 @@
 'use client';
+import { useState } from 'react';
 import { Bookmark, ChevronDown, EyeOff, ExternalLink, MessageCirclePlus, RotateCcw, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Article, isSafeUrl } from '../lib/news';
 import { useChannel } from '../lib/channelContext';
-import { stars } from '../lib/stars';
+import { BLEND_NOTE, isBlended, stars } from '../lib/stars';
 import { useChatShare } from '../lib/chatShare';
 import { FEEDBACK_NOTE, SIGNALS, SIGNAL_LABEL } from '../lib/feedback';
 import { useFeedback } from './FeedbackProvider';
@@ -34,6 +35,8 @@ export default function ArticleCard({ a, bookmarked, read, rank, fading, group, 
   const share = useChatShare();   // 로그인을 켠 빌드 + 로그인 상태에서만 [채팅에 올리기]
   const fb = useFeedback();       // 로그인(비밀번호 변경 끝남)일 때만 [관련 없음] [도움 됨]. 묶음이면 이 카드(대표 기사) id 에 기록
   const s = stars(a);
+  const blended = isBlended(a);           // 채널 llm.w > 0 이고 LLM 점수가 있는 기사만 섞은 ★(소수 한 자리)·설명
+  const [tip, setTip] = useState(false);  // 섞은 ★ 설명: 마우스는 title, 누르면(모바일) 아래 한 줄
   const listId = `grp-${a.id}`;
   const gone = !!dismiss?.dismissed;
   return <article data-bm-id={a.id} className={'article' + (read ? ' isRead' : '') + (gone ? ' isDismissed' : '') + (fading ? ' fading' : '')}><div className="articleMain cardGrid">
@@ -59,7 +62,11 @@ export default function ArticleCard({ a, bookmarked, read, rank, fading, group, 
       <button type="button" aria-label={bookmarked ? '북마크 해제' : '북마크 추가'} aria-pressed={bookmarked} className="bookmark" onClick={e => { pop(e); onBookmark(a); }} onAnimationEnd={unpop}><Bookmark size={20} className={bookmarked ? 'saved' : undefined} aria-hidden="true" /></button>
     </div>
     <div className="meta"><span>{a.source}</span><span className="dot" aria-hidden="true">·</span><time dateTime={a.published_at}>{fmt(a.published_at)}</time></div>
-    <div className="bottomMeta"><span>학습 중요도 {'★'.repeat(s)}{'☆'.repeat(Math.max(0, 5 - s))}</span>{tagList(a).map(t => <span className="tag" key={t}>#{t}</span>)}{read && <span className="read">읽음</span>}{gone && <span className="read">치움</span>}</div>
+    <div className="bottomMeta">{blended
+      ? <button type="button" className="starBtn" title={BLEND_NOTE} aria-expanded={tip} aria-label={`학습 중요도 ${s.toFixed(1)}`} onClick={() => setTip(v => !v)} onBlur={() => setTip(false)}>
+          학습 중요도 {'★'.repeat(Math.round(s))}{'☆'.repeat(Math.max(0, 5 - Math.round(s)))} {s.toFixed(1)}</button>
+      : <span>학습 중요도 {'★'.repeat(s)}{'☆'.repeat(Math.max(0, 5 - s))}</span>}
+      {blended && tip && <span className="starNote" role="note">{BLEND_NOTE}</span>}{tagList(a).map(t => <span className="tag" key={t}>#{t}</span>)}{read && <span className="read">읽음</span>}{gone && <span className="read">치움</span>}</div>
     {group && group.size > 1 && (group.others.length
       ? <button type="button" className="groupToggle" aria-expanded={group.open} aria-controls={listId} onClick={group.onToggle}>
           같은 사건 {group.size.toLocaleString()}건{group.sources > 1 && <> · 매체 {group.sources}곳</>}<ChevronDown size={16} aria-hidden="true" className={group.open ? 'flip' : undefined} />

@@ -28,6 +28,8 @@ export type ChannelMeta = {
   schedule_utc: string[];
   /** 순위순 정렬의 시간 감쇠 반감기(시간). 없으면 lib/rank.ts DEFAULT_HALF_LIFE_H */
   rank_half_life_hours?: number;
+  /** 로컬 LLM 점수 섞기(docs/llm-scoring.md). w: 0~1, 0·없음이면 끔(점수 파일도 안 불러옴). prompt_version: 쓸 점수 기록의 버전(scripts/local/prompts/<채널>.json 과 같아야 함) */
+  llm?: { w?: number; prompt_version?: string };
   tabs: Record<TabId, string>; filters: Record<FilterId, string>;
   storage?: { legacy_keys?: { saved?: string; companies?: string } };
   /** false 면 워크플로가 이 채널을 수집하지 않는다(설정만 준비된 상태). */

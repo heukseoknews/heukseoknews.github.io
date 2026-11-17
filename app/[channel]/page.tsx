@@ -17,6 +17,8 @@ import { dataBounds, monthsBetween, nextOlder } from '../../lib/datePick';
 import { sourceOptions } from '../../lib/sources';
 import { NO_BASELINE_DAYS, isNewArticle, isPendingNew, visibleInNewTab } from '../../lib/newsFilter';
 import { useNews } from '../../lib/useNews';
+import { useLlmScores } from '../../lib/useLlmScores';
+import { llmSettings, withLlm } from '../../lib/llmScore';
 import { useSaved } from '../../lib/useSaved';
 import { fillMissing, toArticle } from '../../lib/bookmarks';
 import { useBookmarkFlow } from '../../components/BookmarkFlow';
@@ -64,14 +66,19 @@ export default function Home() {
   const savedApi = useSaved();
   const { saved, ready, settled, update, markRead, dismiss, undismiss, dismissedSet, setCompanies, readSet, bookmarkList, isBookmarked } = savedApi;
   // 기사 정보가 없는 옛 북마크(v1 이전분)는 기사 데이터를 불러오면 채운다. 채우기 전에는 북마크 탭에서 빼고 마이페이지에서만 보인다
-  const bookmarkArticles = useMemo(() => bookmarkList.filter(b => !b.missing).map(toArticle), [bookmarkList]);
+  const bookmarkRaw = useMemo(() => bookmarkList.filter(b => !b.missing).map(toArticle), [bookmarkList]);
   const companies = saved.companies;  // 선택한 보험사(비면 전체) — 사용자 상태에 저장(새로고침 후에도 유지)
   // 불러올 월: 최근 2개월(useNews 기본) + 달력이 보는 달과 앞뒤 달(KST/UTC 월 경계) + 고른 기간에 걸친 달 + '기간 제한 없음'일 때 과거 달을 최근부터 순서대로(older 개).
   // 검색은 전체 월. 과거 달은 합계 3MB 안이면 자동으로, 넘으면 목록 끝 페이지에 닿을 때 한 달씩(lib/datePick.ts nextOlder).
   const [older, setOlder] = useState(0);
   const [indexMonths, setIndexMonths] = useState<{ month: string; bytes: number }[]>([]);
   const extraMonths = [shiftMonth(calMonth, -1), calMonth, shiftMonth(calMonth, 1), ...(dateFilter ? monthsBetween(dateFilter) : []), ...indexMonths.slice(2, 2 + older).map(m => m.month)];
-  const { index, all, loaded, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : extraMonths);
+  const { index, all: rawAll, loaded, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : extraMonths);
+  // 로컬 LLM 점수(channel.json llm.w, 0·없으면 끔): 불러온 달의 점수 파일을 같이 읽어 ★에 섞는다(lib/stars.ts). 못 읽으면 기존 ★
+  const llm = useMemo(() => llmSettings(ch), [ch]);
+  const evs = useLlmScores(ch.slug, loaded, llm);
+  const all = useMemo(() => withLlm(rawAll, evs, llm?.w ?? 0), [rawAll, evs, llm]);
+  const bookmarkArticles = useMemo(() => withLlm(bookmarkRaw, evs, llm?.w ?? 0), [bookmarkRaw, evs, llm]);
   useEffect(() => { if (index) setIndexMonths(index.months); }, [index]);
   const baseline = saved.lastConfirmed;
   useEffect(() => { if (all.length && bookmarkList.some(b => b.missing)) update(s => fillMissing(s, all)); }, [all, bookmarkList, update]);

@@ -1,7 +1,7 @@
 /** 목록 정렬: 순위순(중요도 × 시간 감쇠) / 최신순. 순수 로직(화면은 app/[channel]/page.tsx).
  *
  *  순위 점수 = 중요도 × 2^(−나이(시간) / 반감기)
- *  - 중요도: ★(stars: score_v2, 없으면 score) + 매체 수 보정 min(1, 0.25·log2(매체 수)).
+ *  - 중요도: ★(stars: score_v2, 없으면 score. 채널 llm.w > 0 이고 LLM 점수가 있으면 섞은 최종 ★, lib/stars.ts) + 매체 수 보정 min(1, 0.25·log2(매체 수)).
  *    score_v2 의 연속 값(★로 자르기 전 raw)은 데이터에 저장하지 않으므로 ★과 매체 수(cluster_sources)로 대신한다.
  *    보정은 같은 ★ 안에서 여러 매체가 다룬 사건을 위로 올리되 ★ 한 단계를 넘지 않는다(2곳 +0.25, 4곳 +0.5, 16곳 이상 +1).
  *  - 나이: 묶음에서 가장 최근 기사 시각부터 기준 시각까지. 기준 시각은 '지금', 단 달력으로 고른 기간이 오늘 전에 끝나면
@@ -11,7 +11,7 @@
 import type { Item } from './clusters.ts';
 import type { Article } from './news.ts';
 import type { TabId } from './channels.ts';
-import { stars } from './stars.ts';
+import { type LlmFields, stars } from './stars.ts';
 import { addDays } from './dates.ts';
 
 export type SortMode = 'rank' | 'latest';
@@ -21,13 +21,13 @@ export const DEFAULT_HALF_LIFE_H = 36;
 export const defaultSort = (tab: TabId): SortMode => (tab === 'new' ? 'rank' : 'latest');
 
 const HOUR = 3_600_000;
-type Scored = Pick<Article, 'score' | 'score_v2'>;
+type Scored = Pick<Article, 'score' | 'score_v2'> & LlmFields;
 
 /** 중요도(★ + 매체 수 보정). ★ 값이 없으면 NaN(점수 없음) */
 export function importance(a: Scored, sources = 1): number {
   const has = (typeof a.score_v2 === 'number' && Number.isFinite(a.score_v2)) || (typeof a.score === 'number' && Number.isFinite(a.score));
   if (!has) return NaN;
-  return stars(a as { score: number; score_v2?: number }) + Math.min(1, 0.25 * Math.log2(Math.max(1, sources)));
+  return stars(a as { score: number; score_v2?: number } & LlmFields) + Math.min(1, 0.25 * Math.log2(Math.max(1, sources)));
 }
 
 /** 순위 점수. importance 가 NaN 이면 NaN */
