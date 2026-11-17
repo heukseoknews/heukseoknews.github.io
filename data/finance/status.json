@@ -1,18 +1,116 @@
 {
  "last_run": {
-  "started_at": "2026-11-16T12:53:35.564154+00:00",
-  "finished_at": "2026-11-16T12:54:10.985578+00:00",
-  "candidates": 744,
-  "added": 248,
-  "failed": [],
+  "started_at": "2026-11-17T02:07:17.221296+00:00",
+  "finished_at": "2026-11-17T02:07:52.143010+00:00",
+  "candidates": 584,
+  "added": 81,
+  "failed": [
+   "가계부채·대출규제",
+   "IPO·공모",
+   "가상자산 제도",
+   "스테이블코인·토큰증권",
+   "카드사"
+  ],
   "noted": [],
   "blocked": {}
  },
  "sources": {
   "서울경제 금융": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
+   "consecutive_failures": 0,
+   "entries": 50,
+   "kept": 50,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 19
+   },
+   "filtered": [
+    "복귀 노리는 젠슨 황 vs “쇄신 필요” 베선트…엔비디아 둘러싼 충돌",
+    "손보사, ‘LH 입찰담합’ 혐의 벗었다…약 4년 만에 무죄 확정",
+    "공정위 또 무리했나…손보사, LH 입찰담합 최종 승소",
+    "GA 소속 설계사만 32만명…당국 제재에도 ‘허위·가공 계약’ 되풀이",
+    "‘뒷돈’ 주고 기업 가입 유도…보험사엔 “수수료 더 달라” 갑질",
+    "에이플러스에셋, 3분기 누적 영업익 411억…작년 연간 실적 넘어",
+    "애큐온캐피탈·저축銀, 소아암 환우 위해 2000만 원 기부",
+    "한화손보, LH 보험입찰 담합 최종 승소",
+    "삼성, 美 빅테크 수주 가속…테슬라 AI칩·스페이스X 위성칩 수주",
+    "SC제일銀, 해외 본사에 1500억 빼줬다"
+   ],
+   "oldest": "2026-11-12T10:22:53+00:00",
+   "newest": "2026-11-17T01:27:54+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "이데일리 금융": {
+   "ok": true,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
+   "consecutive_failures": 0,
+   "entries": 50,
+   "kept": 50,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 22
+   },
+   "filtered": [
+    "[37th SRE][Survey]’레고랜드 악몽 재연' 한신평, 꼴찌 추락…한기평 5년 연속 1위 쾌거",
+    "[제도]선택지를 넓혀라: \"한국형 기금제도의 설계도\"",
+    "[오일 Drive]대통령 방한은 무산됐지만…UAE 외국인 투자 전략은 ‘현재진행형’",
+    "[37th SRE][Survey]‘한발 빠른’ 나신평, 신뢰도 3년 만에 2위",
+    "[37th SRE][Survey]신평사 신뢰도 4년 연속 ‘4점대’…개별 평가사는 ‘주춤’",
+    "[37th SRE][Cover] 반도체 호황의 역설…올라도 꺾여도 크레딧 ‘뇌관’은 남는다",
+    "“장사 접어도 빚 7000만원”…잠 못 드는 사장님들",
+    "[마켓인] \"연말인데 꼭 봄철 같네\"…비수기 잊은 M&A 시장",
+    "출구 안 보이는 석화…AI 호황에 날개 단 전기전자",
+    "[포토] '우리 농산물 소비촉진 대학생 서포터즈' 해단식"
+   ],
+   "oldest": "2026-11-12T01:30:24+00:00",
+   "newest": "2026-11-17T02:01:03+00:00",
+   "at_limit": true,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "헤럴드경제 금융": {
+   "ok": true,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
+   "consecutive_failures": 0,
+   "entries": 43,
+   "kept": 43,
+   "skipped": {
+    "no_link": 0,
+    "no_date": 0,
+    "low_relevance": 6
+   },
+   "filtered": [
+    "교보생명, 3분기 보유계약 보험계약마진 최초 7조 돌파",
+    "교보생명, 3분기 보유계약 보험계약마진 최초 7조 돌파",
+    "에이플러스에셋, 3분기 누적 영업이익 411억…작년 연간 실적 넘어",
+    "JB금융 임직원 AI 경진대회 개최…145개팀 284명 참가",
+    "DB손보, 인터넷전용 ‘미니암보험’ 출시…기존 암보험 가입자 치료비 보장 보완",
+    "보험사 본업 개선하고 해외 실적 효과로 3분기 방어"
+   ],
+   "oldest": "2026-11-15T03:00:08+00:00",
+   "newest": "2026-11-17T01:35:57+00:00",
+   "at_limit": false,
+   "needs_split": false,
+   "gap_risk": false,
+   "error": null,
+   "kind": "rss"
+  },
+  "대한금융신문": {
+   "ok": true,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -22,98 +120,8 @@
     "low_relevance": 18
    },
    "filtered": [
-    "공정위 또 무리했나…손보사, LH 입찰담합 최종 승소",
-    "GA 소속 설계사만 32만명…당국 제재에도 ‘허위·가공 계약’ 되풀이",
-    "‘뒷돈’ 주고 기업 가입 유도…보험사엔 “수수료 더 달라” 갑질",
-    "에이플러스에셋, 3분기 누적 영업익 411억…작년 연간 실적 넘어",
-    "애큐온캐피탈·저축銀, 소아암 환우 위해 2000만 원 기부",
-    "한화손보, LH 보험입찰 담합 최종 승소",
-    "삼성, 美 빅테크 수주 가속…테슬라 AI칩·스페이스X 위성칩 수주",
-    "SC제일銀, 해외 본사에 1500억 빼줬다",
-    "1주일 넘게 거래 멈춘 고팍스, 기약없는 셧다운에 신뢰 추락",
-    "공공기관인데…서금원, 비정규직 확 는다"
-   ],
-   "oldest": "2026-11-12T08:50:46+00:00",
-   "newest": "2026-11-16T09:13:50+00:00",
-   "at_limit": true,
-   "needs_split": false,
-   "gap_risk": false,
-   "error": null,
-   "kind": "rss"
-  },
-  "이데일리 금융": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 50,
-   "kept": 50,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 17
-   },
-   "filtered": [
-    "출구 안 보이는 석화…AI 호황에 날개 단 전기전자",
-    "[포토] '우리 농산물 소비촉진 대학생 서포터즈' 해단식",
-    "\"단일기업 1000억원 지원시 보고하라\"…산은법 개정 추진",
-    "한명 연봉도 안된 연구비 늘렸더니…PE 투자 4년 만에 1300억 기업으로",
-    "[단독]CJ·HDC 손잡고 시작한 생분해 플라스틱 사업, 4년 만에 접는다",
-    "[마켓인]英 AVI, 다우기술 중앙일보 인수 반대…\"주주가치 훼손 우려\"",
-    "출판 콘텐츠·식품 유통 매물…교육 기업 인수 수요[M&A 딜보드]",
-    "젠슨 황 논란 속…엔비디아가 콕 찍은 韓 AI 스타트업 4곳[VC's Pick]",
-    "\"조합 하나에 1~2분\"…시제품 없이 카메라 성능 가려내는 기술[VC 요람]",
-    "[단독]한화솔루션, ‘한화시마론’ 한화디펜스에 넘겼다…재무 개선·시너지 기대"
-   ],
-   "oldest": "2026-11-11T03:07:13+00:00",
-   "newest": "2026-11-16T12:14:03+00:00",
-   "at_limit": true,
-   "needs_split": false,
-   "gap_risk": false,
-   "error": null,
-   "kind": "rss"
-  },
-  "헤럴드경제 금융": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 38,
-   "kept": 38,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 6
-   },
-   "filtered": [
-    "에이플러스에셋, 3분기 누적 영업이익 411억…작년 연간 실적 넘어",
-    "JB금융 임직원 AI 경진대회 개최…145개팀 284명 참가",
-    "DB손보, 인터넷전용 ‘미니암보험’ 출시…기존 암보험 가입자 치료비 보장 보완",
-    "보험사 본업 개선하고 해외 실적 효과로 3분기 방어",
-    "北 해킹조직 ‘라자루스’, 국내 서버 30곳 노렸다…차단 방법은?",
-    "과세도 미뤘는데 코인 공제 250만원→5000만원?…국회 “불합리” 제동 [크립토360]"
-   ],
-   "oldest": "2026-11-14T20:35:00+00:00",
-   "newest": "2026-11-16T09:03:38+00:00",
-   "at_limit": false,
-   "needs_split": false,
-   "gap_risk": false,
-   "error": null,
-   "kind": "rss"
-  },
-  "대한금융신문": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 50,
-   "kept": 50,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 20
-   },
-   "filtered": [
+    "[최수영의 보험판례100] 암 수술 후 5년…보험금은 왜 지급되지 않았을까",
+    "[C-LEVEL 노트] 장원재, 리테일에 승부 건 이유",
     "“내 업무에 쓸 AI는 내가 만든다” JB금융그룹, ‘총 상금 1억 4천만원’ 두 번째 임직원 AI 경진대회 개최 …9개월 만에 참가팀 2배, 완성도 ‘껑충",
     "기술보증기금 권형택 이사장 장인상",
     "[김승호의 수불오디세이 1] 쌀 지켜온 구마, 기술로 전통을 이어가다",
@@ -121,12 +129,10 @@
     "불확실성 확대에 발행어음·IMA 리스크 관리 주문",
     "[컨콜노트] 삼성화재에 쏟아진 캐노피우스 ‘말말말’",
     "iM캐피탈, ‘창립 17주년 기념식’ 개최…지속가능한 성장 다짐",
-    "[컨콜노트]메리츠도 해약준비금에 “부담 커졌다”",
-    "회장 검증 책임 커진 임추위…자문비 청구 근거는 공백",
-    "‘8주룰’에 뇌진탕 진단 늘까…깐깐해진 보험사"
+    "[컨콜노트]메리츠도 해약준비금에 “부담 커졌다”"
    ],
-   "oldest": "2026-11-08T21:00:00+00:00",
-   "newest": "2026-11-16T07:28:17+00:00",
+   "oldest": "2026-11-09T06:49:00+00:00",
+   "newest": "2026-11-17T02:02:46+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -135,23 +141,22 @@
   },
   "한국은행 보도자료": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
    "entries": 100,
-   "kept": 12,
+   "kept": 11,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 5,
-    "too_old": 88
+    "low_relevance": 4,
+    "too_old": 89
    },
    "filtered": [
     "2026년 9월 통화 및 유동성",
     "2026년 10월 수출입물가지수 및 무역지수(잠정)",
     "[보도자료] 치앙마이 이니셔티브 다자화(CMIM) 개정 협정문 발효",
-    "2026년 9월 국제수지(잠정)",
-    "[보도참고자료] 2026년 10월「물가상황점검회의」 개최"
+    "2026년 9월 국제수지(잠정)"
    ],
    "oldest": "2026-08-05T23:00:00+00:00",
    "newest": "2026-11-13T03:00:00+00:00",
@@ -163,16 +168,16 @@
   },
   "재정경제부 보도자료": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
    "entries": 40,
-   "kept": 36,
+   "kept": 33,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 31,
-    "too_old": 4
+    "low_relevance": 28,
+    "too_old": 7
    },
    "filtered": [
     "「세무사 시험 부정행위 대응 TF」 킥오프 회의 및 세무사 시험 부정행위자 시험 무효 절차 개시",
@@ -196,22 +201,25 @@
   },
   "한은·기준금리": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 21,
-   "kept": 21,
+   "entries": 23,
+   "kept": 23,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 2
+    "low_relevance": 5
    },
    "filtered": [
+    "RBA 총재 \"인플레 위험 여전히 상방으로 기울어\"(상보)",
+    "[37th SRE][Cover] 반도체 호황의 역설…올라도 꺾여도 크레딧 ‘뇌관’은 남는다",
+    "\"유지도, 폐기도 쉽지 않네\"⋯'구 M2 출구전략' 난감한 한은",
     "美 생산자물가 6.5% 급등…美·英, 내년에도 긴축 신호",
     "13년 만에 '금' 투자 재개했는데..한은, 어쩌면 좋나"
    ],
-   "oldest": "2026-11-13T13:27:35+00:00",
-   "newest": "2026-11-16T01:40:34+00:00",
+   "oldest": "2026-11-14T02:26:20+00:00",
+   "newest": "2026-11-17T01:22:00+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -220,11 +228,11 @@
   },
   "가계대출·예대금리": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 18,
-   "kept": 18,
+   "entries": 20,
+   "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -232,7 +240,7 @@
    },
    "filtered": [],
    "oldest": "2026-11-10T07:48:16+00:00",
-   "newest": "2026-11-16T08:21:02+00:00",
+   "newest": "2026-11-16T21:00:06+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -240,43 +248,40 @@
    "kind": "search"
   },
   "가계부채·대출규제": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
+   "ok": false,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
    "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 39,
-   "kept": 39,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 0
-   },
+   "consecutive_failures": 1,
+   "entries": 0,
+   "kept": 0,
+   "skipped": {},
    "filtered": [],
-   "oldest": "2026-11-09T15:51:00+00:00",
-   "newest": "2026-11-16T09:00:00+00:00",
+   "oldest": null,
+   "newest": null,
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
-   "error": null,
+   "error": "HTTPError: 429 Client Error: Too Many Requests for url: <url>",
    "kind": "search"
   },
   "5대 은행": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 27,
-   "kept": 27,
+   "entries": 29,
+   "kept": 29,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 1
+    "low_relevance": 2
    },
    "filtered": [
+    "정진완 뒤이을 ‘연임 행장’은...KB·신한·하나 인선 주목",
     "[CEO IN&OUT] 자본비율 끌어올린 정진완 2기…수익성 회복·격차 축소 과제"
    ],
-   "oldest": "2026-11-13T22:00:00+00:00",
-   "newest": "2026-11-16T09:36:17+00:00",
+   "oldest": "2026-11-14T04:00:00+00:00",
+   "newest": "2026-11-17T01:34:01+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -285,19 +290,19 @@
   },
   "인터넷·지방·국책은행": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 27,
-   "kept": 27,
+   "entries": 32,
+   "kept": 32,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0
    },
    "filtered": [],
-   "oldest": "2026-11-09T22:00:00+00:00",
-   "newest": "2026-11-16T09:45:54+00:00",
+   "oldest": "2026-11-10T02:12:00+00:00",
+   "newest": "2026-11-17T01:22:02+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -306,11 +311,11 @@
   },
   "대형 증권사": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 25,
-   "kept": 25,
+   "entries": 24,
+   "kept": 24,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -319,8 +324,8 @@
    "filtered": [
     "상반기 잘나가던 초대형 IB, 3분기 급제동…미래·KB 적자 전환, NH·삼성도 '안심 못 해'"
    ],
-   "oldest": "2026-11-15T15:00:00+00:00",
-   "newest": "2026-11-16T10:38:38+00:00",
+   "oldest": "2026-11-16T02:27:48+00:00",
+   "newest": "2026-11-17T01:54:07+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -329,11 +334,11 @@
   },
   "증권업계": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 35,
-   "kept": 35,
+   "entries": 36,
+   "kept": 36,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -342,8 +347,8 @@
    "filtered": [
     "변동성 장세 속 효과적인 대기자금 관리…다시 주목받는 ‘발행어음’"
    ],
-   "oldest": "2026-11-10T01:14:12+00:00",
-   "newest": "2026-11-16T08:27:58+00:00",
+   "oldest": "2026-11-10T21:00:01+00:00",
+   "newest": "2026-11-16T23:58:58+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -352,30 +357,30 @@
   },
   "자본시장 제도": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 35,
-   "kept": 35,
+   "entries": 39,
+   "kept": 39,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 15
+    "low_relevance": 18
    },
    "filtered": [
-    "“SK하이닉스, 주주환원 확대·낮아진 밸류에이션…시간 여전히 매수자 편”",
     "SK하닉 100조 주주환원 승부수…“시간은 매수자 편” [오늘, 이 종목]",
+    "“SK하이닉스, 주주환원 확대·낮아진 밸류에이션…시간 여전히 매수자 편”",
     "[보험사 이모저모] 주주환원이 먼저냐 성장투자가 먼저냐",
+    "픽셀웍스, 자사주 매입 한도 두 배 확대에 주주환원 기대감 부각",
+    "SBC메디컬그룹, 실적 호조에도 가이던스 부재·주주환원 부족에 투자심리 위축",
+    "픽셀웍스, 자사주 매입 한도 두 배 확대에 주주환원 기대감 부각",
     "아이퀘스트, 3분기 누적 순익 79% 증가…주주환원 확대 추진",
+    "텔레포니카브라질, 3분기 순이익 30% 증가에 주주환원 확대로 주목",
     "브라이트스타로터리, 주주환원 확대와 이탈리아 로또 연장에 투자심리 개선",
-    "신세계, 백화점·면세점 동반 호조… 주주환원 기대도↑-유진",
-    "주주환원 미루고 2조 투자…현금많은 저PBR 현대제철의 배수진",
-    "대표 생일 게시글에도 주주환원 요구…뿔난 에이피알 주주들",
-    "한진, 자사주 전량 소각 결정에 16%대 급증…주주환원 확대 기대감 쑥",
-    "텔레포니카브라질, 3분기 순이익 30% 증가에 주주환원 확대로 주목"
+    "신세계, 백화점·면세점 동반 호조… 주주환원 기대도↑-유진"
    ],
-   "oldest": "2026-11-10T01:42:20+00:00",
-   "newest": "2026-11-16T05:49:11+00:00",
+   "oldest": "2026-11-10T05:56:00+00:00",
+   "newest": "2026-11-16T23:58:03+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -383,38 +388,29 @@
    "kind": "search"
   },
   "IPO·공모": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
+   "ok": false,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
    "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 57,
-   "kept": 57,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 4
-   },
-   "filtered": [
-    "\"대전교육청, 반복된 학생 수요 예측 실패로 과밀학급 초래\"",
-    "고병수 대구시의원 “138억원 들인 월배 공영주차장, 수요예측 적정했나”",
-    "엠비디, 공모가 7000원 확정…수요예측 경쟁률 187대 1",
-    "엠비디, 공모가 7000원 확정…수요예측 경쟁률 187대 1"
-   ],
-   "oldest": "2026-11-09T22:13:01+00:00",
-   "newest": "2026-11-16T12:26:59+00:00",
+   "consecutive_failures": 1,
+   "entries": 0,
+   "kept": 0,
+   "skipped": {},
+   "filtered": [],
+   "oldest": null,
+   "newest": null,
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
-   "error": null,
+   "error": "HTTPError: 429 Client Error: Too Many Requests for url: <url>",
    "kind": "search"
   },
   "금융위원회": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 41,
-   "kept": 41,
+   "entries": 44,
+   "kept": 44,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -422,7 +418,7 @@
    },
    "filtered": [],
    "oldest": "2026-11-11T01:29:00+00:00",
-   "newest": "2026-11-16T08:47:15+00:00",
+   "newest": "2026-11-17T00:38:26+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -431,11 +427,11 @@
   },
   "금융감독원": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
-   "entries": 22,
-   "kept": 22,
+   "entries": 28,
+   "kept": 28,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -443,7 +439,7 @@
    },
    "filtered": [],
    "oldest": "2026-11-14T23:20:05+00:00",
-   "newest": "2026-11-16T10:40:55+00:00",
+   "newest": "2026-11-17T01:00:15+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -452,8 +448,8 @@
   },
   "소비자보호·내부통제": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
    "entries": 26,
    "kept": 26,
@@ -465,8 +461,8 @@
    "filtered": [
     "내부통제 혁신 외친 임종룡…직속 조직 4억원대 횡령 의혹에 책임론 확산"
    ],
-   "oldest": "2026-11-10T00:57:00+00:00",
-   "newest": "2026-11-16T10:53:00+00:00",
+   "oldest": "2026-11-10T22:00:00+00:00",
+   "newest": "2026-11-17T01:40:39+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -475,29 +471,27 @@
   },
   "핀테크 기업": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
    "entries": 47,
    "kept": 47,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 9
+    "low_relevance": 7
    },
    "filtered": [
     "프레이토스, 나스닥 최소 입찰가 미달 통지..내년 5월 10일 시한",
     "AI 활용 금융보안 대회서 토스 1위·토스증권 2위…6년 연속 우승",
     "펠토스 테라퓨틱스, 3분기 매출 1540만 달러·108%↑..순손실 790만 달러 축소",
-    "카카오페이 기부 마라톤 300억 걸음 돌파…소상공인 지원금 10억원 확정",
-    "카카오페이 기부 마라톤 300억 걸음 돌파…소상공인 지원금 10억원 확정",
     "LX판토스, 해외 취약계층 아동 지원에 2억원 기부",
     "LX판토스, 해외 취약계층 아동 지원에 2억원 기부",
     "비트고, 앱토스와 협력 강화… 기관 대상 온체인 시장 접근 지원",
     "LX판토스, 국제사회 취약계층 어린이 지원에 2억원 기부"
    ],
    "oldest": "2026-11-10T03:00:07+00:00",
-   "newest": "2026-11-16T08:49:56+00:00",
+   "newest": "2026-11-17T00:28:38+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -505,75 +499,60 @@
    "kind": "search"
   },
   "가상자산 제도": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
+   "ok": false,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
    "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 7,
-   "kept": 6,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 0,
-    "junk_title": 1
-   },
-   "filtered": [
-    "[노이즈 제목] 가상자산"
-   ],
-   "oldest": "2026-11-14T01:56:57+00:00",
-   "newest": "2026-11-16T12:26:16+00:00",
+   "consecutive_failures": 1,
+   "entries": 0,
+   "kept": 0,
+   "skipped": {},
+   "filtered": [],
+   "oldest": null,
+   "newest": null,
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
-   "error": null,
+   "error": "HTTPError: 429 Client Error: Too Many Requests for url: <url>",
    "kind": "search"
   },
   "스테이블코인·토큰증권": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
+   "ok": false,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
    "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 37,
-   "kept": 37,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 0
-   },
+   "consecutive_failures": 1,
+   "entries": 0,
+   "kept": 0,
+   "skipped": {},
    "filtered": [],
-   "oldest": "2026-11-10T00:47:51+00:00",
-   "newest": "2026-11-16T03:05:32+00:00",
+   "oldest": null,
+   "newest": null,
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
-   "error": null,
+   "error": "HTTPError: 429 Client Error: Too Many Requests for url: <url>",
    "kind": "search"
   },
   "카드사": {
-   "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
+   "ok": false,
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
    "last_success_at": "2026-11-16T12:53:35.564154+00:00",
-   "consecutive_failures": 0,
-   "entries": 54,
-   "kept": 54,
-   "skipped": {
-    "no_link": 0,
-    "no_date": 0,
-    "low_relevance": 0
-   },
+   "consecutive_failures": 1,
+   "entries": 0,
+   "kept": 0,
+   "skipped": {},
    "filtered": [],
-   "oldest": "2026-11-09T22:00:00+00:00",
-   "newest": "2026-11-16T10:26:00+00:00",
+   "oldest": null,
+   "newest": null,
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
-   "error": null,
+   "error": "HTTPError: 429 Client Error: Too Many Requests for url: <url>",
    "kind": "search"
   },
   "금융위원회 보도자료": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -598,22 +577,23 @@
   },
   "금융감독원 보도자료": {
    "ok": true,
-   "last_run_at": "2026-11-16T12:53:35.564154+00:00",
-   "last_success_at": "2026-11-16T12:53:35.564154+00:00",
+   "last_run_at": "2026-11-17T02:07:17.221296+00:00",
+   "last_success_at": "2026-11-17T02:07:17.221296+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 2
+    "low_relevance": 3
    },
    "filtered": [
+    "전금업자, 온투업자 침해사고 대응 관련 간담회 개최",
     "흔들리지 않는 노후 준비의 기본 원칙 퇴직연금 가이드북을 적극 활용하세요!",
     "금년 세무사시험 수석합격자(한OO씨)의 CPA시험 부정행위 언급과 관련하여 안내드립니다."
    ],
    "oldest": "2026-11-11T00:00:00+00:00",
-   "newest": "2026-11-16T00:00:00+00:00",
+   "newest": "2026-11-17T00:00:00+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
