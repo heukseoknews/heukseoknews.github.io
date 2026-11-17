@@ -1,3 +1,5 @@
 # 로컬 LLM 점수 파일·스크립트는 어느 운영체제에서 만들어도 LF 로 고정(docs/llm-scoring.md)
 data/*/llm/*.json text eol=lf
 scripts/local/** text eol=lf
+# 윈도우 더블클릭용 배치 파일은 CRLF(cmd 가 LF 에서 레이블을 잘못 읽는 경우가 있음)
+*.bat text eol=crlf

@@ -90,6 +90,34 @@ git pull --rebase origin main && git push origin HEAD:main   # CLAUDE.md 의 pus
 다른 컴퓨터에서 **직접 커밋·push** 할 때는 그 컴퓨터의 git 사용자를 GitHub noreply 이메일로 설정한다(공개 저장소에 개인 이메일이 남지 않게):
 `git config user.name "Seungu Sin"` · `git config user.email "<번호>+<GitHub 아이디>@users.noreply.github.com"`(GitHub 설정 > Emails 에 나오는 값).
 
+### 윈도우 수동 점수 갱신 도구(`run_scoring.py`)
+
+다른 컴퓨터에서 점수를 만들어 **그 자리에서 커밋·push** 하는 도구. Claude 없이 사람이 직접 실행한다. 저장소 폴더의 `점수매기기.bat` 을 더블클릭하거나:
+
+```bat
+python scripts/local/run_scoring.py                      :: 전체 흐름(커밋 전 Enter 확인)
+python scripts/local/run_scoring.py --dry-run --limit 5  :: 채점만 해 보고 아무것도 쓰지 않음, push 없음
+```
+
+순서: 최신 받기(`git pull --ff-only`) → 대상 찾기 → 채점(`llm_score.py` 의 대상 선택·채점·저장을 그대로 씀) → 결과 요약 → 검증 → Enter 확인 → 점수 파일만 커밋 → `git push origin HEAD:main`.
+
+| 항목 | 규칙 |
+|---|---|
+| 대상 | 모든 채널, 최근 7일 수집·숨김 아님·현재 `prompt_version` 점수 없음. 1회 상한 1,500건(넘으면 채널과 상관없이 수집 시각이 최신인 기사부터 고르고, 남은 것은 다음 실행. 처리는 같은 채널끼리 묶어서). 시작 전에 채널별 건수와 예상 시간(기사당 약 3초) 표시 |
+| 옵션 | `--dry-run`(쓰지 않음·push 없음), `--yes`(확인 생략, 자동 실행용), `--channels insurance,ai`, `--since 7` 또는 날짜, `--limit N`(1~1,500) |
+| Ollama | 꺼져 있으면 도구가 `ollama serve` 를 켜고, 끝나면 **도구가 켠 경우에만** 끈다. 모델은 끝나면 메모리에서 내린다 |
+| 메모리 | 사용 가능한 RAM 이 5GB 미만이면 경고하고 묻는다(Enter 는 '아니오'). `--yes` 면 멈춘다 |
+| 검증(push 전) | JSON `{id: [기록…]}` 구조, 기록 필드와 점수 0~5, HEAD 판의 기존 기록은 그대로(추가만), 기사 파일에 있는 id, 같은 모델·프롬프트 중복 없음, 파일당 5MB 이하, LF |
+| 커밋 | `data/<채널>/llm/<YYYY-MM>.json` 만 경로를 지정해 스테이징한다(`git add -A` 안 씀). 다른 변경은 건드리지 않고 알려 준다. 메시지 `data(llm): 점수 N건 (보험 a, AI b, 금융 c)` |
+| push | 거절되면 `git pull --rebase origin main` 후 한 번만 재시도. rebase 충돌이면 rebase 를 취소하고 멈춘다(커밋은 로컬에 남음). force push 는 쓰지 않는다 |
+| 멈추는 경우 | main 이 아님, 이미 스테이징된 변경, 커밋 작성자(`user.name`·`user.email`) 미설정(이메일은 추측하지 않음), 최신 받기 실패, 다른 실행 중(잠금 `.git/run_scoring.lock`), 검증 실패 |
+| 기록 | `logs/run_scoring-<시각>.log`(`.gitignore` 의 `*.log` 로 git 에서 빠짐) |
+
+- 확인에서 `n` 을 누르면 점수 파일은 커밋하지 않은 채 남고, 다음 실행 때 함께 검증·커밋한다. 중간에 Ctrl+C 로 끊어도 20건마다 저장된 데까지 남는다.
+- 처음 쓰기 전에 작성자를 noreply 이메일로 설정한다(위 문단). push 인증은 git 이 윈도우 자격 증명 관리자로 처리하며, 처음 뜨는 로그인 창에 사람이 직접 입력한다. 도구는 토큰·비밀번호를 다루지 않는다.
+- `점수매기기.bat` 은 UTF-8 콘솔로 바꾸고, git 이 PATH 에 없으면 Git for Windows 기본 위치(`Program Files\Git\cmd`)를 쓴다. 옵션은 그대로 넘긴다.
+- 학교 PC(i7-14700, RAM 16GB, CPU 만, Ollama 0.40.16) 2026-11-17 벤치마크: 기사당 평균 3.05s, 첫 건 11.9s, 실행 중 RAM 약 5GB.
+
 ### 다른 컴퓨터의 Ollama 를 SSH 터널로 빌리기
 
 저장소는 Mac 에 두고 계산만 다른 컴퓨터에서 하는 방법. 그 컴퓨터에 Ollama 와 모델이 있고 SSH 로 접속할 수 있어야 한다(윈도우는 OpenSSH 서버 기능을 켬).
