@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-17T19:25:13.474112+00:00",
-  "finished_at": "2026-11-17T19:25:15.626795+00:00",
+  "started_at": "2026-11-18T01:20:32.555365+00:00",
+  "finished_at": "2026-11-18T01:20:35.530710+00:00",
   "candidates": 310,
-  "added": 24,
+  "added": 22,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,10 +11,10 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
-   "entries": 1405,
+   "entries": 1406,
    "kept": 99,
    "skipped": {
     "no_link": 0,
@@ -25,7 +25,7 @@
    "filtered": [
     "[노이즈 제목] LifeVal"
    ],
-   "oldest": "2026-10-20T10:00:00+00:00",
+   "oldest": "2026-10-21T00:00:00+00:00",
    "newest": "2026-11-17T17:45:00+00:00",
    "at_limit": true,
    "needs_split": false,
@@ -35,8 +35,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 12,
@@ -57,16 +57,16 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 908,
-   "kept": 30,
+   "kept": 29,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 70
+    "too_old": 71
    },
    "filtered": [],
    "oldest": "2026-06-26T00:00:00+00:00",
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -106,29 +106,30 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 9
+    "low_relevance": 11
    },
    "filtered": [
+    "Nvidia promises that revenue will keep soaring — for now",
+    "Nvidia is abandoning China after Jensen Huang’s ouster",
+    "Nvidia says it doesn’t plan to reappoint Jensen Huang as CEO",
+    "SEC reportedly investigating Nvidia amid Huang exit",
+    "Google joins the tech outage trend by announcing it’s not having one",
+    "Model ML raises $250M to automate investment banking grunt work",
     "As decision model use skyrockets, is customization the next frontier?",
     "Jensen Huang says he would be ‘honored’ if allowed to return as Nvidia CEO",
     "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
-    "Science Corporation’s brain tech is worth $3.5 billion after new funding",
-    "Nvidia’s first big move after Jensen Huang’s exit targets national security",
-    "Spotify’s new tool aims to stop deepfakes from being attributed to real artists",
-    "All the questions Nvidia should answer on Tuesday — but probably won’t",
-    "Trump says ex-Nvidia CEO Jensen Huang’s affair with an alleged Chinese spy did not threaten national security",
-    "Sam Altman on Nvidia without Jensen Huang: The industry will be ‘fine’"
+    "Science Corporation’s brain tech is worth $3.5 billion after new funding"
    ],
-   "oldest": "2026-11-16T17:10:00+00:00",
-   "newest": "2026-11-17T19:02:20+00:00",
+   "oldest": "2026-11-17T14:05:30+00:00",
+   "newest": "2026-11-18T00:16:50+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -137,23 +138,24 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 3
+    "low_relevance": 4
    },
    "filtered": [
+    "“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia",
     "Ars Live: What do drone strikes on data centers mean for the future? Talk at 1 pm EST today",
     "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
     "Jensen Huang allies build a \"war room\" to get him back at Nvidia"
    ],
-   "oldest": "2026-11-09T17:24:26+00:00",
-   "newest": "2026-11-17T16:50:10+00:00",
+   "oldest": "2026-11-10T15:00:39+00:00",
+   "newest": "2026-11-18T00:27:29+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -162,17 +164,18 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 22
+    "low_relevance": 21
    },
    "filtered": [
+    "젠슨 황 \"이사회가 원하면 CEO 복귀\"…엔비디아는 검토 안 해",
     "텐센트 'Hy4 플래시' 출시...일상 업무 특화·작업 비용 95% 절감",
     "무안 농업 AX 시설 3곳, 데이터 연계 규격 설계…9억8000만원 용역 발주",
     "“광영동의 어제와 오늘을 담다”… 광양시, 지역의 역사를 기록한 석재 아트월 조성",
@@ -181,11 +184,10 @@
     "WSJ \"앨리스 황 남편, 중국 정부 지원받아 13조 데이터센터 사업 추진\"",
     "세계 슈퍼컴퓨터 신규 진입 역대 최저…한국 '한강' 12위",
     "스캐터랩, 청소년 보호 강화…애플 다운로드 중단 대응?",
-    "MS 글로벌 서비스 장애 원인은 4개월 전 버그...서버 80% 이상 마비",
-    "트럼프, 엔비디아 주식 최대 830억 보유 추정…중국 수출 허용에 이해충돌 논란"
+    "MS 글로벌 서비스 장애 원인은 4개월 전 버그...서버 80% 이상 마비"
    ],
-   "oldest": "2026-11-16T07:36:38+00:00",
-   "newest": "2026-11-17T09:18:21+00:00",
+   "oldest": "2026-11-16T08:00:00+00:00",
+   "newest": "2026-11-18T00:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -194,24 +196,23 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 4
+    "low_relevance": 3
    },
    "filtered": [
     "음성으로 가전 10만1,000종 이상 제어…스위치봇, 스마트홈 통합 허브 출시",
     "“양자컴퓨팅으로 신약 개발의 한계 넘겠다”…조은성 인세리브로 대표, 글로벌 제약기업 도전",
-    "구글, 한국 정밀지도 국외반출 보안조건 이행…정부, 좌표표시 제거·군사시설 영상처리 확인",
-    "전장 검증된 자율 무인체계에 7억달러 투자…우크라이나계 '유포스', 영국서 생산 확대"
+    "구글, 한국 정밀지도 국외반출 보안조건 이행…정부, 좌표표시 제거·군사시설 영상처리 확인"
    ],
-   "oldest": "2026-11-13T01:09:32+00:00",
-   "newest": "2026-11-17T12:50:58+00:00",
+   "oldest": "2026-11-13T04:21:10+00:00",
+   "newest": "2026-11-18T00:52:11+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -220,8 +221,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
    "entries": 11,
    "kept": 7,
@@ -238,7 +239,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-11T17:13:59+00:00",
-   "newest": "2026-11-17T18:26:57+00:00",
+   "newest": "2026-11-17T22:59:08+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -247,11 +248,11 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-17T19:25:13.474112+00:00",
-   "last_success_at": "2026-11-17T19:25:13.474112+00:00",
+   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
    "consecutive_failures": 0,
-   "entries": 4,
-   "kept": 4,
+   "entries": 5,
+   "kept": 5,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -261,7 +262,7 @@
     "EviBridge: Encoding Predictive Visual Evidence for Proactive Interaction"
    ],
    "oldest": "2026-11-15T07:03:39+00:00",
-   "newest": "2026-11-17T08:02:11+00:00",
+   "newest": "2026-11-17T08:49:22+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,

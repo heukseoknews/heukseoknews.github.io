@@ -1,5 +1,447 @@
 [
  {
+  "id": "47f9687186418d60",
+  "title": "오픈AI, GPT-6.2 아스트라·솔 전격 공개…전문가급 AI 업무 수행에 비용 혁신까지",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42776",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T00:52:11+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 4,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "6ba8731518377f84",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "2fbf24add20bd938",
+  "title": "에브리봇, 피지컬 AI 사업본부 출범…중국 애지봇·DDT와 휴머노이드·사족보행 로봇사업 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42775",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T00:28:56+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "0db3b4bdf59c14e4",
+  "title": "Copilot is \"the new OS for work,\" and now Office runs inside of it",
+  "url": "https://arstechnica.com/gadgets/2026/11/microsoft-calls-copilot-the-new-os-for-work-at-ignite-keynote/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-18T00:27:29+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "c2829355baf07fc0",
+  "title": "시마AI, 피지컬 AI 소프트웨어 ‘팔레트 3.0’ 공개…단일 칩에서 여러 AI 모델 동시 실행",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42774",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T00:24:17+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개",
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "a726a4f040d13249",
+  "title": "Nvidia promises that revenue will keep soaring — for now",
+  "url": "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T00:16:50+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "revenue"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "b7bd1cac9e086f49",
+  "title": "화학연·한국콜마, AI로 화장품 피부 안전성 예측…원료·혼합물 평가기술 공동개발",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42773",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T00:15:00+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "안전"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "ca6d0ef77b2da612",
+  "title": "[AI리더의 서가] VLA 로보틱스 입문",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217283",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T00:00:00+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "e07eab0523a72372",
+  "title": "딥엘 보이스, 한국 회의 이용량 5배 급증…AI 통번역, 기업 넘어 교육·공공으로 확산",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42772",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-17T23:56:09+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "국회"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "음성·오디오"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "7648720b0216823a",
+  "title": "Nvidia is abandoning China after Jensen Huang’s ouster",
+  "url": "https://techcrunch.com/2026/11/17/nvidia-is-abandoning-china-after-jensen-huangs-ouster/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T23:37:48+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "7c1076c2aa096bde",
+  "title": "Nvidia says its open source AI strategy remains intact after Jensen Huang’s exit",
+  "url": "https://techcrunch.com/2026/11/17/nvidia-says-its-open-source-ai-strategy-remains-intact-after-jensen-huangs-exit/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T23:04:35+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "open source"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "fc38b51a6db9bccf",
+  "title": "Nvidia says it doesn’t plan to reappoint Jensen Huang as CEO",
+  "url": "https://techcrunch.com/2026/11/17/nvidia-says-it-doesnt-plan-to-reappoint-jensen-huang-as-ceo/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T22:42:27+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "dc52e334dcb4a852",
+  "title": "Amazon and Google will together own nearly 30% of Anthropic after its IPO",
+  "url": "https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T22:29:05+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Amazon",
+   "Google·DeepMind",
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "45547459a8928b2e",
+  "title": "[11월17일] 미국 이어 중국도 'AI 과학적 발견' 경쟁…문샷, 생물학·화학 연구에 집중",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217482",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-17T22:00:00+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "6ba8731518377f84",
+  "title": "오픈AI, 세계 2위 성능 'GPT-6.2 아스트라' 출시...API 20% 인하",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217513",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-17T21:48:40+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "출시",
+   "api"
+  ],
+  "score": 4,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "6ba8731518377f84",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
+ },
+ {
+  "id": "04c4dac80f3d2432",
+  "title": "SEC reportedly investigating Nvidia amid Huang exit",
+  "url": "https://techcrunch.com/2026/11/17/sec-reportedly-investigating-nvidia-amid-huang-exit/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T21:48:07+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "10493fa85ddbf2d5",
+  "title": "Google joins the tech outage trend by announcing it’s not having one",
+  "url": "https://techcrunch.com/2026/11/17/google-joins-the-tech-outage-trend-by-announcing-its-not-having-one/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T21:34:50+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "announcing"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "0d2320a39514c83c",
+  "title": "젠슨 황 \"이사회가 원하면 CEO 복귀\"…엔비디아는 검토 안 해",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217512",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-17T20:37:19+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "85bd515d71fb7a7a",
+  "title": "“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia",
+  "url": "https://arstechnica.com/tech-policy/2026/11/trump-was-in-bed-with-jensen-critics-balk-at-huangs-wish-to-return-to-nvidia/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-17T20:32:55+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "0625d4b9c1bb8b33",
+  "title": "MS, 'MAI 코드 2' 출시…앤트로픽급 코딩 성능에 비용은 5%",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217511",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-17T20:01:05+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "출시",
+   "코딩"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "2fb55c3571a040c5",
+  "title": "Model ML raises $250M to automate investment banking grunt work",
+  "url": "https://techcrunch.com/2026/11/17/model-ml-raises-250m-to-automate-investment-banking-grunt-work/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-17T19:32:11+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "raises",
+   "investment",
+   "model"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "af36944b8f532014",
   "title": "Google expands access to Gemini Tasks, which can help with calls, purchases",
   "url": "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/",
@@ -656,6 +1098,31 @@
   "score_v2": 2
  },
  {
+  "id": "68d5da403015e3cc",
+  "title": "Meta Turns Its AI Agent Into a Voice Assistant With a Face",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBJbC13cnh0TzdLem5ESWtSSGRjMjRpX1ZNWWZGSktxMFoxcVJvWnVtUVVrcXozQ2pxX2ZfamNRWm1jTmZHUGtZaHRacGpuY2Zlai16cWpTS3BwczktZjV3ZlFiR0c2Y1RVSlVBWVl2SGI?oc=5",
+  "source": "TechJuice",
+  "source_type": "media",
+  "published_at": "2026-11-17T08:49:22+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP",
+   "음성·오디오"
+  ],
+  "score_v2": 3
+ },
+ {
   "id": "3dbeb52e8c6a02ba",
   "title": "“광영동의 어제와 오늘을 담다”… 광양시, 지역의 역사를 기록한 석재 아트월 조성",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217510",
@@ -710,6 +1177,30 @@
   "companies": [],
   "orgs": [],
   "score_v2": 1
+ },
+ {
+  "id": "3047d7657748ea76",
+  "title": "Introducing ChatGPT for Sales",
+  "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-17T08:00:00+00:00",
+  "collected_at": "2026-11-18T01:20:32.555365+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introducing"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
  },
  {
   "id": "82917754c0cc1601",
