@@ -11,9 +11,10 @@ import {
   DEFAULT_FILTER, KINDS, KIND_LABEL, NOTICE, SOURCE_LABEL, dday, filterEvents, fmtKst, fmtRange, groupByWeek, mergeEvents, origTime, parseEvents, parseStatus,
 } from '../../lib/calendar';
 import { MANUAL_EVENTS } from '../../lib/calendarManual';
+import { DATA_CACHE } from '../../lib/news';
 
 const LIST = meChannels(CHANNELS.map(c => c.slug));
-const getJson = (p: string) => fetch(p, { cache: 'no-store' }).then(r => (r.ok ? r.json() : null)).catch(() => null);
+const getJson = (p: string) => fetch(p, { cache: DATA_CACHE }).then(r => (r.ok ? r.json() : null)).catch(() => null);
 const toggle = <T,>(list: T[], v: T): T[] => (list.includes(v) ? list.filter(x => x !== v) : [...list, v]);
 
 /** 일정(/calendar/): 채널과 무관한 포털 화면(색은 포털 공통 색 — 채널 theme 를 넣지 않음). 헤더는 마이페이지 틀(채널명 자리에 '일정').

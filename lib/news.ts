@@ -19,9 +19,14 @@ export type Article = {
 export const isRelevant = (a: { relevant?: boolean }) => a.relevant !== false;
 export type DataIndex = { updated_at: string | null; months: { month: string; count: number; bytes: number }[] };
 
+/** 데이터 파일(data/ 아래 JSON) 요청의 캐시 방식. 'no-cache': 브라우저는 사본을 두되 쓸 때마다 서버에 ETag 로 확인한다
+ *  (바뀌지 않았으면 304 — 본문을 다시 받지 않음, 바뀌었으면 새 본문). 확인 없이 옛 사본을 쓰는 일은 없다(예전 'no-store' 와 같은 신선도).
+ *  GitHub Pages 의 ETag 는 배포마다 바뀐다(docs/architecture.md 7.6). version.json 은 배포 확인용이라 그대로 'no-store'. */
+export const DATA_CACHE: RequestCache = 'no-cache';
+
 /** 채널 데이터: /data/<채널>/<파일>. 사이트는 루트 주소(basePath 없음)에 배포된다. */
 async function getJson<T>(channel: string, path: string): Promise<T> {
-  const res = await fetch(`/data/${channel}/${path}`, { cache: 'no-store' });
+  const res = await fetch(`/data/${channel}/${path}`, { cache: DATA_CACHE });
   if (!res.ok) throw new Error(`${path} HTTP ${res.status}`);
   return res.json() as Promise<T>;
 }

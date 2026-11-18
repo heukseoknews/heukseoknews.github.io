@@ -62,13 +62,13 @@ const file = { a: [rec('v1', '2026-11-17T01:00:00Z', 3.284)], b: [rec('v0', '202
 assert.deepEqual([...evMapOf(file, 'v1')], [['a', 3.284]]);
 for (const bad of [null, [], 'x', 3]) assert.equal(evMapOf(bad, 'v1').size, 0);
 
-// ───── 폴백: 점수 파일이 없거나 실패·형식 오류면 조용히 빈 값 ─────
+// ───── 폴백: 점수 파일이 없거나 실패·형식 오류면 조용히 빈 값(404 기억은 호출마다 새 기억 장소 — tests/news-load.test.ts) ─────
 const res = (status: number, body: unknown) => ({ ok: status === 200, status, json: async () => body }) as Response;
 const urls: string[] = [];
-assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async u => { urls.push(u); return res(404, null); })).size, 0);
-assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async () => { throw new Error('offline'); })).size, 0);
-assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async () => ({ ok: true, json: async () => { throw new SyntaxError('bad'); } }) as unknown as Response)).size, 0);
-assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async () => res(200, file))).get('a'), 3.284);
+assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async u => { urls.push(u); return res(404, null); }, new Set())).size, 0);
+assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async () => { throw new Error('offline'); }, new Set())).size, 0);
+assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async () => ({ ok: true, json: async () => { throw new SyntaxError('bad'); } }) as unknown as Response, new Set())).size, 0);
+assert.equal((await fetchLlmMonth('insurance', '2026-11', 'v1', async () => res(200, file), new Set())).get('a'), 3.284);
 assert.equal(urls[0], '/data/insurance/llm/2026-11.json');
 
 // ───── withLlm: 끄거나 점수가 없으면 같은 배열(지금과 완전히 같음), 원본은 바꾸지 않음 ─────
@@ -103,7 +103,7 @@ assert.equal(snapshotOf({ ...rows[1], llm_ev: 5, llm_w: 1 })?.score, 3);
 
 // ───── 화면 연결(소스) ─────
 const page = readFileSync('app/[channel]/page.tsx', 'utf8');
-assert.ok(page.includes('llmSettings(ch)') && page.includes('useLlmScores(ch.slug, loaded, llm)') && page.includes('withLlm(rawAll, evs, llm?.w ?? 0)') && page.includes('withLlm(bookmarkRaw, evs, llm?.w ?? 0)'));
+assert.ok(page.includes('llmSettings(ch)') && page.includes('useLlmScores(ch.slug, llmMonths, llm)') && page.includes('withLlm(rawAll, evs, llm?.w ?? 0)') && page.includes('withLlm(bookmarkRaw, evs, llm?.w ?? 0)'));
 const week = readFileSync('app/[channel]/week/page.tsx', 'utf8');
 assert.ok(week.includes('withLlm(rawAll, evs, llm?.w ?? 0)') && week.includes('WEEKLY_USES_LLM ? llmSettings(ch) : null'), '이번 주 핵심은 WEEKLY_USES_LLM 로 켜고 끈다');
 assert.equal(WEEKLY_USES_LLM, false, '임시: 이번 주 핵심은 기존 ★(7일 범위 채점 뒤 켬)');

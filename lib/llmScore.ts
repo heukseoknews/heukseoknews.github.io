@@ -4,6 +4,7 @@
  *  - 점수가 없는 기사·파일을 못 불러온 달은 기존 ★ 그대로(lib/stars.ts).
  *  라벨 페이지(/label/)는 이 모듈을 쓰지 않는다(tests/llm-blend.test.ts). */
 import type { LlmFields } from './stars.ts';
+import { DATA_CACHE } from './news.ts';
 
 export type LlmSettings = { w: number; promptVersion: string };
 
@@ -63,11 +64,18 @@ export function withLlm<T extends { id: string }>(articles: T[], evs: Map<string
 export const monthsToFetch = (settings: LlmSettings | null, months: string[], tried: Set<string>): string[] =>
   settings ? months.filter(m => /^\d{4}-\d{2}$/.test(m) && !tried.has(m)) : [];
 
+/** 점수 파일이 없다(404)고 확인된 '채널/달'. 이 탭이 열려 있는 동안(사이트 안 이동 포함) 다시 요청하지 않는다 — 새로고침하면 다시 확인.
+ *  404 만 기억한다(오프라인·서버 오류는 기억하지 않음). 점수 파일은 채점한 달에만 있다(docs/llm-scoring.md). */
+export const LLM_MISSING = new Set<string>();
+
 /** 한 달 점수 파일. 없거나(404) 실패하거나 형식이 틀리면 조용히 빈 Map(기존 ★로 폴백) */
 export async function fetchLlmMonth(channel: string, month: string, promptVersion: string,
-  fetchImpl: (url: string, init?: RequestInit) => Promise<Response> = fetch): Promise<Map<string, number>> {
+  fetchImpl: (url: string, init?: RequestInit) => Promise<Response> = fetch, missing: Set<string> = LLM_MISSING): Promise<Map<string, number>> {
+  const key = `${channel}/${month}`;
+  if (missing.has(key)) return new Map();
   try {
-    const res = await fetchImpl(`/data/${channel}/llm/${month}.json`, { cache: 'no-store' });
+    const res = await fetchImpl(`/data/${channel}/llm/${month}.json`, { cache: DATA_CACHE });
+    if (res.status === 404) missing.add(key);
     if (!res.ok) return new Map();
     return evMapOf(await res.json(), promptVersion);
   } catch {

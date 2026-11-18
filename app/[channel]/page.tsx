@@ -17,6 +17,7 @@ import { dataBounds, monthsBetween, nextOlder } from '../../lib/datePick';
 import { sourceOptions } from '../../lib/sources';
 import { NO_BASELINE_DAYS, isNewArticle, isPendingNew, visibleInNewTab } from '../../lib/newsFilter';
 import { useNews } from '../../lib/useNews';
+import { currentMonths } from '../../lib/newsLoad';
 import { useLlmScores } from '../../lib/useLlmScores';
 import { llmSettings, withLlm } from '../../lib/llmScore';
 import { useSaved } from '../../lib/useSaved';
@@ -74,10 +75,12 @@ export default function Home() {
   const [older, setOlder] = useState(0);
   const [indexMonths, setIndexMonths] = useState<{ month: string; bytes: number }[]>([]);
   const extraMonths = [shiftMonth(calMonth, -1), calMonth, shiftMonth(calMonth, 1), ...(dateFilter ? monthsBetween(dateFilter) : []), ...indexMonths.slice(2, 2 + older).map(m => m.month)];
-  const { index, all: rawAll, loaded, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : extraMonths);
-  // 로컬 LLM 점수(channel.json llm.w, 0·없으면 끔): 불러온 달의 점수 파일을 같이 읽어 ★에 섞는다(lib/stars.ts). 못 읽으면 기존 ★
+  const { index, all: rawAll, loaded, requested, failure, loading, loadingMore } = useNews(ch.slug, search.trim() ? 'all' : extraMonths);
+  // 로컬 LLM 점수(channel.json llm.w, 0·없으면 끔): 점수 파일을 월 파일과 동시에 읽어 ★에 섞는다(lib/stars.ts). 이번 달은 index.json 과 동시에
+  // (작은 점수 파일이 큰 월 파일보다 먼저 도착해 목록이 처음부터 섞은 ★로 그려지게). 목록은 점수를 기다리지 않는다 — 아직 안 왔거나 못 읽으면 기존 ★, 도착하면 갱신
   const llm = useMemo(() => llmSettings(ch), [ch]);
-  const evs = useLlmScores(ch.slug, loaded, llm);
+  const llmMonths = useMemo(() => [...new Set([...currentMonths(Date.now()), ...requested])], [requested]);
+  const evs = useLlmScores(ch.slug, llmMonths, llm);
   const all = useMemo(() => withLlm(rawAll, evs, llm?.w ?? 0), [rawAll, evs, llm]);
   const bookmarkArticles = useMemo(() => withLlm(bookmarkRaw, evs, llm?.w ?? 0), [bookmarkRaw, evs, llm]);
   useEffect(() => { if (index) setIndexMonths(index.months); }, [index]);
