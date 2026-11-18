@@ -390,6 +390,9 @@ html[data-auth="leaving"] body{visibility:hidden}
 @media(hover:hover){.msgAct:hover,.iconBtn:hover{color:var(--accent-strong);background:var(--accent-soft)}.msgAct.danger:hover{color:#a54235}.chatPickList button:not(:disabled):hover{background:var(--bg)}.chatArt[href]:hover .chatArtTitle{color:var(--accent);text-decoration:underline}.chatNew:hover{background:var(--accent-strong)}}
 @media(max-width:680px){.chatMain{padding:0 12px}.msg{max-width:88%}}
 @media(max-width:480px){.chatAttachBtn{padding:0 11px}.chatAttachBtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}}
+/* 오늘의 날씨(components/WeatherStrip.tsx): 탭 줄 위 한 줄, 좁은 화면은 줄바꿈. 등급 색은 좋음 파랑·보통 초록·나쁨 주황·매우나쁨 빨강 */
+.weather{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:2px 16px;padding:8px 2px 10px;font-size:var(--fs-14);color:var(--text-2)}.wxMain{display:flex;align-items:center;flex-wrap:wrap;gap:2px 12px;min-width:0}.wxPlace{color:var(--text)}.wxNow{display:inline-flex;align-items:center;gap:5px}.wxNow svg{color:var(--accent)}.wxNow b{color:var(--text)}.wxRange,.wxPop,.wxPm{white-space:nowrap}.wxPm b.g1{color:#1d5fb8}.wxPm b.g2{color:#1f7a3f}.wxPm b.g3{color:#b45309}.wxPm b.g4{color:#b42318}.wxCredit{margin:0;font-size:var(--fs-12);color:var(--subtle)}.wxCredit a{color:inherit}
+@media(max-width:680px){.weather{font-size:var(--fs-13);gap:2px 10px;padding:6px 2px 8px}.wxMain{gap:2px 10px}}
 /* ───── 미세 상호작용(누르는 느낌). transform·opacity·색만 바꾸고 크기·여백은 그대로(틀 측정 영향 없음). 0.12~0.2초.
    hover 는 (hover:hover) 안에서만, '동작 줄이기'를 켠 사용자는 모두 끈다(맨 아래). 색은 채널 변수(--accent 등)만 쓴다 ───── */
 :where(button,a.confirm,a.chBtn,a.meBtn,a.loginLink,a.acctItem,.meCh){transition:transform .14s ease,background-color .14s ease,border-color .14s ease,color .14s ease}

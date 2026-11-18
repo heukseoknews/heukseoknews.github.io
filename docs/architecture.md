@@ -299,6 +299,9 @@ origin 이 바뀌면(github.io 하위 경로 → 새 도메인) **모든 localSt
 | 예약 지연·60일 무활동 | 예약 워크플로는 기본 브랜치에서만, 저장소가 60일 무활동이면 자동 비활성화 | 새 저장소로 옮길 때 확인 |
 | 데이터 증가 | 관련도 낮은 기사까지 저장(약 22%), 월 파일 증가 | 월 5MB 초과 시 알림·분할 |
 
+### 7.5 오늘의 날씨(외부 요청)
+채널 뉴스 화면(`/<채널>/`) 탭 줄 위 한 줄(`components/WeatherStrip.tsx`, `lib/weather.ts`)은 방문자 브라우저가 Open-Meteo 공개 API(키 없음, 비상업 무료 조건: 구독·광고 없는 개인 사이트, 하루 1만 회 이하)를 직접 부른다. 날씨는 `api.open-meteo.com/v1/forecast`(`current=temperature_2m,weather_code`, `daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max`, `timezone=Asia/Seoul`), 미세먼지는 `air-quality-api.open-meteo.com/v1/air-quality`(`hourly=pm10,pm2_5&past_hours=24`, CAMS 전지구 약 45km 격자)이며, 좌표는 고정값(37.50, 126.96)이고 위치 권한은 쓰지 않는다. 등급은 지난 24시간 평균을 반올림해 에어코리아 통합대기환경지수 구간(PM10 30/80/150, PM2.5 15/35/75 ㎍/㎥)으로 판정한다(공식은 24시간 예측 이동평균이라 근삿값). 이 요청으로 **방문자 IP와 브라우저 정보가 Open-Meteo로 전달**되며, Open-Meteo는 좌표 등이 담긴 서버 로그를 90일 보관한다고 밝힌다. 결과는 방문자 localStorage `heukseok-weather`에 30분 캐시하고, 실패하면 위젯을 숨긴다(대기질만 실패하면 미세먼지 칸만 뺀다). 출처 표기는 CC BY 4.0과 대기질 문서 요건에 따라 "Weather data by Open-Meteo.com · Air quality: CAMS"를 둔다. `/label/` 등 다른 화면에서는 부르지 않는다. **끄는 방법**: `lib/weather.ts`의 `WEATHER_ENABLED`를 `false`로 바꿔 배포하면 요청과 화면이 모두 사라진다(완전히 걷어내려면 `app/[channel]/page.tsx`의 `<WeatherStrip />` 한 줄을 지운다).
+
 ---
 
 ## 8. 채널 구조 초안과 이전 계획 (구현 아님)

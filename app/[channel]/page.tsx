@@ -22,6 +22,7 @@ import { llmSettings, withLlm } from '../../lib/llmScore';
 import { useSaved } from '../../lib/useSaved';
 import { fillMissing, toArticle } from '../../lib/bookmarks';
 import { useBookmarkFlow } from '../../components/BookmarkFlow';
+import WeatherStrip from '../../components/WeatherStrip';
 
 type Tab = TabId;
 const TABS: Tab[] = ['new', 'all', 'press', 'bookmarks'];  // 표시 이름은 채널 channel.json 의 tabs
@@ -230,6 +231,7 @@ export default function Home() {
 
   return <>
     <h1 className="srOnly">{ch.name} 뉴스</h1>
+    <WeatherStrip />
     <nav className="primary" aria-label="뉴스 보기">{TABS.map(t =>
       <button key={t} className={tab === t ? 'active' : ''} onClick={() => { setTab(t); setCategory('전체'); setPanel(onTabChange(panel)); }}>
         {t === 'new' ? <Clock3 size={16} /> : t === 'press' ? <ShieldCheck size={16} /> : t === 'bookmarks' ? <Bookmark size={16} /> : <Newspaper size={16} />} {ch.tabs[t]}{t === 'new' && (settled && !loading
