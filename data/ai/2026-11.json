@@ -1,5 +1,930 @@
 [
  {
+  "id": "e767becd5bca8a01",
+  "title": "정부, 피지컬 AI 실무인력 양성 본격화…전주·성남·청주·창원에 테스트베드 4곳 구축",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42790",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T09:46:04+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "정부"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "1548788edb1258a7",
+  "title": "오픈AI \"사이버 보안, 코딩보다 큰 사업 될 것\"…신성장 동력 육성",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217542",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T09:29:41+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "육성",
+   "코딩"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "979546925aa860cd",
+  "title": "앤트로픽·오픈AI 등 주요 모델, ‘게임’으로 속이자 민간인까지 군사 표적으로 식별",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217523",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T09:15:13+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic",
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "0688e1eff18f9f80",
+  "title": "Chain-of-Thought Father Jason Wei Exits Meta to Join $20 Billion Valued AI Unicorn",
+  "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBua1VEQnQ3VGh2NmhxdFVibVZzOE9WRGhlX2QyUGdpUHpRcWRFS1FQRS1fdUE0aGJXaTZBWHJJZjFWVG9wejVDYzFlaHhFcjMwZFBz?oc=5",
+  "source": "eu.36kr.com",
+  "source_type": "media",
+  "published_at": "2026-11-18T09:12:46+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4cc8b0a572d5a960",
+  "title": "구글, 제미나이 '태스크 모드' 한국에도 무료 제공…예약·쇼핑까지 대행",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217531",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T08:50:37+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "945d0638f5f5c9ee",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
+ },
+ {
+  "id": "12f9495a51e6dc14",
+  "title": "AI·로봇·자율주행 한자리에…광주서 첨단기술 경진대회 22개 열린다",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217544",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T08:40:04+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "c2bf8619af45c408",
+  "title": "리퀴드 AI, 의사결정 모델 'd1.2' 출시…AA 평가 1위",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217536",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T08:39:22+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시",
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "9b5ff2e44ee856f6",
+  "title": "퍼플렉시티, AI 에이전트 16개가 협업·상호 검증하는 기능 출시",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217543",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T08:28:44+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "출시",
+   "기능"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "df386362037b2bb7",
+  "title": "중국 AI 기업들, 수출 규제 앞두고 모델의 사이버 공격 능력 축소",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217541",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T08:07:19+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "규제",
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "3632b4d786d20b18",
+  "title": "2027년, \"AI 사이버 공격 빨라지고 보안 주권 중요해진다\"…F5, 사이버보안 3대 변화 전망",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42789",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T08:03:39+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "deea9bfeb8c70340",
+  "title": "전남광주, 수능 AI 안경 대응 강화…132명 배치·감독교사 법률지원",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217520",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T07:57:51+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a2382e192fe25a87",
+  "title": "허사비스의 AI 신약 기업, 6개월 새 9.4조 투자 유치…임상시험 본격 추진",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217528",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T07:54:17+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "투자 유치"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "5a3df9ccb3a21776",
+  "title": "미국 30여개 주, '캐릭터닷AI' 매각 심사 강화 요구…아동 대화 기록 쟁점",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217538",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T07:46:04+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "6e08df3ba67ef518",
+  "title": "엔비디아, 삼성전기·앰코 등 글로벌 공급망 파트너 협력 확대",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217533",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T07:38:58+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "협력"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "3616500815de2166",
+  "title": "사람처럼 손 쓰는 로봇 개발에 6600억 투자…제네시스 AI 기업가치 4.6조",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217534",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T07:37:03+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "기업가치",
+   "투자"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "51aadd94964cc979",
+  "title": "초록소프트, 한국이엔씨와 AI 스마트팜 맞손...클린룸 기술에 AI 더해",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217535",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T07:19:57+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "436cdf19eb78e8fa",
+  "title": "몬드리안AI, 서울대 공대에 프라이빗 AI 클라우드 플랫폼 공급...기존 시스템 윈백",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217539",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T07:18:54+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "2e6c63feb16c4a98",
+  "title": "오픈AI, NATO에 사이버 보안 AI 공급…유럽 정부·기관으로 사업 확대",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217529",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T06:05:37+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "정부"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "de177f6c51ac6722",
+  "title": "여수 AI 재난안전 진단 2만7000명 참여…지난해 기초진단 이어 영상교육 운영",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217516",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T05:56:23+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "안전"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "8dc95525f87ea6f4",
+  "title": "GIST, AI대학 이어 'AI반도체연구원' 설립 추진…반도체 인재 양성 속도",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217514",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T05:53:22+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "반도체"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "86e075909dd10583",
+  "title": "대만이 인정한 엣지 AI 제품, 핵심 반도체는 한국산…딥엑스 NPU로 50TOPS 구현",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42788",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T05:53:14+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "반도체"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "b921ea3a65f5b23a",
+  "title": "노타, AI 에이전트 성능 높이는 풀스택 최적화 기술 공개...\"시간 47%·토큰 60% 절감\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217515",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T05:48:51+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향",
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개",
+   "최적화"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "038dbb2b5402ca31",
+  "title": "MS, '코파일럿'에 상시 업무 수행 AI 도입…기업용 에이전트 관리도 강화",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217532",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T05:38:53+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "도입"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "5cda7671d586d851",
+  "title": "AI 위험 인식도 언어권 따라 달랐다…OECD, 독일어권은 자율주행·저작권·LLM에 집중",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42787",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T05:06:58+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "저작권",
+   "위험"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스",
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "24d55cc94ea89af2",
+  "title": "젠슨 황 딸, 메가스피드 의혹 대응 관여…엔비디아 가족 경영 논란",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217518",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T05:02:43+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "a4d47177b0251a45",
+  "title": "DGIST 이태훈 교수팀, 엔비디아 고성능 GPU 지원받아 에이전틱 AI 기반 신소재 탐색",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42786",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T04:56:52+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "gpu"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "c6cf2a3f9894822e",
+  "title": "앤트로픽, 기관 수요 폭발에 IPO 공모가 인상 검토",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217526",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T04:41:42+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "cf7ef777e7873c43",
+  "title": "미 SEC, 젠슨 황 사임 후 엔비디아 조사…투자자 공시 위반 여부 확인",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217522",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T04:32:47+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "af558eac550877c3",
+  "title": "SKT, AI 기지국으로 일반 차량 무인 이송…2027년 KG모빌리티 공장 적용 추진",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42785",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T04:25:16+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "적용"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "SK텔레콤"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "6c16e185530f8b3b",
+  "title": "중국, 미국 반도체 원격 접근 규제에 반발…“강행하면 보복 조치”",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217521",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T04:03:18+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "규제",
+   "반도체"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "0d944b092a716e43",
+  "title": "영국, 경찰 실시간 얼굴인식 법제화 추진…AI 감시 확대와 기본권 보호 충돌",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42784",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T03:56:56+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "c487a107ae338e13",
+  "title": "하사비스의 AI 신약 개발에 6조6천억원 몰렸다…아이소모픽 랩스, 신약 설계 넘어 임상 개발 가속",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42783",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T03:23:04+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "2e474d8ba83acd77",
+  "title": "사티아 나델라, “AI 블랙박스 용납 못 해”…AI 에이전트 행동 독립 검증·통제 표준 추진",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42782",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:53:31+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "26d75f4312307571",
+  "title": "엔비디아 이사회, 젠슨 황 CEO 복귀 거부...후임자 물색 본격화",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217517",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:50:43+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "c970092afde891ef",
+  "title": "구글, 나를 닮은 AI 영상 아바타 무료 제공…개인 영상 제작 문턱 낮춘다",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42781",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:35:37+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "ae14573a9d8fa9e7",
+  "title": "초장문 AI 추론 병목 줄이는 ‘희소 어텐션’ 설계법 공개…엔비디아, GPU 연산 효율 최적화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42780",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:30:45+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "공개",
+   "최적화",
+   "gpu"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "d6d5c523aa519c03",
+  "title": "엠버 \"태양광·풍력·배터리 조합 시 전력 공급비 18% 절감\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217478",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:25:00+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "70074cff335c8d48",
+  "title": "튀르키예, 2조3400억원 규모 태양광 건설 추진…국제 금융기관 8곳 지원 의향",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217472",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:25:00+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "945d0638f5f5c9ee",
+  "title": "제미나이, 전화 예약·쇼핑까지 대신한다…한국 포함 6개국에 자율 AI 에이전트 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42779",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:13:16+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "945d0638f5f5c9ee",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
+  "id": "c2c34e8903302dd7",
+  "title": "멕시코 태양광 발전 규모, 5.65GW 돌파…설치 신청도 65만건 넘었다",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217469",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T02:10:00+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "2d0e14421c7bfffd",
+  "title": "젠슨 황, '엔비디아는 일생일대의 기업, CEO 복귀 의사 밝혀'…“이사회가 원한다면 돌아가겠다”",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42778",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T01:51:27+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "cluster_id": "0d2320a39514c83c",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
+ },
+ {
+  "id": "0d4a3780c61dc50a",
+  "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
+  "url": "https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T01:44:21+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "startup",
+   "deal"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "2c9faadf0c020224",
+  "title": "마이크로소프트, 자체 AI 모델 ‘코드 2’ 공개…5천만 AI 에이전트 관리·데이터 인프라 혁신 가속",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42777",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-18T01:25:14+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개",
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Microsoft"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
   "id": "47f9687186418d60",
   "title": "오픈AI, GPT-6.2 아스트라·솔 전격 공개…전문가급 AI 업무 수행에 비용 혁신까지",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42776",
@@ -150,6 +1075,32 @@
    "월드모델·로보틱스"
   ],
   "score_v2": 2
+ },
+ {
+  "id": "a1de396d3910fa2e",
+  "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+  "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-18T00:00:00+00:00",
+  "collected_at": "2026-11-18T10:46:57.603503+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "partner"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
  },
  {
   "id": "e07eab0523a72372",
@@ -372,7 +1323,11 @@
    "NVIDIA"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "0d2320a39514c83c",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "85bd515d71fb7a7a",

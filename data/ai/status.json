@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-18T01:20:32.555365+00:00",
-  "finished_at": "2026-11-18T01:20:35.530710+00:00",
-  "candidates": 310,
-  "added": 22,
+  "started_at": "2026-11-18T10:46:57.603503+00:00",
+  "finished_at": "2026-11-18T10:47:00.209039+00:00",
+  "candidates": 309,
+  "added": 44,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,10 +11,10 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
-   "entries": 1406,
+   "entries": 1407,
    "kept": 99,
    "skipped": {
     "no_link": 0,
@@ -26,7 +26,7 @@
     "[노이즈 제목] LifeVal"
    ],
    "oldest": "2026-10-21T00:00:00+00:00",
-   "newest": "2026-11-17T17:45:00+00:00",
+   "newest": "2026-11-18T00:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -35,8 +35,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 12,
@@ -57,8 +57,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 908,
    "kept": 29,
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -106,8 +106,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -117,6 +117,7 @@
     "low_relevance": 11
    },
    "filtered": [
+    "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
     "Nvidia promises that revenue will keep soaring — for now",
     "Nvidia is abandoning China after Jensen Huang’s ouster",
     "Nvidia says it doesn’t plan to reappoint Jensen Huang as CEO",
@@ -125,11 +126,10 @@
     "Model ML raises $250M to automate investment banking grunt work",
     "As decision model use skyrockets, is customization the next frontier?",
     "Jensen Huang says he would be ‘honored’ if allowed to return as Nvidia CEO",
-    "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
-    "Science Corporation’s brain tech is worth $3.5 billion after new funding"
+    "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials"
    ],
-   "oldest": "2026-11-17T14:05:30+00:00",
-   "newest": "2026-11-18T00:16:50+00:00",
+   "oldest": "2026-11-17T14:26:46+00:00",
+   "newest": "2026-11-18T01:44:21+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -138,8 +138,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -164,30 +164,30 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 21
+    "low_relevance": 16
    },
    "filtered": [
+    "엔비디아, 삼성전기·앰코 등 글로벌 공급망 파트너 협력 확대",
+    "젠슨 황 딸, 메가스피드 의혹 대응 관여…엔비디아 가족 경영 논란",
+    "미 SEC, 젠슨 황 사임 후 엔비디아 조사…투자자 공시 위반 여부 확인",
+    "중국, 미국 반도체 원격 접근 규제에 반발…“강행하면 보복 조치”",
+    "엔비디아 이사회, 젠슨 황 CEO 복귀 거부...후임자 물색 본격화",
+    "엠버 \"태양광·풍력·배터리 조합 시 전력 공급비 18% 절감\"",
+    "튀르키예, 2조3400억원 규모 태양광 건설 추진…국제 금융기관 8곳 지원 의향",
+    "멕시코 태양광 발전 규모, 5.65GW 돌파…설치 신청도 65만건 넘었다",
     "젠슨 황 \"이사회가 원하면 CEO 복귀\"…엔비디아는 검토 안 해",
-    "텐센트 'Hy4 플래시' 출시...일상 업무 특화·작업 비용 95% 절감",
-    "무안 농업 AX 시설 3곳, 데이터 연계 규격 설계…9억8000만원 용역 발주",
-    "“광영동의 어제와 오늘을 담다”… 광양시, 지역의 역사를 기록한 석재 아트월 조성",
-    "광주 자율주행차 30일 첫 운행…연말까지 약 120대 도로 투입 전망",
-    "젠슨 황 딸, 직급 넘는 영향력 행사…아버지 퇴진 후 권한 조정 과제",
-    "WSJ \"앨리스 황 남편, 중국 정부 지원받아 13조 데이터센터 사업 추진\"",
-    "세계 슈퍼컴퓨터 신규 진입 역대 최저…한국 '한강' 12위",
-    "스캐터랩, 청소년 보호 강화…애플 다운로드 중단 대응?",
-    "MS 글로벌 서비스 장애 원인은 4개월 전 버그...서버 80% 이상 마비"
+    "텐센트 'Hy4 플래시' 출시...일상 업무 특화·작업 비용 95% 절감"
    ],
-   "oldest": "2026-11-16T08:00:00+00:00",
-   "newest": "2026-11-18T00:00:00+00:00",
+   "oldest": "2026-11-17T06:29:21+00:00",
+   "newest": "2026-11-18T09:29:41+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -196,8 +196,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -207,12 +207,12 @@
     "low_relevance": 3
    },
    "filtered": [
+    "젠슨 황, '엔비디아는 일생일대의 기업, CEO 복귀 의사 밝혀'…“이사회가 원한다면 돌아가겠다”",
     "음성으로 가전 10만1,000종 이상 제어…스위치봇, 스마트홈 통합 허브 출시",
-    "“양자컴퓨팅으로 신약 개발의 한계 넘겠다”…조은성 인세리브로 대표, 글로벌 제약기업 도전",
-    "구글, 한국 정밀지도 국외반출 보안조건 이행…정부, 좌표표시 제거·군사시설 영상처리 확인"
+    "“양자컴퓨팅으로 신약 개발의 한계 넘겠다”…조은성 인세리브로 대표, 글로벌 제약기업 도전"
    ],
-   "oldest": "2026-11-13T04:21:10+00:00",
-   "newest": "2026-11-18T00:52:11+00:00",
+   "oldest": "2026-11-16T01:27:28+00:00",
+   "newest": "2026-11-18T09:46:04+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -221,8 +221,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
    "entries": 11,
    "kept": 7,
@@ -239,7 +239,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-11T17:13:59+00:00",
-   "newest": "2026-11-17T22:59:08+00:00",
+   "newest": "2026-11-18T09:25:37+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -248,11 +248,11 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-18T01:20:32.555365+00:00",
-   "last_success_at": "2026-11-18T01:20:32.555365+00:00",
+   "last_run_at": "2026-11-18T10:46:57.603503+00:00",
+   "last_success_at": "2026-11-18T10:46:57.603503+00:00",
    "consecutive_failures": 0,
-   "entries": 5,
-   "kept": 5,
+   "entries": 4,
+   "kept": 4,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -261,8 +261,8 @@
    "filtered": [
     "EviBridge: Encoding Predictive Visual Evidence for Proactive Interaction"
    ],
-   "oldest": "2026-11-15T07:03:39+00:00",
-   "newest": "2026-11-17T08:49:22+00:00",
+   "oldest": "2026-11-15T23:03:47+00:00",
+   "newest": "2026-11-18T09:12:46+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
