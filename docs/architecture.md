@@ -295,12 +295,18 @@ origin 이 바뀌면(github.io 하위 경로 → 새 도메인) **모든 localSt
 | 게시판 구조 변경 | HTML 파서 의존 | 첫 페이지 0건이면 "구조 변경 의심" 실패 처리, 기존 데이터 보존 |
 | 구글 링크 | 저장분의 77% 가 구글 중간 링크(원문으로 안 풀림) | 직접 링크가 있으면 우선 교체 |
 | localStorage | 키 `actuary-news-hub-v3`(북마크=기사 객체 통째로, 용량 약 5MB 한도, 쓰기 실패는 조용히 무시), 읽음 SOFT 1,500 / HARD 5,000 | 스키마를 바꾸면 키 버전을 올릴 것. **origin 이 바뀌면 전부 초기화** |
-| fetch 비용 | `cache:'no-store'`, 검색 시 전체 월 로드 | 월 파일 1~2MB 수준이라 현재는 문제 없음. 5MB 넘으면 알림 기준 |
+| fetch 비용 | 데이터는 `cache:'no-cache'`(7.6), 검색 시 전체 월 로드 | 2026-11-18 보험 11월 3.4MB(gzip 847KB). 5MB 넘으면 알림 기준 |
 | 예약 지연·60일 무활동 | 예약 워크플로는 기본 브랜치에서만, 저장소가 60일 무활동이면 자동 비활성화 | 새 저장소로 옮길 때 확인 |
 | 데이터 증가 | 관련도 낮은 기사까지 저장(약 22%), 월 파일 증가 | 월 5MB 초과 시 알림·분할 |
 
 ### 7.5 오늘의 날씨(외부 요청)
 채널 뉴스 화면(`/<채널>/`) 탭 줄 위 한 줄(`components/WeatherStrip.tsx`, `lib/weather.ts`)은 방문자 브라우저가 Open-Meteo 공개 API(키 없음, 비상업 무료 조건: 구독·광고 없는 개인 사이트, 하루 1만 회 이하)를 직접 부른다. 날씨는 `api.open-meteo.com/v1/forecast`(`current=temperature_2m,weather_code`, `daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max`, `timezone=Asia/Seoul`), 미세먼지는 `air-quality-api.open-meteo.com/v1/air-quality`(`hourly=pm10,pm2_5&past_hours=24`, CAMS 전지구 약 45km 격자)이며, 좌표는 고정값(37.50, 126.96)이고 위치 권한은 쓰지 않는다. 등급은 지난 24시간 평균을 반올림해 에어코리아 통합대기환경지수 구간(PM10 30/80/150, PM2.5 15/35/75 ㎍/㎥)으로 판정한다(공식은 24시간 예측 이동평균이라 근삿값). 이 요청으로 **방문자 IP와 브라우저 정보가 Open-Meteo로 전달**되며, Open-Meteo는 좌표 등이 담긴 서버 로그를 90일 보관한다고 밝힌다. 결과는 방문자 localStorage `heukseok-weather`에 30분 캐시하고, 실패하면 위젯을 숨긴다(대기질만 실패하면 미세먼지 칸만 뺀다). 출처 표기는 CC BY 4.0과 대기질 문서 요건에 따라 "Weather data by Open-Meteo.com · Air quality: CAMS"를 둔다. `/label/` 등 다른 화면에서는 부르지 않는다. **끄는 방법**: `lib/weather.ts`의 `WEATHER_ENABLED`를 `false`로 바꿔 배포하면 요청과 화면이 모두 사라진다(완전히 걷어내려면 `app/[channel]/page.tsx`의 `<WeatherStrip />` 한 줄을 지운다).
+
+### 7.6 데이터 불러오기·캐시
+- **같은 달은 한 번만**: `lib/useNews.ts` 는 달별로 진행 중이거나 끝난 요청을 기억한다(`lib/newsLoad.ts` `createOnce`·`monthRequester`). 실패한 요청은 기록을 지워 다시 요청할 수 있게 하되, 같은 방문에서 저절로 반복하지는 않는다(실패한 달은 빈 목록 + 안내).
+- **이번 달은 index.json 과 동시에**: 한국 시각의 달 월 파일을 index.json 과 함께 요청한다. 월 파일은 발행 시각의 UTC 달로 나뉘므로 매달 1일 0~9시(한국)에는 UTC 달도 함께 요청한다. 미리 받은 결과는 index 가 원하는 달일 때만 목록에 들어간다.
+- **점수 파일은 월 파일과 동시에**: 채널 화면은 `useNews` 의 `requested`(요청하는 달)로 점수 파일을 부른다. 목록은 점수를 기다리지 않는다(아직 없으면 기존 ★, 도착하면 갱신). 404 는 탭이 열려 있는 동안 기억해 다시 요청하지 않는다(`LLM_MISSING`, 새로고침하면 다시 확인).
+- **캐시 방식**: data/ 의 JSON 은 `cache:'no-cache'`(`DATA_CACHE`, `lib/news.ts`). 브라우저는 사본을 두되 쓸 때마다 `If-None-Match` 로 서버에 확인하고, 바뀌지 않았으면 304(본문 없음)를 받는다. 확인 없이 옛 사본을 쓰지 않으므로 신선도는 예전 `no-store` 와 같다. GitHub Pages 응답(2026-11-18 확인): `Cache-Control: max-age=600`, `ETag: "<배포 시각>-<크기>"`(gzip 응답은 `W/` 약한 ETag) — ETag 가 배포마다 바뀌어 새 수집이 배포되면 반드시 새 본문을 받는다. 앞단 CDN(Fastly)이 최대 10분 사본을 줄 수 있는 것은 예전과 같다(브라우저 캐시 방식과 무관). `version.json` 은 배포 확인용이라 `no-store` 그대로.
 
 ---
 
