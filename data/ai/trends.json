@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T19:05:14.241909+00:00",
+ "generated_at": "2026-11-19T00:45:20.228245+00:00",
  "keywords": [
   "GPT",
   "Gemini",
@@ -78,15 +78,15 @@
   {
    "week_start": "2026-11-16",
    "counts": {
-    "GPT": 12,
-    "Gemini": 6,
-    "Claude": 2,
+    "GPT": 13,
+    "Gemini": 8,
+    "Claude": 4,
     "Llama": 0,
     "오픈소스": 4,
     "규제": 2,
     "월드모델": 6
    },
-   "total": 184
+   "total": 199
   }
  ]
 }

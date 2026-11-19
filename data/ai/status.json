@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-18T19:05:10.739697+00:00",
-  "finished_at": "2026-11-18T19:05:14.237774+00:00",
-  "candidates": 315,
-  "added": 20,
+  "started_at": "2026-11-19T00:45:17.790650+00:00",
+  "finished_at": "2026-11-19T00:45:20.224681+00:00",
+  "candidates": 316,
+  "added": 23,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,10 +11,10 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
-   "entries": 1410,
+   "entries": 1413,
    "kept": 99,
    "skipped": {
     "no_link": 0,
@@ -25,8 +25,8 @@
    "filtered": [
     "[노이즈 제목] LifeVal"
    ],
-   "oldest": "2026-10-21T07:00:00+00:00",
-   "newest": "2026-11-18T08:00:00+00:00",
+   "oldest": "2026-10-21T17:00:00+00:00",
+   "newest": "2026-11-18T10:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -35,20 +35,20 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
    "entries": 100,
-   "kept": 13,
+   "kept": 14,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 87
+    "too_old": 86
    },
    "filtered": [],
-   "oldest": "2025-12-12T17:50:50+00:00",
-   "newest": "2026-11-18T18:13:42+00:00",
+   "oldest": "2025-12-16T10:14:24+00:00",
+   "newest": "2026-11-18T21:35:43+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -57,20 +57,20 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
-   "entries": 912,
-   "kept": 33,
+   "entries": 913,
+   "kept": 31,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 67
+    "too_old": 69
    },
    "filtered": [],
-   "oldest": "2026-06-30T18:32:50+00:00",
-   "newest": "2026-11-18T18:53:43+00:00",
+   "oldest": "2026-07-01T00:00:00+00:00",
+   "newest": "2026-11-18T19:54:56+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -107,8 +107,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -118,18 +118,18 @@
     "low_relevance": 9
    },
    "filtered": [
+    "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
+    "Elon Musk says ousting Jensen Huang is like ‘kicking Michael Jordan off your team’",
+    "Microsoft CEO Satya Nadella remains confident in Nvidia after Huang’s exit",
+    "Nvidia created a weird bit of intrigue by not filing a routine SEC report",
+    "Palmer Luckey thinks China is ‘thrilled to have Jensen out,’ so he wants the ousted Nvidia CEO reinstated",
+    "Sam Altman says his life is so weird that he’s unfazed by Andrew Garfield portraying him in upcoming movie",
     "Nvidia clarifies when it will — and won’t — keep financing neoclouds",
     "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
-    "Nvidia promises that revenue will keep soaring — for now",
-    "Nvidia is abandoning China after Jensen Huang’s ouster",
-    "Nvidia says it doesn’t plan to reappoint Jensen Huang as CEO",
-    "SEC reportedly investigating Nvidia amid Huang exit",
-    "Google joins the tech outage trend by announcing it’s not having one",
-    "Model ML raises $250M to automate investment banking grunt work",
-    "As decision model use skyrockets, is customization the next frontier?"
+    "Nvidia promises that revenue will keep soaring — for now"
    ],
-   "oldest": "2026-11-17T18:04:16+00:00",
-   "newest": "2026-11-18T18:04:05+00:00",
+   "oldest": "2026-11-18T00:16:50+00:00",
+   "newest": "2026-11-19T00:42:56+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -138,24 +138,25 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 4
+    "low_relevance": 5
    },
    "filtered": [
+    "Muse privacy invasions are freaking out Meta staffers, internal chats show",
     "“Trump was in bed with Jensen”: Critics balk at Huang’s wish to return to Nvidia",
     "Ars Live: What do drone strikes on data centers mean for the future? Talk at 1 pm EST today",
     "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
     "Jensen Huang allies build a \"war room\" to get him back at Nvidia"
    ],
-   "oldest": "2026-11-10T20:30:01+00:00",
-   "newest": "2026-11-18T18:10:33+00:00",
+   "oldest": "2026-11-10T21:12:59+00:00",
+   "newest": "2026-11-18T19:19:33+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -164,17 +165,18 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 16
+    "low_relevance": 15
    },
    "filtered": [
+    "엔비디아, 첫 직원회의서 \"앞으로 나아가자\"…황 복귀 배제",
     "엔비디아, 삼성전기·앰코 등 글로벌 공급망 파트너 협력 확대",
     "젠슨 황 딸, 메가스피드 의혹 대응 관여…엔비디아 가족 경영 논란",
     "미 SEC, 젠슨 황 사임 후 엔비디아 조사…투자자 공시 위반 여부 확인",
@@ -183,11 +185,10 @@
     "엠버 \"태양광·풍력·배터리 조합 시 전력 공급비 18% 절감\"",
     "튀르키예, 2조3400억원 규모 태양광 건설 추진…국제 금융기관 8곳 지원 의향",
     "멕시코 태양광 발전 규모, 5.65GW 돌파…설치 신청도 65만건 넘었다",
-    "젠슨 황 \"이사회가 원하면 CEO 복귀\"…엔비디아는 검토 안 해",
-    "텐센트 'Hy4 플래시' 출시...일상 업무 특화·작업 비용 95% 절감"
+    "젠슨 황 \"이사회가 원하면 CEO 복귀\"…엔비디아는 검토 안 해"
    ],
-   "oldest": "2026-11-17T06:29:21+00:00",
-   "newest": "2026-11-18T09:29:41+00:00",
+   "oldest": "2026-11-17T07:33:52+00:00",
+   "newest": "2026-11-19T00:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -196,8 +197,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -221,11 +222,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
-   "entries": 11,
-   "kept": 7,
+   "entries": 13,
+   "kept": 9,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -239,7 +240,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-12T08:00:00+00:00",
-   "newest": "2026-11-18T16:31:28+00:00",
+   "newest": "2026-11-18T23:35:59+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -248,8 +249,8 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-18T19:05:10.739697+00:00",
-   "last_success_at": "2026-11-18T19:05:10.739697+00:00",
+   "last_run_at": "2026-11-19T00:45:17.790650+00:00",
+   "last_success_at": "2026-11-19T00:45:17.790650+00:00",
    "consecutive_failures": 0,
    "entries": 5,
    "kept": 5,
@@ -261,7 +262,7 @@
    "filtered": [
     "EviBridge: Encoding Predictive Visual Evidence for Proactive Interaction"
    ],
-   "oldest": "2026-11-15T23:03:47+00:00",
+   "oldest": "2026-11-17T08:02:11+00:00",
    "newest": "2026-11-18T16:50:17+00:00",
    "at_limit": false,
    "needs_split": false,

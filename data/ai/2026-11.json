@@ -1,5 +1,403 @@
 [
  {
+  "id": "76052896ed5fc980",
+  "title": "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
+  "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T00:42:56+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Microsoft"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "15854f142fc8dee6",
+  "title": "[AI리더의 서가] 강화학습 기본과 PyTorch 제2판",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217285",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-19T00:00:00+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "pytorch"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "통계·ML·시계열"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "28a1e7a21c66bddf",
+  "title": "Amidst fears of AI cyberattacks, Satya Nadella says lots of critical infrastructure is ‘unpatchable’",
+  "url": "https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T23:45:00+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "903a1ad1af07efef",
+  "title": "구글, 세계 3위 성능 '제미나이 4 네온' 출시…작업 비용 32% 절감",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217546",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T23:39:28+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시"
+  ],
+  "score": 4,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "adfcdcc86fbdaf71",
+  "title": "Anthropic prices initial public offering",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0wb1JNWEpudjJCR014ZnpEdkQ1MUFXOTZsRV9sU2wxclptYmRMVjY3d2R3bWJ2U2ZXdlktS1lNVE45b2NrVkY4aERJOXRJVkpRdy1kd2tRek52UG8wcXUwUEQwaUlEM0p1aE9YRlRvbnkyZVJUSmFLcWhFOA?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-18T23:35:59+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "806578be9a08eded",
+  "title": "Elon Musk says ousting Jensen Huang is like ‘kicking Michael Jordan off your team’",
+  "url": "https://techcrunch.com/2026/11/18/elon-musk-says-ousting-jensen-huang-is-like-kicking-michael-jordan-off-your-team/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T23:25:17+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "fd0f1695410f8d6e",
+  "title": "Microsoft CEO Satya Nadella remains confident in Nvidia after Huang’s exit",
+  "url": "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-remains-confident-in-nvidia-after-huangs-exit/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T23:17:28+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Microsoft",
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "591236888382df2b",
+  "title": "Satya Nadella predicts AI agents will reshuffle the economics of the web",
+  "url": "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T22:58:11+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "9cd84c2455ae281d",
+  "title": "Anthropic reportedly prices IPO at $83 a share, above projected range",
+  "url": "https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T22:11:15+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "5aa23fdb12e276b6",
+  "title": "엔비디아, 첫 직원회의서 \"앞으로 나아가자\"…황 복귀 배제",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217545",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T22:00:24+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "234e5a9b7910e291",
+  "title": "[11월18일] 미국 핵심 시스템 줄줄이 마비…해킹 없었지만 AI 공격 공포 커져",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217524",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-18T22:00:00+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "d8ac169631b01ef6",
+  "title": "Nvidia created a weird bit of intrigue by not filing a routine SEC report",
+  "url": "https://techcrunch.com/2026/11/18/nvidia-created-a-weird-bit-of-intrigue-by-not-filing-a-routine-sec-report/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T21:57:40+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "fd9bebbff7e69286",
+  "title": "Introducing Gemini 4 Neon",
+  "url": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-11-18T21:35:43+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introducing"
+  ],
+  "score": 5,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "3285b906d368abcf",
+  "title": "Palmer Luckey warns AI-powered cyberattacks are outpacing defenses: ‘It’s time to start running’",
+  "url": "https://techcrunch.com/2026/11/18/palmer-luckey-warns-ai-powered-cyberattacks-are-outpacing-defenses-its-time-to-start-running/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T21:34:13+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "f2571adad4d38d72",
+  "title": "Palmer Luckey thinks China is ‘thrilled to have Jensen out,’ so he wants the ousted Nvidia CEO reinstated",
+  "url": "https://techcrunch.com/2026/11/18/palmer-luckey-thinks-china-is-thrilled-to-have-jensen-out-so-he-wants-the-ousted-nvidia-ceo-reinstated/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T21:31:21+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "cef4a627b91c6fcc",
+  "title": "Sam Altman says his life is so weird that he’s unfazed by Andrew Garfield portraying him in upcoming movie",
+  "url": "https://techcrunch.com/2026/11/18/sam-altman-says-his-life-is-so-weird-that-hes-unfazed-by-andrew-garfield-portraying-him-in-upcoming-movie/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T20:07:01+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "ac57b5b6ee9ed73e",
+  "title": "Snapchat now lets developers build AR Lenses with AI assistants like Claude Code and Cursor",
+  "url": "https://techcrunch.com/2026/11/18/snapchat-now-lets-developers-build-ar-lenses-with-ai-coding-assistants-like-claude-code-and-cursor/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-18T19:56:39+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "developer",
+   "code"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "f0b81ce3c1461288",
+  "title": "DaisyRose-27B: Pushing the Frontier of Post-Training Efficiency",
+  "url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-18T19:54:56+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "25a4ca5f35209bfb",
+  "title": "Muse privacy invasions are freaking out Meta staffers, internal chats show",
+  "url": "https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-18T19:19:33+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "privacy"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "e55c8f2df06c07ff",
   "title": "Why your fine-tuning job takes longer than the FLOPs say",
   "url": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
@@ -544,6 +942,46 @@
   "score_v2": 3
  },
  {
+  "id": "58da586369f33999",
+  "title": "Research acceleration: The jagged frontier",
+  "url": "https://openai.com/index/research-acceleration-jagged-frontier",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-18T08:00:00+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "53d809d7420a3923",
+  "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+  "url": "https://openai.com/business/customer-stories/sumitomo-life",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-18T08:00:00+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
   "id": "deea9bfeb8c70340",
   "title": "전남광주, 수능 AI 안경 대응 강화…132명 배치·감독교사 법률지원",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217520",
@@ -699,6 +1137,26 @@
   "companies": [
    "OpenAI"
   ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "99be0c0a7e074380",
+  "title": "Managing frontier AI risk: From training to deployment",
+  "url": "https://openai.com/index/managing-frontier-ai-risk",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-18T06:00:00+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "risk"
+  ],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
   "orgs": [],
   "score_v2": 3
  },
@@ -2565,6 +3023,28 @@
    "LLM·NLP"
   ],
   "score_v2": 2
+ },
+ {
+  "id": "0ab8d0c19b4a19e3",
+  "title": "Claude Fable 5.2 solves two open problems in the physics of black holes",
+  "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBZUGhIZlEzczZ3OTFxcjBiRFJLUDhrZjhGM1hKRHdQWnYzV05NQUh0Y19Nb2d6WHlQNWR6UkZmWEp0YlE4endwZXJTdVNwUmN3LXQxUU5MaTFaQldqZkZNZjFHZWNiZFN6LV9UdQ?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-17T08:00:00+00:00",
+  "collected_at": "2026-11-19T00:45:17.790650+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 4,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
  },
  {
   "id": "82917754c0cc1601",
