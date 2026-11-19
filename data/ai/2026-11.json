@@ -1,5 +1,260 @@
 [
  {
+  "id": "62649bf472ca2edc",
+  "title": "Google gives Gemini the ability to use your Mac for you",
+  "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T18:09:11+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "0f23f3a02ee9e0a1",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
+ },
+ {
+  "id": "44d9cf6c24026b2f",
+  "title": "SEC Filings",
+  "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE82ckdWOFg4N2Fpa2dtdkZKUWZidHlHaXBubHNJRDhDT2NxMHZlTFVyZWw5WlpvTXdPc1JnRzJxaDZoSm9wQ3Z0MzlDeVVRd3RSQVdHdERsT1lBR2ZpNUZJdWcxdWVwdw?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:07:54+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "d8ac169631b01ef6",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
+ },
+ {
+  "id": "47396adf5e31273b",
+  "title": "Meta’s AI agent Muse is mixing up conversations and exposing private data, report says",
+  "url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T17:38:40+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "a01e91531918f8e7",
+  "title": "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
+  "url": "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T17:00:00+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "raises"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Alibaba"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "56f5de5b11aedbd4",
+  "title": "Anthropic hits Nasdaq exchanges at $111, 33% above IPO price",
+  "url": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T16:59:23+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "74b46c8b5e6ae130",
+  "title": "At Nasdaq opening bell, Anthropic CEO recommits to pacing AI development",
+  "url": "https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T16:19:41+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "559b89dfb99f77d3",
+  "title": "Anthropic’s IPO puts AI’s circular financing boom to the test",
+  "url": "https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T14:54:39+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "bf5774fae79f5be9",
+  "title": "Investor Relations",
+  "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE5tRXlFbU10LTN2LW5xV3dTVGxfcmVVMHNCUnB4VDJ2YmZOMVkxbXhrWEFfZEpTVnlKOENINXFrNGI4amI5UHc?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T14:17:11+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "abd04dc00b8ba51e",
+  "title": "Season’s Streamings and Savings: Black Friday Deals Come to GeForce NOW",
+  "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-black-friday-2026/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-19T14:00:12+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "deal"
+  ],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "db895de00b77372a",
+  "title": "Superhuman pushes its Go assistant everywhere",
+  "url": "https://techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T14:00:00+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "a3ec424200c53510",
+  "title": "LG그룹, \"주요 계열사 CEO 대부분 유임, 2027년 임원 132명 승진\"…피지컬 AI·R&D 핵심인재 전진 배치",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42810",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-19T13:48:18+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "00070b774c7a9663",
+  "title": "AI가 쓴 글, 사람처럼 위장해도 잡아낸다…MIT·코넬대, 탐지율 27%에서 93%로 높여",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42809",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-19T13:11:19+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "35f6ea47040a9636",
   "title": "오픈AI, AI로 AMD GPU 설계 개선…“5개월 만에 1년치 진전”",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217562",
@@ -261,6 +516,28 @@
   ],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "9342dbf934e428aa",
+  "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+  "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-19T08:00:00+00:00",
+  "collected_at": "2026-11-19T19:10:32.648891+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
  },
  {
   "id": "1c21349ed3ddc1d7",
@@ -1337,7 +1614,10 @@
    "NVIDIA"
   ],
   "orgs": [],
-  "score_v2": 1
+  "score_v2": 1,
+  "cluster_id": "d8ac169631b01ef6",
+  "cluster_size": 2,
+  "cluster_sources": 2
  },
  {
   "id": "fd9bebbff7e69286",
@@ -3530,7 +3810,11 @@
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 3
+  "score_v2": 3,
+  "cluster_id": "0f23f3a02ee9e0a1",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "89be98d92d9e645f",
@@ -11657,7 +11941,10 @@
   "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "33a0483307191e73",
+  "cluster_size": 3,
+  "cluster_sources": 2
  },
  {
   "id": "bb27561db5d10d50",
@@ -13552,7 +13839,7 @@
   ],
   "orgs": [],
   "cluster_id": "33a0483307191e73",
-  "cluster_size": 2,
+  "cluster_size": 3,
   "cluster_sources": 2,
   "score_v2": 2
  },
@@ -15573,7 +15860,7 @@
   ],
   "orgs": [],
   "cluster_id": "33a0483307191e73",
-  "cluster_size": 2,
+  "cluster_size": 3,
   "cluster_sources": 2,
   "score_v2": 2,
   "cluster_lead": true
