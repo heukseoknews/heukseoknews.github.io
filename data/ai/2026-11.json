@@ -1,5 +1,395 @@
 [
  {
+  "id": "dbe111187a465a8a",
+  "title": "Apple may be developing its own AI agent that runs your Mac",
+  "url": "https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-20T00:56:01+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Apple"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "ad84405834598899",
+  "title": "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
+  "url": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-20T00:43:50+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "06b807380a231b2a",
+  "title": "ETRI, ICT 50년 기술혁신 기록한 '헤리티지 북' 발간…AI·피지컬 AI로 미래 100년 준비",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42816",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-20T00:39:25+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "60bf43313752fd80",
+  "title": "삼성전자, 반도체 성과 주역 3명 사장 승진…메모리·시스템LSI·반도체 연구개발 수장 교체",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42815",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-20T00:31:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "반도체"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [
+   "삼성전자"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4026831d555bc6fc",
+  "title": "아모데이 CEO, “AI로 100년의 의학 발전을 10년으로 압축, AI 개발 속도보다 인간의 통제와 안전이 우선”",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42814",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-20T00:14:09+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "안전",
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "ff84664b9c28537f",
+  "title": "[AI리더의 서가] 일하는 AI 에이전트 설계하는 사람",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217287",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-20T00:00:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "dac17352bf292d19",
+  "title": "한시간컴, 영상 AI로 키즈 애니메이션 제작…콘텐츠진흥원 데모데이 대상 수상",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42813",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-19T23:49:10+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "8afc1f57b7486b72",
+  "title": "앤트로픽, 나스닥 상장 첫날 시가총액 2,337조원…AI 모델 기업 첫 증시 입성",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42812",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-19T23:34:19+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "상장",
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "cluster_id": "965882fe6f52a7e2",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "a899b56fc37ff59a",
+  "title": "아모데이 \"AI 개발 속도 조절…사업·정치적 압력에 굴복 안 해\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217596",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-19T22:00:23+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "0f7363922bc6b406",
+  "title": "[11월19일] 앤트로픽 IPO 앞두고 오픈AI 창업진이 던진 견제구",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217561",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-19T22:00:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic",
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "001e20945eceeac0",
+  "title": "Meta’s new Muse Charm device may cost $300",
+  "url": "https://techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T21:58:06+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "90ed40385dcd844c",
+  "title": "Meta FAIR Self-Improving Memory Hits 56.0 on Continual Learning Bench",
+  "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOM3JEc25fWGVlX3paS0lxTnRPU2ptaG1qd0RNNzU4Zi1vdE9hWEF3S3NfdjRvTlVoZUR6UElQaG1kMnU4S0E3NHVFLWpkMGJINXhsRWw1aHU3NGJKcWcwSHdtTGcwM0Y1SmxQMmppaGN3THE2RUx3dHFHUG1oMUxCN1d2SGEwUUpBcmxON044eHZWOG9BRFFPddIBmAFBVV95cUxOM3JEc25fWGVlX3paS0lxTnRPU2ptaG1qd0RNNzU4Zi1vdE9hWEF3S3NfdjRvTlVoZUR6UElQaG1kMnU4S0E3NHVFLWpkMGJINXhsRWw1aHU3NGJKcWcwSHdtTGcwM0Y1SmxQMmppaGN3THE2RUx3dHFHUG1oMUxCN1d2SGEwUUpBcmxON044eHZWOG9BRFFPdQ?oc=5",
+  "source": "MarkTechPost",
+  "source_type": "media",
+  "published_at": "2026-11-19T21:46:22+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "87b2502506d7cb89",
+  "title": "These tech outages are giving Y2K, AI agent style",
+  "url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T21:42:31+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "706f457144f7c045",
+  "title": "미국, 중국 반도체 수출 허가 강화…삼성·TSMC 일부 출하 중단",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217595",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-19T21:23:17+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "반도체"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "965882fe6f52a7e2",
+  "title": "앤트로픽, 나스닥 상장 첫날 기업가치 2조달러…스페이스X 추월",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217594",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-19T20:25:23+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "상장",
+   "기업가치"
+  ],
+  "score": 4,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "cluster_id": "965882fe6f52a7e2",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4,
+  "cluster_lead": true
+ },
+ {
+  "id": "eaecd34f2a6c3727",
+  "title": "Traumatized teens sue school, cops after Doritos bag triggers AI gun alert",
+  "url": "https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-19T20:19:28+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "teens"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "88461657b387a0e6",
+  "title": "NVIDIA and Microsoft Expand Accelerated Computing From Azure to Windows PCs",
+  "url": "https://blogs.nvidia.com/blog/microsoft-ignite-accelerated-computing-azure-windows-pcs/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-19T20:00:15+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [
+   "NVIDIA",
+   "Microsoft"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "694eda7767094817",
+  "title": "Anthropic’s IPO could deliver $156B to charity",
+  "url": "https://techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-19T19:10:45+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
   "id": "62649bf472ca2edc",
   "title": "Google gives Gemini the ability to use your Mac for you",
   "url": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
@@ -25,6 +415,160 @@
   "score_v2": 3
  },
  {
+  "id": "8b146a25ac3839ed",
+  "title": "Leadership & Governance - Co-Founders & Executives",
+  "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQd2o0MlBsWFhmdC1MV1pfa2c4QzEyYkdiM0owWWRvM2RvYkk4LW5QTUtXanRIMnpZU2NDTnF3S2l2cURIU21makt1LUtzOHBtSHJDLUVtRGM3b2RRcmJMcFNyOVhpOC1jX24xQlZPYVdsYWxtenNnTGw0SVh5UjdidnEwM1FaV0h0c3E1bEVSYXlVdw?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:08:06+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "governance"
+  ],
+  "score": 4,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "b19ed98a0d6f9178",
+  "cluster_size": 4,
+  "cluster_sources": 1,
+  "score_v2": 3
+ },
+ {
+  "id": "1fc4890bae37113d",
+  "title": "Leadership & Governance - Governance Documents",
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNVEVoaEMxdkZJZVJOTzUzcGpTaDVYQVhBMVJ6QWg3bS1yTy1PTWgyRndiNi1JY3hQTlVXTHlXdU1mOW1nLTNRWEFBMVFkV1RIVVNyR2xza1hGUm4wVmYzN0xNNzlRODFRMVFORmZweGlqdEdWM3U4bTU1V202WGpoYkhPRENkVnFkUW00Zk1XTQ?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:08:05+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "governance"
+  ],
+  "score": 4,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "b19ed98a0d6f9178",
+  "cluster_size": 4,
+  "cluster_sources": 1,
+  "score_v2": 3
+ },
+ {
+  "id": "53fa40bb5de94f0d",
+  "title": "News and Events - Events and Presentations",
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbmVOU2FzZTQ3VHliRm9WR3ktTGZfX0lWY2N2aWxzaml1UXhBYm9ZdVNwT3U1NXFoTjNTQWZ4QlFIUjFfSnhaeXNqZE9fOXNXZlhhZFhCWWQyVGVYVUNTUm0xcGF6R0Nmby1DdEl4S2FwOUt2TkIySXF4UnFFOE8zeVhPWkZYRW1wWTlvQg?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:08:05+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "2589707037086610",
+  "cluster_size": 2,
+  "cluster_sources": 1,
+  "score_v2": 2
+ },
+ {
+  "id": "5d4dcc1a8981d3e7",
+  "title": "Redirecting to Studio",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EYjZXT0NlZW1rNjlkNDdJSFRmSHRYZlBtVTF0WHlDNV9pLXZLaEFjQnRmV045Q2NSSU5aQWx0Y213aVBRbFFXVDg3TzJuWGFkd2VpN1RHSEp1Q0JCTDRMTWVlSENLVF9Hb1FDN0U0b1ZkZw?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:08:03+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "3d5ae1710290d8f5",
+  "title": "Leadership & Governance",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE94X1JGM0RaX01YZzZ1cW1TVnRURlE2NUw2ZTZlbWUyYkF3RDNyVDNhTjY4eEMydExlUmhMSVV4TnlYTXBSU1ZyUUFsNUZvN2NodjU0eEZ4RWw0am96LTFNZlhscktiazRKek0yT2ZxamFOODg?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:08:02+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "governance"
+  ],
+  "score": 4,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "b19ed98a0d6f9178",
+  "cluster_size": 4,
+  "cluster_sources": 1,
+  "score_v2": 3
+ },
+ {
+  "id": "2589707037086610",
+  "title": "News and Events - News",
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE81Wi1wa1dpMXA4ckNWXzlvQkNSUjhGdElMSTlyMzE0RU9iZGJwR3lUMjFSXy1DWldHaWhMZWsxQ2l3RzYzY001NENMalA4WS1xeVc0bUIzOTBlVG9UamNselBqT2ZSdzh1QnZUc2RJNFRTQQ?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:08:01+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "2589707037086610",
+  "cluster_size": 2,
+  "cluster_sources": 1,
+  "score_v2": 2,
+  "cluster_lead": true
+ },
+ {
+  "id": "b19ed98a0d6f9178",
+  "title": "Leadership & Governance - Committee Composition",
+  "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOdkhhQkU3eDFIc1MyS3pzelh1cXp6MHVLLXBRY0F5M3g4Y1U1aFNIY0dMMllDWDIwdENyZkYtSDVONkRHeUFOU1R6ald5UF83MkdpNWctUmNMNE4xM1huNEt3N18wLThoZ3owa3RLbDRqR09KSHpkd0wwbThCejAtWi1qZGw1aUtSNHEzYXRWUFk?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:08:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "governance"
+  ],
+  "score": 4,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "b19ed98a0d6f9178",
+  "cluster_size": 4,
+  "cluster_sources": 1,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
   "id": "44d9cf6c24026b2f",
   "title": "SEC Filings",
   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE82ckdWOFg4N2Fpa2dtdkZKUWZidHlHaXBubHNJRDhDT2NxMHZlTFVyZWw5WlpvTXdPc1JnRzJxaDZoSm9wQ3Z0MzlDeVVRd3RSQVdHdERsT1lBR2ZpNUZJdWcxdWVwdw?oc=5",
@@ -45,6 +589,44 @@
   "cluster_sources": 2,
   "score_v2": 2,
   "cluster_lead": true
+ },
+ {
+  "id": "1aba36510642582b",
+  "title": "Resources - Investor Contacts",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1Nako1UmFIeGd6SEMtRFA5ZXBLSUFteVFmeFhTc2F1OGV0dVFNa2NxdFFLUlRnQms1S1VrQTFmbGtiRGE1ektFclJ0bFFEQmRhbDJjS3RPc0JRcnRnY01NWjdSb1h6VUcwSXJBbXdUcFV0VUVlTkp3MDBGMA?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-19T18:07:53+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "444985d98c1f379d",
+  "title": "Meta’s Muse Can Now Show You an Outfit Before You Buy It",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE03LU1UWHVJZl92b1k5bF9sQm1UMy14a0dWTFg4dDZrWXVVS29qSDNuaXo3aUoxV2tuTDFTcUxJQm5iT1JjNlM0aGdfVEVuaFFLUHIwSHppQ2tGT0ZGVGZGc2RFMS1rVjNaNnNqZ0lMZ0FuTS1X?oc=5",
+  "source": "iPhone in Canada",
+  "source_type": "media",
+  "published_at": "2026-11-19T17:42:57+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "47396adf5e31273b",
@@ -249,6 +831,24 @@
   "tags": [],
   "score": 2,
   "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "8ddce41926411d42",
+  "title": "Pranay Manocha offers ₹46.7L referral for AI researchers, ₹7.94cr compensation",
+  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPYkhaVGRXMlFETmFCLTk1TU9UcWI1WDM2YUpac1Q3Q1UtTzd3cVpSdUlkWTExbXR5UGJveUd6Z3o2OE82RTk0OGtEb0lTMncwdUkxYTFSNXZTZllISVA0elZSSGR0REVPclk4a05ZRTlkczdsS1VDTC1Ja3BfQVNiaEpienJtNjFmWkwxV3hSc1N3Q1VnSUc2d2tXd1ZiU2xSTzcxNUl6TDNzcnRzWktUakItQURsaGhLdUtpcnd2RE96OHc?oc=5",
+  "source": "NewsBytes",
+  "source_type": "media",
+  "published_at": "2026-11-19T12:45:49+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
   "relevant": true,
   "companies": [],
   "orgs": [],
@@ -1409,6 +2009,80 @@
   "orgs": [
    "통계·ML·시계열"
   ],
+  "score_v2": 2
+ },
+ {
+  "id": "a890a236270cc5e3",
+  "title": "Deploying Daybreak Red",
+  "url": "https://openai.com/business/learn/deploying-daybreak-red",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-19T00:00:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "17b7a2b39f098895",
+  "title": "See PR scans in action",
+  "url": "https://openai.com/business/learn/pr-scans-demo",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-19T00:00:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "82fe289fe466dcc1",
+  "title": "Explore the Codex Security Plugin",
+  "url": "https://openai.com/business/learn/codex-security-plugin-demo",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-19T00:00:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "da30645137037f00",
+  "title": "Get started with Daybreak Blue",
+  "url": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-19T00:00:00+00:00",
+  "collected_at": "2026-11-20T00:57:10.835046+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
   "score_v2": 2
  },
  {
