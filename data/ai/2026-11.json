@@ -1,5 +1,103 @@
 [
  {
+  "id": "79b7324f6ff32c68",
+  "title": "Chips can survive the space environment — can their financing?",
+  "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-20T17:40:01+00:00",
+  "collected_at": "2026-11-20T18:52:07.613617+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "chip"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "678540575cb9b16b",
+  "title": "Anthropic rings the bell: Why were there no Chinese faces?",
+  "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBpMzdTWk93SnNWX1VrT0dpUDZRaXpTZTllYXhmd0JHV0dDYklfX3ZPejhvWTk3LVc0ZVBqanV4S0lhMl9iblpPMEtyb0pHNUVMOHZiVTQyTHlTNmJzdlR4SUlB?oc=5",
+  "source": "Global Times",
+  "source_type": "media",
+  "published_at": "2026-11-20T16:07:00+00:00",
+  "collected_at": "2026-11-20T18:52:07.613617+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "bc6cd0668a9d5bb9",
+  "title": "The fallout from Nvidia’s Jensen Huang scandal continues",
+  "url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-20T14:55:44+00:00",
+  "collected_at": "2026-11-20T18:52:07.613617+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "1895a884c21c9ded",
+  "title": "Six AI-powered gadgets that could make your home office smarter",
+  "url": "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-20T14:00:00+00:00",
+  "collected_at": "2026-11-20T18:52:07.613617+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "8619b4a30ab98e80",
+  "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
+  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1pMHRici1uRTBSYVNzNnJ5UVFiS1gtRjdJNWJZNUpDV0JxdzJVWHVUVEh5dXhVcVBYWXpSQWs2N1dnclY1aXJFaDhzM21OamVwQ1E?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-20T12:45:21+00:00",
+  "collected_at": "2026-11-20T18:52:07.613617+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "24cb134cff77ccfa",
   "title": "도이치텔레콤, 미스트랄에 1억 유로 투자…독일 소버린 AI 인프라와 유럽산 AI 모델 결합",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42830",
@@ -1059,6 +1157,27 @@
    "LLM·NLP"
   ],
   "score_v2": 2
+ },
+ {
+  "id": "701a571706ec6c00",
+  "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+  "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-20T00:00:00+00:00",
+  "collected_at": "2026-11-20T18:52:07.613617+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introducing",
+   "model"
+  ],
+  "score": 4,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 4
  },
  {
   "id": "dac17352bf292d19",
