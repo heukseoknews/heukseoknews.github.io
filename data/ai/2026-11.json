@@ -1,5 +1,207 @@
 [
  {
+  "id": "b8b9eff6ecd5d134",
+  "title": "칠레 103MW 태양광발전소, 사이버공격 신고 후 80일 넘게 가동 중단",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217563",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T00:10:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "953c217a33926795",
+  "title": "앤트로픽, 상장 이틀째 8.5% 급락...공모가까지 근접",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217639",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T00:08:29+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "상장"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "6002dd9d5b092b1d",
+  "title": "위성으로 본 칭하이성 태양광단지, 준공 2~5년 뒤 식생지수 28.4% 높아져",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217554",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T00:05:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "93a84a95ef2a1c22",
+  "title": "앤트로픽 수학자 \"클로드로 167년 난제 리만 가설 증명\"...검증 착수",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217638",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-20T23:36:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "a5374c06a5f207b9",
+  "title": "[11월20일] 구글 \"AGI는 끝이 아니다\"…AGI 이후 4가지 발전 경로 제시",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217605",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-20T22:00:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "ff62a6d0a83feae4",
+  "title": "Google rolls out new search homepage with AI chat history and no search button",
+  "url": "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-20T21:58:29+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "rolls out"
+  ],
+  "score": 3,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "66eae4612900f2e7",
+  "title": "Meta reconsiders 2030 net-zero goal amid record emissions from AI data centers",
+  "url": "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-20T21:47:10+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "f22d46a83ecd25c4",
+  "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+  "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-20T20:59:08+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "privacy"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "98001fcd04fee053",
+  "title": "Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.",
+  "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-20T19:53:41+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "startup"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "861ca51b04b5cf48",
+  "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
+  "url": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-20T19:32:08+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "79b7324f6ff32c68",
   "title": "Chips can survive the space environment — can their financing?",
   "url": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/",
@@ -96,6 +298,24 @@
   ],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "7ad44f990f0c53ef",
+  "title": "Combatting adversarial distillation",
+  "url": "https://openai.com/index/combatting-adversarial-distillation",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-20T10:00:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "24cb134cff77ccfa",
@@ -1178,6 +1398,62 @@
   "companies": [],
   "orgs": [],
   "score_v2": 4
+ },
+ {
+  "id": "824c03b970f1dc58",
+  "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+  "url": "https://huggingface.co/blog/inkling2mini",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-20T00:00:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "8145fefb47ff1ca9",
+  "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+  "url": "https://openai.com/business/customer-stories/hebbia",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-20T00:00:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "c1a2af93db54bfcf",
+  "title": "Can AI help scientists identify promising drug candidates?",
+  "url": "https://openai.com/index/introducing-medchembench",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-20T00:00:00+00:00",
+  "collected_at": "2026-11-21T00:18:24.092397+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
  },
  {
   "id": "dac17352bf292d19",

@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-20T18:52:07.613617+00:00",
-  "finished_at": "2026-11-20T18:52:10.126023+00:00",
-  "candidates": 319,
-  "added": 6,
+  "started_at": "2026-11-21T00:18:24.092397+00:00",
+  "finished_at": "2026-11-21T00:18:26.999560+00:00",
+  "candidates": 318,
+  "added": 14,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,10 +11,10 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
-   "entries": 1418,
+   "entries": 1421,
    "kept": 99,
    "skipped": {
     "no_link": 0,
@@ -25,8 +25,8 @@
    "filtered": [
     "[노이즈 제목] LifeVal"
    ],
-   "oldest": "2026-10-23T00:00:00+00:00",
-   "newest": "2026-11-19T08:00:00+00:00",
+   "oldest": "2026-10-23T17:00:00+00:00",
+   "newest": "2026-11-20T10:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -35,8 +35,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 14,
@@ -57,19 +57,19 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
-   "entries": 914,
-   "kept": 30,
+   "entries": 915,
+   "kept": 31,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 70
+    "too_old": 69
    },
    "filtered": [],
-   "oldest": "2026-07-06T00:00:00+00:00",
+   "oldest": "2026-07-06T15:30:55+00:00",
    "newest": "2026-11-20T00:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -109,15 +109,15 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 9
+    "low_relevance": 7
    },
    "filtered": [
     "Chips can survive the space environment — can their financing?",
@@ -126,12 +126,10 @@
     "The unfolding Jensen Huang scandal: a timeline",
     "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
     "Superhuman pushes its Go assistant everywhere",
-    "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
-    "Elon Musk says ousting Jensen Huang is like ‘kicking Michael Jordan off your team’",
-    "Microsoft CEO Satya Nadella remains confident in Nvidia after Huang’s exit"
+    "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit"
    ],
-   "oldest": "2026-11-18T23:17:28+00:00",
-   "newest": "2026-11-20T17:40:01+00:00",
+   "oldest": "2026-11-18T23:45:00+00:00",
+   "newest": "2026-11-20T19:53:41+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -140,8 +138,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -157,8 +155,8 @@
     "Robo-soldier startup backed by Eric Trump misses payroll, may collapse",
     "Jensen Huang allies build a \"war room\" to get him back at Nvidia"
    ],
-   "oldest": "2026-11-10T22:35:01+00:00",
-   "newest": "2026-11-19T20:19:28+00:00",
+   "oldest": "2026-11-11T18:16:40+00:00",
+   "newest": "2026-11-20T21:58:29+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -167,30 +165,30 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 15
+    "low_relevance": 16
    },
    "filtered": [
+    "칠레 103MW 태양광발전소, 사이버공격 신고 후 80일 넘게 가동 중단",
+    "위성으로 본 칭하이성 태양광단지, 준공 2~5년 뒤 식생지수 28.4% 높아져",
+    "[11월20일] 구글 \"AGI는 끝이 아니다\"…AGI 이후 4가지 발전 경로 제시",
     "정체불명 모델 '게슈탈트', 디자인 평가서 인간 전문가 제치고 1위",
     "캘리포니아주, 엔비디아에 소환장...중국 기밀 유출·투자자 기만 조사",
     "AMD 리사 수 \"젠슨 황은 훌륭한 리더...엔비디아 논란과 거리 둘 것\"",
     "엔비디아, dLLM 개발사 인셉션 6700억 이상에 인수 협상",
     "KT·LG전자, 양자직접통신 시스템 구현…이미지·문자 전송·복원 성공",
     "AMD, 중국 제재 기업과 거래 의혹에 주가 8% 급락...미국 조사 가능성 제기",
-    "알리바바, 엔비디아 간첩 스캔들 관련 의혹 은폐로 주주 소송",
-    "정부 인정 AIDC 기준 나왔다...AIDC 특별법 하위법령서 구체화",
-    "삼성전자, 부사장 3명 사장 승진…반도체 핵심 수장 교체",
-    "슈나이더일렉트릭 \"태양광·배터리로 전력시스템 비용 최대 40%↓\""
+    "알리바바, 엔비디아 간첩 스캔들 관련 의혹 은폐로 주주 소송"
    ],
-   "oldest": "2026-11-19T06:50:00+00:00",
-   "newest": "2026-11-20T08:45:00+00:00",
+   "oldest": "2026-11-19T07:51:15+00:00",
+   "newest": "2026-11-21T00:10:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -199,8 +197,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -225,8 +223,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
    "entries": 15,
    "kept": 11,
@@ -243,7 +241,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-14T01:40:13+00:00",
-   "newest": "2026-11-20T16:13:35+00:00",
+   "newest": "2026-11-20T22:28:16+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -252,21 +250,20 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-20T18:52:07.613617+00:00",
-   "last_success_at": "2026-11-20T18:52:07.613617+00:00",
+   "last_run_at": "2026-11-21T00:18:24.092397+00:00",
+   "last_success_at": "2026-11-21T00:18:24.092397+00:00",
    "consecutive_failures": 0,
-   "entries": 7,
-   "kept": 7,
+   "entries": 5,
+   "kept": 5,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 2
+    "low_relevance": 1
    },
    "filtered": [
-    "Chain-of-Thought Author Jason Wei → Mercor CSO",
     "Meta’s Muse Can Now Show You an Outfit Before You Buy It"
    ],
-   "oldest": "2026-11-18T00:00:00+00:00",
+   "oldest": "2026-11-18T05:07:43+00:00",
    "newest": "2026-11-20T16:07:00+00:00",
    "at_limit": false,
    "needs_split": false,
