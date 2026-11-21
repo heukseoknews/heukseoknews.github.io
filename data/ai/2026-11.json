@@ -1,5 +1,67 @@
 [
  {
+  "id": "f52216bdae320c52",
+  "title": "Here are the top AI agents that can live in your text messages",
+  "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-21T17:00:00+00:00",
+  "collected_at": "2026-11-21T17:46:48.641802+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "f2e0e504895b9fb3",
+  "title": "Is selling an AI version of your face to this microdrama startup the future of Hollywood?",
+  "url": "https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-21T16:00:00+00:00",
+  "collected_at": "2026-11-21T17:46:48.641802+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "startup"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "86a9102c930044e8",
+  "title": "이 대통령, “대한민국 AI 대전환, 인공지능 고속도로가 열 것”...울산 SK AI데이터센터 건설 현장 점검",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42837",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-21T10:48:17+00:00",
+  "collected_at": "2026-11-21T17:46:48.641802+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "bd2e7a86b30ced72",
   "title": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217650",
@@ -598,6 +660,26 @@
   "score_v2": 3
  },
  {
+  "id": "0a1f8655fdbc56d7",
+  "title": "Stock Quote",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0xQnFFY3JocmN6cXROVjFJWEtzLWhmYzFyLVJXXzU0UG5YcHpaY1I3MlVEVUxpTTYzRm96NkdoazR4c29iaFJqSVRRTmxHOEJ2OFJxaXNFVFVYMjBfeW5ueGxJS3lmR2NpZmRNdmdySklNaE13NUE?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-20T20:58:10+00:00",
+  "collected_at": "2026-11-21T17:46:48.641802+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "stock"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "98001fcd04fee053",
   "title": "Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.",
   "url": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/",
@@ -928,6 +1010,28 @@
   ],
   "orgs": [],
   "score_v2": 2
+ },
+ {
+  "id": "c07f724c3b76386b",
+  "title": "Coordinated vulnerability disclosure for Claude-discovered vulnerabilities",
+  "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1jR2N3dUU0bDRtZzhfeTBDemVSOE9JNUVPSHd2UGlMQ19EWXVXREF4YmozanNTcEk2Nk5zNTB2N0pjc1kwUVJycTJfQ3RYWnFHQ1dGRF82a0ZPUVZsQS1IczBLWXhhQ29ZU3Q3Q3dJSQ?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-20T08:00:00+00:00",
+  "collected_at": "2026-11-21T17:46:48.641802+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
  },
  {
   "id": "2dac117b27a50c3d",
