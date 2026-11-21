@@ -1,5 +1,439 @@
 [
  {
+  "id": "bd2e7a86b30ced72",
+  "title": "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217650",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T09:55:59+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터",
+   "gpu"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "f9b4d6c7182764da",
+  "title": "AI 작업 능력, 6개월 만에 16시간→40시간…\"판단력 여전히 한계\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217649",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T09:20:47+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "e24ad59eb24dc417",
+  "title": "구글, 제미나이 앱에 GIF 생성 기능 출시…오픈AI 이어 도입",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217648",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T07:39:48+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "출시",
+   "도입",
+   "기능"
+  ],
+  "score": 5,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind",
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "9b03f1706c24ad3b",
+  "title": "화웨이, 금융 AI 에이전트 대규모 운영체계 공개…개발·토큰·데이터 통합 관리",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42836",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-21T04:59:04+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "9db202567c37900c",
+  "title": "\"AI 예측은 물리적 한계를 벗어나지 않는다\"…MIT, 혼돈계에서도 안정성 보장하는 머신러닝 기술 오픈소스로",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42835",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-21T03:10:59+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "오픈소스"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "통계·ML·시계열"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "141b0e8dbf820a35",
+  "title": "\"젠슨 황, 20여년 전부터 직원들에게 폭언·위협\"…불만 제기 이어져",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217644",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:51:51+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "ac03007f4c937e05",
+  "title": "유튜브, 미 교육청들과 '중독 소송' 4조원 합의 추진",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217647",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:44:00+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "소송"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7140f613a2a8af78",
+  "title": "英 보건사회복지부·교육부, 아동·성인 돌봄에 AI 활용 지침 첫 발표…사회복지 행정업무 시간 63% 단축",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42834",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:42:46+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "0b703428f85b2190",
+  "title": "트럼프 \"젠슨 황에 두 번째 기회 줘야\"…CEO 복귀 재촉구",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217646",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:37:50+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "5fb3510df21631d9",
+  "title": "미 민주당, 엔비디아의 메가스피드 조사 개입 의혹 조사 착수",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217641",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:25:40+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "c18056bb54101a3c",
+  "title": "휴민랩스, 피지컬 AI에 4,700만달러 투자 유치…한국에 로봇 실증 인프라 구축",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42833",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:24:19+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "투자 유치",
+   "실증"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "f2412c6a6262fb7e",
+  "title": "메타, 뇌 연구 데이터 2만5천시간으로 확대…원자 수준 신약·효소 시뮬레이션 연구 강화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42832",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:09:20+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "469969156df0ed9b",
+  "title": "스페이스X, '커서'의 중국 AI 모델 퇴출 검토",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217643",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T02:01:27+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "fc3bded6d900a9fe",
+  "title": "오픈AI, AI 내부 추론 탈취 공격 성공률 54%에서 0.2%로…모델 무단 복제 방어 강화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42831",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-21T01:59:20+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "76483e149f9e142e",
+  "title": "트럼프·시진핑, 군사 AI에 인간 통제 합의…주요 군사작전까지 적용",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217640",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T01:42:02+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "적용"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "921c128c23deaf6e",
+  "title": "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217645",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T01:32:11+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "주가"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "5469b1c6f91d61ea",
+  "title": "[AI카툰] Bob, Senior IT guy - 밥, 코스모스의 시작",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217636",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T01:00:00+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "0d38242202d23f5a",
+  "title": "[내면 지도 그리기] 43 Inner Mapping: 나를 찾는 지도",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217635",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T01:00:00+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "998cdb2415637c34",
+  "title": "트럼프 \"해외에 데이터센터 짓는 미국 기업에 막대한 세금 부과\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217642",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T00:49:09+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "5a18c7b3b2601c5f",
+  "title": "비수도권 AI 데이터센터, 50MW 이하 전력계통영향평가 면제 추진",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217616",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T00:15:00+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "6a88522da2a0a2c4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "43d144c1fa41acd2",
+  "title": "베트남 수상태양광 속도…자라이성 35MW 착공·닥락성 304MW 부지 승인",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217553",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T00:15:00+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "b8b9eff6ecd5d134",
   "title": "칠레 103MW 태양광발전소, 사이버공격 신고 후 80일 넘게 가동 중단",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217563",
@@ -242,6 +676,28 @@
   "score_v2": 2
  },
  {
+  "id": "6be9c621264b594c",
+  "title": "Meta's Muse Read Signal Messages and Invented Markets",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZTNoMVZXZWxwX08xMUR4WWxMVTJSZVR5eTZCZ0VuWmt5X0dCcWR1M0l0NFZiSkh2THNPcVRPLUl1UmxBdDk0cVpDbjhrd0drY2QyeFUxQ3NCOERPZW5nWkkteDZhT195NDNKaWhJb1FsTHJ3eWV2VWo5ZFJCc0N0Qw?oc=5",
+  "source": "SecNews.gr",
+  "source_type": "media",
+  "published_at": "2026-11-20T15:55:00+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "market"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "bc6cd0668a9d5bb9",
   "title": "The fallout from Nvidia’s Jensen Huang scandal continues",
   "url": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues/",
@@ -298,6 +754,27 @@
   ],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "591342821c05b69c",
+  "title": "Symbal AI researcher hiring bonus: Pranay Manocha offers $50,000 for referrals",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPUFhZWWhST1MxcWd5ZW96c2c5T3BmWi1yQ1dqc2hnS29oZHNmOXNsblQ3THl1a0xKSE1ocDlESmtETkl3LXhvdnlzZ0hyeWU3NkVVYURwNF9xT204WUpTVTh5SzRIZ0Zpcm05SHRfWEF3d3BTeVVXOVRpYXBSQnBEWFhUY3hrMkJQOC1nclcxTlZOZW5BZTB6TFU3MHRrVGNteF85dXRfZDFMek5vOXc?oc=5",
+  "source": "Alice Blue",
+  "source_type": "media",
+  "published_at": "2026-11-20T12:10:12+00:00",
+  "collected_at": "2026-11-21T10:16:34.742256+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "8ddce41926411d42",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
  },
  {
   "id": "7ad44f990f0c53ef",
@@ -952,7 +1429,11 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 4
+  "score_v2": 4,
+  "cluster_id": "6a88522da2a0a2c4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "f2cdc871ff3009f8",
@@ -2177,7 +2658,11 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "8ddce41926411d42",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "35f6ea47040a9636",
