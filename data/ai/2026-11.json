@@ -1,5 +1,90 @@
 [
  {
+  "id": "f6f5282ad9e3c36b",
+  "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
+  "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-21T21:37:10+00:00",
+  "collected_at": "2026-11-21T23:36:51.521762+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "044fb7804e00ac8e",
+  "title": "A tale of two Nvidias",
+  "url": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-21T21:07:42+00:00",
+  "collected_at": "2026-11-21T23:36:51.521762+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "0c95bb88979dba0b",
+  "title": "손정의, SK하이닉스 1조달러 인수 검토…월가에 자금 조달 타진",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217653",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-21T20:59:45+00:00",
+  "collected_at": "2026-11-21T23:36:51.521762+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "인수"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "2026650d77112bd8",
+  "title": "'This seems like an extreme privacy violation.' Surprising messages from the Muse AI agent are unnerving Meta's own employees, report says",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQd2ZwRFpsTk5lTHR6UjAtR2ZkTlRXVURpWXo4ZVJDMjFLZGx4eXYtQVpldFJsaV85b3ZFZkc5dlk0eFFXdUg4ZTVyRDlwRXQ0WHJyVXFtMUEtSjhVejA4SDhmNVAyZ1VMV1NfakcxSlB0OGRqSmUyOW5BemkxdzhMZ0pVd0oyVC1HU1oyNXBoOVRFNG4xbERHeEpadDhNanRya0pwS1RoU0d4cXctRUFQNGxR?oc=5",
+  "source": "Fortune",
+  "source_type": "media",
+  "published_at": "2026-11-21T17:28:00+00:00",
+  "collected_at": "2026-11-21T23:36:51.521762+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "privacy",
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
   "id": "f52216bdae320c52",
   "title": "Here are the top AI agents that can live in your text messages",
   "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",

@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-21T17:46:48.641802+00:00",
-  "finished_at": "2026-11-21T17:46:51.688689+00:00",
-  "candidates": 319,
-  "added": 5,
+  "started_at": "2026-11-21T23:36:51.521762+00:00",
+  "finished_at": "2026-11-21T23:36:54.448564+00:00",
+  "candidates": 320,
+  "added": 4,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 1421,
    "kept": 99,
@@ -35,8 +35,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 13,
@@ -57,16 +57,16 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 915,
-   "kept": 31,
+   "kept": 30,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 69
+    "too_old": 70
    },
    "filtered": [],
    "oldest": "2026-07-06T15:30:55+00:00",
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -109,8 +109,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -120,15 +120,15 @@
     "low_relevance": 6
    },
    "filtered": [
+    "A tale of two Nvidias",
     "Chips can survive the space environment — can their financing?",
     "The fallout from Nvidia’s Jensen Huang scandal continues",
     "Meta’s new Muse Charm device may cost $300",
     "The unfolding Jensen Huang scandal: a timeline",
-    "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories",
-    "Superhuman pushes its Go assistant everywhere"
+    "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories"
    ],
-   "oldest": "2026-11-19T14:00:00+00:00",
-   "newest": "2026-11-21T17:00:00+00:00",
+   "oldest": "2026-11-19T16:19:41+00:00",
+   "newest": "2026-11-21T21:37:10+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -137,8 +137,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -164,17 +164,18 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 23
+    "low_relevance": 24
    },
    "filtered": [
+    "손정의, SK하이닉스 1조달러 인수 검토…월가에 자금 조달 타진",
     "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
     "\"젠슨 황, 20여년 전부터 직원들에게 폭언·위협\"…불만 제기 이어져",
     "유튜브, 미 교육청들과 '중독 소송' 4조원 합의 추진",
@@ -183,11 +184,10 @@
     "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
     "[내면 지도 그리기] 43 Inner Mapping: 나를 찾는 지도",
     "트럼프 \"해외에 데이터센터 짓는 미국 기업에 막대한 세금 부과\"",
-    "베트남 수상태양광 속도…자라이성 35MW 착공·닥락성 304MW 부지 승인",
-    "칠레 103MW 태양광발전소, 사이버공격 신고 후 80일 넘게 가동 중단"
+    "베트남 수상태양광 속도…자라이성 35MW 착공·닥락성 304MW 부지 승인"
    ],
-   "oldest": "2026-11-20T01:55:00+00:00",
-   "newest": "2026-11-21T09:55:59+00:00",
+   "oldest": "2026-11-20T02:05:00+00:00",
+   "newest": "2026-11-21T20:59:45+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -196,8 +196,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -222,11 +222,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
-   "entries": 13,
-   "kept": 11,
+   "entries": 14,
+   "kept": 12,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -247,11 +247,11 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-21T17:46:48.641802+00:00",
-   "last_success_at": "2026-11-21T17:46:48.641802+00:00",
+   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
    "consecutive_failures": 0,
-   "entries": 7,
-   "kept": 7,
+   "entries": 8,
+   "kept": 8,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -262,7 +262,7 @@
     "Meta's Muse Read Signal Messages and Invented Markets"
    ],
    "oldest": "2026-11-19T12:45:49+00:00",
-   "newest": "2026-11-20T16:07:00+00:00",
+   "newest": "2026-11-21T17:28:00+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
