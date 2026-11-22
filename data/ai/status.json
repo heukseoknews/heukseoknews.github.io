@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-22T18:03:56.094612+00:00",
-  "finished_at": "2026-11-22T18:03:58.834970+00:00",
-  "candidates": 315,
-  "added": 3,
+  "started_at": "2026-11-22T23:53:02.226543+00:00",
+  "finished_at": "2026-11-22T23:53:04.489883+00:00",
+  "candidates": 314,
+  "added": 4,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 1422,
    "kept": 99,
@@ -35,8 +35,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 13,
@@ -57,8 +57,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 915,
    "kept": 29,
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -109,17 +109,18 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 6
+    "low_relevance": 7
    },
    "filtered": [
+    "Why data centers are at the center of the Big Tech backlash",
     "A tale of two Nvidias",
     "Chips can survive the space environment — can their financing?",
     "The fallout from Nvidia’s Jensen Huang scandal continues",
@@ -127,8 +128,8 @@
     "The unfolding Jensen Huang scandal: a timeline",
     "Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories"
    ],
-   "oldest": "2026-11-19T16:19:41+00:00",
-   "newest": "2026-11-21T21:37:10+00:00",
+   "oldest": "2026-11-19T17:00:00+00:00",
+   "newest": "2026-11-22T21:14:07+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -137,8 +138,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -164,15 +165,15 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 22
+    "low_relevance": 21
    },
    "filtered": [
     "알트먼, 메타의 딥페이크 영상에 등장…메타 \"정책 위반 아니다\"",
@@ -186,8 +187,8 @@
     "\"젠슨 황, 20여년 전부터 직원들에게 폭언·위협\"…불만 제기 이어져",
     "유튜브, 미 교육청들과 '중독 소송' 4조원 합의 추진"
    ],
-   "oldest": "2026-11-20T05:55:41+00:00",
-   "newest": "2026-11-22T09:30:43+00:00",
+   "oldest": "2026-11-20T07:02:08+00:00",
+   "newest": "2026-11-22T22:14:28+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -196,8 +197,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -212,8 +213,8 @@
     "LG CNS 2027년 정기 임원인사, 배민 부사장 승진…김지욱·이병승 전무 승진 등 총 14명 인사",
     "ETRI, 서버 메모리 한계 넘는 공유 기술 개발…448GB 서버로 1.8TB 유전체 분석 성공"
    ],
-   "oldest": "2026-11-18T04:56:52+00:00",
-   "newest": "2026-11-22T04:53:43+00:00",
+   "oldest": "2026-11-18T05:06:58+00:00",
+   "newest": "2026-11-22T23:43:41+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -222,8 +223,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
    "entries": 14,
    "kept": 12,
@@ -247,11 +248,11 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
-   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_run_at": "2026-11-22T23:53:02.226543+00:00",
+   "last_success_at": "2026-11-22T23:53:02.226543+00:00",
    "consecutive_failures": 0,
-   "entries": 4,
-   "kept": 4,
+   "entries": 3,
+   "kept": 3,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -260,7 +261,7 @@
    "filtered": [
     "Meta's Muse Read Signal Messages and Invented Markets"
    ],
-   "oldest": "2026-11-19T21:46:22+00:00",
+   "oldest": "2026-11-20T15:55:00+00:00",
    "newest": "2026-11-21T17:28:00+00:00",
    "at_limit": false,
    "needs_split": false,

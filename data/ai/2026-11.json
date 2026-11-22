@@ -1,5 +1,85 @@
 [
  {
+  "id": "a82520ed1c151790",
+  "title": "\"같은 심부전 치료제도 환자마다 효과 다르다\"…분당서울대병원, 치료 효과 예측하는 AI ‘파라가이드’ 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42840",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-22T23:43:41+00:00",
+  "collected_at": "2026-11-22T23:53:02.226543+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "c7a8c6d72fbec390",
+  "title": "오픈AI \"사전학습으로 AI 지능 급성장…RSI 대비해 개발 제한해야\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217665",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T22:14:28+00:00",
+  "collected_at": "2026-11-22T23:53:02.226543+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "883b69d3f986860b",
+  "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
+  "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-22T21:14:07+00:00",
+  "collected_at": "2026-11-22T23:53:02.226543+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "47b2738e2872fd88",
+  "title": "Why data centers are at the center of the Big Tech backlash",
+  "url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-22T18:08:43+00:00",
+  "collected_at": "2026-11-22T23:53:02.226543+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "89096e0db5c2cca4",
   "title": "알트먼, 메타의 딥페이크 영상에 등장…메타 \"정책 위반 아니다\"",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217664",
