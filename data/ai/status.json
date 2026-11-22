@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-21T23:36:51.521762+00:00",
-  "finished_at": "2026-11-21T23:36:54.448564+00:00",
-  "candidates": 320,
-  "added": 4,
+  "started_at": "2026-11-22T10:22:28.235536+00:00",
+  "finished_at": "2026-11-22T10:22:31.086469+00:00",
+  "candidates": 317,
+  "added": 17,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 1421,
    "kept": 99,
@@ -35,8 +35,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 13,
@@ -57,16 +57,16 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 915,
-   "kept": 30,
+   "kept": 29,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 70
+    "too_old": 71
    },
    "filtered": [],
    "oldest": "2026-07-06T15:30:55+00:00",
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -109,8 +109,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -137,8 +137,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -164,30 +164,30 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 24
+    "low_relevance": 22
    },
    "filtered": [
+    "알트먼, 메타의 딥페이크 영상에 등장…메타 \"정책 위반 아니다\"",
+    "젠슨 황의 '악수 거래', 엔비디아 경영 위험으로…공급망 유지 시험대",
+    "싱킹머신즈, 노트북서 구동하는 264억 매개변수 '잉클링 2 미니' 공개",
+    "앨리스 황 칩 거래망 추적하니…중국 게임업체·캄보디아 범죄 조직 등장",
+    "영국, 세계유산·공항 안전 문제로 840MW 태양광발전소 건설 불허",
+    "이탈리아, 재생에너지 연계 배터리 100만대 돌파…저장용량 12.84GWh",
     "손정의, SK하이닉스 1조달러 인수 검토…월가에 자금 조달 타진",
     "머스크의 우주 데이터센터, 첫 금융 장벽…채권단 \"GPU 반입 제한\"",
     "\"젠슨 황, 20여년 전부터 직원들에게 폭언·위협\"…불만 제기 이어져",
-    "유튜브, 미 교육청들과 '중독 소송' 4조원 합의 추진",
-    "트럼프 \"젠슨 황에 두 번째 기회 줘야\"…CEO 복귀 재촉구",
-    "미 민주당, 엔비디아의 메가스피드 조사 개입 의혹 조사 착수",
-    "엔비디아, SEC 회계 조사에 주가 14% 폭락…시총 4위 추락",
-    "[내면 지도 그리기] 43 Inner Mapping: 나를 찾는 지도",
-    "트럼프 \"해외에 데이터센터 짓는 미국 기업에 막대한 세금 부과\"",
-    "베트남 수상태양광 속도…자라이성 35MW 착공·닥락성 304MW 부지 승인"
+    "유튜브, 미 교육청들과 '중독 소송' 4조원 합의 추진"
    ],
-   "oldest": "2026-11-20T02:05:00+00:00",
-   "newest": "2026-11-21T20:59:45+00:00",
+   "oldest": "2026-11-20T05:55:41+00:00",
+   "newest": "2026-11-22T09:30:43+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -196,8 +196,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -212,8 +212,8 @@
     "LG CNS 2027년 정기 임원인사, 배민 부사장 승진…김지욱·이병승 전무 승진 등 총 14명 인사",
     "ETRI, 서버 메모리 한계 넘는 공유 기술 개발…448GB 서버로 1.8TB 유전체 분석 성공"
    ],
-   "oldest": "2026-11-18T03:56:56+00:00",
-   "newest": "2026-11-21T10:48:17+00:00",
+   "oldest": "2026-11-18T04:56:52+00:00",
+   "newest": "2026-11-22T04:53:43+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -222,11 +222,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
-   "entries": 14,
-   "kept": 12,
+   "entries": 13,
+   "kept": 11,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -237,8 +237,8 @@
     "[노이즈 제목] - Anthropic",
     "[노이즈 제목] - Anthropic"
    ],
-   "oldest": "2026-11-15T01:02:52+00:00",
-   "newest": "2026-11-21T15:24:14+00:00",
+   "oldest": "2026-11-16T14:32:51+00:00",
+   "newest": "2026-11-22T03:26:39+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -247,11 +247,11 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-21T23:36:51.521762+00:00",
-   "last_success_at": "2026-11-21T23:36:51.521762+00:00",
+   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
    "consecutive_failures": 0,
-   "entries": 8,
-   "kept": 8,
+   "entries": 7,
+   "kept": 7,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -261,7 +261,7 @@
     "Meta’s Muse Can Now Show You an Outfit Before You Buy It",
     "Meta's Muse Read Signal Messages and Invented Markets"
    ],
-   "oldest": "2026-11-19T12:45:49+00:00",
+   "oldest": "2026-11-19T16:22:49+00:00",
    "newest": "2026-11-21T17:28:00+00:00",
    "at_limit": false,
    "needs_split": false,

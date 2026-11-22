@@ -1,5 +1,368 @@
 [
  {
+  "id": "89096e0db5c2cca4",
+  "title": "알트먼, 메타의 딥페이크 영상에 등장…메타 \"정책 위반 아니다\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217664",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T09:30:43+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "딥페이크",
+   "정책"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "bfbaa5cd6210b02a",
+  "title": "오픈AI \"AI가 연구 작업 절반 스스로 완료\"…7개월 만에 성공률 2배",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217657",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T08:25:00+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a88ed1e6a96c0c05",
+  "title": "[AI 이슈트렌드] 수능 AI 부정행위 논란 속 한덕수 판결 주목…앤트로픽 상장에도 기술주 약세",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217662",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T08:23:16+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "상장"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "240b20405ce1f1e4",
+  "title": "젠슨 황의 '악수 거래', 엔비디아 경영 위험으로…공급망 유지 시험대",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217663",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T08:17:00+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "위험"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "44aa41d5d4550d8e",
+  "title": "유수연 네이션에이 대표 \"AI 영상 무제한 생성…비용 경쟁력으로 승부\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217427",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T07:00:00+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "대표"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "1c85480906c5c7a7",
+  "title": "제미나이, 산불 무전 30초 이내 감지…음성 인식 오류율 38%에서 22.34%로 낮춰",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42839",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-22T04:53:43+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [
+   "LLM·NLP",
+   "음성·오디오"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "e7e31813364d7fa3",
+  "title": "싱킹머신즈, 노트북서 구동하는 264억 매개변수 '잉클링 2 미니' 공개",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217656",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T03:09:37+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "d9de3b9b703f6086",
+  "title": "오픈AI, 음성 모델 'GPT-라이브-1.1' 출시…대기 요금 60% 인하",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217655",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T03:01:05+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시",
+   "모델"
+  ],
+  "score": 5,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "음성·오디오",
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "6db2f558aeaf6f26",
+  "title": "오라클 \"오픈AI 데이터센터 계약 자금 확보 완료\"…추가 조달 우려 반박",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217661",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T02:53:37+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "2c6236b7ae6b6493",
+  "title": "앨리스 황 칩 거래망 추적하니…중국 게임업체·캄보디아 범죄 조직 등장",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217658",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T02:36:38+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "c15f0539ae353a63",
+  "title": "오픈AI, 챗GPT 플러스 구독자에 '닷츠' 확대...비즈니스 스탠더드도 지원",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217659",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T02:24:10+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "215efc0b9751116a",
+  "title": "미국 AI 칩 규제에 중국 기업들 잇단 타격…WSJ \"엔비디아 금단 현상\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217660",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T02:15:38+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "06f297d6e6f253c2",
+  "title": "영국, 세계유산·공항 안전 문제로 840MW 태양광발전소 건설 불허",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217573",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T00:10:00+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "안전"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "b6b17d181cdc0f77",
+  "title": "이탈리아, 재생에너지 연계 배터리 100만대 돌파…저장용량 12.84GWh",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217570",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T00:10:00+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "4f6a537c8607d83d",
+  "title": "챗GPT·클로드, 모바일 앱 나란히 개편…AI 에이전트 기능 전면에",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217654",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T00:09:35+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "기능"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI",
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "2e6bb0ed413fcf69",
+  "title": "최태원 회장, “AI 네이티브 대학, 설계부터 바꿔야”...韓日 기업·대학 공동 AI 인재 육성 제안",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42838",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-22T00:09:31+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "육성"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "84ead11611bc69df",
+  "title": "LGU+ 조직개편...\"AI 사업 성과 창출 가속\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217651",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-22T00:00:00+00:00",
+  "collected_at": "2026-11-22T10:22:28.235536+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "f6f5282ad9e3c36b",
   "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
   "url": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
