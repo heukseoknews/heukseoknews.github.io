@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-22T10:22:28.235536+00:00",
-  "finished_at": "2026-11-22T10:22:31.086469+00:00",
-  "candidates": 317,
-  "added": 17,
+  "started_at": "2026-11-22T18:03:56.094612+00:00",
+  "finished_at": "2026-11-22T18:03:58.834970+00:00",
+  "candidates": 315,
+  "added": 3,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,10 +11,10 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
-   "entries": 1421,
+   "entries": 1422,
    "kept": 99,
    "skipped": {
     "no_link": 0,
@@ -25,8 +25,8 @@
    "filtered": [
     "[노이즈 제목] LifeVal"
    ],
-   "oldest": "2026-10-23T17:00:00+00:00",
-   "newest": "2026-11-20T10:00:00+00:00",
+   "oldest": "2026-10-26T07:00:00+00:00",
+   "newest": "2026-11-22T00:00:00+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -35,8 +35,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 13,
@@ -57,8 +57,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
    "entries": 915,
    "kept": 29,
@@ -79,8 +79,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -109,8 +109,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -137,8 +137,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -164,8 +164,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -196,8 +196,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -222,11 +222,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
-   "entries": 13,
-   "kept": 11,
+   "entries": 14,
+   "kept": 12,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -238,7 +238,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-16T14:32:51+00:00",
-   "newest": "2026-11-22T03:26:39+00:00",
+   "newest": "2026-11-22T15:30:10+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -247,21 +247,20 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-22T10:22:28.235536+00:00",
-   "last_success_at": "2026-11-22T10:22:28.235536+00:00",
+   "last_run_at": "2026-11-22T18:03:56.094612+00:00",
+   "last_success_at": "2026-11-22T18:03:56.094612+00:00",
    "consecutive_failures": 0,
-   "entries": 7,
-   "kept": 7,
+   "entries": 4,
+   "kept": 4,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 2
+    "low_relevance": 1
    },
    "filtered": [
-    "Meta’s Muse Can Now Show You an Outfit Before You Buy It",
     "Meta's Muse Read Signal Messages and Invented Markets"
    ],
-   "oldest": "2026-11-19T16:22:49+00:00",
+   "oldest": "2026-11-19T21:46:22+00:00",
    "newest": "2026-11-21T17:28:00+00:00",
    "at_limit": false,
    "needs_split": false,
