@@ -1,5 +1,827 @@
 [
  {
+  "id": "00f5d329e1ef5ba8",
+  "title": "황 복귀에 엔비디아 직원들 환호…머스크·알트먼도 환영",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217711",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:10:26+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "5e2478fb7557e8d3",
+  "title": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+  "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:05:50+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "launch",
+   "agent",
+   "code"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "876aad68c91f878f",
+  "title": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
+  "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:02:05+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "raises",
+   "stock",
+   "agent",
+   "market"
+  ],
+  "score": 4,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "b51df53e34318352",
+  "title": "[11월23일] 'GPT-6'가 로봇의 두뇌까지 맡기 시작했다는 것의 의미",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217684",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:00:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP",
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "affb554213303069",
+  "title": "Elon Musk and others rejoice as Jensen Huang is reinstated at Nvidia amid scandal",
+  "url": "https://techcrunch.com/2026/11/23/elon-musk-and-others-rejoice-as-jensen-huang-is-reinstated-at-nvidia-amid-scandal/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T21:47:41+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "685cd646740c119a",
+  "title": "‘Superintelligence is arriving’: Mark Zuckerberg’s AI chief warns humanity may lose control—the same week the Nasdaq wiped out its entire 2026 gain",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOLVdscU5CTnZHSUFhSUd4czB5ckpDeWc5SFlKd1pETDNwZnF4N2thRWM0SVBtQU5qYm1JNDJXRE5xMVhmTllGTDdvS3o4YUszRjBXcldEczZrLW5YdGdhb2hjU2J2STlaMHR1VjRrdUNZbEk4UXE0aFp3V3JrYU9naFNVdkJIVkROMnV3X2hZMG1CNjJzSDVKQURmUkFxZTUwejhsRF9KdjEtZEI4bkc1RnZJM3c?oc=5",
+  "source": "Fortune",
+  "source_type": "media",
+  "published_at": "2026-11-23T21:35:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "770032b6c93d4eab",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 3
+ },
+ {
+  "id": "b3e755e44e889b4f",
+  "title": "[기고] AI가 리만 가설을 풀었다면 수학은 끝난 것인가",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217706",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-23T21:30:47+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "bf2b853553a4f501",
+  "title": "States sue SpaceX to stop Grok from generating child sex images, revenge porn",
+  "url": "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-23T21:30:44+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [
+   "xAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "ea39f8a43a60b7b5",
+  "title": "Megaspeed, the company at the center of the Jensen Huang scandal, appears headed for a US blacklist",
+  "url": "https://techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T21:25:42+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "1764cf97c33742fe",
+  "title": "‘Clearly Superhuman’: Meta’s AI Chief Warns Against A ‘Handover’ Of Society To The Machines",
+  "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdFVvTno5akNqZDdSUGVOdU14dVQzbTA1aTNiUUc4aFJXUzZHa05PTWFVXzNobkJKOXlyaXJxWDhESmxKVm9VSDhNLVZMaVB2c0hhT1gwMGJCZjNHS3hnMUltc2FKTjl1S3Y3b2JRdXNIcHNDbFhjdThUMS1tNWY2cmg5OVpxcDN3dDY0?oc=5",
+  "source": "The Daily Caller",
+  "source_type": "media",
+  "published_at": "2026-11-23T20:50:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "d70157d1228f26a0",
+  "title": "Nvidia employees greet Jensen Huang like a hero as he returns to company’s HQ",
+  "url": "https://techcrunch.com/2026/11/23/nvidia-employees-greet-jensen-huang-like-a-hero-as-he-returns-to-companys-hq/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T20:38:53+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "71637f58bfff7251",
+  "title": "젠슨 황 복귀에 엔비디아 주가 31% 급등…AI 관련주 동반 반등",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217709",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-23T20:22:38+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "주가"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "76fe7e0b6a6897f0",
+  "title": "Three professors built a startup to find holes in AI agents; Meta hired them to protect its own systems; f",
+  "url": "https://news.google.com/rss/articles/CBMirAJBVV95cUxPUjNrc2o4V1hMWGxrTjhCZWt3NkZ5VzF6MDJWaU5ub0lGRTFDTkYxUE9ydzI1VU5DaDdES0I5NGN3VGdIVnpNV3ZzMHFJWml2OVlyWUpacWhkVTVMa2ZsUTYwRzhLckpCcXpZSV9oUTVwRTc3MWMtTDIzSklkYndiODlaVzZoYVU2RWlteVBqODZhR3g3b3FWSElJX05UaENBdzdmRkljamRtZ2JFTnNVYkFGaDR2ZFZRTmNHbFhVeUtPLWFmT2g4NzB5dEtPaE5aQ2Fub3FRTFdtaTk3aDRTZEpxRWpzZnBoVlNUcVg2SXBrT2pueDVqbndoM2dZU3pFNkZjMkhLdzBBaTNwQXZPS3AxU1hVMExjOEx6U2RpT2o2VE5MVW5GZVphZVjSAbICQVVfeXFMUGZfUXl3ODViUklVVU5aRi0yaVlIRFVMZW04SzQ3UV9RLXdqQWw4aWk0azRIZmMyZFlEV1RSdjlPNE9EMktfZmN0SUNDekhzZ21NYlRfV1d1MU5PSVdPVWRxcTZ1SXhtck5SaFdaSTZVSDg4TmlJWlVJRjlqakpFbGtQTnMwX2pQdHNDS3BRajgyeUFpck1WZWFIS1RiMFlzQ21RYUQ0OE44ZTB1Yk80ZDNZM3puV2pEQ003UG42N1pmVnhOQlBZd2JCbUFYMjRWeEhKTTl3czFpZ2NuR2RhSUgwVlU4Rmc3a0dGbTZibVltcUxYYkVxQlF1RjhwWUxJUFROWmcwQXF0WkZWWHRJZk4zMkdBVTRielJvN3cyc1FJNVJYQktCNUl4WHlwSzA2VG9n?oc=5",
+  "source": "The Economic Times",
+  "source_type": "media",
+  "published_at": "2026-11-23T20:18:28+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "startup",
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "bba2f7636e2dda17",
+  "title": "젠슨 황 복귀 배경은…트럼프 개입·주가 폭락·후임자 난항",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217708",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-23T20:07:15+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "주가"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "74a10a9670e1d524",
+  "title": "Meta AI chief says superintelligence is coming, warns next year will be critical",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOUDZwZnROZ3RoOE9ZLU93ZFVHdDVFdHc4d21JaDBZRnZUZ1FySWpjUmE4ODIzR285dWsyR2d3TGxZWThaUmZGU3UwSFJqcGxrS2l6dkJtM1p3N1BKLUNlOTY4ZUlmb1FqMGlmbTdXSldpT2VjeUVnVG54Y1NyNkEtZ29nWTlUSGpxOVlkRGE4X0ZqY2ctTGxhbEdTZEVNZE4xdDV5djctQlFyWnUtMlhibEVYWnY3Q3PSAb8BQVVfeXFMTkZPWmJVbzlqdjJqSWFZSFIxNG5HWEp4a3k2Sms5SXBUOVhGNllzSm00dFVYRndJRFVfQm9HSHdyc2I3U1hDWUE0SWxnY3NEbVVReVBDUUVTWmZKbHRjX3MtNWlVZFlrcEU1VWdvT2lVU2t0VUN2YnN4bG4xdVZMdm9rUVQ1bXkyRjdZRW9MeERRbXNlTXVWU3BQbk9PZ3hrTTNCaE1DYUowVFNOUkNZZS00b21KWHVjN1JDVlpxWlk?oc=5",
+  "source": "The Express Tribune",
+  "source_type": "media",
+  "published_at": "2026-11-23T20:03:45+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3
+ },
+ {
+  "id": "f0e722ebf574956f",
+  "title": "젠슨 황, 사임 11일 만에 엔비디아 CEO 복귀…트럼프 직접 개입",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217707",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-23T19:50:17+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "25f33d1df44504de",
+  "title": "Google Search’s AI Mode can now tap into Drive and Wallet for more personalized responses",
+  "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T19:14:46+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "f0e18a836478a957",
+  "title": "Returning to the Neuron Basis for Interpretability, Part 1: Answering Three Objections",
+  "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE51RURTZW9Mc2ZrRWI5bDFKYnpkeThPVFFKQ3hVamlUWUZ2akJBOVNEaTA0WjFPR2pRUEtNdEllSFBJRjhNXzRVbUxYNndSQW9SVnNpN0xMNXVIRkVfNGRkZGs2OC1TRlI1?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-23T18:14:08+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "02f282f3db14100c",
+  "title": "Returning to the Neuron Basis for Interpretability, Part 2: Using Neurons For Safety Applications",
+  "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE80SEl5Nm1XTnFSUk1iaEtQYkNkT3F5Ump1TkR1Y1lRQ1c5TllybllYUVhzQ2hOR3cxbzBSWUgwbC1BOFE1VjZiaDc0Rjd0S21NWFR0R3Y4MGg3UW14YzhHc1JrYUhRdm9kOUhnQVNnWDE?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-23T18:14:08+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "safety"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "4aa489ee2a12fc59",
+  "title": "Jensen Huang scheduled to testify next week in Senate following reinstatement as Nvidia CEO",
+  "url": "https://techcrunch.com/2026/11/23/jensen-huang-scheduled-to-testify-next-week-in-senate-following-reinstatement-as-nvidia-ceo/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T18:12:22+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "senate",
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "eb2701ff66febea2",
+  "title": "RoboTrack: Point tracking for real-world robotic manipulation",
+  "url": "https://huggingface.co/blog/allenai/robotrack",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-23T17:20:37+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "fc32915cc49c0588",
+  "title": "Amazon snaps up Decart’s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
+  "url": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T17:14:23+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "chip"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "8d32fcc88c2d5088",
+  "title": "Merry Making: Play, Build and Create With NVIDIA Technologies This Holiday Season",
+  "url": "https://blogs.nvidia.com/blog/nvidia-technologies-holidays-2026/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-23T17:00:08+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "895b540db6a8889e",
+  "title": "Finding faster quantum algorithms with agents and formal verification",
+  "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-11-23T16:59:40+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "a62a31ba5f1d2afb",
+  "title": "Jensen Huang isn’t out of the woods yet",
+  "url": "https://techcrunch.com/2026/11/23/jensen-huang-isnt-out-of-the-woods-yet/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T16:57:40+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "76b72dfbff18bdc0",
+  "title": "Trump reportedly called into Nvidia board meeting to advocate for Huang’s return",
+  "url": "https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T16:39:10+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "53ec019c08e778d7",
+  "title": "AI ‘superintelligence’ is arriving – and ‘it is hard to imagine’ how we can control it, says Meta’s AI boss",
+  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNFgxTHFzU3N4Rk5NUVh6Z0dsQUJHaXVtMmpjeGtXNzRpU05NZVFjcVBtZWlRV3pCeVR5YlA4UlJmQVpGRXRjM0RWWmZUcU4yQ3F5Nmp3MmluUm5DUk56RmRRTnUxOGhOWWVpLXEta1ZKbWJaWk10SWthU1dzS1hQZTNzVXhMTFJBUE1iRTJPTWFDWTUyMHY5VXQzVVpaWmsxcW5HTlhMV3dsTmRfMHdBeUdR?oc=5",
+  "source": "The Independent",
+  "source_type": "media",
+  "published_at": "2026-11-23T16:05:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3
+ },
+ {
+  "id": "27a6b6af092d6a67",
+  "title": "Jensen Huang reinstated as Nvidia CEO, board chair",
+  "url": "https://arstechnica.com/ai/2026/11/jensen-huang-reinstated-as-nvidia-ceo-board-chair/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-23T15:46:18+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "cluster_id": "89fc33d5028ef502",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
+ },
+ {
+  "id": "976fcfe5a3598720",
+  "title": "“How Many More Do We Need?”: Megyn Kelly reacts to Meta AI chief’s Superintelligence warning",
+  "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNXzczV3dya3dPLUZXTlB2R3ItU3NLbGRTQmh2M094bFFZLXVBT2drTFMxSzIwblRRWW5LUW5ZYk9WZlVSbUlrY2tZbXhFV0Z0MWE5WFdxY3NUeWJaaXRpY3BqempjZnk0Qzl0MFZ6VTMwYnN0Um5UZ3dndmNWUUFpVkdQMUlIcFNkX1JYOUI3ZnRWRDkzMVZHR2JnQWEtVHBnakhjeEdDRjQzdE5HeDY0ZWFyT2RTV3YwU040NF9ZYUZHekNEVkwtSUxYNkw?oc=5",
+  "source": "Soap Central",
+  "source_type": "media",
+  "published_at": "2026-11-23T15:39:55+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3
+ },
+ {
+  "id": "5381e47704710107",
+  "title": "Meta (NASDAQ: META) Bets Up To $135 Billion On 2026 AI Push As Chief Warns Superintelligence Is Already Arriving",
+  "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNVWxxUlNrQnZBMmJRVmtSQUVOcGYtbFNteG9wVGFWN3h1UGNFcnR5U2VBRWdULS0zOFVNcGUySURMcU5FR0VSOVVLRFpGRmZ2cWZFeXZrQ0xZWk5PVVpJRnlWdFZMN3RCMGFXQU1yZ1pTdXJuSFgyRld6LUpnbkVJU1dnVExFbW5EcV81OUc0MUdxZ0l0cXRuS25waFBtWjVCTGFQN1RxMGlfa0pnUUwyeFV2b0FYTUVqbm5taXdxcmdqTE5TdEdGLWYtRG50NTNSbmhLWkFZTzJ2SGd4bTJuNFZWd3F4RTZNSHhsRzd3?oc=5",
+  "source": "Foreign Policy Journal",
+  "source_type": "media",
+  "published_at": "2026-11-23T15:10:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3
+ },
+ {
+  "id": "29c9de3a1f8674ad",
+  "title": "Trump endorses Jensen Huang’s return to Nvidia, says US has no evidence of wrongdoing",
+  "url": "https://techcrunch.com/2026/11/23/trump-endorses-jensen-huangs-return-to-nvidia-says-us-has-no-evidence-of-wrongdoing/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T15:04:01+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "f623141117fe3174",
+  "title": "Sierra doubles valuation to $30B within six months as demand for AI in CX takes off",
+  "url": "https://techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T14:43:03+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "valuation"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "89fc33d5028ef502",
+  "title": "Nvidia reverses course and brings Jensen Huang back as CEO",
+  "url": "https://techcrunch.com/2026/11/23/nvidia-reverses-course-and-brings-jensen-huang-back-as-ceo/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-23T14:21:59+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "cluster_id": "89fc33d5028ef502",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2,
+  "cluster_lead": true
+ },
+ {
+  "id": "1f62273df05084e0",
+  "title": "Superintelligence Is Near, Warns Meta's Alexandr Wang, Says Next Year's Choices Will Decide Humanity's Future",
+  "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNbTV1OUpFTWQ3ck94dHBNTXNNQm9mLTloMHIwT3hpTHBoandDNHFhYXJmTkZsOWdqeWdKNXQ1TWlSUmZ2X2dPVzRKQk96VU5Pa2FrY0pDSm1wMkc0YXhqVlVaUnRqZThkZENoVHdkVEkzR0tHeGRPYThSTjFkUFVEYXZLMllDZktvbEk0NlJkd0R4aG5rOEVvWGNVcmxVRTdYYWhuWDhBaXhrMVhSc2ZIOWdUUElCdkhVcmF4Wmd2TFlsX1hVaW5LRWNOYl92dkl1LTIyYdIB2gFBVV95cUxQVW0wbUZpSFFKbXowb2FzX1VrRWVDelZ6MlByVzh3M1ZwQmhwRkQwZ1JEOW5IX1F6aF80ci16R3Q3dWJ5dEhEYk9wRW0tN0UwX1dENW1LMWJUWDRWTVFTNkRuLV9MVXJ0NG1IaHdJbWQ2YUswcXltSUo4M1ZaY3VSc2g0dXJkR2tRUDhXQ1A5LWVJNDI2d25WYlVCQWJKYzBHSXdkcW9Mbkk0Y3kxcTF5WmsxQnpFR1haMmZPUjZWcmhYMmhjT1N5aTdCOWFycTZuR25icnY3VmpmZw?oc=5",
+  "source": "ETV Bharat",
+  "source_type": "media",
+  "published_at": "2026-11-23T14:03:07+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "770032b6c93d4eab",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 1
+ },
+ {
+  "id": "cc0590401e47b97a",
+  "title": "Meta’s Alexandr Wang warns against handing over society to AI",
+  "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUy1DaWt5T2t2TE91OW5GbnpaQ2lMcE5GV2w1a2JzTkdfQU9US0RwZWNZdmdjV0F6ZmtYcDUtRV9FMnlmaTNfRGdUY0tXSEllSmVubnVSSmtJc3NwX1dDUkNMeWd0ZDlvMGtBdzB2N3hvWE15NjZpUTR4cE55MGUwUVNOS2Y2cmxaX0s0bGhRaHBRYWU4Q3RleS1ob2lNekMtVm5vMXdzRU5fSUhGdUJjY3NPTzHSAbQBQVVfeXFMTlMtQ2lreU9rdkxPdTluRm56WkNpTHBORldsNWtic05HX0FPVEtEcGVjWXZnY1dBemZrWHA1LUVfRTJ5ZmkzX0RnVGNLV0hJZUplbm51UkprSXNzcF9XQ1JDTHlndGQ5bzBrQXcwdjd4b1hNeTY2aVE0eHBOeTBlMFFTTktmNnJsWl9LNGxoUWhwUWFlOEN0ZXktaG9pTXpDLVZubzF3c0VOX0lIRnVCY2NzT08x?oc=5",
+  "source": "Social Samosa",
+  "source_type": "media",
+  "published_at": "2026-11-23T13:14:23+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "d759d71a7ea2ebad",
+  "cluster_size": 3,
+  "cluster_sources": 3,
+  "score_v2": 2
+ },
+ {
+  "id": "cdb684b45db216d2",
+  "title": "KAIST, 피지컬 AI·제조 AI 에이전트 산업 적용 논의…휴머노이드부터 자율제조까지 제조혁신 전략 공유",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42861",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-23T12:46:01+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "적용"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스",
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "c3079baa07ae12d8",
+  "title": "Review: The Asus ProArt P16 offers a glimpse of a future powered by local AI",
+  "url": "https://arstechnica.com/reviews/2026/11/review-the-asus-proart-p16-offers-a-glimpse-of-a-future-powered-by-local-ai/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-23T12:00:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "1c2bce32b775856d",
+  "title": "Meta executive says superintelligence is arriving, urges AI safety focus",
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQVWxHQWlMaEJ3cXFKckFBcUt1bjlMd18wMUtnZVVYSnM5YnlGWWlNR0E5eTFNMk03V0pOZk1RR3c5Nlg2LTlaN1dCY3lMSEFhZUpyN245UkNRdy13SmFuNFNFZVRjdUVTbERwQ3NhWTJ1bXY2RjNoeDkzX0JNTy1jdTFocDdnVnlGbm9QZHMwUm1fWjlYcDRES1ZSd0hHSVdWV2RuV0JPU0plcmJ2Sk85aFp5RnNaSmst0gG4AUFVX3lxTFBVbEdBaUxoQndxcUpyQUFxS3VuOUx3XzAxS2dlVVhKczlieUZZaU1HQTl5MU0yTTdXSk5mTVFHdzk2WDYtOVo3V0JjeUxIQWFlSnI3bjlSQ1F3LXdKYW40U0VlVGN1RVNsRHBDc2FZMnVtdjZGM2h4OTNfQk1PLWN1MWhwN2dWeUZub1BkczBSbV9aOVhwNERLVlJ3SEdJV1ZXZG5XQk9TSmVyYnZKTzloWnlGc1pKay0?oc=5",
+  "source": "Free Press Kashmir",
+  "source_type": "media",
+  "published_at": "2026-11-23T11:42:52+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "safety"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3
+ },
+ {
   "id": "0c66e70dd23e19ea",
   "title": "Meta’s AI Chief Sounds Alarm on Superintelligence as Lawmakers Pushes for an Outright Ban",
   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZktYOXExZE01akZ6X2JnVy02MHhqdnJjaUw4ZllwMVFrNnV2ZXh4cGhCRDN5X2FEUTdBTjFzUlp0ZHNOa0dOV2hjdks0eVhvRThpYlpGVXlSZ0FfamxXOGhhQl9ERG5hWHJxb2VWZnJmTG5md1VFOU90SFFzdWtLbQ?oc=5",
@@ -20,9 +842,32 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 4,
-  "cluster_sources": 4,
-  "score_v2": 4
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3
+ },
+ {
+  "id": "80625a73ec8509de",
+  "title": "\"Humanity Is Approaching Superintelligence\": Meta AI Chief Warns of a Pivotal Year",
+  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPYllmZU9BRjlNd1RkUF93a2o4N0Q3OWdqLTM1eHFPeEZOdDdCbEdBMUxiMDV3VlhDbThtLXpZMGthVFdQckdHMDJTS192ZUhNelZ1LWVzYnowQVFzdGM5S0lJQVJzREE5ZVNnN0FCaTdXNU12a2VmSnMtc2dHUFo3YV9mbEtrRFHSAYcBQVVfeXFMT2JZZmVPQUY5TXdUZFBfd2tqODdENzlnai0zNXhxT3hGTnQ3QmxHQTFMYjA1d1ZYQ204bS16WTBrYVRXUHJHRzAyU0tfdmVITXpWdS1lc2J6MEFRc3RjOUtJSUFSc0RBOWVTZzdBQmk3VzVNdmtlZkpzLXNnR1BaN2FfZmxLa0RR?oc=5",
+  "source": "Mezha",
+  "source_type": "media",
+  "published_at": "2026-11-23T10:22:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "770032b6c93d4eab",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 3
  },
  {
   "id": "226a1e6342750139",
@@ -41,8 +886,8 @@
   "companies": [],
   "orgs": [],
   "cluster_id": "d759d71a7ea2ebad",
-  "cluster_size": 2,
-  "cluster_sources": 2,
+  "cluster_size": 3,
+  "cluster_sources": 3,
   "score_v2": 2,
   "cluster_lead": true
  },
@@ -374,9 +1219,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 4,
-  "cluster_sources": 4,
-  "score_v2": 4
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3
  },
  {
   "id": "9d96a5ee45323dfd",
@@ -396,6 +1241,42 @@
   "orgs": [
    "월드모델·로보틱스"
   ],
+  "score_v2": 2
+ },
+ {
+  "id": "10878202550bbbf9",
+  "title": "Connected intelligence for in-house legal",
+  "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-23T08:00:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "1259b534687dd8b3",
+  "title": "Richpanel helps companies automate 50% of support in 30 days",
+  "url": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-23T08:00:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
   "score_v2": 2
  },
  {
@@ -476,6 +1357,26 @@
   ],
   "orgs": [],
   "score_v2": 4
+ },
+ {
+  "id": "b4209ba945015f8a",
+  "title": "광양경자청, 인도네시아 바탕 특별경제구역청과 업무협약 체결",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217710",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-23T06:55:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "업무협약"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "997effd8820b9e21",
@@ -601,9 +1502,9 @@
   ],
   "orgs": [],
   "cluster_id": "770032b6c93d4eab",
-  "cluster_size": 2,
-  "cluster_sources": 2,
-  "score_v2": 2
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 3
  },
  {
   "id": "b02f1ace8f248fcf",
@@ -689,9 +1590,9 @@
   ],
   "orgs": [],
   "cluster_id": "770032b6c93d4eab",
-  "cluster_size": 2,
-  "cluster_sources": 2,
-  "score_v2": 2,
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 3,
   "cluster_lead": true
  },
  {
@@ -715,8 +1616,8 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 9,
+  "cluster_sources": 9,
   "score_v2": 2
  },
  {
@@ -738,8 +1639,8 @@
   ],
   "orgs": [],
   "cluster_id": "d759d71a7ea2ebad",
-  "cluster_size": 2,
-  "cluster_sources": 2,
+  "cluster_size": 3,
+  "cluster_sources": 3,
   "score_v2": 1
  },
  {
@@ -1159,9 +2060,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 4,
-  "cluster_sources": 4,
-  "score_v2": 4,
+  "cluster_size": 9,
+  "cluster_sources": 9,
+  "score_v2": 3,
   "cluster_lead": true
  },
  {
@@ -1198,6 +2099,26 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "00d52199bef25f9e",
+  "title": "How to build and maintain an agentic evaluation",
+  "url": "https://huggingface.co/blog/agentic-evals",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-23T00:00:00+00:00",
+  "collected_at": "2026-11-23T22:15:34.492323+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
   "score_v2": 2
  },
  {
