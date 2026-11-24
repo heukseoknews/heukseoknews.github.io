@@ -1,5 +1,463 @@
 [
  {
+  "id": "3040fb2c920a236d",
+  "title": "오픈AI, 챗GPT에 'GPT-6.2 솔' 탑재…지시 수행·이미지 이해 강화",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217725",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T03:13:38+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "5f2c215d6e622d57",
+  "title": "젠슨 황 복귀에 미 의회 초당적 반발…AI 칩 수출 규제 강화 요구",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217721",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T03:06:08+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "9446a17931ae4515",
+  "title": "NYT \"앨리스 황, 중국 정보기관과 1년 넘게 접촉\"…정부 조사는 계속",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217718",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T03:01:52+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "정부"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "dff86b7c16a915ed",
+  "title": "미국, 메가스피드 블랙리스트 등재…황 CEO 복귀 당일 AI 칩 공급 차단",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217722",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T02:56:18+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "52ae0cc50cdb1694",
+  "title": "광양경자청, 중국 유망기업 17개사 초청 미래 산업 투자유치 본격화",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217727",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T02:54:21+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "투자 유치"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "45dc5b91245a6cd5",
+  "title": "삼성전자, 2027 임원인사…반도체 인재 중용 ‘성과주의’ 재확인",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217717",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T02:26:32+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "반도체"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "삼성전자"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7f993d1b86650c42",
+  "title": "LGU+, 데이터독과 통화 에이전트 '익시오' 안정성 높인다",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217719",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T02:23:29+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "52549e3f00f7164a",
+  "title": "한컴, 공공기관 HWP 문서 → HWPX 변환 지원",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217716",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T02:22:33+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "353dcd57e7eff727",
+  "title": "오픈AI·시스코, 오픈소스 보안 런타임 시루도 공개...시스템 재시작 없이 리눅스 보호한다",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42867",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T02:07:55+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "오픈소스",
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "9b2a4bcf64d5e23b",
+  "title": "AWS 맷 가먼 CEO “AI 안전, 모델의 행동을 신뢰하는 것은 희망에 의존하는 것”…독립적 통제 시스템 구축 촉구",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42866",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T01:40:15+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "모델·제품 출시",
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "안전",
+   "ceo",
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "e4f251f9008d9e68",
+  "title": "삼성SDS, 2027년 임원 인사 10명 승진…AX·AI 인프라 사업 확대 위한 세대교체",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42865",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T01:32:27+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "AX"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "445bfc5a64054891",
+  "title": "Meta AI chief says AI 1,000 times smarter than humans is coming, warns of control risks",
+  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNaFNUNzVGd3FZd0FDNnhXTnliSi1qSTl6UDdMd2pmVEVscXRHanVDNVBtbWxDOUdzeUF3RTU2OXVCV0YwZHV3S1JmMTZ3VWFZZWRQS05tOWpqaDlGMXhMUzB5RGlDdVE3VDQ0eS1WeTVBR1BqOFVPbzlTUW1aaUYtdktqeURhMFRkNWhTaE42ekk5cXNBZGZrT0VWRnpwOHZtcEpwXw?oc=5",
+  "source": "디지털투데이",
+  "source_type": "media",
+  "published_at": "2026-11-24T01:24:37+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "risk"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
+ },
+ {
+  "id": "bf235a282a62b827",
+  "title": "Meta Parts Ways With Virtue AI Hires",
+  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE45R3QzdTRqamQwLXIzV0loSVJvNG1FSW1HSTVYVGpZR2NTVkNyTW9XVDVHeHJzaTYtLWs0WjltaXF3akY1YnFTYUt3aS10S1M0LTNGdVlrcU1JR0owdEJTRHZ4MGh4dGYtS0tUR01manphN1BmbEpzMkd3NEdOQQ?oc=5",
+  "source": "Wisevoter",
+  "source_type": "media",
+  "published_at": "2026-11-24T00:49:59+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "hire"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "41207b41ec27aa12",
+  "title": "삼성전자, 2027년 임원 인사 131명 승진…AI 메모리·피지컬 AI·파운드리 기술 인재 전진 배치",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42864",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T00:36:33+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "삼성전자"
+  ],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "440ce146c506de65",
+  "title": "한국인 1만명 게놈 분석, 미등록 유전변이 988만개 발굴…생체 나이 측정 정확도 높인다",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42863",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T00:21:04+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "f57b2cfd315cc0ef",
+  "title": "[AI리더의 서가] AI 네이티브 개발자를 위한 OpenAI 코덱스 실전 활용법",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217620",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T00:00:00+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "개발자"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "35ec4afb82089e63",
+  "title": "젠슨 황 11일 만에 엔비디아 복귀…트럼프 직접 개입에 주가 31% 폭등, AI 산업 지배구조 논란 확산",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42862",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-23T23:29:50+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "주가"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "cluster_id": "f0e722ebf574956f",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
+  "id": "76be31653f6d4868",
+  "title": "Meta AI Chief Warns Superintelligence Is Near",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5SUXpGeWNnaENPeDF0Z1dVU2RpY1NjUmM4SUh6cUNPMDUzYU9LY29FLVhNUUM1VzNUZ2ttVlNyZUpfTXh2YzFJWVNoQjIzLW5QQXZRMDNWMXNIbHQ1Y2U3LXUxdndoM3M?oc=5",
+  "source": "cwibc.co.id",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:57:00+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
+ },
+ {
+  "id": "ac6865c20cde31c4",
+  "title": "Meta Executive Warns Superintelligence Could Threaten Human Control",
+  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5XTFc4Z0tSeEdHVzNSd0p0UjlMNjJBQ1BNOUFnQk9iQ0djVlBKWEJ0QTN5d19HNExDa21zMzMtblpDTm9TcnE0UFNtb2Jxd2c2QlVEbUdhVEJpUndHbTg2UHlnXzZNbXByb2lQYVl5SzdlSWpiN1VselJVSQ?oc=5",
+  "source": "Limapagi",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:56:00+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 1
+ },
+ {
+  "id": "49da591494a837b2",
+  "title": "Meta's AI Chief, Citing Riemann Hypothesis Proof, Warns of 'Arrival of Superintelligence,' Urges Humans Keep the Reins",
+  "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBhdTI4NmE5UjR4WG5FVUxfWUtUbWpmeHBEdEJmRld5RFlvQ1VQQzdhNEVWU2xPYXdndmttOWlaUWdRczBQeWhTckJ0V1laZmxQYUpQeFVYeXBNQ1hTUEtLYVJxVUFxazVCZkZPYjBtQ0pxYmhZY3c?oc=5",
+  "source": "BigGo Finance",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:55:00+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "79995ee0acd2c672",
+  "title": "Meta AI Chief Warns Superintelligence Could Threaten Human Control",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1LbmQweVNESWl4bHJIT2Nmd3VmVHlyNXRMUl9EcTZld2dSTWhkSFlscDNNbTI0OVJrSG14YkNJTjNzaFo3RVV3MDZsYVAzRnV2cjFBZmFpcVdFek9RWWw3SEJwM2NPYjE1ejVXTlRHWjhZZzU0?oc=5",
+  "source": "bsinews.id",
+  "source_type": "media",
+  "published_at": "2026-11-23T22:55:00+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
+ },
+ {
   "id": "00f5d329e1ef5ba8",
   "title": "황 복귀에 엔비디아 직원들 환호…머스크·알트먼도 환영",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217711",
@@ -195,6 +653,46 @@
   "score_v2": 1
  },
  {
+  "id": "b0689cf87ab570a4",
+  "title": "OpenAI and Cisco introduce Shirudo",
+  "url": "https://openai.com/index/introducing-shirudo",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-23T21:20:00+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "introduce"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "2ff5568355f485f7",
+  "title": "Working with AI",
+  "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5QQWdUV21Fa2dHR25yU2RLd3Exd0ZQc3RERzMyZFBtWWhxS0NQZjlWR21rWXZqa3FYbmRlZEhPRGhXb19XR3UtTWd3YTdDR3JwM05VTzZoaW82UDdGQWNF?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-23T21:12:08+00:00",
+  "collected_at": "2026-11-24T04:06:32.632501+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "1764cf97c33742fe",
   "title": "‘Clearly Superhuman’: Meta’s AI Chief Warns Against A ‘Handover’ Of Society To The Machines",
   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdFVvTno5akNqZDdSUGVOdU14dVQzbTA1aTNiUUc4aFJXUzZHa05PTWFVXzNobkJKOXlyaXJxWDhESmxKVm9VSDhNLVZMaVB2c0hhT1gwMGJCZjNHS3hnMUltc2FKTjl1S3Y3b2JRdXNIcHNDbFhjdThUMS1tNWY2cmg5OVpxcDN3dDY0?oc=5",
@@ -322,9 +820,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
  },
  {
   "id": "f0e722ebf574956f",
@@ -346,7 +844,10 @@
    "NVIDIA"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "f0e722ebf574956f",
+  "cluster_size": 2,
+  "cluster_sources": 2
  },
  {
   "id": "25f33d1df44504de",
@@ -566,9 +1067,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
  },
  {
   "id": "27a6b6af092d6a67",
@@ -614,9 +1115,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
  },
  {
   "id": "5381e47704710107",
@@ -637,9 +1138,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
  },
  {
   "id": "29c9de3a1f8674ad",
@@ -817,9 +1318,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
  },
  {
   "id": "0c66e70dd23e19ea",
@@ -842,9 +1343,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
  },
  {
   "id": "80625a73ec8509de",
@@ -1219,9 +1720,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4
  },
  {
   "id": "9d96a5ee45323dfd",
@@ -1616,8 +2117,8 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
+  "cluster_size": 13,
+  "cluster_sources": 13,
   "score_v2": 2
  },
  {
@@ -2060,9 +2561,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 9,
-  "cluster_sources": 9,
-  "score_v2": 3,
+  "cluster_size": 13,
+  "cluster_sources": 13,
+  "score_v2": 4,
   "cluster_lead": true
  },
  {
