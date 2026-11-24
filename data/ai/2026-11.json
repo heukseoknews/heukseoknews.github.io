@@ -1,5 +1,306 @@
 [
  {
+  "id": "ea655aef5669054d",
+  "title": "What's going on with the Riemann hypothesis?",
+  "url": "https://arstechnica.com/ai/2026/11/whats-going-on-with-the-riemann-hypothesis/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-24T20:34:53+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "49da591494a837b2",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
+ },
+ {
+  "id": "1a3ac1c1f3d1afa7",
+  "title": "Amazon drone crashes on garage after delivering shampoo, draws FAA probe",
+  "url": "https://arstechnica.com/gadgets/2026/11/faa-opens-probe-after-amazon-delivery-drone-clips-cable-crashes-into-garage/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-24T18:47:57+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "7992bf690613aecd",
+  "title": "Anthropic shares fall below IPO price, a worrying sign for AI startups",
+  "url": "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T18:30:42+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ipo",
+   "startup"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "4113acb1424b41bb",
+  "title": "UK warns AI-driven cyberattacks are exposing years of weak security",
+  "url": "https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T18:02:59+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "3d9795e0b578488b",
+  "title": "Tidal announces ban on AI-generated music; 27 million tracks will be deleted",
+  "url": "https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-24T17:34:34+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "ban"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "6f0f83d3e1c30af4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
+ },
+ {
+  "id": "b0f646dfac9a0a0a",
+  "title": "Meta brings its Muse AI assistant directly into Instagram DMs",
+  "url": "https://techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T17:00:00+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "6f0f83d3e1c30af4",
+  "title": "Tidal to ban and remove millions of AI-generated tracks as AI slop inundates music streaming",
+  "url": "https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T16:46:00+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "ban"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "6f0f83d3e1c30af4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
+  "id": "6a28e842b3bf4bfd",
+  "title": "Microduck Obstacle Avoidance: A Sim2Real Workflow with Isaac Lab and Newton",
+  "url": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-24T16:34:13+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "019e0bffaaa4fe38",
+  "title": "Meta officially launches Muse AI agent in the UK",
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZnA3UzAxT2ZHYU9MbjRtYVVPdGVDQzBJMXhHVjVlRWZjTHNma3BsVjd6Y3laVUloQVQtN0VIZmktODlTWWhsTzVFeDJpX0ttbGItRmVYMk1KbzJTMy1lM1NnbE4wVnhkQWRxd1Ztd2dlaEUzd0lKRUVkMXdBNV9maA?oc=5",
+  "source": "Windows Report",
+  "source_type": "media",
+  "published_at": "2026-11-24T16:31:33+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "launch",
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "0d4dbfed2ba868d7",
+  "title": "Why a Crusoe investor is betting on solar and batteries to power future AI data centers",
+  "url": "https://techcrunch.com/2026/11/24/why-a-crusoe-investor-is-betting-on-solar-and-batteries-to-power-future-ai-data-centers/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T16:10:00+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "a9a1f591c3b5ca40",
+  "title": "Pinterest will now let parents limit the AI-generated content their teens see",
+  "url": "https://techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T16:02:37+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "teens"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "a4cb5a65f0d9bf1e",
+  "title": "Amazon’s Decart acquisition is a bet on using software to narrow the silicon gap with Nvidia",
+  "url": "https://techcrunch.com/2026/11/24/amazons-decart-acquisition-is-a-bet-on-using-software-to-narrow-the-gap-with-nvidia-in-the-ai-chip-race/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T15:51:07+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "acquisition"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "Amazon",
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "53fd63244ab16fab",
+  "title": "How Trump and Silicon Valley forced Nvidia to take Jensen Huang back",
+  "url": "https://arstechnica.com/tech-policy/2026/11/how-trump-and-silicon-valley-forced-nvidia-to-take-jensen-huang-back/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-24T14:56:50+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "5665c86e15d759ac",
+  "title": "Meta stock falls as Class C share delay raises questions over AI funding",
+  "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMFdMWm1xOWhlXzdJbW13djlYT3VEWWhKOWp3WnR1Z25Oci1UN2RXZ1Z0SXlld2ZyYTE4UHBnTmM4Rm84N3Nrcm80MTU3bkdBbVNNaHFYLVRtMmgyM213b0tuV0pEcjUxY1pnWDhaVkdLeXBSMk82ejlwYUpGZmplNHVabnAtZ2sxTFVlaFZKRjJRb3VpbVlwQVMwcXBnN1h6S2RJam1VWFgwMXlWckFza2lpSVp2TnNCNWZOSEhVc2Q5em1VMWhvSw?oc=5",
+  "source": "TradingView",
+  "source_type": "media",
+  "published_at": "2026-11-24T14:08:57+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "raises",
+   "funding",
+   "stock"
+  ],
+  "score": 4,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
   "id": "44bd775b8ffe162a",
   "title": "Amazon says hackers' AI agents found and exploited 0-day with little human input",
   "url": "https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/",
@@ -24,6 +325,28 @@
   "score_v2": 3
  },
  {
+  "id": "270a9cb761a16ac5",
+  "title": "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
+  "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQUzRPQkNMSGRQWEpoODJwUzViZ2dPUUNkUTlvb3lhUkhnOWxFXzR6VG1SbzhNTnd5cktTSnNMLVhnLUZjOGtRZ0dNeGY4LTZxQnYxSlhSQWNKb05sem4tcnJlMVFqRkVvYTJsbGlkU3RLOWxjeXc0MkFJS053T3VMNnM0LVV0dFF5aWlYOUFNODB1cnZRQXJhVU5ZRjFDdGV6M1RMNXhqa05KWmlic3pkbGxXdWl4bzZMQ3FIcDRkREZuZERIck5jOGN4X1p0Y1htcDVNRVo4MmppSkt3SEJleGRxaGE1ck0wLWtGUjJLbVVTbW5ReTV6RTZ3c3N0SGlGVGQ0dzRfVldocFk?oc=5",
+  "source": "TradingView",
+  "source_type": "media",
+  "published_at": "2026-11-24T12:08:52+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "stock"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "ffd1b95382014bd4",
   "title": "Trapit Bansal quits Meta, IIT Kanpur grad Zuckerberg poached from OpenAI is starting from scratch again",
   "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOTVktaXphUDVXdDRxRFhDcDFzRTkxcjRlQWhoZ0VweWRyQjRKQU9RMWpUS1BhZzVTalZkTlQtTWxpcjNiaDVWMThlb1NTUW9fanZYNWdXdW9GYS03R2hxdXFEYlFianFOREswRVZnWGI1cDNFUHJZMERXdDFWWjZBSHJ5MjQtaUFLZndzZExhYm52dUY0ci1kSXR2ZEVOOUp3dGVDbHRkNk9LUmVpbEt4ZEszUDVtRkJNZ2lYOU5kQl9EUWg5ZHd3TkQ2RXpYV0hmMnNWdzJJQlZUc0hHbnE1bGRPTU5DUnNJclBZYnVyZVA3UGpreXpGcThwRm5od9IBgwJBVV95cUxQbUZRaXBXd3pKcDlPTmt2TDkxR3NtVEJmVXlETHVpUnVhbGt2ZGdMM1UwSU9zcmJRLUo5WlJGR18zeWZOQmxla2ctbk5NLTVnX1AySERLMVFqWTItTjNxZjlvNVVKWkhlaF80UVlMWVh4X3FWelVxem50eHN5MEZMVWxIU0R5TWF6MnN4VkVOSHd3dW5ZUjg2OTNmbjBZcnIyNXVndXlsaEN2bWZ4VmVnQUdnSEpqMVJfS3Q1NzBUOE5BU0pIZEstZDRPM3h5M3E1cWlnOXAwb1ZvT0w5d3Zsb3Mta3N6d2NDM3JodzVaQ3RXNmp6MXVIWnBHQklyZU8xYldz?oc=5",
@@ -41,6 +364,24 @@
    "Meta",
    "OpenAI"
   ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "7758c04a629331bf",
+  "title": "Searching for distant planets with Astra",
+  "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-24T11:00:00+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
   "orgs": [],
   "score_v2": 2
  },
@@ -1124,6 +1465,45 @@
   "score_v2": 2
  },
  {
+  "id": "7e14b56be6744308",
+  "title": "How Intentful uses dots to make more time for growth",
+  "url": "https://openai.com/business/customer-stories/intentful-dots",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-24T00:00:00+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "89a905d5eae9fa3e",
+  "title": "How iFood scales coding agents across 15,000 repositories",
+  "url": "https://openai.com/business/customer-stories/ifood",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-24T00:00:00+00:00",
+  "collected_at": "2026-11-24T20:53:40.229861+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "coding",
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "35ec4afb82089e63",
   "title": "젠슨 황 11일 만에 엔비디아 복귀…트럼프 직접 개입에 주가 31% 폭등, AI 산업 지배구조 논란 확산",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42862",
@@ -1213,7 +1593,11 @@
    "Meta"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "49da591494a837b2",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "79995ee0acd2c672",
