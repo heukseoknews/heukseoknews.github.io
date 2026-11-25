@@ -1,5 +1,475 @@
 [
  {
+  "id": "f3eec81ad11f5b31",
+  "title": "HS효성인포메이션시스템, AI 워크로드 특화 스토리지 출시",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42884",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:42:56+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "965b03a84426ec46",
+  "title": "코오롱베니트, 기업 백업 데이터를 AI 자산으로…코헤시티 ‘가이아’ 국내 공급 본격화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42883",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:33:12+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a8d989888f3f7084",
+  "title": "레드햇·마이크로소프트, 차세대 가상화 기술 공동 개발…AI 워크로드·가상머신 통합 운영 지원",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42882",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:25:06+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Microsoft"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "d1fdc803f5ecad7d",
+  "title": "피지컬 AI 시대, 데이터 업로드가 통신 경쟁력으로…KT·LG전자, 5G 대비 업로드 용량 4.9배 높인 6G 기술 검증",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42881",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:00:30+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "기술 검증"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "e531448faeec84ee",
+  "title": "텐센트, 한국어 등 102개 언어 지원 오픈소스 번역 AI ‘하이 MT3’ 공개…오역 43%·누락 및 추가 오류 74% 줄여",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42880",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T01:40:22+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "오픈소스",
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "2cdb8886fda9f99b",
+  "title": "앤트로픽, 상장 4거래일 만에 공모가 붕괴…시총 5000억달러 증발",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217753",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T00:48:29+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "상장"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "772e0c5e7f8c3d94",
+  "title": "네이버클라우드·한수원·한전KDN, 원전 특화 AI 에이전트 개발 협력",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42879",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T00:20:00+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "협력"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "네이버"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "cd26d95554d7ee3a",
+  "title": "Yale’s Sonnenfeld: Nvidia is a ‘detriment’ to U.S. industrial might — not a champion",
+  "url": "https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T00:12:02+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "baaa3fcf6fd0ae7a",
+  "title": "가상 환경에서 AI 학습하고 자율 시스템 검증한다…T3 디펜스, 센서 시뮬레이션·AI 개발 도구 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42878",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T00:09:54+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개",
+   "도구"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "8b36e0bdb43dd09e",
+  "title": "모픽AI, 겹치는 대사까지 동시 처리하는 AI 더빙 툴 출시…90개 이상 언어 지원",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42877",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T00:00:26+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "1ace040aeb538f39",
+  "title": "[AI리더의 서가] 에이전틱 코딩 완성의 기술",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217621",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T00:00:00+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "코딩"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "183a7c05f2c3d032",
+  "title": "AgentBox: Meta FAIR Agent Orchestrator for Slurm",
+  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOOHJES3J2bVkzUmlnYngtenRPWlg5b1FGMnMzalhBR0V3Y3ZRSkJ0eUh6UFpsOWM0cXlUOVBKWm1wMmdiOUhpM0FyTHp2cXNmak9CZXo3eUhrcV82Ry1iekV3eVRoaXBVRE9XMURzazJsRUhNVHVBVjdNajhnSmNhbVlxZFFRcDNMRTZzZHZ3Tld0MGd1?oc=5",
+  "source": "explainx.ai",
+  "source_type": "media",
+  "published_at": "2026-11-25T00:00:00+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "9cb8bc63815cc32e",
+  "title": "에스이노베이션스, 72억 원 규모 엣지 AI 반도체 사업 참여…자율주행 로봇 적용·실증 추진",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42876",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T23:40:09+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "적용",
+   "실증",
+   "반도체"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "6c61b16088b62d0c",
+  "title": "AI 에이전트로 외국인 환자 유치 지원…인덴트코퍼레이션, K-의료관광 시장 공략",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42875",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T23:31:33+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "시장"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "2c4a4e33ef5741da",
+  "title": "서비스나우, 기업 위험 관리에 에이전틱 AI 적용…규정 준수 점검부터 시정 조치까지 자동화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42874",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-24T23:26:06+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "정책·규제·안전"
+  ],
+  "tags": [
+   "적용",
+   "위험"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "97f21b1a1bb0ae2b",
+  "title": "Jensen Huang still thinks a succession plan creates unnecessary hierarchy",
+  "url": "https://techcrunch.com/2026/11/24/jensen-huang-still-thinks-a-succession-plan-creates-unnecessary-hierarchy/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T22:27:52+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "f7aa24f2c45eada6",
+  "title": "[11월24일] AI 업계, 초지능 경고 넘어 개발 제한 방안까지…미국 규제에 영향 줄까",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217724",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T22:00:00+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "규제"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "171b94fafc685f0b",
+  "title": "In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy",
+  "url": "https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T21:48:27+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "86266e890e18a6d4",
+  "title": "Even the best AI agents struggle with everyday life",
+  "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T21:33:29+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "5edc970ed59b587c",
+  "title": "Walmart teams up with Meta to bring Black Friday deals to AI agent Muse",
+  "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T21:32:38+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "deal",
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "977f9f016cc6ca5b",
+  "title": "Maple raises $5.3M to build AI products that protect your data, even from itself",
+  "url": "https://techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-24T21:19:52+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "raises"
+  ],
+  "score": 3,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "35259976495dff5d",
+  "title": "젠슨 황, 복귀 후 첫 직원회의서 사과…복귀 정당성 강조",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217752",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T20:55:29+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "ea655aef5669054d",
   "title": "What's going on with the Riemann hypothesis?",
   "url": "https://arstechnica.com/ai/2026/11/whats-going-on-with-the-riemann-hypothesis/",
@@ -62,6 +532,26 @@
   ],
   "orgs": [],
   "score_v2": 4
+ },
+ {
+  "id": "46b80efd072e3aed",
+  "title": "Measuring and mitigating agent sandbox escape with Siren",
+  "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1fZjR4dUV6eU1kNy1Ub1BpVmxfRXA2c3A5cU5rX2RZZFY3aU1WRGloYkUxZ1pqQmltVjQtTXFDYjhPLXJDbVlBYWxuTC1qQ2JJQW9OeEoyUQ?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-24T18:04:55+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
  },
  {
   "id": "4113acb1424b41bb",
@@ -299,6 +789,28 @@
   ],
   "orgs": [],
   "score_v2": 4
+ },
+ {
+  "id": "ac2f786b30f6d457",
+  "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+  "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-24T13:00:00+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "model"
+  ],
+  "score": 4,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
  },
  {
   "id": "44bd775b8ffe162a",
@@ -1501,6 +2013,28 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a3c9028eefd69cfd",
+  "title": "Clay helps sales teams win with Codex and ChatGPT",
+  "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+  "source": "OpenAI",
+  "source_type": "press",
+  "published_at": "2026-11-24T00:00:00+00:00",
+  "collected_at": "2026-11-25T02:48:31.948618+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "OpenAI News",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
   "score_v2": 2
  },
  {
