@@ -1,5 +1,295 @@
 [
  {
+  "id": "3a73412d0df0bb71",
+  "title": "OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work",
+  "url": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T20:03:27+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "c3986ed0d71a9c0f",
+  "title": "Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it",
+  "url": "https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T19:54:57+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "code"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "71a07b1df043fc19",
+  "title": "Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’",
+  "url": "https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T19:44:24+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "88bd06d7e0e9b82f",
+  "title": "Where scientists draw the line on AI agents",
+  "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-25T18:52:55+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "fd3eea6ab732b725",
+  "title": "Want to buy your kid an AI toy this Christmas? Not in New York",
+  "url": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T18:11:46+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "628d3c512960bc42",
+  "title": "Character.AI’s plan to auction off users’ private chats challenged by state AGs",
+  "url": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T17:35:58+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "984340aa25210009",
+  "title": "Migrating our Messages API to Rust",
+  "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE91blh2eENvd0hsR25fTlhrSkktUlc3djUxb3NYdGo2dm1maGJfZlhvU3NhSS1rWk45WDczZnpiUzVrOEFWVVA1aDRfSXo3YkpfY0RuSzdESDVlU1FqN1VBV1N3Mm5ZdTQ?oc=5",
+  "source": "Anthropic",
+  "source_type": "press",
+  "published_at": "2026-11-25T17:15:45+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "api"
+  ],
+  "score": 3,
+  "feed_name": "Anthropic 공식(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "e0d965bae52b9875",
+  "title": "Ars Live recap: Don’t expect military attacks on data centers to stop",
+  "url": "https://arstechnica.com/gadgets/2026/11/ars-live-recap-dont-expect-military-attacks-on-data-centers-to-stop/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-25T16:47:14+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "551b41b55629eb2a",
+  "title": "AI data centers are becoming harder to build, and neoclouds are feeling it",
+  "url": "https://techcrunch.com/podcast/ai-data-centers-are-becoming-harder-to-build-and-neoclouds-are-feeling-it/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T15:41:43+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "data center"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "3057c1692fc87eb1",
+  "title": "Amazon and Meta reportedly in talks to lift blockade on AI agent Muse",
+  "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T14:10:18+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": true,
+  "companies": [
+   "Amazon",
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "ec57c99a6a096767",
+  "title": "The questions Jensen Huang and Nvidia will still have to answer about Megaspeed",
+  "url": "https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T13:00:00+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "e2a076fdf7febe09",
+  "title": "Meta superintelligence warning: what the proof verifies",
+  "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPUU9NSjRHZjVXTEZ2YWVfaEpNZHo0TXYySlhrNmhyMm1hMHczeHlwSmxwejJxakdVY2tCa0VTcFpzdkdGSzdKR21CdlFnMWhqbjl5eXp2c0ZuRUMzXzh6ZHBTb1JqZndJbWVBMjVoaHl3ZkkxNWgwZjRSU1lsd01XX19MYk5IMHBTUDNMRlVLQmVSS2tXdXI0Z09oQkZ2Wnc?oc=5",
+  "source": "NeoTeo",
+  "source_type": "media",
+  "published_at": "2026-11-25T12:38:42+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "a320c85dd9d59f64",
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
+ },
+ {
+  "id": "62853cacf41b22b3",
+  "title": "\"로봇이 움직이는 물체를 끝까지 추적한다\"…앨런인공지능연구소, 피지컬 AI 평가체계 ‘로보트랙’ 오픈소스로",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42892",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T12:28:44+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "오픈소스"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "319f463cce75ff29",
+  "title": "AI may soon change what it means to be a theoretical physicist",
+  "url": "https://arstechnica.com/ai/2026/11/ai-can-do-the-calculations-physicists-are-figuring-out-what-comes-next/",
+  "source": "Ars Technica",
+  "source_type": "media",
+  "published_at": "2026-11-25T12:00:28+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Ars Technica AI",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "3cf8323b439d5d9a",
   "title": "오픈AI 코덱스·아스트라, 별 1900만개 데이터 분석…아마추어 천문학자도 외계행성 찾는다",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42891",
@@ -18,6 +308,29 @@
   ],
   "orgs": [],
   "score_v2": 2
+ },
+ {
+  "id": "178db532669f142e",
+  "title": "IIT Kanpur alumnus Trapit Bansal exits Meta, plans new research",
+  "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVDVrSG14d0xZNnM1M1RIbEs2NDZ4MXRlSWkyYzd0RmdNcXItZHRwRDI0Z1FCbTUwTlBlOUpEeGhrS1h5N3phZDkteENrNjh4RWpTXzh5NGkzYVM5b2h5ZkVRT29GT3hMdFYteUlCcDBrX0xQX0NoNlF4alc3MGYxNjN4RnJDT0t4WDRIWU03VFlYbWw0SnE3OVNZejNsNFpxVWI2Z21CQXFmQQ?oc=5",
+  "source": "TechGig",
+  "source_type": "media",
+  "published_at": "2026-11-25T10:23:14+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "ffd1b95382014bd4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
  },
  {
   "id": "0077e07924e43bf7",
@@ -1119,6 +1432,26 @@
   "score_v2": 3
  },
  {
+  "id": "df3be113c8aed13f",
+  "title": "Hill-climbing Inkling 2 Mini inference on one RTX PRO 6000",
+  "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-25T00:00:00+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "inference"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "9cb8bc63815cc32e",
   "title": "에스이노베이션스, 72억 원 규모 엣지 AI 반도체 사업 참여…자율주행 로봇 적용·실증 추진",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42876",
@@ -1713,6 +2046,26 @@
   "cluster_lead": true
  },
  {
+  "id": "616293296550946f",
+  "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+  "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+  "source": "Google DeepMind",
+  "source_type": "press",
+  "published_at": "2026-11-24T13:07:53+00:00",
+  "collected_at": "2026-11-25T20:13:18.748508+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 3,
+  "feed_name": "Google DeepMind",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
   "id": "ac2f786b30f6d457",
   "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
   "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
@@ -1799,7 +2152,11 @@
    "OpenAI"
   ],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "ffd1b95382014bd4",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "7758c04a629331bf",
@@ -2876,9 +3233,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "bf235a282a62b827",
@@ -3070,9 +3427,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "ac6865c20cde31c4",
@@ -3093,8 +3450,8 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 14,
+  "cluster_sources": 14,
   "score_v2": 1
  },
  {
@@ -3140,9 +3497,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "00f5d329e1ef5ba8",
@@ -3507,9 +3864,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "f0e722ebf574956f",
@@ -3761,9 +4118,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "27a6b6af092d6a67",
@@ -3809,9 +4166,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "5381e47704710107",
@@ -3832,9 +4189,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "29c9de3a1f8674ad",
@@ -4012,9 +4369,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "0c66e70dd23e19ea",
@@ -4037,9 +4394,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "80625a73ec8509de",
@@ -4414,9 +4771,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3
  },
  {
   "id": "9d96a5ee45323dfd",
@@ -4811,8 +5168,8 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
+  "cluster_size": 14,
+  "cluster_sources": 14,
   "score_v2": 2
  },
  {
@@ -5255,9 +5612,9 @@
   ],
   "orgs": [],
   "cluster_id": "a320c85dd9d59f64",
-  "cluster_size": 13,
-  "cluster_sources": 13,
-  "score_v2": 4,
+  "cluster_size": 14,
+  "cluster_sources": 14,
+  "score_v2": 3,
   "cluster_lead": true
  },
  {
