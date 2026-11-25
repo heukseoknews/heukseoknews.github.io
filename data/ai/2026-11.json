@@ -1,5 +1,804 @@
 [
  {
+  "id": "3cf8323b439d5d9a",
+  "title": "오픈AI 코덱스·아스트라, 별 1900만개 데이터 분석…아마추어 천문학자도 외계행성 찾는다",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42891",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T10:42:41+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "0077e07924e43bf7",
+  "title": "An Indic Voice Agent with CUGA",
+  "url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-25T10:22:09+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "음성·오디오"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "b7a47420038d605a",
+  "title": "日 사카나 AI, 300억 파라미터 추론 모델 ‘나마즈 스몰’ 발표…4배 큰 엔비디아 모델 평균 성능 추월",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42890",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T10:15:35+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "87c9ea041761a749",
+  "title": "Is Meta’s Autonomous Muse AI Agent Ready for UK Retail?",
+  "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNHVVVzlBazJHODFZeVlyeHhrd2RoWWVaUEVoYnFZMVVrUWNrNko0Z0NWanY2Qmw4QWxWbnl1cTd4Um5OUzhUOVd0dVVoLW1CVTk1SVJaX3hJNkp6OUlhUkVtSG9JQy1wakxUUHkxdEdSZTNENWo3WXp2WEFmSW1JQ0t5NFY1ZkY2?oc=5",
+  "source": "AI Magazine",
+  "source_type": "media",
+  "published_at": "2026-11-25T10:07:29+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "2501e372cd19d2db",
+  "cluster_size": 4,
+  "cluster_sources": 4,
+  "score_v2": 5
+ },
+ {
+  "id": "676954242444ec55",
+  "title": "오픈AI \"범용 AI GPT-6, 전문 모델 없이 단백질 설계…실험서 검증\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217758",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T09:23:41+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "b57aa454dd0b9c0a",
+  "title": "앤트로픽, AI 샌드박스 탈출 평가 '사이렌' 공개…최대 32% 접근 시도",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217763",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T09:13:28+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "f5b62ef543eb3e5b",
+  "title": "美 공군, AI·가상현실 기반 공중급유 훈련 확대…연료 270만 갤런 이상 절감",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42889",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T09:03:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "10aadf9d80edb32a",
+  "title": "최첨단 AI, 글 하나만으로 작성자 실명까지 알아내…익명성 위협",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217785",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T09:01:43+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "b157b81944669bbe",
+  "title": "오픈AI, 기업용 AI 에이전트 정확도 높이는 데이터 도구 '아테나' 개발 중",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217778",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T08:46:26+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "도구"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "54df0fb1cb3f181c",
+  "title": "오픈AI·시스코, AI로 리눅스 공격 막는 보안 기술 '시루도' 공개",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217766",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T08:28:30+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "cluster_id": "353dcd57e7eff727",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 4
+ },
+ {
+  "id": "8802c0c1436510d9",
+  "title": "MS, 자체 강화학습 인프라 '로켓' 공개…\"외부 모델 증류 없이 성능 향상\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217783",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T08:19:15+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "공개",
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [
+   "통계·ML·시계열"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "eb9233374855c330",
+  "title": "xAI 창립 멤버들, 미래 예측 AI 개발 나서…30년치 인터넷 활용",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217779",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T08:07:12+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "xAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4ef4d39274b90843",
+  "title": "[게시판] LGU+, AI 통화 앱 '익시오' 보이스피싱 기능 강화 등 단신",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217781",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T08:00:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "기능"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "음성·오디오"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "327443cb41a41699",
+  "title": "음악 플랫폼 타이달, AI 생성곡 전면 금지…연말까지 2900만곡 삭제",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217782",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T07:59:55+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "70541679cee8d217",
+  "title": "로이터 \"앨리스 황 관련 기업, 중국서 3억달러 규모 AI 장비 금융 거래 확인\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217784",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T07:53:35+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "ba4c4df029f3fae3",
+  "title": "브릴스, 디와이에이에 로봇 솔루션 공급...AI 고속 비전 로봇으로 공정 고도화",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217780",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T07:21:32+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "고도화"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "36d32d936e028714",
+  "title": "오픈클로, 실생활 AI 에이전트 평가 '셸벤치' 공개…최고 모델도 성공률 62.5%",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217773",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T07:16:09+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "공개",
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "f73a44eeecf9b776",
+  "title": "앤트로픽 \"AI 도입 기업, 직원 해고보다 신규 채용 줄여\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217775",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T07:02:19+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "도입"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "69894c0c92d6fca2",
+  "title": "스페이스X·테슬라, 3.5조달러 합병 협상 본격화…연내 타결 추진",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217774",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:54:42+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "합병"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "3f5a6a289244cda4",
+  "title": "일레븐랩스, 국내 AI 단편제작 프로젝트에 기술 파트너로 참여·지원",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217771",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:50:19+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "44a1b9b3badc1e6e",
+  "title": "전남대, 등록금·장학금 업무 AI 자동화 확대 추진…기존 시스템에 3억원 추가",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217754",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:48:58+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "d2005aa68fc7d185",
+  "title": "전남광주, 서·논술형 평가 단계적 확대…AI 평가지원시스템 내년 시범",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217768",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:47:22+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "27e8c49edd65e6d4",
+  "title": "의료영상 AI 뉴로핏, 서틀메디컬과 솔루션 협력...북미 시장 조준",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217767",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:46:41+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "협력",
+   "시장"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "f3ddd706c4d33a87",
+  "title": "오픈AI 도청 혐의 전직 엔지니어, 보석금 13억원에 석방 예정",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217762",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:45:17+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "fa29fae24ec423f0",
+  "title": "KT, LG전자와 대량 AI 데이터 전송 위한 6G 핵심 업로드 기술 검증",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217772",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:32:29+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "기술 검증"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "d1fdc803f5ecad7d",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 2
+ },
+ {
+  "id": "dfe81d07147db649",
+  "title": "네이버클라우드, 한수원·한전KDN과 원전 AX 체계 구축",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217776",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T06:31:09+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "AX"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "네이버"
+  ],
+  "orgs": [],
+  "cluster_id": "772e0c5e7f8c3d94",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
+ },
+ {
+  "id": "02e00700f441975d",
+  "title": "아마존 CTO 보겔스, 2027년 5대 기술 전망…\"AI 스스로 방어하고 인간의 뇌와 컴퓨팅 경계 허문다\"",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42888",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T05:08:05+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Amazon"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "93f1e22a489a63e3",
+  "title": "\"AI에 월 25달러 쓰면 물 7.2ℓ 소비…아몬드 우유의 162분의 1\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217769",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T04:51:56+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "2c4afd9794cc128f",
+  "title": "젠슨 황 복귀 후폭풍…엔비디아 이사회 독립성 논란",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217765",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T04:45:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "2872928f915b7e62",
+  "title": "화웨이, 美 재판 9가지 범죄 유형에 유죄 평결…조직범죄 공모는 무죄, \"미중 AI·반도체 기술 패권 경쟁에 미칠 영향 주목\"",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42887",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T04:20:07+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "반도체"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "16979d6fcb941bf8",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3,
+  "cluster_lead": true
+ },
+ {
+  "id": "0325112e2f563b6b",
+  "title": "트럼프가 젠슨 황을 복귀시킨 이유…\"미국 오픈웨이트 AI 수호자\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217764",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T04:14:35+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "e2e0f8f1325a98c6",
+  "title": "MS, 대규모 시스템 장애에 '코드 레드' 발령…1시간 내 복구 목표",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217761",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T03:47:58+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "b507faf5e1f06a1c",
+  "title": "오픈AI·앤트로픽 내부서 AI 개발 중단론…\"최고 모델 통제 어려워\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217755",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T03:38:15+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "모델"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI",
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "1cf672567efc3370",
+  "title": "과기부, 3차 미래전략회의…\"AI 경제적 가치 창출이 국가 경쟁력 좌우\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217760",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T03:23:08+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "4695ade65521b10c",
+  "title": "아무리 똑똑한 AI도 쉬운 문제에서 틀린다…구글 딥마인드, AI 신뢰성 평가 ‘인류의 첫 번째 시험’ 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42886",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T03:22:26+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Google·DeepMind"
+  ],
+  "orgs": [],
+  "score_v2": 4
+ },
+ {
+  "id": "a13ae6c01998147c",
+  "title": "바이브컴퍼니·아이지에이웍스, MCP 기반 소비 트렌드 분석…클로드 국내 결제액 13배 증가",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42885",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:58:39+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "16979d6fcb941bf8",
+  "title": "화웨이, 미 형사재판서 10개 혐의 유죄…핵심 조직범죄 혐의는 무죄",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217756",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:55:47+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "16979d6fcb941bf8",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 1
+ },
+ {
+  "id": "2b4128fba8ed9a3d",
+  "title": "딥핑소스, 오사카 지하철역 구내 상담부스에 AI 영상분석 솔루션 공급",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217757",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:50:23+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "f3eec81ad11f5b31",
   "title": "HS효성인포메이션시스템, AI 워크로드 특화 스토리지 출시",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42884",
@@ -18,6 +817,24 @@
   "companies": [],
   "orgs": [],
   "score_v2": 3
+ },
+ {
+  "id": "16230f6b30844c64",
+  "title": "테슬라, 4.1조원 태양광 원료공장 추진…텍사스에 세금 감면 신청",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217671",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:35:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
  },
  {
   "id": "965b03a84426ec46",
@@ -58,6 +875,44 @@
   "score_v2": 2
  },
  {
+  "id": "fb00234317fae101",
+  "title": "중국 태양광 조달 기준 바뀐다…싼샤그룹, 5.24GW 입찰에 효율등급 적용",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217714",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:20:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "적용"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "96e01b977d79734a",
+  "title": "베트남, 태양광 전력 판매설비 검사 강화…원격 출력제어 시험",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217713",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T02:15:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
   "id": "d1fdc803f5ecad7d",
   "title": "피지컬 AI 시대, 데이터 업로드가 통신 경쟁력으로…KT·LG전자, 5G 대비 업로드 용량 4.9배 높인 6G 기술 검증",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42881",
@@ -77,7 +932,11 @@
   "orgs": [
    "월드모델·로보틱스"
   ],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "d1fdc803f5ecad7d",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "e531448faeec84ee",
@@ -148,7 +1007,11 @@
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "772e0c5e7f8c3d94",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "cd26d95554d7ee3a",
@@ -615,6 +1478,29 @@
   "score_v2": 2
  },
  {
+  "id": "d5ed0f4ad294ed6e",
+  "title": "Meta Brings Muse to UK Adults With Shopping and Travel Tasks",
+  "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE8tNWx2VnVYNlEtOWtTS0hCdmVidmphRUpuVzZRZl9xaUtrQlhoaVdQN1MyNGlscGFTelo1ZTUtNGdDQ0FKY2dRTEZVRzZEU1A0V3B4ZTBfSlhHby1oa0N5X1J5dlE1bmlFcG5SS0dtbHJiYW5t?oc=5",
+  "source": "Technobezz",
+  "source_type": "media",
+  "published_at": "2026-11-24T16:58:32+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": false,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [],
+  "cluster_id": "2501e372cd19d2db",
+  "cluster_size": 4,
+  "cluster_sources": 4,
+  "score_v2": 1
+ },
+ {
   "id": "6f0f83d3e1c30af4",
   "title": "Tidal to ban and remove millions of AI-generated tracks as AI slop inundates music streaming",
   "url": "https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/",
@@ -681,7 +1567,10 @@
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 4
+  "score_v2": 5,
+  "cluster_id": "2501e372cd19d2db",
+  "cluster_size": 4,
+  "cluster_sources": 4
  },
  {
   "id": "0d4dbfed2ba868d7",
@@ -789,6 +1678,39 @@
   ],
   "orgs": [],
   "score_v2": 4
+ },
+ {
+  "id": "2501e372cd19d2db",
+  "title": "Meta launches Muse AI agent in UK with several retail partners",
+  "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPS1pzQ290Zk91Q3RoZTBqb1BkM1FDaEI4Tl84UFg3dF9RcmZXZEVNY3l0RlE1SFF1YmFpejU2RlcyMWlibTlVV0JMS1MtM0VLb0JrTFhWaWdnRjBUdXUwNGZzZ1Q0bUFXQWZ3R2IyUGR4TkNHTFpPVEYzczRYUktYNmtCLS1WTDhJeVE?oc=5",
+  "source": "Retail Insight Network",
+  "source_type": "media",
+  "published_at": "2026-11-24T13:15:17+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "업계·투자 동향",
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "launch",
+   "partner",
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "2501e372cd19d2db",
+  "cluster_size": 4,
+  "cluster_sources": 4,
+  "score_v2": 5,
+  "cluster_lead": true
  },
  {
   "id": "ac2f786b30f6d457",
@@ -937,6 +1859,28 @@
   "score_v2": 2
  },
  {
+  "id": "4bc24c7ce0048389",
+  "title": "Muse.ai app brings agentic shopping to Britain",
+  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNUkFYT1JFTUtaSXFrSHVxZWdvTHBiN0dpbExvQXZ4TXh1bGR3VkxUbzFja3lSbmo5NDBWVmpEYmhVMFZjRDJIcElZOW5JdzhnNWJzOXE1T0U4OGZVT3dRRlhaSUtrMmhhejJqc2tuT2lFSVpORFV4WUFDUktrOVc2Qm9RR3hJX2lLQzREcFhKbDFhbDBDcGxFUXgxS04xcXZxazd0RzQtNFBaTDNsRlE?oc=5",
+  "source": "StartupHub.ai",
+  "source_type": "media",
+  "published_at": "2026-11-24T09:38:18+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "app"
+  ],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
   "id": "64fcb59ab5728196",
   "title": "앤트로픽, ‘클로드 십’ 출시…AI가 코드 검토부터 수정·승인까지 자동화",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217729",
@@ -1020,6 +1964,26 @@
   ],
   "score": 3,
   "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "9b2f92d29e713c4c",
+  "title": "정부, 공공 AI 상담 기준 마련…뉴욕선 같은 질문에도 다른 답변",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217777",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-24T08:30:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [],
+  "tags": [
+   "정부"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
   "relevant": true,
   "companies": [],
   "orgs": [],
@@ -1732,6 +2696,26 @@
   "score_v2": 1
  },
  {
+  "id": "8e2ec473463ae033",
+  "title": "Embo emerges from stealth with $110M seed led by a16z to build robot brains that learn from internet video",
+  "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFAwdk03Z3JoTXFrdy1uV3JzRmVaNUIzd3NYeGlqYVhIOUxWOFVaVmFWTTRkcHM5TG91V2RxdUlDWFlEU1l1c2pjVklyeU9HYlh0YkQzMU1IU0ZOaWJVOS1XLW1xWTVibXdvSEpuMVByaGlQN1cwbjVz?oc=5",
+  "source": "Next Unicorn Ventures",
+  "source_type": "media",
+  "published_at": "2026-11-24T02:41:00+00:00",
+  "collected_at": "2026-11-25T11:46:03.366947+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
   "id": "45dc5b91245a6cd5",
   "title": "삼성전자, 2027 임원인사…반도체 인재 중용 ‘성과주의’ 재확인",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217717",
@@ -1814,7 +2798,11 @@
    "OpenAI"
   ],
   "orgs": [],
-  "score_v2": 4
+  "score_v2": 4,
+  "cluster_id": "353dcd57e7eff727",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "9b2a4bcf64d5e23b",
@@ -2584,7 +3572,11 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 3,
+  "cluster_id": "02f282f3db14100c",
+  "cluster_size": 2,
+  "cluster_sources": 1,
+  "cluster_lead": true
  },
  {
   "id": "02f282f3db14100c",
@@ -2604,7 +3596,10 @@
   "relevant": true,
   "companies": [],
   "orgs": [],
-  "score_v2": 3
+  "score_v2": 3,
+  "cluster_id": "02f282f3db14100c",
+  "cluster_size": 2,
+  "cluster_sources": 1
  },
  {
   "id": "4aa489ee2a12fc59",
