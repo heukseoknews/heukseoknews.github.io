@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-26T01:57:27.583567+00:00",
-  "finished_at": "2026-11-26T01:57:30.333723+00:00",
-  "candidates": 356,
-  "added": 12,
+  "started_at": "2026-11-26T11:31:54.034387+00:00",
+  "finished_at": "2026-11-26T11:31:57.307910+00:00",
+  "candidates": 345,
+  "added": 49,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,16 +11,17 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 1430,
-   "kept": 99,
+   "kept": 98,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "junk_title": 1
+    "junk_title": 1,
+    "too_old": 1
    },
    "filtered": [
     "[노이즈 제목] LifeVal"
@@ -35,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 15,
@@ -57,8 +58,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 917,
    "kept": 31,
@@ -70,7 +71,7 @@
    },
    "filtered": [],
    "oldest": "2026-07-07T00:00:00+00:00",
-   "newest": "2026-11-25T18:52:55+00:00",
+   "newest": "2026-11-26T05:05:36+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -79,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -110,8 +111,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -138,8 +139,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -168,30 +169,30 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 12
+    "low_relevance": 11
    },
    "filtered": [
-    "MS, 자체 강화학습 인프라 '로켓' 공개…\"외부 모델 증류 없이 성능 향상\"",
-    "스페이스X·테슬라, 3.5조달러 합병 협상 본격화…연내 타결 추진",
-    "네이버클라우드, 한수원·한전KDN과 원전 AX 체계 구축",
-    "젠슨 황 복귀 후폭풍…엔비디아 이사회 독립성 논란",
-    "MS, 대규모 시스템 장애에 '코드 레드' 발령…1시간 내 복구 목표",
-    "화웨이, 미 형사재판서 10개 혐의 유죄…핵심 조직범죄 혐의는 무죄",
-    "테슬라, 4.1조원 태양광 원료공장 추진…텍사스에 세금 감면 신청",
-    "중국 태양광 조달 기준 바뀐다…싼샤그룹, 5.24GW 입찰에 효율등급 적용",
-    "베트남, 태양광 전력 판매설비 검사 강화…원격 출력제어 시험",
-    "젠슨 황, 복귀 후 첫 직원회의서 사과…복귀 정당성 강조"
+    "코그니션, 코딩 모델 'SWE-2.1' 출시…장기 작업·사이버 보안 성능 강화",
+    "머스크, 엔비디아 본사 방문…젠슨 황 CEO 복귀 축하",
+    "S&P, 엔비디아 신용등급 하향 검토…황 복귀에도 지배구조 불안",
+    "공직사회도 '바이브 코딩'…공무원이 업무용 앱 직접 개발",
+    "미국, 스페이스X 우주 데이터센터용 위성 최대 100만기 배치 승인",
+    "이재혁 마키나락스 공동 창업자, 식품제조 AX로 시드 투자 유치",
+    "한컴위드, 통합 보안관리 플랫폼 '한컴 엑사임스' 출시",
+    "미 상원, 태양광 인허가 차별에 손해배상 추진…환경소송은 150일 제한",
+    "남는 태양광 전기, 수소로 저장했다가 겨울에 사용한다…일본서 실증 결과 발표",
+    "스페인, 데이터센터 재생전력 80% 시간별 의무화…업계 소송 예고"
    ],
-   "oldest": "2026-11-24T07:33:29+00:00",
-   "newest": "2026-11-26T00:51:45+00:00",
+   "oldest": "2026-11-25T07:16:09+00:00",
+   "newest": "2026-11-26T08:55:33+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -200,8 +201,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -211,12 +212,12 @@
     "low_relevance": 3
    },
    "filtered": [
-    "한국인 1만명 게놈 분석, 미등록 유전변이 988만개 발굴…생체 나이 측정 정확도 높인다",
-    "한국전력, 한전ON 개인정보 유출 사고 발생…고객번호·계좌번호·카드정보 등 유출 확인",
-    "중소 제조기업 1,021곳에 2,696억원 지원…중기부, 2027년 스마트공장 구축지원사업 참여기업 모집"
+    "키옥시아, GPU 메모리 확장 한계 넘는다…초당 1800만회 랜덤 읽기 구현한 차세대 SSD 공개",
+    "에스트래픽, 미국 엘에이 메트로 1200만 달러 추가 수주…누적 계약액 4600만 달러",
+    "한국인 1만명 게놈 분석, 미등록 유전변이 988만개 발굴…생체 나이 측정 정확도 높인다"
    ],
-   "oldest": "2026-11-23T02:36:35+00:00",
-   "newest": "2026-11-26T01:55:11+00:00",
+   "oldest": "2026-11-23T12:46:01+00:00",
+   "newest": "2026-11-26T10:27:12+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -225,8 +226,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
    "entries": 19,
    "kept": 15,
@@ -243,7 +244,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-19T17:07:35+00:00",
-   "newest": "2026-11-25T23:38:43+00:00",
+   "newest": "2026-11-26T09:06:17+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -252,27 +253,26 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-26T01:57:27.583567+00:00",
-   "last_success_at": "2026-11-26T01:57:27.583567+00:00",
+   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
    "consecutive_failures": 0,
-   "entries": 38,
-   "kept": 38,
+   "entries": 28,
+   "kept": 28,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 7
+    "low_relevance": 6
    },
    "filtered": [
-    "Meta's Alexandr Wang says superintelligence is arriving and humans must not hand society over",
     "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
     "Alexandr Wang on list of the world's youngest self-made billionaires",
-    "IIT Kanpur alumnus Trapit Bansal exits Meta, plans new research",
     "Superintelligence Is Near, Warns Meta's Alexandr Wang, Says Next Year's Choices Will Decide Humanity's Future",
     "Meta Executive Warns Superintelligence Could Threaten Human Control",
+    "Meta Plans Ahead Across Three Time Scales",
     "Meta Brings Muse to UK Adults With Shopping and Travel Tasks"
    ],
-   "oldest": "2026-11-23T04:26:09+00:00",
-   "newest": "2026-11-25T18:25:45+00:00",
+   "oldest": "2026-11-23T11:42:52+00:00",
+   "newest": "2026-11-26T06:08:27+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
