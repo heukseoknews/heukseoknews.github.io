@@ -3034,15 +3034,19 @@
   "source_type": "media",
   "published_at": "2026-11-25T23:21:28+00:00",
   "collected_at": "2026-11-26T01:57:27.902059+00:00",
-  "category": "미분류",
-  "sub_categories": [],
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
   "tags": [
    "AI"
   ],
   "score": 2,
   "feed_name": "서울경제 금융",
-  "relevant": false,
-  "companies": [],
+  "relevant": true,
+  "companies": [
+   "NH농협은행"
+  ],
   "orgs": []
  },
  {
@@ -4308,15 +4312,19 @@
   "source_type": "media",
   "published_at": "2026-11-25T09:36:43+00:00",
   "collected_at": "2026-11-26T01:57:27.902059+00:00",
-  "category": "미분류",
-  "sub_categories": [],
+  "category": "은행·금리·통화정책",
+  "sub_categories": [
+   "핀테크·디지털금융"
+  ],
   "tags": [
    "AI"
   ],
   "score": 2,
   "feed_name": "서울경제 금융",
-  "relevant": false,
-  "companies": [],
+  "relevant": true,
+  "companies": [
+   "NH농협은행"
+  ],
   "orgs": []
  },
  {
@@ -29768,13 +29776,15 @@
   "source_type": "media",
   "published_at": "2026-11-19T09:00:00+00:00",
   "collected_at": "2026-11-20T00:57:09.115681+00:00",
-  "category": "미분류",
+  "category": "은행·금리·통화정책",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "5대 은행",
   "relevant": true,
-  "companies": [],
+  "companies": [
+   "NH농협은행"
+  ],
   "orgs": []
  },
  {
@@ -29785,13 +29795,15 @@
   "source_type": "media",
   "published_at": "2026-11-19T09:00:00+00:00",
   "collected_at": "2026-11-21T00:18:25.346668+00:00",
-  "category": "미분류",
+  "category": "은행·금리·통화정책",
   "sub_categories": [],
   "tags": [],
   "score": 2,
   "feed_name": "5대 은행",
   "relevant": true,
-  "companies": [],
+  "companies": [
+   "NH농협은행"
+  ],
   "orgs": []
  },
  {
@@ -76545,10 +76557,12 @@
   "tags": [
    "대출"
   ],
-  "score": 2,
+  "score": 3,
   "feed_name": "이데일리 금융",
   "relevant": true,
-  "companies": [],
+  "companies": [
+   "NH농협은행"
+  ],
   "orgs": []
  },
  {
