@@ -1,5 +1,253 @@
 [
  {
+  "id": "5d1068a7a791b932",
+  "title": "EBS, 전 국민 AI 학습 플랫폼 ‘AI이솦’ 정식 오픈…국내외 생성형 AI 5종 무료 제공",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42900",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-26T01:55:11+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a291849a6a00d1d2",
+  "title": "약국에 들어온 피지컬 AI...약사 퇴근하면 조제실 재고 확인하는 휴머노이드",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42899",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-26T01:47:08+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "85adf1a53c117b56",
+  "title": "자동차와 휴머노이드, 하나의 AI 두뇌로 움직인다…샤오펑, 튜링 피지컬 AI 아키텍처 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42898",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-26T01:18:07+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "a7f7e8e4a239847d",
+  "title": "AI 투자 불안에 기술주 하락 지속…앤트로픽 장중 74달러까지 밀려",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217790",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-26T00:51:45+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "c4286235563b2b91",
+  "title": "KT클라우드, 안산에 110MW 규모 AI 데이터센터 캠퍼스 조성…수도권 거점 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42896",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-26T00:24:54+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "c72614af38f52613",
+  "title": "남극 200km 자율주행에 관측장비 설치까지…한국로봇융합연구원, 극한지 작업용 휴머노이드 개발 착수",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42895",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-26T00:19:02+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "6c3a14f885bb81ed",
+  "title": "연구 실패까지 기억하는 AI 과학자…ETRI-UST, 연구 설계부터 논문 작성까지 자율 수행하는 ‘유라’ 오픈소스 공개",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42894",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-26T00:11:44+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "오픈소스",
+   "공개"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "d6af1f4c96fca4b9",
+  "title": "[AI리더의 서가] 불가능을 예측하라",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217622",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-26T00:00:00+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "9d1c919051436e5f",
+  "title": "앤트로픽 CEO 아모데이, “인간의 자유의지를 AI에 넘겨서는 안 된다”…AI 통치 강력 반대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42893",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-25T23:44:24+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "ceo"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "77bb663b6361291f",
+  "title": "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
+  "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-25T22:44:32+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "governance",
+   "risk"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "2e3ca9238ffcb4cf",
+  "title": "[11월25일] \"AI의 의식, 문제는 만드는 법도 막는 법도 모른다는 것\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217759",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T22:00:00+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "8a4b626f6ef59fa4",
+  "title": "앤트로픽, 클로드로 누구나 PC 앱 제작·배포하도록 지원",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217786",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-25T21:12:40+00:00",
+  "collected_at": "2026-11-26T01:57:27.583567+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
   "id": "3a73412d0df0bb71",
   "title": "OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work",
   "url": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
