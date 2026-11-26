@@ -1,5 +1,97 @@
 [
  {
+  "id": "7aa896c7cb490e59",
+  "title": "Grand Theft Auto VI proves why efficiency isn’t a virtue",
+  "url": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-26T16:00:00+00:00",
+  "collected_at": "2026-11-26T19:50:34.290673+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "c91b7def9228b89a",
+  "title": "Come for the Games, Stay for the Community With GeForce NOW",
+  "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-community-war-thunder-reward/",
+  "source": "NVIDIA",
+  "source_type": "press",
+  "published_at": "2026-11-26T14:00:22+00:00",
+  "collected_at": "2026-11-26T19:50:34.290673+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "NVIDIA Blog",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "1195b3ff977ed2e9",
+  "title": "Meta rolls out Muse AI agent to UK users",
+  "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBOdDFzQmZXY2lvTFBsVEZCdm1ZQUg3MkQ5elJJVkplUXR5T1puTWMyT04xQVlZbDV2RjVEZzk2MGtmbWx6WWJUc1Y0cXluYUwxZVV5dkFUaUt4LU8wamdtTjM3SHp5aUlUWURJblFmWUhRQUk?oc=5",
+  "source": "TyN Magazine",
+  "source_type": "media",
+  "published_at": "2026-11-26T12:38:50+00:00",
+  "collected_at": "2026-11-26T19:50:34.290673+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "rolls out",
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [
+   "Meta"
+  ],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "2501e372cd19d2db",
+  "cluster_size": 5,
+  "cluster_sources": 5,
+  "score_v2": 5
+ },
+ {
+  "id": "a734da9d3a1d8760",
+  "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+  "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-26T11:37:17+00:00",
+  "collected_at": "2026-11-26T19:50:34.290673+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "introducing",
+   "llama.cpp",
+   "benchmark"
+  ],
+  "score": 5,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 4
+ },
+ {
   "id": "ec21c0968582cf58",
   "title": "대한항공, AI로 조종사·승무원 수면건강 관리…항공업계 최초 디지털 수면검사 도입",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42912",
@@ -1152,6 +1244,26 @@
   "score_v2": 2
  },
  {
+  "id": "819f2bb8e324e5e7",
+  "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+  "url": "https://huggingface.co/blog/training-swarms",
+  "source": "Hugging Face",
+  "source_type": "press",
+  "published_at": "2026-11-26T00:00:00+00:00",
+  "collected_at": "2026-11-26T19:50:34.290673+00:00",
+  "category": "오픈소스·개발 도구",
+  "sub_categories": [],
+  "tags": [
+   "agent"
+  ],
+  "score": 3,
+  "feed_name": "Hugging Face Blog",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "9d1c919051436e5f",
   "title": "앤트로픽 CEO 아모데이, “인간의 자유의지를 AI에 넘겨서는 안 된다”…AI 통치 강력 반대",
   "url": "https://www.aitimes.kr/news/articleView.html?idxno=42893",
@@ -1638,8 +1750,8 @@
    "LLM·NLP"
   ],
   "cluster_id": "2501e372cd19d2db",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 5,
+  "cluster_sources": 5,
   "score_v2": 5
  },
  {
@@ -3066,8 +3178,8 @@
   ],
   "orgs": [],
   "cluster_id": "2501e372cd19d2db",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 5,
+  "cluster_sources": 5,
   "score_v2": 1
  },
  {
@@ -3139,8 +3251,8 @@
   ],
   "score_v2": 5,
   "cluster_id": "2501e372cd19d2db",
-  "cluster_size": 4,
-  "cluster_sources": 4
+  "cluster_size": 5,
+  "cluster_sources": 5
  },
  {
   "id": "0d4dbfed2ba868d7",
@@ -3300,8 +3412,8 @@
    "LLM·NLP"
   ],
   "cluster_id": "2501e372cd19d2db",
-  "cluster_size": 4,
-  "cluster_sources": 4,
+  "cluster_size": 5,
+  "cluster_sources": 5,
   "score_v2": 5,
   "cluster_lead": true
  },

@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-26T11:31:54.034387+00:00",
-  "finished_at": "2026-11-26T11:31:57.307910+00:00",
-  "candidates": 345,
-  "added": 49,
+  "started_at": "2026-11-26T19:50:34.290673+00:00",
+  "finished_at": "2026-11-26T19:50:36.970532+00:00",
+  "candidates": 337,
+  "added": 5,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,17 +11,17 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
    "entries": 1430,
-   "kept": 98,
+   "kept": 97,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
     "junk_title": 1,
-    "too_old": 1
+    "too_old": 2
    },
    "filtered": [
     "[노이즈 제목] LifeVal"
@@ -36,16 +36,16 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
    "entries": 100,
-   "kept": 15,
+   "kept": 14,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
-    "too_old": 85
+    "too_old": 86
    },
    "filtered": [],
    "oldest": "2025-12-23T17:01:02+00:00",
@@ -58,10 +58,10 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
-   "entries": 917,
+   "entries": 918,
    "kept": 31,
    "skipped": {
     "no_link": 0,
@@ -70,8 +70,8 @@
     "too_old": 69
    },
    "filtered": [],
-   "oldest": "2026-07-07T00:00:00+00:00",
-   "newest": "2026-11-26T05:05:36+00:00",
+   "oldest": "2026-07-07T15:20:06+00:00",
+   "newest": "2026-11-26T11:37:17+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -80,17 +80,18 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 9
+    "low_relevance": 10
    },
    "filtered": [
+    "Come for the Games, Stay for the Community With GeForce NOW",
     "Merry Making: Play, Build and Create With NVIDIA Technologies This Holiday Season",
     "NVIDIA and Microsoft Expand Accelerated Computing From Azure to Windows PCs",
     "Season’s Streamings and Savings: Black Friday Deals Come to GeForce NOW",
@@ -101,8 +102,8 @@
     "CUDA at 20: How the Platform Transformed Scientific Computing",
     "A New Dawn in the Cloud: ‘Warhammer 40,000: Dawn of War IV’ Is Coming to GeForce NOW"
    ],
-   "oldest": "2026-11-11T03:00:20+00:00",
-   "newest": "2026-11-23T17:00:08+00:00",
+   "oldest": "2026-11-12T14:00:59+00:00",
+   "newest": "2026-11-26T14:00:22+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -111,17 +112,18 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 6
+    "low_relevance": 7
    },
    "filtered": [
+    "Grand Theft Auto VI proves why efficiency isn’t a virtue",
     "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
     "Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it",
     "The questions Jensen Huang and Nvidia will still have to answer about Megaspeed",
@@ -129,8 +131,8 @@
     "Jensen Huang still thinks a succession plan creates unnecessary hierarchy",
     "In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy"
    ],
-   "oldest": "2026-11-24T16:10:00+00:00",
-   "newest": "2026-11-25T22:44:32+00:00",
+   "oldest": "2026-11-24T16:46:00+00:00",
+   "newest": "2026-11-26T16:00:00+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -139,8 +141,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -169,8 +171,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -201,8 +203,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -226,11 +228,11 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
-   "entries": 19,
-   "kept": 15,
+   "entries": 14,
+   "kept": 10,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
@@ -243,8 +245,8 @@
     "[노이즈 제목] - Anthropic",
     "[노이즈 제목] - Anthropic"
    ],
-   "oldest": "2026-11-19T17:07:35+00:00",
-   "newest": "2026-11-26T09:06:17+00:00",
+   "oldest": "2026-11-19T18:07:54+00:00",
+   "newest": "2026-11-26T17:13:17+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -253,26 +255,26 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-26T11:31:54.034387+00:00",
-   "last_success_at": "2026-11-26T11:31:54.034387+00:00",
+   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
    "consecutive_failures": 0,
-   "entries": 28,
-   "kept": 28,
+   "entries": 27,
+   "kept": 27,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 6
    },
    "filtered": [
-    "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
     "Alexandr Wang on list of the world's youngest self-made billionaires",
-    "Superintelligence Is Near, Warns Meta's Alexandr Wang, Says Next Year's Choices Will Decide Humanity's Future",
-    "Meta Executive Warns Superintelligence Could Threaten Human Control",
+    "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
+    "IIT Kanpur alumnus Trapit Bansal exits Meta, plans new research",
     "Meta Plans Ahead Across Three Time Scales",
+    "Meta Executive Warns Superintelligence Could Threaten Human Control",
     "Meta Brings Muse to UK Adults With Shopping and Travel Tasks"
    ],
-   "oldest": "2026-11-23T11:42:52+00:00",
-   "newest": "2026-11-26T06:08:27+00:00",
+   "oldest": "2026-11-23T20:06:52+00:00",
+   "newest": "2026-11-26T12:38:50+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
