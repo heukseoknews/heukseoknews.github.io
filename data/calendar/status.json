@@ -1,7 +1,7 @@
 {
  "sources": {
   "ccfddl": {
-   "last_attempt_at": "2026-11-26T01:58:50.653334+00:00",
+   "last_attempt_at": "2026-11-27T01:58:46.903531+00:00",
    "validators": {
     "AI/nips.yml": {
      "etag": "W/\"85dbb95df3c065e18c64008ea37c6046b79d9eb93e32d2eb6b8b2777c9322222\"",
@@ -54,18 +54,18 @@
    },
    "errors": [],
    "ok": true,
-   "last_success_at": "2026-11-26T01:58:50.653334+00:00",
+   "last_success_at": "2026-11-27T01:58:46.903531+00:00",
    "count": 98,
    "channel": "ai"
   },
   "kidi": {
-   "last_attempt_at": "2026-11-26T01:58:50.653334+00:00",
+   "last_attempt_at": "2026-11-27T01:58:46.903531+00:00",
    "ok": true,
    "last_error_at": "2026-11-16T09:25:43.155915+00:00",
    "channel": "insurance",
-   "last_success_at": "2026-11-26T01:58:50.653334+00:00",
+   "last_success_at": "2026-11-27T01:58:46.903531+00:00",
    "count": 12
   }
  },
- "updated_at": "2026-11-26T01:58:50.653334+00:00"
+ "updated_at": "2026-11-27T01:58:46.903531+00:00"
 }
