@@ -1,5 +1,210 @@
 [
  {
+  "id": "ded54ab4a2e7f192",
+  "title": "캐나다, 소버린 AI 경쟁력 강화에 7억 캐나다달러 추가 투입…AI 컴퓨팅 지원기금 10억 달러로 확대",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42917",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-27T01:46:21+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "d204ff3a792060e6",
+  "title": "서울대·日 홋카이도대, 30년 학술교류 기반으로 공동연구 협력 강화",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42916",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-27T01:29:54+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "협력",
+   "공동연구"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "119243bf57068c73",
+  "title": "카이헬스, AI로 시험관아기 배아 발달 가능성 분석…분당서울대병원 정식 도입",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42915",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-27T00:27:44+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "도입"
+  ],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "3c410c3a2e45775b",
+  "title": "래블업, 클라우드 없이 개인 PC서 AI 에이전트 실행…‘에이아이고 2.0’ 출시",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42914",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-27T00:17:11+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "출시"
+  ],
+  "score": 3,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "acf9f7fe6416ecdd",
+  "title": "\"피지컬 AI부터 AI 영화까지\"…KAIST, 과학기술과 예술의 융합으로 인간 창의성 확장한",
+  "url": "https://www.aitimes.kr/news/articleView.html?idxno=42913",
+  "source": "인공지능신문",
+  "source_type": "media",
+  "published_at": "2026-11-26T23:59:47+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "인공지능신문",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 2
+ },
+ {
+  "id": "bd8d871b0ae91bee",
+  "title": "미 정보당국 \"중국, 젠슨 황 사건 배후 조종 증거 없어\"…간첩 의혹 판단은 엇갈려",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217839",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-26T23:01:21+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "fd49c4fc5cebc40a",
+  "title": "[11월26일] 앤트로픽이 던진 역설…AI 기술 발전에 깊어지는 투자자들의 고민",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217803",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-26T22:00:00+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "투자"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "9966eddd3666e3e8",
+  "title": "Z.ai 'GLM-5.5' 출시 지연…문샷 AI도 개발 주기 두배 전망",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217838",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-26T21:20:35+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "출시"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "c1c9246e4b89a57b",
+  "title": "엔비디아, 동남아 4개국 AI 서버 출하 중단…중국 우회 접근 차단",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217837",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-26T20:55:39+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "33b3d08d99aeb285",
+  "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+  "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+  "source": "TechCrunch",
+  "source_type": "media",
+  "published_at": "2026-11-26T20:03:54+00:00",
+  "collected_at": "2026-11-27T01:57:24.882644+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "chip"
+  ],
+  "score": 2,
+  "feed_name": "TechCrunch AI",
+  "relevant": false,
+  "companies": [
+   "NVIDIA"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "7aa896c7cb490e59",
   "title": "Grand Theft Auto VI proves why efficiency isn’t a virtue",
   "url": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",

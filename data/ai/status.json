@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-26T19:50:34.290673+00:00",
-  "finished_at": "2026-11-26T19:50:36.970532+00:00",
-  "candidates": 337,
-  "added": 5,
+  "started_at": "2026-11-27T01:57:24.882644+00:00",
+  "finished_at": "2026-11-27T01:57:28.035968+00:00",
+  "candidates": 327,
+  "added": 10,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,8 +11,8 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 1430,
    "kept": 97,
@@ -36,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 14,
@@ -58,8 +58,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 918,
    "kept": 31,
@@ -80,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -112,17 +112,18 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 7
+    "low_relevance": 8
    },
    "filtered": [
+    "Nvidia hits pause on chip shipments to Southeast Asia",
     "Grand Theft Auto VI proves why efficiency isn’t a virtue",
     "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
     "Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it",
@@ -131,8 +132,8 @@
     "Jensen Huang still thinks a succession plan creates unnecessary hierarchy",
     "In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy"
    ],
-   "oldest": "2026-11-24T16:46:00+00:00",
-   "newest": "2026-11-26T16:00:00+00:00",
+   "oldest": "2026-11-24T17:00:00+00:00",
+   "newest": "2026-11-26T20:03:54+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -141,8 +142,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -171,17 +172,18 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 11
+    "low_relevance": 12
    },
    "filtered": [
+    "미 정보당국 \"중국, 젠슨 황 사건 배후 조종 증거 없어\"…간첩 의혹 판단은 엇갈려",
     "코그니션, 코딩 모델 'SWE-2.1' 출시…장기 작업·사이버 보안 성능 강화",
     "머스크, 엔비디아 본사 방문…젠슨 황 CEO 복귀 축하",
     "S&P, 엔비디아 신용등급 하향 검토…황 복귀에도 지배구조 불안",
@@ -190,11 +192,10 @@
     "이재혁 마키나락스 공동 창업자, 식품제조 AX로 시드 투자 유치",
     "한컴위드, 통합 보안관리 플랫폼 '한컴 엑사임스' 출시",
     "미 상원, 태양광 인허가 차별에 손해배상 추진…환경소송은 150일 제한",
-    "남는 태양광 전기, 수소로 저장했다가 겨울에 사용한다…일본서 실증 결과 발표",
-    "스페인, 데이터센터 재생전력 80% 시간별 의무화…업계 소송 예고"
+    "남는 태양광 전기, 수소로 저장했다가 겨울에 사용한다…일본서 실증 결과 발표"
    ],
-   "oldest": "2026-11-25T07:16:09+00:00",
-   "newest": "2026-11-26T08:55:33+00:00",
+   "oldest": "2026-11-25T08:00:00+00:00",
+   "newest": "2026-11-26T23:01:21+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -203,8 +204,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -214,12 +215,12 @@
     "low_relevance": 3
    },
    "filtered": [
+    "서울대·日 홋카이도대, 30년 학술교류 기반으로 공동연구 협력 강화",
     "키옥시아, GPU 메모리 확장 한계 넘는다…초당 1800만회 랜덤 읽기 구현한 차세대 SSD 공개",
-    "에스트래픽, 미국 엘에이 메트로 1200만 달러 추가 수주…누적 계약액 4600만 달러",
-    "한국인 1만명 게놈 분석, 미등록 유전변이 988만개 발굴…생체 나이 측정 정확도 높인다"
+    "에스트래픽, 미국 엘에이 메트로 1200만 달러 추가 수주…누적 계약액 4600만 달러"
    ],
-   "oldest": "2026-11-23T12:46:01+00:00",
-   "newest": "2026-11-26T10:27:12+00:00",
+   "oldest": "2026-11-24T01:40:15+00:00",
+   "newest": "2026-11-27T01:46:21+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -228,8 +229,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
    "entries": 14,
    "kept": 10,
@@ -246,7 +247,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-19T18:07:54+00:00",
-   "newest": "2026-11-26T17:13:17+00:00",
+   "newest": "2026-11-26T22:41:36+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -255,26 +256,25 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-26T19:50:34.290673+00:00",
-   "last_success_at": "2026-11-26T19:50:34.290673+00:00",
+   "last_run_at": "2026-11-27T01:57:24.882644+00:00",
+   "last_success_at": "2026-11-27T01:57:24.882644+00:00",
    "consecutive_failures": 0,
-   "entries": 27,
-   "kept": 27,
+   "entries": 17,
+   "kept": 17,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 6
+    "low_relevance": 5
    },
    "filtered": [
     "Alexandr Wang on list of the world's youngest self-made billionaires",
     "META Stock Is Down 24% From Peak: JPMorgan Sees ‘Attractive Buying Opportunity’ — But 2027 Spending, Capex Remain An Overhang",
     "IIT Kanpur alumnus Trapit Bansal exits Meta, plans new research",
     "Meta Plans Ahead Across Three Time Scales",
-    "Meta Executive Warns Superintelligence Could Threaten Human Control",
     "Meta Brings Muse to UK Adults With Shopping and Travel Tasks"
    ],
-   "oldest": "2026-11-23T20:06:52+00:00",
-   "newest": "2026-11-26T12:38:50+00:00",
+   "oldest": "2026-11-24T02:41:00+00:00",
+   "newest": "2026-11-26T18:06:52+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
