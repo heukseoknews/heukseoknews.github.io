@@ -1,5 +1,320 @@
 [
  {
+  "id": "ec9d2a530efb4e15",
+  "title": "Robotics startup Embo raises $110 million in seed funding to build world-model AI for robots",
+  "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNU2lqQlhlRHFGbHdncGpUY1dpaGZtMmNWQlhiT2hrWFF6WXEyd252NVVaOVJaejc2WHJ4c3RIVVJDWHFrT1ZsaWpKX3R0S1liRkZoWjcyQkdjQUcyck9CcDZxSzV5MmNBc2VIX2I5cnFzY2pCckZQZ1UwRTRYN0luNGtDb0lqeXdwaWxWMXhJYlRhaXM3RU8xTnVFUWJIRmJXSmhERkp2d1RPNzZxQV9BM25CSG9LZGc?oc=5",
+  "source": "the-decoder.com",
+  "source_type": "media",
+  "published_at": "2026-11-28T10:48:18+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [
+   "모델·제품 출시"
+  ],
+  "tags": [
+   "raises",
+   "funding",
+   "startup",
+   "model"
+  ],
+  "score": 4,
+  "feed_name": "Meta AI(검색)",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "b621575e9c39cd70",
+  "title": "유발 하라리 \"AI 최대 위협은 '집단적 치매'...인류, 세상 이해 못할 것\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217900",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T09:31:30+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "bfaeceba92634540",
+  "title": "샤오펑 \"휴머노이드 가격 전기차 수준\"...자동차 기술로 양산·수익화",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217899",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T09:02:58+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "월드모델·로보틱스"
+  ],
+  "cluster_id": "85adf1a53c117b56",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
+ },
+ {
+  "id": "f93fef182336948e",
+  "title": "앤트로픽, 주가 11% 급등해 공모가 회복…12월 보호예수 해제가 변수",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217898",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T08:25:00+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "주가"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "fd311c70196bf9cc",
+  "title": "스페이스X 우주 데이터센터 100만기 승인에 과학계 반발",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217897",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T08:09:45+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "cluster_id": "7d9d3c7b0fee6541",
+  "cluster_size": 2,
+  "cluster_sources": 1,
+  "score_v2": 2
+ },
+ {
+  "id": "e19cb8a8059acaa8",
+  "title": "앤트로픽 전·현직 50여명 '수입 10% 기부' 서약…창업자 지분 80% 기부",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217896",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T07:45:34+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "Anthropic"
+  ],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "99ea3e0b9f3332af",
+  "title": "사카나 AI, 30B급 추론 모델 '나마즈 스몰' 공개...웹 검색서 120B 모델 압도",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217892",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T07:38:14+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [],
+  "tags": [
+   "공개",
+   "모델"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "cluster_id": "b7a47420038d605a",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "score_v2": 3
+ },
+ {
+  "id": "4c2ba8f8d97e21e5",
+  "title": "프리즘ML, 5.9GB AI 모델 '본사이 2.5' 출시...코딩·에이전트 성능 대폭 향상",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217893",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T07:20:56+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구"
+  ],
+  "tags": [
+   "출시",
+   "모델",
+   "코딩"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP"
+  ],
+  "score_v2": 3
+ },
+ {
+  "id": "74c007a990ca9fcf",
+  "title": "바이트댄스, AI 에이전트 강화학습 도구 '라미나' 공개...GPU 사용 시간 64% 절감",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217894",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T07:09:21+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "모델·제품 출시",
+  "sub_categories": [
+   "오픈소스·개발 도구",
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "공개",
+   "도구",
+   "gpu"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [
+   "LLM·NLP",
+   "통계·ML·시계열"
+  ],
+  "score_v2": 4
+ },
+ {
+  "id": "749cdc6e4617c13c",
+  "title": "앨리스 황 관련 중국 데이터센터서 블랙웰 확인…일련번호까지 추적",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217891",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T06:49:25+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [
+   "데이터센터"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "b062b7dad23e29a0",
+  "title": "오픈AI, 애플에 맞소송…\"협력업체 압박해 AI 기기 생산 방해\"",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217889",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T03:02:54+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "정책·규제·안전",
+  "sub_categories": [
+   "업계·투자 동향"
+  ],
+  "tags": [
+   "소송",
+   "협력"
+  ],
+  "score": 3,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [
+   "OpenAI",
+   "Apple"
+  ],
+  "orgs": [],
+  "score_v2": 3
+ },
+ {
+  "id": "429d38d6efc49d29",
+  "title": "[AI카툰] Bob, Senior IT guy - 밥, 휴먼러닝하기",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217895",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T01:00:00+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
+  "id": "a8029dc4fc7d4c29",
+  "title": "[내면 지도 그리기] 44 Inner Mapping: 나를 찾는 지도",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217886",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T01:00:00+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "미분류",
+  "sub_categories": [],
+  "tags": [],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": false,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 1
+ },
+ {
+  "id": "39e052b42444c517",
+  "title": "창문으로 태양광 발전하고 AI로 발전량 예측…일본 간사이전력 실증 추진",
+  "url": "https://www.aitimes.com/news/articleView.html?idxno=217830",
+  "source": "AI타임스",
+  "source_type": "media",
+  "published_at": "2026-11-28T00:20:00+00:00",
+  "collected_at": "2026-11-28T10:55:09.986840+00:00",
+  "category": "업계·투자 동향",
+  "sub_categories": [],
+  "tags": [
+   "실증"
+  ],
+  "score": 2,
+  "feed_name": "AI타임스",
+  "relevant": true,
+  "companies": [],
+  "orgs": [],
+  "score_v2": 2
+ },
+ {
   "id": "af5a5aaa7462d660",
   "title": "주택용 태양광, 폭염 사망 위험도 낮출 수 있다…일본 44개 지역 분석",
   "url": "https://www.aitimes.com/news/articleView.html?idxno=217836",
@@ -1994,7 +2309,11 @@
   "relevant": false,
   "companies": [],
   "orgs": [],
-  "score_v2": 2
+  "score_v2": 2,
+  "cluster_id": "7d9d3c7b0fee6541",
+  "cluster_size": 2,
+  "cluster_sources": 1,
+  "cluster_lead": true
  },
  {
   "id": "7e1c9cf11e7faec3",
@@ -2452,7 +2771,11 @@
   "orgs": [
    "월드모델·로보틱스"
   ],
-  "score_v2": 3
+  "score_v2": 3,
+  "cluster_id": "85adf1a53c117b56",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "a7f7e8e4a239847d",
@@ -3039,7 +3362,11 @@
   "orgs": [
    "LLM·NLP"
   ],
-  "score_v2": 3
+  "score_v2": 3,
+  "cluster_id": "b7a47420038d605a",
+  "cluster_size": 2,
+  "cluster_sources": 2,
+  "cluster_lead": true
  },
  {
   "id": "87c9ea041761a749",

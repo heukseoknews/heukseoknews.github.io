@@ -1,9 +1,9 @@
 {
  "last_run": {
-  "started_at": "2026-11-28T01:40:57.122749+00:00",
-  "finished_at": "2026-11-28T01:41:00.544455+00:00",
-  "candidates": 306,
-  "added": 5,
+  "started_at": "2026-11-28T10:55:09.986840+00:00",
+  "finished_at": "2026-11-28T10:55:13.100586+00:00",
+  "candidates": 303,
+  "added": 14,
   "failed": [],
   "noted": [],
   "blocked": {}
@@ -11,17 +11,17 @@
  "sources": {
   "OpenAI News": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 1430,
-   "kept": 92,
+   "kept": 90,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
     "low_relevance": 0,
     "junk_title": 1,
-    "too_old": 7
+    "too_old": 9
    },
    "filtered": [
     "[노이즈 제목] LifeVal"
@@ -36,8 +36,8 @@
   },
   "Google DeepMind": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 100,
    "kept": 13,
@@ -58,8 +58,8 @@
   },
   "Hugging Face Blog": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 919,
    "kept": 29,
@@ -80,8 +80,8 @@
   },
   "NVIDIA Blog": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 18,
    "kept": 18,
@@ -112,8 +112,8 @@
   },
   "TechCrunch AI": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -142,8 +142,8 @@
   },
   "Ars Technica AI": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 20,
    "kept": 20,
@@ -172,8 +172,8 @@
   },
   "AI타임스": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -183,19 +183,19 @@
     "low_relevance": 11
    },
    "filtered": [
+    "스페이스X 우주 데이터센터 100만기 승인에 과학계 반발",
+    "앨리스 황 관련 중국 데이터센터서 블랙웰 확인…일련번호까지 추적",
+    "[내면 지도 그리기] 44 Inner Mapping: 나를 찾는 지도",
     "주택용 태양광, 폭염 사망 위험도 낮출 수 있다…일본 44개 지역 분석",
     "태양광 패널, 새 배설물로 성능 최대 11.4% 저하…빗물 세척에도 한계",
     "뉴럴링크, 미 최초 BCI 핵심 임상시험 승인…상용화 검증 돌입",
     "무디스 \"젠슨 황 복귀로 엔비디아 불확실성 완화\"…신용등급 유지",
     "화웨이, 삼성·하이닉스에 도전…HBM4 대비 데이터 핀 두배 설계",
     "SK증권, LG CNS AIDC 매출 본격화로 내년 성장 가속화 전망",
-    "호주, 태양광 2050년 최대 215GW 전망…2030 재생전력 목표 달성 난항",
-    "수상태양광, 파도로 연간 발전량 최대 2.28% 손실 추정",
-    "레바논, 태양광 1.5GW에도 전력난…350MW·ESS 1GWh 계통연계 추진",
-    "미 정보당국 \"중국, 젠슨 황 사건 배후 조종 증거 없어\"…간첩 의혹 판단은 엇갈려"
+    "호주, 태양광 2050년 최대 215GW 전망…2030 재생전력 목표 달성 난항"
    ],
-   "oldest": "2026-11-26T07:30:00+00:00",
-   "newest": "2026-11-28T00:15:00+00:00",
+   "oldest": "2026-11-27T02:15:00+00:00",
+   "newest": "2026-11-28T09:31:30+00:00",
    "at_limit": true,
    "needs_split": false,
    "gap_risk": false,
@@ -204,8 +204,8 @@
   },
   "인공지능신문": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 50,
    "kept": 50,
@@ -230,8 +230,8 @@
   },
   "Anthropic 공식(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
    "entries": 10,
    "kept": 7,
@@ -247,7 +247,7 @@
     "[노이즈 제목] - Anthropic"
    ],
    "oldest": "2026-11-23T18:14:08+00:00",
-   "newest": "2026-11-27T23:16:22+00:00",
+   "newest": "2026-11-28T08:09:54+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
@@ -256,22 +256,21 @@
   },
   "Meta AI(검색)": {
    "ok": true,
-   "last_run_at": "2026-11-28T01:40:57.122749+00:00",
-   "last_success_at": "2026-11-28T01:40:57.122749+00:00",
+   "last_run_at": "2026-11-28T10:55:09.986840+00:00",
+   "last_success_at": "2026-11-28T10:55:09.986840+00:00",
    "consecutive_failures": 0,
-   "entries": 7,
-   "kept": 7,
+   "entries": 6,
+   "kept": 6,
    "skipped": {
     "no_link": 0,
     "no_date": 0,
-    "low_relevance": 2
+    "low_relevance": 1
    },
    "filtered": [
-    "IIT Kanpur alumnus Trapit Bansal exits Meta, plans new research",
     "Meta Plans Ahead Across Three Time Scales"
    ],
-   "oldest": "2026-11-25T10:07:29+00:00",
-   "newest": "2026-11-26T18:06:52+00:00",
+   "oldest": "2026-11-25T12:38:42+00:00",
+   "newest": "2026-11-28T10:48:18+00:00",
    "at_limit": false,
    "needs_split": false,
    "gap_risk": false,
