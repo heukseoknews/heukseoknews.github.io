@@ -10,7 +10,7 @@
    "tz": "AoE",
    "link": "https://kdd2025.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai25:0:abstract_deadline",
@@ -22,7 +22,7 @@
    "tz": "UTC-12",
    "link": "https://aaai.org/conference/aaai/aaai-25/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd25:0:deadline",
@@ -34,7 +34,7 @@
    "tz": "AoE",
    "link": "https://kdd2025.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai25:0:deadline",
@@ -46,7 +46,7 @@
    "tz": "UTC-12",
    "link": "https://aaai.org/conference/aaai/aaai-25/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr25:0:abstract_deadline",
@@ -58,7 +58,7 @@
    "tz": "UTC-12",
    "link": "https://iclr.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr25:0:deadline",
@@ -70,7 +70,7 @@
    "tz": "UTC-12",
    "link": "https://iclr.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:naacl:naacl25:0:deadline",
@@ -82,7 +82,7 @@
    "tz": "UTC-12",
    "link": "https://2025.naacl.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr25:0:abstract_deadline",
@@ -94,7 +94,7 @@
    "tz": "UTC-8",
    "link": "https://cvpr.thecvf.com/Conferences/2025/CallForPapers",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr25:0:deadline",
@@ -106,7 +106,7 @@
    "tz": "UTC-8",
    "link": "https://cvpr.thecvf.com/Conferences/2025/CallForPapers",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:naacl:naacl25:1:deadline",
@@ -118,7 +118,7 @@
    "tz": "UTC-12",
    "link": "https://2025.naacl.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai25:0:abstract_deadline",
@@ -130,7 +130,7 @@
    "tz": "UTC-12",
    "link": "https://2025.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml25:0:abstract_deadline",
@@ -142,7 +142,7 @@
    "tz": "UTC-12",
    "link": "https://icml.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai25:0:deadline",
@@ -154,7 +154,7 @@
    "tz": "UTC-12",
    "link": "https://2025.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml25:0:deadline",
@@ -166,7 +166,7 @@
    "tz": "UTC-12",
    "link": "https://icml.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd25:1:abstract_deadline",
@@ -178,7 +178,7 @@
    "tz": "AoE",
    "link": "https://kdd2025.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd25:1:deadline",
@@ -190,7 +190,7 @@
    "tz": "AoE",
    "link": "https://kdd2025.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl25:0:deadline",
@@ -202,7 +202,7 @@
    "tz": "UTC-12",
    "link": "https://2025.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai25:date",
@@ -214,7 +214,7 @@
    "end": "2025-03-02",
    "link": "https://aaai.org/conference/aaai/aaai-25/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iccv:iccv25:0:abstract_deadline",
@@ -226,7 +226,7 @@
    "tz": "UTC+0",
    "link": "https://iccv.thecvf.com/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iccv:iccv25:0:deadline",
@@ -238,7 +238,7 @@
    "tz": "UTC+0",
    "link": "https://iccv.thecvf.com/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl25:1:deadline",
@@ -250,7 +250,7 @@
    "tz": "UTC-12",
    "link": "https://2025.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr25:date",
@@ -262,7 +262,7 @@
    "end": "2025-04-26",
    "link": "https://iclr.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:naacl:naacl25:date",
@@ -274,7 +274,7 @@
    "end": "2025-05-02",
    "link": "https://2025.naacl.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:nips:nips25:0:abstract_deadline",
@@ -286,7 +286,7 @@
    "tz": "AoE",
    "link": "https://neurips.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:nips:nips25:0:deadline",
@@ -298,7 +298,7 @@
    "tz": "AoE",
    "link": "https://neurips.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:emnlp:emnlp25:0:deadline",
@@ -310,7 +310,7 @@
    "tz": "UTC-12",
    "link": "https://2025.emnlp.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr25:date",
@@ -322,7 +322,7 @@
    "end": "2025-06-15",
    "link": "https://cvpr.thecvf.com/Conferences/2025/CallForPapers",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml25:date",
@@ -334,7 +334,7 @@
    "end": "2025-07-19",
    "link": "https://icml.cc/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd26:0:abstract_deadline",
@@ -346,7 +346,7 @@
    "tz": "AoE",
    "link": "https://kdd2026.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai26:0:abstract_deadline",
@@ -358,7 +358,7 @@
    "tz": "UTC-12",
    "link": "https://aaai.org/conference/aaai/aaai-26/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl25:date",
@@ -370,7 +370,7 @@
    "end": "2025-07-30",
    "link": "https://2025.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd26:0:deadline",
@@ -382,7 +382,7 @@
    "tz": "AoE",
    "link": "https://kdd2026.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai26:0:deadline",
@@ -394,7 +394,7 @@
    "tz": "UTC-12",
    "link": "https://aaai.org/conference/aaai/aaai-26/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:emnlp:emnlp25:1:deadline",
@@ -406,7 +406,7 @@
    "tz": "UTC-12",
    "link": "https://2025.emnlp.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd25:date",
@@ -418,7 +418,7 @@
    "end": "2025-08-07",
    "link": "https://kdd2025.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai25:date",
@@ -430,7 +430,7 @@
    "end": "2025-08-22",
    "link": "https://2025.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr26:0:abstract_deadline",
@@ -442,7 +442,7 @@
    "tz": "AoE",
    "link": "https://iclr.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr26:0:deadline",
@@ -454,7 +454,7 @@
    "tz": "AoE",
    "link": "https://iclr.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl26:0:deadline",
@@ -466,7 +466,7 @@
    "tz": "UTC-12",
    "link": "https://2026.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iccv:iccv25:date",
@@ -478,7 +478,7 @@
    "end": "2025-10-23",
    "link": "https://iccv.thecvf.com/Conferences/2025",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:emnlp:emnlp25:date",
@@ -490,7 +490,7 @@
    "end": "2025-11-07",
    "link": "https://2025.emnlp.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr26:0:abstract_deadline",
@@ -502,7 +502,7 @@
    "tz": "UTC-12",
    "link": "https://cvpr.thecvf.com/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr26:0:deadline",
@@ -514,7 +514,7 @@
    "tz": "UTC-12",
    "link": "https://cvpr.thecvf.com/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl26:1:deadline",
@@ -526,7 +526,7 @@
    "tz": "UTC-12",
    "link": "https://2026.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:agent:32:0:시행 공고:1",
@@ -538,7 +538,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:1:시행 공고:1",
@@ -550,7 +550,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai26:0:abstract_deadline",
@@ -562,7 +562,7 @@
    "tz": "UTC-12",
    "link": "https://2026.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai26:0:deadline",
@@ -574,7 +574,7 @@
    "tz": "UTC-12",
    "link": "https://2026.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai26:date",
@@ -586,7 +586,7 @@
    "end": "2026-01-25",
    "link": "https://aaai.org/conference/aaai/aaai-26/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml26:0:abstract_deadline",
@@ -598,7 +598,7 @@
    "tz": "UTC+0",
    "link": "https://icml.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml26:0:deadline",
@@ -610,7 +610,7 @@
    "tz": "UTC+0",
    "link": "https://icml.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd26:1:abstract_deadline",
@@ -622,7 +622,7 @@
    "tz": "AoE",
    "link": "https://kdd2026.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd26:1:deadline",
@@ -634,7 +634,7 @@
    "tz": "AoE",
    "link": "https://kdd2026.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:1:원서 접수:1",
@@ -647,7 +647,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:eccv:eccv26:0:abstract_deadline",
@@ -659,7 +659,7 @@
    "tz": "UTC-8",
    "link": "https://eccv.ecva.net/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:eccv:eccv26:0:deadline",
@@ -671,7 +671,7 @@
    "tz": "UTC-8",
    "link": "https://eccv.ecva.net/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl26:2:deadline",
@@ -683,7 +683,7 @@
    "tz": "UTC-12",
    "link": "https://2026.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:1:시험:1",
@@ -695,7 +695,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr26:date",
@@ -707,7 +707,7 @@
    "end": "2026-04-25",
    "link": "https://iclr.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:nips:nips26:0:abstract_deadline",
@@ -719,7 +719,7 @@
    "tz": "UTC+0",
    "link": "https://neurips.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:nips:nips26:0:deadline",
@@ -731,7 +731,7 @@
    "tz": "UTC+0",
    "link": "https://neurips.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:emnlp:emnlp26:0:deadline",
@@ -743,7 +743,7 @@
    "tz": "UTC-12",
    "link": "https://2026.emnlp.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:1:합격자 발표:1",
@@ -755,7 +755,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr26:date",
@@ -767,7 +767,7 @@
    "end": "2026-06-07",
    "link": "https://cvpr.thecvf.com/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:2:원서 접수:1",
@@ -780,7 +780,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl26:date",
@@ -792,7 +792,7 @@
    "end": "2026-07-07",
    "link": "https://2026.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml26:date",
@@ -804,7 +804,7 @@
    "end": "2026-07-11",
    "link": "https://icml.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd27:0:abstract_deadline",
@@ -816,7 +816,7 @@
    "tz": "AoE",
    "link": "https://kdd2027.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai27:0:abstract_deadline",
@@ -828,7 +828,7 @@
    "tz": "UTC-12",
    "link": "https://aaai.org/conference/aaai/aaai-27/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:2:시험:1",
@@ -840,7 +840,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:2:시험:2",
@@ -852,7 +852,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd27:0:deadline",
@@ -864,7 +864,7 @@
    "tz": "AoE",
    "link": "https://kdd2027.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai27:0:deadline",
@@ -876,7 +876,7 @@
    "tz": "UTC-12",
    "link": "https://aaai.org/conference/aaai/aaai-27/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:emnlp:emnlp26:1:deadline",
@@ -888,7 +888,7 @@
    "tz": "UTC-12",
    "link": "https://2026.emnlp.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd26:date",
@@ -900,7 +900,7 @@
    "end": "2026-08-13",
    "link": "https://kdd2026.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai26:date",
@@ -912,7 +912,7 @@
    "end": "2026-08-21",
    "link": "https://2026.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:eccv:eccv26:date",
@@ -924,7 +924,7 @@
    "end": "2026-09-12",
    "link": "https://eccv.ecva.net/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:pro:49:2:합격자 발표:1",
@@ -936,7 +936,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr27:0:abstract_deadline",
@@ -948,7 +948,7 @@
    "tz": "AoE",
    "link": "https://iclr.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:nips:nips26:0:decision_deadline",
@@ -960,7 +960,7 @@
    "tz": "UTC+0",
    "link": "https://neurips.cc/Conferences/2026",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr27:0:deadline",
@@ -972,7 +972,7 @@
    "tz": "AoE",
    "link": "https://iclr.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:naacl:naacl27:0:deadline",
@@ -984,7 +984,7 @@
    "tz": "UTC-12",
    "link": "https://2027.naacl.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:agent:32:0:원서 접수:1",
@@ -997,7 +997,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:emnlp:emnlp26:date",
@@ -1009,7 +1009,7 @@
    "end": "2026-10-27",
    "link": "https://2026.emnlp.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr27:0:abstract_deadline",
@@ -1021,7 +1021,7 @@
    "tz": "UTC-12",
    "link": "https://cvpr.thecvf.com/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd27:0:decision_deadline",
@@ -1033,7 +1033,7 @@
    "tz": "AoE",
    "link": "https://kdd2027.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:agent:32:0:시험:1",
@@ -1045,7 +1045,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr27:0:deadline",
@@ -1057,7 +1057,7 @@
    "tz": "UTC-12",
    "link": "https://cvpr.thecvf.com/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai27:0:decision_deadline",
@@ -1069,7 +1069,7 @@
    "tz": "UTC-12",
    "link": "https://aaai.org/conference/aaai/aaai-27/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr27:0:decision_deadline",
@@ -1081,7 +1081,7 @@
    "tz": "AoE",
    "link": "https://iclr.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "kidi:agent:32:0:합격자 발표:1",
@@ -1093,7 +1093,7 @@
    "tz": "KST",
    "link": "https://certi.kidi.or.kr:10443/exam/exam-guide/schedule",
    "source": "kidi",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:naacl:naacl27:1:deadline",
@@ -1105,7 +1105,7 @@
    "tz": "UTC-12",
    "link": "https://2027.naacl.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl27:0:deadline",
@@ -1117,7 +1117,7 @@
    "tz": "UTC-12",
    "link": "https://2027.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai27:0:abstract_deadline",
@@ -1129,7 +1129,7 @@
    "tz": "AoE",
    "link": "https://2027.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai27:0:deadline",
@@ -1141,7 +1141,7 @@
    "tz": "AoE",
    "link": "https://2027.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml27:0:abstract_deadline",
@@ -1153,7 +1153,7 @@
    "tz": "AoE",
    "link": "https://icml.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml27:0:deadline",
@@ -1165,7 +1165,7 @@
    "tz": "AoE",
    "link": "https://icml.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:naacl:naacl27:1:decision_deadline",
@@ -1177,7 +1177,7 @@
    "tz": "UTC-12",
    "link": "https://2027.naacl.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:aaai:aaai27:date",
@@ -1189,7 +1189,7 @@
    "end": "2027-02-23",
    "link": "https://aaai.org/conference/aaai/aaai-27/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr27:0:decision_deadline",
@@ -1201,7 +1201,7 @@
    "tz": "UTC-12",
    "link": "https://cvpr.thecvf.com/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai27:0:decision_deadline",
@@ -1213,7 +1213,7 @@
    "tz": "AoE",
    "link": "https://2027.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iclr:iclr27:date",
@@ -1225,7 +1225,7 @@
    "end": "2027-04-28",
    "link": "https://iclr.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml27:0:decision_deadline",
@@ -1237,7 +1237,7 @@
    "tz": "AoE",
    "link": "https://icml.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:naacl:naacl27:date",
@@ -1249,7 +1249,7 @@
    "end": "2027-06-05",
    "link": "https://2027.naacl.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:cvpr:cvpr27:date",
@@ -1261,7 +1261,7 @@
    "end": "2027-06-24",
    "link": "https://cvpr.thecvf.com/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:sigkdd:sigkdd27:date",
@@ -1273,7 +1273,7 @@
    "end": "2027-08-05",
    "link": "https://kdd2027.kdd.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:icml:icml27:date",
@@ -1285,7 +1285,7 @@
    "end": "2027-08-04",
    "link": "https://icml.cc/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:ijcai:ijcai27:date",
@@ -1297,7 +1297,7 @@
    "end": "2027-08-13",
    "link": "https://2027.ijcai.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:acl:acl27:date",
@@ -1309,7 +1309,7 @@
    "end": "2027-08-22",
    "link": "https://2027.aclweb.org/",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   },
   {
    "id": "ccfddl:iccv:iccv27:date",
@@ -1321,7 +1321,7 @@
    "end": "2027-10-07",
    "link": "https://iccv.thecvf.com/Conferences/2027",
    "source": "ccfddl",
-   "checked": "2026-11-27"
+   "checked": "2026-11-28"
   }
  ]
 }
